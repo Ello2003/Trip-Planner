@@ -1,0 +1,84 @@
+{
+  "entities": {
+    "Trip": {
+      "title": "Trip",
+      "description": "A travel trip containing budget expenses, itinerary items, research, packing list, attire manifest, and lounge/haul diary.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 200 },
+        "year": { "type": "integer" },
+        "status": { "type": "string", "enum": ["upcoming", "completed", "cancelled"] },
+        "budget": { "type": "number" },
+        "startDate": { "type": "string", "maxLength": 50 },
+        "endDate": { "type": "string", "maxLength": 50 },
+        "travelers": { "type": "integer" },
+        "notes": { "type": "string", "maxLength": 5000 },
+        "country": { "type": "string", "maxLength": 100 },
+        "countryGuessed": { "type": "boolean" },
+        "mapEmbedUrl": { "type": "string", "maxLength": 2000 },
+        "timelineMode": { "type": "string", "enum": ["dates", "days"] },
+        "timelineManualOrder": { "type": "boolean" },
+        "expenses": { "type": "array" },
+        "planItems": { "type": "array" },
+        "research": { "type": "array" },
+        "packingList": { "type": "array" },
+        "manualEstimates": { "type": "array" },
+        "hiddenSheets": { "type": "array" },
+        "sectionMapUrls": { "type": "object" },
+        "luggageBags": { "type": "array" },
+        "outfits": { "type": "array" },
+        "hauls": { "type": "array" },
+        "loungeVisits": { "type": "array" },
+        "ownerId": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "integer" },
+        "updatedAt": { "type": "integer" }
+      },
+      "required": ["id", "name", "year", "status", "budget", "ownerId", "updatedAt"]
+    },
+    "UserSettings": {
+      "title": "UserSettings",
+      "description": "User preferences, categories, and sync settings.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "categories": { "type": "array" },
+        "sheets": { "type": "array" },
+        "settings": { "type": "object" },
+        "updatedAt": { "type": "integer" }
+      },
+      "required": ["userId", "updatedAt"]
+    },
+    "BackupSnapshot": {
+      "title": "BackupSnapshot",
+      "description": "Incremental or full ledger backup snapshots with metadata, trip summaries, and restore data.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 200 },
+        "trigger": { "type": "string", "enum": ["auto", "manual", "checkpoint"] },
+        "tripCount": { "type": "integer" },
+        "tripsSummary": { "type": "array" },
+        "state": { "type": "object" },
+        "changesSummary": { "type": "string", "maxLength": 1000 },
+        "ownerId": { "type": "string", "maxLength": 128 },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "name", "ownerId", "timestamp", "state"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/trips/{tripId}": {
+      "schema": "Trip",
+      "description": "Stores individual travel itineraries, budgets, and manifests for each authenticated user."
+    },
+    "/users/{userId}/backups/{backupId}": {
+      "schema": "BackupSnapshot",
+      "description": "Incremental and full ledger backup snapshots for recovery."
+    },
+    "/users/{userId}/meta/settings": {
+      "schema": "UserSettings",
+      "description": "User ledger configuration and custom categories."
+    }
+  }
+}

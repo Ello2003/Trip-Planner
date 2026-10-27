@@ -1,0 +1,8 @@
+{
+  "name": "Travel Ledger",
+  "description": "Tactile travel budget, expense tracker, itinerary planner, and research notebook with multi-currency support, boarding-pass dashboard, and backup sync.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

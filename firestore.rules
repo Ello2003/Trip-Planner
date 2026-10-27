@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default-deny global safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Connectivity test probe
+    match /test/connection {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    // User isolated root
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // Trips collection
+      match /trips/{tripId} {
+        allow get, list, delete: if isOwner(userId) && isValidId(tripId);
+        
+        allow create: if isOwner(userId) && isValidId(tripId)
+          && request.resource.data.id is string
+          && request.resource.data.id.size() <= 128
+          && request.resource.data.name is string
+          && request.resource.data.name.size() <= 200
+          && request.resource.data.ownerId == request.auth.uid;
+
+        allow update: if isOwner(userId) && isValidId(tripId)
+          && request.resource.data.id is string
+          && request.resource.data.id == resource.data.id
+          && request.resource.data.ownerId == resource.data.ownerId
+          && request.resource.data.name is string
+          && request.resource.data.name.size() <= 200;
+      }
+
+      // Backups collection
+      match /backups/{backupId} {
+        allow get, list, delete: if isOwner(userId) && isValidId(backupId);
+        allow create, update: if isOwner(userId) && isValidId(backupId)
+          && request.resource.data.id is string
+          && request.resource.data.id.size() <= 128
+          && request.resource.data.ownerId == request.auth.uid;
+      }
+
+      // User ledger settings & metadata
+      match /meta/{docId} {
+        allow read, write: if isOwner(userId) && isValidId(docId);
+      }
+    }
+  }
+}
