@@ -203,7 +203,8 @@ export interface Trip {
   id: string;
   name: string;
   year: number;
-  status: 'upcoming' | 'completed' | 'cancelled';
+  status: 'upcoming' | 'completed' | 'cancelled' | 'archived';
+  isArchived?: boolean;
   budget: number;
   startDate: string | null;
   endDate: string | null;
@@ -269,6 +270,16 @@ export interface Settings {
   githubLastSyncAt: number | null;
   tripTabOrder: string[];
   disabledTabs?: string[];
+  // Feature customisation & display toggles
+  showHaulBadges?: boolean;
+  showAttireBadges?: boolean;
+  showLuggageBadges?: boolean;
+  showCountdownBadge?: boolean;
+  showUpNextStrip?: boolean;
+  showItineraryMap?: boolean;
+  showResearchMap?: boolean;
+  enableCurrencyConverter?: boolean;
+  defaultShowArchived?: boolean;
 }
 
 export interface TripSummary {
@@ -315,7 +326,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.17.0';
+export const APP_VERSION = '1.18.2';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -376,6 +387,9 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.18.2': 'Resolved Firestore collection list permission error for users/trips by decoupling collection list queries from document ID validation, opened test probe read access, and made GitHub Pages base path conditional on GITHUB_ACTIONS environment to prevent dev server pre-warming 302 redirects.',
+  '1.18.1': 'Fixed React singleton resolution and Vite dependency pre-bundling configuration (resolve.dedupe & optimizeDeps for react and react-dom), resolving the "Invalid hook call: null is not an object (evaluating resolveDispatcher().useState)" error.',
+  '1.18.0': 'Added Trip Archive status allowing trips to be hidden from the dashboard and toggled via the dashboard header with instant restore. Cleaned up boarding passes by removing haul/attire badges by default, backed by comprehensive feature toggles in settings. Fixed Google Maps place search and geocoding in Name/Search to reliably resolve real addresses and display them directly on maps without legacy widget errors.',
   '1.17.0': 'Added Cloud Firestore incremental backup and recovery management with safety checkpoints, snapshot inspection, and selective single-trip restoration. Added GitHub Connection Tester with comprehensive diagnostic checks for token scopes and branch status. Introduced inline & modal tab customization with enable/disable toggles (attire & hauls disabled by default with one-click presets) and resolved duplicate packing tab rendering.',
   '1.16.0': 'Added interactive Google Maps component for the Research section featuring AdvancedMarker elements, category/sheet filtering with item counts, Places API geocoding, InfoWindows with instant "Promote to Plan" actions, and list/map view modes.',
   '1.15.0': 'Added interactive Google Maps itinerary component in TripDetailView featuring AdvancedMarker elements, day-by-day and category filtering, Places API geocoding, InfoWindows, and settings API key integration.',

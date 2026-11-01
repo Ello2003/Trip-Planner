@@ -190,6 +190,42 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
         ← All Trips
       </button>
 
+      {(trip.status === 'archived' || trip.isArchived) && (
+        <div
+          style={{
+            margin: '12px 0 16px',
+            padding: '10px 16px',
+            background: 'var(--paper-raised)',
+            border: '1px dashed var(--brass)',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px',
+            fontSize: '13px'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ fontSize: '18px' }}>📦</span>
+            <span>
+              <strong>Archived Trip:</strong> This trip is currently hidden from the main dashboard.
+            </span>
+          </div>
+          <button
+            type="button"
+            className="btn-primary btn-sm"
+            onClick={() => {
+              onUpdateTrip(
+                { ...trip, status: 'upcoming', isArchived: false, updatedAt: Date.now() },
+                { action: 'trip-unarchived', detail: `Restored "${trip.name}" to active status` }
+              );
+            }}
+          >
+            Restore to Active
+          </button>
+        </div>
+      )}
+
       <div className="detail-header">
         <div>
           <div className="detail-title">
@@ -202,6 +238,23 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
               </span>
             )}
             {trip.name}
+            {(trip.status === 'archived' || trip.isArchived) && (
+              <span
+                style={{
+                  marginLeft: '10px',
+                  fontSize: '11px',
+                  fontFamily: 'var(--font-mono)',
+                  padding: '2px 8px',
+                  borderRadius: '10px',
+                  background: 'var(--paper-edge)',
+                  color: 'var(--ink-soft)',
+                  verticalAlign: 'middle',
+                  fontWeight: 500
+                }}
+              >
+                📦 Archived
+              </span>
+            )}
           </div>
           <div className="detail-sub">{dateSub}</div>
         </div>
@@ -235,14 +288,16 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
       </div>
 
       <div className="toolbar">
-        <button
-          className={`btn-ghost ${showMapBanner ? 'active' : ''}`}
-          onClick={() => setShowMapBanner(!showMapBanner)}
-          style={{ borderColor: showMapBanner ? 'var(--brass)' : undefined }}
-        >
-          🗺️ {showMapBanner ? 'Hide Map Banner' : 'Itinerary Map'}
-        </button>
-        {onOpenCurrencyConverter && (
+        {settings.showItineraryMap !== false && (
+          <button
+            className={`btn-ghost ${showMapBanner ? 'active' : ''}`}
+            onClick={() => setShowMapBanner(!showMapBanner)}
+            style={{ borderColor: showMapBanner ? 'var(--brass)' : undefined }}
+          >
+            🗺️ {showMapBanner ? 'Hide Map Banner' : 'Itinerary Map'}
+          </button>
+        )}
+        {settings.enableCurrencyConverter !== false && onOpenCurrencyConverter && (
           <button
             type="button"
             className="btn-ghost"
@@ -252,6 +307,29 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
             💱 Currency
           </button>
         )}
+        <button
+          type="button"
+          className="btn-ghost"
+          onClick={() => {
+            const isNowArchived = trip.status === 'archived' || !!trip.isArchived;
+            const nextStatus = isNowArchived ? 'upcoming' : 'archived';
+            onUpdateTrip(
+              {
+                ...trip,
+                status: nextStatus,
+                isArchived: !isNowArchived,
+                updatedAt: Date.now()
+              },
+              {
+                action: isNowArchived ? 'trip-unarchived' : 'trip-archived',
+                detail: `${isNowArchived ? 'Unarchived' : 'Archived'} "${trip.name}"`
+              }
+            );
+          }}
+          title={trip.status === 'archived' ? 'Restore to active trips' : 'Archive and hide from main dashboard'}
+        >
+          📦 {trip.status === 'archived' || trip.isArchived ? 'Unarchive Trip' : 'Archive Trip'}
+        </button>
         <button className="btn-ghost" onClick={onEditTrip}>
           Edit Trip Details
         </button>

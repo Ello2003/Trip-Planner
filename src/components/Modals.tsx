@@ -28,6 +28,7 @@ import {
   GithubTestResult
 } from '../utils/githubSync';
 import { getDefaultExchangeRate, getCurrencyInfo, formatCurrencyAmount } from '../utils/currency';
+import { searchPlaceOrAddress, ResolvedPlace, getGoogleMapsApiKey } from '../utils/mapsHelper';
 
 // Base Modal Wrapper
 export const ModalWrapper: React.FC<{
@@ -70,7 +71,7 @@ export const TripModal: React.FC<{
   const [year, setYear] = useState(existing?.year || new Date().getFullYear());
   const [travelers, setTravelers] = useState(existing?.travelers || 2);
   const [budget, setBudget] = useState(existing ? String(existing.budget) : '');
-  const [status, setStatus] = useState<'upcoming' | 'completed' | 'cancelled'>(
+  const [status, setStatus] = useState<Trip['status']>(
     existing?.status || 'upcoming'
   );
 
@@ -226,6 +227,7 @@ export const TripModal: React.FC<{
               <option value="upcoming">Upcoming</option>
               <option value="completed">Completed</option>
               <option value="cancelled">Cancelled</option>
+              <option value="archived">📦 Archived</option>
             </select>
           </div>
         </div>
@@ -744,6 +746,30 @@ export const PlanItemModal: React.FC<{
   const [dayNumberEnd, setDayNumberEnd] = useState(existing?.dayNumberEnd ? String(existing.dayNumberEnd) : '');
   const [time, setTime] = useState(existing?.time || '');
   const [location, setLocation] = useState(existing?.location || '');
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationFeedback, setLocationFeedback] = useState<string | null>(null);
+
+  const handleFindPlanLocation = async () => {
+    const q = location.trim() || name.trim();
+    if (!q) return;
+    setIsLocating(true);
+    setLocationFeedback(null);
+    try {
+      const results = await searchPlaceOrAddress(q, undefined, trip.name);
+      if (results.length > 0) {
+        const best = results[0];
+        setLocation(`${best.name ? best.name + ', ' : ''}${best.address} (${best.lat.toFixed(5)}, ${best.lng.toFixed(5)})`);
+        setLocationFeedback(`✅ Mapped: ${best.address}`);
+      } else {
+        setLocationFeedback('No exact location found. You can keep your custom entry.');
+      }
+    } catch (_) {
+      setLocationFeedback('Could not fetch location.');
+    } finally {
+      setIsLocating(false);
+    }
+  };
+
   const [cost, setCost] = useState(existing?.cost != null ? String(existing.cost) : '');
   const [wantLink, setWantLink] = useState(!!existing?.linkedExpenseId);
   const [notes, setNotes] = useState(existing?.notes || '');
@@ -908,11 +934,32 @@ export const PlanItemModal: React.FC<{
 
         <div className="field">
           <label>Location (optional)</label>
-          <input
-            type="text"
-            value={location}
-            onChange={e => setLocation(e.target.value)}
-          />
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <input
+              type="text"
+              placeholder="e.g. 10 Downing St, London or venue name…"
+              value={location}
+              onChange={e => {
+                setLocation(e.target.value);
+                if (locationFeedback) setLocationFeedback(null);
+              }}
+            />
+            <button
+              type="button"
+              className="btn-ghost btn-sm"
+              style={{ whiteSpace: 'nowrap', padding: '0 12px' }}
+              disabled={isLocating || (!location.trim() && !name.trim())}
+              onClick={handleFindPlanLocation}
+              title="Search address & coordinates for map display"
+            >
+              {isLocating ? 'Locating…' : '📍 Find Address'}
+            </button>
+          </div>
+          {locationFeedback && (
+            <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '4px' }}>
+              {locationFeedback}
+            </div>
+          )}
         </div>
 
         <div className="field">
@@ -1106,7 +1153,7 @@ export const PlanItemModal: React.FC<{
   );
 };
 
-// 5. ResearchItemModal (with Google Places Autocomplete if configured)
+// 5. ResearchItemModal (with modern Google Places & Geocoding address search)
 export const ResearchItemModal: React.FC<{
   sheets: Sheet[];
   existing?: ResearchItem | null;
@@ -1131,30 +1178,64 @@ export const ResearchItemModal: React.FC<{
   const [lat, setLat] = useState<number | null>(existing?.lat ?? null);
   const [lng, setLng] = useState<number | null>(existing?.lng ?? null);
 
-  const searchInputRef = useRef<HTMLInputElement>(null);
+  // Search & Places state
+  const [searchResults, setSearchResults] = useState<ResolvedPlace[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [searchFeedback, setSearchFeedback] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!settings.mapsApiKey || !searchInputRef.current || !(window as any).google?.maps?.places) return;
+  const handleSearchPlaces = async (queryText: string) => {
+    const q = queryText.trim();
+    if (q.length < 2) return;
+    setIsSearching(true);
+    setSearchFeedback(null);
     try {
-      const autocomplete = new (window as any).google.maps.places.Autocomplete(searchInputRef.current, {
-        fields: ['name', 'formatted_address', 'geometry', 'website']
-      });
-      autocomplete.addListener('place_changed', () => {
-        const place = autocomplete.getPlace();
-        if (place) {
-          if (place.name) setName(place.name);
-          if (place.formatted_address) setAddress(place.formatted_address);
-          if (place.geometry?.location) {
-            setLat(place.geometry.location.lat());
-            setLng(place.geometry.location.lng());
-          }
-          if (place.website) {
-            setLinks(prev => [...prev, { id: uid('link'), label: 'Website', url: place.website }]);
-          }
-        }
-      });
-    } catch (_) {}
-  }, [settings.mapsApiKey]);
+      const apiKey = getGoogleMapsApiKey(settings);
+      const results = await searchPlaceOrAddress(q, apiKey);
+      setSearchResults(results);
+      setShowDropdown(true);
+      if (results.length === 0) {
+        setSearchFeedback('No matching address found. You can type an address manually below.');
+      }
+    } catch (_) {
+      setSearchFeedback('Could not fetch address details.');
+    } finally {
+      setIsSearching(false);
+    }
+  };
+
+  const handleSelectPlace = (place: ResolvedPlace) => {
+    if (place.name && place.name !== name) {
+      setName(place.name);
+    }
+    setAddress(place.address);
+    setLat(place.lat);
+    setLng(place.lng);
+    if (place.website) {
+      const exists = links.some(l => l.url === place.website);
+      if (!exists) {
+        setLinks(prev => [...prev, { id: uid('link'), label: 'Official Website', url: place.website! }]);
+      }
+    }
+    setShowDropdown(false);
+    setSearchFeedback(`Found: ${place.address}`);
+  };
+
+  const handleGeocodeAddress = async () => {
+    if (!address.trim()) return;
+    setIsSearching(true);
+    try {
+      const apiKey = getGoogleMapsApiKey(settings);
+      const results = await searchPlaceOrAddress(address.trim(), apiKey);
+      if (results.length > 0) {
+        handleSelectPlace(results[0]);
+      } else {
+        setSearchFeedback('Address could not be located on the map.');
+      }
+    } finally {
+      setIsSearching(false);
+    }
+  };
 
   const handleAddLink = () => {
     setLinks([...links, { id: uid('link'), label: '', url: '' }]);
@@ -1211,27 +1292,142 @@ export const ResearchItemModal: React.FC<{
           </div>
         </div>
 
-        <div className="field">
+        <div className="field" style={{ position: 'relative' }}>
           <label>Name / Search</label>
-          <input
-            ref={searchInputRef}
-            type="text"
-            placeholder="Start typing a place name…"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            autoFocus
-          />
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <input
+              type="text"
+              placeholder="Search place name or destination (e.g. Louvre, Dishoom Shoreditch)…"
+              value={name}
+              onChange={e => {
+                setName(e.target.value);
+                if (showDropdown) setShowDropdown(false);
+              }}
+              onKeyDown={e => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  handleSearchPlaces(name);
+                }
+              }}
+              autoFocus
+            />
+            <button
+              type="button"
+              className="btn-primary btn-sm"
+              style={{ whiteSpace: 'nowrap', padding: '0 14px' }}
+              disabled={isSearching || !name.trim()}
+              onClick={() => handleSearchPlaces(name)}
+            >
+              {isSearching ? 'Searching…' : '🔍 Find Address'}
+            </button>
+          </div>
+
+          {/* Autocomplete / Search Results dropdown */}
+          {showDropdown && searchResults.length > 0 && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                right: 0,
+                zIndex: 50,
+                background: 'var(--paper-raised)',
+                border: '1px solid var(--paper-edge)',
+                borderRadius: '6px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                maxHeight: '220px',
+                overflowY: 'auto',
+                marginTop: '4px'
+              }}
+            >
+              <div style={{ padding: '6px 10px', fontSize: '11px', color: 'var(--ink-soft)', borderBottom: '1px solid var(--line)', background: 'var(--paper)' }}>
+                Select matching place to autofill address &amp; map coordinates:
+              </div>
+              {searchResults.map((res, i) => (
+                <div
+                  key={i}
+                  onClick={() => handleSelectPlace(res)}
+                  style={{
+                    padding: '8px 12px',
+                    borderBottom: i < searchResults.length - 1 ? '1px solid var(--line)' : 'none',
+                    cursor: 'pointer',
+                    transition: 'background 0.15s ease'
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.background = 'var(--paper)')}
+                  onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                >
+                  <div style={{ fontWeight: 600, fontSize: '13px', color: 'var(--ink)' }}>
+                    📍 {res.name}
+                  </div>
+                  <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '2px' }}>
+                    {res.address}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {searchFeedback && (
+            <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '4px', fontStyle: 'italic' }}>
+              {searchFeedback}
+            </div>
+          )}
         </div>
 
         <div className="field">
           <label>Address</label>
-          <input
-            type="text"
-            placeholder="Autofills from search, or type your own"
-            value={address}
-            onChange={e => setAddress(e.target.value)}
-          />
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <input
+              type="text"
+              placeholder="Autofills from place search, or enter address manually"
+              value={address}
+              onChange={e => setAddress(e.target.value)}
+            />
+            <button
+              type="button"
+              className="btn-ghost btn-sm"
+              style={{ whiteSpace: 'nowrap', padding: '0 12px' }}
+              disabled={isSearching || !address.trim()}
+              onClick={handleGeocodeAddress}
+              title="Locate coordinates for this address"
+            >
+              📍 Locate
+            </button>
+          </div>
         </div>
+
+        {/* Pinned Map Coordinate Banner */}
+        {lat != null && lng != null && (
+          <div
+            style={{
+              padding: '8px 12px',
+              background: '#eef6f3',
+              border: '1px solid #35695c',
+              borderRadius: '6px',
+              marginBottom: '14px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              fontSize: '12px',
+              color: '#1c2530'
+            }}
+          >
+            <span>
+              ✅ <strong>Mapped Coordinates:</strong> {lat.toFixed(5)}, {lng.toFixed(5)} — Will display marker on map
+            </span>
+            <button
+              type="button"
+              className="btn-ghost btn-sm"
+              style={{ fontSize: '10.5px', padding: '2px 8px' }}
+              onClick={() => {
+                setLat(null);
+                setLng(null);
+              }}
+            >
+              Clear Pin
+            </button>
+          </div>
+        )}
 
         <div className="field-row">
           <div className="field">
@@ -1320,7 +1516,7 @@ export const ResearchItemModal: React.FC<{
             Cancel
           </button>
           <button type="submit" className="btn-primary">
-            {isEdit ? 'Save Changes' : 'Add Place'}
+            {isEdit ? 'Save Changes' : 'Add Item'}
           </button>
         </div>
       </form>
@@ -2243,6 +2439,248 @@ export const GithubSyncModal: React.FC<{
             Save
           </button>
         </div>
+      </div>
+    </ModalWrapper>
+  );
+};
+
+// 13.5. SettingsModal (Feature Customisation & Global Preferences)
+export const SettingsModal: React.FC<{
+  settings: Settings;
+  onClose: () => void;
+  onSaveSettings: (settings: Settings) => void;
+  onOpenReorderTabs?: () => void;
+  onOpenGithubSync?: () => void;
+  onOpenBackupManager?: () => void;
+}> = ({
+  settings,
+  onClose,
+  onSaveSettings,
+  onOpenReorderTabs,
+  onOpenGithubSync,
+  onOpenBackupManager
+}) => {
+  const [form, setForm] = useState<Settings>({ ...settings });
+
+  const handleToggle = (key: keyof Settings) => {
+    setForm(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const handleSave = () => {
+    onSaveSettings(form);
+    onClose();
+  };
+
+  return (
+    <ModalWrapper title="Settings & Feature Customisation" wide onClose={onClose}>
+      <div style={{ maxHeight: '65vh', overflowY: 'auto', paddingRight: '4px', marginBottom: '16px' }}>
+
+        {/* Section 1: Boarding Pass Cards */}
+        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
+          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
+            🎫 Boarding Pass Cards (Dashboard)
+          </h4>
+          <p style={{ fontSize: '12px', color: 'var(--ink-soft)', marginTop: 0, marginBottom: '12px' }}>
+            Choose which badge indicators appear on your luxury boarding pass cards.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={!!form.showHaulBadges}
+                onChange={() => handleToggle('showHaulBadges')}
+              />
+              <span>Show Lounge &amp; Haul Badges (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>✨ N hauls/lounges</span>)</span>
+            </label>
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={!!form.showAttireBadges}
+                onChange={() => handleToggle('showAttireBadges')}
+              />
+              <span>Show Wardrobe / Attire Badges (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>👔 N looks</span>)</span>
+            </label>
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={!!form.showLuggageBadges}
+                onChange={() => handleToggle('showLuggageBadges')}
+              />
+              <span>Show Luggage Bags Badges (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>💼 N bags</span>)</span>
+            </label>
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={form.showCountdownBadge !== false}
+                onChange={() => handleToggle('showCountdownBadge')}
+              />
+              <span>Show Departure Countdown Chip (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>In 5d</span>)</span>
+            </label>
+          </div>
+        </div>
+
+        {/* Section 2: Dashboard & Itinerary Modules */}
+        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
+          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
+            🧭 Dashboard &amp; Display Modules
+          </h4>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={form.showUpNextStrip !== false}
+                onChange={() => handleToggle('showUpNextStrip')}
+              />
+              <span>Show "Up Next" upcoming activities strip on dashboard</span>
+            </label>
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={!!form.defaultShowArchived}
+                onChange={() => handleToggle('defaultShowArchived')}
+              />
+              <span>Always show Archived trips by default on dashboard</span>
+            </label>
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={form.showItineraryMap !== false}
+                onChange={() => handleToggle('showItineraryMap')}
+              />
+              <span>Enable Itinerary Route Map banner</span>
+            </label>
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={form.showResearchMap !== false}
+                onChange={() => handleToggle('showResearchMap')}
+              />
+              <span>Enable Research Places Map view</span>
+            </label>
+
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={form.enableCurrencyConverter !== false}
+                onChange={() => handleToggle('enableCurrencyConverter')}
+              />
+              <span>Enable Multi-Currency Converter &amp; Exchange rate calculations</span>
+            </label>
+          </div>
+
+          {onOpenReorderTabs && (
+            <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid var(--line)' }}>
+              <button
+                type="button"
+                className="btn-ghost btn-sm"
+                onClick={() => {
+                  onClose();
+                  onOpenReorderTabs();
+                }}
+              >
+                ⚙️ Customize &amp; Reorder Itinerary Tabs
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Section 3: Financial Defaults */}
+        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
+          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
+            💱 Currency &amp; Finance Defaults
+          </h4>
+          <div className="field" style={{ margin: 0 }}>
+            <label>Default Ledger Home Currency</label>
+            <select
+              value={form.homeCurrency || 'GBP'}
+              onChange={e => setForm(prev => ({ ...prev, homeCurrency: e.target.value }))}
+            >
+              {SUPPORTED_CURRENCIES.map(c => (
+                <option key={c.code} value={c.code}>
+                  {c.flag} {c.code} — {c.name} ({c.symbol})
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Section 4: Google Maps Key */}
+        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
+          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
+            🗺️ Google Maps Platform Configuration
+          </h4>
+          <div className="field" style={{ margin: 0 }}>
+            <label>Custom Google Maps API Key (Optional)</label>
+            <input
+              type="text"
+              placeholder="AIzaSy… (Leave empty to use provisioned Cloud Demo Key)"
+              value={form.mapsApiKey || ''}
+              onChange={e => setForm(prev => ({ ...prev, mapsApiKey: e.target.value }))}
+            />
+            <div style={{ fontSize: '11px', color: 'var(--ink-soft)', marginTop: '4px' }}>
+              {form.mapsApiKey ? 'Using custom API key' : 'Active: Provisioned Google Cloud Demo Key with Places & Geocoding'}
+            </div>
+          </div>
+        </div>
+
+        {/* Section 5: Integrations Shortcuts */}
+        <div style={{ padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
+          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
+            ☁️ Cloud Storage &amp; Sync
+          </h4>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            {onOpenBackupManager && (
+              <button
+                type="button"
+                className="btn-ghost btn-sm"
+                onClick={() => {
+                  onClose();
+                  onOpenBackupManager();
+                }}
+              >
+                💾 Backup &amp; Recovery Manager
+              </button>
+            )}
+            {onOpenGithubSync && (
+              <button
+                type="button"
+                className="btn-ghost btn-sm"
+                onClick={() => {
+                  onClose();
+                  onOpenGithubSync();
+                }}
+              >
+                🐙 GitHub Sync Settings
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="modal-actions">
+        <button type="button" className="btn-ghost" onClick={onClose}>
+          Cancel
+        </button>
+        <button type="button" className="btn-primary" onClick={handleSave}>
+          Save Settings
+        </button>
       </div>
     </ModalWrapper>
   );

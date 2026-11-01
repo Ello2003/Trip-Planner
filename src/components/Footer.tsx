@@ -8,6 +8,7 @@ interface FooterProps {
   onOpenGithubSync: () => void;
   onOpenBackupHistory: () => void;
   onOpenChangelog?: () => void;
+  onOpenSettings?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -17,7 +18,8 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenActivityLog,
   onOpenGithubSync,
   onOpenBackupHistory,
-  onOpenChangelog
+  onOpenChangelog,
+  onOpenSettings
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -66,6 +68,14 @@ export const Footer: React.FC<FooterProps> = ({
       <button className="footer-link" onClick={onOpenBackupHistory}>
         Backup History
       </button>
+      {onOpenSettings && (
+        <>
+          <span className="footer-sep">·</span>
+          <button className="footer-link" onClick={onOpenSettings}>
+            ⚙️ Settings
+          </button>
+        </>
+      )}
       {onOpenChangelog && (
         <>
           <span className="footer-sep">·</span>

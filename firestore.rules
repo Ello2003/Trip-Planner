@@ -21,7 +21,7 @@ service cloud.firestore {
 
     // Connectivity test probe
     match /test/connection {
-      allow read: if isSignedIn();
+      allow read: if true;
       allow write: if false;
     }
 
@@ -31,7 +31,9 @@ service cloud.firestore {
 
       // Trips collection
       match /trips/{tripId} {
-        allow get, list, delete: if isOwner(userId) && isValidId(tripId);
+        allow get: if isOwner(userId) && isValidId(tripId);
+        allow list: if isOwner(userId);
+        allow delete: if isOwner(userId) && isValidId(tripId);
         
         allow create: if isOwner(userId) && isValidId(tripId)
           && request.resource.data.id is string
@@ -50,7 +52,9 @@ service cloud.firestore {
 
       // Backups collection
       match /backups/{backupId} {
-        allow get, list, delete: if isOwner(userId) && isValidId(backupId);
+        allow get: if isOwner(userId) && isValidId(backupId);
+        allow list: if isOwner(userId);
+        allow delete: if isOwner(userId) && isValidId(backupId);
         allow create, update: if isOwner(userId) && isValidId(backupId)
           && request.resource.data.id is string
           && request.resource.data.id.size() <= 128
@@ -59,7 +63,9 @@ service cloud.firestore {
 
       // User ledger settings & metadata
       match /meta/{docId} {
-        allow read, write: if isOwner(userId) && isValidId(docId);
+        allow get: if isOwner(userId) && isValidId(docId);
+        allow list: if isOwner(userId);
+        allow write: if isOwner(userId) && isValidId(docId);
       }
     }
   }

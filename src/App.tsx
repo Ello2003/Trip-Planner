@@ -46,7 +46,8 @@ import {
   ActivityLogModal,
   BackupHistoryModal,
   GithubSyncModal,
-  MapSettingsModal
+  MapSettingsModal,
+  SettingsModal
 } from './components/Modals';
 import { CurrencyConverterModal } from './components/CurrencyConverterModal';
 import { BackupManagerModal } from './components/BackupManagerModal';
@@ -600,6 +601,7 @@ export const App: React.FC = () => {
             }
           }}
           onOpenChangelog={() => setModalType('changelog')}
+          onOpenSettings={() => setModalType('settings')}
           onHomeClick={() => setActiveTripId(null)}
           onOpenCurrencyConverter={() => setModalType('currencyConverter')}
           user={user}
@@ -615,6 +617,7 @@ export const App: React.FC = () => {
               trips={state.trips}
               categories={state.categories}
               sheets={state.sheets}
+              settings={state.settings}
               activeDashTab={activeDashTab}
               setActiveDashTab={setActiveDashTab}
               onOpenTrip={(id, initialTab) => {
@@ -624,6 +627,8 @@ export const App: React.FC = () => {
               }}
               onNewTrip={() => setModalType('newTrip')}
               onManageCategories={() => setModalType('categories')}
+              onUpdateTrip={handleUpdateTrip}
+              onOpenSettings={() => setModalType('settings')}
             />
           </>
         ) : (
@@ -683,6 +688,7 @@ export const App: React.FC = () => {
           onOpenGithubSync={() => setModalType('githubSync')}
           onOpenBackupHistory={() => setModalType('backupHistory')}
           onOpenChangelog={() => setModalType('changelog')}
+          onOpenSettings={() => setModalType('settings')}
         />
 
         {/* Toast */}
@@ -703,6 +709,7 @@ export const App: React.FC = () => {
                 name: tripData.name!,
                 year: tripData.year!,
                 status: tripData.status!,
+                isArchived: tripData.status === 'archived',
                 budget: tripData.budget!,
                 startDate: tripData.startDate || null,
                 endDate: tripData.endDate || null,
@@ -753,6 +760,7 @@ export const App: React.FC = () => {
                 {
                   ...modalPayload.trip,
                   ...tripData,
+                  isArchived: tripData.status ? tripData.status === 'archived' : modalPayload.trip.isArchived,
                   updatedAt: Date.now()
                 },
                 { action: 'trip-edited', detail: `Updated details for "${tripData.name}"` }
@@ -1304,6 +1312,20 @@ export const App: React.FC = () => {
               updateState(prev => ({ ...prev, settings: newSettings }));
               showToast('Default currency updated in settings');
             }}
+          />
+        )}
+
+        {modalType === 'settings' && (
+          <SettingsModal
+            settings={state.settings}
+            onClose={() => setModalType(null)}
+            onSaveSettings={newSettings => {
+              updateState(prev => ({ ...prev, settings: newSettings }));
+              showToast('Settings saved');
+            }}
+            onOpenReorderTabs={() => setModalType('reorderTabs')}
+            onOpenGithubSync={() => setModalType('githubSync')}
+            onOpenBackupManager={() => setModalType('backupHistory')}
           />
         )}
       </div>

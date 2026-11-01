@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Trip, Category, Sheet } from '../types';
+import { Trip, Category, Sheet, Settings } from '../types';
 import {
   fmt,
   budgetCountedTotal,
@@ -16,30 +16,49 @@ interface DashboardViewProps {
   trips: Trip[];
   categories: Category[];
   sheets: Sheet[];
+  settings: Settings;
   activeDashTab: 'trips' | 'charts';
   setActiveDashTab: (tab: 'trips' | 'charts') => void;
   onOpenTrip: (tripId: string, initialTab?: string) => void;
   onNewTrip: () => void;
   onManageCategories: () => void;
+  onUpdateTrip?: (updated: Trip, logAction?: { action: string; detail: string }) => void;
+  onOpenSettings?: () => void;
 }
 
 export const DashboardView: React.FC<DashboardViewProps> = ({
   trips,
   categories,
   sheets,
+  settings,
   activeDashTab,
   setActiveDashTab,
   onOpenTrip,
   onNewTrip,
-  onManageCategories
+  onManageCategories,
+  onUpdateTrip,
+  onOpenSettings
 }) => {
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [sortBy, setSortBy] = useState('year-desc');
+  const [showArchived, setShowArchived] = useState<boolean>(settings.defaultShowArchived ?? false);
+
+  const archivedCount = trips.filter(t => t.status === 'archived' || !!t.isArchived).length;
 
   // Filter & sort
   let filtered = trips.filter(t => {
-    if (statusFilter !== 'all' && t.status !== statusFilter) return false;
+    const isArchived = t.status === 'archived' || !!t.isArchived;
+
+    if (statusFilter === 'archived') {
+      if (!isArchived) return false;
+    } else if (statusFilter !== 'all') {
+      if (t.status !== statusFilter) return false;
+    } else {
+      // statusFilter === 'all': hide archived trips unless showArchived toggle is on
+      if (!showArchived && isArchived) return false;
+    }
+
     if (search && !t.name.toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
@@ -61,25 +80,27 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       filtered.sort((a, b) => b.year - a.year || (b.updatedAt || 0) - (a.updatedAt || 0));
   }
 
-  // Calculate upcoming plan items for "Up Next" strip
+  // Calculate upcoming plan items for "Up Next" strip (excluding archived)
   const now = new Date();
   const upcomingPlanItems: { trip: Trip; item: any; date: Date }[] = [];
-  trips.forEach(t => {
-    if (t.status === 'cancelled') return;
-    t.planItems.forEach(item => {
-      if (item.status === 'cancelled') return;
-      let d: Date | null = null;
-      if (t.timelineMode === 'dates') {
-        if (item.date) d = dateKeyToLocalDate(item.date, item.time);
-      } else if (item.dayNumber && t.startDate) {
-        d = dateKeyToLocalDate(addDaysToDateKey(t.startDate, Number(item.dayNumber) - 1), item.time);
-      }
-      if (d && d >= now) {
-        upcomingPlanItems.push({ trip: t, item, date: d });
-      }
+  if (settings.showUpNextStrip !== false) {
+    trips.forEach(t => {
+      if (t.status === 'cancelled' || t.status === 'archived' || t.isArchived) return;
+      t.planItems.forEach(item => {
+        if (item.status === 'cancelled') return;
+        let d: Date | null = null;
+        if (t.timelineMode === 'dates') {
+          if (item.date) d = dateKeyToLocalDate(item.date, item.time);
+        } else if (item.dayNumber && t.startDate) {
+          d = dateKeyToLocalDate(addDaysToDateKey(t.startDate, Number(item.dayNumber) - 1), item.time);
+        }
+        if (d && d >= now) {
+          upcomingPlanItems.push({ trip: t, item, date: d });
+        }
+      });
     });
-  });
-  upcomingPlanItems.sort((a, b) => a.date.getTime() - b.date.getTime());
+    upcomingPlanItems.sort((a, b) => a.date.getTime() - b.date.getTime());
+  }
   const upNextList = upcomingPlanItems.slice(0, 5);
 
   const getSheetColor = (key: string) => {
@@ -88,6 +109,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   };
 
   const getStatusLabel = (t: Trip) => {
+    if (t.status === 'archived' || t.isArchived) {
+      return { cls: 'status-archived', text: '📦 Archived' };
+    }
     const spent = budgetCountedTotal(t);
     if (t.status === 'cancelled') return { cls: 'status-cancelled', text: 'Cancelled' };
     if (spent > Number(t.budget || 0)) return { cls: 'status-over', text: 'Over Budget' };
@@ -144,13 +168,59 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
           )}
 
-          <div className="toolbar">
-            <button className="btn-primary" onClick={onNewTrip}>
-              + New Trip
-            </button>
-            <button className="btn-ghost" onClick={onManageCategories}>
-              Categories
-            </button>
+          <div className="toolbar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <button className="btn-primary" onClick={onNewTrip}>
+                + New Trip
+              </button>
+              <button className="btn-ghost" onClick={onManageCategories}>
+                Categories
+              </button>
+              {onOpenSettings && (
+                <button
+                  type="button"
+                  className="btn-ghost"
+                  onClick={onOpenSettings}
+                  title="Feature Customisation & Global Settings"
+                >
+                  ⚙️ Settings
+                </button>
+              )}
+            </div>
+
+            {/* Dashboard Header Archive Toggle */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                type="button"
+                className={`btn-ghost ${showArchived ? 'active' : ''}`}
+                onClick={() => setShowArchived(prev => !prev)}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  borderColor: showArchived ? 'var(--brass)' : undefined,
+                  background: showArchived ? 'var(--paper-raised)' : undefined,
+                  fontWeight: showArchived ? 600 : 400
+                }}
+                title={showArchived ? 'Hide archived trips from view' : 'Show archived trips on dashboard'}
+              >
+                <span>📦 {showArchived ? 'Hide Archived' : 'Show Archived'}</span>
+                {archivedCount > 0 && (
+                  <span
+                    style={{
+                      fontSize: '10px',
+                      fontFamily: 'var(--font-mono)',
+                      padding: '1px 6px',
+                      borderRadius: '10px',
+                      background: showArchived ? 'var(--brass)' : 'var(--paper-edge)',
+                      color: showArchived ? '#fff' : 'inherit'
+                    }}
+                  >
+                    {archivedCount}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
 
           <div className="filter-bar">
@@ -161,10 +231,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               onChange={e => setSearch(e.target.value)}
             />
             <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
-              <option value="all">All statuses</option>
+              <option value="all">All active statuses</option>
               <option value="upcoming">Upcoming</option>
               <option value="completed">Completed</option>
               <option value="cancelled">Cancelled</option>
+              <option value="archived">📦 Archived ({archivedCount})</option>
             </select>
             <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
               <option value="year-desc">Newest first</option>
@@ -212,14 +283,61 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   ? 'Guessed from trip name — click Edit Trip to confirm'
                   : t.country;
 
+                const isArchived = t.status === 'archived' || !!t.isArchived;
+
                 return (
-                  <div className="pass" key={t.id} onClick={() => onOpenTrip(t.id)}>
+                  <div
+                    className={`pass ${isArchived ? 'pass-archived' : ''}`}
+                    key={t.id}
+                    onClick={() => onOpenTrip(t.id)}
+                    style={{
+                      opacity: isArchived ? 0.88 : 1,
+                      border: isArchived ? '1px dashed var(--brass)' : undefined
+                    }}
+                  >
                     <div className="pass-top">
                       <div className="pass-eyebrow">
                         <span>Boarding Pass</span>
-                        <span className="chip-group">
+                        <span className="chip-group" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                           <span className={`status-chip ${st.cls}`}>{st.text}</span>
-                          {countdown && <span className="countdown-chip">{countdown}</span>}
+                          {countdown && settings.showCountdownBadge !== false && (
+                            <span className="countdown-chip">{countdown}</span>
+                          )}
+                          {onUpdateTrip && (
+                            isArchived ? (
+                              <button
+                                type="button"
+                                className="btn-ghost btn-sm"
+                                style={{ fontSize: '10px', padding: '1px 7px', background: 'var(--paper-raised)' }}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onUpdateTrip(
+                                    { ...t, status: 'upcoming', isArchived: false, updatedAt: Date.now() },
+                                    { action: 'trip-unarchived', detail: `Restored "${t.name}" from archive` }
+                                  );
+                                }}
+                                title="Unarchive and restore to active dashboard"
+                              >
+                                Restore
+                              </button>
+                            ) : (
+                              <button
+                                type="button"
+                                className="btn-ghost btn-sm"
+                                style={{ fontSize: '10px', padding: '1px 6px', opacity: 0.75 }}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onUpdateTrip(
+                                    { ...t, status: 'archived', isArchived: true, updatedAt: Date.now() },
+                                    { action: 'trip-archived', detail: `Archived trip "${t.name}"` }
+                                  );
+                                }}
+                                title="Archive trip to hide from dashboard"
+                              >
+                                📦 Archive
+                              </button>
+                            )
+                          )}
                         </span>
                       </div>
 
@@ -237,20 +355,22 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
                       {datesLine && <div className="pass-dates">{datesLine}</div>}
 
-                      {/* Travel Manifest Badges */}
-                      {((t.outfits && t.outfits.length > 0) || (t.hauls && t.hauls.length > 0) || (t.luggageBags && t.luggageBags.length > 0)) && (
+                      {/* Travel Manifest Badges — Toggled via Settings (Hidden by default for clean boarding pass) */}
+                      {((settings.showLuggageBadges && t.luggageBags && t.luggageBags.length > 0) ||
+                        (settings.showAttireBadges && t.outfits && t.outfits.length > 0) ||
+                        (settings.showHaulBadges && ((t.hauls?.length || 0) + (t.loungeVisits?.length || 0)) > 0)) && (
                         <div className="flex flex-wrap gap-1.5 mb-2.5">
-                          {t.luggageBags && t.luggageBags.length > 0 && (
+                          {settings.showLuggageBadges && t.luggageBags && t.luggageBags.length > 0 && (
                             <span className="text-[10px] font-mono px-1.5 py-0.5 bg-[#eae4d3] border border-[#d5cbac] rounded text-[#1c2530] font-medium">
                               💼 {t.luggageBags.length} bag{t.luggageBags.length !== 1 ? 's' : ''}
                             </span>
                           )}
-                          {t.outfits && t.outfits.length > 0 && (
+                          {settings.showAttireBadges && t.outfits && t.outfits.length > 0 && (
                             <span className="text-[10px] font-mono px-1.5 py-0.5 bg-[#eae4d3] border border-[#d5cbac] rounded text-[#1c2530] font-medium">
                               👔 {t.outfits.length} look{t.outfits.length !== 1 ? 's' : ''}
                             </span>
                           )}
-                          {((t.hauls?.length || 0) + (t.loungeVisits?.length || 0)) > 0 && (
+                          {settings.showHaulBadges && ((t.hauls?.length || 0) + (t.loungeVisits?.length || 0)) > 0 && (
                             <span className="text-[10px] font-mono px-1.5 py-0.5 bg-[#eae4d3] border border-[#d5cbac] rounded text-[#1c2530] font-medium">
                               ✨ {(t.hauls?.length || 0) + (t.loungeVisits?.length || 0)} hauls/lounges
                             </span>

@@ -17,6 +17,7 @@ interface HeaderProps {
   onOpenChangelog: () => void;
   onHomeClick: () => void;
   onOpenCurrencyConverter?: () => void;
+  onOpenSettings?: () => void;
   user: User | null;
   cloudSyncStatus: CloudSyncStatus;
   onSignInGoogle: () => void;
@@ -36,6 +37,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenChangelog,
   onHomeClick,
   onOpenCurrencyConverter,
+  onOpenSettings,
   user,
   cloudSyncStatus,
   onSignInGoogle,
@@ -112,6 +114,17 @@ export const Header: React.FC<HeaderProps> = ({
               title="Open Currency Converter & Calculator"
             >
               💱 <span className="hidden sm:inline">Currency</span>
+            </button>
+          )}
+
+          {onOpenSettings && (
+            <button
+              type="button"
+              onClick={onOpenSettings}
+              className="px-2 py-1 text-xs font-mono bg-[#f4efe2] border border-[#d5cbac] rounded hover:bg-[#eae4d3] text-[#1c2530] font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+              title="Settings & Feature Customisation"
+            >
+              ⚙️ <span className="hidden sm:inline">Settings</span>
             </button>
           )}
 

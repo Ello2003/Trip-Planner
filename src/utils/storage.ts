@@ -36,6 +36,7 @@ export function defaultSheets(): Sheet[] {
 export function defaultSettings(): Settings {
   return {
     mapsApiKey: '',
+    homeCurrency: 'GBP',
     githubEnabled: false,
     githubToken: '',
     githubOwner: '',
@@ -45,7 +46,16 @@ export function defaultSettings(): Settings {
     githubSha: null,
     githubLastSyncAt: null,
     tripTabOrder: ['budget', 'charts', 'plan', 'research', 'posttrip', 'packing', 'attire', 'hauls'],
-    disabledTabs: ['attire', 'hauls']
+    disabledTabs: ['attire', 'hauls'],
+    showHaulBadges: false,
+    showAttireBadges: false,
+    showLuggageBadges: false,
+    showCountdownBadge: true,
+    showUpNextStrip: true,
+    showItineraryMap: true,
+    showResearchMap: true,
+    enableCurrencyConverter: true,
+    defaultShowArchived: false
   };
 }
 
@@ -206,6 +216,8 @@ export function migrateState(state: any): AppState {
 
   (state.trips || []).forEach((t: Trip) => {
     if (t.travelers == null) t.travelers = 2;
+    if (t.status === undefined) t.status = 'upcoming';
+    if (t.isArchived === undefined) t.isArchived = t.status === 'archived';
     if (t.startDate === undefined) t.startDate = null;
     if (t.endDate === undefined) t.endDate = null;
     if (t.notes === undefined) t.notes = '';
