@@ -51,6 +51,8 @@ import {
 } from './components/Modals';
 import { CurrencyConverterModal } from './components/CurrencyConverterModal';
 import { BackupManagerModal } from './components/BackupManagerModal';
+import { APIProvider } from '@vis.gl/react-google-maps';
+import { getGoogleMapsApiKey } from './utils/mapsHelper';
 
 const MAX_UNDO = 40;
 
@@ -527,9 +529,11 @@ export const App: React.FC = () => {
   };
 
   const currentTrip = state.trips.find(t => t.id === activeTripId) || null;
+  const effectiveApiKey = getGoogleMapsApiKey(state.settings);
 
   return (
-    <div id="travel-ledger-root">
+    <APIProvider apiKey={effectiveApiKey} libraries={['places', 'marker', 'geocoding']}>
+      <div id="travel-ledger-root">
       {quotaExceeded && (
         <div style={{
           background: '#fffbeb',
@@ -1330,5 +1334,6 @@ export const App: React.FC = () => {
         )}
       </div>
     </div>
+    </APIProvider>
   );
 };

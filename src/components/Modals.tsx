@@ -2137,21 +2137,165 @@ export const ActivityLogModal: React.FC<{
   log: ActivityLogItem[];
   onClose: () => void;
 }> = ({ log, onClose }) => {
+  const [filter, setFilter] = useState<'all' | 'trip' | 'expense' | 'plan' | 'sync'>('all');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredLog = log.filter(item => {
+    // Category match
+    if (filter === 'trip' && !item.action.startsWith('trip-')) return false;
+    if (filter === 'expense' && !item.action.startsWith('expense-')) return false;
+    if (filter === 'plan' && !item.action.startsWith('plan-') && !item.action.startsWith('research-')) return false;
+    if (filter === 'sync' && !item.action.includes('sync') && !item.action.includes('backup') && !item.action.includes('cloud')) return false;
+
+    // Search match
+    if (searchTerm.trim()) {
+      const q = searchTerm.toLowerCase();
+      return item.detail.toLowerCase().includes(q) || item.action.toLowerCase().includes(q);
+    }
+    return true;
+  });
+
+  const getActionBadge = (action: string) => {
+    if (action.startsWith('trip-')) return { label: 'Trip', color: '#1c2530', bg: '#f4efe2', icon: '✈️' };
+    if (action.startsWith('expense-')) return { label: 'Expense', color: '#35695c', bg: '#e8f3ef', icon: '💳' };
+    if (action.startsWith('plan-') || action.startsWith('research-')) return { label: 'Itinerary', color: '#35597a', bg: '#edf2f7', icon: '📌' };
+    if (action.includes('sync') || action.includes('cloud') || action.includes('backup')) return { label: 'Cloud/Sync', color: '#b8874f', bg: '#fbf4ea', icon: '☁️' };
+    if (action.includes('trash') || action.includes('delete')) return { label: 'Deletion', color: '#a63a2e', bg: '#faebea', icon: '🗑️' };
+    return { label: 'System', color: '#5b6672', bg: '#f0f2f5', icon: '⚙️' };
+  };
+
   return (
-    <ModalWrapper title="Activity Log" wide onClose={onClose}>
-      <div style={{ maxHeight: '50vh', overflowY: 'auto', marginBottom: '16px' }}>
-        {log.length === 0 ? (
-          <div className="empty-state">No activity yet.</div>
+    <ModalWrapper title="Expedition Activity Log & Audit Trail" wide onClose={onClose}>
+      <p style={{ fontSize: '12px', color: 'var(--ink-soft)', marginTop: '-8px', marginBottom: '14px' }}>
+        Chronological audit record of trip changes, budget entries, itinerary updates, and cloud sync checkpoints.
+      </p>
+
+      {/* Filter Toolbar */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
+        <input
+          type="text"
+          placeholder="Filter activity by keyword or trip name…"
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+          style={{
+            width: '100%',
+            padding: '7px 10px',
+            fontSize: '12px',
+            fontFamily: 'var(--font-mono)',
+            background: 'var(--paper-raised)',
+            border: '1px solid var(--paper-edge)',
+            borderRadius: '5px'
+          }}
+        />
+
+        <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+          {(['all', 'trip', 'expense', 'plan', 'sync'] as const).map(tab => {
+            const active = filter === tab;
+            const labels = {
+              all: `All Events (${log.length})`,
+              trip: 'Trips',
+              expense: 'Expenses',
+              plan: 'Itinerary',
+              sync: 'Cloud & Sync'
+            };
+            return (
+              <button
+                key={tab}
+                type="button"
+                className={`btn-ghost btn-sm ${active ? 'active-filter' : ''}`}
+                onClick={() => setFilter(tab)}
+                style={{
+                  fontSize: '11px',
+                  padding: '3px 8px',
+                  background: active ? 'var(--ink)' : 'transparent',
+                  color: active ? '#fff' : 'inherit',
+                  fontFamily: 'var(--font-mono)'
+                }}
+              >
+                {labels[tab]}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Log Feed */}
+      <div style={{ maxHeight: '48vh', overflowY: 'auto', marginBottom: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+        {filteredLog.length === 0 ? (
+          <div className="empty-state" style={{ padding: '32px 16px' }}>
+            No activity matches the selected filter.
+          </div>
         ) : (
-          log.slice(0, 100).map(item => (
-            <div className="log-item" key={item.id}>
-              <span>{item.detail}</span>
-              <span className="ts">{new Date(item.ts).toLocaleString('en-GB')}</span>
-            </div>
-          ))
+          filteredLog.slice(0, 120).map(item => {
+            const badge = getActionBadge(item.action);
+            const dateStr = new Date(item.ts).toLocaleString('en-GB', {
+              day: '2-digit',
+              month: 'short',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit'
+            });
+
+            return (
+              <div
+                key={item.id}
+                style={{
+                  padding: '9px 12px',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--paper-edge)',
+                  borderRadius: '6px',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  justifyContent: 'space-between',
+                  gap: '12px',
+                  fontSize: '12px',
+                  lineHeight: 1.4
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', flex: 1 }}>
+                  <span
+                    style={{
+                      fontSize: '9.5px',
+                      fontFamily: 'var(--font-mono)',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      background: badge.bg,
+                      color: badge.color,
+                      border: `1px solid ${badge.color}30`,
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0
+                    }}
+                  >
+                    {badge.icon} {badge.label}
+                  </span>
+                  <span style={{ color: 'var(--ink)', fontWeight: 500 }}>
+                    {item.detail}
+                  </span>
+                </div>
+
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    color: 'var(--ink-soft)',
+                    fontSize: '10.5px',
+                    whiteSpace: 'nowrap',
+                    opacity: 0.85
+                  }}
+                >
+                  {dateStr}
+                </span>
+              </div>
+            );
+          })
         )}
       </div>
-      <div className="modal-actions">
+
+      <div className="modal-actions" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--ink-soft)' }}>
+          Showing {Math.min(120, filteredLog.length)} of {log.length} recorded events
+        </span>
         <button type="button" className="btn-primary" onClick={onClose}>
           Close
         </button>
@@ -2167,37 +2311,75 @@ export const BackupHistoryModal: React.FC<{
   onRestoreHistory: (entry: HistoryEntry) => void;
 }> = ({ history, onClose, onRestoreHistory }) => {
   return (
-    <ModalWrapper title="Backup History" wide onClose={onClose}>
-      <p style={{ fontSize: '12px', color: 'var(--ink-soft)', marginTop: '-6px' }}>
-        A snapshot is kept automatically once per day (last 14 days kept). Restoring replaces your current trips, categories, and packing lists — your current data is moved to Trash first.
-      </p>
+    <ModalWrapper title="Local Daily Snapshot Archive" wide onClose={onClose}>
+      <div style={{ background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px', padding: '10px 14px', marginBottom: '14px' }}>
+        <p style={{ fontSize: '12px', color: 'var(--ink-soft)', margin: 0, lineHeight: 1.5 }}>
+          🛡️ A snapshot is captured automatically once each day upon making your first edit (rolling 14 days retained). Restoring replaces current trips with the historical snapshot while moving existing data safely to Trash.
+        </p>
+      </div>
 
-      <div style={{ maxHeight: '50vh', overflowY: 'auto', marginBottom: '16px' }}>
+      <div style={{ maxHeight: '48vh', overflowY: 'auto', marginBottom: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {history.length === 0 ? (
-          <div className="empty-state">
-            No snapshots yet — one is saved automatically the first time you make a change today.
+          <div className="empty-state" style={{ padding: '36px 16px' }}>
+            No local snapshots stored yet. One is saved automatically on your first edit of the day.
           </div>
         ) : (
           history.map(entry => {
-            let count = '?';
+            let count = 0;
+            let tripNames: string[] = [];
             try {
-              count = JSON.parse(entry.snapshot).trips.length;
+              const parsed = JSON.parse(entry.snapshot);
+              count = parsed.trips?.length || 0;
+              tripNames = (parsed.trips || []).slice(0, 3).map((t: any) => t.name);
             } catch (_) {}
 
             return (
-              <div className="cat-row" key={entry.dateKey}>
+              <div
+                key={entry.dateKey}
+                style={{
+                  padding: '12px 14px',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--paper-edge)',
+                  borderRadius: '6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '12px'
+                }}
+              >
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 600 }}>{entry.dateKey}</div>
-                  <div style={{ fontSize: '11px', color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)' }}>
-                    {new Date(entry.timestamp).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })} · {count} trip(s)
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ fontWeight: 700, fontFamily: 'var(--font-display)', fontSize: '14px', color: 'var(--ink)' }}>
+                      📅 {entry.dateKey}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '10px',
+                        fontFamily: 'var(--font-mono)',
+                        background: 'var(--paper-raised)',
+                        border: '1px solid var(--paper-edge)',
+                        padding: '1px 6px',
+                        borderRadius: '3px',
+                        color: 'var(--ink-soft)'
+                      }}
+                    >
+                      {count} trip{count !== 1 ? 's' : ''}
+                    </span>
+                  </div>
+
+                  <div style={{ fontSize: '11px', color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', marginTop: '3px' }}>
+                    Captured: {new Date(entry.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    {tripNames.length > 0 && ` · Includes: ${tripNames.join(', ')}${count > 3 ? '…' : ''}`}
                   </div>
                 </div>
+
                 <button
                   type="button"
-                  className="btn-ghost btn-sm"
+                  className="btn-secondary btn-sm"
                   onClick={() => onRestoreHistory(entry)}
+                  style={{ fontWeight: 600, padding: '5px 12px', fontSize: '11px', whiteSpace: 'nowrap' }}
                 >
-                  Restore
+                  ↺ Restore Snapshot
                 </button>
               </div>
             );
@@ -2445,6 +2627,7 @@ export const GithubSyncModal: React.FC<{
 };
 
 // 13.5. SettingsModal (Feature Customisation & Global Preferences)
+// 13.5. SettingsModal (Feature Customisation & Global Preferences)
 export const SettingsModal: React.FC<{
   settings: Settings;
   onClose: () => void;
@@ -2461,6 +2644,7 @@ export const SettingsModal: React.FC<{
   onOpenBackupManager
 }) => {
   const [form, setForm] = useState<Settings>({ ...settings });
+  const [activeTab, setActiveTab] = useState<'passes' | 'display' | 'currency' | 'cloud'>('passes');
 
   const handleToggle = (key: keyof Settings) => {
     setForm(prev => ({ ...prev, [key]: !prev[key] }));
@@ -2471,216 +2655,469 @@ export const SettingsModal: React.FC<{
     onClose();
   };
 
+  const renderToggleCard = (
+    title: string,
+    description: string,
+    checked: boolean,
+    onChange: () => void,
+    previewBadge?: string
+  ) => (
+    <div
+      onClick={onChange}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '12px 14px',
+        background: checked ? 'var(--paper-warm)' : 'var(--paper)',
+        border: `1px solid ${checked ? 'var(--brass)' : 'var(--paper-edge)'}`,
+        borderRadius: '6px',
+        cursor: 'pointer',
+        transition: 'all 0.15s ease',
+        boxShadow: checked ? '0 1px 3px rgba(184, 135, 79, 0.12)' : 'none'
+      }}
+    >
+      <div style={{ flex: 1, paddingRight: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '3px' }}>
+          <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)' }}>{title}</span>
+          {previewBadge && (
+            <span
+              style={{
+                fontSize: '10px',
+                fontFamily: 'var(--font-mono)',
+                padding: '1px 6px',
+                borderRadius: '3px',
+                background: checked ? 'var(--brass-soft)' : 'var(--line)',
+                color: checked ? 'var(--brass-dark)' : 'var(--ink-soft)',
+                border: '1px solid var(--paper-edge)'
+              }}
+            >
+              {previewBadge}
+            </span>
+          )}
+        </div>
+        <p style={{ margin: 0, fontSize: '11.5px', color: 'var(--ink-soft)', lineHeight: 1.35 }}>
+          {description}
+        </p>
+      </div>
+
+      <div
+        style={{
+          width: '38px',
+          height: '22px',
+          borderRadius: '11px',
+          background: checked ? 'var(--brass)' : 'var(--line)',
+          position: 'relative',
+          transition: 'background 0.2s ease',
+          flexShrink: 0
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: '2px',
+            left: checked ? '18px' : '2px',
+            width: '18px',
+            height: '18px',
+            borderRadius: '50%',
+            background: '#ffffff',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
+            transition: 'left 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}
+        />
+      </div>
+    </div>
+  );
+
   return (
-    <ModalWrapper title="Settings & Feature Customisation" wide onClose={onClose}>
-      <div style={{ maxHeight: '65vh', overflowY: 'auto', paddingRight: '4px', marginBottom: '16px' }}>
-
-        {/* Section 1: Boarding Pass Cards */}
-        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
-          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
-            🎫 Boarding Pass Cards (Dashboard)
-          </h4>
-          <p style={{ fontSize: '12px', color: 'var(--ink-soft)', marginTop: 0, marginBottom: '12px' }}>
-            Choose which badge indicators appear on your luxury boarding pass cards.
-          </p>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={!!form.showHaulBadges}
-                onChange={() => handleToggle('showHaulBadges')}
-              />
-              <span>Show Lounge &amp; Haul Badges (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>✨ N hauls/lounges</span>)</span>
-            </label>
-
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={!!form.showAttireBadges}
-                onChange={() => handleToggle('showAttireBadges')}
-              />
-              <span>Show Wardrobe / Attire Badges (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>👔 N looks</span>)</span>
-            </label>
-
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={!!form.showLuggageBadges}
-                onChange={() => handleToggle('showLuggageBadges')}
-              />
-              <span>Show Luggage Bags Badges (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>💼 N bags</span>)</span>
-            </label>
-
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={form.showCountdownBadge !== false}
-                onChange={() => handleToggle('showCountdownBadge')}
-              />
-              <span>Show Departure Countdown Chip (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>In 5d</span>)</span>
-            </label>
+    <ModalWrapper title="Trip Planner Settings & Preferences" wide onClose={onClose}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        {/* Subtitle Banner */}
+        <div
+          style={{
+            padding: '10px 14px',
+            background: 'var(--paper-warm)',
+            border: '1px solid var(--brass-soft)',
+            borderRadius: '6px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px'
+          }}
+        >
+          <div>
+            <div style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--ink)' }}>
+              Precision Travel Ledger Customization
+            </div>
+            <div style={{ fontSize: '11px', color: 'var(--ink-soft)' }}>
+              Configure boarding ticket badges, map engines, default currency rates, and cloud vaults.
+            </div>
           </div>
+          <span
+            style={{
+              fontSize: '11px',
+              fontFamily: 'var(--font-mono)',
+              padding: '2px 7px',
+              borderRadius: '4px',
+              background: 'var(--paper)',
+              border: '1px solid var(--paper-edge)',
+              color: 'var(--brass-dark)'
+            }}
+          >
+            Preferences
+          </span>
         </div>
 
-        {/* Section 2: Dashboard & Itinerary Modules */}
-        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
-          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
-            🧭 Dashboard &amp; Display Modules
-          </h4>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={form.showUpNextStrip !== false}
-                onChange={() => handleToggle('showUpNextStrip')}
-              />
-              <span>Show "Up Next" upcoming activities strip on dashboard</span>
-            </label>
-
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={!!form.defaultShowArchived}
-                onChange={() => handleToggle('defaultShowArchived')}
-              />
-              <span>Always show Archived trips by default on dashboard</span>
-            </label>
-
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={form.showItineraryMap !== false}
-                onChange={() => handleToggle('showItineraryMap')}
-              />
-              <span>Enable Itinerary Route Map banner</span>
-            </label>
-
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={form.showResearchMap !== false}
-                onChange={() => handleToggle('showResearchMap')}
-              />
-              <span>Enable Research Places Map view</span>
-            </label>
-
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '13px' }}>
-              <input
-                type="checkbox"
-                style={{ width: 'auto' }}
-                checked={form.enableCurrencyConverter !== false}
-                onChange={() => handleToggle('enableCurrencyConverter')}
-              />
-              <span>Enable Multi-Currency Converter &amp; Exchange rate calculations</span>
-            </label>
-          </div>
-
-          {onOpenReorderTabs && (
-            <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid var(--line)' }}>
-              <button
-                type="button"
-                className="btn-ghost btn-sm"
-                onClick={() => {
-                  onClose();
-                  onOpenReorderTabs();
+        {/* Segmented Nav Tabs */}
+        <div
+          style={{
+            display: 'flex',
+            borderBottom: '1px solid var(--line)',
+            gap: '4px',
+            paddingBottom: '2px'
+          }}
+        >
+          {[
+            { id: 'passes', label: '🎫 Boarding Passes', count: '4' },
+            { id: 'display', label: '🧭 Display & Maps', count: '4' },
+            { id: 'currency', label: '💱 Currency & Finance', count: 'Rates' },
+            { id: 'cloud', label: '☁️ Cloud & Vault Hub', count: 'Sync' }
+          ].map(tab => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setActiveTab(tab.id as any)}
+              style={{
+                background: activeTab === tab.id ? 'var(--paper)' : 'transparent',
+                border: '1px solid',
+                borderColor: activeTab === tab.id ? 'var(--paper-edge) var(--paper-edge) var(--paper)' : 'transparent',
+                borderTop: activeTab === tab.id ? '2px solid var(--brass)' : '2px solid transparent',
+                borderRadius: '6px 6px 0 0',
+                padding: '8px 12px',
+                fontSize: '12px',
+                fontWeight: activeTab === tab.id ? 600 : 500,
+                color: activeTab === tab.id ? 'var(--ink)' : 'var(--ink-soft)',
+                cursor: 'pointer',
+                marginBottom: '-1px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                transition: 'all 0.15s'
+              }}
+            >
+              <span>{tab.label}</span>
+              <span
+                style={{
+                  fontSize: '9.5px',
+                  fontFamily: 'var(--font-mono)',
+                  padding: '1px 5px',
+                  borderRadius: '3px',
+                  background: activeTab === tab.id ? 'var(--brass-soft)' : 'var(--line)',
+                  color: activeTab === tab.id ? 'var(--brass-dark)' : 'var(--ink-soft)'
                 }}
               >
-                ⚙️ Customize &amp; Reorder Itinerary Tabs
-              </button>
+                {tab.count}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Content Body */}
+        <div style={{ maxHeight: '55vh', overflowY: 'auto', paddingRight: '4px' }}>
+          {activeTab === 'passes' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--ink-soft)', marginBottom: '4px' }}>
+                Select which badge chips and indicators appear on your dashboard boarding pass tickets:
+              </div>
+
+              {renderToggleCard(
+                'Lounge & Specialty Haul Badges',
+                'Show lounge review count and shopping haul badges on the boarding pass header.',
+                !!form.showHaulBadges,
+                () => handleToggle('showHaulBadges'),
+                '✨ 2 hauls'
+              )}
+
+              {renderToggleCard(
+                'Wardrobe / Attire Badges',
+                'Display curated outfit count on the boarding pass card.',
+                !!form.showAttireBadges,
+                () => handleToggle('showAttireBadges'),
+                '👔 4 looks'
+              )}
+
+              {renderToggleCard(
+                'Luggage & Bags Badges',
+                'Display luggage weight and baggage counter badge.',
+                !!form.showLuggageBadges,
+                () => handleToggle('showLuggageBadges'),
+                '💼 2 bags'
+              )}
+
+              {renderToggleCard(
+                'Departure Countdown Chip',
+                'Display live countdown chip (e.g. "In 5d", "Tomorrow", "Ongoing").',
+                form.showCountdownBadge !== false,
+                () => handleToggle('showCountdownBadge'),
+                '⏳ In 5d'
+              )}
+            </div>
+          )}
+
+          {activeTab === 'display' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--ink-soft)', marginBottom: '4px' }}>
+                Configure modules, dashboard layout, and interactive Google Maps views:
+              </div>
+
+              {renderToggleCard(
+                '"Up Next" Dashboard Strip',
+                'Display the upcoming activities ticker directly on the main dashboard for immediate itinerary context.',
+                form.showUpNextStrip !== false,
+                () => handleToggle('showUpNextStrip')
+              )}
+
+              {renderToggleCard(
+                'Show Archived Trips By Default',
+                'Always display archived trips on the dashboard without needing to toggle the archive view button.',
+                !!form.defaultShowArchived,
+                () => handleToggle('defaultShowArchived')
+              )}
+
+              {renderToggleCard(
+                'Interactive Itinerary Route Map',
+                'Display the Google Map route banner inside trip detail views with day filtering.',
+                form.showItineraryMap !== false,
+                () => handleToggle('showItineraryMap'),
+                'Google Maps'
+              )}
+
+              {renderToggleCard(
+                'Research Places Interactive Map',
+                'Enable map view alongside notes, sights, and recommendations in the Research tab.',
+                form.showResearchMap !== false,
+                () => handleToggle('showResearchMap'),
+                'Places API'
+              )}
+
+              {/* Map API Key Configuration Card */}
+              <div
+                style={{
+                  marginTop: '8px',
+                  padding: '14px',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--paper-edge)',
+                  borderRadius: '6px'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)' }}>
+                    🗺️ Google Maps API Key
+                  </span>
+                  <span
+                    style={{
+                      fontSize: '10px',
+                      fontFamily: 'var(--font-mono)',
+                      padding: '2px 6px',
+                      borderRadius: '3px',
+                      background: form.mapsApiKey ? 'var(--brass-soft)' : '#e6f4ea',
+                      color: form.mapsApiKey ? 'var(--brass-dark)' : '#137333',
+                      border: '1px solid var(--paper-edge)'
+                    }}
+                  >
+                    {form.mapsApiKey ? 'Custom Key Active' : 'Cloud Demo Key Provisioned'}
+                  </span>
+                </div>
+                <div className="field" style={{ margin: 0 }}>
+                  <input
+                    type="text"
+                    placeholder="AIzaSy… (Leave empty to use built-in Google Cloud Demo Key)"
+                    value={form.mapsApiKey || ''}
+                    onChange={e => setForm(prev => ({ ...prev, mapsApiKey: e.target.value }))}
+                    style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}
+                  />
+                  <div style={{ fontSize: '11px', color: 'var(--ink-soft)', marginTop: '4px' }}>
+                    Google Maps Platform with Places, Geocoding, and AdvancedMarker is pre-configured.
+                  </div>
+                </div>
+              </div>
+
+              {onOpenReorderTabs && (
+                <div
+                  style={{
+                    padding: '12px 14px',
+                    background: 'var(--paper-warm)',
+                    border: '1px solid var(--brass-soft)',
+                    borderRadius: '6px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--ink)' }}>
+                      Reorder &amp; Enable/Disable Itinerary Tabs
+                    </div>
+                    <div style={{ fontSize: '11px', color: 'var(--ink-soft)' }}>
+                      Customize order of Budget, Charts, Plan, Attire, Lounges, Research, and Packing.
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    className="btn-ghost btn-sm"
+                    onClick={() => {
+                      onClose();
+                      onOpenReorderTabs();
+                    }}
+                  >
+                    Customize Tabs →
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+
+          {activeTab === 'currency' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--ink-soft)', marginBottom: '2px' }}>
+                Define default base ledger currency and multi-currency exchange parameters:
+              </div>
+
+              {renderToggleCard(
+                'Multi-Currency Exchange Engine',
+                'Enable automatic live/fixed currency conversions and multi-currency expense inputs across foreign destinations.',
+                form.enableCurrencyConverter !== false,
+                () => handleToggle('enableCurrencyConverter'),
+                '25+ Currencies'
+              )}
+
+              <div
+                style={{
+                  padding: '14px',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--paper-edge)',
+                  borderRadius: '6px'
+                }}
+              >
+                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--ink)', marginBottom: '6px' }}>
+                  Default Ledger Home Currency
+                </label>
+                <p style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: 0, marginBottom: '10px' }}>
+                  Used as the baseline currency for dashboard aggregates, charts, and budget breakdowns.
+                </p>
+                <select
+                  value={form.homeCurrency || 'GBP'}
+                  onChange={e => setForm(prev => ({ ...prev, homeCurrency: e.target.value }))}
+                  style={{ fontSize: '13px', padding: '8px 10px' }}
+                >
+                  {SUPPORTED_CURRENCIES.map(c => (
+                    <option key={c.code} value={c.code}>
+                      {c.flag} {c.code} — {c.name} ({c.symbol}) [Rate: {c.rateToGbp.toFixed(3)} to GBP]
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'cloud' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--ink-soft)', marginBottom: '2px' }}>
+                Direct shortcuts to cloud persistence, rolling snapshots, and remote repositories:
+              </div>
+
+              <div
+                style={{
+                  padding: '14px',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--paper-edge)',
+                  borderRadius: '6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '12px'
+                }}
+              >
+                <div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span>💾</span>
+                    <span>Trip Planner Backup &amp; Recovery Vault</span>
+                  </div>
+                  <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '2px' }}>
+                    Inspect manual checkpoints, auto-saved snapshots, and selectively restore single trips.
+                  </div>
+                </div>
+                {onOpenBackupManager && (
+                  <button
+                    type="button"
+                    className="btn-ghost btn-sm"
+                    onClick={() => {
+                      onClose();
+                      onOpenBackupManager();
+                    }}
+                  >
+                    Open Vault →
+                  </button>
+                )}
+              </div>
+
+              <div
+                style={{
+                  padding: '14px',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--paper-edge)',
+                  borderRadius: '6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '12px'
+                }}
+              >
+                <div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span>🐙</span>
+                    <span>GitHub Remote Repository Sync</span>
+                  </div>
+                  <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '2px' }}>
+                    Configure personal access token, target repo, and branch for push/pull data synchronization.
+                  </div>
+                </div>
+                {onOpenGithubSync && (
+                  <button
+                    type="button"
+                    className="btn-ghost btn-sm"
+                    onClick={() => {
+                      onClose();
+                      onOpenGithubSync();
+                    }}
+                  >
+                    Configure Git →
+                  </button>
+                )}
+              </div>
             </div>
           )}
         </div>
 
-        {/* Section 3: Financial Defaults */}
-        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
-          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
-            💱 Currency &amp; Finance Defaults
-          </h4>
-          <div className="field" style={{ margin: 0 }}>
-            <label>Default Ledger Home Currency</label>
-            <select
-              value={form.homeCurrency || 'GBP'}
-              onChange={e => setForm(prev => ({ ...prev, homeCurrency: e.target.value }))}
-            >
-              {SUPPORTED_CURRENCIES.map(c => (
-                <option key={c.code} value={c.code}>
-                  {c.flag} {c.code} — {c.name} ({c.symbol})
-                </option>
-              ))}
-            </select>
-          </div>
+        {/* Modal Actions */}
+        <div
+          className="modal-actions"
+          style={{
+            margin: 0,
+            paddingTop: '12px',
+            borderTop: '1px solid var(--line)',
+            display: 'flex',
+            justifyContent: 'flex-end',
+            gap: '8px'
+          }}
+        >
+          <button type="button" className="btn-ghost" onClick={onClose}>
+            Cancel
+          </button>
+          <button type="button" className="btn-primary" onClick={handleSave}>
+            Save Preferences
+          </button>
         </div>
-
-        {/* Section 4: Google Maps Key */}
-        <div style={{ marginBottom: '18px', padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
-          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
-            🗺️ Google Maps Platform Configuration
-          </h4>
-          <div className="field" style={{ margin: 0 }}>
-            <label>Custom Google Maps API Key (Optional)</label>
-            <input
-              type="text"
-              placeholder="AIzaSy… (Leave empty to use provisioned Cloud Demo Key)"
-              value={form.mapsApiKey || ''}
-              onChange={e => setForm(prev => ({ ...prev, mapsApiKey: e.target.value }))}
-            />
-            <div style={{ fontSize: '11px', color: 'var(--ink-soft)', marginTop: '4px' }}>
-              {form.mapsApiKey ? 'Using custom API key' : 'Active: Provisioned Google Cloud Demo Key with Places & Geocoding'}
-            </div>
-          </div>
-        </div>
-
-        {/* Section 5: Integrations Shortcuts */}
-        <div style={{ padding: '12px 14px', background: 'var(--paper)', border: '1px solid var(--paper-edge)', borderRadius: '6px' }}>
-          <h4 style={{ margin: '0 0 10px', fontSize: '13.5px', fontFamily: 'var(--font-display)', color: 'var(--ink)' }}>
-            ☁️ Cloud Storage &amp; Sync
-          </h4>
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            {onOpenBackupManager && (
-              <button
-                type="button"
-                className="btn-ghost btn-sm"
-                onClick={() => {
-                  onClose();
-                  onOpenBackupManager();
-                }}
-              >
-                💾 Backup &amp; Recovery Manager
-              </button>
-            )}
-            {onOpenGithubSync && (
-              <button
-                type="button"
-                className="btn-ghost btn-sm"
-                onClick={() => {
-                  onClose();
-                  onOpenGithubSync();
-                }}
-              >
-                🐙 GitHub Sync Settings
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className="modal-actions">
-        <button type="button" className="btn-ghost" onClick={onClose}>
-          Cancel
-        </button>
-        <button type="button" className="btn-primary" onClick={handleSave}>
-          Save Settings
-        </button>
       </div>
     </ModalWrapper>
   );

@@ -221,25 +221,28 @@ export const BackupManagerModal: React.FC<BackupManagerModalProps> = ({
   return (
     <div className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-3">
       <div
-        className="modal-box bg-[#fcfaf5] border-2 border-[#1c2530] rounded-lg max-w-3xl w-full p-6 shadow-2xl flex flex-col max-h-[90vh]"
+        className="modal-box bg-[#fcfaf5] border-2 border-[#1c2530] rounded-xl max-w-3xl w-full p-5 sm:p-6 shadow-2xl flex flex-col max-h-[90vh]"
         style={{ fontFamily: 'var(--font-body)' }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-[#d5cbac] pb-3 mb-4">
+        <div className="flex items-center justify-between border-b-2 border-[#1c2530] pb-3 mb-4">
           <div className="flex items-center gap-2.5">
-            <History size={20} className="text-[#b8874f]" />
+            <div className="w-8 h-8 rounded-lg bg-[#1c2530] text-[#f4efe2] flex items-center justify-center font-bold">
+              <Database size={18} className="text-[#b8874f]" />
+            </div>
             <div>
-              <h3 className="text-lg font-serif font-bold text-[#1c2530] m-0">
-                Backup &amp; Snapshot Manager
+              <h3 className="text-lg sm:text-xl font-serif font-black text-[#1c2530] tracking-tight m-0">
+                Backup &amp; Recovery Vault
               </h3>
-              <p className="text-xs text-[#5b6672] font-mono m-0 mt-0.5">
-                Incremental ledger versioning with Cloud Firestore &amp; safety checkpoints
+              <p className="text-[11px] font-mono uppercase tracking-[2px] text-[#8a7a3a] mt-0.5 font-semibold m-0">
+                Cloud Firestore Snapshots &amp; Local Checkpoints
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="text-lg font-bold text-[#5b6672] hover:text-[#1c2530] p-1 rounded transition-colors"
+            className="p-1.5 text-[#5b6672] hover:text-[#1c2530] hover:bg-[#eae4d3] rounded-md transition-colors cursor-pointer text-lg font-bold"
+            title="Close backup vault"
           >
             ✕
           </button>

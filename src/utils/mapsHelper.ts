@@ -38,14 +38,15 @@ export function ensureGoogleMapsLoaded(apiKey?: string): Promise<void> {
 
   const key = apiKey || getGoogleMapsApiKey();
   loadPromise = new Promise<void>((resolve) => {
+    // If Google Maps is being loaded by APIProvider or existing tag, poll until ready
     const existing = document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]');
-    if (existing) {
+    if (existing || (window as any).google) {
       const check = setInterval(() => {
         if ((window as any).google?.maps) {
           clearInterval(check);
           resolve();
         }
-      }, 100);
+      }, 50);
       setTimeout(() => {
         clearInterval(check);
         resolve();
@@ -57,6 +58,7 @@ export function ensureGoogleMapsLoaded(apiKey?: string): Promise<void> {
     script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&libraries=places,marker,geocoding&v=weekly`;
     script.async = true;
     script.defer = true;
+    script.crossOrigin = 'anonymous';
     script.onload = () => resolve();
     script.onerror = () => {
       console.warn('Google Maps script failed to load, falling back to network geocoder');

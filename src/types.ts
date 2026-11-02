@@ -326,7 +326,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.18.2';
+export const APP_VERSION = '1.19.0';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -387,6 +387,8 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.19.0': 'Renamed application to Trip Planner across all views and document headers. Completely overhauled and reorganized the top-right header control deck with streamlined profile authentication dropdown, live Cloud Protected status badge, compact GitHub push/pull segmented pills, split undo/redo controls, and dedicated triggers for Currency Converter and Settings. Redesigned Version History (Annals & Changelog) with category badges and instant keyword search, redesigned Backup & Recovery Vault with visual snapshots, modernized the Activity Log modal with filter tabs, and upgraded the Settings Hub into a luxury tabbed control center with custom toggle cards and live badge previews.',
+  '1.18.3': 'Unified Google Maps initialization into single top-level APIProvider in App.tsx to eliminate duplicate script tags and loader conflicts, added cross-origin script error protection in main.tsx, and ensured maps helper uses anonymous crossorigin attribute.',
   '1.18.2': 'Resolved Firestore collection list permission error for users/trips by decoupling collection list queries from document ID validation, opened test probe read access, and made GitHub Pages base path conditional on GITHUB_ACTIONS environment to prevent dev server pre-warming 302 redirects.',
   '1.18.1': 'Fixed React singleton resolution and Vite dependency pre-bundling configuration (resolve.dedupe & optimizeDeps for react and react-dom), resolving the "Invalid hook call: null is not an object (evaluating resolveDispatcher().useState)" error.',
   '1.18.0': 'Added Trip Archive status allowing trips to be hidden from the dashboard and toggled via the dashboard header with instant restore. Cleaned up boarding passes by removing haul/attire badges by default, backed by comprehensive feature toggles in settings. Fixed Google Maps place search and geocoding in Name/Search to reliably resolve real addresses and display them directly on maps without legacy widget errors.',

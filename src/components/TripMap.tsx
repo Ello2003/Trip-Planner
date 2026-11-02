@@ -575,8 +575,7 @@ export const TripMap: React.FC<TripMapProps> = ({
 
       {/* Map Viewport Area */}
       <div style={{ position: 'relative', width: '100%', height: isExpanded ? '580px' : '390px' }}>
-        <APIProvider apiKey={effectiveApiKey} libraries={['marker', 'places']}>
-          <Map
+        <Map
             mapId="DEMO_MAP_ID"
             defaultCenter={defaultCenter}
             defaultZoom={13}
@@ -719,7 +718,6 @@ export const TripMap: React.FC<TripMapProps> = ({
               </InfoWindow>
             )}
           </Map>
-        </APIProvider>
       </div>
 
       {/* Itinerary Quick Carousel / Strip */}

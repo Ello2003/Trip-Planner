@@ -17,6 +17,14 @@ console.error = (...args: unknown[]) => {
   }
 };
 
+// Suppress generic third-party cross-origin "Script error." notifications from leaking
+window.addEventListener('error', (event) => {
+  if (event.message === 'Script error.' || !event.message) {
+    event.preventDefault();
+    return true;
+  }
+});
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <FirebaseProvider>

@@ -651,8 +651,7 @@ export const ResearchMap: React.FC<ResearchMapProps> = ({
 
       {/* Map Viewport Area */}
       <div style={{ position: 'relative', width: '100%', height: isExpanded ? '580px' : '410px' }}>
-        <APIProvider apiKey={effectiveApiKey} libraries={['marker', 'places']}>
-          <Map
+        <Map
             mapId="DEMO_MAP_ID"
             defaultCenter={defaultCenter}
             defaultZoom={13}
@@ -905,7 +904,6 @@ export const ResearchMap: React.FC<ResearchMapProps> = ({
               </InfoWindow>
             )}
           </Map>
-        </APIProvider>
       </div>
 
       {/* Quick Place Strip Carousel */}
