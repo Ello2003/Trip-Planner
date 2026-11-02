@@ -1,23 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AppState, BackupSnapshot, HistoryEntry, Trip } from '../types';
 import { useFirebase } from '../context/FirebaseContext';
-import {
-  History,
-  Cloud,
-  Database,
-  RotateCcw,
-  Plus,
-  Trash2,
-  Download,
-  ChevronDown,
-  ChevronUp,
-  ShieldCheck,
-  Check,
-  Calendar,
-  Layers,
-  ArrowRight,
-  AlertTriangle
-} from 'lucide-react';
+import { Download, Trash2, Plus } from 'lucide-react';
+import { ModalWrapper } from './Modals';
 import { fmt } from '../utils/helpers';
 
 interface BackupManagerModalProps {
@@ -218,266 +203,290 @@ export const BackupManagerModal: React.FC<BackupManagerModalProps> = ({
     };
   });
 
+
+  const formatDate = (ts: number | string) =>
+    new Date(ts).toLocaleString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+
+  const triggerStyle = (trigger?: string): React.CSSProperties => {
+    const map: Record<string, { bg: string; color: string }> = {
+      checkpoint: { bg: 'rgba(184,135,79,0.18)', color: 'var(--ochre)' },
+      auto: { bg: 'rgba(53,105,92,0.12)', color: 'var(--green)' },
+      manual: { bg: 'var(--line)', color: 'var(--ink-soft)' }
+    };
+    const c = map[trigger || 'manual'] || map.manual;
+    return {
+      fontSize: '9.5px',
+      fontFamily: 'var(--font-mono)',
+      fontWeight: 700,
+      letterSpacing: '.6px',
+      textTransform: 'uppercase',
+      padding: '2px 6px',
+      borderRadius: '3px',
+      background: c.bg,
+      color: c.color
+    };
+  };
+
+  const cardStyle: React.CSSProperties = {
+    padding: '12px 14px',
+    background: 'var(--paper)',
+    border: '1px solid var(--paper-edge)',
+    borderRadius: '6px'
+  };
+
+  const metaStyle: React.CSSProperties = {
+    fontSize: '11px',
+    fontFamily: 'var(--font-mono)',
+    color: 'var(--ink-soft)',
+    marginTop: '3px'
+  };
+
+  const counter = (n: number, active: boolean): React.ReactNode => (
+    <span
+      style={{
+        fontSize: '9.5px',
+        fontFamily: 'var(--font-mono)',
+        padding: '1px 5px',
+        borderRadius: '3px',
+        background: active ? 'rgba(184,135,79,0.18)' : 'var(--line)',
+        color: active ? 'var(--ochre)' : 'var(--ink-soft)'
+      }}
+    >
+      {n}
+    </span>
+  );
+
+  const tabs: { id: 'cloud' | 'local'; label: string; count: number }[] = [
+    { id: 'cloud', label: '☁️ Cloud Backups', count: cloudBackups.length },
+    { id: 'local', label: '💾 Local Snapshots', count: localHistory.length }
+  ];
+
+  const tripMini = (t: { name: string; year: any; budget: number; expenseCount: number; planItemCount: number }) => (
+    <>
+      <div style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--ink)' }}>
+        {t.name} ({t.year})
+      </div>
+      <div style={{ ...metaStyle, fontSize: '10.5px', marginTop: '1px' }}>
+        {fmt(t.budget)} · {t.expenseCount} expenses · {t.planItemCount} stops
+      </div>
+    </>
+  );
+
   return (
-    <div className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-3">
-      <div
-        className="modal-box bg-[#fcfaf5] border-2 border-[#1c2530] rounded-xl max-w-3xl w-full p-5 sm:p-6 shadow-2xl flex flex-col max-h-[90vh]"
-        style={{ fontFamily: 'var(--font-body)' }}
-      >
-        {/* Header */}
-        <div className="flex items-center justify-between border-b-2 border-[#1c2530] pb-3 mb-4">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#1c2530] text-[#f4efe2] flex items-center justify-center font-bold">
-              <Database size={18} className="text-[#b8874f]" />
+    <ModalWrapper title="Backup & Recovery Vault" wide onClose={onClose}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        {/* Status banner (matches Settings) */}
+        <div
+          style={{
+            padding: '10px 14px',
+            background: 'var(--paper)',
+            border: `1px solid ${user ? 'var(--green)' : 'var(--brass)'}`,
+            borderRadius: '6px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px',
+            flexWrap: 'wrap'
+          }}
+        >
+          <div>
+            <div style={{ fontSize: '12.5px', fontWeight: 600, color: 'var(--ink)' }}>
+              {user ? `☁️ Cloud sync active · ${user.displayName || user.email}` : '💾 Local cache only'}
             </div>
-            <div>
-              <h3 className="text-lg sm:text-xl font-serif font-black text-[#1c2530] tracking-tight m-0">
-                Backup &amp; Recovery Vault
-              </h3>
-              <p className="text-[11px] font-mono uppercase tracking-[2px] text-[#8a7a3a] mt-0.5 font-semibold m-0">
-                Cloud Firestore Snapshots &amp; Local Checkpoints
-              </p>
+            <div style={{ fontSize: '11px', color: 'var(--ink-soft)' }}>
+              {user
+                ? 'Snapshots are stored in Firestore and available on every device.'
+                : 'Sign in from the top bar to enable cloud backups across devices.'}
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="p-1.5 text-[#5b6672] hover:text-[#1c2530] hover:bg-[#eae4d3] rounded-md transition-colors cursor-pointer text-lg font-bold"
-            title="Close backup vault"
-          >
-            ✕
-          </button>
+          {user && !isCreating && (
+            <button
+              type="button"
+              className="btn-primary btn-sm"
+              onClick={() => setIsCreating(true)}
+              style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
+            >
+              <Plus size={13} /> New Backup
+            </button>
+          )}
         </div>
 
-        {/* Top Control Bar */}
-        <div className="flex items-center justify-between bg-[#f4efe2] border border-[#d5cbac] rounded-md p-3 mb-4 flex-wrap gap-2">
-          {/* Cloud Auth Status */}
-          <div className="flex items-center gap-2 text-xs font-mono">
-            {user ? (
-              <span className="flex items-center gap-1.5 text-[#35695c] font-semibold">
-                <Cloud size={14} /> Cloud Active: {user.displayName || user.email}
-              </span>
-            ) : (
-              <span className="flex items-center gap-1.5 text-[#8a7a3a]">
-                <Database size={14} /> Local Cache Only (Sign in to Header for Cloud Backups)
-              </span>
-            )}
-          </div>
-
-          {/* Action buttons */}
-          <div className="flex items-center gap-2">
-            {!isCreating && (
-              <button
-                type="button"
-                className="btn-primary btn-sm flex items-center gap-1 text-xs"
-                onClick={() => setIsCreating(true)}
-              >
-                <Plus size={13} /> Create Incremental Backup
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* New Backup Input Form */}
+        {/* New backup form */}
         {isCreating && (
           <form
             onSubmit={handleCreateBackup}
-            className="bg-[#f0ebe0] border border-[#c5ba9d] rounded-md p-3 mb-4 flex flex-col gap-2 animate-in fade-in"
+            style={{ ...cardStyle, background: 'var(--paper-raised)', display: 'flex', flexDirection: 'column', gap: '8px' }}
           >
-            <div className="text-xs font-semibold text-[#1c2530]">
-              Create New Incremental Backup
-            </div>
-            <div className="flex items-center gap-2">
+            <div className="field" style={{ margin: 0 }}>
+              <label htmlFor="backup-name">Backup name</label>
               <input
+                id="backup-name"
                 type="text"
-                className="flex-1 text-xs p-1.5 border border-[#c5ba9d] rounded bg-[#fffdfa]"
-                placeholder="e.g. Pre-flight London check or Major budget revisions"
+                placeholder="e.g. Before London budget changes"
                 value={newBackupName}
                 onChange={e => setNewBackupName(e.target.value)}
                 autoFocus
               />
-              <button
-                type="submit"
-                disabled={isSubmitting || !newBackupName.trim()}
-                className="btn-primary btn-sm text-xs"
-              >
-                {isSubmitting ? 'Saving…' : 'Save Backup'}
-              </button>
-              <button
-                type="button"
-                className="btn-ghost btn-sm text-xs"
-                onClick={() => setIsCreating(false)}
-              >
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
+              <button type="button" className="btn-ghost btn-sm" onClick={() => setIsCreating(false)}>
                 Cancel
+              </button>
+              <button type="submit" className="btn-primary btn-sm" disabled={isSubmitting || !newBackupName.trim()}>
+                {isSubmitting ? 'Saving…' : 'Save Backup'}
               </button>
             </div>
           </form>
         )}
 
-        {/* Storage Tabs */}
-        <div className="flex border-b border-[#d5cbac] mb-3 gap-2">
-          <button
-            type="button"
-            className={`pb-2 px-3 text-xs font-mono font-semibold transition-colors flex items-center gap-1.5 ${
-              activeTab === 'cloud'
-                ? 'border-b-2 border-[#1c2530] text-[#1c2530]'
-                : 'text-[#5b6672] hover:text-[#1c2530]'
-            }`}
-            onClick={() => setActiveTab('cloud')}
-          >
-            <Cloud size={13} /> Cloud Firestore ({cloudBackups.length})
-          </button>
-          <button
-            type="button"
-            className={`pb-2 px-3 text-xs font-mono font-semibold transition-colors flex items-center gap-1.5 ${
-              activeTab === 'local'
-                ? 'border-b-2 border-[#1c2530] text-[#1c2530]'
-                : 'text-[#5b6672] hover:text-[#1c2530]'
-            }`}
-            onClick={() => setActiveTab('local')}
-          >
-            <Database size={13} /> Local Snapshots ({localHistory.length})
-          </button>
+        {/* Segmented tabs (same pattern as Settings) */}
+        <div style={{ display: 'flex', borderBottom: '1px solid var(--line)', gap: '4px', paddingBottom: '2px' }}>
+          {tabs.map(tab => {
+            const active = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                style={{
+                  background: active ? 'var(--paper)' : 'transparent',
+                  border: '1px solid',
+                  borderColor: active ? 'var(--paper-edge) var(--paper-edge) var(--paper)' : 'transparent',
+                  borderTop: active ? '2px solid var(--brass)' : '2px solid transparent',
+                  borderRadius: '6px 6px 0 0',
+                  padding: '8px 12px',
+                  fontSize: '12px',
+                  fontWeight: active ? 600 : 500,
+                  color: active ? 'var(--ink)' : 'var(--ink-soft)',
+                  marginBottom: '-1px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <span>{tab.label}</span>
+                {counter(tab.count, active)}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Backups List */}
-        <div className="flex-1 overflow-y-auto space-y-2.5 pr-1" style={{ minHeight: '260px' }}>
+        {/* List */}
+        <div style={{ maxHeight: '46vh', minHeight: '180px', overflowY: 'auto', paddingRight: '4px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {activeTab === 'cloud' && (
             <>
               {!user ? (
-                <div className="text-center py-8 text-xs text-[#5b6672]">
-                  Sign in with Google in the top bar to enable persistent multi-device Cloud Firestore backups.
-                </div>
+                <div className="empty-state">Sign in with Google in the top bar to enable cloud backups.</div>
               ) : isLoading ? (
-                <div className="text-center py-8 text-xs text-[#8a7a3a] font-mono">
-                  Loading cloud backup snapshots…
-                </div>
+                <div className="empty-state">Loading cloud backups…</div>
               ) : cloudBackups.length === 0 ? (
-                <div className="text-center py-8 text-xs text-[#5b6672]">
-                  No cloud backup snapshots yet. Click <strong>"Create Incremental Backup"</strong> above to take your first cloud snapshot.
-                </div>
+                <div className="empty-state">No cloud backups yet. Use “New Backup” to take your first snapshot.</div>
               ) : (
                 cloudBackups.map(bk => {
                   const isExpanded = expandedId === bk.id;
-                  const dateStr = new Date(bk.timestamp).toLocaleString('en-GB', {
-                    day: 'numeric',
-                    month: 'short',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  });
-
                   return (
-                    <div
-                      key={bk.id}
-                      className="border border-[#d5cbac] bg-[#fbf8ef] rounded-md p-3 transition-all hover:border-[#b8874f]"
-                    >
-                      <div className="flex items-center justify-between flex-wrap gap-2">
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <span className="font-serif font-bold text-sm text-[#1c2530]">
+                    <div key={bk.id} style={cardStyle}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+                        <div style={{ flex: '1 1 200px', minWidth: 0 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                            <span style={{ fontWeight: 700, fontFamily: 'var(--font-display)', fontSize: '14px', color: 'var(--ink)' }}>
                               {bk.name}
                             </span>
-                            <span
-                              className={`text-[9.5px] font-mono uppercase px-1.5 py-0.5 rounded font-semibold ${
-                                bk.trigger === 'checkpoint'
-                                  ? 'bg-[#e2d09c] text-[#71541c]'
-                                  : bk.trigger === 'auto'
-                                  ? 'bg-[#d8e2dc] text-[#2c5144]'
-                                  : 'bg-[#d5cbac] text-[#1c2530]'
-                              }`}
-                            >
-                              {bk.trigger}
-                            </span>
+                            <span style={triggerStyle(bk.trigger)}>{bk.trigger}</span>
                           </div>
-                          <div className="text-[11px] font-mono text-[#5b6672] mt-0.5 flex items-center gap-2 flex-wrap">
-                            <span>🕒 {dateStr}</span>
-                            <span>•</span>
-                            <span>✈️ {bk.tripCount} trip(s)</span>
-                            {bk.changesSummary && (
-                              <>
-                                <span>•</span>
-                                <span className="italic">{bk.changesSummary}</span>
-                              </>
-                            )}
+                          <div style={metaStyle}>
+                            {formatDate(bk.timestamp)} · {bk.tripCount} trip{bk.tripCount !== 1 ? 's' : ''}
                           </div>
+                          {bk.changesSummary && (
+                            <div style={{ ...metaStyle, fontStyle: 'italic' }}>{bk.changesSummary}</div>
+                          )}
                         </div>
 
-                        {/* Card Action Buttons */}
-                        <div className="flex items-center gap-1.5">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                           <button
                             type="button"
-                            className="btn-ghost btn-sm text-xs py-1 px-2"
+                            className="btn-ghost btn-sm"
                             onClick={() => setExpandedId(isExpanded ? null : bk.id)}
                             title="Preview trips inside this backup"
                           >
-                            {isExpanded ? 'Hide' : 'Inspect'} {isExpanded ? <ChevronUp size={12} className="inline" /> : <ChevronDown size={12} className="inline" />}
+                            {isExpanded ? 'Hide' : 'Inspect'}
                           </button>
-
                           <button
                             type="button"
-                            className="btn-secondary btn-sm text-xs py-1 px-2"
+                            className="btn-ghost btn-sm"
                             onClick={() => setSelectedSnapshotForTrip(bk)}
-                            title="Restore just one trip from this snapshot without changing other trips"
+                            title="Restore a single trip without touching the others"
                           >
-                            Trip Restore
+                            Restore trip…
                           </button>
-
                           <button
                             type="button"
-                            className="btn-primary btn-sm text-xs py-1 px-2.5 font-bold"
+                            className="btn-primary btn-sm"
                             onClick={() => handleFullRestore(bk)}
-                            title="Restore entire ledger to this snapshot"
+                            title="Restore the entire ledger to this snapshot"
                           >
-                            Full Restore
+                            ↺ Full restore
                           </button>
-
                           <button
                             type="button"
-                            className="btn-ghost btn-sm p-1 text-[#5b6672] hover:text-[#1c2530]"
+                            className="btn-ghost btn-sm"
                             onClick={() => handleDownloadSnapshot(bk)}
                             title="Download as JSON"
+                            aria-label="Download as JSON"
+                            style={{ padding: '5px 7px', display: 'flex' }}
                           >
                             <Download size={13} />
                           </button>
-
                           <button
                             type="button"
-                            className="btn-ghost btn-sm p-1 text-[#a63a2e]"
+                            className="btn-danger btn-sm"
                             onClick={() => handleDeleteCloudBackup(bk.id, bk.name)}
                             title="Delete backup"
+                            aria-label="Delete backup"
+                            style={{ padding: '5px 7px', display: 'flex' }}
                           >
                             <Trash2 size={13} />
                           </button>
                         </div>
                       </div>
 
-                      {/* Expanded Drawer: Shows exact trips list inside snapshot */}
                       {isExpanded && (
-                        <div className="mt-3 pt-2.5 border-t border-[#e2d8bd] bg-[#f4efe2] -mx-3 -mb-3 p-3 rounded-b-md text-xs">
-                          <div className="font-semibold text-[#1c2530] mb-1.5 flex items-center gap-1.5">
-                            <Layers size={13} className="text-[#b8874f]" /> Trips in this Snapshot:
+                        <div style={{ marginTop: '10px', paddingTop: '10px', borderTop: '1px solid var(--paper-edge)' }}>
+                          <div style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--ink-soft)', marginBottom: '6px' }}>
+                            Trips in this snapshot
                           </div>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                             {(bk.tripsSummary || []).map(t => (
                               <div
                                 key={t.id}
-                                className="bg-[#fffdfa] border border-[#d5cbac] p-2 rounded text-[11px] flex items-center justify-between"
+                                style={{
+                                  padding: '8px 10px',
+                                  background: 'var(--paper-raised)',
+                                  border: '1px solid var(--paper-edge)',
+                                  borderRadius: '5px',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'space-between',
+                                  gap: '10px'
+                                }}
                               >
-                                <div>
-                                  <div className="font-bold text-[#1c2530]">{t.name} ({t.year})</div>
-                                  <div className="text-[10px] text-[#5b6672] font-mono">
-                                    Budget: {fmt(t.budget)} · {t.expenseCount} exp · {t.planItemCount} stops
-                                  </div>
-                                </div>
+                                <div>{tripMini(t)}</div>
                                 <button
                                   type="button"
-                                  className="text-[10px] text-[#35597a] hover:underline font-semibold ml-2"
+                                  className="btn-ghost btn-sm"
+                                  style={{ whiteSpace: 'nowrap' }}
                                   onClick={() => {
                                     const fullTrip = bk.state.trips.find(x => x.id === t.id);
                                     if (fullTrip) handleRestoreOneTrip(fullTrip, bk.name);
                                   }}
                                 >
-                                  Restore Trip ↗
+                                  Restore
                                 </button>
                               </div>
                             ))}
@@ -494,121 +503,127 @@ export const BackupManagerModal: React.FC<BackupManagerModalProps> = ({
           {activeTab === 'local' && (
             <>
               {parsedLocalSnapshots.length === 0 ? (
-                <div className="text-center py-8 text-xs text-[#5b6672]">
-                  No local snapshots stored yet. Snapshots are created automatically when editing trips.
-                </div>
+                <div className="empty-state">No local snapshots yet. One is saved automatically on your first edit each day.</div>
               ) : (
-                parsedLocalSnapshots.map(entry => {
-                  const dateStr = new Date(entry.timestamp).toLocaleString('en-GB', {
-                    day: 'numeric',
-                    month: 'short',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  });
-
-                  return (
-                    <div
-                      key={entry.dateKey}
-                      className="border border-[#d5cbac] bg-[#fbf8ef] rounded-md p-3 flex items-center justify-between flex-wrap gap-2"
-                    >
-                      <div>
-                        <div className="font-serif font-bold text-sm text-[#1c2530]">
-                          Local Snapshot ({entry.dateKey})
-                        </div>
-                        <div className="text-[11px] font-mono text-[#5b6672] mt-0.5">
-                          🕒 {dateStr} · ✈️ {entry.tripsCount} trip(s)
-                        </div>
+                parsedLocalSnapshots.map(entry => (
+                  <div
+                    key={entry.dateKey}
+                    style={{ ...cardStyle, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}
+                  >
+                    <div>
+                      <div style={{ fontWeight: 700, fontFamily: 'var(--font-display)', fontSize: '14px', color: 'var(--ink)' }}>
+                        {entry.dateKey}
                       </div>
-
-                      <div className="flex items-center gap-1.5">
-                        <button
-                          type="button"
-                          className="btn-primary btn-sm text-xs py-1 px-2.5 font-bold"
-                          onClick={() => {
-                            if (!entry.parsedState) {
-                              onShowToast('Could not read snapshot');
-                              return;
-                            }
-                            if (
-                              window.confirm(
-                                `Restore local snapshot from ${entry.dateKey}? Current state will be safely checkpointed first.`
-                              )
-                            ) {
-                              onRestoreState(entry.parsedState, `Restored local snapshot (${entry.dateKey})`);
-                              onClose();
-                            }
-                          }}
-                        >
-                          Restore
-                        </button>
+                      <div style={metaStyle}>
+                        {formatDate(entry.timestamp)} · {entry.tripsCount} trip{entry.tripsCount !== 1 ? 's' : ''}
                       </div>
                     </div>
-                  );
-                })
+                    <button
+                      type="button"
+                      className="btn-primary btn-sm"
+                      onClick={() => {
+                        if (!entry.parsedState) {
+                          onShowToast('Could not read snapshot');
+                          return;
+                        }
+                        if (
+                          window.confirm(
+                            `Restore local snapshot from ${entry.dateKey}? Current state will be safely checkpointed first.`
+                          )
+                        ) {
+                          onRestoreState(entry.parsedState, `Restored local snapshot (${entry.dateKey})`);
+                          onClose();
+                        }
+                      }}
+                    >
+                      ↺ Restore
+                    </button>
+                  </div>
+                ))
               )}
             </>
           )}
         </div>
 
-        {/* Modal Footer */}
-        <div className="border-t border-[#d5cbac] pt-3 mt-3 flex items-center justify-between">
-          <div className="flex items-center gap-1.5 text-[11px] text-[#5b6672] font-mono">
-            <ShieldCheck size={14} className="text-[#35695c]" />
-            <span>Safety checkpoint taken automatically before every restore.</span>
-          </div>
-          <button type="button" className="btn-ghost" onClick={onClose}>
+        {/* Footer actions (matches Settings) */}
+        <div
+          style={{
+            paddingTop: '12px',
+            borderTop: '1px solid var(--line)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '8px',
+            flexWrap: 'wrap'
+          }}
+        >
+          <span style={{ fontSize: '11px', color: 'var(--ink-soft)' }}>
+            🛡️ A safety checkpoint is saved automatically before every restore.
+          </span>
+          <button type="button" className="btn-primary" onClick={onClose}>
             Close
           </button>
         </div>
+      </div>
 
-        {/* Selective Trip Modal (Overlay) */}
-        {selectedSnapshotForTrip && (
-          <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/40 p-4">
-            <div className="bg-[#fcfaf5] border-2 border-[#1c2530] rounded-lg max-w-md w-full p-5 shadow-2xl">
-              <h4 className="font-serif font-bold text-base text-[#1c2530] m-0 mb-1">
-                Select Trip to Restore
-              </h4>
-              <p className="text-xs text-[#5b6672] m-0 mb-3">
-                From snapshot: <strong>{selectedSnapshotForTrip.name}</strong>. Only the chosen trip will be restored.
-              </p>
-
-              <div className="space-y-2 max-h-[50vh] overflow-y-auto mb-4">
-                {selectedSnapshotForTrip.state.trips.map(t => (
-                  <div
-                    key={t.id}
-                    className="p-2.5 bg-[#f4efe2] border border-[#d5cbac] rounded flex items-center justify-between"
-                  >
-                    <div>
-                      <div className="font-bold text-xs text-[#1c2530]">{t.name} ({t.year})</div>
-                      <div className="text-[10px] text-[#5b6672] font-mono">
-                        {fmt(t.budget)} · {t.expenses?.length || 0} exp · {t.planItems?.length || 0} stops
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn-primary btn-sm text-xs py-1 px-2"
-                      onClick={() => handleRestoreOneTrip(t, selectedSnapshotForTrip.name)}
-                    >
-                      Restore This Trip
-                    </button>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex justify-end">
-                <button
-                  type="button"
-                  className="btn-ghost btn-sm"
-                  onClick={() => setSelectedSnapshotForTrip(null)}
+      {/* Single-trip restore picker */}
+      {selectedSnapshotForTrip && (
+        <div
+          onClick={() => setSelectedSnapshotForTrip(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(28,37,48,0.55)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 110,
+            padding: '20px'
+          }}
+        >
+          <div
+            className="modal-box"
+            onClick={e => e.stopPropagation()}
+            style={{ maxWidth: '440px' }}
+          >
+            <h3>Restore a single trip</h3>
+            <p style={{ fontSize: '12px', color: 'var(--ink-soft)', margin: '-8px 0 12px' }}>
+              From <strong>{selectedSnapshotForTrip.name}</strong>. Your other trips stay unchanged.
+            </p>
+            <div style={{ maxHeight: '45vh', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {selectedSnapshotForTrip.state.trips.map(t => (
+                <div
+                  key={t.id}
+                  style={{ ...cardStyle, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px' }}
                 >
-                  Cancel
-                </button>
-              </div>
+                  <div>
+                    {tripMini({
+                      name: t.name,
+                      year: t.year,
+                      budget: t.budget,
+                      expenseCount: t.expenses?.length || 0,
+                      planItemCount: t.planItems?.length || 0
+                    })}
+                  </div>
+                  <button
+                    type="button"
+                    className="btn-primary btn-sm"
+                    style={{ whiteSpace: 'nowrap' }}
+                    onClick={() => handleRestoreOneTrip(t, selectedSnapshotForTrip.name)}
+                  >
+                    Restore
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="modal-actions">
+              <button type="button" className="btn-ghost" onClick={() => setSelectedSnapshotForTrip(null)}>
+                Cancel
+              </button>
             </div>
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      )}
+    </ModalWrapper>
   );
 };
