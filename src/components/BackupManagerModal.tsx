@@ -237,7 +237,8 @@ export const BackupManagerModal: React.FC<BackupManagerModalProps> = ({
     padding: '12px 14px',
     background: 'var(--paper)',
     border: '1px solid var(--paper-edge)',
-    borderRadius: '6px'
+    borderRadius: '6px',
+    flexShrink: 0
   };
 
   const metaStyle: React.CSSProperties = {

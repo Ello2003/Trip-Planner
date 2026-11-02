@@ -166,7 +166,8 @@ export const VersionHistoryModal: React.FC<VersionHistoryModalProps> = ({ isOpen
                     background: isCurrent ? 'var(--paper)' : 'var(--paper-raised)',
                     border: `1px solid ${isCurrent ? 'var(--brass)' : 'var(--paper-edge)'}`,
                     borderRadius: '6px',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    flexShrink: 0
                   }}
                 >
                   <div

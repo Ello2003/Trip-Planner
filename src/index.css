@@ -1593,3 +1593,254 @@ body {
     padding: 20px;
   }
 }
+
+/* ===== App header ===== */
+#travel-ledger-root .app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--ink);
+}
+
+#travel-ledger-root .app-header .wordmark {
+  cursor: pointer;
+  user-select: none;
+}
+
+#travel-ledger-root .wordmark-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0;
+}
+
+#travel-ledger-root .app-header .wordmark:hover .wordmark-title {
+  color: var(--ink-soft);
+}
+
+#travel-ledger-root .wordmark small {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+
+#travel-ledger-root .hdr-deck {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+#travel-ledger-root .hdr-row,
+#travel-ledger-root .hdr-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#travel-ledger-root .hdr-btn {
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--paper-edge);
+  border-radius: 6px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+#travel-ledger-root .hdr-btn:hover:not(:disabled) {
+  border-color: var(--brass);
+  background: #faf6ea;
+}
+
+#travel-ledger-root .hdr-btn.primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper-raised);
+}
+
+#travel-ledger-root .hdr-btn.primary:hover:not(:disabled) {
+  background: var(--ink-soft);
+  border-color: var(--ink-soft);
+}
+
+#travel-ledger-root .hdr-btn.version {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  background: var(--paper);
+  border-color: var(--line);
+}
+
+#travel-ledger-root .hdr-btn .ico-brass { color: var(--brass); }
+#travel-ledger-root .hdr-btn .ico-green { color: var(--green); }
+#travel-ledger-root .hdr-btn .ico-blue { color: var(--blue); }
+#travel-ledger-root .hdr-btn .ico-ochre { color: var(--ochre); }
+
+/* Segmented control (Undo/Redo, Git Push/Pull) */
+#travel-ledger-root .hdr-seg {
+  display: inline-flex;
+  align-items: stretch;
+  height: 34px;
+  overflow: hidden;
+  background: var(--paper-raised);
+  border: 1px solid var(--paper-edge);
+  border-radius: 6px;
+}
+
+#travel-ledger-root .hdr-seg > button {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 11px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+#travel-ledger-root .hdr-seg > button + button,
+#travel-ledger-root .hdr-seg > .hdr-seg-label + button {
+  border-left: 1px solid var(--paper-edge);
+}
+
+#travel-ledger-root .hdr-seg > button:hover:not(:disabled) { background: var(--paper); }
+#travel-ledger-root .hdr-seg > button:disabled { opacity: 0.35; cursor: default; }
+
+#travel-ledger-root .hdr-seg-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--paper);
+}
+
+/* Account chip + dropdown */
+#travel-ledger-root .hdr-menu-wrap { position: relative; }
+
+#travel-ledger-root .hdr-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--ink);
+  color: var(--paper-raised);
+  flex-shrink: 0;
+}
+
+#travel-ledger-root .hdr-name {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#travel-ledger-root .hdr-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  width: 260px;
+  padding: 12px;
+  z-index: 60;
+  background: var(--paper-raised);
+  border: 1px solid var(--paper-edge);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#travel-ledger-root .hdr-menu-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+#travel-ledger-root .hdr-menu-name { font-size: 13px; font-weight: 600; margin-top: 2px; }
+#travel-ledger-root .hdr-menu-email {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#travel-ledger-root .hdr-menu-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 10px 0;
+  padding: 8px 0;
+  border-top: 1px solid var(--paper-edge);
+  border-bottom: 1px solid var(--paper-edge);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Status strip */
+#travel-ledger-root .hdr-status {
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--slate);
+}
+
+#travel-ledger-root .hdr-status .sep { color: var(--line); }
+#travel-ledger-root .hdr-status .ok { color: var(--green); font-weight: 600; }
+#travel-ledger-root .hdr-status .err { color: var(--red); font-weight: 600; }
+#travel-ledger-root .hdr-status .item { display: inline-flex; align-items: center; gap: 6px; }
+
+#travel-ledger-root .hdr-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#travel-ledger-root .hdr-dot.pulse { animation: hdrPulse 1.2s ease-in-out infinite; }
+
+@keyframes hdrPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (max-width: 720px) {
+  #travel-ledger-root .wordmark-title { font-size: 24px; }
+  #travel-ledger-root .hdr-deck { align-items: flex-start; width: 100%; }
+  #travel-ledger-root .hdr-row,
+  #travel-ledger-root .hdr-status { justify-content: flex-start; }
+  #travel-ledger-root .hdr-opt { display: none; }
+  #travel-ledger-root .hdr-menu { right: auto; left: 0; }
+}
