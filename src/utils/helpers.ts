@@ -200,3 +200,29 @@ export function sortTimelineItems(items: PlanItem[]): PlanItem[] {
     })
     .map(entry => entry.item);
 }
+
+// Compare URLs ignoring scheme, "www.", query/hash and trailing slashes
+export function normalizeUrlForCompare(url: string): string {
+  return (url || '')
+    .trim()
+    .toLowerCase()
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .replace(/[?#].*$/, '')
+    .replace(/\/+$/, '');
+}
+
+// Append a place's website as a NEW link row. Never edits or replaces existing
+// links, and skips only when an equivalent URL is already present.
+export function addWebsiteLink<T extends { id: string; label: string; url: string }>(
+  links: T[],
+  website: string | undefined,
+  placeName?: string
+): T[] {
+  if (!website) return links;
+  const target = normalizeUrlForCompare(website);
+  if (links.some(l => normalizeUrlForCompare(l.url) === target)) return links;
+  const hasOfficial = links.some(l => /^official website/i.test(l.label.trim()));
+  const label = hasOfficial && placeName ? `Official Website (${placeName})` : 'Official Website';
+  return [...links, { id: uid('link'), label, url: website } as T];
+}

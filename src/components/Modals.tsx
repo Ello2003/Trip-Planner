@@ -17,7 +17,7 @@ import {
   TRIP_TAB_LABELS,
   SUPPORTED_CURRENCIES
 } from '../types';
-import { uid, singleLine, guessCountryFromName, fmt } from '../utils/helpers';
+import { uid, singleLine, guessCountryFromName, fmt, addWebsiteLink } from '../utils/helpers';
 import { resolveExpenseCategory } from '../utils/storage';
 import {
   githubUserError,
@@ -1212,10 +1212,8 @@ export const ResearchItemModal: React.FC<{
     setLat(place.lat);
     setLng(place.lng);
     if (place.website) {
-      const exists = links.some(l => l.url === place.website);
-      if (!exists) {
-        setLinks(prev => [...prev, { id: uid('link'), label: 'Official Website', url: place.website! }]);
-      }
+      // Functional update so we always add to the latest list; existing links are never touched
+      setLinks(prev => addWebsiteLink(prev, place.website, place.name));
     }
     setShowDropdown(false);
     setSearchFeedback(`Found: ${place.address}`);
