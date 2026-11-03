@@ -1,4 +1,4 @@
-import { COUNTRIES, CITY_TO_COUNTRY, CUR, Trip, Expense, PlanItem, Category } from '../types';
+import { COUNTRIES, CITY_TO_COUNTRY, CUR, SHEET_TO_CAT, Trip, Expense, PlanItem, Category, AppState } from '../types';
 
 let uidCounter = 0;
 export function uid(prefix: string): string {
@@ -225,4 +225,87 @@ export function addWebsiteLink<T extends { id: string; label: string; url: strin
   const hasOfficial = links.some(l => /^official website/i.test(l.label.trim()));
   const label = hasOfficial && placeName ? `Official Website (${placeName})` : 'Official Website';
   return [...links, { id: uid('link'), label, url: website } as T];
+}
+
+// ---- Category / section rename migration ----------------------------------
+// Items reference categories by NAME, so renaming (or deleting) a category
+// must carry everything that points at the old name across to the new one.
+export interface NameChange {
+  from: string;
+  to: string;
+}
+
+function nameMapper(changes: NameChange[]) {
+  const map = new Map(changes.map(c => [c.from, c.to]));
+  return (k: string): string => (map.has(k) ? (map.get(k) as string) : k);
+}
+
+// Plan & Research sections (keyed by Sheet.key). Updates every trip (and trashed trip):
+// plan items, research items, per-trip hidden sections, per-section map links, and the
+// "original" snapshot kept on items converted to estimates.
+export function renameSheetsInState(state: AppState, changes: NameChange[]): AppState {
+  if (!changes.length) return state;
+  const re = nameMapper(changes);
+  const categoryNames = new Set((state.categories || []).map(c => c.name));
+  const mapTrip = <T extends Trip>(t: T): T => ({
+    ...t,
+    planItems: (t.planItems || []).map(i => {
+      const moved = re(i.sheet) !== i.sheet;
+      if (!moved && !i.estimateOriginal) return i;
+      const next: PlanItem = { ...i, sheet: re(i.sheet) };
+      // The default budget category is derived from the section name ("Restaurants" -> "Food & Drink").
+      // Pin it so the item doesn't fall back to "Other" once the section has a new name.
+      if (moved && !i.estimateCategory) {
+        const def = SHEET_TO_CAT[i.sheet];
+        next.estimateCategory = def && categoryNames.has(def) ? def : 'Other';
+      }
+      if (i.estimateOriginal) next.estimateOriginal = { ...i.estimateOriginal, sheet: re(i.estimateOriginal.sheet) };
+      return next;
+    }),
+    research: (t.research || []).map(r => ({ ...r, sheet: re(r.sheet) })),
+    hiddenSheets: (t.hiddenSheets || []).map(re),
+    sectionMapUrls: Object.fromEntries(
+      Object.entries(t.sectionMapUrls || {}).map(([k, v]) => [re(k), v])
+    )
+  });
+  return {
+    ...state,
+    trips: state.trips.map(mapTrip),
+    trash: state.trash
+      ? { ...state.trash, trips: (state.trash.trips || []).map(mapTrip) }
+      : state.trash
+  };
+}
+
+// Expense categories (keyed by Category.name). Updates every trip (and trashed trip):
+// expenses, manual budget estimates, plan-item estimate categories (and their "original" snapshot).
+export function renameExpenseCategoriesInState(state: AppState, changes: NameChange[]): AppState {
+  if (!changes.length) return state;
+  const re = nameMapper(changes);
+  const mapTrip = <T extends Trip>(t: T): T => ({
+    ...t,
+    expenses: (t.expenses || []).map(e => ({ ...e, category: re(e.category) })),
+    manualEstimates: (t.manualEstimates || []).map(m => ({ ...m, category: re(m.category) })),
+    planItems: (t.planItems || []).map(i => {
+      if (!i.estimateCategory && !i.estimateOriginal) return i;
+      const next: PlanItem = { ...i };
+      if (i.estimateCategory) next.estimateCategory = re(i.estimateCategory);
+      if (i.estimateOriginal) next.estimateOriginal = { ...i.estimateOriginal, category: re(i.estimateOriginal.category) };
+      return next;
+    })
+  });
+  return {
+    ...state,
+    trips: state.trips.map(mapTrip),
+    trash: state.trash
+      ? {
+          ...state.trash,
+          trips: (state.trash.trips || []).map(mapTrip),
+          expenses: (state.trash.expenses || []).map(x => ({
+            ...x,
+            expense: { ...x.expense, category: re(x.expense.category) }
+          }))
+        }
+      : state.trash
+  };
 }

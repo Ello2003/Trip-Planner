@@ -18,7 +18,7 @@ import {
   defaultSeedState,
   resolveExpenseCategory
 } from './utils/storage';
-import { uid, singleLine, fmt } from './utils/helpers';
+import { uid, singleLine, fmt, renameSheetsInState, renameExpenseCategoriesInState } from './utils/helpers';
 import {
   githubConfigured,
   githubPushRemote,
@@ -212,6 +212,32 @@ export const App: React.FC = () => {
       });
     },
     [persistState]
+  );
+
+  // Inline edits of Plan / Research / Visited section headers
+  const handleRenameSheet = useCallback(
+    (from: string, to: string): string | null => {
+      const name = to.trim();
+      if (!name) return 'Name can\u2019t be empty';
+      if (state.sheets.some(s => s.key !== from && s.key.toLowerCase() === name.toLowerCase())) {
+        return 'That name is already used';
+      }
+      updateState(prev =>
+        renameSheetsInState(
+          { ...prev, sheets: prev.sheets.map(s => (s.key === from ? { ...s, key: name } : s)) },
+          [{ from, to: name }]
+        )
+      );
+      return null;
+    },
+    [state.sheets, updateState]
+  );
+
+  const handleRecolorSheet = useCallback(
+    (key: string, color: string) => {
+      updateState(prev => ({ ...prev, sheets: prev.sheets.map(s => (s.key === key ? { ...s, color } : s)) }));
+    },
+    [updateState]
   );
 
   // Update specific trip
@@ -640,6 +666,8 @@ export const App: React.FC = () => {
             trip={currentTrip}
             categories={state.categories}
             sheets={state.sheets}
+            onRenameSheet={handleRenameSheet}
+            onRecolorSheet={handleRecolorSheet}
             settings={state.settings}
             activeTripTab={activeTripTab}
             setActiveTripTab={setActiveTripTab}
@@ -1058,8 +1086,10 @@ export const App: React.FC = () => {
             categories={state.categories}
             trips={state.trips}
             onClose={() => setModalType(null)}
-            onUpdateCategories={newCats => {
-              updateState(prev => ({ ...prev, categories: newCats }));
+            onUpdateCategories={(newCats, changes) => {
+              updateState(prev =>
+                renameExpenseCategoriesInState({ ...prev, categories: newCats }, changes || [])
+              );
             }}
             onShowToast={showToast}
           />
@@ -1070,8 +1100,8 @@ export const App: React.FC = () => {
             trip={currentTrip}
             sheets={state.sheets}
             onClose={() => setModalType(null)}
-            onUpdateSheets={newSheets => {
-              updateState(prev => ({ ...prev, sheets: newSheets }));
+            onUpdateSheets={(newSheets, changes) => {
+              updateState(prev => renameSheetsInState({ ...prev, sheets: newSheets }, changes || []));
             }}
             onUpdateTripHiddenSheets={hidden => {
               if (currentTrip) {
