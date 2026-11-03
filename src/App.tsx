@@ -28,7 +28,6 @@ import { Header } from './components/Header';
 import { KPIBoard } from './components/KPIBoard';
 import { DashboardView } from './components/DashboardView';
 import { TripDetailView } from './components/TripDetailView';
-import { Footer } from './components/Footer';
 import { PrintArea } from './components/PrintArea';
 import { useFirebase } from './context/FirebaseContext';
 import { VersionHistoryModal } from './components/VersionHistoryModal';
@@ -383,6 +382,43 @@ export const App: React.FC = () => {
     showToast('Backup downloaded');
   };
 
+  // GitHub sync actions (used from Settings > Data & Sync)
+  const handleGithubPush = async () => {
+            try {
+              setSyncStatus({ kind: 'syncing', text: '☁ pushing…' });
+              await githubPushRemote(state);
+              setSyncStatus({ kind: '', text: '☁ pushed successfully' });
+              showToast('Pushed to GitHub');
+            } catch (err: any) {
+              setSyncStatus({ kind: 'error', text: '☁ push failed' });
+              showToast('Push failed');
+            }
+  };
+
+  const handleGithubPull = async () => {
+            try {
+              setSyncStatus({ kind: 'syncing', text: '☁ pulling…' });
+              const remote = await githubFetchRemote(state.settings);
+              if (remote.exists && remote.json) {
+                if (
+                  window.confirm(
+                    `Pull ${remote.json.trips?.length || 0} trip(s) from GitHub? Current data will be moved to Trash first.`
+                  )
+                ) {
+                  updateState(prev => ({
+                    ...prev,
+                    trips: remote.json.trips || prev.trips,
+                    categories: remote.json.categories || prev.categories,
+                    sheets: remote.json.sheets || prev.sheets
+                  }));
+                  showToast('Pulled from GitHub');
+                }
+              }
+            } catch (_) {
+              showToast('Pull failed');
+            }
+  };
+
   const handleImportBackup = (file: File) => {
     const reader = new FileReader();
     reader.onload = e => {
@@ -595,41 +631,6 @@ export const App: React.FC = () => {
           onRedo={handleRedo}
           saveFlagVisible={saveFlagVisible}
           syncStatus={syncStatus}
-          githubConfigured={githubConfigured(state.settings)}
-          onGithubPush={async () => {
-            try {
-              setSyncStatus({ kind: 'syncing', text: '☁ pushing…' });
-              await githubPushRemote(state);
-              setSyncStatus({ kind: '', text: '☁ pushed successfully' });
-              showToast('Pushed to GitHub');
-            } catch (err: any) {
-              setSyncStatus({ kind: 'error', text: '☁ push failed' });
-              showToast('Push failed');
-            }
-          }}
-          onGithubPull={async () => {
-            try {
-              setSyncStatus({ kind: 'syncing', text: '☁ pulling…' });
-              const remote = await githubFetchRemote(state.settings);
-              if (remote.exists && remote.json) {
-                if (
-                  window.confirm(
-                    `Pull ${remote.json.trips?.length || 0} trip(s) from GitHub? Current data will be moved to Trash first.`
-                  )
-                ) {
-                  updateState(prev => ({
-                    ...prev,
-                    trips: remote.json.trips || prev.trips,
-                    categories: remote.json.categories || prev.categories,
-                    sheets: remote.json.sheets || prev.sheets
-                  }));
-                  showToast('Pulled from GitHub');
-                }
-              }
-            } catch (_) {
-              showToast('Pull failed');
-            }
-          }}
           onOpenChangelog={() => setModalType('changelog')}
           onOpenSettings={() => setModalType('settings')}
           onHomeClick={() => setActiveTripId(null)}
@@ -712,16 +713,7 @@ export const App: React.FC = () => {
           />
         )}
 
-        <Footer
-          onExportBackup={handleExportBackup}
-          onImportBackup={handleImportBackup}
-          onOpenTrash={() => setModalType('trash')}
-          onOpenActivityLog={() => setModalType('activityLog')}
-          onOpenGithubSync={() => setModalType('githubSync')}
-          onOpenBackupHistory={() => setModalType('backupHistory')}
-          onOpenChangelog={() => setModalType('changelog')}
-          onOpenSettings={() => setModalType('settings')}
-        />
+        <div style={{ height: 36 }} />
 
         {/* Toast */}
         <div className={`toast ${toastMessage ? 'show' : ''}`}>
@@ -1360,6 +1352,13 @@ export const App: React.FC = () => {
             onOpenReorderTabs={() => setModalType('reorderTabs')}
             onOpenGithubSync={() => setModalType('githubSync')}
             onOpenBackupManager={() => setModalType('backupHistory')}
+            onExportBackup={handleExportBackup}
+            onImportBackup={handleImportBackup}
+            onOpenTrash={() => setModalType('trash')}
+            onOpenActivityLog={() => setModalType('activityLog')}
+            githubConfigured={githubConfigured(state.settings)}
+            onGithubPush={handleGithubPush}
+            onGithubPull={handleGithubPull}
           />
         )}
       </div>

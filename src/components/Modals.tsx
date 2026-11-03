@@ -2670,15 +2670,30 @@ export const SettingsModal: React.FC<{
   onOpenReorderTabs?: () => void;
   onOpenGithubSync?: () => void;
   onOpenBackupManager?: () => void;
+  onExportBackup?: () => void;
+  onImportBackup?: (file: File) => void;
+  onOpenTrash?: () => void;
+  onOpenActivityLog?: () => void;
+  githubConfigured?: boolean;
+  onGithubPush?: () => void;
+  onGithubPull?: () => void;
 }> = ({
   settings,
   onClose,
   onSaveSettings,
   onOpenReorderTabs,
   onOpenGithubSync,
-  onOpenBackupManager
+  onOpenBackupManager,
+  onExportBackup,
+  onImportBackup,
+  onOpenTrash,
+  onOpenActivityLog,
+  githubConfigured: gitReady,
+  onGithubPush,
+  onGithubPull
 }) => {
   const [form, setForm] = useState<Settings>({ ...settings });
+  const importInputRef = useRef<HTMLInputElement>(null);
   const [activeTab, setActiveTab] = useState<'passes' | 'display' | 'currency' | 'cloud'>('passes');
 
   const handleToggle = (key: keyof Settings) => {
@@ -2688,6 +2703,53 @@ export const SettingsModal: React.FC<{
   const handleSave = () => {
     onSaveSettings(form);
     onClose();
+  };
+
+  // ---- Data & Sync tab helpers ----
+  const sectionLabel = (text: string) => (
+    <div
+      style={{
+        fontFamily: 'var(--font-mono)',
+        fontSize: '10px',
+        letterSpacing: '1px',
+        textTransform: 'uppercase',
+        color: 'var(--ink-soft)',
+        margin: '6px 0 -4px'
+      }}
+    >
+      {text}
+    </div>
+  );
+
+  const actionRow = (icon: string, title: string, desc: React.ReactNode, actions: React.ReactNode) => (
+    <div
+      style={{
+        padding: '12px 14px',
+        background: 'var(--paper)',
+        border: '1px solid var(--paper-edge)',
+        borderRadius: '6px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '12px',
+        flexWrap: 'wrap'
+      }}
+    >
+      <div style={{ flex: '1 1 220px', minWidth: 0 }}>
+        <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <span>{icon}</span>
+          <span>{title}</span>
+        </div>
+        <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '2px', lineHeight: 1.45 }}>{desc}</div>
+      </div>
+      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', alignItems: 'center' }}>{actions}</div>
+    </div>
+  );
+
+  // Close Settings, then open another dialog
+  const goTo = (fn?: () => void) => () => {
+    onClose();
+    fn?.();
   };
 
   const renderToggleCard = (
@@ -2816,7 +2878,7 @@ export const SettingsModal: React.FC<{
             { id: 'passes', label: '🎫 Boarding Passes', count: '4' },
             { id: 'display', label: '🧭 Display & Maps', count: '4' },
             { id: 'currency', label: '💱 Currency & Finance', count: 'Rates' },
-            { id: 'cloud', label: '☁️ Cloud & Vault Hub', count: 'Sync' }
+            { id: 'cloud', label: '🗄️ Data & Sync', count: '7' }
           ].map(tab => (
             <button
               key={tab.id}
@@ -3057,79 +3119,104 @@ export const SettingsModal: React.FC<{
 
           {activeTab === 'cloud' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{ fontSize: '12px', color: 'var(--ink-soft)', marginBottom: '2px' }}>
-                Direct shortcuts to cloud persistence, rolling snapshots, and remote repositories:
-              </div>
+              {sectionLabel('Backup & restore')}
+              {actionRow(
+                '📤',
+                'Export backup',
+                'Download all trips, categories and settings as a JSON file.',
+                <button type="button" className="btn-ghost btn-sm" onClick={() => onExportBackup?.()}>
+                  Export
+                </button>
+              )}
+              {actionRow(
+                '📥',
+                'Import backup',
+                'Load a JSON backup. Your current trips are moved to Trash first, so nothing is lost.',
+                <>
+                  <button type="button" className="btn-ghost btn-sm" onClick={() => importInputRef.current?.click()}>
+                    Choose file…
+                  </button>
+                  <input
+                    ref={importInputRef}
+                    type="file"
+                    hidden
+                    accept="application/json"
+                    onChange={e => {
+                      const file = e.target.files?.[0];
+                      if (file) {
+                        onClose();
+                        onImportBackup?.(file);
+                      }
+                      e.target.value = '';
+                    }}
+                  />
+                </>
+              )}
+              {actionRow(
+                '💾',
+                'Backup & Recovery Vault',
+                'Browse cloud and local snapshots, and restore everything or just one trip.',
+                <button type="button" className="btn-ghost btn-sm" onClick={goTo(onOpenBackupManager)}>
+                  Open Vault →
+                </button>
+              )}
 
-              <div
-                style={{
-                  padding: '14px',
-                  background: 'var(--paper)',
-                  border: '1px solid var(--paper-edge)',
-                  borderRadius: '6px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '12px'
-                }}
-              >
-                <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span>💾</span>
-                    <span>Trip Planner Backup &amp; Recovery Vault</span>
-                  </div>
-                  <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '2px' }}>
-                    Inspect manual checkpoints, auto-saved snapshots, and selectively restore single trips.
-                  </div>
-                </div>
-                {onOpenBackupManager && (
+              {sectionLabel('GitHub sync')}
+              {actionRow(
+                '🐙',
+                'GitHub repository',
+                <>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontWeight: 600, color: gitReady ? 'var(--green)' : 'var(--ink-soft)' }}>
+                    <span style={{ width: 7, height: 7, borderRadius: '50%', background: gitReady ? 'var(--green)' : 'var(--slate)' }} />
+                    {gitReady ? 'Connected' : 'Not configured'}
+                  </span>
+                  <br />
+                  {gitReady
+                    ? 'Push sends your ledger to the repo. Pull replaces local trips with the repo copy.'
+                    : 'Add a personal access token, repository and branch to enable push and pull.'}
+                </>,
+                <>
                   <button
                     type="button"
                     className="btn-ghost btn-sm"
-                    onClick={() => {
-                      onClose();
-                      onOpenBackupManager();
-                    }}
+                    disabled={!gitReady}
+                    onClick={() => onGithubPush?.()}
+                    title="Send your ledger to GitHub"
                   >
-                    Open Vault →
+                    ⬆ Push
                   </button>
-                )}
-              </div>
-
-              <div
-                style={{
-                  padding: '14px',
-                  background: 'var(--paper)',
-                  border: '1px solid var(--paper-edge)',
-                  borderRadius: '6px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '12px'
-                }}
-              >
-                <div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span>🐙</span>
-                    <span>GitHub Remote Repository Sync</span>
-                  </div>
-                  <div style={{ fontSize: '11.5px', color: 'var(--ink-soft)', marginTop: '2px' }}>
-                    Configure personal access token, target repo, and branch for push/pull data synchronization.
-                  </div>
-                </div>
-                {onOpenGithubSync && (
                   <button
                     type="button"
                     className="btn-ghost btn-sm"
-                    onClick={() => {
-                      onClose();
-                      onOpenGithubSync();
-                    }}
+                    disabled={!gitReady}
+                    onClick={() => onGithubPull?.()}
+                    title="Fetch the ledger from GitHub"
                   >
-                    Configure Git →
+                    ⬇ Pull
                   </button>
-                )}
-              </div>
+                  <button type="button" className="btn-ghost btn-sm" onClick={goTo(onOpenGithubSync)}>
+                    {gitReady ? 'Settings →' : 'Set up →'}
+                  </button>
+                </>
+              )}
+
+              {sectionLabel('History & recovery')}
+              {actionRow(
+                '🗑️',
+                'Trash',
+                'Restore trips and expenses you have deleted.',
+                <button type="button" className="btn-ghost btn-sm" onClick={goTo(onOpenTrash)}>
+                  Open Trash →
+                </button>
+              )}
+              {actionRow(
+                '📜',
+                'Activity log',
+                'See what changed and when, across all trips.',
+                <button type="button" className="btn-ghost btn-sm" onClick={goTo(onOpenActivityLog)}>
+                  View log →
+                </button>
+              )}
             </div>
           )}
         </div>

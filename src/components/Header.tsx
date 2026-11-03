@@ -8,9 +8,6 @@ import {
   Coins,
   Undo2,
   Redo2,
-  GitBranch,
-  ArrowUp,
-  ArrowDown,
   ChevronDown
 } from 'lucide-react';
 import { CloudSyncStatus } from '../context/FirebaseContext';
@@ -23,9 +20,6 @@ interface HeaderProps {
   onRedo: () => void;
   saveFlagVisible: boolean;
   syncStatus: { kind: string; text: string } | null;
-  githubConfigured: boolean;
-  onGithubPush: () => void;
-  onGithubPull: () => void;
   onOpenChangelog: () => void;
   onHomeClick: () => void;
   onOpenCurrencyConverter?: () => void;
@@ -43,9 +37,6 @@ export const Header: React.FC<HeaderProps> = ({
   onRedo,
   saveFlagVisible,
   syncStatus,
-  githubConfigured,
-  onGithubPush,
-  onGithubPull,
   onOpenChangelog,
   onHomeClick,
   onOpenCurrencyConverter,
@@ -160,22 +151,6 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
-          {/* Git */}
-          {githubConfigured && (
-            <div className="hdr-seg" role="group" aria-label="GitHub sync">
-              <span className="hdr-seg-label">
-                <GitBranch size={12} />
-                <span className="hdr-opt">Git</span>
-              </span>
-              <button type="button" onClick={onGithubPush} title="Push local ledger to GitHub">
-                <ArrowUp size={13} className="ico-green" /> Push
-              </button>
-              <button type="button" onClick={onGithubPull} title="Pull remote ledger from GitHub">
-                <ArrowDown size={13} className="ico-blue" /> Pull
-              </button>
-            </div>
-          )}
-
           {/* Undo / Redo */}
           <div className="hdr-seg" role="group" aria-label="History">
             <button type="button" disabled={!canUndo} onClick={onUndo} title="Undo (Ctrl+Z)" aria-label="Undo">
@@ -193,16 +168,17 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
+          <button type="button" className="hdr-btn version" onClick={onOpenChangelog} title="Version history & release notes">
+            v{APP_VERSION}
+          </button>
+
           {onOpenSettings && (
-            <button type="button" className="hdr-btn" onClick={onOpenSettings} title="Badges, maps, currencies & integrations">
+            <button type="button" className="hdr-btn settings" onClick={onOpenSettings} title="Settings: preferences, backups, GitHub sync, trash & activity log">
               <SettingsIcon size={14} className="ico-blue" />
               <span>Settings</span>
             </button>
           )}
 
-          <button type="button" className="hdr-btn version" onClick={onOpenChangelog} title="Version history & release notes">
-            v{APP_VERSION}
-          </button>
         </div>
 
         {/* Status strip */}
