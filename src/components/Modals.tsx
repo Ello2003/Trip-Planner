@@ -17,7 +17,7 @@ import {
   TRIP_TAB_LABELS,
   SUPPORTED_CURRENCIES
 } from '../types';
-import { uid, singleLine, guessCountryFromName, fmt, addWebsiteLink } from '../utils/helpers';
+import { uid, singleLine, guessCountryFromName, fmt, addWebsiteLink, NameChange } from '../utils/helpers';
 import { resolveExpenseCategory } from '../utils/storage';
 import {
   githubUserError,
@@ -1597,23 +1597,43 @@ export const CategoriesModal: React.FC<{
   categories: Category[];
   trips: Trip[];
   onClose: () => void;
-  onUpdateCategories: (categories: Category[]) => void;
+  onUpdateCategories: (categories: Category[], changes?: NameChange[]) => void;
   onShowToast: (msg: string) => void;
 }> = ({ categories, trips, onClose, onUpdateCategories, onShowToast }) => {
   const [catList, setCatList] = useState<Category[]>(categories);
 
+  // The parent always receives trimmed, non-blank names. `categories` (props) is the last committed list.
+  const committed = (list: Category[]): Category[] =>
+    list.map((c, i) => ({ ...c, name: c.name.trim() || categories[i]?.name || 'New Category' }));
+
   const handleColorChange = (idx: number, color: string) => {
-    const updated = [...catList];
-    updated[idx].color = color;
+    const updated = catList.map((c, i) => (i === idx ? { ...c, color } : c));
     setCatList(updated);
-    onUpdateCategories(updated);
+    onUpdateCategories(committed(updated));
   };
 
+  // Typing: keep raw text locally, commit the trimmed name, and carry expenses across to the new name.
   const handleNameChange = (idx: number, newName: string) => {
-    const updated = [...catList];
-    updated[idx].name = singleLine(newName) || updated[idx].name;
-    setCatList(updated);
-    onUpdateCategories(updated);
+    const raw = newName.replace(/[\r\n]+/g, ' ');
+    const trimmed = raw.trim();
+    const local = catList.map((c, i) => (i === idx ? { ...c, name: raw } : c));
+    if (!trimmed) {
+      setCatList(local); // blank while retyping: don't touch the real data
+      return;
+    }
+    if (catList.some((c, j) => j !== idx && c.name.trim() === trimmed)) {
+      onShowToast('A category with that name already exists');
+      return;
+    }
+    setCatList(local);
+    const from = categories[idx]?.name;
+    onUpdateCategories(committed(local), from && from !== trimmed ? [{ from, to: trimmed }] : []);
+  };
+
+  const handleNameBlur = (idx: number) => {
+    const finalName = catList[idx].name.trim() || categories[idx]?.name || 'New Category';
+    if (finalName === catList[idx].name) return;
+    setCatList(catList.map((c, i) => (i === idx ? { ...c, name: finalName } : c)));
   };
 
   const handleDelete = (idx: number) => {
@@ -1629,7 +1649,7 @@ export const CategoriesModal: React.FC<{
 
     const updated = catList.filter((_, i) => i !== idx);
     setCatList(updated);
-    onUpdateCategories(updated);
+    onUpdateCategories(committed(updated), [{ from: (categories[idx]?.name ?? cat.name), to: 'Other' }]);
     onShowToast(`Deleted "${cat.name}"`);
   };
 
@@ -1656,6 +1676,7 @@ export const CategoriesModal: React.FC<{
               type="text"
               value={c.name}
               onChange={e => handleNameChange(i, e.target.value)}
+              onBlur={() => handleNameBlur(i)}
               disabled={c.name === 'Other'}
             />
             {c.name !== 'Other' ? (
@@ -1690,7 +1711,7 @@ export const ManageSheetsModal: React.FC<{
   trip?: Trip | null;
   sheets: Sheet[];
   onClose: () => void;
-  onUpdateSheets: (sheets: Sheet[]) => void;
+  onUpdateSheets: (sheets: Sheet[], changes?: NameChange[]) => void;
   onUpdateTripHiddenSheets?: (hidden: string[]) => void;
   onShowToast: (msg: string) => void;
 }> = ({
@@ -1713,24 +1734,39 @@ export const ManageSheetsModal: React.FC<{
     onUpdateSheets(updated);
   };
 
+  // The parent always receives trimmed, non-blank names. `sheets` (props) is the last committed list.
+  const committed = (list: Sheet[]): Sheet[] =>
+    list.map((s, i) => ({ ...s, key: s.key.trim() || sheets[i]?.key || 'New Category' }));
+
   const handleColorChange = (idx: number, color: string) => {
-    const updated = [...sheetList];
-    updated[idx].color = color;
+    const updated = sheetList.map((s, i) => (i === idx ? { ...s, color } : s));
     setSheetList(updated);
-    onUpdateSheets(updated);
+    onUpdateSheets(committed(updated));
   };
 
+  // Typing: keep the raw text locally (so spaces and empty fields work), commit the trimmed name,
+  // and carry every plan/research item across from the old name to the new one.
   const handleNameChange = (idx: number, newKey: string) => {
-    const oldKey = sheetList[idx].key;
-    const clean = singleLine(newKey) || oldKey;
-    if (clean !== oldKey && sheetList.some((s, j) => j !== idx && s.key === clean)) {
+    const raw = newKey.replace(/[\r\n]+/g, ' ');
+    const trimmed = raw.trim();
+    const local = sheetList.map((s, i) => (i === idx ? { ...s, key: raw } : s));
+    if (!trimmed) {
+      setSheetList(local); // blank while retyping: don't touch the real data
+      return;
+    }
+    if (sheetList.some((s, j) => j !== idx && s.key.trim() === trimmed)) {
       onShowToast('A category with that name already exists');
       return;
     }
-    const updated = [...sheetList];
-    updated[idx].key = clean;
-    setSheetList(updated);
-    onUpdateSheets(updated);
+    setSheetList(local);
+    const from = sheets[idx]?.key;
+    onUpdateSheets(committed(local), from && from !== trimmed ? [{ from, to: trimmed }] : []);
+  };
+
+  const handleNameBlur = (idx: number) => {
+    const finalKey = sheetList[idx].key.trim() || sheets[idx]?.key || 'New Category';
+    if (finalKey === sheetList[idx].key) return;
+    setSheetList(sheetList.map((s, i) => (i === idx ? { ...s, key: finalKey } : s)));
   };
 
   const handleToggleTripVisibility = (key: string, checked: boolean) => {
@@ -1778,7 +1814,7 @@ export const ManageSheetsModal: React.FC<{
 
       <div style={{ marginBottom: '16px' }}>
         {sheetList.map((s, i) => (
-          <div className="cat-row" key={s.key + i}>
+          <div className="cat-row" key={i}>
             <div className="reorder-btns">
               <button
                 type="button"
@@ -1809,6 +1845,7 @@ export const ManageSheetsModal: React.FC<{
               type="text"
               value={s.key}
               onChange={e => handleNameChange(i, e.target.value)}
+              onBlur={() => handleNameBlur(i)}
             />
             {trip && (
               <label
