@@ -1844,3 +1844,102 @@ body {
   #travel-ledger-root .hdr-opt { display: none; }
   #travel-ledger-root .hdr-menu { right: auto; left: 0; }
 }
+
+/* ===== Inline editing (section headers) ===== */
+#travel-ledger-root .inline-edit-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+#travel-ledger-root .inline-edit-text {
+  cursor: text;
+  border-bottom: 1px dashed transparent;
+}
+
+#travel-ledger-root .inline-edit-wrap:hover .inline-edit-text {
+  border-bottom-color: var(--brass);
+}
+
+#travel-ledger-root .inline-edit-btn {
+  border: none;
+  background: transparent;
+  padding: 2px 4px;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--ink-soft);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+#travel-ledger-root .sheet-header:hover .inline-edit-btn,
+#travel-ledger-root .inline-edit-btn:focus-visible {
+  opacity: 1;
+}
+
+#travel-ledger-root .inline-edit-btn:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+@media (hover: none) {
+  #travel-ledger-root .inline-edit-btn { opacity: 0.7; }
+}
+
+#travel-ledger-root .inline-edit-input {
+  width: 200px;
+  max-width: 100%;
+  padding: 3px 8px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(184, 135, 79, 0.18);
+}
+
+#travel-ledger-root .inline-edit-input.has-error {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(166, 58, 46, 0.15);
+}
+
+#travel-ledger-root .inline-edit-error {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+#travel-ledger-root .inline-color {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#travel-ledger-root .inline-color .sheet-dot {
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+#travel-ledger-root .inline-color:hover .sheet-dot {
+  transform: scale(1.35);
+  box-shadow: 0 0 0 2px var(--paper-raised), 0 0 0 3px var(--brass);
+}
+
+#travel-ledger-root .inline-color input[type='color'] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+}

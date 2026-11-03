@@ -1,3 +1,4 @@
+import { InlineText, InlineColor } from './InlineEdit';
 import React from 'react';
 import { Trip, Sheet, Category, PlanItem } from '../types';
 import {
@@ -11,6 +12,8 @@ import {
 import { ensureActualExpense, resolveExpenseCategory } from '../utils/storage';
 
 interface VisitedTabProps {
+  onRenameSheet?: (from: string, to: string) => string | null;
+  onRecolorSheet?: (key: string, color: string) => void;
   trip: Trip;
   sheets: Sheet[];
   categories: Category[];
@@ -18,6 +21,8 @@ interface VisitedTabProps {
 }
 
 export const VisitedTab: React.FC<VisitedTabProps> = ({
+  onRenameSheet,
+  onRecolorSheet,
   trip,
   sheets,
   categories,
@@ -97,8 +102,16 @@ export const VisitedTab: React.FC<VisitedTabProps> = ({
             <div className="sheet-section" key={s.key}>
               <div className="sheet-header">
                 <div>
-                  <span className="sheet-dot" style={{ background: s.color }} />
-                  {s.key}{' '}
+                  {onRecolorSheet ? (
+                    <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
+                  ) : (
+                    <span className="sheet-dot" style={{ background: s.color }} />
+                  )}
+                  {onRenameSheet ? (
+                    <InlineText value={s.key} onCommit={n => onRenameSheet!(s.key, n)} />
+                  ) : (
+                    s.key
+                  )}{' '}
                   <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
                     ({items.length})
                   </span>

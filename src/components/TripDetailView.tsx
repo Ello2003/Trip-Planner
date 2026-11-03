@@ -22,6 +22,8 @@ interface TripDetailViewProps {
   trip: Trip;
   categories: Category[];
   sheets: Sheet[];
+  onRenameSheet?: (from: string, to: string) => string | null;
+  onRecolorSheet?: (key: string, color: string) => void;
   settings: Settings;
   activeTripTab: string;
   setActiveTripTab: (tab: string) => void;
@@ -51,6 +53,8 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
   trip,
   categories,
   sheets,
+  onRenameSheet,
+  onRecolorSheet,
   settings,
   activeTripTab,
   setActiveTripTab,
@@ -479,6 +483,8 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
               trip={trip}
               sheets={sheets}
               categories={categories}
+              onRenameSheet={onRenameSheet}
+              onRecolorSheet={onRecolorSheet}
               onUpdateTrip={onUpdateTrip}
               onOpenAddPlanModal={onOpenAddPlanModal}
               onOpenEditPlanModal={onOpenEditPlanModal}
@@ -506,6 +512,8 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           sheets={sheets}
           categories={categories}
           settings={settings}
+          onRenameSheet={onRenameSheet}
+          onRecolorSheet={onRecolorSheet}
           onUpdateTrip={onUpdateTrip}
           onOpenAddResearchModal={onOpenAddResearchModal}
           onOpenEditResearchModal={onOpenEditResearchModal}
@@ -520,6 +528,8 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           trip={trip}
           sheets={sheets}
           categories={categories}
+          onRenameSheet={onRenameSheet}
+          onRecolorSheet={onRecolorSheet}
           onUpdateTrip={onUpdateTrip}
         />
       )}

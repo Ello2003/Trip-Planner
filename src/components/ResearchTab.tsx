@@ -1,9 +1,12 @@
+import { InlineText, InlineColor, rekey } from './InlineEdit';
 import React, { useState } from 'react';
 import { Trip, Sheet, ResearchItem, Settings, Category } from '../types';
 import { fmt, extractMapEmbedUrl } from '../utils/helpers';
 import { ResearchMap } from './ResearchMap';
 
 interface ResearchTabProps {
+  onRenameSheet?: (from: string, to: string) => string | null;
+  onRecolorSheet?: (key: string, color: string) => void;
   trip: Trip;
   sheets: Sheet[];
   categories?: Category[];
@@ -20,6 +23,8 @@ const PRICE_LABELS: Record<number, string> = { 1: '£', 2: '££', 3: '£££', 
 const PRIORITY_LABELS: Record<number, string> = { 1: '★', 2: '★★', 3: '★★★', 4: '★★★★', 5: '★★★★★' };
 
 export const ResearchTab: React.FC<ResearchTabProps> = ({
+  onRenameSheet,
+  onRecolorSheet,
   trip,
   sheets,
   categories,
@@ -39,6 +44,18 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
 
   const toggleSheet = (key: string) => {
     setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  // Rename a section in place; keep all of its per-section UI state under the new name
+  const handleRenameSheet = (from: string, to: string): string | null => {
+    const err = onRenameSheet ? onRenameSheet(from, to) : null;
+    if (!err) {
+      setCollapsedSheets(prev => rekey(prev, from, to));
+      setExpandedSectionMaps(prev => rekey(prev, from, to));
+      setSectionMapEditMode(prev => rekey(prev, from, to));
+      setSectionMapInputs(prev => rekey(prev, from, to));
+    }
+    return err;
   };
 
   const toggleSectionMap = (key: string) => {
@@ -165,8 +182,16 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                       onClick={() => toggleSheet(s.key)}
                     >
                       <span>{isCollapsed ? '▸' : '▾'}</span>
-                      <span className="sheet-dot" style={{ background: s.color }} />
-                      {s.key}{' '}
+                      {onRecolorSheet ? (
+                        <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
+                      ) : (
+                        <span className="sheet-dot" style={{ background: s.color }} />
+                      )}
+                      {onRenameSheet ? (
+                        <InlineText value={s.key} onCommit={n => handleRenameSheet(s.key, n)} />
+                      ) : (
+                        s.key
+                      )}{' '}
                       <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
                         ({items.length})
                       </span>
