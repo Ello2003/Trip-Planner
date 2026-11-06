@@ -1,5 +1,5 @@
 import { AppState, Category, Sheet, Settings, Trip, PlanItem, ManualEstimate, Expense, HistoryEntry, SHEET_TO_CAT } from '../types';
-import { uid, guessCountryFromName, daysBetweenDateKeys, addDaysToDateKey } from './helpers';
+import { uid, guessCountryFromName, daysBetweenDateKeys, addDaysToDateKey, emptyTripNotes } from './helpers';
 
 export const STORAGE_KEY = 'trips-data';
 export const HISTORY_KEY = 'trips-data-history';
@@ -45,7 +45,7 @@ export function defaultSettings(): Settings {
     githubBranch: 'main',
     githubSha: null,
     githubLastSyncAt: null,
-    tripTabOrder: ['budget', 'charts', 'plan', 'research', 'posttrip', 'packing', 'attire', 'hauls'],
+    tripTabOrder: ['budget', 'charts', 'plan', 'research', 'notes', 'posttrip', 'packing', 'attire', 'hauls'],
     disabledTabs: ['attire', 'hauls'],
     showHaulBadges: false,
     showAttireBadges: false,
@@ -231,6 +231,24 @@ export function migrateState(state: any): AppState {
     if (!Array.isArray(t.outfits)) t.outfits = [];
     if (!Array.isArray(t.hauls)) t.hauls = [];
     if (!Array.isArray(t.loungeVisits)) t.loungeVisits = [];
+
+    // Trip Notes & Web Clips (migrates the legacy single-line note once)
+    if (!t.tripNotes || typeof t.tripNotes !== 'object') t.tripNotes = emptyTripNotes();
+    const tn = t.tripNotes;
+    if (!Array.isArray(tn.entries)) tn.entries = [];
+    if (!Array.isArray(tn.clips)) tn.clips = [];
+    if (!Array.isArray(tn.pins)) tn.pins = [];
+    if (!tn.practical || typeof tn.practical !== 'object') tn.practical = emptyTripNotes().practical;
+    if (!Array.isArray(tn.practical.apps)) tn.practical.apps = [];
+    if (typeof tn.practical.currency !== 'string') tn.practical.currency = '';
+    if (typeof tn.practical.emergency !== 'string') tn.practical.emergency = '';
+    if (!['', 'low', 'medium', 'high'].includes(tn.practical.safety)) tn.practical.safety = '';
+    if (!tn.legacyMigrated) {
+      if (typeof t.notes === 'string' && t.notes.trim() && tn.entries.length === 0) {
+        tn.entries.push({ id: uid('note'), text: t.notes.trim(), kind: 'note', createdAt: t.createdAt || Date.now() });
+      }
+      tn.legacyMigrated = true;
+    }
 
     // Seed default sample attire and haul records for London 2026 trip if not present
     if (t.name.toLowerCase().includes('london') && t.year === 2026) {

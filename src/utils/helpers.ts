@@ -1,4 +1,4 @@
-import { COUNTRIES, CITY_TO_COUNTRY, CUR, SHEET_TO_CAT, Trip, Expense, PlanItem, Category, AppState } from '../types';
+import { COUNTRIES, CITY_TO_COUNTRY, CUR, SHEET_TO_CAT, Trip, Expense, PlanItem, Category, AppState, TripNotesData } from '../types';
 
 let uidCounter = 0;
 export function uid(prefix: string): string {
@@ -308,4 +308,84 @@ export function renameExpenseCategoriesInState(state: AppState, changes: NameCha
         }
       : state.trash
   };
+}
+
+// ---- Trip notes ------------------------------------------------------------
+export function emptyTripNotes(): TripNotesData {
+  return {
+    entries: [],
+    clips: [],
+    pins: [],
+    practical: { currency: '', safety: '', emergency: '', apps: [] }
+  };
+}
+
+const KNOWN_SITES: Record<string, string> = {
+  'lonelyplanet.com': 'Lonely Planet',
+  'tripadvisor.com': 'Tripadvisor',
+  'tripadvisor.co.uk': 'Tripadvisor',
+  'google.com': 'Google',
+  'goo.gl': 'Google Maps',
+  'maps.app.goo.gl': 'Google Maps',
+  'youtube.com': 'YouTube',
+  'youtu.be': 'YouTube',
+  'reddit.com': 'Reddit',
+  'wikipedia.org': 'Wikipedia',
+  'wikivoyage.org': 'Wikivoyage',
+  'booking.com': 'Booking.com',
+  'airbnb.com': 'Airbnb',
+  'airbnb.co.uk': 'Airbnb',
+  'ricksteves.com': 'Rick Steves',
+  'theguardian.com': 'The Guardian',
+  'timeout.com': 'Time Out',
+  'cntraveller.com': 'Condé Nast Traveller',
+  'instagram.com': 'Instagram',
+  'tiktok.com': 'TikTok',
+  'alltrails.com': 'AllTrails',
+  'komoot.com': 'Komoot',
+  'skyscanner.net': 'Skyscanner',
+  'rome2rio.com': 'Rome2Rio',
+  'thetrainline.com': 'Trainline',
+  'visitscotland.com': 'VisitScotland',
+  'visitbritain.com': 'VisitBritain',
+  'gov.uk': 'GOV.UK'
+};
+
+// Turn "https://www.lonelyplanet.com/x" into "Lonely Planet" (known sites) or "Example" (fallback)
+export function siteNameFromUrl(url: string): string {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./i, '').toLowerCase();
+    const known = Object.keys(KNOWN_SITES).find(k => host === k || host.endsWith('.' + k));
+    if (known) return KNOWN_SITES[known];
+    const parts = host.split('.');
+    // drop the TLD, and a second-level one too (co.uk, com.au, org.uk ...)
+    const drop = parts.length >= 3 && ['co', 'com', 'org', 'net', 'gov', 'ac'].includes(parts[parts.length - 2]) ? 2 : 1;
+    const base = (parts.slice(0, Math.max(1, parts.length - drop)).join('.') || host).replace(/[-_]+/g, ' ');
+    return base.charAt(0).toUpperCase() + base.slice(1);
+  } catch {
+    return '';
+  }
+}
+
+// Accepts "https://x.com", "x.com/path"; returns a valid absolute URL or null
+export function normalizeWebUrl(input: string): string | null {
+  const raw = (input || '').trim();
+  if (!raw || /\s/.test(raw)) return null;
+  const withScheme = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+  try {
+    const u = new URL(withScheme);
+    return u.hostname.includes('.') ? u.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+// "51.5007, -0.1246" -> { lat, lng } (validated), otherwise null
+export function parseCoords(input: string): { lat: number; lng: number } | null {
+  const m = (input || '').trim().match(/^(-?\d{1,3}(?:\.\d+)?)\s*[,;\s]\s*(-?\d{1,3}(?:\.\d+)?)$/);
+  if (!m) return null;
+  const lat = parseFloat(m[1]);
+  const lng = parseFloat(m[2]);
+  if (lat < -90 || lat > 90 || lng < -180 || lng > 180) return null;
+  return { lat, lng };
 }

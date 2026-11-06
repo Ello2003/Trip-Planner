@@ -199,6 +199,49 @@ export interface PackingItem {
   brandOrNote?: string;
 }
 
+// ---- Trip Notes & Web Clips ----
+export interface NoteEntry {
+  id: string;
+  text: string;
+  kind: 'note' | 'voice';
+  createdAt: number;
+}
+
+export interface WebClip {
+  id: string;
+  site: string;
+  title: string;
+  url: string;
+  why: string;
+  createdAt: number;
+}
+
+export interface GeoPin {
+  id: string;
+  label: string;
+  coords: string; // "lat, lng" or ''
+  url: string; // Google Maps link or ''
+  note: string;
+  createdAt: number;
+}
+
+export type SafetyLevel = '' | 'low' | 'medium' | 'high';
+
+export interface TripPractical {
+  currency: string;
+  safety: SafetyLevel;
+  emergency: string;
+  apps: string[];
+}
+
+export interface TripNotesData {
+  entries: NoteEntry[];
+  clips: WebClip[];
+  pins: GeoPin[];
+  practical: TripPractical;
+  legacyMigrated?: boolean;
+}
+
 export interface Trip {
   id: string;
   name: string;
@@ -210,6 +253,7 @@ export interface Trip {
   endDate: string | null;
   travelers: number;
   notes: string;
+  tripNotes?: TripNotesData;
   expenses: Expense[];
   planItems: PlanItem[];
   timelineMode: 'dates' | 'days';
@@ -326,7 +370,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.21.0';
+export const APP_VERSION = '1.22.0';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -383,10 +427,12 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
   hauls: 'Lounges & Hauls',
   research: 'Research',
   posttrip: 'Visited',
-  packing: 'Packing'
+  packing: 'Packing',
+  notes: 'Notes'
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.22.0': 'Added a Notes tab to every trip with four sections: My Raw Context and Audio Logs for first-person journal notes with optional voice dictation, Web Clips and References saved as Site - Title links with a one-line reason and copy-as-Markdown, Saved Geo-Pins for coordinates or Google Maps links with one-tap Open in Maps and a use-my-location button, and a Practical Dashboard for currency, safety level, emergency number and essential apps. Added automatic migration of any existing single-line trip note into the new journal, and notes are included in trip duplicates, backups, cloud sync and GitHub sync. Improved the Reorder Tabs list so the new Notes tab can be moved or hidden like any other tab.',
   '1.21.0': 'Added a Data & Sync tab to Settings that groups Export, Import, the Backup & Recovery Vault, GitHub Push, Pull and set-up, Trash and the Activity Log into clearly labelled sections. Improved the header by moving Settings to the top-right corner beside the single version button, and moved GitHub Push and Pull out of the header into Settings with a clear connected or not-configured status. Removed the footer, as every link it held now lives in the header or in Settings, so Version History and Settings each appear only once.',
   '1.20.0': 'Added inline editing of section headers on the Plan, Research and Visited tabs: click the pencil or double-click a name to rename it, or click the colour dot to recolour it, with Enter to save, Esc to cancel and duplicate-name protection. Added automatic carry-over when a category or section is renamed, so plan and research items, per-trip map links, hidden sections, budget categories, manual estimates and trashed trips all follow the new name. Added a safeguard so a renamed section keeps its default budget category instead of dropping to Other. Fixed deleting an expense category so its expenses are moved to Other, as the confirmation promised. Fixed category name fields losing focus after every keystroke and swallowing spaces, and allowed the field to be cleared while retyping. Fixed the Version History and Backup & Recovery dialogs, which were unstyled because they relied on Tailwind classes, and rebuilt them to match the Settings dialog. Improved the header toolbar with a single consistent button row, grouped Undo/Redo and Git controls, an account menu that closes on outside click and a responsive status line. Improved the Official Website auto-fill from address lookup so it always adds a new link, never replaces existing ones and skips near-duplicate URLs.',
   '1.19.0': 'Renamed application to Trip Planner across all views and document headers. Completely overhauled and reorganized the top-right header control deck with streamlined profile authentication dropdown, live Cloud Protected status badge, compact GitHub push/pull segmented pills, split undo/redo controls, and dedicated triggers for Currency Converter and Settings. Redesigned Version History (Annals & Changelog) with category badges and instant keyword search, redesigned Backup & Recovery Vault with visual snapshots, modernized the Activity Log modal with filter tabs, and upgraded the Settings Hub into a luxury tabbed control center with custom toggle cards and live badge previews.',

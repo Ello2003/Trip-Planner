@@ -12,6 +12,7 @@ import { TripChartsTab } from './TripChartsTab';
 import { PlanTab } from './PlanTab';
 import { ResearchTab } from './ResearchTab';
 import { VisitedTab } from './VisitedTab';
+import { NotesTab } from './NotesTab';
 import { PackingTab } from './PackingTab';
 import { AttireTab } from './AttireTab';
 import { HaulsTab } from './HaulsTab';
@@ -169,6 +170,12 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
     if (key === 'research') {
       label = 'Research';
       if (trip.research.length) count = ` (${trip.research.length})`;
+    }
+    if (key === 'notes') {
+      label = 'Notes';
+      const tn = trip.tripNotes;
+      const n = tn ? tn.entries.length + tn.clips.length + tn.pins.length : 0;
+      if (n) count = ` (${n})`;
     }
     if (key === 'posttrip') {
       label = 'Visited';
@@ -521,6 +528,10 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           onManageSheets={onManageSheets}
           onOpenMapSettings={onOpenMapSettings}
         />
+      )}
+
+      {activeTripTab === 'notes' && (
+        <NotesTab key={trip.id} trip={trip} onUpdateTrip={onUpdateTrip} onShowToast={onShowToast} />
       )}
 
       {activeTripTab === 'posttrip' && (
