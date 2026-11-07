@@ -1,0 +1,55 @@
+name: Wire MobileShellNav
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/wire-mobile-shell.yml'
+jobs:
+  wire:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch App.tsx
+        run: |
+          python3 << 'PY'
+          from pathlib import Path
+          p = Path('src/App.tsx')
+          text = p.read_text()
+          if 'MobileShellNav' in text:
+              print('Already wired')
+          else:
+              text = text.replace(
+                  "import { Header } from './components/Header';",
+                  "import { Header } from './components/Header';\nimport { MobileShellNav } from './components/MobileShellNav';",
+                  1
+              )
+              anchor = "        <div style={{ height: 36 }} />"
+              nav_jsx = """
+        {!currentTrip && (
+          <MobileShellNav
+            active={activeDashTab === 'charts' ? 'charts' : 'trips'}
+            onTrips={() => { setActiveTripId(null); setActiveDashTab('trips'); }}
+            onCharts={() => { setActiveTripId(null); setActiveDashTab('charts'); }}
+            onNewTrip={() => setModalType('newTrip')}
+            onSettings={() => setModalType('settings')}
+          />
+        )}
+
+        <div style={{ height: 36 }} />"""
+              if anchor not in text:
+                  raise SystemExit('anchor missing')
+              text = text.replace(anchor, nav_jsx, 1)
+              p.write_text(text)
+              print('Patched App.tsx')
+          PY
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/App.tsx
+          if git diff --cached --quiet; then
+            echo "No App.tsx changes"
+          else
+            git commit -m "Wire MobileShellNav into App for dashboard bottom nav"
+            git push
+          fi
