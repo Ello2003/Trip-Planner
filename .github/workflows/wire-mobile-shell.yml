@@ -2,7 +2,9 @@ name: Wire MobileShellNav
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    paths:
+      - '.github/workflows/wire-mobile-shell.yml'
+      - 'src/components/MobileShellNav.tsx'
 jobs:
   wire:
     runs-on: ubuntu-latest
@@ -10,47 +12,51 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Patch App.tsx if needed
+      - name: Patch DashboardView.tsx
         run: |
           python3 << 'PY'
           from pathlib import Path
-          p = Path('src/App.tsx')
+          p = Path('src/components/DashboardView.tsx')
           text = p.read_text()
           if 'MobileShellNav' in text:
-              print('Already wired')
+              print('Already wired in DashboardView')
               raise SystemExit(0)
-          if "import { Header } from './components/Header';" not in text:
-              raise SystemExit('Header import not found')
           text = text.replace(
-              "import { Header } from './components/Header';",
-              "import { Header } from './components/Header';\nimport { MobileShellNav } from './components/MobileShellNav';",
+              "import { DashboardCharts } from './DashboardCharts';",
+              "import { DashboardCharts } from './DashboardCharts';\nimport { MobileShellNav } from './MobileShellNav';",
               1,
           )
-          anchor = '        <div style={{ height: 36 }} />'
-          if anchor not in text:
-              raise SystemExit('spacer anchor not found')
-          nav = '''
-        {!currentTrip && (
-          <MobileShellNav
-            active={activeDashTab === 'charts' ? 'charts' : 'trips'}
-            onTrips={() => { setActiveTripId(null); setActiveDashTab('trips'); }}
-            onCharts={() => { setActiveTripId(null); setActiveDashTab('charts'); }}
-            onNewTrip={() => setModalType('newTrip')}
-            onSettings={() => setModalType('settings')}
-          />
-        )}
+          old = """      ) : (
+        <DashboardCharts trips={trips} categories={categories} />
+      )}
+    </main>
+  );
+};"""
+          new = """      ) : (
+        <DashboardCharts trips={trips} categories={categories} />
+      )}
 
-        <div style={{ height: 36 }} />'''
-          text = text.replace(anchor, nav, 1)
-          p.write_text(text)
-          print('Patched App.tsx successfully')
+      <MobileShellNav
+        active={activeDashTab === 'charts' ? 'charts' : 'trips'}
+        onTrips={() => setActiveDashTab('trips')}
+        onCharts={() => setActiveDashTab('charts')}
+        onNewTrip={onNewTrip}
+        onSettings={() => onOpenSettings && onOpenSettings()}
+      />
+    </main>
+  );
+};"""
+          if old not in text:
+              raise SystemExit('DashboardView anchor not found')
+          p.write_text(text.replace(old, new, 1))
+          print('Patched DashboardView')
           PY
           git config user.name "Ello2003"
           git config user.email "graeme.crazydiamond@gmail.com"
-          git add src/App.tsx
+          git add src/components/DashboardView.tsx
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
           else
-            git commit -m "Wire MobileShellNav into App for dashboard bottom nav"
+            git commit -m "Wire MobileShellNav into DashboardView (app bottom nav)"
             git push
           fi
