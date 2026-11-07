@@ -1,0 +1,28 @@
+name: Restore index.css
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/restore-css.yml'
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore index.css from known-good commit
+        run: |
+          git checkout 836fd394454b658013a6db3085505bae516fe050 -- src/index.css
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/index.css
+          git status
+          if git diff --cached --quiet; then
+            echo "No changes - already restored"
+          else
+            git commit -m "Restore src/index.css from good commit (fix PLACEHOLDER corruption)"
+            git push
+          fi
