@@ -11,6 +11,7 @@ import {
   addDaysToDateKey
 } from '../utils/helpers';
 import { DashboardCharts } from './DashboardCharts';
+import { MobileShellNav } from './MobileShellNav';
 
 interface DashboardViewProps {
   trips: Trip[];
@@ -46,19 +47,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
   const archivedCount = trips.filter(t => t.status === 'archived' || !!t.isArchived).length;
 
-  // Filter & sort
   let filtered = trips.filter(t => {
     const isArchived = t.status === 'archived' || !!t.isArchived;
-
     if (statusFilter === 'archived') {
       if (!isArchived) return false;
     } else if (statusFilter !== 'all') {
       if (t.status !== statusFilter) return false;
     } else {
-      // statusFilter === 'all': hide archived trips unless showArchived toggle is on
       if (!showArchived && isArchived) return false;
     }
-
     if (search && !t.name.toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
@@ -80,7 +77,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       filtered.sort((a, b) => b.year - a.year || (b.updatedAt || 0) - (a.updatedAt || 0));
   }
 
-  // Calculate upcoming plan items for "Up Next" strip (excluding archived)
   const now = new Date();
   const upcomingPlanItems: { trip: Trip; item: any; date: Date }[] = [];
   if (settings.showUpNextStrip !== false) {
@@ -147,7 +143,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 const dateLabel =
                   date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) +
                   (item.time ? ' · ' + item.time : '');
-
                 return (
                   <div
                     className="upnext-row"
@@ -177,18 +172,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 Categories
               </button>
               {onOpenSettings && (
-                <button
-                  type="button"
-                  className="btn-ghost"
-                  onClick={onOpenSettings}
-                  title="Feature Customisation & Global Settings"
-                >
+                <button type="button" className="btn-ghost" onClick={onOpenSettings} title="Feature Customisation & Global Settings">
                   ⚙️ Settings
                 </button>
               )}
             </div>
-
-            {/* Dashboard Header Archive Toggle */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <button
                 type="button"
@@ -206,16 +194,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               >
                 <span>📦 {showArchived ? 'Hide Archived' : 'Show Archived'}</span>
                 {archivedCount > 0 && (
-                  <span
-                    style={{
-                      fontSize: '10px',
-                      fontFamily: 'var(--font-mono)',
-                      padding: '1px 6px',
-                      borderRadius: '10px',
-                      background: showArchived ? 'var(--brass)' : 'var(--paper-edge)',
-                      color: showArchived ? '#fff' : 'inherit'
-                    }}
-                  >
+                  <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', padding: '1px 6px', borderRadius: '10px', background: showArchived ? 'var(--brass)' : 'var(--paper-edge)', color: showArchived ? '#fff' : 'inherit' }}>
                     {archivedCount}
                   </span>
                 )}
@@ -224,12 +203,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           <div className="filter-bar">
-            <input
-              type="text"
-              placeholder="Search trips…"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-            />
+            <input type="text" placeholder="Search trips…" value={search} onChange={e => setSearch(e.target.value)} />
             <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
               <option value="all">All active statuses</option>
               <option value="upcoming">Upcoming</option>
@@ -248,9 +222,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           {filtered.length === 0 ? (
             <div className="empty-state">
-              {trips.length === 0
-                ? 'No trips yet — add your first one above.'
-                : 'No trips match that search/filter.'}
+              {trips.length === 0 ? 'No trips yet — add your first one above.' : 'No trips match that search/filter.'}
             </div>
           ) : (
             <div className="trips-grid">
@@ -262,13 +234,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 const st = getStatusLabel(t);
                 const fillColor = spent > budget ? 'var(--red)' : 'var(--green)';
                 const perPerson = t.travelers > 1 ? spent / t.travelers : null;
-
                 let countdown: string | null = null;
                 if (t.status === 'upcoming' && t.startDate) {
                   const d = daysUntil(t.startDate);
                   countdown = d >= 0 ? `In ${d}d` : `${Math.abs(d)}d ago`;
                 }
-
                 const days = tripDuration(t);
                 let datesLine = '';
                 if (t.startDate) {
@@ -277,23 +247,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 } else if (days) {
                   datesLine = `${days} day${days !== 1 ? 's' : ''}`;
                 }
-
                 const flag = countryFlagForTrip(t);
-                const flagTitle = t.countryGuessed
-                  ? 'Guessed from trip name — click Edit Trip to confirm'
-                  : t.country;
-
+                const flagTitle = t.countryGuessed ? 'Guessed from trip name — click Edit Trip to confirm' : t.country;
                 const isArchived = t.status === 'archived' || !!t.isArchived;
-
                 return (
                   <div
                     className={`pass ${isArchived ? 'pass-archived' : ''}`}
                     key={t.id}
                     onClick={() => onOpenTrip(t.id)}
-                    style={{
-                      opacity: isArchived ? 0.88 : 1,
-                      border: isArchived ? '1px dashed var(--brass)' : undefined
-                    }}
+                    style={{ opacity: isArchived ? 0.88 : 1, border: isArchived ? '1px dashed var(--brass)' : undefined }}
                   >
                     <div className="pass-top">
                       <div className="pass-eyebrow">
@@ -305,99 +267,28 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                           )}
                           {onUpdateTrip && (
                             isArchived ? (
-                              <button
-                                type="button"
-                                className="btn-ghost btn-sm"
-                                style={{ fontSize: '10px', padding: '1px 7px', background: 'var(--paper-raised)' }}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  onUpdateTrip(
-                                    { ...t, status: 'upcoming', isArchived: false, updatedAt: Date.now() },
-                                    { action: 'trip-unarchived', detail: `Restored "${t.name}" from archive` }
-                                  );
-                                }}
-                                title="Unarchive and restore to active dashboard"
-                              >
-                                Restore
-                              </button>
+                              <button type="button" className="btn-ghost btn-sm" style={{ fontSize: '10px', padding: '1px 7px', background: 'var(--paper-raised)' }} onClick={(e) => { e.stopPropagation(); onUpdateTrip({ ...t, status: 'upcoming', isArchived: false, updatedAt: Date.now() }, { action: 'trip-unarchived', detail: `Restored "${t.name}" from archive` }); }} title="Unarchive and restore to active dashboard">Restore</button>
                             ) : (
-                              <button
-                                type="button"
-                                className="btn-ghost btn-sm"
-                                style={{ fontSize: '10px', padding: '1px 6px', opacity: 0.75 }}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  onUpdateTrip(
-                                    { ...t, status: 'archived', isArchived: true, updatedAt: Date.now() },
-                                    { action: 'trip-archived', detail: `Archived trip "${t.name}"` }
-                                  );
-                                }}
-                                title="Archive trip to hide from dashboard"
-                              >
-                                📦 Archive
-                              </button>
+                              <button type="button" className="btn-ghost btn-sm" style={{ fontSize: '10px', padding: '1px 6px', opacity: 0.75 }} onClick={(e) => { e.stopPropagation(); onUpdateTrip({ ...t, status: 'archived', isArchived: true, updatedAt: Date.now() }, { action: 'trip-archived', detail: `Archived trip "${t.name}"` }); }} title="Archive trip to hide from dashboard">📦 Archive</button>
                             )
                           )}
                         </span>
                       </div>
-
                       <div className="pass-name">
-                        {flag && (
-                          <span
-                            className={`pass-flag ${t.countryGuessed ? 'pass-flag-guessed' : ''}`}
-                            title={flagTitle}
-                          >
-                            {flag}{' '}
-                          </span>
-                        )}
+                        {flag && (<span className={`pass-flag ${t.countryGuessed ? 'pass-flag-guessed' : ''}`} title={flagTitle}>{flag}{' '}</span>)}
                         {t.name}
                       </div>
-
                       {datesLine && <div className="pass-dates">{datesLine}</div>}
-
-                      {/* Travel Manifest Badges — Toggled via Settings (Hidden by default for clean boarding pass) */}
-                      {((settings.showLuggageBadges && t.luggageBags && t.luggageBags.length > 0) ||
-                        (settings.showAttireBadges && t.outfits && t.outfits.length > 0) ||
-                        (settings.showHaulBadges && ((t.hauls?.length || 0) + (t.loungeVisits?.length || 0)) > 0)) && (
-                        <div className="flex flex-wrap gap-1.5 mb-2.5">
-                          {settings.showLuggageBadges && t.luggageBags && t.luggageBags.length > 0 && (
-                            <span className="text-[10px] font-mono px-1.5 py-0.5 bg-[#eae4d3] border border-[#d5cbac] rounded text-[#1c2530] font-medium">
-                              💼 {t.luggageBags.length} bag{t.luggageBags.length !== 1 ? 's' : ''}
-                            </span>
-                          )}
-                          {settings.showAttireBadges && t.outfits && t.outfits.length > 0 && (
-                            <span className="text-[10px] font-mono px-1.5 py-0.5 bg-[#eae4d3] border border-[#d5cbac] rounded text-[#1c2530] font-medium">
-                              👔 {t.outfits.length} look{t.outfits.length !== 1 ? 's' : ''}
-                            </span>
-                          )}
-                          {settings.showHaulBadges && ((t.hauls?.length || 0) + (t.loungeVisits?.length || 0)) > 0 && (
-                            <span className="text-[10px] font-mono px-1.5 py-0.5 bg-[#eae4d3] border border-[#d5cbac] rounded text-[#1c2530] font-medium">
-                              ✨ {(t.hauls?.length || 0) + (t.loungeVisits?.length || 0)} hauls/lounges
-                            </span>
-                          )}
-                        </div>
-                      )}
-
                       <div className="pass-figures">
                         <span>Budget {fmt(budget)}</span>
-                        <span className={diff < 0 ? 'diff-neg' : 'diff-pos'}>
-                          {diff < 0 ? '-' : ''}{fmt(Math.abs(diff))}
-                        </span>
+                        <span className={diff < 0 ? 'diff-neg' : 'diff-pos'}>{diff < 0 ? '-' : ''}{fmt(Math.abs(diff))}</span>
                       </div>
-
-                      {perPerson != null && (
-                        <div className="pass-pp">
-                          {fmt(perPerson)} / person ({t.travelers})
-                        </div>
-                      )}
-
+                      {perPerson != null && (<div className="pass-pp">{fmt(perPerson)} / person ({t.travelers})</div>)}
                       <div className="pass-track">
                         <div className="pass-fill" style={{ width: `${pct}%`, background: fillColor }} />
                       </div>
                     </div>
-
                     <div className="perforation" />
-
                     <div className="pass-bottom">
                       <div className="barcode" />
                       <div className="pass-year">{t.year}</div>
@@ -411,6 +302,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       ) : (
         <DashboardCharts trips={trips} categories={categories} />
       )}
+
+      <MobileShellNav
+        active={activeDashTab === 'charts' ? 'charts' : 'trips'}
+        onTrips={() => setActiveDashTab('trips')}
+        onCharts={() => setActiveDashTab('charts')}
+        onNewTrip={onNewTrip}
+        onSettings={() => onOpenSettings && onOpenSettings()}
+      />
     </main>
   );
 };
