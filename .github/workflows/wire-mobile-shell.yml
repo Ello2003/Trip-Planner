@@ -2,8 +2,7 @@ name: Wire MobileShellNav
 on:
   workflow_dispatch:
   push:
-    paths:
-      - '.github/workflows/wire-mobile-shell.yml'
+    branches: [main]
 jobs:
   wire:
     runs-on: ubuntu-latest
@@ -11,7 +10,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Patch App.tsx
+      - name: Patch App.tsx if needed
         run: |
           python3 << 'PY'
           from pathlib import Path
@@ -19,14 +18,18 @@ jobs:
           text = p.read_text()
           if 'MobileShellNav' in text:
               print('Already wired')
-          else:
-              text = text.replace(
-                  "import { Header } from './components/Header';",
-                  "import { Header } from './components/Header';\nimport { MobileShellNav } from './components/MobileShellNav';",
-                  1
-              )
-              anchor = "        <div style={{ height: 36 }} />"
-              nav_jsx = """
+              raise SystemExit(0)
+          if "import { Header } from './components/Header';" not in text:
+              raise SystemExit('Header import not found')
+          text = text.replace(
+              "import { Header } from './components/Header';",
+              "import { Header } from './components/Header';\nimport { MobileShellNav } from './components/MobileShellNav';",
+              1,
+          )
+          anchor = '        <div style={{ height: 36 }} />'
+          if anchor not in text:
+              raise SystemExit('spacer anchor not found')
+          nav = '''
         {!currentTrip && (
           <MobileShellNav
             active={activeDashTab === 'charts' ? 'charts' : 'trips'}
@@ -37,18 +40,16 @@ jobs:
           />
         )}
 
-        <div style={{ height: 36 }} />"""
-              if anchor not in text:
-                  raise SystemExit('anchor missing')
-              text = text.replace(anchor, nav_jsx, 1)
-              p.write_text(text)
-              print('Patched App.tsx')
+        <div style={{ height: 36 }} />'''
+          text = text.replace(anchor, nav, 1)
+          p.write_text(text)
+          print('Patched App.tsx successfully')
           PY
           git config user.name "Ello2003"
           git config user.email "graeme.crazydiamond@gmail.com"
           git add src/App.tsx
           if git diff --cached --quiet; then
-            echo "No App.tsx changes"
+            echo "No changes to commit"
           else
             git commit -m "Wire MobileShellNav into App for dashboard bottom nav"
             git push
