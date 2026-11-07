@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import { FirebaseProvider } from './context/FirebaseContext';
 import './index.css';
+import './mobile.css';
 
 // Google Maps Platform Quota Exceeded listener
 (window as any).gm_authFailure = () => {
@@ -32,4 +33,3 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </FirebaseProvider>
   </React.StrictMode>
 );
-
