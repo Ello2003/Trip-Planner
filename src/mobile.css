@@ -1,142 +1,118 @@
-/* ===== Mobile usability layer (≤720px) — does not affect desktop ===== */
+/* ===== App-like mobile shell (≤720px only) — desktop unchanged ===== */
 @media (max-width: 720px) {
-  /* Page chrome */
+  #travel-ledger-root {
+    --mobile-nav-h: calc(60px + env(safe-area-inset-bottom, 0px));
+  }
+
   #travel-ledger-root .wrap {
-    padding: 14px 12px 88px;
+    padding: 10px 12px calc(var(--mobile-nav-h) + 16px);
   }
 
-  /* Header: stack, tighter */
-  #travel-ledger-root .app-header,
-  #travel-ledger-root .masthead {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding-bottom: 12px;
-    margin-bottom: 14px;
+  /* ---- Sticky compact header ---- */
+  #travel-ledger-root .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: var(--paper);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0 10px;
+    margin: 0 0 12px;
+    border-bottom: 1px solid var(--paper-edge);
   }
 
-  #travel-ledger-root .wordmark {
-    font-size: 22px !important;
+  #travel-ledger-root .wordmark-title {
+    font-size: 18px !important;
+    line-height: 1.2;
   }
 
-  #travel-ledger-root .wordmark small,
-  #travel-ledger-root .wordmark-sub {
-    font-size: 9px !important;
-    letter-spacing: 1.5px !important;
+  #travel-ledger-root .wordmark small {
+    display: none !important;
   }
 
-  #travel-ledger-root .masthead-meta,
   #travel-ledger-root .hdr-deck {
-    align-items: stretch !important;
-    width: 100%;
+    align-items: flex-end !important;
+    gap: 4px;
   }
 
-  #travel-ledger-root .hdr-row,
-  #travel-ledger-root .undo-redo-row {
-    flex-wrap: wrap;
-    gap: 6px;
+  #travel-ledger-root .hdr-row {
+    flex-wrap: nowrap;
+    gap: 4px;
+    justify-content: flex-end;
   }
 
-  #travel-ledger-root .hdr-btn,
-  #travel-ledger-root .undo-redo-btn,
-  #travel-ledger-root button.btn-ghost {
-    min-height: 40px;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  /* KPI / boarding-pass strip */
-  #travel-ledger-root .kpi-board,
-  #travel-ledger-root .boarding-pass,
-  #travel-ledger-root .pass-strip {
-    border-radius: 12px;
-    padding: 14px 12px;
-  }
-
-  #travel-ledger-root .pass-figures,
-  #travel-ledger-root .kpi-row {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 10px;
-  }
-
-  #travel-ledger-root .pass-figures > *:last-child:nth-child(odd),
-  #travel-ledger-root .kpi-row > *:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-  }
-
-  #travel-ledger-root .kpi-val,
-  #travel-ledger-root .kpi-board .value,
-  #travel-ledger-root .pass-figures .num {
-    font-size: 22px !important;
-  }
-
-  /* Dashboard tabs + toolbars */
-  #travel-ledger-root .dash-tabs,
-  #travel-ledger-root .tab-bar {
-    gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    margin-bottom: 12px;
-  }
-
-  #travel-ledger-root .dash-tabs::-webkit-scrollbar,
-  #travel-ledger-root .tab-bar::-webkit-scrollbar {
+  #travel-ledger-root .hdr-btn .hdr-name {
     display: none;
   }
 
-  #travel-ledger-root .tab-btn {
-    padding: 12px 14px 10px;
+  #travel-ledger-root .hdr-btn {
+    min-height: 36px;
+    padding: 6px 8px;
     font-size: 11px;
-    white-space: nowrap;
   }
 
-  #travel-ledger-root .toolbar,
-  #travel-ledger-root .dash-toolbar,
-  #travel-ledger-root .trip-toolbar {
+  #travel-ledger-root .hdr-btn:has(.ico-ochre),
+  #travel-ledger-root .hdr-btn.version,
+  #travel-ledger-root .hdr-btn.settings {
+    display: none;
+  }
+
+  #travel-ledger-root .hdr-status {
+    display: none;
+  }
+
+  /* ---- KPI compact ---- */
+  #travel-ledger-root .kpi-board {
+    border-radius: 14px;
+    padding: 14px 12px;
+    margin-bottom: 14px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 12px;
+  }
+
+  #travel-ledger-root .kpi-cell .value {
+    font-size: 20px !important;
+  }
+
+  #travel-ledger-root .kpi-cell .label {
+    font-size: 9px !important;
+  }
+
+  /* Hide desktop dash tab strip (bottom nav replaces it) */
+  #travel-ledger-root .tab-bar {
+    display: none !important;
+  }
+
+  #travel-ledger-root .toolbar {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 12px;
   }
 
-  #travel-ledger-root .toolbar .btn-primary,
-  #travel-ledger-root .dash-toolbar .btn-primary {
-    flex: 1 1 100%;
+  #travel-ledger-root .toolbar .btn-primary {
     min-height: 44px;
-    justify-content: center;
+    flex: 1 1 auto;
   }
 
-  /* Search + filters stack */
-  #travel-ledger-root .filter-bar,
-  #travel-ledger-root .filter-row,
-  #travel-ledger-root .search-row,
-  #travel-ledger-root .trip-filters {
+  #travel-ledger-root .filter-bar {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
+    margin-bottom: 12px;
   }
 
   #travel-ledger-root .filter-bar input,
-  #travel-ledger-root .filter-bar select,
-  #travel-ledger-root .filter-row input,
-  #travel-ledger-root .filter-row select,
-  #travel-ledger-root input[type="search"],
-  #travel-ledger-root .trip-search {
+  #travel-ledger-root .filter-bar select {
     width: 100% !important;
     max-width: 100% !important;
     min-height: 44px;
-    font-size: 16px; /* prevent iOS zoom */
-  }
-
-  /* Cards / lists */
-  #travel-ledger-root .trip-card,
-  #travel-ledger-root .card,
-  #travel-ledger-root .day-card {
+    font-size: 16px;
     border-radius: 10px;
-    padding: 14px 12px;
   }
 
   #travel-ledger-root .trips-grid {
@@ -144,30 +120,109 @@
     gap: 10px;
   }
 
-  /* Tables → horizontal scroll instead of crushing */
+  #travel-ledger-root .trip-card,
+  #travel-ledger-root .card,
+  #travel-ledger-root .day-card {
+    border-radius: 12px;
+    padding: 14px 12px;
+  }
+
   #travel-ledger-root .table-scroll,
   #travel-ledger-root .exp-table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin: 0 -12px;
-    padding: 0 12px;
   }
 
   #travel-ledger-root table.exp-table {
     min-width: 520px;
   }
 
-  /* Modals full-bleed on small screens */
   #travel-ledger-root .modal-backdrop .modal,
   #travel-ledger-root .modal-panel {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0;
     border-radius: 16px 16px 0 0;
     max-height: 92vh;
   }
 
-  /* ===== Fixed bottom tab bar (inside a trip) ===== */
+  /* ---- Dashboard bottom shell nav ---- */
+  #travel-ledger-root .mobile-shell-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 45;
+    height: var(--mobile-nav-h);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    background: var(--paper-raised);
+    border-top: 1px solid var(--paper-edge);
+    box-shadow: 0 -6px 24px rgba(28, 37, 48, 0.1);
+    align-items: stretch;
+    justify-content: space-around;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  #travel-ledger-root .mobile-shell-nav.is-hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #travel-ledger-root .mobile-shell-nav .shell-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: none;
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    min-height: 48px;
+    padding: 6px 4px;
+    cursor: pointer;
+  }
+
+  #travel-ledger-root .mobile-shell-nav .shell-tab.active {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  #travel-ledger-root .mobile-shell-nav .shell-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  #travel-ledger-root .mobile-shell-nav .shell-fab {
+    position: relative;
+    top: -12px;
+  }
+
+  #travel-ledger-root .mobile-shell-nav .shell-fab-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    box-shadow: 0 4px 14px rgba(28, 37, 48, 0.25);
+  }
+
+  #travel-ledger-root .mobile-shell-nav .shell-fab span:last-child {
+    margin-top: 2px;
+  }
+
+  /* ---- Trip detail bottom tabs ---- */
   #travel-ledger-root .mobile-bottom-tabs {
     display: flex;
     position: fixed;
@@ -183,7 +238,7 @@
     scrollbar-width: none;
     padding: 0 4px;
     padding-bottom: env(safe-area-inset-bottom, 0);
-    height: calc(56px + env(safe-area-inset-bottom, 0px));
+    height: var(--mobile-nav-h);
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
@@ -215,7 +270,6 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     cursor: pointer;
-    border-radius: 0;
   }
 
   #travel-ledger-root .mobile-bottom-tabs .m-tab.active {
@@ -239,7 +293,7 @@
     opacity: 0.85;
   }
 
-  /* Timeline: stacked cards so titles are fully readable */
+  /* Timeline stacked cards */
   #travel-ledger-root .tl-row {
     display: flex;
     flex-direction: column;
@@ -279,7 +333,6 @@
     border-top: 1px solid var(--paper-edge);
   }
 
-  /* Back button more tappable */
   #travel-ledger-root .back-btn {
     min-height: 40px;
     margin-bottom: 8px;
@@ -287,6 +340,7 @@
 }
 
 @media (min-width: 721px) {
+  #travel-ledger-root .mobile-shell-nav,
   #travel-ledger-root .mobile-bottom-tabs {
     display: none !important;
   }
