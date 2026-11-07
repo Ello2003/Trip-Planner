@@ -1,9 +1,173 @@
-/* ===== Mobile bottom tab bar + timeline cards (≤720px only) ===== */
+/* ===== Mobile usability layer (≤720px) — does not affect desktop ===== */
 @media (max-width: 720px) {
+  /* Page chrome */
   #travel-ledger-root .wrap {
-    padding-bottom: 72px;
+    padding: 14px 12px 88px;
   }
 
+  /* Header: stack, tighter */
+  #travel-ledger-root .app-header,
+  #travel-ledger-root .masthead {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+
+  #travel-ledger-root .wordmark {
+    font-size: 22px !important;
+  }
+
+  #travel-ledger-root .wordmark small,
+  #travel-ledger-root .wordmark-sub {
+    font-size: 9px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  #travel-ledger-root .masthead-meta,
+  #travel-ledger-root .hdr-deck {
+    align-items: stretch !important;
+    width: 100%;
+  }
+
+  #travel-ledger-root .hdr-row,
+  #travel-ledger-root .undo-redo-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  #travel-ledger-root .hdr-btn,
+  #travel-ledger-root .undo-redo-btn,
+  #travel-ledger-root button.btn-ghost {
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* KPI / boarding-pass strip */
+  #travel-ledger-root .kpi-board,
+  #travel-ledger-root .boarding-pass,
+  #travel-ledger-root .pass-strip {
+    border-radius: 12px;
+    padding: 14px 12px;
+  }
+
+  #travel-ledger-root .pass-figures,
+  #travel-ledger-root .kpi-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 10px;
+  }
+
+  #travel-ledger-root .pass-figures > *:last-child:nth-child(odd),
+  #travel-ledger-root .kpi-row > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  #travel-ledger-root .kpi-val,
+  #travel-ledger-root .kpi-board .value,
+  #travel-ledger-root .pass-figures .num {
+    font-size: 22px !important;
+  }
+
+  /* Dashboard tabs + toolbars */
+  #travel-ledger-root .dash-tabs,
+  #travel-ledger-root .tab-bar {
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-bottom: 12px;
+  }
+
+  #travel-ledger-root .dash-tabs::-webkit-scrollbar,
+  #travel-ledger-root .tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  #travel-ledger-root .tab-btn {
+    padding: 12px 14px 10px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  #travel-ledger-root .toolbar,
+  #travel-ledger-root .dash-toolbar,
+  #travel-ledger-root .trip-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  #travel-ledger-root .toolbar .btn-primary,
+  #travel-ledger-root .dash-toolbar .btn-primary {
+    flex: 1 1 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  /* Search + filters stack */
+  #travel-ledger-root .filter-bar,
+  #travel-ledger-root .filter-row,
+  #travel-ledger-root .search-row,
+  #travel-ledger-root .trip-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #travel-ledger-root .filter-bar input,
+  #travel-ledger-root .filter-bar select,
+  #travel-ledger-root .filter-row input,
+  #travel-ledger-root .filter-row select,
+  #travel-ledger-root input[type="search"],
+  #travel-ledger-root .trip-search {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 44px;
+    font-size: 16px; /* prevent iOS zoom */
+  }
+
+  /* Cards / lists */
+  #travel-ledger-root .trip-card,
+  #travel-ledger-root .card,
+  #travel-ledger-root .day-card {
+    border-radius: 10px;
+    padding: 14px 12px;
+  }
+
+  #travel-ledger-root .trips-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  /* Tables → horizontal scroll instead of crushing */
+  #travel-ledger-root .table-scroll,
+  #travel-ledger-root .exp-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -12px;
+    padding: 0 12px;
+  }
+
+  #travel-ledger-root table.exp-table {
+    min-width: 520px;
+  }
+
+  /* Modals full-bleed on small screens */
+  #travel-ledger-root .modal-backdrop .modal,
+  #travel-ledger-root .modal-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    max-height: 92vh;
+  }
+
+  /* ===== Fixed bottom tab bar (inside a trip) ===== */
   #travel-ledger-root .mobile-bottom-tabs {
     display: flex;
     position: fixed;
@@ -17,8 +181,9 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 0 6px;
-    height: 56px;
+    padding: 0 4px;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
@@ -40,6 +205,7 @@
     justify-content: center;
     gap: 2px;
     min-width: 64px;
+    min-height: 48px;
     padding: 6px 10px;
     border: none;
     background: transparent;
@@ -111,6 +277,12 @@
     gap: 8px;
     padding: 6px 14px 12px;
     border-top: 1px solid var(--paper-edge);
+  }
+
+  /* Back button more tappable */
+  #travel-ledger-root .back-btn {
+    min-height: 40px;
+    margin-bottom: 8px;
   }
 }
 
