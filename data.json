@@ -43,7 +43,7 @@
       "color": "#35695c"
     },
     {
-      "key": "Transport / Transfers",
+      "key": "Transport | Transfers",
       "color": "#5b6672"
     },
     {
@@ -51,7 +51,7 @@
       "color": "#8a7a3a"
     },
     {
-      "key": "Cheap Eats",
+      "key": "Breakfasts | Bakeries | Casual Dining",
       "color": "#b8874f"
     },
     {
@@ -59,7 +59,7 @@
       "color": "#6a4a6e"
     },
     {
-      "key": "Bars",
+      "key": "Bars With Views | Cocktails",
       "color": "#6a4a6e"
     },
     {
@@ -97,6 +97,22 @@
     {
       "key": "Shopping",
       "color": "#6a4a6e"
+    },
+    {
+      "key": "Belgium Chocolate | Waffles",
+      "color": "#6a4a6e"
+    },
+    {
+      "key": "Cheap Eats",
+      "color": "#b8874f"
+    },
+    {
+      "key": "Bars",
+      "color": "#6a4a6e"
+    },
+    {
+      "key": "Transport / Transfers",
+      "color": "#5b6672"
     }
   ],
   "trips": [
@@ -104,7 +120,7 @@
       "id": "trip_ms9g79qh_8_lc9sb",
       "name": "Santorini",
       "year": 2024,
-      "status": "completed",
+      "status": "archived",
       "budget": 4000,
       "startDate": null,
       "endDate": null,
@@ -179,7 +195,7 @@
       "timelineMode": "days",
       "research": [],
       "createdAt": 1785532924169,
-      "updatedAt": 1786110017518,
+      "updatedAt": 1793663773194,
       "packingList": [],
       "country": "Greece",
       "countryGuessed": false,
@@ -187,13 +203,30 @@
       "manualEstimates": [],
       "hiddenSheets": [],
       "sectionMapUrls": {},
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": true,
+      "luggageBags": [],
+      "outfits": [],
+      "hauls": [],
+      "loungeVisits": [],
+      "tripNotes": {
+        "entries": [],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_ms9g79qh_e_y0tq4",
       "name": "London",
       "year": 2024,
-      "status": "completed",
+      "status": "archived",
       "budget": 1000,
       "startDate": null,
       "endDate": null,
@@ -250,7 +283,7 @@
       "timelineMode": "days",
       "research": [],
       "createdAt": 1785532924169,
-      "updatedAt": 1786109968948,
+      "updatedAt": 1793663772368,
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
@@ -258,13 +291,37 @@
       "manualEstimates": [],
       "hiddenSheets": [],
       "sectionMapUrls": {},
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": true,
+      "luggageBags": [],
+      "outfits": [],
+      "hauls": [],
+      "loungeVisits": [],
+      "tripNotes": {
+        "entries": [
+          {
+            "id": "note_mw73rd3l_2_xcwa2",
+            "text": "Hyde Park - Stevie Nicks",
+            "kind": "note",
+            "createdAt": 1785532924169
+          }
+        ],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_ms9g79qh_m_f4vz9",
       "name": "Paris",
       "year": 2025,
-      "status": "completed",
+      "status": "archived",
       "budget": 2500,
       "startDate": null,
       "endDate": null,
@@ -339,7 +396,7 @@
       "timelineMode": "days",
       "research": [],
       "createdAt": 1785532924169,
-      "updatedAt": 1786110098095,
+      "updatedAt": 1793663776352,
       "packingList": [],
       "country": "France",
       "countryGuessed": false,
@@ -347,13 +404,30 @@
       "manualEstimates": [],
       "hiddenSheets": [],
       "sectionMapUrls": {},
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": true,
+      "luggageBags": [],
+      "outfits": [],
+      "hauls": [],
+      "loungeVisits": [],
+      "tripNotes": {
+        "entries": [],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_ms9g79qh_q_oggtn",
       "name": "Liverpool",
       "year": 2025,
-      "status": "completed",
+      "status": "archived",
       "budget": 1000,
       "startDate": null,
       "endDate": null,
@@ -392,7 +466,7 @@
       "timelineMode": "days",
       "research": [],
       "createdAt": 1785532924169,
-      "updatedAt": 1786109865158,
+      "updatedAt": 1793663774003,
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
@@ -400,13 +474,37 @@
       "manualEstimates": [],
       "hiddenSheets": [],
       "sectionMapUrls": {},
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": true,
+      "luggageBags": [],
+      "outfits": [],
+      "hauls": [],
+      "loungeVisits": [],
+      "tripNotes": {
+        "entries": [
+          {
+            "id": "note_mw73rd3l_3_yu2ax",
+            "text": "Springsteen Trip",
+            "kind": "note",
+            "createdAt": 1785532924169
+          }
+        ],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_ms9g79qh_11_kwuzd",
       "name": "Italy",
       "year": 2025,
-      "status": "cancelled",
+      "status": "archived",
       "budget": 4000,
       "startDate": null,
       "endDate": null,
@@ -508,7 +606,7 @@
       "timelineMode": "days",
       "research": [],
       "createdAt": 1785532924169,
-      "updatedAt": 1786110023044,
+      "updatedAt": 1793663776886,
       "packingList": [],
       "country": "Italy",
       "countryGuessed": false,
@@ -516,7 +614,24 @@
       "manualEstimates": [],
       "hiddenSheets": [],
       "sectionMapUrls": {},
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": true,
+      "luggageBags": [],
+      "outfits": [],
+      "hauls": [],
+      "loungeVisits": [],
+      "tripNotes": {
+        "entries": [],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_ms9g79qh_14_mvqhc",
@@ -534,7 +649,7 @@
           "description": "Airport Parking",
           "category": "Transportation",
           "quantity": 1,
-          "unitCost": 0,
+          "unitCost": 37.39,
           "notes": "",
           "rating": null,
           "mirror": false
@@ -562,7 +677,7 @@
           "description": "MAN - Brugge Flights",
           "category": "Flights",
           "quantity": 2,
-          "unitCost": null,
+          "unitCost": 208.53,
           "notes": "",
           "rating": null
         },
@@ -579,7 +694,7 @@
       "planItems": [
         {
           "id": "plan_murk7w6d_b_q4ho8",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Train",
           "status": "idea",
           "date": "2026-12-11",
@@ -600,7 +715,7 @@
           "estimateCategory": "Transportation",
           "estimateOriginal": {
             "name": "Train",
-            "sheet": "Transport / Transfers",
+            "sheet": "Transport | Transfers",
             "category": "Transportation",
             "quantity": 1,
             "cost": null
@@ -608,7 +723,7 @@
         },
         {
           "id": "plan_mv8ptu6b_c_n5quv",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Airport Parking",
           "status": "idea",
           "date": "2026-12-11",
@@ -635,7 +750,7 @@
           "estimateCategory": "Transportation",
           "estimateOriginal": {
             "name": "Airport Parking",
-            "sheet": "Transport / Transfers",
+            "sheet": "Transport | Transfers",
             "category": "Transportation",
             "quantity": 1,
             "cost": 40
@@ -643,7 +758,7 @@
         },
         {
           "id": "plan_mv8pwmxu_i_bf5z5",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Brussels to Brugge Train",
           "status": "idea",
           "date": "2026-12-11",
@@ -664,7 +779,7 @@
           "estimateCategory": "Transportation",
           "estimateOriginal": {
             "name": "Brussels to Brugge Train",
-            "sheet": "Transport / Transfers",
+            "sheet": "Transport | Transfers",
             "category": "Transportation",
             "quantity": 1,
             "cost": 20
@@ -672,7 +787,7 @@
         },
         {
           "id": "plan_mv8pxrpq_l_0xfa9",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Petrol",
           "status": "idea",
           "date": "2026-12-11",
@@ -693,18 +808,247 @@
           "estimateCategory": "Transportation",
           "estimateOriginal": {
             "name": "Petrol",
-            "sheet": "Transport / Transfers",
+            "sheet": "Transport | Transfers",
             "category": "Transportation",
             "quantity": 1,
             "cost": 60
           }
+        },
+        {
+          "id": "plan_mvoj43vr_2_vup1t",
+          "sheet": "Hotels",
+          "name": "Hotel Aragon",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": "2026-12-12",
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": 2,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "actualNotes": "",
+          "actualRating": null,
+          "estimateQuantity": 1,
+          "estimateCategory": "Hotels",
+          "estimateOriginal": {
+            "name": "Hotel Aragon",
+            "sheet": "Hotels",
+            "category": "Hotels",
+            "quantity": 1,
+            "cost": null
+          }
+        },
+        {
+          "id": "plan_mw79t9vl_16_pgpo6",
+          "sheet": "Pubs",
+          "name": "Le Trappiste",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Kuipersstraat 33, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw79t9vl_17_l05a3",
+              "label": "Official Website",
+              "url": "http://www.letrappistebrugge.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Tasting Paddles",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Le Trappiste",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
+        },
+        {
+          "id": "plan_mw79tso9_1a_yiiys",
+          "sheet": "Pubs",
+          "name": "Bauhaus",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Langestraat 135, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw79tso9_1b_siwid",
+              "label": "Official Website",
+              "url": "http://www.bauhaus.be/?utm_source=google&utm_medium=organic&utm_campaign=gmb_bruges"
+            },
+            {
+              "id": "link_mw79tso9_1c_kbea9",
+              "label": "Menu",
+              "url": "https://bauhaus.be/?utm_source=google&utm_medium=organic&utm_campaign=gmb_bruges"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Massive Choice",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Bauhaus",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
+        },
+        {
+          "id": "plan_mw79u3er_1f_7h3a1",
+          "sheet": "Pubs",
+          "name": "Huisbrouwerij De Halve Maan",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Walplein 26, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw79u3er_1g_t9tsz",
+              "label": "Official Website",
+              "url": "http://www.halvemaan.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Huisbrouwerij De Halve Maan",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
+        },
+        {
+          "id": "plan_mw79up2j_1j_mq54p",
+          "sheet": "Pubs",
+          "name": "2be Shop",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Wollestraat 53, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw79up2j_1k_ercpg",
+              "label": "Official Website",
+              "url": "http://www.2-be.biz/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "2be Shop",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
+        },
+        {
+          "id": "plan_mw79uye6_1n_na94a",
+          "sheet": "Pubs",
+          "name": "'t Brugs Beertje",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Kemelstraat 5, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw79uye6_1o_39e4u",
+              "label": "Official Website",
+              "url": "https://www.brugsbeertje.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Cheap",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "'t Brugs Beertje",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
       "research": [
         {
           "id": "res_murk7nx3_9_b0buk",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Brussels to Brugge Train",
           "address": "",
           "lat": null,
@@ -720,7 +1064,7 @@
         },
         {
           "id": "res_mv8ptojb_9_xkqqd",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Airport Parking",
           "address": "Jet Parks 3 / Jet Parks Ringway",
           "lat": null,
@@ -742,7 +1086,7 @@
         },
         {
           "id": "res_mv8pvzk1_f_0fxvg",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Petrol",
           "address": "",
           "lat": null,
@@ -755,10 +1099,1451 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mv8pxrpq_l_0xfa9",
           "createdAt": 1792019074753
+        },
+        {
+          "id": "res_mvpw09qg_1_8ok1h",
+          "sheet": "Hotels",
+          "name": "Hotel Aragon",
+          "address": "Naaldenstraat 22, 8000 Brugge, Belgium",
+          "lat": 51.210643999999995,
+          "lng": 3.222296,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzv7gmi_21_jhca8",
+              "label": "Official Website",
+              "url": "https://www.aragon.be/en/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": "plan_mvpw0bx6_3_191a7",
+          "createdAt": 1793057277257
+        },
+        {
+          "id": "res_mvvmemkc_k_02nwo",
+          "sheet": "Pubs",
+          "name": "'t Brugs Beertje",
+          "address": "Kemelstraat 5, 8000 Brugge, Belgium",
+          "lat": 51.2068237,
+          "lng": 3.2217179,
+          "priceLevel": null,
+          "priority": 4,
+          "estCost": null,
+          "notes": "Cheap",
+          "links": [
+            {
+              "id": "link_mvztz84j_10_swuo0",
+              "label": "Official Website",
+              "url": "https://www.brugsbeertje.be/"
+            }
+          ],
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw79uye6_1n_na94a",
+          "createdAt": 1793403947964
+        },
+        {
+          "id": "res_mvvmenpe_m_dj31u",
+          "sheet": "Pubs",
+          "name": "Le Trappiste",
+          "address": "Kuipersstraat 33, 8000 Brugge, Belgium",
+          "lat": 51.210837999999995,
+          "lng": 3.222809,
+          "priceLevel": null,
+          "priority": 5,
+          "estCost": null,
+          "notes": "Tasting Paddles",
+          "links": [
+            {
+              "id": "link_mvztzfnt_12_mge1m",
+              "label": "Official Website",
+              "url": "http://www.letrappistebrugge.be/"
+            }
+          ],
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw79t9vl_16_pgpo6",
+          "createdAt": 1793403949442
+        },
+        {
+          "id": "res_mvvmeoq9_o_7g0qr",
+          "sheet": "Pubs",
+          "name": "De Garre",
+          "address": "De Garre 1, 8000 Brugge, Belgium",
+          "lat": 51.208334699999995,
+          "lng": 3.2258407,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvztzjft_14_hqdvo",
+              "label": "Official Website",
+              "url": "https://www.degarre.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793403950769
+        },
+        {
+          "id": "res_mvvmepgb_q_mf4ny",
+          "sheet": "Pubs",
+          "name": "Bauhaus",
+          "address": "Langestraat 135, 8000 Brugge, Belgium",
+          "lat": 51.211900199999995,
+          "lng": 3.2374684,
+          "priceLevel": null,
+          "priority": 5,
+          "estCost": null,
+          "notes": "Massive Choice",
+          "links": [
+            {
+              "id": "link_mvztzqsv_16_vdf5w",
+              "label": "Official Website",
+              "url": "http://www.bauhaus.be/?utm_source=google&utm_medium=organic&utm_campaign=gmb_bruges"
+            },
+            {
+              "id": "link_mw79aqwz_13_2muoz",
+              "label": "Menu",
+              "url": "https://bauhaus.be/?utm_source=google&utm_medium=organic&utm_campaign=gmb_bruges"
+            }
+          ],
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw79tso9_1a_yiiys",
+          "createdAt": 1793403951707
+        },
+        {
+          "id": "res_mvvmeq3p_s_66ggt",
+          "sheet": "Pubs",
+          "name": "Huisbrouwerij De Halve Maan",
+          "address": "Walplein 26, 8000 Brugge, Belgium",
+          "lat": 51.202447299999996,
+          "lng": 3.2241779999999998,
+          "priceLevel": null,
+          "priority": 5,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvztzvku_18_dslo3",
+              "label": "Official Website",
+              "url": "http://www.halvemaan.be/"
+            }
+          ],
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw79u3er_1f_7h3a1",
+          "createdAt": 1793403952549
+        },
+        {
+          "id": "res_mvvmeqpq_u_gwvdv",
+          "sheet": "Pubs",
+          "name": "De Kelk",
+          "address": "Langestraat 69, 8000 Brugge, Belgium",
+          "lat": 51.210583299999996,
+          "lng": 3.2354016,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvztzyzj_1a_a2fra",
+              "label": "Official Website",
+              "url": "http://www.dekelk.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793403953342
+        },
+        {
+          "id": "res_mvvmfnou_w_rqzde",
+          "sheet": "Sights",
+          "name": "Historic centre of Brugge (Bruges)",
+          "address": "Grote Markt, 2000 Antwerpen, Belgium",
+          "lat": 51.2088142,
+          "lng": 3.2243722999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793403996078
+        },
+        {
+          "id": "res_mvvmg3ek_y_ebjcc",
+          "sheet": "Sights",
+          "name": "Market Square",
+          "address": "Markt, 8000 Brugge, Belgium",
+          "lat": 51.208688099999996,
+          "lng": 3.2244082,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404016445
+        },
+        {
+          "id": "res_mvvmgfkl_10_56o3u",
+          "sheet": "Sights",
+          "name": "Belfry of Bruges",
+          "address": "Markt 7, 8000 Brugge, Belgium",
+          "lat": 51.2081466,
+          "lng": 3.2248010999999996,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzuk9g6_1i_6fvnk",
+              "label": "Official Website",
+              "url": "https://www.museabrugge.be/bezoek-onze-musea/onze-musea-en-monumenten/belfort"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404032213
+        },
+        {
+          "id": "res_mvvmgowr_12_otykb",
+          "sheet": "Sights",
+          "name": "Basilica of the Holy Blood",
+          "address": "Burg 13, 8000 Brugge, Belgium",
+          "lat": 51.2081343,
+          "lng": 3.2265447999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzukdk6_1k_t1nxs",
+              "label": "Official Website",
+              "url": "http://www.holyblood.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404044316
+        },
+        {
+          "id": "res_mvvmgv79_14_kl3mc",
+          "sheet": "Sights",
+          "name": "Den Burg",
+          "address": "Den Burg, Netherlands",
+          "lat": 53.0546266,
+          "lng": 4.7997252999999995,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404052469
+        },
+        {
+          "id": "res_mvvmh2tg_16_fb7av",
+          "sheet": "Sights",
+          "name": "Rosary Quay",
+          "address": "Rozenhoedkaai 3, 8000 Brugge, Belgium",
+          "lat": 51.2073745,
+          "lng": 3.2278678999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzukn0p_1n_kbcv5",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/en/rozenhoedkaai"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404062340
+        },
+        {
+          "id": "res_mvvmhan9_18_ak574",
+          "sheet": "Sights",
+          "name": "De Dijver park",
+          "address": "Dijver, 8000 Brugge, Belgium",
+          "lat": 51.206101700000005,
+          "lng": 3.2257072,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404072486
+        },
+        {
+          "id": "res_mvvmhk97_1a_4euzd",
+          "sheet": "Sights",
+          "name": "Simon Stevin",
+          "address": "Simon Stevinplein, 8000 Brugge, Belgium",
+          "lat": 51.206611599999995,
+          "lng": 3.2227343,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzuktwc_1q_la4ff",
+              "label": "Official Website",
+              "url": "http://www.brugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404084939
+        },
+        {
+          "id": "res_mvvmhqev_1c_r7jte",
+          "sheet": "Sights",
+          "name": "Boniface Bridge",
+          "address": "Groeninge 6, 8000 Brugge, Belgium",
+          "lat": 51.204911599999996,
+          "lng": 3.2253486,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzukx70_1s_qiodx",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/en/bonifaciusbrug-bonifaciusbridge"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404092919
+        },
+        {
+          "id": "res_mvvmhzxs_1e_x40nj",
+          "sheet": "Sights",
+          "name": "Huisbrouwerij De Halve Maan",
+          "address": "Walplein 26, 8000 Brugge, Belgium",
+          "lat": 51.202447299999996,
+          "lng": 3.2241779999999998,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzukztn_1u_o4mex",
+              "label": "Official Website",
+              "url": "http://www.halvemaan.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404105264
+        },
+        {
+          "id": "res_mvvmi5uj_1g_1ckv8",
+          "sheet": "Sights",
+          "name": "De Wijngaard",
+          "address": "Begijnhof 4, 8000 Brugge, Belgium",
+          "lat": 51.201778499999996,
+          "lng": 3.2234409,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzul9w1_1w_xi6l3",
+              "label": "Official Website",
+              "url": "https://sites.google.com/view/dewijngaardbegijnhofbrugge/home"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404112923
+        },
+        {
+          "id": "res_mvvmicdk_1i_tdpzy",
+          "sheet": "Sights",
+          "name": "Minnewater",
+          "address": "Minnewater, 8000 Brugge, Belgium",
+          "lat": 51.199729399999995,
+          "lng": 3.2239419999999996,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404121384
+        },
+        {
+          "id": "res_mvvmikzc_1k_8vw09",
+          "sheet": "Sights",
+          "name": "Gunpowder Tower (Poertoren)",
+          "address": "Begijnenvest 1, 8000 Brugge, Belgium",
+          "lat": 51.1985841,
+          "lng": 3.2236217999999996,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzultuc_1z_rkk64",
+              "label": "Official Website",
+              "url": "https://inventaris.onroerenderfgoed.be/erfgoedobjecten/200722"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404132536
+        },
+        {
+          "id": "res_mvvmn3ds_1m_d5g9x",
+          "sheet": "Cigars",
+          "name": "Jerry's Cigar Bar",
+          "address": "Simon Stevinplein 13, 8000 Brugge, Belgium",
+          "lat": 51.2062405,
+          "lng": 3.2226736999999996,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzujjbf_1c_dxmu6",
+              "label": "Official Website",
+              "url": "http://www.jerryscigarbar.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404343009
+        },
+        {
+          "id": "res_mvvmnkxh_1o_2vrhr",
+          "sheet": "Cigars",
+          "name": "Missault",
+          "address": "Braambergstraat 5, 8000 Brugge, Belgium",
+          "lat": 51.207465,
+          "lng": 3.2280439999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzujqti_1e_hltlq",
+              "label": "Official Website",
+              "url": "http://www.missaultbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793404365750
+        },
+        {
+          "id": "res_mvvn63gw_1r_cgrtj",
+          "sheet": "Shopping",
+          "name": "De Witte Pelikaan",
+          "address": "Vlamingstraat 23, 8000 Brugge, Belgium",
+          "lat": 51.210164199999994,
+          "lng": 3.2244367,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Christmas Shop",
+          "links": [
+            {
+              "id": "link_mvztxb23_w_ilae2",
+              "label": "Official Website",
+              "url": "http://www.dewittepelikaan.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793405229584
+        },
+        {
+          "id": "res_mvvn6hqb_1t_itnt0",
+          "sheet": "Shopping",
+          "name": "Käthe Wohlfahrt",
+          "address": "Breidelstraat 4, 8000 Brugge, Belgium",
+          "lat": 51.2084529,
+          "lng": 3.2254240999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Christmas Shop",
+          "links": [
+            {
+              "id": "link_mw4aglfh_2_8phbp",
+              "label": "Official Website",
+              "url": "https://www.kaethe-wohlfahrt.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793405248067
+        },
+        {
+          "id": "res_mvzvhspx_24_r8l8a",
+          "sheet": "Sights",
+          "name": "Hotel Dukes' Palace",
+          "address": "Prinsenhof 8, 8000 Brugge, Belgium",
+          "lat": 51.20854800000001,
+          "lng": 3.2201049999999998,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mvzvhpf3_23_cjryk",
+              "label": "Official Website",
+              "url": "https://www.hoteldukespalace.com/en/?utm_source=GMB&utm_medium=organic"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793661077157
+        },
+        {
+          "id": "res_mw00klu0_6_pwaws",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "The Chocolate Line",
+          "address": "The Chocolate Line, 75, Vaartstraat, Nijverheidsdok (Z12), Sint-Pieters, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2313728,
+          "lng": 3.2128952,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793669606280
+        },
+        {
+          "id": "res_mw00lafg_8_z087v",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "The Old Chocolate House",
+          "address": "The Old Chocolate House, Mariastraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2060614,
+          "lng": 3.2230754,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793669638156
+        },
+        {
+          "id": "res_mw00rfck_a_v4hse",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Chez Albert",
+          "address": "Chez Albert, Stationsplein, Sint-Michiels, Bruges, Brugge, West Flanders, Flanders, 8200, Belgium",
+          "lat": 51.1970288,
+          "lng": 3.2175407,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793669924469
+        },
+        {
+          "id": "res_mw00scub_c_im6gs",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "House of Waffles",
+          "address": "House of Waffles, Wollestraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2075842,
+          "lng": 3.226278,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793669967875
+        },
+        {
+          "id": "res_mw010p4b_e_f9m4n",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Groot Vlaenderen",
+          "address": "Groot Vlaenderen, 94, Vlamingstraat, Sint-Walburgakwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2122443,
+          "lng": 3.2231237,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793670357035
+        },
+        {
+          "id": "res_mw01kzh4_g_yhx9b",
+          "sheet": "Coffee",
+          "name": "Aux Merveilleux de Fred",
+          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
+          "lat": 51.3443421,
+          "lng": 3.2877077,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793671303576
+        },
+        {
+          "id": "res_mw01rjf1_i_4n3wk",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "That's Toast",
+          "address": "That's Toast, 4, Dweersstraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2064074,
+          "lng": 3.2192262,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793671609357
+        },
+        {
+          "id": "res_mw01wib8_k_uoayw",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Fritbar",
+          "address": "Fritbar, 3, Katelijnestraat, Onze-Lieve-Vrouwekwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2037742,
+          "lng": 3.2247633,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793671841204
+        },
+        {
+          "id": "res_mw47mnln_3_tehpn",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "The Spot Waffles & Pancakes",
+          "address": "Jozef Suvéestraat 19, 8000 Brugge, Belgium",
+          "lat": 51.2070729,
+          "lng": 3.2293672,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw47mmo2_2_vag7r",
+              "label": "Official Website",
+              "url": "https://www.thespotbruges.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793923323899
+        },
+        {
+          "id": "res_mw47n7x3_7_3b6hg",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Waffles 'n Beer in Bruges Centre",
+          "address": "Hoogstraat 10, 8000 Brugge, Belgium",
+          "lat": 51.2093327,
+          "lng": 3.2287377999999998,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw47n6yy_6_12g0d",
+              "label": "Official Website",
+              "url": "https://www.wafflesnbeer.be/?utm_source=google&utm_medium=organic&utm_campaign=gmb"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793923350231
+        },
+        {
+          "id": "res_mw4ah1ux_4_w3qig",
+          "sheet": "Sights",
+          "name": "Winter gloed 2025",
+          "address": "Site Oud Sint-Jan, Zonnekemeers, 8000 Brugge, Belgium",
+          "lat": 51.2037014,
+          "lng": 3.2222963,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793928101289
+        },
+        {
+          "id": "res_mw4amkco_6_m9za1",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Boulangerie Schaeverbeke",
+          "address": "Schaarstraat 2, 8000 Brugge, Belgium",
+          "lat": 51.20452160000001,
+          "lng": 3.232078,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793928358536
+        },
+        {
+          "id": "res_mw4anhtn_8_m2wst",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Tasty Sandwich",
+          "address": "Eiermarkt 7, 8000 Brugge, Belgium",
+          "lat": 51.2094416,
+          "lng": 3.2230032,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793928401915
+        },
+        {
+          "id": "res_mw4ap5uz_c_rr7vg",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Van Mullem 🍞",
+          "address": "Vlamingstraat 56, 8000 Brugge, Belgium",
+          "lat": 51.210648,
+          "lng": 3.2245939999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4ap4j5_b_j1ffy",
+              "label": "Official Website",
+              "url": "https://patisserie-vanmullem.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793928479723
+        },
+        {
+          "id": "res_mw4b09ln_f_c2wo0",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Carpe Diem Bakery & Tea-room",
+          "address": "Wijngaardstraat 8, 8000 Brugge, Belgium",
+          "lat": 51.2023,
+          "lng": 3.2253277999999996,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b08xu_e_ixxx3",
+              "label": "Official Website",
+              "url": "http://www.tearoom-carpediem.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793928997787
+        },
+        {
+          "id": "res_mw4b0y31_h_icqct",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Bakkerij Sint-Paulus",
+          "address": "Vlamingstraat 25, 8000 Brugge, Belgium",
+          "lat": 51.2103397,
+          "lng": 3.2243207999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929029517
+        },
+        {
+          "id": "res_mw4b2qza_q_gxuxf",
+          "sheet": "Coffee",
+          "name": "Nuba Cafe Brugge",
+          "address": "Oude Burg 10, 8000 Brugge, Belgium",
+          "lat": 51.2072618,
+          "lng": 3.2247989,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b2qbo_p_4bibj",
+              "label": "Official Website",
+              "url": "https://www.instagram.com/nubacafe/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929113622
+        },
+        {
+          "id": "res_mw4b34u4_t_d481t",
+          "sheet": "Coffee",
+          "name": "Coffeebar Adriaan",
+          "address": "Adriaan Willaertstraat 7, 8000 Brugge, Belgium",
+          "lat": 51.2108078,
+          "lng": 3.2237238,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b348x_s_q2blg",
+              "label": "Official Website",
+              "url": "http://www.coffeebaradriaan.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929131580
+        },
+        {
+          "id": "res_mw4b3ik3_w_t0il9",
+          "sheet": "Coffee",
+          "name": "Les Coquettes Le Café",
+          "address": "Braambergstraat 12 a, 8000 Brugge, Belgium",
+          "lat": 51.2075563,
+          "lng": 3.2286907,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b3hom_v_q6abq",
+              "label": "Official Website",
+              "url": "http://www.lescoquettes.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929149363
+        },
+        {
+          "id": "res_mw4b48at_z_9sflb",
+          "sheet": "Coffee",
+          "name": "Blackbird Coffee Club",
+          "address": "Jan van Eyckplein 7, 8000 Brugge, Belgium",
+          "lat": 51.2118512,
+          "lng": 3.2258364,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b47no_y_jspqe",
+              "label": "Official Website",
+              "url": "https://www.blackbird-bruges.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929182725
+        },
+        {
+          "id": "res_mw4b4jof_12_mfrwf",
+          "sheet": "Coffee",
+          "name": "EspressoBar - I Love Coffee",
+          "address": "Sint-Jakobsstraat 10, 8000 Brugge, Belgium",
+          "lat": 51.209469899999995,
+          "lng": 3.2225167,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b4j2f_11_slwm9",
+              "label": "Official Website",
+              "url": "https://ilcoffee.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929197471
+        },
+        {
+          "id": "res_mw4b4wl4_15_486mi",
+          "sheet": "Coffee",
+          "name": "Brapas",
+          "address": "Sint-Amandsstraat 30, 8000 Brugge, Belgium",
+          "lat": 51.208492299999996,
+          "lng": 3.2220795,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b4w02_14_de2c0",
+              "label": "Official Website",
+              "url": "https://www.brapas.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929214200
+        },
+        {
+          "id": "res_mw4b7r7r_17_3y2cn",
+          "sheet": "Coffee",
+          "name": "Hof Café",
+          "address": "Markt 3, 8000 Brugge, Belgium",
+          "lat": 51.2089925,
+          "lng": 3.2253825,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929347207
+        },
+        {
+          "id": "res_mw4b8sxc_19_qxaxo",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "CROQUES & COFFEE",
+          "address": "Burg 15/7, 8000 Brugge, Belgium",
+          "lat": 51.2082183,
+          "lng": 3.2262567,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929396080
+        },
+        {
+          "id": "res_mw4ba2hi_1c_r8frc",
+          "sheet": "Restaurants",
+          "name": "El Churrasco Argentino",
+          "address": "Vlamingstraat 76, 8000 Brugge, Belgium",
+          "lat": 51.2111303,
+          "lng": 3.2243527,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4ba1ne_1b_p6d2d",
+              "label": "Official Website",
+              "url": "https://www.elchurrascoargentinobrugge.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929455126
+        },
+        {
+          "id": "res_mw4bcv1b_1f_rhrbg",
+          "sheet": "Restaurants",
+          "name": "Au Petit Grand BV",
+          "address": "Philipstockstraat 18, 8000 Brugge, Belgium",
+          "lat": 51.2094637,
+          "lng": 3.2260896,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bcu9z_1e_8m693",
+              "label": "Official Website",
+              "url": "http://www.aupetitgrand.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929585439
+        },
+        {
+          "id": "res_mw4beu1g_1i_gj9v7",
+          "sheet": "Restaurants",
+          "name": "De koetse",
+          "address": "Oude Burg 31, 8000 Brugge, Belgium",
+          "lat": 51.2063534,
+          "lng": 3.2235506,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4betc2_1h_kmmgk",
+              "label": "Official Website",
+              "url": "http://www.dekoetsebrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929677460
+        },
+        {
+          "id": "res_mw4bg428_1l_iwbb2",
+          "sheet": "Restaurants",
+          "name": "Pigeon House",
+          "address": "Sint-Jansplein 12, 8000 Brugge, Belgium",
+          "lat": 51.2107083,
+          "lng": 3.2263167,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bg3dz_1k_jr204",
+              "label": "Official Website",
+              "url": "http://pigeonhouse.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929737104
+        },
+        {
+          "id": "res_mw4bh5j5_1o_01fyj",
+          "sheet": "Restaurants",
+          "name": "De Gastro",
+          "address": "Braambergstraat 6, 8000 Brugge, Belgium",
+          "lat": 51.2074419,
+          "lng": 3.228262,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bh4vu_1n_8h9f9",
+              "label": "Official Website",
+              "url": "http://www.degastro.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929785665
+        },
+        {
+          "id": "res_mw4bko1x_1x_phjlp",
+          "sheet": "Restaurants",
+          "name": "Seafoodbar Belge",
+          "address": "Eiermarkt 14, 8000 Brugge, Belgium",
+          "lat": 51.209329800000006,
+          "lng": 3.2236027999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bkmz7_1w_mj264",
+              "label": "Official Website",
+              "url": "http://www.seafoodbar-belge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929949637
+        },
+        {
+          "id": "res_mw4bni95_1z_cmt3t",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Three.B.pasta",
+          "address": "Geldmuntstraat 12, 8000 Brugge, Belgium",
+          "lat": 51.2090672,
+          "lng": 3.2222923,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793930082089
+        },
+        {
+          "id": "res_mw4bqqlk_22_y2vw8",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "NOBLE Bruges",
+          "address": "Meestraat 4, 8000 Brugge, Belgium",
+          "lat": 51.2087832,
+          "lng": 3.2286869000000005,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "With View",
+          "links": [
+            {
+              "id": "link_mw4bqlu0_21_34kef",
+              "label": "Official Website",
+              "url": "http://www.noblebruges.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793930232872
+        },
+        {
+          "id": "res_mw6wvt2m_25_rdcp2",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Opus Latino",
+          "address": "Burg 15, 8000 Brugge, Belgium",
+          "lat": 51.208221599999995,
+          "lng": 3.2263536,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views.",
+          "links": [
+            {
+              "id": "link_mw6wvo4k_24_in0yl",
+              "label": "Official Website",
+              "url": "http://www.opuslatino.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794086673646
+        },
+        {
+          "id": "res_mw6ww5ml_28_3ku06",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "ODA Rooftop Bar",
+          "address": "Steenstraat 96, 8000 Brugge, Belgium",
+          "lat": 51.2059797,
+          "lng": 3.2209095999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views",
+          "links": [
+            {
+              "id": "link_mw6ww377_27_5qkjc",
+              "label": "Official Website",
+              "url": "https://www.odarooftopbar.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794086689917
+        },
+        {
+          "id": "res_mw6xmgvd_2b_njrpe",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "’t Klein Venetië",
+          "address": "Braambergstraat 1, 8000 Brugge, Belgium",
+          "lat": 51.207456699999994,
+          "lng": 3.2279464,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views",
+          "links": [
+            {
+              "id": "link_mw6xmdo7_2a_whf99",
+              "label": "Official Website",
+              "url": "http://www.kleinvenetie.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794087917545
+        },
+        {
+          "id": "res_mw6ygo7u_2e_2jpmp",
+          "sheet": "Restaurants",
+          "name": "Brasserie Rozenhoedkaai",
+          "address": "Pandreitje 1a, 8000 Brugge, Belgium",
+          "lat": 51.207317599999996,
+          "lng": 3.2280884999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw6ygnj8_2d_tc1ef",
+              "label": "Official Website",
+              "url": "http://www.rozenhoedkaai.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794089326746
+        },
+        {
+          "id": "res_mw6zf94a_2h_d0446",
+          "sheet": "Restaurants",
+          "name": "Petite Aneth",
+          "address": "Maria van Bourgondiëlaan 1, 8000 Brugge, Belgium",
+          "lat": 51.2117541,
+          "lng": 3.2112190999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw6zf7ft_2g_ki2rb",
+              "label": "Official Website",
+              "url": "http://www.aneth.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794090940138
+        },
+        {
+          "id": "res_mw75izs0_5_uwp5w",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Boho Brunch",
+          "address": "Giststraat 3, 8000 Brugge, Belgium",
+          "lat": 51.2070185,
+          "lng": 3.2204941,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw75iyet_4_72c0a",
+              "label": "Official Website",
+              "url": "http://www.bohobrunch.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794101192352
+        },
+        {
+          "id": "res_mw764umf_8_piwgn",
+          "sheet": "Coffee",
+          "name": "The Republic",
+          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
+          "lat": 51.210260100000006,
+          "lng": 3.2214601000000003,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw764tva_7_joecf",
+              "label": "Official Website",
+              "url": "https://www.republiekbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794102212103
+        },
+        {
+          "id": "res_mw765n4r_b_aim2z",
+          "sheet": "Pubs",
+          "name": "2be Shop",
+          "address": "Wollestraat 53, 8000 Brugge, Belgium",
+          "lat": 51.2072149,
+          "lng": 3.2268024000000004,
+          "priceLevel": null,
+          "priority": 4,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw765mfe_a_25w4l",
+              "label": "Official Website",
+              "url": "http://www.2-be.biz/"
+            }
+          ],
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw79up2j_1j_mq54p",
+          "createdAt": 1794102249051
+        },
+        {
+          "id": "res_mw76764y_e_oound",
+          "sheet": "Shopping",
+          "name": "The Bottle Shop",
+          "address": "Wollestraat 13, 8000 Brugge, Belgium",
+          "lat": 51.208079299999994,
+          "lng": 3.2254821999999996,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw7675jf_d_ojcas",
+              "label": "Official Website",
+              "url": "http://www.thebottleshop.be"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794102320338
+        },
+        {
+          "id": "res_mw77l1oj_i_2kdsu",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "The Republic",
+          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
+          "lat": 51.210260100000006,
+          "lng": 3.2214601000000003,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77l0ta_h_xn1jk",
+              "label": "Official Website",
+              "url": "https://www.republiekbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104647363
+        },
+        {
+          "id": "res_mw77muh8_l_1rebc",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Estaminet in 't Molenhuis🍺",
+          "address": "Potterierei 109, 8000 Brugge, Belgium",
+          "lat": 51.220402799999995,
+          "lng": 3.2332451,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77mt21_k_bav5h",
+              "label": "Official Website",
+              "url": "https://molenhuisbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104731340
+        },
+        {
+          "id": "res_mw77o6i4_o_jschl",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Hotel Van Cleef",
+          "address": "Molenmeers 11, 8000 Brugge, Belgium",
+          "lat": 51.2102551,
+          "lng": 3.2319484999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77o56k_n_s9evr",
+              "label": "Official Website",
+              "url": "http://www.hotelvancleef.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104793580
+        },
+        {
+          "id": "res_mw77oy7k_r_e8d61",
+          "sheet": "Coffee",
+          "name": "Kaffee Kamiel",
+          "address": "Zilverpand 7, 8000 Brugge, Belgium",
+          "lat": 51.2068096,
+          "lng": 3.2201052,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77oxfw_q_dkz3x",
+              "label": "Official Website",
+              "url": "https://www.kaffeekamiel.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104829488
+        },
+        {
+          "id": "res_mw79a2x8_10_rvzl4",
+          "sheet": "Pubs",
+          "name": "The Monk",
+          "address": "Vlamingstraat 37, 8000 Brugge, Belgium",
+          "lat": 51.211279399999995,
+          "lng": 3.2239792,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Tasting Paddles",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794107494988
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1792616951716,
+      "updatedAt": 1794108470631,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -784,19 +2569,40 @@
       "hiddenSheets": [
         "Activities",
         "Wine Bars",
-        "Shopping",
         "Things To Do",
         "Cocktails",
-        "Coffee Shops"
+        "Coffee Shops",
+        "Transport / Transfers",
+        "Bars",
+        "Cheap Eats"
       ],
-      "sectionMapUrls": {},
-      "timelineManualOrder": true
+      "sectionMapUrls": {
+        "Hotels": "https://www.google.com/maps/d/u/0/embed?mid=1f6FfvNkIjENZy6xpFzzQ36u-ZKDRmns&ehbc=2E312F"
+      },
+      "timelineManualOrder": true,
+      "isArchived": false,
+      "luggageBags": [],
+      "outfits": [],
+      "hauls": [],
+      "loungeVisits": [],
+      "tripNotes": {
+        "entries": [],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_ms9gp16e_1_0n81d",
       "name": "London",
       "year": 2026,
-      "status": "completed",
+      "status": "archived",
       "budget": 400,
       "startDate": "2026-08-04",
       "endDate": "2026-08-05",
@@ -901,7 +2707,7 @@
         },
         {
           "id": "plan_ms9hi1u3_3_hk0ah",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Train",
           "status": "booked",
           "date": "2026-08-04",
@@ -923,7 +2729,7 @@
           "estimateCategory": "Transportation",
           "estimateOriginal": {
             "name": "Train",
-            "sheet": "Transport / Transfers",
+            "sheet": "Transport | Transfers",
             "category": "Transportation",
             "quantity": 1,
             "cost": null
@@ -2109,7 +3915,7 @@
         }
       ],
       "createdAt": 1785533752886,
-      "updatedAt": 1789842339105,
+      "updatedAt": 1793663775582,
       "packingList": [
         {
           "id": "pack_msa8n1yn_4_f0stn",
@@ -2216,7 +4022,151 @@
       "manualEstimates": [],
       "hiddenSheets": [],
       "sectionMapUrls": {},
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": true,
+      "luggageBags": [
+        {
+          "id": "bag_mvztvx39_2_y57fj",
+          "name": "Rimowa Essential Cabin (Matte Black)",
+          "type": "carry_on",
+          "colorTag": "#b8874f",
+          "maxWeightKg": 10,
+          "currentWeightKg": 8.4,
+          "notes": "Overhead cabin compliant, TSA combination lock"
+        },
+        {
+          "id": "bag_mvztvx39_3_ke7bo",
+          "name": "Bennett Winch Leather Weekender",
+          "type": "checked",
+          "colorTag": "#35597a",
+          "maxWeightKg": 15,
+          "currentWeightKg": 11.2,
+          "notes": "Tuscan leather holdall with garment compartment"
+        }
+      ],
+      "outfits": [
+        {
+          "id": "outfit_mvztvx39_4_hm3aa",
+          "dayNumber": 1,
+          "timeOfDay": "evening",
+          "occasion": "Dinner at Bancone & Soho Lounges",
+          "footwear": "Edward Green Dark Oak Oxfords",
+          "weatherNote": "Mild evening 18°C",
+          "wornStatus": "worn",
+          "notes": "Formal smart attire",
+          "pieces": [
+            {
+              "id": "pc_mvztvx39_5_l4xql",
+              "name": "Suit Supply Navy Wool Blazer",
+              "type": "jacket"
+            },
+            {
+              "id": "pc_mvztvx39_6_x4pvo",
+              "name": "Cavour Linen Trousers",
+              "type": "trousers"
+            },
+            {
+              "id": "pc_mvztvx39_7_uzu4y",
+              "name": "Thomas Mason White Poplin Shirt",
+              "type": "top"
+            },
+            {
+              "id": "pc_mvztvx39_8_6ri4p",
+              "name": "Cartier Gold Ring",
+              "type": "accessory"
+            }
+          ]
+        },
+        {
+          "id": "outfit_mvztvx39_9_6cnuh",
+          "dayNumber": 2,
+          "timeOfDay": "day",
+          "occasion": "Savile Row, Burlington Arcade & St. James Visit",
+          "footwear": "Baudoin & Lange Suede Loafers",
+          "weatherNote": "Daytime 21°C",
+          "wornStatus": "planned",
+          "notes": "Tailoring fittings and cigar sampling",
+          "pieces": [
+            {
+              "id": "pc_mvztvx39_a_503wd",
+              "name": "Knitted Merino Polo Shirt",
+              "type": "top"
+            },
+            {
+              "id": "pc_mvztvx39_b_h5z8a",
+              "name": "Tailored Beige Chinos",
+              "type": "trousers"
+            },
+            {
+              "id": "pc_mvztvx39_c_xkt57",
+              "name": "Shoe Horn in day bag",
+              "type": "accessory"
+            }
+          ]
+        }
+      ],
+      "hauls": [
+        {
+          "id": "haul_mvztvx39_d_k7hgk",
+          "name": "Davidoff Signature No. 2 Tubos (Pack of 4)",
+          "category": "cigars",
+          "merchant": "Davidoff of London - St. James",
+          "formatOrSpec": "Panetela 6 x 38",
+          "quantity": 4,
+          "unitPrice": 27.75,
+          "currency": "£",
+          "dutyFreeCategory": "tobacco",
+          "notes": "Smooth Dominican blend, cedar and floral notes",
+          "dateAcquired": "2026-08-04"
+        },
+        {
+          "id": "haul_mvztvx39_e_x9kwn",
+          "name": "Suit Supply Havana Navy Wool Blazer",
+          "category": "tailoring",
+          "merchant": "Suit Supply Vigo Street",
+          "formatOrSpec": "Size 40R / Italian Wool",
+          "quantity": 1,
+          "unitPrice": 379,
+          "currency": "£",
+          "dutyFreeCategory": "goods",
+          "notes": "Unstructured shoulder, patch pockets",
+          "dateAcquired": "2026-08-04"
+        }
+      ],
+      "loungeVisits": [
+        {
+          "id": "lng_mvztvx39_f_hutzh",
+          "venueName": "Davidoff of London Sampling Lounge",
+          "city": "St. James, London",
+          "date": "2026-08-04",
+          "rating": 5,
+          "pairingOrSelection": "Davidoff Signature No. 2 with Double Espresso",
+          "atmosphereNotes": "Masterfully curated humidor room. Warm hospitality from Eddie Sahakian.",
+          "isPrivateOrMembersClub": false
+        },
+        {
+          "id": "lng_mvztvx39_g_1o2rm",
+          "venueName": "The Churchill Bar & Terrace",
+          "city": "Portman Square, London",
+          "date": "2026-08-04",
+          "rating": 5,
+          "pairingOrSelection": "Winston Churchill Late Hour + Smoked Old Fashioned",
+          "atmosphereNotes": "Refined heated terrace with bespoke cigar service.",
+          "isPrivateOrMembersClub": true
+        }
+      ],
+      "tripNotes": {
+        "entries": [],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_msizzid0_1p_eq7is",
@@ -2312,7 +4262,7 @@
         },
         {
           "id": "plan_mv9zqs02_c_xndxz",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "Petrol",
           "status": "idea",
           "date": "2026-12-04",
@@ -2333,7 +4283,7 @@
           "estimateCategory": "Transportation",
           "estimateOriginal": {
             "name": "Petrol",
-            "sheet": "Transport / Transfers",
+            "sheet": "Transport | Transfers",
             "category": "Transportation",
             "quantity": 1,
             "cost": 50
@@ -2367,15 +4317,21 @@
         {
           "id": "res_msjcveb5_1v_t87fz",
           "sheet": "Pubs",
-          "name": "Cafe Royale",
-          "address": "19 West Register Street",
-          "lat": null,
-          "lng": null,
+          "name": "Cafe Royal",
+          "address": "19 W Register St, Edinburgh EH2 2AA, UK",
+          "lat": 55.9538387,
+          "lng": -3.1904209000000003,
           "priceLevel": 3,
           "priority": 5,
           "estCost": null,
           "notes": "",
-          "links": [],
+          "links": [
+            {
+              "id": "link_mvzx5f47_2_3utzv",
+              "label": "Official Website",
+              "url": "https://www.caferoyaledinburgh.com/?utm_source=g_places&utm_medium=locations&utm_campaign=MC_pubpage"
+            }
+          ],
           "status": "shortlisted",
           "linkedPlanItemId": null,
           "createdAt": 1786131993137
@@ -2449,9 +4405,9 @@
           "id": "res_msjd3jhm_23_w3a75",
           "sheet": "Cocktails",
           "name": "Panda & Sons",
-          "address": "",
-          "lat": null,
-          "lng": null,
+          "address": "Panda & Sons, 79, Queen Street, New Town, New Town/Broughton, City of Edinburgh, Scotland, EH2 4NF, United Kingdom",
+          "lat": 55.9532068,
+          "lng": -3.2069716,
           "priceLevel": 4,
           "priority": 5,
           "estCost": null,
@@ -2463,7 +4419,7 @@
         },
         {
           "id": "res_msjg2wqs_25_o4dhb",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Caley Bar",
           "address": "Caledonian Hotel",
           "lat": null,
@@ -2610,7 +4566,7 @@
         },
         {
           "id": "res_mt4dy1sr_f_20wnq",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Heads & Tales Gin Bar",
           "address": "",
           "lat": null,
@@ -2626,7 +4582,7 @@
         },
         {
           "id": "res_mt4ygmlm_m_htj72",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Bar Prince",
           "address": "The Balmoral",
           "lat": null,
@@ -2826,7 +4782,7 @@
         },
         {
           "id": "res_mt7w716a_1v_it563",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Bar & Lounge",
           "address": "The Bonham",
           "lat": null,
@@ -2992,7 +4948,7 @@
         },
         {
           "id": "res_mti0zygg_t_wx8vs",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Dome",
           "address": "",
           "lat": null,
@@ -3010,9 +4966,9 @@
           "id": "res_mti11ygk_w_jt8hb",
           "sheet": "Pubs",
           "name": "Brewhemia",
-          "address": "",
-          "lat": null,
-          "lng": null,
+          "address": "Brewhemia, 1A, Market Street, Abbeyhill, Old Town, City of Edinburgh, Scotland, EH1 1DE, United Kingdom",
+          "lat": 55.9511467,
+          "lng": -3.1887459,
           "priceLevel": null,
           "priority": 4,
           "estCost": null,
@@ -3027,7 +4983,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1792096094030,
+      "updatedAt": 1793663982885,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -3035,18 +4991,35 @@
         "Sights",
         "Activities",
         "Hotels",
-        "Cheap Eats"
+        "Breakfasts | Bakeries | Casual Dining"
       ],
       "sectionMapUrls": {
         "Wine Bars": "https://www.google.com/maps/d/embed?mid=1Wa9qzlro10vsTMlHaTCkZ0R4WTI2XYI&hl=en&ehbc=2E312F"
       },
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": false,
+      "luggageBags": [],
+      "outfits": [],
+      "hauls": [],
+      "loungeVisits": [],
+      "tripNotes": {
+        "entries": [],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     },
     {
       "id": "trip_mswbxsjm_8_wbnn1",
       "name": "London",
       "year": 2026,
-      "status": "completed",
+      "status": "archived",
       "budget": 500,
       "startDate": "2026-09-27",
       "endDate": "2026-09-29",
@@ -3168,7 +5141,7 @@
         },
         {
           "id": "plan_mu0lmv7w_1w_pfi7k",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "NCL to LDN",
           "status": "idea",
           "date": "2026-09-27",
@@ -3188,7 +5161,7 @@
           "estimateCategory": "Transportation",
           "estimateOriginal": {
             "name": "ncl to ldn",
-            "sheet": "Transport / Transfers",
+            "sheet": "Transport | Transfers",
             "category": "Transportation",
             "quantity": 1,
             "cost": 100.09
@@ -3390,7 +5363,7 @@
         },
         {
           "id": "plan_muaekpxm_h_y43cf",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Bluebird",
           "status": "idea",
           "date": "2026-09-28",
@@ -3410,7 +5383,7 @@
           "estimateCategory": "Food & Drink",
           "estimateOriginal": {
             "name": "Bluebird",
-            "sheet": "Bars",
+            "sheet": "Bars With Views | Cocktails",
             "category": "Food & Drink",
             "quantity": 1,
             "cost": null
@@ -3420,7 +5393,7 @@
         },
         {
           "id": "plan_muahnor8_v_i1e4l",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Colbert",
           "status": "idea",
           "date": "2026-09-28",
@@ -3440,7 +5413,7 @@
           "estimateCategory": "Food & Drink",
           "estimateOriginal": {
             "name": "Colbert",
-            "sheet": "Bars",
+            "sheet": "Bars With Views | Cocktails",
             "category": "Food & Drink",
             "quantity": 1,
             "cost": null
@@ -3450,7 +5423,7 @@
         },
         {
           "id": "plan_muaho18i_y_us1kt",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Beauchamp",
           "status": "idea",
           "date": "2026-09-28",
@@ -3470,7 +5443,7 @@
           "estimateCategory": "Food & Drink",
           "estimateOriginal": {
             "name": "The Beauchamp",
-            "sheet": "Bars",
+            "sheet": "Bars With Views | Cocktails",
             "category": "Food & Drink",
             "quantity": 1,
             "cost": null
@@ -3657,7 +5630,7 @@
         },
         {
           "id": "plan_mun5ck5l_2o_88loa",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Hippodrome",
           "status": "idea",
           "date": "2026-09-27",
@@ -3677,7 +5650,7 @@
           "estimateCategory": "Food & Drink",
           "estimateOriginal": {
             "name": "Hippodrome",
-            "sheet": "Bars",
+            "sheet": "Bars With Views | Cocktails",
             "category": "Food & Drink",
             "quantity": 1,
             "cost": null
@@ -3744,7 +5717,7 @@
         },
         {
           "id": "plan_munaj78y_2y_b9kbp",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Cafe Boheme",
           "status": "idea",
           "date": "2026-09-28",
@@ -3764,7 +5737,7 @@
           "estimateCategory": "Food & Drink",
           "estimateOriginal": {
             "name": "Cafe Boheme",
-            "sheet": "Bars",
+            "sheet": "Bars With Views | Cocktails",
             "category": "Food & Drink",
             "quantity": 1,
             "cost": null
@@ -3773,7 +5746,7 @@
         },
         {
           "id": "plan_munasti6_31_w01b4",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Coach and Horses",
           "status": "idea",
           "date": "2026-09-27",
@@ -3793,7 +5766,7 @@
           "estimateCategory": "Food & Drink",
           "estimateOriginal": {
             "name": "Coach and Horses",
-            "sheet": "Bars",
+            "sheet": "Bars With Views | Cocktails",
             "category": "Food & Drink",
             "quantity": 1,
             "cost": null
@@ -3802,7 +5775,7 @@
         },
         {
           "id": "plan_muoo1hkn_5_2y02v",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The French House",
           "status": "idea",
           "date": "2026-09-27",
@@ -3823,7 +5796,7 @@
           "estimateCategory": "Food & Drink",
           "estimateOriginal": {
             "name": "The French House",
-            "sheet": "Bars",
+            "sheet": "Bars With Views | Cocktails",
             "category": "Food & Drink",
             "quantity": 1,
             "cost": null
@@ -3850,7 +5823,7 @@
         },
         {
           "id": "res_mtm3lu9g_5_03xon",
-          "sheet": "Transport / Transfers",
+          "sheet": "Transport | Transfers",
           "name": "NCL to LDN",
           "address": "",
           "lat": null,
@@ -3866,7 +5839,7 @@
         },
         {
           "id": "res_mtt7nbnd_6_dvyo6",
-          "sheet": "Cheap Eats",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Dal Fiorentino",
           "address": "Fitzrovia | Notting Hill | Holborn |",
           "lat": null,
@@ -3994,7 +5967,7 @@
         },
         {
           "id": "res_mtur7k8d_b_19u9u",
-          "sheet": "Cheap Eats",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Focaccia Factory",
           "address": "Mayfair",
           "lat": null,
@@ -4090,7 +6063,7 @@
         },
         {
           "id": "res_mtw5j7gm_d_hk2ep",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Bluebird",
           "address": "Chelsea",
           "lat": null,
@@ -4106,7 +6079,7 @@
         },
         {
           "id": "res_mtw5nlsx_f_uz1ez",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Stanley's",
           "address": "Chelsea",
           "lat": null,
@@ -4122,7 +6095,7 @@
         },
         {
           "id": "res_mtw5p7gn_h_3hrjv",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Garden at Corinthia London",
           "address": "Trafalgar Sq",
           "lat": null,
@@ -4138,7 +6111,7 @@
         },
         {
           "id": "res_mtw5xym9_m_fcx8e",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Ivy Chelsea Garden",
           "address": "Chelsea",
           "lat": null,
@@ -4154,7 +6127,7 @@
         },
         {
           "id": "res_mtw66enh_o_bm52e",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Connaught",
           "address": "Mayfair",
           "lat": null,
@@ -4170,7 +6143,7 @@
         },
         {
           "id": "res_mtw66qnn_q_vuwp9",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Franco's",
           "address": "st james",
           "lat": null,
@@ -4186,7 +6159,7 @@
         },
         {
           "id": "res_mtw6bwaq_t_yhwul",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Colbert",
           "address": "Chelsea",
           "lat": null,
@@ -4202,7 +6175,7 @@
         },
         {
           "id": "res_mu0dgpk5_v_bhxlw",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Dovetail",
           "address": "Leicester square",
           "lat": null,
@@ -4224,7 +6197,7 @@
         },
         {
           "id": "res_mu0dmjjq_z_hi5ww",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Gods Rooftop",
           "address": "",
           "lat": null,
@@ -4256,7 +6229,7 @@
         },
         {
           "id": "res_mu0gqigh_14_xonmi",
-          "sheet": "Cheap Eats",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Carbon",
           "address": "78 Brewer St, London W1F 9TY",
           "lat": null,
@@ -4272,7 +6245,7 @@
         },
         {
           "id": "res_mu0gsfuk_16_bqwfq",
-          "sheet": "Cheap Eats",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Eat Activ",
           "address": "26 Noel St, London W1F 8GY",
           "lat": null,
@@ -4288,7 +6261,7 @@
         },
         {
           "id": "res_mu0gznpd_18_nv7m7",
-          "sheet": "Cheap Eats",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Make Mine",
           "address": "86 Dean St, London W1D 3SR",
           "lat": null,
@@ -4418,7 +6391,7 @@
         },
         {
           "id": "res_mu1v5gdp_27_4dhe7",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Beauchamp",
           "address": "Knightsbridge",
           "lat": null,
@@ -4434,7 +6407,7 @@
         },
         {
           "id": "res_mu3apcng_29_ffy8v",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Flute",
           "address": "Soho",
           "lat": null,
@@ -4450,7 +6423,7 @@
         },
         {
           "id": "res_mu3ed09z_2h_hilpq",
-          "sheet": "Cheap Eats",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Breadstall Pizza",
           "address": "Soho",
           "lat": null,
@@ -4530,7 +6503,7 @@
         },
         {
           "id": "res_mubx9i2e_1a_1enmh",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "28°-50° Wine Workshop & Kitchen",
           "address": "Marylebone",
           "lat": null,
@@ -4594,7 +6567,7 @@
         },
         {
           "id": "res_mug51x2s_1x_wjhdl",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The Marlborough Head",
           "address": "Covent Garden",
           "lat": null,
@@ -4610,7 +6583,7 @@
         },
         {
           "id": "res_mug7p94w_20_dhe9c",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "Dovetail",
           "address": "Leicester square",
           "lat": null,
@@ -4632,7 +6605,7 @@
         },
         {
           "id": "res_muoo19rz_3_f5p74",
-          "sheet": "Bars",
+          "sheet": "Bars With Views | Cocktails",
           "name": "The French House",
           "address": "",
           "lat": null,
@@ -4773,14 +6746,158 @@
         "Pubs"
       ],
       "createdAt": 1786916485570,
-      "updatedAt": 1790898929627,
+      "updatedAt": 1793663779081,
       "sectionMapUrls": {
         "Shopping": "https://www.google.com/maps/d/u/0/embed?mid=1OfW-BTzHmlazTWW50UhG-lmpt1GVl4s&ehbc=2E312F",
         "Restaurants": "https://www.google.com/maps/d/u/0/embed?mid=1g_ZKFxA4a5NyxwHKImbOP1LdUOI1ts4&ehbc=2E312F",
         "Cigars": "https://www.google.com/maps/d/u/0/embed?mid=1E4IugDGMc2J8zc1n8-U5LVj1TGhoj4k&ehbc=2E312F",
-        "Bars": "https://www.google.com/maps/d/u/0/embed?mid=17JtustSph_DQVK3QNVy0FSrZ39Jqys4&ehbc=2E312F"
+        "Bars With Views | Cocktails": "https://www.google.com/maps/d/u/0/embed?mid=17JtustSph_DQVK3QNVy0FSrZ39Jqys4&ehbc=2E312F"
       },
-      "timelineManualOrder": true
+      "timelineManualOrder": true,
+      "isArchived": true,
+      "luggageBags": [
+        {
+          "id": "bag_mvztvx39_h_g8o6j",
+          "name": "Rimowa Essential Cabin (Matte Black)",
+          "type": "carry_on",
+          "colorTag": "#b8874f",
+          "maxWeightKg": 10,
+          "currentWeightKg": 8.4,
+          "notes": "Overhead cabin compliant, TSA combination lock"
+        },
+        {
+          "id": "bag_mvztvx39_i_f6u0v",
+          "name": "Bennett Winch Leather Weekender",
+          "type": "checked",
+          "colorTag": "#35597a",
+          "maxWeightKg": 15,
+          "currentWeightKg": 11.2,
+          "notes": "Tuscan leather holdall with garment compartment"
+        }
+      ],
+      "outfits": [
+        {
+          "id": "outfit_mvztvx39_j_61x6f",
+          "dayNumber": 1,
+          "timeOfDay": "evening",
+          "occasion": "Dinner at Bancone & Soho Lounges",
+          "footwear": "Edward Green Dark Oak Oxfords",
+          "weatherNote": "Mild evening 18°C",
+          "wornStatus": "worn",
+          "notes": "Formal smart attire",
+          "pieces": [
+            {
+              "id": "pc_mvztvx39_k_jolm5",
+              "name": "Suit Supply Navy Wool Blazer",
+              "type": "jacket"
+            },
+            {
+              "id": "pc_mvztvx39_l_zu60y",
+              "name": "Cavour Linen Trousers",
+              "type": "trousers"
+            },
+            {
+              "id": "pc_mvztvx39_m_qv3cr",
+              "name": "Thomas Mason White Poplin Shirt",
+              "type": "top"
+            },
+            {
+              "id": "pc_mvztvx39_n_d0mph",
+              "name": "Cartier Gold Ring",
+              "type": "accessory"
+            }
+          ]
+        },
+        {
+          "id": "outfit_mvztvx39_o_b0twg",
+          "dayNumber": 2,
+          "timeOfDay": "day",
+          "occasion": "Savile Row, Burlington Arcade & St. James Visit",
+          "footwear": "Baudoin & Lange Suede Loafers",
+          "weatherNote": "Daytime 21°C",
+          "wornStatus": "planned",
+          "notes": "Tailoring fittings and cigar sampling",
+          "pieces": [
+            {
+              "id": "pc_mvztvx39_p_f51qf",
+              "name": "Knitted Merino Polo Shirt",
+              "type": "top"
+            },
+            {
+              "id": "pc_mvztvx39_q_1ojl1",
+              "name": "Tailored Beige Chinos",
+              "type": "trousers"
+            },
+            {
+              "id": "pc_mvztvx39_r_6ggxk",
+              "name": "Shoe Horn in day bag",
+              "type": "accessory"
+            }
+          ]
+        }
+      ],
+      "hauls": [
+        {
+          "id": "haul_mvztvx39_s_vv8t9",
+          "name": "Davidoff Signature No. 2 Tubos (Pack of 4)",
+          "category": "cigars",
+          "merchant": "Davidoff of London - St. James",
+          "formatOrSpec": "Panetela 6 x 38",
+          "quantity": 4,
+          "unitPrice": 27.75,
+          "currency": "£",
+          "dutyFreeCategory": "tobacco",
+          "notes": "Smooth Dominican blend, cedar and floral notes",
+          "dateAcquired": "2026-08-04"
+        },
+        {
+          "id": "haul_mvztvx39_t_d2apr",
+          "name": "Suit Supply Havana Navy Wool Blazer",
+          "category": "tailoring",
+          "merchant": "Suit Supply Vigo Street",
+          "formatOrSpec": "Size 40R / Italian Wool",
+          "quantity": 1,
+          "unitPrice": 379,
+          "currency": "£",
+          "dutyFreeCategory": "goods",
+          "notes": "Unstructured shoulder, patch pockets",
+          "dateAcquired": "2026-08-04"
+        }
+      ],
+      "loungeVisits": [
+        {
+          "id": "lng_mvztvx39_u_00ldw",
+          "venueName": "Davidoff of London Sampling Lounge",
+          "city": "St. James, London",
+          "date": "2026-08-04",
+          "rating": 5,
+          "pairingOrSelection": "Davidoff Signature No. 2 with Double Espresso",
+          "atmosphereNotes": "Masterfully curated humidor room. Warm hospitality from Eddie Sahakian.",
+          "isPrivateOrMembersClub": false
+        },
+        {
+          "id": "lng_mvztvx39_v_3sl3v",
+          "venueName": "The Churchill Bar & Terrace",
+          "city": "Portman Square, London",
+          "date": "2026-08-04",
+          "rating": 5,
+          "pairingOrSelection": "Winston Churchill Late Hour + Smoked Old Fashioned",
+          "atmosphereNotes": "Refined heated terrace with bespoke cigar service.",
+          "isPrivateOrMembersClub": true
+        }
+      ],
+      "tripNotes": {
+        "entries": [],
+        "clips": [],
+        "pins": [],
+        "practical": {
+          "currency": "",
+          "safety": "",
+          "emergency": "",
+          "apps": []
+        },
+        "legacyMigrated": true
+      }
     }
   ],
   "trash": {
