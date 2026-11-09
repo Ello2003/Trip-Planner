@@ -2543,7 +2543,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794108470631,
+      "updatedAt": 1794267441459,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -2586,7 +2586,14 @@
       "hauls": [],
       "loungeVisits": [],
       "tripNotes": {
-        "entries": [],
+        "entries": [
+          {
+            "id": "note_mw9wiaer_2_7b4r8",
+            "text": "Westerven 12",
+            "kind": "note",
+            "createdAt": 1794267441459
+          }
+        ],
         "clips": [],
         "pins": [],
         "practical": {
