@@ -42,3 +42,65 @@
   background: rgba(184, 135, 79, 0.12);
   outline: 1px dashed var(--brass);
 }
+
+/* Packing list rows */
+#travel-ledger-root .pack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0 8px;
+}
+#travel-ledger-root .pack-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid var(--paper-edge);
+  border-radius: 8px;
+  background: var(--paper-raised);
+}
+#travel-ledger-root .pack-row.packed-row {
+  opacity: 0.65;
+}
+#travel-ledger-root .pack-row .pack-name {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--ink);
+}
+#travel-ledger-root .pack-row .pack-qty {
+  width: 56px;
+  text-align: right;
+  border: 1px solid var(--paper-edge);
+  border-radius: 4px;
+  padding: 4px 6px;
+  background: var(--paper);
+}
+
+/* Research sortable rows */
+#travel-ledger-root .research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 0 8px;
+}
+#travel-ledger-root .research-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 10px;
+  border: 1px solid var(--paper-edge);
+  border-radius: 8px;
+  background: var(--paper-raised);
+}
+#travel-ledger-root .research-row .research-main {
+  flex: 1;
+  min-width: 0;
+}
+#travel-ledger-root .research-row .research-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

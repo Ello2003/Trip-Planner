@@ -1,6 +1,7 @@
 import React from 'react';
 import { Trip, PackingItem, PACKING_CATEGORIES, PACKING_ESSENTIALS } from '../types';
 import { singleLine, uid } from '../utils/helpers';
+import { SortableList, SortableRow, DragHandle } from './Sortable';
 
 interface PackingTabProps {
   trip: Trip;
@@ -35,7 +36,6 @@ export const PackingTab: React.FC<PackingTabProps> = ({
       if (field === 'qty') return { ...p, qty: Math.max(1, Number(value) || 1) };
       return p;
     });
-
     onUpdateTrip({
       ...trip,
       packingList: updated,
@@ -63,7 +63,6 @@ export const PackingTab: React.FC<PackingTabProps> = ({
       onShowToast('Essentials already added');
       return;
     }
-
     const newItems: PackingItem[] = toAdd.map(e => ({
       id: uid('pack'),
       category: e.category,
@@ -71,7 +70,6 @@ export const PackingTab: React.FC<PackingTabProps> = ({
       qty: e.qty,
       packed: false
     }));
-
     onUpdateTrip(
       {
         ...trip,
@@ -80,10 +78,33 @@ export const PackingTab: React.FC<PackingTabProps> = ({
       },
       {
         action: 'packing-essentials-added',
-        detail: `Added ${toAdd.length} essential item(s) to ${trip.name} packing list`
+        detail: `Added ${toAdd.length} essentials to ${trip.name} packing list`
       }
     );
-    onShowToast(`${toAdd.length} item(s) added`);
+    onShowToast(`Added ${toAdd.length} essentials`);
+  };
+
+  const handleReorderCategory = (categoryKey: string, newIds: string[]) => {
+    const reordered = newIds
+      .map(id => trip.packingList.find(p => p.id === id))
+      .filter(Boolean) as PackingItem[];
+    const byCat: Record<string, PackingItem[]> = {};
+    for (const p of trip.packingList) {
+      (byCat[p.category] ||= []).push(p);
+    }
+    byCat[categoryKey] = reordered;
+    const next: PackingItem[] = [];
+    for (const c of PACKING_CATEGORIES) {
+      if (byCat[c.key]) next.push(...byCat[c.key]);
+    }
+    for (const [k, list] of Object.entries(byCat)) {
+      if (!PACKING_CATEGORIES.some(c => c.key === k)) next.push(...list);
+    }
+    onUpdateTrip({
+      ...trip,
+      packingList: next,
+      updatedAt: Date.now()
+    });
   };
 
   return (
@@ -93,54 +114,24 @@ export const PackingTab: React.FC<PackingTabProps> = ({
           + Add Item
         </button>
         <button className="btn-ghost" onClick={handleQuickAddEssentials}>
-          + Quick Add Essentials
+          + Essentials
         </button>
-        {total > 0 && (
-          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div
-              style={{
-                width: '120px',
-                height: '6px',
-                borderRadius: '3px',
-                background: 'var(--paper-edge)',
-                overflow: 'hidden'
-              }}
-            >
-              <div
-                style={{
-                  width: `${pct}%`,
-                  height: '100%',
-                  background: 'var(--green)',
-                  transition: 'width 0.3s ease'
-                }}
-              />
-            </div>
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '12px',
-                color: 'var(--ink-soft)'
-              }}
-            >
-              {packed} / {total} packed
-            </span>
-          </div>
-        )}
+        <div style={{ marginLeft: 'auto', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--ink-soft)' }}>
+          {packed}/{total} packed ({pct}%)
+        </div>
       </div>
 
       <div>
         {PACKING_CATEGORIES.map(c => {
           const items = trip.packingList.filter(i => i.category === c.key);
-          const packedCount = items.filter(i => i.packed).length;
-
           return (
             <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={c.key}>
               <div className="sheet-header">
-                <div>
-                  <span className="sheet-dot" style={{ background: c.color }} />
-                  {c.key}{' '}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span className="sheet-dot" style={{ background: c.color || 'var(--slate)' }} />
+                  <strong>{c.key}</strong>
                   <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
-                    ({packedCount}/{items.length})
+                    ({items.length})
                   </span>
                 </div>
                 <button className="btn-ghost btn-sm" onClick={() => onOpenAddPackingModal(c.key)}>
@@ -149,58 +140,48 @@ export const PackingTab: React.FC<PackingTabProps> = ({
               </div>
 
               {items.length > 0 ? (
-                <div className="table-scroll">
-                  <table className="exp-table packing-table">
-                    <thead>
-                      <tr>
-                        <th style={{ width: '8%' }}></th>
-                        <th style={{ width: '66%' }}>Item</th>
-                        <th style={{ width: '14%' }} className="num">Qty</th>
-                        <th style={{ width: '12%' }}></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {items.map(item => (
-                        <tr key={item.id} className={item.packed ? 'packed-row' : ''}>
-                          <td>
-                            <input
-                              type="checkbox"
-                              checked={item.packed}
-                              onChange={() => handleTogglePacked(item)}
-                              aria-label="Mark packed"
-                            />
-                          </td>
-                          <td>
-                            <input
-                              type="text"
-                              className="pack-name"
-                              value={item.name}
-                              onChange={e => handleItemChange(item, 'name', e.target.value)}
-                            />
-                          </td>
-                          <td className="num">
-                            <input
-                              type="number"
-                              min="1"
-                              step="1"
-                              value={item.qty}
-                              style={{ textAlign: 'right' }}
-                              onChange={e => handleItemChange(item, 'qty', e.target.value)}
-                            />
-                          </td>
-                          <td>
-                            <button
-                              className="exp-del"
-                              onClick={() => handleDeleteItem(item)}
-                              title="Delete item"
-                            >
-                              ✕
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                <div className="pack-list">
+                  <SortableList
+                    ids={items.map(i => i.id)}
+                    onReorder={(_f, _t, newIds) => handleReorderCategory(c.key, newIds)}
+                  >
+                    {items.map(item => (
+                      <SortableRow
+                        key={item.id}
+                        id={item.id}
+                        className={`pack-row ${item.packed ? 'packed-row' : ''}`}
+                      >
+                        <DragHandle />
+                        <input
+                          type="checkbox"
+                          checked={item.packed}
+                          onChange={() => handleTogglePacked(item)}
+                          aria-label="Mark packed"
+                        />
+                        <input
+                          type="text"
+                          className="pack-name"
+                          value={item.name}
+                          onChange={e => handleItemChange(item, 'name', e.target.value)}
+                        />
+                        <input
+                          type="number"
+                          min={1}
+                          step={1}
+                          className="pack-qty"
+                          value={item.qty}
+                          onChange={e => handleItemChange(item, 'qty', e.target.value)}
+                        />
+                        <button
+                          className="exp-del"
+                          onClick={() => handleDeleteItem(item)}
+                          title="Delete item"
+                        >
+                          ✕
+                        </button>
+                      </SortableRow>
+                    ))}
+                  </SortableList>
                 </div>
               ) : (
                 <div className="empty-state">Nothing here yet.</div>
