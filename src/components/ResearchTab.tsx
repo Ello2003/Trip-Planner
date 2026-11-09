@@ -193,22 +193,48 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                             <thead>
                               <tr>
                                 <th style={{ width: '36px' }}></th>
-                                <th style={{ width: '30%' }}>Name</th>
+                                <th style={{ width: '36%' }}>Name</th>
                                 <th style={{ width: '10%' }}>Price</th>
                                 <th style={{ width: '12%' }}>Priority</th>
-                                <th style={{ width: '14%' }} className="num">Est. Cost</th>
+                                <th style={{ width: '12%' }} className="num">Est. Cost</th>
                                 <th style={{ width: '12%' }}>Status</th>
-                                <th style={{ width: '18%' }}></th>
+                                <th style={{ width: '14%' }}></th>
                               </tr>
                             </thead>
                             <tbody>
                               {items.map(r => (
                                 <SortableRow as="tr" key={r.id} id={r.id}>
                                   <td className="drag-cell"><DragHandle /></td>
-                                  <td>
+                                  <td style={{ minWidth: '180px' }}>
                                     <strong>{r.name}</strong>
-                                    {r.address && <div style={{ color: 'var(--ink-soft)', fontSize: '11px' }}>{r.address}</div>}
-                                    {r.notes && <div style={{ color: 'var(--ink-soft)', fontSize: '11px', fontStyle: 'italic' }}>{r.notes}</div>}
+                                    {r.address && (
+                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px' }}>
+                                        {r.address}
+                                      </div>
+                                    )}
+                                    {r.links && r.links.length > 0 && (
+                                      <div style={{ fontSize: '11px', marginTop: '2px' }}>
+                                        {r.links.map((link, idx) => (
+                                          <span key={link.id || idx}>
+                                            {idx > 0 && ' · '}
+                                            <a
+                                              href={link.url}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              style={{ color: 'var(--blue)' }}
+                                              onClick={e => e.stopPropagation()}
+                                            >
+                                              {link.label || 'link'}
+                                            </a>
+                                          </span>
+                                        ))}
+                                      </div>
+                                    )}
+                                    {r.notes && (
+                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px', fontStyle: 'italic', marginTop: '2px' }}>
+                                        {r.notes}
+                                      </div>
+                                    )}
                                   </td>
                                   <td>{r.priceLevel ? PRICE_LABELS[r.priceLevel] : '—'}</td>
                                   <td>{r.priority ? PRIORITY_LABELS[r.priority] : '—'}</td>
