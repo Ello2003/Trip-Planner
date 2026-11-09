@@ -1,0 +1,44 @@
+name: Restore table UI + DnD
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/restore-table-dnd.yml'
+      - 'scripts/packing-table.b64'
+      - 'scripts/research-table.b64'
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply table+DnD files
+        run: |
+          python3 << 'PY'
+          import base64, pathlib
+          mapping = {
+            'scripts/research-table.b64': 'src/components/ResearchTab.tsx',
+            'scripts/packing-table.b64': 'src/components/PackingTab.tsx',
+          }
+          for src, dest in mapping.items():
+            p = pathlib.Path(src)
+            if not p.exists():
+              print('skip missing', src)
+              continue
+            data = p.read_text().strip()
+            if data.startswith('PLACEHOLDER'):
+              print('skip placeholder', src)
+              continue
+            pathlib.Path(dest).write_bytes(base64.b64decode(data))
+            print('wrote', dest)
+          PY
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/ResearchTab.tsx src/components/PackingTab.tsx || true
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Research & Packing: original table UI with drag handles"
+            git push
+          fi
