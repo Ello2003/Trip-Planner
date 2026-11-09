@@ -218,10 +218,10 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                   </td>
                                   <td style={{ whiteSpace: 'nowrap' }}>
                                     {r.status !== 'promoted' && (
-                                      <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan" style={{ marginRight: '6px' }}>to Plan</button>
+                                      <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan" style={{ marginRight: '6px' }}>{'→ Plan'}</button>
                                     )}
-                                    <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">E</button>
-                                    <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">X</button>
+                                    <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">{'✎'}</button>
+                                    <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">{'✕'}</button>
                                   </td>
                                 </SortableRow>
                               ))}
