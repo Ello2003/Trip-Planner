@@ -37,7 +37,7 @@ export function DragHandle({ className = '' }: { className?: string }) {
       {...ctx.listeners}
       onClick={e => e.stopPropagation()}
     >
-      ⠿
+      ⣿
     </button>
   );
 }
@@ -47,9 +47,16 @@ interface SortableRowProps {
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
+  as?: 'div' | 'tr';
 }
 
-export function SortableRow({ id, children, className = '', disabled }: SortableRowProps) {
+export function SortableRow({
+  id,
+  children,
+  className = '',
+  disabled,
+  as: Tag = 'div'
+}: SortableRowProps) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id,
     disabled
@@ -70,9 +77,13 @@ export function SortableRow({ id, children, className = '', disabled }: Sortable
 
   return (
     <HandleCtx.Provider value={handleValue}>
-      <div ref={setNodeRef} style={style} className={`sortable-row ${isDragging ? 'is-dragging' : ''} ${className}`.trim()}>
+      <Tag
+        ref={setNodeRef as any}
+        style={style}
+        className={`sortable-row ${isDragging ? 'is-dragging' : ''} ${className}`.trim()}
+      >
         {children}
-      </div>
+      </Tag>
     </HandleCtx.Provider>
   );
 }
