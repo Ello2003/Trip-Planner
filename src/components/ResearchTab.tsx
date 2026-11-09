@@ -1,4 +1,5 @@
 import { InlineText, InlineColor, rekey } from './InlineEdit';
+import { SortableList, SortableRow, DragHandle } from './Sortable';
 import React, { useState } from 'react';
 import { Trip, Sheet, ResearchItem, Settings, Category } from '../types';
 import { fmt, extractMapEmbedUrl } from '../utils/helpers';
@@ -19,8 +20,8 @@ interface ResearchTabProps {
   onOpenMapSettings: () => void;
 }
 
-const PRICE_LABELS: Record<number, string> = { 1: '£', 2: '££', 3: '£££', 4: '££££' };
-const PRIORITY_LABELS: Record<number, string> = { 1: '★', 2: '★★', 3: '★★★', 4: '★★★★', 5: '★★★★★' };
+const PRICE_LABELS: Record<number, string> = { 1: '\u00a3', 2: '\u00a3\u00a3', 3: '\u00a3\u00a3\u00a3', 4: '\u00a3\u00a3\u00a3\u00a3' };
+const PRIORITY_LABELS: Record<number, string> = { 1: '\u2605', 2: '\u2605\u2605', 3: '\u2605\u2605\u2605', 4: '\u2605\u2605\u2605\u2605', 5: '\u2605\u2605\u2605\u2605\u2605' };
 
 export const ResearchTab: React.FC<ResearchTabProps> = ({
   onRenameSheet,
@@ -46,7 +47,6 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
     setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  // Rename a section in place; keep all of its per-section UI state under the new name
   const handleRenameSheet = (from: string, to: string): string | null => {
     const err = onRenameSheet ? onRenameSheet(from, to) : null;
     if (!err) {
@@ -67,11 +67,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
     const url = extractMapEmbedUrl(raw);
     const updatedUrls = { ...trip.sectionMapUrls, [key]: url };
     onUpdateTrip(
-      {
-        ...trip,
-        sectionMapUrls: updatedUrls,
-        updatedAt: Date.now()
-      },
+      { ...trip, sectionMapUrls: updatedUrls, updatedAt: Date.now() },
       { action: 'section-map-added', detail: `Added a map for ${key} on ${trip.name}` }
     );
     setSectionMapEditMode(prev => ({ ...prev, [key]: false }));
@@ -81,11 +77,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
     const updatedUrls = { ...trip.sectionMapUrls };
     delete updatedUrls[key];
     onUpdateTrip(
-      {
-        ...trip,
-        sectionMapUrls: updatedUrls,
-        updatedAt: Date.now()
-      },
+      { ...trip, sectionMapUrls: updatedUrls, updatedAt: Date.now() },
       { action: 'section-map-removed', detail: `Removed the ${key} map for ${trip.name}` }
     );
     setExpandedSectionMaps(prev => ({ ...prev, [key]: false }));
@@ -95,13 +87,22 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   const handleDeleteItem = (item: ResearchItem) => {
     const updated = trip.research.filter(r => r.id !== item.id);
     onUpdateTrip(
-      {
-        ...trip,
-        research: updated,
-        updatedAt: Date.now()
-      },
+      { ...trip, research: updated, updatedAt: Date.now() },
       { action: 'research-deleted', detail: `Removed "${item.name}" from ${trip.name} research` }
     );
+  };
+
+  const handleReorderResearch = (sheetKey: string, newIds: string[]) => {
+    const inSheet = trip.research.filter(r => r.sheet === sheetKey);
+    const others = trip.research.filter(r => r.sheet !== sheetKey);
+    const reordered = newIds
+      .map(id => inSheet.find(r => r.id === id))
+      .filter(Boolean) as typeof trip.research;
+    onUpdateTrip({
+      ...trip,
+      research: [...others, ...reordered],
+      updatedAt: Date.now()
+    });
   };
 
   return (
@@ -110,43 +111,15 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
         <button className="btn-primary" onClick={() => onOpenAddResearchModal()}>
           + Add Place
         </button>
-
         <div className="timeline-toggle" style={{ display: 'inline-flex' }}>
-          <button
-            type="button"
-            className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`}
-            onClick={() => setResearchView('both')}
-            title="Split view: Interactive Map & Places List"
-          >
-            🗺️ Split View
-          </button>
-          <button
-            type="button"
-            className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`}
-            onClick={() => setResearchView('list')}
-            title="Categorized List Only"
-          >
-            📋 List Only
-          </button>
-          <button
-            type="button"
-            className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`}
-            onClick={() => setResearchView('map')}
-            title="Interactive Map Only"
-          >
-            🗺️ Map Only
-          </button>
+          <button type="button" className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('both')} title="Split view">\uD83D\uDDFA\uFE0F Split View</button>
+          <button type="button" className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('list')} title="List only">\uD83D\uDCCB List Only</button>
+          <button type="button" className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('map')} title="Map only">\uD83D\uDDFA\uFE0F Map Only</button>
         </div>
-
-        <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>
-          Manage Categories
-        </button>
-        <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>
-          ⚙️ Maps Key
-        </button>
+        <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>Manage Categories</button>
+        <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>\u2699\uFE0F Maps Key</button>
       </div>
 
-      {/* Interactive Google Maps component for Researched Places */}
       {(researchView === 'both' || researchView === 'map') && (
         <ResearchMap
           trip={trip}
@@ -162,7 +135,6 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
         />
       )}
 
-      {/* Categorized Places List */}
       {researchView !== 'map' && (
         <div>
           {sheets
@@ -177,11 +149,8 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
               return (
                 <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={s.key}>
                   <div className="sheet-header">
-                    <div
-                      style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}
-                      onClick={() => toggleSheet(s.key)}
-                    >
-                      <span>{isCollapsed ? '▸' : '▾'}</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }} onClick={() => toggleSheet(s.key)}>
+                      <span>{isCollapsed ? '\u25B8' : '\u25BE'}</span>
                       {onRecolorSheet ? (
                         <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
                       ) : (
@@ -192,22 +161,11 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                       ) : (
                         s.key
                       )}{' '}
-                      <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
-                        ({items.length})
-                      </span>
+                      <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>({items.length})</span>
                     </div>
                     <div style={{ display: 'flex', gap: '6px' }}>
-                      <button
-                        className="btn-ghost btn-sm"
-                        onClick={() => toggleSectionMap(s.key)}
-                        title={hasMap ? 'Show/hide map' : 'Add a map for this section'}
-                        style={hasMap ? { borderColor: 'var(--brass)', color: 'var(--brass)' } : undefined}
-                      >
-                        🗺 Map
-                      </button>
-                      <button className="btn-ghost btn-sm" onClick={() => onOpenAddResearchModal(s.key)}>
-                        + Add
-                      </button>
+                      <button className="btn-ghost btn-sm" onClick={() => toggleSectionMap(s.key)} title={hasMap ? 'Show/hide map' : 'Add a map'} style={hasMap ? { borderColor: 'var(--brass)', color: 'var(--brass)' } : undefined}>\uD83D\uDDFA Map</button>
+                      <button className="btn-ghost btn-sm" onClick={() => onOpenAddResearchModal(s.key)}>+ Add</button>
                     </div>
                   </div>
 
@@ -217,50 +175,18 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                         <div style={{ marginBottom: '14px' }}>
                           {hasMap && !mapEditing ? (
                             <div>
-                              <iframe
-                                src={trip.sectionMapUrls[s.key]}
-                                width="100%"
-                                height="320"
-                                style={{ border: 0, borderRadius: '6px', display: 'block' }}
-                                loading="lazy"
-                                title={`${s.key} Map`}
-                              />
+                              <iframe src={trip.sectionMapUrls[s.key]} width="100%" height="320" style={{ border: 0, borderRadius: '6px', display: 'block' }} loading="lazy" title={`${s.key} Map`} />
                               <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
-                                <button
-                                  className="btn-ghost btn-sm"
-                                  onClick={() => {
-                                    setSectionMapInputs(prev => ({ ...prev, [s.key]: trip.sectionMapUrls[s.key] }));
-                                    setSectionMapEditMode(prev => ({ ...prev, [s.key]: true }));
-                                  }}
-                                >
-                                  Change
-                                </button>
-                                <button className="btn-ghost btn-sm" onClick={() => handleRemoveSectionMap(s.key)}>
-                                  Remove
-                                </button>
+                                <button className="btn-ghost btn-sm" onClick={() => { setSectionMapInputs(prev => ({ ...prev, [s.key]: trip.sectionMapUrls[s.key] })); setSectionMapEditMode(prev => ({ ...prev, [s.key]: true })); }}>Change</button>
+                                <button className="btn-ghost btn-sm" onClick={() => handleRemoveSectionMap(s.key)}>Remove</button>
                               </div>
                             </div>
                           ) : (
                             <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                              <textarea
-                                rows={1}
-                                placeholder="Paste a Google Maps/My Maps share or embed link"
-                                style={{ flex: 1 }}
-                                value={sectionMapInputs[s.key] || ''}
-                                onChange={e =>
-                                  setSectionMapInputs(prev => ({ ...prev, [s.key]: e.target.value }))
-                                }
-                              />
-                              <button className="btn-primary btn-sm" onClick={() => handleSaveSectionMap(s.key)}>
-                                {hasMap ? 'Save' : 'Add'}
-                              </button>
+                              <textarea rows={1} placeholder="Paste a Google Maps/My Maps share or embed link" style={{ flex: 1 }} value={sectionMapInputs[s.key] || ''} onChange={e => setSectionMapInputs(prev => ({ ...prev, [s.key]: e.target.value }))} />
+                              <button className="btn-primary btn-sm" onClick={() => handleSaveSectionMap(s.key)}>{hasMap ? 'Save' : 'Add'}</button>
                               {mapEditing && (
-                                <button
-                                  className="btn-ghost btn-sm"
-                                  onClick={() => setSectionMapEditMode(prev => ({ ...prev, [s.key]: false }))}
-                                >
-                                  Cancel
-                                </button>
+                                <button className="btn-ghost btn-sm" onClick={() => setSectionMapEditMode(prev => ({ ...prev, [s.key]: false }))}>Cancel</button>
                               )}
                             </div>
                           )}
@@ -268,97 +194,32 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                       )}
 
                       {items.length > 0 ? (
-                        <div className="table-scroll">
-                          <table className="exp-table research-table">
-                            <thead>
-                              <tr>
-                                <th style={{ width: '32%' }}>Name</th>
-                                <th style={{ width: '10%' }}>Price</th>
-                                <th style={{ width: '12%' }}>Priority</th>
-                                <th style={{ width: '14%' }} className="num">Est. Cost</th>
-                                <th style={{ width: '12%' }}>Status</th>
-                                <th style={{ width: '20%' }}></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {items.map(r => (
-                                <tr key={r.id}>
-                                  <td>
-                                    <strong>{r.name}</strong>
-                                    {r.address && (
-                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px' }}>
-                                        {r.address}
-                                      </div>
-                                    )}
-                                    {r.links && r.links.length > 0 && (
-                                      <div style={{ fontSize: '11px', marginTop: '2px' }}>
-                                        {r.links.map((link, idx) => (
-                                          <span key={link.id || idx}>
-                                            {idx > 0 && ' · '}
-                                            <a
-                                              href={link.url}
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              style={{ color: 'var(--blue)' }}
-                                            >
-                                              {link.label || 'link'}
-                                            </a>
-                                          </span>
-                                        ))}
-                                      </div>
-                                    )}
-                                    {r.notes && (
-                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px', fontStyle: 'italic' }}>
-                                        {r.notes}
-                                      </div>
-                                    )}
-                                  </td>
-                                  <td>{r.priceLevel ? PRICE_LABELS[r.priceLevel] : '—'}</td>
-                                  <td>{r.priority ? PRIORITY_LABELS[r.priority] : '—'}</td>
-                                  <td className="num">{r.estCost != null ? fmt(r.estCost) : '—'}</td>
-                                  <td>
-                                    <span
-                                      className={`status-chip status-${
-                                        r.status === 'promoted'
-                                          ? 'completed'
-                                          : r.status === 'dismissed'
-                                          ? 'cancelled'
-                                          : 'upcoming'
-                                      }`}
-                                    >
-                                      {r.status}
-                                    </span>
-                                  </td>
-                                  <td style={{ whiteSpace: 'nowrap' }}>
-                                    {r.status !== 'promoted' && (
-                                      <button
-                                        className="btn-ghost btn-sm"
-                                        onClick={() => onPromoteToPlan(r)}
-                                        title="Promote to Plan"
-                                        style={{ marginRight: '6px' }}
-                                      >
-                                        → Plan
-                                      </button>
-                                    )}
-                                    <button
-                                      className="exp-del"
-                                      onClick={() => onOpenEditResearchModal(r)}
-                                      title="Edit"
-                                    >
-                                      ✎
-                                    </button>
-                                    <button
-                                      className="exp-del"
-                                      onClick={() => handleDeleteItem(r)}
-                                      title="Delete"
-                                    >
-                                      ✕
-                                    </button>
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                        <div className="research-list">
+                          <SortableList ids={items.map(i => i.id)} onReorder={(_f, _t, newIds) => handleReorderResearch(s.key, newIds)}>
+                            {items.map(r => (
+                              <SortableRow key={r.id} id={r.id} className="research-row">
+                                <DragHandle />
+                                <div className="research-main">
+                                  <div style={{ fontWeight: 600 }}>{r.name}</div>
+                                  {r.address && <div style={{ color: 'var(--ink-soft)', fontSize: '12px' }}>{r.address}</div>}
+                                  {r.notes && <div style={{ fontSize: '12px', marginTop: 2 }}>{r.notes}</div>}
+                                  <div style={{ marginTop: 6 }}>
+                                    <span className={`status-chip status-${r.status === 'promoted' ? 'completed' : r.status === 'dismissed' ? 'cancelled' : 'upcoming'}`}>{r.status}</span>
+                                    {r.estCost != null && <span style={{ marginLeft: 8, fontFamily: 'var(--font-mono)', fontSize: 12 }}>{fmt(r.estCost)}</span>}
+                                    {r.priceLevel ? <span style={{ marginLeft: 8 }}>{PRICE_LABELS[r.priceLevel]}</span> : null}
+                                    {r.priority ? <span style={{ marginLeft: 8 }}>{PRIORITY_LABELS[r.priority]}</span> : null}
+                                  </div>
+                                </div>
+                                <div className="research-actions">
+                                  {r.status !== 'promoted' && (
+                                    <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan">\u2192 Plan</button>
+                                  )}
+                                  <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">\u270E</button>
+                                  <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">\u2715</button>
+                                </div>
+                              </SortableRow>
+                            ))}
+                          </SortableList>
                         </div>
                       ) : (
                         <div className="empty-state">Nothing here yet.</div>
