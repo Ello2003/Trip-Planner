@@ -21,7 +21,7 @@ interface ResearchTabProps {
 }
 
 const PRICE_LABELS: Record<number, string> = { 1: '£', 2: '££', 3: '£££', 4: '££££' };
-const PRIORITY_LABELS: Record<number, string> = { 1: '★', 2: '★★', 3: '★★★', 4: '★★★★', 5: '★★★★★' };
+const PRIORITY_LABELS: Record<number, string> = { 1: '*', 2: '**', 3: '***', 4: '****', 5: '*****' };
 
 export const ResearchTab: React.FC<ResearchTabProps> = ({
   onRenameSheet,
@@ -112,37 +112,12 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
           + Add Place
         </button>
         <div className="timeline-toggle" style={{ display: 'inline-flex' }}>
-          <button
-            type="button"
-            className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`}
-            onClick={() => setResearchView('both')}
-            title="Split view: Interactive Map & Places List"
-          >
-            Split View
-          </button>
-          <button
-            type="button"
-            className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`}
-            onClick={() => setResearchView('list')}
-            title="Categorized List Only"
-          >
-            List Only
-          </button>
-          <button
-            type="button"
-            className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`}
-            onClick={() => setResearchView('map')}
-            title="Interactive Map Only"
-          >
-            Map Only
-          </button>
+          <button type="button" className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('both')} title="Split view">Split View</button>
+          <button type="button" className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('list')} title="List only">List Only</button>
+          <button type="button" className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('map')} title="Map only">Map Only</button>
         </div>
-        <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>
-          Manage Categories
-        </button>
-        <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>
-          Maps Key
-        </button>
+        <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>Manage Categories</button>
+        <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>Maps Key</button>
       </div>
 
       {(researchView === 'both' || researchView === 'map') && (
@@ -162,189 +137,106 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
 
       {researchView !== 'map' && (
         <div>
-          {sheets
-            .filter(s => !trip.hiddenSheets.includes(s.key))
-            .map(s => {
-              const items = trip.research.filter(r => r.sheet === s.key);
-              const isCollapsed = collapsedSheets[s.key];
-              const hasMap = !!trip.sectionMapUrls[s.key];
-              const mapExpanded = expandedSectionMaps[s.key];
-              const mapEditing = sectionMapEditMode[s.key];
-
-              return (
-                <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={s.key}>
-                  <div className="sheet-header">
-                    <div
-                      style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}
-                      onClick={() => toggleSheet(s.key)}
-                    >
-                      <span>{isCollapsed ? '▸' : '▾'}</span>
-                      {onRecolorSheet ? (
-                        <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
-                      ) : (
-                        <span className="sheet-dot" style={{ background: s.color }} />
-                      )}
-                      {onRenameSheet ? (
-                        <InlineText value={s.key} onCommit={n => handleRenameSheet(s.key, n)} />
-                      ) : (
-                        s.key
-                      )}{' '}
-                      <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
-                        ({items.length})
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', gap: '6px' }}>
-                      <button
-                        className="btn-ghost btn-sm"
-                        onClick={() => toggleSectionMap(s.key)}
-                        title={hasMap ? 'Show/hide map' : 'Add a map for this section'}
-                        style={hasMap ? { borderColor: 'var(--brass)', color: 'var(--brass)' } : undefined}
-                      >
-                        Map
-                      </button>
-                      <button className="btn-ghost btn-sm" onClick={() => onOpenAddResearchModal(s.key)}>
-                        + Add
-                      </button>
-                    </div>
+          {sheets.filter(s => !trip.hiddenSheets.includes(s.key)).map(s => {
+            const items = trip.research.filter(r => r.sheet === s.key);
+            const isCollapsed = collapsedSheets[s.key];
+            const hasMap = !!trip.sectionMapUrls[s.key];
+            const mapExpanded = expandedSectionMaps[s.key];
+            const mapEditing = sectionMapEditMode[s.key];
+            return (
+              <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={s.key}>
+                <div className="sheet-header">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }} onClick={() => toggleSheet(s.key)}>
+                    <span>{isCollapsed ? '>' : 'v'}</span>
+                    {onRecolorSheet ? (
+                      <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
+                    ) : (
+                      <span className="sheet-dot" style={{ background: s.color }} />
+                    )}
+                    {onRenameSheet ? (
+                      <InlineText value={s.key} onCommit={n => handleRenameSheet(s.key, n)} />
+                    ) : (
+                      s.key
+                    )}{' '}
+                    <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>({items.length})</span>
                   </div>
-
-                  {!isCollapsed && (
-                    <div>
-                      {mapExpanded && (
-                        <div style={{ marginBottom: '14px' }}>
-                          {hasMap && !mapEditing ? (
-                            <div>
-                              <iframe
-                                src={trip.sectionMapUrls[s.key]}
-                                width="100%"
-                                height="320"
-                                style={{ border: 0, borderRadius: '6px', display: 'block' }}
-                                loading="lazy"
-                                title={`${s.key} Map`}
-                              />
-                              <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
-                                <button
-                                  className="btn-ghost btn-sm"
-                                  onClick={() => {
-                                    setSectionMapInputs(prev => ({ ...prev, [s.key]: trip.sectionMapUrls[s.key] }));
-                                    setSectionMapEditMode(prev => ({ ...prev, [s.key]: true }));
-                                  }}
-                                >
-                                  Change
-                                </button>
-                                <button className="btn-ghost btn-sm" onClick={() => handleRemoveSectionMap(s.key)}>
-                                  Remove
-                                </button>
-                              </div>
-                            </div>
-                          ) : (
-                            <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                              <textarea
-                                rows={1}
-                                placeholder="Paste a Google Maps/My Maps share or embed link"
-                                style={{ flex: 1 }}
-                                value={sectionMapInputs[s.key] || ''}
-                                onChange={e =>
-                                  setSectionMapInputs(prev => ({ ...prev, [s.key]: e.target.value }))
-                                }
-                              />
-                              <button className="btn-primary btn-sm" onClick={() => handleSaveSectionMap(s.key)}>
-                                {hasMap ? 'Save' : 'Add'}
-                              </button>
-                              {mapEditing && (
-                                <button
-                                  className="btn-ghost btn-sm"
-                                  onClick={() => setSectionMapEditMode(prev => ({ ...prev, [s.key]: false }))}
-                                >
-                                  Cancel
-                                </button>
-                              )}
-                            </div>
-                          )}
-                        </div>
-                      )}
-
-                      {items.length > 0 ? (
-                        <div className="research-list">
-                          <SortableList
-                            ids={items.map(i => i.id)}
-                            onReorder={(_f, _t, newIds) => handleReorderResearch(s.key, newIds)}
-                          >
-                            {items.map(r => (
-                              <SortableRow key={r.id} id={r.id} className="research-row">
-                                <DragHandle />
-                                <div className="research-main">
-                                  <div style={{ fontWeight: 600, fontSize: '14px' }}>{r.name}</div>
-                                  {r.address && (
-                                    <div style={{ color: 'var(--ink-soft)', fontSize: '12px' }}>{r.address}</div>
-                                  )}
-                                  {r.notes && (
-                                    <div style={{ fontSize: '12px', marginTop: 2, color: 'var(--ink-soft)' }}>
-                                      {r.notes}
-                                    </div>
-                                  )}
-                                  <div style={{ marginTop: 6, display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
-                                    <span
-                                      className={`status-chip status-${
-                                        r.status === 'promoted'
-                                          ? 'completed'
-                                          : r.status === 'dismissed'
-                                          ? 'cancelled'
-                                          : 'upcoming'
-                                      }`}
-                                    >
-                                      {r.status}
-                                    </span>
-                                    {r.estCost != null && (
-                                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}>
-                                        {fmt(r.estCost)}
-                                      </span>
-                                    )}
-                                    {r.priceLevel ? (
-                                      <span style={{ fontSize: '12px' }}>{PRICE_LABELS[r.priceLevel]}</span>
-                                    ) : null}
-                                    {r.priority ? (
-                                      <span style={{ fontSize: '12px' }}>{PRIORITY_LABELS[r.priority]}</span>
-                                    ) : null}
-                                  </div>
-                                </div>
-                                <div className="research-actions">
-                                  {r.status !== 'promoted' && (
-                                    <button
-                                      className="btn-ghost btn-sm"
-                                      onClick={() => onPromoteToPlan(r)}
-                                      title="Promote to Plan"
-                                    >
-                                      to Plan
-                                    </button>
-                                  )}
-                                  <button
-                                    className="exp-del"
-                                    onClick={() => onOpenEditResearchModal(r)}
-                                    title="Edit"
-                                  >
-                                    Edit
-                                  </button>
-                                  <button
-                                    className="exp-del"
-                                    onClick={() => handleDeleteItem(r)}
-                                    title="Delete"
-                                  >
-                                    Del
-                                  </button>
-                                </div>
-                              </SortableRow>
-                            ))}
-                          </SortableList>
-                        </div>
-                      ) : (
-                        <div className="empty-state">Nothing here yet.</div>
-                      )}
-                    </div>
-                  )}
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    <button className="btn-ghost btn-sm" onClick={() => toggleSectionMap(s.key)} title={hasMap ? 'Show/hide map' : 'Add a map'} style={hasMap ? { borderColor: 'var(--brass)', color: 'var(--brass)' } : undefined}>Map</button>
+                    <button className="btn-ghost btn-sm" onClick={() => onOpenAddResearchModal(s.key)}>+ Add</button>
+                  </div>
                 </div>
-              );
-            })}
+                {!isCollapsed && (
+                  <div>
+                    {mapExpanded && (
+                      <div style={{ marginBottom: '14px' }}>
+                        {hasMap && !mapEditing ? (
+                          <div>
+                            <iframe src={trip.sectionMapUrls[s.key]} width="100%" height="320" style={{ border: 0, borderRadius: '6px', display: 'block' }} loading="lazy" title={`${s.key} Map`} />
+                            <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
+                              <button className="btn-ghost btn-sm" onClick={() => { setSectionMapInputs(prev => ({ ...prev, [s.key]: trip.sectionMapUrls[s.key] })); setSectionMapEditMode(prev => ({ ...prev, [s.key]: true })); }}>Change</button>
+                              <button className="btn-ghost btn-sm" onClick={() => handleRemoveSectionMap(s.key)}>Remove</button>
+                            </div>
+                          </div>
+                        ) : (
+                          <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                            <textarea rows={1} placeholder="Paste a Google Maps/My Maps share or embed link" style={{ flex: 1 }} value={sectionMapInputs[s.key] || ''} onChange={e => setSectionMapInputs(prev => ({ ...prev, [s.key]: e.target.value }))} />
+                            <button className="btn-primary btn-sm" onClick={() => handleSaveSectionMap(s.key)}>{hasMap ? 'Save' : 'Add'}</button>
+                            {mapEditing && (<button className="btn-ghost btn-sm" onClick={() => setSectionMapEditMode(prev => ({ ...prev, [s.key]: false }))}>Cancel</button>)}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {items.length > 0 ? (
+                      <div className="table-scroll">
+                        <SortableList ids={items.map(i => i.id)} onReorder={(_f, _t, newIds) => handleReorderResearch(s.key, newIds)}>
+                          <table className="exp-table research-table">
+                            <thead>
+                              <tr>
+                                <th style={{ width: '36px' }}></th>
+                                <th style={{ width: '30%' }}>Name</th>
+                                <th style={{ width: '10%' }}>Price</th>
+                                <th style={{ width: '12%' }}>Priority</th>
+                                <th style={{ width: '14%' }} className="num">Est. Cost</th>
+                                <th style={{ width: '12%' }}>Status</th>
+                                <th style={{ width: '18%' }}></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {items.map(r => (
+                                <SortableRow as="tr" key={r.id} id={r.id}>
+                                  <td className="drag-cell"><DragHandle /></td>
+                                  <td>
+                                    <strong>{r.name}</strong>
+                                    {r.address && <div style={{ color: 'var(--ink-soft)', fontSize: '11px' }}>{r.address}</div>}
+                                    {r.notes && <div style={{ color: 'var(--ink-soft)', fontSize: '11px', fontStyle: 'italic' }}>{r.notes}</div>}
+                                  </td>
+                                  <td>{r.priceLevel ? PRICE_LABELS[r.priceLevel] : '—'}</td>
+                                  <td>{r.priority ? PRIORITY_LABELS[r.priority] : '—'}</td>
+                                  <td className="num">{r.estCost != null ? fmt(r.estCost) : '—'}</td>
+                                  <td>
+                                    <span className={`status-chip status-${r.status === 'promoted' ? 'completed' : r.status === 'dismissed' ? 'cancelled' : 'upcoming'}`}>{r.status}</span>
+                                  </td>
+                                  <td style={{ whiteSpace: 'nowrap' }}>
+                                    {r.status !== 'promoted' && (
+                                      <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan" style={{ marginRight: '6px' }}>to Plan</button>
+                                    )}
+                                    <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">E</button>
+                                    <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">X</button>
+                                  </td>
+                                </SortableRow>
+                              ))}
+                            </tbody>
+                          </table>
+                        </SortableList>
+                      </div>
+                    ) : (
+                      <div className="empty-state">Nothing here yet.</div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
