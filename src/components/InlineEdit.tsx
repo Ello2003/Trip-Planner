@@ -2,24 +2,37 @@ import React, { useEffect, useRef, useState } from 'react';
 
 interface InlineTextProps {
   value: string;
-  /** Return an error message to reject the change, or null/undefined to accept it. */
   onCommit: (next: string) => string | null | void;
   title?: string;
+  className?: string;
 }
 
-/** Text that turns into an input in place. Double-click or ✎ to edit, Enter/blur saves, Esc cancels. */
-export const InlineText: React.FC<InlineTextProps> = ({ value, onCommit, title = 'Double-click to rename' }) => {
+/** Text that turns into an input on single click (or pencil). Enter/blur saves, Esc cancels. */
+export const InlineText: React.FC<InlineTextProps> = ({
+  value,
+  onCommit,
+  title = 'Click to edit',
+  className = ''
+}) => {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const skipBlur = useRef(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!notice) return;
     const t = setTimeout(() => setNotice(null), 3000);
     return () => clearTimeout(t);
   }, [notice]);
+
+  useEffect(() => {
+    if (editing) {
+      inputRef.current?.focus();
+      inputRef.current?.select();
+    }
+  }, [editing]);
 
   const start = (e?: React.SyntheticEvent) => {
     e?.stopPropagation();
@@ -36,7 +49,6 @@ export const InlineText: React.FC<InlineTextProps> = ({ value, onCommit, title =
     setError(null);
   };
 
-  // fromBlur: an invalid name quietly reverts (with a short notice) instead of trapping focus
   const commit = (fromBlur: boolean) => {
     const next = draft.replace(/[\r\n]+/g, ' ').trim();
     if (!next || next === value) {
@@ -62,19 +74,11 @@ export const InlineText: React.FC<InlineTextProps> = ({ value, onCommit, title =
     return (
       <span className="inline-edit-wrap" onClick={e => e.stopPropagation()}>
         <input
+          ref={inputRef}
           className={`inline-edit-input ${error ? 'has-error' : ''}`}
           value={draft}
-          autoFocus
-          maxLength={60}
-          aria-label="Rename"
-          aria-invalid={!!error}
-          onFocus={e => e.currentTarget.select()}
-          onChange={e => {
-            setDraft(e.target.value);
-            if (error) setError(null);
-          }}
+          onChange={e => setDraft(e.target.value)}
           onKeyDown={e => {
-            e.stopPropagation();
             if (e.key === 'Enter') {
               e.preventDefault();
               commit(false);
@@ -98,7 +102,19 @@ export const InlineText: React.FC<InlineTextProps> = ({ value, onCommit, title =
 
   return (
     <span className="inline-edit-wrap">
-      <span className="inline-edit-text" onDoubleClick={start} title={title}>
+      <span
+        className={`inline-edit-text ${className}`.trim()}
+        onClick={start}
+        title={title}
+        role="button"
+        tabIndex={0}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            start(e);
+          }
+        }}
+      >
         {value}
       </span>
       <button type="button" className="inline-edit-btn" onClick={start} title="Rename" aria-label={`Rename ${value}`}>
@@ -115,7 +131,6 @@ interface InlineColorProps {
   title?: string;
 }
 
-/** The coloured dot becomes a colour picker. Saves once, when the picker closes (not on every drag step). */
 export const InlineColor: React.FC<InlineColorProps> = ({ color, onCommit, title = 'Change colour' }) => {
   const [preview, setPreview] = useState(color);
   const ref = useRef<HTMLInputElement>(null);
@@ -131,7 +146,6 @@ export const InlineColor: React.FC<InlineColorProps> = ({ color, onCommit, title
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    // Native "change" fires when the picker is dismissed with a new value
     const onChange = () => {
       if (el.value !== latest.current) commitRef.current(el.value);
     };
@@ -142,18 +156,11 @@ export const InlineColor: React.FC<InlineColorProps> = ({ color, onCommit, title
   return (
     <label className="inline-color" title={title} onClick={e => e.stopPropagation()}>
       <span className="sheet-dot" style={{ background: preview }} />
-      <input
-        ref={ref}
-        type="color"
-        value={preview}
-        aria-label={title}
-        onChange={e => setPreview(e.target.value)}
-      />
+      <input ref={ref} type="color" value={preview} aria-label={title} onChange={e => setPreview(e.target.value)} />
     </label>
   );
 };
 
-/** Move a name-keyed record entry (collapse state, etc.) from one key to another. */
 export function rekey<T>(rec: Record<string, T>, from: string, to: string): Record<string, T> {
   if (!(from in rec)) return rec;
   const { [from]: val, ...rest } = rec;

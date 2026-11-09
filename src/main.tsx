@@ -4,8 +4,8 @@ import { App } from './App';
 import { FirebaseProvider } from './context/FirebaseContext';
 import './index.css';
 import './mobile.css';
+import './dnd.css';
 
-// Google Maps Platform Quota Exceeded listener
 (window as any).gm_authFailure = () => {
   window.dispatchEvent(new CustomEvent('gmp-quota-exceeded'));
 };
@@ -18,7 +18,6 @@ console.error = (...args: unknown[]) => {
   }
 };
 
-// Suppress generic third-party cross-origin "Script error." notifications from leaking
 window.addEventListener('error', (event) => {
   if (event.message === 'Script error.' || !event.message) {
     event.preventDefault();
