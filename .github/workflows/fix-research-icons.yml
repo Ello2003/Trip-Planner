@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - 'scripts/fix_icons.py'
       - '.github/workflows/fix-research-icons.yml'
 jobs:
   fix:
@@ -11,34 +12,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Patch icons
-        run: |
-          python3 << 'PY'
-          from pathlib import Path
-          p = Path('src/components/ResearchTab.tsx')
-          t = p.read_text()
-          t = t.replace(
-              '>to Plan</button>',
-              ">{'\u2192 Plan'}</button>",
-          )
-          t = t.replace('>E</button>', ">{'\u270E'}</button>")
-          t = t.replace('>X</button>', ">{'\u2715'}</button>")
-          # only replace first X if packing-style - research has Delete title
-          p.write_text(t)
-          print('patched')
-          PY
-          # Also fix Packing delete if plain X
-          python3 << 'PY'
-          from pathlib import Path
-          p = Path('src/components/PackingTab.tsx')
-          t = p.read_text()
-          if ">X</button>" in t:
-            t = t.replace(">X</button>", ">{'\u2715'}</button>")
-            p.write_text(t)
-            print('packing patched')
-          PY
+      - run: python3 scripts/fix_icons.py
+      - run: |
           git config user.name "Ello2003"
           git config user.email "graeme.crazydiamond@gmail.com"
-          git add src/components/ResearchTab.tsx src/components/PackingTab.tsx
-          git commit -m "Icons: Plan-style pencil/x/arrow using JS unicode escapes" || true
+          git add src/components/ResearchTab.tsx
+          git commit -m "Icons: Plan-style arrow, pencil, x" || echo nochange
           git push
