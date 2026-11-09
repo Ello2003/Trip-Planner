@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { InlineText, InlineColor, rekey } from './InlineEdit';
+import { SortableList, SortableRow, DragHandle } from './Sortable';
 import { Trip, Sheet, PlanItem, Category } from '../types';
 import {
   fmt,
@@ -165,23 +166,15 @@ export const PlanTab: React.FC<PlanTabProps> = ({
     });
   };
 
-  const handleMoveTimelineItem = (item: PlanItem, direction: number, groupKey: string) => {
-    const groupItems = groups[groupKey]?.items || [];
-    const index = groupItems.findIndex(x => x.id === item.id);
-    const targetIdx = index + direction;
-    if (targetIdx < 0 || targetIdx >= groupItems.length) return;
-
-    const reordered = [...groupItems];
-    const [moved] = reordered.splice(index, 1);
-    reordered.splice(targetIdx, 0, moved);
-
-    // Update timelineOrder on items
-    reordered.forEach((p, idx) => {
-      p.timelineOrder = idx;
+  const handleReorderTimelineGroup = (groupKey: string, newIds: string[]) => {
+    const orderMap = new Map(newIds.map((id, idx) => [id, idx]));
+    const updatedPlan = trip.planItems.map(p => {
+      if (!orderMap.has(p.id)) return p;
+      return { ...p, timelineOrder: orderMap.get(p.id)! };
     });
-
     onUpdateTrip({
       ...trip,
+      planItems: updatedPlan,
       timelineManualOrder: true,
       updatedAt: Date.now()
     });
@@ -268,10 +261,15 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                       <span className="rule" />
                     </div>
                     <div className="day-card">
+                      <SortableList
+                        ids={sortedItems.map(i => i.id)}
+                        onReorder={(_from, _to, newIds) => handleReorderTimelineGroup(key, newIds)}
+                      >
                       {sortedItems.map(item => (
-                        <div
-                          className={`tl-row ${item.status === 'cancelled' ? 'is-cancelled' : ''}`}
+                        <SortableRow
+                          id={item.id}
                           key={item.id}
+                          className={`tl-row ${item.status === 'cancelled' ? 'is-cancelled' : ''}`}
                         >
                           <div className="tl-time-cell">
                             <input
@@ -301,20 +299,7 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                             />
                           </div>
                           <div className="tl-reorder-cell">
-                            <button
-                              className="tl-move"
-                              onClick={() => handleMoveTimelineItem(item, -1, key)}
-                              title="Move up"
-                            >
-                              ↑
-                            </button>
-                            <button
-                              className="tl-move"
-                              onClick={() => handleMoveTimelineItem(item, 1, key)}
-                              title="Move down"
-                            >
-                              ↓
-                            </button>
+                            <DragHandle />
                             <button
                               className="exp-del"
                               onClick={() => handleDeleteItem(item)}
@@ -323,8 +308,9 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                               ✕
                             </button>
                           </div>
-                        </div>
+                        </SortableRow>
                       ))}
+                      </SortableList>
 
                       <div className="tl-add-row">
                         <button
