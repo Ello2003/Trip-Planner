@@ -21,7 +21,7 @@ interface ResearchTabProps {
 }
 
 const PRICE_LABELS: Record<number, string> = { 1: '£', 2: '££', 3: '£££', 4: '££££' };
-const PRIORITY_LABELS: Record<number, string> = { 1: '*', 2: '**', 3: '***', 4: '****', 5: '*****' };
+const PRIORITY_LABELS: Record<number, string> = { 1: '★', 2: '★★', 3: '★★★', 4: '★★★★', 5: '★★★★★' };
 
 export const ResearchTab: React.FC<ResearchTabProps> = ({
   onRenameSheet,
@@ -147,7 +147,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
               <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={s.key}>
                 <div className="sheet-header">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }} onClick={() => toggleSheet(s.key)}>
-                    <span>{isCollapsed ? '>' : 'v'}</span>
+                    <span>{isCollapsed ? '\u25B8' : '\u25BE'}</span>
                     {onRecolorSheet ? (
                       <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
                     ) : (
@@ -218,10 +218,10 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                   </td>
                                   <td style={{ whiteSpace: 'nowrap' }}>
                                     {r.status !== 'promoted' && (
-                                      <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan" style={{ marginRight: '6px' }}>{'→ Plan'}</button>
+                                      <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan" style={{ marginRight: '6px' }}>{'\u2192 Plan'}</button>
                                     )}
-                                    <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">{'✎'}</button>
-                                    <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">{'✕'}</button>
+                                    <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">{'\u270E'}</button>
+                                    <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">{'\u2715'}</button>
                                   </td>
                                 </SortableRow>
                               ))}
