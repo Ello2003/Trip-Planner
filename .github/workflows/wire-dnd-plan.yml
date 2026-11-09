@@ -1,0 +1,176 @@
+name: Wire DnD PlanTab
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/wire-dnd-plan.yml'
+      - 'src/components/Sortable.tsx'
+jobs:
+  wire:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch PlanTab for Sortable timeline
+        run: |
+          python3 << 'PY'
+          from pathlib import Path
+          p = Path('src/components/PlanTab.tsx')
+          text = p.read_text()
+          if 'SortableList' in text:
+              print('Already has SortableList')
+              raise SystemExit(0)
+
+          # import
+          if "from './Sortable'" not in text:
+              text = text.replace(
+                  "import { InlineText, InlineColor, rekey } from './InlineEdit';",
+                  "import { InlineText, InlineColor, rekey } from './InlineEdit';\nimport { SortableList, SortableRow, DragHandle } from './Sortable';",
+                  1,
+              )
+
+          # Replace handleMoveTimelineItem with proper reorder by ids
+          old_move = '''  const handleMoveTimelineItem = (item: PlanItem, direction: number, groupKey: string) => {
+    const groupItems = groups[groupKey]?.items || [];
+    const index = groupItems.findIndex(x => x.id === item.id);
+    const targetIdx = index + direction;
+    if (targetIdx < 0 || targetIdx >= groupItems.length) return;
+
+    const reordered = [...groupItems];
+    const [moved] = reordered.splice(index, 1);
+    reordered.splice(targetIdx, 0, moved);
+
+    // Update timelineOrder on items
+    reordered.forEach((p, idx) => {
+      p.timelineOrder = idx;
+    });
+
+    onUpdateTrip({
+      ...trip,
+      timelineManualOrder: true,
+      updatedAt: Date.now()
+    });
+  };'''
+
+          new_move = '''  const handleReorderTimelineGroup = (groupKey: string, newIds: string[]) => {
+    const orderMap = new Map(newIds.map((id, idx) => [id, idx]));
+    const updatedPlan = trip.planItems.map(p => {
+      if (!orderMap.has(p.id)) return p;
+      return { ...p, timelineOrder: orderMap.get(p.id)! };
+    });
+    onUpdateTrip({
+      ...trip,
+      planItems: updatedPlan,
+      timelineManualOrder: true,
+      updatedAt: Date.now()
+    });
+  };'''
+
+          if old_move in text:
+              text = text.replace(old_move, new_move, 1)
+          else:
+              print('WARN: handleMoveTimelineItem block not found exactly')
+
+          # Replace the day-card map of items with SortableList
+          # Find the pattern of sortedItems.map(item => (
+          marker = '{sortedItems.map(item => ('
+          if marker not in text:
+              # try alternate spacing
+              marker = 'sortedItems.map(item => ('
+          if 'SortableList' not in text and marker in text:
+              # Wrap day-card contents: after <div className="day-card"> insert SortableList
+              # and replace map with SortableRow + DragHandle instead of up/down
+              text2 = text
+              # Replace up/down buttons with DragHandle
+              text2 = text2.replace(
+                  '''                          <div className="tl-reorder-cell">
+                            <button
+                              className="tl-move"
+                              onClick={() => handleMoveTimelineItem(item, -1, key)}
+                              title="Move up"
+                            >
+                              ↑
+                            </button>
+                            <button
+                              className="tl-move"
+                              onClick={() => handleMoveTimelineItem(item, 1, key)}
+                              title="Move down"
+                            >
+                              ↓
+                            </button>
+                            <button
+                              className="exp-del"
+                              onClick={() => handleDeleteItem(item)}
+                              title="Delete"
+                            >
+                              ✕
+                            </button>
+                          </div>''',
+                  '''                          <div className="tl-reorder-cell">
+                            <DragHandle />
+                            <button
+                              className="exp-del"
+                              onClick={() => handleDeleteItem(item)}
+                              title="Delete"
+                            >
+                              ✕
+                            </button>
+                          </div>''',
+                  1,
+              )
+
+              # Wrap the map in SortableList / SortableRow
+              old_block_start = '''                    <div className="day-card">
+                      {sortedItems.map(item => (
+                        <div
+                          className={`tl-row ${item.status === 'cancelled' ? 'is-cancelled' : ''}`}
+                          key={item.id}
+                        >'''
+              new_block_start = '''                    <div className="day-card">
+                      <SortableList
+                        ids={sortedItems.map(i => i.id)}
+                        onReorder={(_from, _to, newIds) => handleReorderTimelineGroup(key, newIds)}
+                      >
+                      {sortedItems.map(item => (
+                        <SortableRow
+                          id={item.id}
+                          key={item.id}
+                          className={`tl-row ${item.status === 'cancelled' ? 'is-cancelled' : ''}`}
+                        >'''
+              if old_block_start in text2:
+                  text2 = text2.replace(old_block_start, new_block_start, 1)
+                  # close SortableRow instead of div for tl-row - find the closing of each row is hard
+                  # Replace first occurrence of closing pattern after reorder cell
+                  text2 = text2.replace(
+                      '''                          </div>
+                        </div>
+                      ))}
+
+                      <div className="tl-add-row">''',
+                      '''                          </div>
+                        </SortableRow>
+                      ))}
+                      </SortableList>
+
+                      <div className="tl-add-row">''',
+                      1,
+                  )
+                  text = text2
+                  print('Wrapped timeline in SortableList')
+              else:
+                  print('WARN: day-card block start not found')
+                  text = text2
+
+          p.write_text(text)
+          print('PlanTab write done, has SortableList:', 'SortableList' in text)
+          PY
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/PlanTab.tsx
+          if git diff --cached --quiet; then
+            echo "No PlanTab changes"
+          else
+            git commit -m "Plan timeline: drag-and-drop reorder with ⠿ handles (replace up/down)"
+            git push
+          fi
