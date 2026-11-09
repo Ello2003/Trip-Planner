@@ -20,8 +20,8 @@ interface ResearchTabProps {
   onOpenMapSettings: () => void;
 }
 
-const PRICE_LABELS: Record<number, string> = { 1: '\u00a3', 2: '\u00a3\u00a3', 3: '\u00a3\u00a3\u00a3', 4: '\u00a3\u00a3\u00a3\u00a3' };
-const PRIORITY_LABELS: Record<number, string> = { 1: '\u2605', 2: '\u2605\u2605', 3: '\u2605\u2605\u2605', 4: '\u2605\u2605\u2605\u2605', 5: '\u2605\u2605\u2605\u2605\u2605' };
+const PRICE_LABELS: Record<number, string> = { 1: '£', 2: '££', 3: '£££', 4: '££££' };
+const PRIORITY_LABELS: Record<number, string> = { 1: '★', 2: '★★', 3: '★★★', 4: '★★★★', 5: '★★★★★' };
 
 export const ResearchTab: React.FC<ResearchTabProps> = ({
   onRenameSheet,
@@ -112,12 +112,37 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
           + Add Place
         </button>
         <div className="timeline-toggle" style={{ display: 'inline-flex' }}>
-          <button type="button" className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('both')} title="Split view">\uD83D\uDDFA\uFE0F Split View</button>
-          <button type="button" className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('list')} title="List only">\uD83D\uDCCB List Only</button>
-          <button type="button" className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('map')} title="Map only">\uD83D\uDDFA\uFE0F Map Only</button>
+          <button
+            type="button"
+            className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`}
+            onClick={() => setResearchView('both')}
+            title="Split view: Interactive Map & Places List"
+          >
+            Split View
+          </button>
+          <button
+            type="button"
+            className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`}
+            onClick={() => setResearchView('list')}
+            title="Categorized List Only"
+          >
+            List Only
+          </button>
+          <button
+            type="button"
+            className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`}
+            onClick={() => setResearchView('map')}
+            title="Interactive Map Only"
+          >
+            Map Only
+          </button>
         </div>
-        <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>Manage Categories</button>
-        <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>\u2699\uFE0F Maps Key</button>
+        <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>
+          Manage Categories
+        </button>
+        <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>
+          Maps Key
+        </button>
       </div>
 
       {(researchView === 'both' || researchView === 'map') && (
@@ -149,8 +174,11 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
               return (
                 <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={s.key}>
                   <div className="sheet-header">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }} onClick={() => toggleSheet(s.key)}>
-                      <span>{isCollapsed ? '\u25B8' : '\u25BE'}</span>
+                    <div
+                      style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}
+                      onClick={() => toggleSheet(s.key)}
+                    >
+                      <span>{isCollapsed ? '▸' : '▾'}</span>
                       {onRecolorSheet ? (
                         <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
                       ) : (
@@ -161,11 +189,22 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                       ) : (
                         s.key
                       )}{' '}
-                      <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>({items.length})</span>
+                      <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
+                        ({items.length})
+                      </span>
                     </div>
                     <div style={{ display: 'flex', gap: '6px' }}>
-                      <button className="btn-ghost btn-sm" onClick={() => toggleSectionMap(s.key)} title={hasMap ? 'Show/hide map' : 'Add a map'} style={hasMap ? { borderColor: 'var(--brass)', color: 'var(--brass)' } : undefined}>\uD83D\uDDFA Map</button>
-                      <button className="btn-ghost btn-sm" onClick={() => onOpenAddResearchModal(s.key)}>+ Add</button>
+                      <button
+                        className="btn-ghost btn-sm"
+                        onClick={() => toggleSectionMap(s.key)}
+                        title={hasMap ? 'Show/hide map' : 'Add a map for this section'}
+                        style={hasMap ? { borderColor: 'var(--brass)', color: 'var(--brass)' } : undefined}
+                      >
+                        Map
+                      </button>
+                      <button className="btn-ghost btn-sm" onClick={() => onOpenAddResearchModal(s.key)}>
+                        + Add
+                      </button>
                     </div>
                   </div>
 
@@ -175,18 +214,50 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                         <div style={{ marginBottom: '14px' }}>
                           {hasMap && !mapEditing ? (
                             <div>
-                              <iframe src={trip.sectionMapUrls[s.key]} width="100%" height="320" style={{ border: 0, borderRadius: '6px', display: 'block' }} loading="lazy" title={`${s.key} Map`} />
+                              <iframe
+                                src={trip.sectionMapUrls[s.key]}
+                                width="100%"
+                                height="320"
+                                style={{ border: 0, borderRadius: '6px', display: 'block' }}
+                                loading="lazy"
+                                title={`${s.key} Map`}
+                              />
                               <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
-                                <button className="btn-ghost btn-sm" onClick={() => { setSectionMapInputs(prev => ({ ...prev, [s.key]: trip.sectionMapUrls[s.key] })); setSectionMapEditMode(prev => ({ ...prev, [s.key]: true })); }}>Change</button>
-                                <button className="btn-ghost btn-sm" onClick={() => handleRemoveSectionMap(s.key)}>Remove</button>
+                                <button
+                                  className="btn-ghost btn-sm"
+                                  onClick={() => {
+                                    setSectionMapInputs(prev => ({ ...prev, [s.key]: trip.sectionMapUrls[s.key] }));
+                                    setSectionMapEditMode(prev => ({ ...prev, [s.key]: true }));
+                                  }}
+                                >
+                                  Change
+                                </button>
+                                <button className="btn-ghost btn-sm" onClick={() => handleRemoveSectionMap(s.key)}>
+                                  Remove
+                                </button>
                               </div>
                             </div>
                           ) : (
                             <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                              <textarea rows={1} placeholder="Paste a Google Maps/My Maps share or embed link" style={{ flex: 1 }} value={sectionMapInputs[s.key] || ''} onChange={e => setSectionMapInputs(prev => ({ ...prev, [s.key]: e.target.value }))} />
-                              <button className="btn-primary btn-sm" onClick={() => handleSaveSectionMap(s.key)}>{hasMap ? 'Save' : 'Add'}</button>
+                              <textarea
+                                rows={1}
+                                placeholder="Paste a Google Maps/My Maps share or embed link"
+                                style={{ flex: 1 }}
+                                value={sectionMapInputs[s.key] || ''}
+                                onChange={e =>
+                                  setSectionMapInputs(prev => ({ ...prev, [s.key]: e.target.value }))
+                                }
+                              />
+                              <button className="btn-primary btn-sm" onClick={() => handleSaveSectionMap(s.key)}>
+                                {hasMap ? 'Save' : 'Add'}
+                              </button>
                               {mapEditing && (
-                                <button className="btn-ghost btn-sm" onClick={() => setSectionMapEditMode(prev => ({ ...prev, [s.key]: false }))}>Cancel</button>
+                                <button
+                                  className="btn-ghost btn-sm"
+                                  onClick={() => setSectionMapEditMode(prev => ({ ...prev, [s.key]: false }))}
+                                >
+                                  Cancel
+                                </button>
                               )}
                             </div>
                           )}
@@ -195,27 +266,72 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
 
                       {items.length > 0 ? (
                         <div className="research-list">
-                          <SortableList ids={items.map(i => i.id)} onReorder={(_f, _t, newIds) => handleReorderResearch(s.key, newIds)}>
+                          <SortableList
+                            ids={items.map(i => i.id)}
+                            onReorder={(_f, _t, newIds) => handleReorderResearch(s.key, newIds)}
+                          >
                             {items.map(r => (
                               <SortableRow key={r.id} id={r.id} className="research-row">
                                 <DragHandle />
                                 <div className="research-main">
-                                  <div style={{ fontWeight: 600 }}>{r.name}</div>
-                                  {r.address && <div style={{ color: 'var(--ink-soft)', fontSize: '12px' }}>{r.address}</div>}
-                                  {r.notes && <div style={{ fontSize: '12px', marginTop: 2 }}>{r.notes}</div>}
-                                  <div style={{ marginTop: 6 }}>
-                                    <span className={`status-chip status-${r.status === 'promoted' ? 'completed' : r.status === 'dismissed' ? 'cancelled' : 'upcoming'}`}>{r.status}</span>
-                                    {r.estCost != null && <span style={{ marginLeft: 8, fontFamily: 'var(--font-mono)', fontSize: 12 }}>{fmt(r.estCost)}</span>}
-                                    {r.priceLevel ? <span style={{ marginLeft: 8 }}>{PRICE_LABELS[r.priceLevel]}</span> : null}
-                                    {r.priority ? <span style={{ marginLeft: 8 }}>{PRIORITY_LABELS[r.priority]}</span> : null}
+                                  <div style={{ fontWeight: 600, fontSize: '14px' }}>{r.name}</div>
+                                  {r.address && (
+                                    <div style={{ color: 'var(--ink-soft)', fontSize: '12px' }}>{r.address}</div>
+                                  )}
+                                  {r.notes && (
+                                    <div style={{ fontSize: '12px', marginTop: 2, color: 'var(--ink-soft)' }}>
+                                      {r.notes}
+                                    </div>
+                                  )}
+                                  <div style={{ marginTop: 6, display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
+                                    <span
+                                      className={`status-chip status-${
+                                        r.status === 'promoted'
+                                          ? 'completed'
+                                          : r.status === 'dismissed'
+                                          ? 'cancelled'
+                                          : 'upcoming'
+                                      }`}
+                                    >
+                                      {r.status}
+                                    </span>
+                                    {r.estCost != null && (
+                                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}>
+                                        {fmt(r.estCost)}
+                                      </span>
+                                    )}
+                                    {r.priceLevel ? (
+                                      <span style={{ fontSize: '12px' }}>{PRICE_LABELS[r.priceLevel]}</span>
+                                    ) : null}
+                                    {r.priority ? (
+                                      <span style={{ fontSize: '12px' }}>{PRIORITY_LABELS[r.priority]}</span>
+                                    ) : null}
                                   </div>
                                 </div>
                                 <div className="research-actions">
                                   {r.status !== 'promoted' && (
-                                    <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan">\u2192 Plan</button>
+                                    <button
+                                      className="btn-ghost btn-sm"
+                                      onClick={() => onPromoteToPlan(r)}
+                                      title="Promote to Plan"
+                                    >
+                                      to Plan
+                                    </button>
                                   )}
-                                  <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">\u270E</button>
-                                  <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">\u2715</button>
+                                  <button
+                                    className="exp-del"
+                                    onClick={() => onOpenEditResearchModal(r)}
+                                    title="Edit"
+                                  >
+                                    Edit
+                                  </button>
+                                  <button
+                                    className="exp-del"
+                                    onClick={() => handleDeleteItem(r)}
+                                    title="Delete"
+                                  >
+                                    Del
+                                  </button>
                                 </div>
                               </SortableRow>
                             ))}
