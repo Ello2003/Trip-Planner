@@ -22,11 +22,7 @@ export const PackingTab: React.FC<PackingTabProps> = ({
 
   const handleTogglePacked = (item: PackingItem) => {
     const updated = trip.packingList.map(p => (p.id === item.id ? { ...p, packed: !p.packed } : p));
-    onUpdateTrip({
-      ...trip,
-      packingList: updated,
-      updatedAt: Date.now()
-    });
+    onUpdateTrip({ ...trip, packingList: updated, updatedAt: Date.now() });
   };
 
   const handleItemChange = (item: PackingItem, field: 'name' | 'qty', value: any) => {
@@ -36,52 +32,16 @@ export const PackingTab: React.FC<PackingTabProps> = ({
       if (field === 'qty') return { ...p, qty: Math.max(1, Number(value) || 1) };
       return p;
     });
-    onUpdateTrip({
-      ...trip,
-      packingList: updated,
-      updatedAt: Date.now()
-    });
+    onUpdateTrip({ ...trip, packingList: updated, updatedAt: Date.now() });
   };
 
   const handleDeleteItem = (item: PackingItem) => {
     const updated = trip.packingList.filter(p => p.id !== item.id);
     onUpdateTrip(
-      {
-        ...trip,
-        packingList: updated,
-        updatedAt: Date.now()
-      },
+      { ...trip, packingList: updated, updatedAt: Date.now() },
       { action: 'packing-item-deleted', detail: `Removed "${item.name}" from ${trip.name} packing list` }
     );
     onShowToast('Item deleted');
-  };
-
-  const handleQuickAddEssentials = () => {
-    const existingNames = new Set(trip.packingList.map(i => i.name.toLowerCase()));
-    const toAdd = PACKING_ESSENTIALS.filter(e => !existingNames.has(e.name.toLowerCase()));
-    if (!toAdd.length) {
-      onShowToast('Essentials already added');
-      return;
-    }
-    const newItems: PackingItem[] = toAdd.map(e => ({
-      id: uid('pack'),
-      category: e.category,
-      name: e.name,
-      qty: e.qty,
-      packed: false
-    }));
-    onUpdateTrip(
-      {
-        ...trip,
-        packingList: [...trip.packingList, ...newItems],
-        updatedAt: Date.now()
-      },
-      {
-        action: 'packing-essentials-added',
-        detail: `Added ${toAdd.length} essentials to ${trip.name} packing list`
-      }
-    );
-    onShowToast(`Added ${toAdd.length} essentials`);
   };
 
   const handleReorderCategory = (categoryKey: string, newIds: string[]) => {
@@ -100,11 +60,28 @@ export const PackingTab: React.FC<PackingTabProps> = ({
     for (const [k, list] of Object.entries(byCat)) {
       if (!PACKING_CATEGORIES.some(c => c.key === k)) next.push(...list);
     }
-    onUpdateTrip({
-      ...trip,
-      packingList: next,
-      updatedAt: Date.now()
-    });
+    onUpdateTrip({ ...trip, packingList: next, updatedAt: Date.now() });
+  };
+
+  const handleQuickAddEssentials = () => {
+    const existingNames = new Set(trip.packingList.map(i => i.name.toLowerCase()));
+    const toAdd = PACKING_ESSENTIALS.filter(e => !existingNames.has(e.name.toLowerCase()));
+    if (!toAdd.length) {
+      onShowToast('Essentials already added');
+      return;
+    }
+    const newItems: PackingItem[] = toAdd.map(e => ({
+      id: uid('pack'),
+      category: e.category,
+      name: e.name,
+      qty: e.qty,
+      packed: false
+    }));
+    onUpdateTrip(
+      { ...trip, packingList: [...trip.packingList, ...newItems], updatedAt: Date.now() },
+      { action: 'packing-essentials-added', detail: `Added ${toAdd.length} essentials to ${trip.name} packing list` }
+    );
+    onShowToast(`Added ${toAdd.length} essentials`);
   };
 
   return (
@@ -140,47 +117,71 @@ export const PackingTab: React.FC<PackingTabProps> = ({
               </div>
 
               {items.length > 0 ? (
-                <div className="pack-list">
+                <div className="table-scroll">
                   <SortableList
                     ids={items.map(i => i.id)}
                     onReorder={(_f, _t, newIds) => handleReorderCategory(c.key, newIds)}
                   >
-                    {items.map(item => (
-                      <SortableRow
-                        key={item.id}
-                        id={item.id}
-                        className={`pack-row ${item.packed ? 'packed-row' : ''}`}
-                      >
-                        <DragHandle />
-                        <input
-                          type="checkbox"
-                          checked={item.packed}
-                          onChange={() => handleTogglePacked(item)}
-                          aria-label="Mark packed"
-                        />
-                        <input
-                          type="text"
-                          className="pack-name"
-                          value={item.name}
-                          onChange={e => handleItemChange(item, 'name', e.target.value)}
-                        />
-                        <input
-                          type="number"
-                          min={1}
-                          step={1}
-                          className="pack-qty"
-                          value={item.qty}
-                          onChange={e => handleItemChange(item, 'qty', e.target.value)}
-                        />
-                        <button
-                          className="exp-del"
-                          onClick={() => handleDeleteItem(item)}
-                          title="Delete item"
-                        >
-                          ✕
-                        </button>
-                      </SortableRow>
-                    ))}
+                    <table className="exp-table packing-table">
+                      <thead>
+                        <tr>
+                          <th style={{ width: '36px' }}></th>
+                          <th style={{ width: '8%' }}></th>
+                          <th style={{ width: '58%' }}>Item</th>
+                          <th style={{ width: '14%' }} className="num">Qty</th>
+                          <th style={{ width: '12%' }}></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {items.map(item => (
+                          <SortableRow
+                            as="tr"
+                            key={item.id}
+                            id={item.id}
+                            className={item.packed ? 'packed-row' : ''}
+                          >
+                            <td className="drag-cell">
+                              <DragHandle />
+                            </td>
+                            <td>
+                              <input
+                                type="checkbox"
+                                checked={item.packed}
+                                onChange={() => handleTogglePacked(item)}
+                                aria-label="Mark packed"
+                              />
+                            </td>
+                            <td>
+                              <input
+                                type="text"
+                                className="pack-name"
+                                value={item.name}
+                                onChange={e => handleItemChange(item, 'name', e.target.value)}
+                              />
+                            </td>
+                            <td className="num">
+                              <input
+                                type="number"
+                                min={1}
+                                step={1}
+                                value={item.qty}
+                                style={{ textAlign: 'right' }}
+                                onChange={e => handleItemChange(item, 'qty', e.target.value)}
+                              />
+                            </td>
+                            <td>
+                              <button
+                                className="exp-del"
+                                onClick={() => handleDeleteItem(item)}
+                                title="Delete item"
+                              >
+                                X
+                              </button>
+                            </td>
+                          </SortableRow>
+                        ))}
+                      </tbody>
+                    </table>
                   </SortableList>
                 </div>
               ) : (
