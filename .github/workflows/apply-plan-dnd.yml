@@ -1,0 +1,26 @@
+name: Apply PlanTab DnD patch
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/plan-dnd.patch'
+      - '.github/workflows/apply-plan-dnd.yml'
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply patch
+        run: |
+          if grep -q SortableList src/components/PlanTab.tsx; then
+            echo "Already applied"
+            exit 0
+          fi
+          patch -p1 < scripts/plan-dnd.patch
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/PlanTab.tsx
+          git commit -m "Plan timeline: drag-and-drop with handle (replace up/down)"
+          git push
