@@ -2543,7 +2543,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794267441459,
+      "updatedAt": 1794267465431,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -2594,7 +2594,16 @@
             "createdAt": 1794267441459
           }
         ],
-        "clips": [],
+        "clips": [
+          {
+            "id": "clip_mw9wiswn_3_xk5my",
+            "createdAt": 1794267465431,
+            "url": "https://www.belgiumking.com/top-10-beers/",
+            "site": "Belgiumking",
+            "title": "Top 10 Beers",
+            "why": ""
+          }
+        ],
         "pins": [],
         "practical": {
           "currency": "",
