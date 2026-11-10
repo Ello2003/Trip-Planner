@@ -1047,11 +1047,11 @@
           "id": "plan_mw9z0c6c_b_ul2wx",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Boho Brunch",
-          "status": "idea",
-          "date": "2026-12-11",
+          "status": "booked",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "10:15",
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Giststraat 3, 8000 Brugge, Belgium",
           "links": [
@@ -1066,7 +1066,11 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2618,7 +2622,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794271507755,
+      "updatedAt": 1794271676502,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7138,6 +7142,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9z126u_e_0kyh9",
+      "ts": 1794271676502,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Boho Brunch\" on Brugge"
+    },
+    {
       "id": "log_mw9z0c6l_d_c7t8i",
       "ts": 1794271642797,
       "action": "research-promoted",
@@ -8330,12 +8340,6 @@
       "ts": 1790806604636,
       "action": "expense-added",
       "detail": "Added \"Poplo\" (£33.48) to London"
-    },
-    {
-      "id": "log_muoluzi0_3_cmffk",
-      "ts": 1790802986040,
-      "action": "expense-deleted",
-      "detail": "Removed \"Blacklock\" (£56.66) from London"
     }
   ]
 }
