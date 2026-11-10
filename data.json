@@ -2562,10 +2562,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794269508954
+        },
+        {
+          "id": "res_mw9xue78_4_2vfcr",
+          "sheet": "Pubs",
+          "name": "Duvelorium Belgian Beer Bar",
+          "address": "Markt 1, 8000 Brugge, Belgium",
+          "lat": 51.2091809,
+          "lng": 3.224951,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw9xudh3_3_3zl2p",
+              "label": "Official Website",
+              "url": "https://www.duvelorium.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794269685860
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794269609953,
+      "updatedAt": 1794269685860,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7085,6 +7107,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9xue78_5_593a9",
+      "ts": 1794269685860,
+      "action": "research-added",
+      "detail": "Added \"Duvelorium Belgian Beer Bar\" to Brugge research"
+    },
+    {
       "id": "log_mw9xsrmp_2_jz6tx",
       "ts": 1794269609953,
       "action": "research-edited",
@@ -8277,12 +8305,6 @@
       "ts": 1790783485883,
       "action": "plan-marked-visited",
       "detail": "Marked \"Blacklock\" as visited on London"
-    },
-    {
-      "id": "log_muoa8y6k_6_louq1",
-      "ts": 1790783482124,
-      "action": "plan-unmarked-visited",
-      "detail": "Unmarked \"Blacklock\" as visited on London"
     }
   ]
 }
