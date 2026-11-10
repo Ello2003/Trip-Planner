@@ -2421,7 +2421,7 @@
           "lat": 51.2070185,
           "lng": 3.2204941,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -2651,7 +2651,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272005712,
+      "updatedAt": 1794272026919,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7171,6 +7171,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9z8kkn_l_axnwl",
+      "ts": 1794272026919,
+      "action": "research-edited",
+      "detail": "Updated \"Boho Brunch\" in Brugge research"
+    },
+    {
       "id": "log_mw9z847k_k_jqc3o",
       "ts": 1794272005712,
       "action": "research-edited",
@@ -8363,12 +8369,6 @@
       "ts": 1790807137079,
       "action": "visited-actual-created",
       "detail": "Copied estimated cost for \"Suitsupply\" into Actual Expenses on London"
-    },
-    {
-      "id": "log_muoo1qdi_8_4cvmk",
-      "ts": 1790806660038,
-      "action": "plan-marked-visited",
-      "detail": "Marked \"The French House\" as visited on London"
     }
   ]
 }
