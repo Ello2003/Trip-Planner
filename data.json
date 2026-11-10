@@ -3098,28 +3098,6 @@
           "createdAt": 1793929347207
         },
         {
-          "id": "res_mw764umf_8_piwgn",
-          "sheet": "Coffee",
-          "name": "The Republic",
-          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
-          "lat": 51.210260100000006,
-          "lng": 3.2214601000000003,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw764tva_7_joecf",
-              "label": "Official Website",
-              "url": "https://www.republiekbrugge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794102212103
-        },
-        {
           "id": "res_mwbcfqwk_1a_kysok",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Brapas",
@@ -3143,7 +3121,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354696684,
+      "updatedAt": 1794354746316,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7641,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbchj9o_1i_txpc6",
+      "ts": 1794354746316,
+      "action": "research-deleted",
+      "detail": "Removed \"The Republic\" from Brugge research"
+    },
+    {
       "id": "log_mwbcggz0_1h_je5tb",
       "ts": 1794354696684,
       "action": "research-edited",
@@ -8855,12 +8839,6 @@
       "ts": 1793403950769,
       "action": "plan-moved-to-research",
       "detail": "Moved \"De Garre\" from Plan back to Research on Brugge"
-    },
-    {
-      "id": "log_mvvmenpe_n_rtzpc",
-      "ts": 1793403949442,
-      "action": "plan-moved-to-research",
-      "detail": "Moved \"Le Trappiste\" from Plan back to Research on Brugge"
     }
   ]
 }
