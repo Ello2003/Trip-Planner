@@ -3102,10 +3102,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794269685860
+        },
+        {
+          "id": "res_mwbc7i63_x_kwk35",
+          "sheet": "Coffee",
+          "name": "DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |",
+          "address": "Hoogstraat 33, 8000 Brugge, Belgium",
+          "lat": 51.2099298,
+          "lng": 3.2300152,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwbc7har_w_wrtyr",
+              "label": "Official Website",
+              "url": "http://www.deeskoffie.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794354278331
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354236907,
+      "updatedAt": 1794354278331,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7625,6 +7647,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbc7i63_y_s2vt4",
+      "ts": 1794354278331,
+      "action": "research-added",
+      "detail": "Added \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" to Brugge research"
+    },
+    {
       "id": "log_mwbc6m7f_v_d35ce",
       "ts": 1794354236907,
       "action": "research-edited",
@@ -8817,12 +8845,6 @@
       "ts": 1792096094018,
       "action": "plan-item-added",
       "detail": "Added \"Petrol\" (Transport / Transfers) on Edinburgh"
-    },
-    {
-      "id": "log_mv9zqfl1_b_0n68f",
-      "ts": 1792096077925,
-      "action": "sheet-visibility-changed",
-      "detail": "Showed \"Transport / Transfers\" for Edinburgh"
     }
   ]
 }
