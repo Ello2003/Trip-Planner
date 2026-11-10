@@ -2994,6 +2994,28 @@
           "createdAt": 1794086689917
         },
         {
+          "id": "res_mw6xmgvd_2b_njrpe",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "’t Klein Venetië",
+          "address": "Braambergstraat 1, 8000 Brugge, Belgium",
+          "lat": 51.207456699999994,
+          "lng": 3.2279464,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views",
+          "links": [
+            {
+              "id": "link_mw6xmdo7_2a_whf99",
+              "label": "Official Website",
+              "url": "http://www.kleinvenetie.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794087917545
+        },
+        {
           "id": "res_mw010p4b_e_f9m4n",
           "sheet": "Bars With Views | Cocktails",
           "name": "Groot Vlaenderen",
@@ -3030,28 +3052,6 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794086673646
-        },
-        {
-          "id": "res_mw6xmgvd_2b_njrpe",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "’t Klein Venetië",
-          "address": "Braambergstraat 1, 8000 Brugge, Belgium",
-          "lat": 51.207456699999994,
-          "lng": 3.2279464,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "Views",
-          "links": [
-            {
-              "id": "link_mw6xmdo7_2a_whf99",
-              "label": "Official Website",
-              "url": "http://www.kleinvenetie.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794087917545
         },
         {
           "id": "res_mw77l1oj_i_2kdsu",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354858763,
+      "updatedAt": 1794354864374,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
