@@ -2202,22 +2202,6 @@
           "createdAt": 1793669967875
         },
         {
-          "id": "res_mw010p4b_e_f9m4n",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "Groot Vlaenderen",
-          "address": "Groot Vlaenderen, 94, Vlamingstraat, Sint-Walburgakwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
-          "lat": 51.2122443,
-          "lng": 3.2231237,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793670357035
-        },
-        {
           "id": "res_mw01rjf1_i_4n3wk",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "That's Toast",
@@ -2572,94 +2556,6 @@
           "createdAt": 1793930082089
         },
         {
-          "id": "res_mw4bqqlk_22_y2vw8",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "NOBLE Bruges",
-          "address": "Meestraat 4, 8000 Brugge, Belgium",
-          "lat": 51.2087832,
-          "lng": 3.2286869000000005,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "With View",
-          "links": [
-            {
-              "id": "link_mw4bqlu0_21_34kef",
-              "label": "Official Website",
-              "url": "http://www.noblebruges.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793930232872
-        },
-        {
-          "id": "res_mw6wvt2m_25_rdcp2",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "Opus Latino",
-          "address": "Burg 15, 8000 Brugge, Belgium",
-          "lat": 51.208221599999995,
-          "lng": 3.2263536,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "Views.",
-          "links": [
-            {
-              "id": "link_mw6wvo4k_24_in0yl",
-              "label": "Official Website",
-              "url": "http://www.opuslatino.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794086673646
-        },
-        {
-          "id": "res_mw6ww5ml_28_3ku06",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "ODA Rooftop Bar",
-          "address": "Steenstraat 96, 8000 Brugge, Belgium",
-          "lat": 51.2059797,
-          "lng": 3.2209095999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "Views",
-          "links": [
-            {
-              "id": "link_mw6ww377_27_5qkjc",
-              "label": "Official Website",
-              "url": "https://www.odarooftopbar.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794086689917
-        },
-        {
-          "id": "res_mw6xmgvd_2b_njrpe",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "’t Klein Venetië",
-          "address": "Braambergstraat 1, 8000 Brugge, Belgium",
-          "lat": 51.207456699999994,
-          "lng": 3.2279464,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "Views",
-          "links": [
-            {
-              "id": "link_mw6xmdo7_2a_whf99",
-              "label": "Official Website",
-              "url": "http://www.kleinvenetie.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794087917545
-        },
-        {
           "id": "res_mw6ygo7u_2e_2jpmp",
           "sheet": "Restaurants",
           "name": "Brasserie Rozenhoedkaai",
@@ -2768,72 +2664,6 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwbbxxrw_6_a19rx",
           "createdAt": 1794102320338
-        },
-        {
-          "id": "res_mw77l1oj_i_2kdsu",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "The Republic",
-          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
-          "lat": 51.210260100000006,
-          "lng": 3.2214601000000003,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw77l0ta_h_xn1jk",
-              "label": "Official Website",
-              "url": "https://www.republiekbrugge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794104647363
-        },
-        {
-          "id": "res_mw77muh8_l_1rebc",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "Estaminet in 't Molenhuis🍺",
-          "address": "Potterierei 109, 8000 Brugge, Belgium",
-          "lat": 51.220402799999995,
-          "lng": 3.2332451,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw77mt21_k_bav5h",
-              "label": "Official Website",
-              "url": "https://molenhuisbrugge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794104731340
-        },
-        {
-          "id": "res_mw77o6i4_o_jschl",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "Hotel Van Cleef",
-          "address": "Molenmeers 11, 8000 Brugge, Belgium",
-          "lat": 51.2102551,
-          "lng": 3.2319484999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw77o56k_n_s9evr",
-              "label": "Official Website",
-              "url": "http://www.hotelvancleef.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794104793580
         },
         {
           "id": "res_mw79a2x8_10_rvzl4",
@@ -3120,6 +2950,176 @@
           "createdAt": 1794354662900
         },
         {
+          "id": "res_mw4bqqlk_22_y2vw8",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "NOBLE Bruges",
+          "address": "Meestraat 4, 8000 Brugge, Belgium",
+          "lat": 51.2087832,
+          "lng": 3.2286869000000005,
+          "priceLevel": null,
+          "priority": 5,
+          "estCost": null,
+          "notes": "With View",
+          "links": [
+            {
+              "id": "link_mw4bqlu0_21_34kef",
+              "label": "Official Website",
+              "url": "http://www.noblebruges.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793930232872
+        },
+        {
+          "id": "res_mw010p4b_e_f9m4n",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Groot Vlaenderen",
+          "address": "Groot Vlaenderen, 94, Vlamingstraat, Sint-Walburgakwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2122443,
+          "lng": 3.2231237,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793670357035
+        },
+        {
+          "id": "res_mw6wvt2m_25_rdcp2",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Opus Latino",
+          "address": "Burg 15, 8000 Brugge, Belgium",
+          "lat": 51.208221599999995,
+          "lng": 3.2263536,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views.",
+          "links": [
+            {
+              "id": "link_mw6wvo4k_24_in0yl",
+              "label": "Official Website",
+              "url": "http://www.opuslatino.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794086673646
+        },
+        {
+          "id": "res_mw6ww5ml_28_3ku06",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "ODA Rooftop Bar",
+          "address": "Steenstraat 96, 8000 Brugge, Belgium",
+          "lat": 51.2059797,
+          "lng": 3.2209095999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views",
+          "links": [
+            {
+              "id": "link_mw6ww377_27_5qkjc",
+              "label": "Official Website",
+              "url": "https://www.odarooftopbar.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794086689917
+        },
+        {
+          "id": "res_mw6xmgvd_2b_njrpe",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "’t Klein Venetië",
+          "address": "Braambergstraat 1, 8000 Brugge, Belgium",
+          "lat": 51.207456699999994,
+          "lng": 3.2279464,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views",
+          "links": [
+            {
+              "id": "link_mw6xmdo7_2a_whf99",
+              "label": "Official Website",
+              "url": "http://www.kleinvenetie.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794087917545
+        },
+        {
+          "id": "res_mw77l1oj_i_2kdsu",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "The Republic",
+          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
+          "lat": 51.210260100000006,
+          "lng": 3.2214601000000003,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77l0ta_h_xn1jk",
+              "label": "Official Website",
+              "url": "https://www.republiekbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104647363
+        },
+        {
+          "id": "res_mw77muh8_l_1rebc",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Estaminet in 't Molenhuis🍺",
+          "address": "Potterierei 109, 8000 Brugge, Belgium",
+          "lat": 51.220402799999995,
+          "lng": 3.2332451,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77mt21_k_bav5h",
+              "label": "Official Website",
+              "url": "https://molenhuisbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104731340
+        },
+        {
+          "id": "res_mw77o6i4_o_jschl",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Hotel Van Cleef",
+          "address": "Molenmeers 11, 8000 Brugge, Belgium",
+          "lat": 51.2102551,
+          "lng": 3.2319484999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77o56k_n_s9evr",
+              "label": "Official Website",
+              "url": "http://www.hotelvancleef.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104793580
+        },
+        {
           "id": "res_mwbci3t0_1k_htn6f",
           "sheet": "Bars With Views | Cocktails",
           "name": "The Republic",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354772932,
+      "updatedAt": 1794354841600,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcjksg_1m_u7bvz",
+      "ts": 1794354841600,
+      "action": "research-edited",
+      "detail": "Updated \"NOBLE Bruges\" in Brugge research"
+    },
+    {
       "id": "log_mwbci3t0_1l_06irz",
       "ts": 1794354772932,
       "action": "research-added",
@@ -8855,12 +8861,6 @@
       "ts": 1793403952550,
       "action": "plan-moved-to-research",
       "detail": "Moved \"Huisbrouwerij De Halve Maan\" from Plan back to Research on Brugge"
-    },
-    {
-      "id": "log_mvvmepgb_r_gfjvx",
-      "ts": 1793403951707,
-      "action": "plan-moved-to-research",
-      "detail": "Moved \"Bauhaus\" from Plan back to Research on Brugge"
     }
   ]
 }
