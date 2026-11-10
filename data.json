@@ -1348,7 +1348,7 @@
           "sheet": "Cigars",
           "name": "Missault",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1367,6 +1367,74 @@
           "notes": "",
           "visited": false,
           "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Missault",
+            "sheet": "Cigars",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
+        },
+        {
+          "id": "plan_mwbbxvn4_2_n6lvg",
+          "sheet": "Shopping",
+          "name": "Käthe Wohlfahrt",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Breidelstraat 4, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbbxvn4_3_40mej",
+              "label": "Official Website",
+              "url": "https://www.kaethe-wohlfahrt.com/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Christmas Shop",
+          "visited": false,
+          "estimateCategory": "Shopping",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbbxxrw_6_a19rx",
+          "sheet": "Shopping",
+          "name": "The Bottle Shop",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Wollestraat 13, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbbxxrw_7_3h7v7",
+              "label": "Official Website",
+              "url": "http://www.thebottleshop.be"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Shopping",
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
@@ -1928,8 +1996,8 @@
               "url": "https://www.kaethe-wohlfahrt.com/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbbxvn4_2_n6lvg",
           "createdAt": 1793405248067
         },
         {
@@ -2768,8 +2836,8 @@
               "url": "http://www.thebottleshop.be"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbbxxrw_6_a19rx",
           "createdAt": 1794102320338
         },
         {
@@ -2922,7 +2990,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794353740679,
+      "updatedAt": 1794353833409,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7442,6 +7510,30 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbbxyv5_9_tqp1n",
+      "ts": 1794353833409,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Bottle Shop\" on Brugge"
+    },
+    {
+      "id": "log_mwbbxxrx_8_hrlik",
+      "ts": 1794353831997,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Bottle Shop\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbbxx39_5_58oz2",
+      "ts": 1794353831109,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Käthe Wohlfahrt\" on Brugge"
+    },
+    {
+      "id": "log_mwbbxvn5_4_108uj",
+      "ts": 1794353829233,
+      "action": "research-promoted",
+      "detail": "Promoted \"Käthe Wohlfahrt\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbbvzbc_5_dql6z",
       "ts": 1794353740680,
       "action": "plan-item-edited",
@@ -8616,30 +8708,6 @@
       "ts": 1791407061288,
       "action": "research-promoted",
       "detail": "Promoted \"Train\" to Plan on Brugge"
-    },
-    {
-      "id": "log_muyli6zt_1_lm0jz",
-      "ts": 1791407050985,
-      "action": "research-edited",
-      "detail": "Updated \"Train\" to Brugge research"
-    },
-    {
-      "id": "log_murk7xrf_d_dhyvd",
-      "ts": 1790981629611,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Train\" (Transport / Transfers) on Brugge"
-    },
-    {
-      "id": "log_murk7w6d_c_kk4d3",
-      "ts": 1790981627557,
-      "action": "research-promoted",
-      "detail": "Promoted \"Train\" to Plan on Brugge"
-    },
-    {
-      "id": "log_murk7nx3_a_2pp97",
-      "ts": 1790981616855,
-      "action": "research-added",
-      "detail": "Added \"Train\" to Brugge research"
     }
   ]
 }
