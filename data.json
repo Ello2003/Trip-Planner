@@ -2540,10 +2540,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794107494988
+        },
+        {
+          "id": "res_mw9xqlp6_5_1h3a1",
+          "sheet": "Pubs",
+          "name": "Brewery Bourgogne des Flandres",
+          "address": "Wollestraat 26, 8000 Brugge, Belgium",
+          "lat": 51.2068853,
+          "lng": 3.2260587,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw9xqkgg_4_5aw2y",
+              "label": "Official Website",
+              "url": "http://bourgognedesflandres.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794269508954
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794269215444,
+      "updatedAt": 1794269508954,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7063,6 +7085,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9xqlp6_6_2nq3w",
+      "ts": 1794269508954,
+      "action": "research-added",
+      "detail": "Added \"Brewery Bourgogne des Flandres\" to Brugge research"
+    },
+    {
       "id": "log_mw79uzqg_1q_bflvr",
       "ts": 1794108470632,
       "action": "plan-item-edited",
@@ -8255,12 +8283,6 @@
       "ts": 1790783390462,
       "action": "trip-duplicated",
       "detail": "Duplicated \"London\" as \"London (copy)\""
-    },
-    {
-      "id": "log_muoa1co8_e_sc378",
-      "ts": 1790783127656,
-      "action": "expense-deleted",
-      "detail": "Removed \"Walker Slater\" (£595.00) from London"
     }
   ]
 }
