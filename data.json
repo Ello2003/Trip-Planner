@@ -2918,6 +2918,22 @@
           "createdAt": 1794354278331
         },
         {
+          "id": "res_mwbc86bk_z_w5yz3",
+          "sheet": "Coffee",
+          "name": "AVI '38 Specialty Coffeebar Bruges",
+          "address": "Niklaas Desparsstraat 8, 8000 Brugge, Belgium",
+          "lat": 51.209677799999994,
+          "lng": 3.2237647999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794354309632
+        },
+        {
           "id": "res_mw01kzh4_g_yhx9b",
           "sheet": "Coffee",
           "name": "Aux Merveilleux de Fred",
@@ -3124,26 +3140,10 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794104829488
-        },
-        {
-          "id": "res_mwbc86bk_z_w5yz3",
-          "sheet": "Coffee",
-          "name": "AVI '38 Specialty Coffeebar Bruges",
-          "address": "Niklaas Desparsstraat 8, 8000 Brugge, Belgium",
-          "lat": 51.209677799999994,
-          "lng": 3.2237647999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794354309632
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354435983,
+      "updatedAt": 1794354441399,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
