@@ -2431,7 +2431,7 @@
               "url": "http://www.bohobrunch.be/"
             }
           ],
-          "status": "promoted",
+          "status": "researching",
           "linkedPlanItemId": "plan_mw9z0c6c_b_ul2wx",
           "createdAt": 1794101192352
         },
@@ -2651,7 +2651,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794271727663,
+      "updatedAt": 1794271824779,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7171,6 +7171,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9z48ln_j_wkwyv",
+      "ts": 1794271824779,
+      "action": "research-edited",
+      "detail": "Updated \"Boho Brunch\" in Brugge research"
+    },
+    {
       "id": "log_mw9z25o0_i_nvuxm",
       "ts": 1794271727664,
       "action": "plan-item-edited",
@@ -8363,12 +8369,6 @@
       "ts": 1790806651023,
       "action": "plan-item-edited",
       "detail": "Updated \"The French House\" (Bars) on London"
-    },
-    {
-      "id": "log_muoo1hko_6_9dmfb",
-      "ts": 1790806648632,
-      "action": "research-promoted",
-      "detail": "Promoted \"The French House\" to Plan on London"
     }
   ]
 }
