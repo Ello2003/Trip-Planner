@@ -3044,6 +3044,28 @@
           "createdAt": 1793929149363
         },
         {
+          "id": "res_mw77oy7k_r_e8d61",
+          "sheet": "Coffee",
+          "name": "Kaffee Kamiel",
+          "address": "Zilverpand 7, 8000 Brugge, Belgium",
+          "lat": 51.2068096,
+          "lng": 3.2201052,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77oxfw_q_dkz3x",
+              "label": "Official Website",
+              "url": "https://www.kaffeekamiel.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104829488
+        },
+        {
           "id": "res_mw01kzh4_g_yhx9b",
           "sheet": "Coffee",
           "name": "Aux Merveilleux de Fred",
@@ -3118,32 +3140,10 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794102212103
-        },
-        {
-          "id": "res_mw77oy7k_r_e8d61",
-          "sheet": "Coffee",
-          "name": "Kaffee Kamiel",
-          "address": "Zilverpand 7, 8000 Brugge, Belgium",
-          "lat": 51.2068096,
-          "lng": 3.2201052,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw77oxfw_q_dkz3x",
-              "label": "Official Website",
-              "url": "https://www.kaffeekamiel.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794104829488
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354580945,
+      "updatedAt": 1794354588770,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
