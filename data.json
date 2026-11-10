@@ -3075,7 +3075,7 @@
           "priceLevel": null,
           "priority": null,
           "estCost": null,
-          "notes": "",
+          "notes": "Meringues",
           "links": [],
           "status": "researching",
           "linkedPlanItemId": null,
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354588770,
+      "updatedAt": 1794354621815,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcev7c_18_m1qrg",
+      "ts": 1794354621816,
+      "action": "research-edited",
+      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
+    },
+    {
       "id": "log_mwbcdhth_17_9y0wf",
       "ts": 1794354557813,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793403787175,
       "action": "plan-item-added",
       "detail": "Added \"'t Brugs Beertje\" (Pubs) on Brugge"
-    },
-    {
-      "id": "log_mvpw4hlr_7_ejcnp",
-      "ts": 1793057474079,
-      "action": "section-map-added",
-      "detail": "Added a map for Hotels on Brugge"
     }
   ]
 }
