@@ -1485,6 +1485,29 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbc36vq_j_w0kju",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Chez Albert",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Chez Albert, Stationsplein, Sint-Michiels, Bruges, Brugge, West Flanders, Flanders, 8200, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Liège Waffles",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2110,10 +2133,10 @@
           "priceLevel": null,
           "priority": null,
           "estCost": null,
-          "notes": "",
+          "notes": "Liège Waffles",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbc36vq_j_w0kju",
           "createdAt": 1793669924469
         },
         {
@@ -3036,7 +3059,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794353920900,
+      "updatedAt": 1794354078602,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7556,6 +7579,24 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbc3824_l_ep5oz",
+      "ts": 1794354078604,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Chez Albert\" on Brugge"
+    },
+    {
+      "id": "log_mwbc36vt_k_qmxsp",
+      "ts": 1794354077081,
+      "action": "research-promoted",
+      "detail": "Promoted \"Chez Albert\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbc34b7_i_1ad4j",
+      "ts": 1794354073747,
+      "action": "research-edited",
+      "detail": "Updated \"Chez Albert\" in Brugge research"
+    },
+    {
       "id": "log_mwbbzudg_h_bbvl5",
       "ts": 1794353920900,
       "action": "research-edited",
@@ -8736,24 +8777,6 @@
       "ts": 1792019106413,
       "action": "plan-item-edited",
       "detail": "Updated \"Brussels to Brugge Train\" (Transport / Transfers) on Brugge"
-    },
-    {
-      "id": "log_mv8pwmxu_j_hn7si",
-      "ts": 1792019105058,
-      "action": "research-promoted",
-      "detail": "Promoted \"Brussels to Brugge Train\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mv8pwjy3_h_8jg5w",
-      "ts": 1792019101179,
-      "action": "research-edited",
-      "detail": "Updated \"Brussels to Brugge Train\" to Brugge research"
-    },
-    {
-      "id": "log_mv8pvzk1_g_h942f",
-      "ts": 1792019074753,
-      "action": "research-added",
-      "detail": "Added \"Petrol\" to Brugge research"
     }
   ]
 }
