@@ -1462,6 +1462,29 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbbzbnq_e_ksjvu",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "The Old Chocolate House",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "The Old Chocolate House, Mariastraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Hot Choc",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2071,10 +2094,10 @@
           "priceLevel": null,
           "priority": 5,
           "estCost": null,
-          "notes": "",
+          "notes": "Hot Choc",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbbzbnq_e_ksjvu",
           "createdAt": 1793669638156
         },
         {
@@ -3013,7 +3036,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794353871346,
+      "updatedAt": 1794353898867,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7533,6 +7556,24 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbbzddg_g_7lmp4",
+      "ts": 1794353898868,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Old Chocolate House\" on Brugge"
+    },
+    {
+      "id": "log_mwbbzbnr_f_h2txe",
+      "ts": 1794353896647,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Old Chocolate House\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbbz917_d_t2px2",
+      "ts": 1794353893243,
+      "action": "research-edited",
+      "detail": "Updated \"The Old Chocolate House\" in Brugge research"
+    },
+    {
       "id": "log_mwbbys4z_c_xutb6",
       "ts": 1794353871347,
       "action": "plan-item-edited",
@@ -8713,24 +8754,6 @@
       "ts": 1792018976790,
       "action": "plan-item-edited",
       "detail": "Updated \"Airport Parking\" (Transport / Transfers) on Brugge"
-    },
-    {
-      "id": "log_mv8ptu6b_d_8j4fh",
-      "ts": 1792018974467,
-      "action": "research-promoted",
-      "detail": "Promoted \"Airport Parking\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mv8ptojc_a_djv87",
-      "ts": 1792018967160,
-      "action": "research-added",
-      "detail": "Added \"Airport Parking\" to Brugge research"
-    },
-    {
-      "id": "log_muyljm8u_7_kjadl",
-      "ts": 1791407117406,
-      "action": "plan-item-deleted",
-      "detail": "Removed \"Train\" from Brugge"
     }
   ]
 }
