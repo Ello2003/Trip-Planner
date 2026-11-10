@@ -2941,7 +2941,7 @@
           "lat": 51.2072618,
           "lng": 3.2247989,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354496745,
+      "updatedAt": 1794354502128,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbccauo_14_6w0ou",
+      "ts": 1794354502128,
+      "action": "research-edited",
+      "detail": "Updated \"Nuba Cafe Brugge\" in Brugge research"
+    },
+    {
       "id": "log_mwbcc3ga_13_g2125",
       "ts": 1794354492538,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793057280090,
       "action": "research-promoted",
       "detail": "Promoted \"Hotel Aragon\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mvpw09qh_2_554gt",
-      "ts": 1793057277257,
-      "action": "research-added",
-      "detail": "Added \"Hotel Aragon\" to Brugge research"
     }
   ]
 }
