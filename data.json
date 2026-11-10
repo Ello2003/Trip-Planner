@@ -2078,9 +2078,9 @@
           "priceLevel": null,
           "priority": 5,
           "estCost": null,
-          "notes": "",
+          "notes": "Handmade Chocs",
           "links": [],
-          "status": "promoted",
+          "status": "researching",
           "linkedPlanItemId": "plan_mwbbyqdj_a_bi7zx",
           "createdAt": 1793669606280
         },
@@ -3036,7 +3036,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794353898867,
+      "updatedAt": 1794353920900,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7556,6 +7556,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbbzudg_h_bbvl5",
+      "ts": 1794353920900,
+      "action": "research-edited",
+      "detail": "Updated \"The Chocolate Line\" in Brugge research"
+    },
+    {
       "id": "log_mwbbzddg_g_7lmp4",
       "ts": 1794353898868,
       "action": "plan-item-edited",
@@ -8748,12 +8754,6 @@
       "ts": 1792019074753,
       "action": "research-added",
       "detail": "Added \"Petrol\" to Brugge research"
-    },
-    {
-      "id": "log_mv8ptvyu_e_a6ina",
-      "ts": 1792018976790,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Airport Parking\" (Transport / Transfers) on Brugge"
     }
   ]
 }
