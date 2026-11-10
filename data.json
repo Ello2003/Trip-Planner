@@ -3118,10 +3118,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794354662900
+        },
+        {
+          "id": "res_mwbci3t0_1k_htn6f",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "The Republic",
+          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
+          "lat": 51.210260100000006,
+          "lng": 3.2214601000000003,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwbci2ev_1j_ryrty",
+              "label": "Official Website",
+              "url": "https://www.republiekbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794354772932
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354746316,
+      "updatedAt": 1794354772932,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7641,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbci3t0_1l_06irz",
+      "ts": 1794354772932,
+      "action": "research-added",
+      "detail": "Added \"The Republic\" to Brugge research"
+    },
+    {
       "id": "log_mwbchj9o_1i_txpc6",
       "ts": 1794354746316,
       "action": "research-deleted",
@@ -8833,12 +8861,6 @@
       "ts": 1793403951707,
       "action": "plan-moved-to-research",
       "detail": "Moved \"Bauhaus\" from Plan back to Research on Brugge"
-    },
-    {
-      "id": "log_mvvmeoq9_p_x259p",
-      "ts": 1793403950769,
-      "action": "plan-moved-to-research",
-      "detail": "Moved \"De Garre\" from Plan back to Research on Brugge"
     }
   ]
 }
