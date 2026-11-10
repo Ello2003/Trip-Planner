@@ -3000,6 +3000,28 @@
           "createdAt": 1793929182725
         },
         {
+          "id": "res_mw4b4jof_12_mfrwf",
+          "sheet": "Coffee",
+          "name": "EspressoBar - I Love Coffee",
+          "address": "Sint-Jakobsstraat 10, 8000 Brugge, Belgium",
+          "lat": 51.209469899999995,
+          "lng": 3.2225167,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b4j2f_11_slwm9",
+              "label": "Official Website",
+              "url": "https://ilcoffee.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929197471
+        },
+        {
           "id": "res_mw01kzh4_g_yhx9b",
           "sheet": "Coffee",
           "name": "Aux Merveilleux de Fred",
@@ -3036,28 +3058,6 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793929149363
-        },
-        {
-          "id": "res_mw4b4jof_12_mfrwf",
-          "sheet": "Coffee",
-          "name": "EspressoBar - I Love Coffee",
-          "address": "Sint-Jakobsstraat 10, 8000 Brugge, Belgium",
-          "lat": 51.209469899999995,
-          "lng": 3.2225167,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b4j2f_11_slwm9",
-              "label": "Official Website",
-              "url": "https://ilcoffee.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929197471
         },
         {
           "id": "res_mw4b4wl4_15_486mi",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354557811,
+      "updatedAt": 1794354571141,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
