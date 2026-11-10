@@ -1439,6 +1439,29 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbbyqdj_a_bi7zx",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "The Chocolate Line",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "The Chocolate Line, 75, Vaartstraat, Nijverheidsdok (Z12), Sint-Pieters, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2034,8 +2057,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbbyqdj_a_bi7zx",
           "createdAt": 1793669606280
         },
         {
@@ -2990,7 +3013,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794353833409,
+      "updatedAt": 1794353871346,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7510,6 +7533,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbbys4z_c_xutb6",
+      "ts": 1794353871347,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Chocolate Line\" on Brugge"
+    },
+    {
+      "id": "log_mwbbyqdj_b_z0mic",
+      "ts": 1794353869063,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Chocolate Line\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbbxyv5_9_tqp1n",
       "ts": 1794353833409,
       "action": "plan-item-edited",
@@ -8696,18 +8731,6 @@
       "ts": 1791407117406,
       "action": "plan-item-deleted",
       "detail": "Removed \"Train\" from Brugge"
-    },
-    {
-      "id": "log_muylikqi_5_l6a1p",
-      "ts": 1791407068794,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Train\" (Transport / Transfers) on Brugge"
-    },
-    {
-      "id": "log_muyliey0_3_882et",
-      "ts": 1791407061288,
-      "action": "research-promoted",
-      "detail": "Promoted \"Train\" to Plan on Brugge"
     }
   ]
 }
