@@ -1048,7 +1048,7 @@
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Boho Brunch",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-12",
           "endDate": null,
           "time": "10:15",
           "dayNumber": 2,
@@ -1070,14 +1070,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Boho Brunch",
+            "sheet": "Breakfasts | Bakeries | Casual Dining",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mw9z20fd_f_k1nqo",
           "sheet": "Pubs",
           "name": "Brewery Bourgogne des Flandres",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-12",
           "endDate": null,
           "time": null,
           "dayNumber": 2,
@@ -1099,14 +1109,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Brewery Bourgogne des Flandres",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mw9zbcw5_m_0o94p",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "That's Toast",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1128,14 +1148,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "That's Toast",
+            "sheet": "Breakfasts | Bakeries | Casual Dining",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mw9zbmr8_q_5tcy1",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Boulangerie Schaeverbeke",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1151,14 +1181,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Boulangerie Schaeverbeke",
+            "sheet": "Breakfasts | Bakeries | Casual Dining",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mw9zbs9z_t_xftl6",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Tasty Sandwich",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1174,14 +1214,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Tasty Sandwich",
+            "sheet": "Breakfasts | Bakeries | Casual Dining",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mw9zbxqp_w_3uggd",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Boho Brunch",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1203,14 +1253,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Boho Brunch",
+            "sheet": "Breakfasts | Bakeries | Casual Dining",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mw9zidyz_10_0oax0",
           "sheet": "Shopping",
           "name": "De Witte Pelikaan",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1232,14 +1292,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "De Witte Pelikaan",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbbv9rl_16_kvb11",
           "sheet": "Cigars",
           "name": "Jerry's Cigar Bar",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1250,6 +1320,45 @@
               "id": "link_mwbbv9rm_17_9wo71",
               "label": "Official Website",
               "url": "http://www.jerryscigarbar.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Jerry's Cigar Bar",
+            "sheet": "Cigars",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
+        },
+        {
+          "id": "plan_mwbbvxzc_2_pe83p",
+          "sheet": "Cigars",
+          "name": "Missault",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Braambergstraat 5, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbbvxzc_3_rv3vr",
+              "label": "Official Website",
+              "url": "http://www.missaultbrugge.be/"
             }
           ],
           "cost": null,
@@ -1775,8 +1884,8 @@
               "url": "http://www.missaultbrugge.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbbvxzc_2_pe83p",
           "createdAt": 1793404365750
         },
         {
@@ -2813,7 +2922,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794353710688,
+      "updatedAt": 1794353740679,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7333,6 +7442,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbbvzbc_5_dql6z",
+      "ts": 1794353740680,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Missault\" on Brugge"
+    },
+    {
+      "id": "log_mwbbvxzd_4_xflw4",
+      "ts": 1794353738953,
+      "action": "research-promoted",
+      "detail": "Promoted \"Missault\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbbvc69_19_qokt4",
       "ts": 1794353710689,
       "action": "plan-item-edited",
@@ -8519,18 +8640,6 @@
       "ts": 1790981616855,
       "action": "research-added",
       "detail": "Added \"Train\" to Brugge research"
-    },
-    {
-      "id": "log_murk2xy6_8_ya1td",
-      "ts": 1790981396574,
-      "action": "sheet-visibility-changed",
-      "detail": "Hid \"Coffee Shops\" for Brugge"
-    },
-    {
-      "id": "log_murk2x3q_7_8lix3",
-      "ts": 1790981395478,
-      "action": "sheet-visibility-changed",
-      "detail": "Showed \"Coffee\" for Brugge"
     }
   ]
 }
