@@ -1827,7 +1827,7 @@
           "lat": 51.20452160000001,
           "lng": 3.232078,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -2593,7 +2593,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794271483705,
+      "updatedAt": 1794271507755,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7113,6 +7113,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9yxfzf_a_13kjc",
+      "ts": 1794271507755,
+      "action": "research-edited",
+      "detail": "Updated \"Boulangerie Schaeverbeke\" in Brugge research"
+    },
+    {
       "id": "log_mw9ywxfe_9_0uni4",
       "ts": 1794271483706,
       "action": "research-edited",
@@ -8305,12 +8311,6 @@
       "ts": 1790802577154,
       "action": "visited-actual-created",
       "detail": "Copied estimated cost for \"Blacklock\" into Actual Expenses on London"
-    },
-    {
-      "id": "log_muokmxa6_1_wbane",
-      "ts": 1790800930302,
-      "action": "trip-deleted",
-      "detail": "Deleted trip \"London (copy)\""
     }
   ]
 }
