@@ -575,10 +575,10 @@ export const App: React.FC = () => {
       { action: 'research-promoted', detail: `Promoted "${item.name}" to Plan on ${currentTrip.name}` }
     );
 
-    setActiveTripTab('plan');
+    // Stay on Research after promote
     setModalType('editPlanItem');
     setModalPayload({ item: newPlan });
-    showToast('Promoted — set a date/day to place it on the timeline');
+    showToast('Added to Plan — still on Research');
   };
 
   // Print export handler
