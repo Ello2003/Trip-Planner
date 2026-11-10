@@ -3029,7 +3029,7 @@
           "lat": 51.2075563,
           "lng": 3.2286907,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3051,7 +3051,7 @@
           "lat": 51.2068096,
           "lng": 3.2201052,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354676796,
+      "updatedAt": 1794354685467,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcg8bf_1f_8f7bv",
+      "ts": 1794354685467,
+      "action": "research-edited",
+      "detail": "Updated \"Kaffee Kamiel\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcg5hn_1e_1luxr",
+      "ts": 1794354681803,
+      "action": "research-edited",
+      "detail": "Updated \"Les Coquettes Le Café\" in Brugge research"
+    },
+    {
       "id": "log_mwbcg1mk_1d_7m28o",
       "ts": 1794354676796,
       "action": "research-edited",
@@ -8849,18 +8861,6 @@
       "ts": 1793403847254,
       "action": "plan-item-added",
       "detail": "Added \"De Kelk\" (Pubs) on Brugge"
-    },
-    {
-      "id": "log_mvvmccw5_h_hzy1l",
-      "ts": 1793403842117,
-      "action": "plan-item-added",
-      "detail": "Added \"Huisbrouwerij De Halve Maan\" (Pubs) on Brugge"
-    },
-    {
-      "id": "log_mvvmc039_f_e829r",
-      "ts": 1793403825525,
-      "action": "plan-item-added",
-      "detail": "Added \"Bauhaus\" (Pubs) on Brugge"
     }
   ]
 }
