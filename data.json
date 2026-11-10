@@ -2543,7 +2543,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794269181615,
+      "updatedAt": 1794269215444,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -2595,6 +2595,14 @@
           }
         ],
         "clips": [
+          {
+            "id": "clip_mw9xkb84_3_iy2ng",
+            "createdAt": 1794269215444,
+            "url": "https://filmoffice.visitbruges.be/sites/default/files/downloads/moviemap-a3_uk_2020.pdf",
+            "site": "Filmoffice.visitbruges",
+            "title": "In Brugge",
+            "why": "Filming Locations"
+          },
           {
             "id": "clip_mw9xjl4f_2_1fwtt",
             "createdAt": 1794269181615,
