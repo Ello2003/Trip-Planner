@@ -2956,22 +2956,6 @@
           "createdAt": 1793929113622
         },
         {
-          "id": "res_mw01kzh4_g_yhx9b",
-          "sheet": "Coffee",
-          "name": "Aux Merveilleux de Fred",
-          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
-          "lat": 51.3443421,
-          "lng": 3.2877077,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793671303576
-        },
-        {
           "id": "res_mw4b34u4_t_d481t",
           "sheet": "Coffee",
           "name": "Coffeebar Adriaan",
@@ -2994,28 +2978,6 @@
           "createdAt": 1793929131580
         },
         {
-          "id": "res_mw4b3ik3_w_t0il9",
-          "sheet": "Coffee",
-          "name": "Les Coquettes Le Café",
-          "address": "Braambergstraat 12 a, 8000 Brugge, Belgium",
-          "lat": 51.2075563,
-          "lng": 3.2286907,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b3hom_v_q6abq",
-              "label": "Official Website",
-              "url": "http://www.lescoquettes.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929149363
-        },
-        {
           "id": "res_mw4b48at_z_9sflb",
           "sheet": "Coffee",
           "name": "Blackbird Coffee Club",
@@ -3036,6 +2998,44 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793929182725
+        },
+        {
+          "id": "res_mw01kzh4_g_yhx9b",
+          "sheet": "Coffee",
+          "name": "Aux Merveilleux de Fred",
+          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
+          "lat": 51.3443421,
+          "lng": 3.2877077,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793671303576
+        },
+        {
+          "id": "res_mw4b3ik3_w_t0il9",
+          "sheet": "Coffee",
+          "name": "Les Coquettes Le Café",
+          "address": "Braambergstraat 12 a, 8000 Brugge, Belgium",
+          "lat": 51.2075563,
+          "lng": 3.2286907,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b3hom_v_q6abq",
+              "label": "Official Website",
+              "url": "http://www.lescoquettes.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929149363
         },
         {
           "id": "res_mw4b4jof_12_mfrwf",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354508112,
+      "updatedAt": 1794354537494,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
