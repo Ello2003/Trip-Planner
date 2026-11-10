@@ -1729,7 +1729,7 @@
           "lat": 51.2064074,
           "lng": 3.2192262,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -2593,7 +2593,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794271297409,
+      "updatedAt": 1794271483705,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7113,6 +7113,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9ywxfe_9_0uni4",
+      "ts": 1794271483706,
+      "action": "research-edited",
+      "detail": "Updated \"That's Toast\" in Brugge research"
+    },
+    {
       "id": "log_mw9ysxoh_8_idpou",
       "ts": 1794271297409,
       "action": "research-edited",
@@ -8305,12 +8311,6 @@
       "ts": 1790800930302,
       "action": "trip-deleted",
       "detail": "Deleted trip \"London (copy)\""
-    },
-    {
-      "id": "log_muoci40l_3_oatqk",
-      "ts": 1790787268821,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Blacklock\" (Restaurants) on London"
     }
   ]
 }
