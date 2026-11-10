@@ -1100,6 +1100,35 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mw9zbcw5_m_0o94p",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "That's Toast",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "That's Toast, 4, Dweersstraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [
+            {
+              "id": "link_mw9zbcw6_n_k84mf",
+              "label": "Menu",
+              "url": "https://www.thatstoast.com/menu"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -1797,8 +1826,8 @@
               "url": "https://www.thatstoast.com/menu"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw9zbcw5_m_0o94p",
           "createdAt": 1793671609357
         },
         {
@@ -2651,7 +2680,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272026919,
+      "updatedAt": 1794272159275,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7171,6 +7200,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9zbep9_p_tnazp",
+      "ts": 1794272159277,
+      "action": "plan-item-edited",
+      "detail": "Updated \"That's Toast\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbcw6_o_3g6ym",
+      "ts": 1794272156934,
+      "action": "research-promoted",
+      "detail": "Promoted \"That's Toast\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9z8kkn_l_axnwl",
       "ts": 1794272026919,
       "action": "research-edited",
@@ -8357,18 +8398,6 @@
       "ts": 1790807253692,
       "action": "visited-actual-created",
       "detail": "Copied estimated cost for \"The Coach and Horses\" into Actual Expenses on London"
-    },
-    {
-      "id": "log_muoodb6q_4_4f9jn",
-      "ts": 1790807200226,
-      "action": "visited-actual-created",
-      "detail": "Copied estimated cost for \"Devonshire\" into Actual Expenses on London"
-    },
-    {
-      "id": "log_muoobygn_2_d87th",
-      "ts": 1790807137079,
-      "action": "visited-actual-created",
-      "detail": "Copied estimated cost for \"Suitsupply\" into Actual Expenses on London"
     }
   ]
 }
