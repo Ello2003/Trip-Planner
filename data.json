@@ -2549,9 +2549,9 @@
           "lat": 51.2068853,
           "lng": 3.2260587,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
-          "notes": "Tasting Paddles",
+          "notes": "Tasting Paddles\nTerrace",
           "links": [
             {
               "id": "link_mw9xqkgg_4_5aw2y",
@@ -2587,7 +2587,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794269685860,
+      "updatedAt": 1794270911242,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7107,6 +7107,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9yknpm_6_b5c3a",
+      "ts": 1794270911242,
+      "action": "research-edited",
+      "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
+    },
+    {
       "id": "log_mw9xue78_5_593a9",
       "ts": 1794269685860,
       "action": "research-added",
@@ -8299,12 +8305,6 @@
       "ts": 1790787172536,
       "action": "country-auto-guessed",
       "detail": "Guessed country for 1 trip(s) from their names — check Edit Trip to correct any that are wrong"
-    },
-    {
-      "id": "log_muoa912z_7_idr6s",
-      "ts": 1790783485883,
-      "action": "plan-marked-visited",
-      "detail": "Marked \"Blacklock\" as visited on London"
     }
   ]
 }
