@@ -3140,10 +3140,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794102212103
+        },
+        {
+          "id": "res_mwbcfqwk_1a_kysok",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Brapas",
+          "address": "Sint-Amandsstraat 30, 8000 Brugge, Belgium",
+          "lat": 51.208492299999996,
+          "lng": 3.2220795,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwbcfq6m_19_4agej",
+              "label": "Official Website",
+              "url": "https://www.brapas.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794354662900
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354621815,
+      "updatedAt": 1794354662900,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7685,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcfqwk_1b_oy07w",
+      "ts": 1794354662900,
+      "action": "research-added",
+      "detail": "Added \"Brapas\" to Brugge research"
+    },
+    {
       "id": "log_mwbcev7c_18_m1qrg",
       "ts": 1794354621816,
       "action": "research-edited",
@@ -8855,12 +8883,6 @@
       "ts": 1793403801883,
       "action": "plan-item-added",
       "detail": "Added \"Le Trappiste\" (Pubs) on Brugge"
-    },
-    {
-      "id": "log_mvvmb6hz_9_bwnaa",
-      "ts": 1793403787175,
-      "action": "plan-item-added",
-      "detail": "Added \"'t Brugs Beertje\" (Pubs) on Brugge"
     }
   ]
 }
