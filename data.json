@@ -1204,6 +1204,35 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mw9zidyz_10_0oax0",
+          "sheet": "Shopping",
+          "name": "De Witte Pelikaan",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Vlamingstraat 23, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw9zidyz_11_gtqix",
+              "label": "Official Website",
+              "url": "http://www.dewittepelikaan.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Christmas Shop",
+          "visited": false,
+          "estimateCategory": "Shopping",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -1739,8 +1768,8 @@
               "url": "http://www.dewittepelikaan.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw9zidyz_10_0oax0",
           "createdAt": 1793405229584
         },
         {
@@ -2755,7 +2784,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272185865,
+      "updatedAt": 1794272486484,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7275,6 +7304,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9zif6d_13_qtnpb",
+      "ts": 1794272486485,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De Witte Pelikaan\" on Brugge"
+    },
+    {
+      "id": "log_mw9zidyz_12_d3cbq",
+      "ts": 1794272484923,
+      "action": "research-promoted",
+      "detail": "Promoted \"De Witte Pelikaan\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9zbz7v_z_dkmdk",
       "ts": 1794272185867,
       "action": "plan-item-edited",
@@ -8461,18 +8502,6 @@
       "ts": 1790981319045,
       "action": "sheet-visibility-changed",
       "detail": "Hid \"Shopping\" for Brugge"
-    },
-    {
-      "id": "log_murk1604_2_06ygp",
-      "ts": 1790981313700,
-      "action": "sheet-visibility-changed",
-      "detail": "Hid \"Wine Bars\" for Brugge"
-    },
-    {
-      "id": "log_murk0uau_1_ljg90",
-      "ts": 1790981298534,
-      "action": "trip-edited",
-      "detail": "Updated details for \"Brugge\""
     }
   ]
 }
