@@ -1840,7 +1840,7 @@
           "lat": 51.2060614,
           "lng": 3.2230754,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -2784,7 +2784,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272533857,
+      "updatedAt": 1794272537997,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7304,6 +7304,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9zjixc_15_iodmn",
+      "ts": 1794272538000,
+      "action": "research-edited",
+      "detail": "Updated \"The Old Chocolate House\" in Brugge research"
+    },
+    {
       "id": "log_mw9zjfq9_14_mvwn9",
       "ts": 1794272533857,
       "action": "research-edited",
@@ -8496,12 +8502,6 @@
       "ts": 1790981377916,
       "action": "sheet-visibility-changed",
       "detail": "Hid \"Cocktails\" for Brugge"
-    },
-    {
-      "id": "log_murk294o_4_5cl0c",
-      "ts": 1790981364408,
-      "action": "sheet-visibility-changed",
-      "detail": "Hid \"Things To Do\" for Brugge"
     }
   ]
 }
