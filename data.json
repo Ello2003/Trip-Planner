@@ -3082,28 +3082,6 @@
           "createdAt": 1793671303576
         },
         {
-          "id": "res_mw4b4wl4_15_486mi",
-          "sheet": "Coffee",
-          "name": "Brapas",
-          "address": "Sint-Amandsstraat 30, 8000 Brugge, Belgium",
-          "lat": 51.208492299999996,
-          "lng": 3.2220795,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b4w02_14_de2c0",
-              "label": "Official Website",
-              "url": "https://www.brapas.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929214200
-        },
-        {
           "id": "res_mw4b7r7r_17_3y2cn",
           "sheet": "Coffee",
           "name": "Hof Café",
@@ -3165,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354662900,
+      "updatedAt": 1794354667737,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7685,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcfumx_1c_0vidx",
+      "ts": 1794354667737,
+      "action": "research-deleted",
+      "detail": "Removed \"Brapas\" from Brugge research"
+    },
+    {
       "id": "log_mwbcfqwk_1b_oy07w",
       "ts": 1794354662900,
       "action": "research-added",
@@ -8877,12 +8861,6 @@
       "ts": 1793403815363,
       "action": "plan-item-added",
       "detail": "Added \"De Garre\" (Pubs) on Brugge"
-    },
-    {
-      "id": "log_mvvmbhuj_b_v0l5x",
-      "ts": 1793403801883,
-      "action": "plan-item-added",
-      "detail": "Added \"Le Trappiste\" (Pubs) on Brugge"
     }
   ]
 }
