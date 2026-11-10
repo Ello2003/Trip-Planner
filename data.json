@@ -1152,6 +1152,29 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mw9zbs9z_t_xftl6",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Tasty Sandwich",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Eiermarkt 7, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -1957,8 +1980,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw9zbs9z_t_xftl6",
           "createdAt": 1793928401915
         },
         {
@@ -2703,7 +2726,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272171451,
+      "updatedAt": 1794272178612,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7223,6 +7246,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9zbtmd_v_osypn",
+      "ts": 1794272178613,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Tasty Sandwich\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbs9z_u_b3ujb",
+      "ts": 1794272176871,
+      "action": "research-promoted",
+      "detail": "Promoted \"Tasty Sandwich\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9zbo3f_s_fxtp3",
       "ts": 1794272171451,
       "action": "plan-item-edited",
@@ -8409,18 +8444,6 @@
       "ts": 1790898929628,
       "action": "trip-edited",
       "detail": "Updated details for \"London\""
-    },
-    {
-      "id": "log_muoozrj1_c_id7k4",
-      "ts": 1790808247837,
-      "action": "expense-added",
-      "detail": "Added \"Walker Slater\" (£595.00) to London"
-    },
-    {
-      "id": "log_muookh5c_a_t0l5s",
-      "ts": 1790807534544,
-      "action": "expense-deleted",
-      "detail": "Removed \"The Coach and Horses\" (£0.00) from London"
     }
   ]
 }
