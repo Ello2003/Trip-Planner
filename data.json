@@ -2218,22 +2218,6 @@
           "createdAt": 1793670357035
         },
         {
-          "id": "res_mw01kzh4_g_yhx9b",
-          "sheet": "Coffee",
-          "name": "Aux Merveilleux de Fred",
-          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
-          "lat": 51.3443421,
-          "lng": 3.2877077,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793671303576
-        },
-        {
           "id": "res_mw01rjf1_i_4n3wk",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "That's Toast",
@@ -2422,154 +2406,6 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793929029517
-        },
-        {
-          "id": "res_mw4b2qza_q_gxuxf",
-          "sheet": "Coffee",
-          "name": "Nuba Cafe Brugge",
-          "address": "Oude Burg 10, 8000 Brugge, Belgium",
-          "lat": 51.2072618,
-          "lng": 3.2247989,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b2qbo_p_4bibj",
-              "label": "Official Website",
-              "url": "https://www.instagram.com/nubacafe/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929113622
-        },
-        {
-          "id": "res_mw4b34u4_t_d481t",
-          "sheet": "Coffee",
-          "name": "Coffeebar Adriaan",
-          "address": "Adriaan Willaertstraat 7, 8000 Brugge, Belgium",
-          "lat": 51.2108078,
-          "lng": 3.2237238,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b348x_s_q2blg",
-              "label": "Official Website",
-              "url": "http://www.coffeebaradriaan.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929131580
-        },
-        {
-          "id": "res_mw4b3ik3_w_t0il9",
-          "sheet": "Coffee",
-          "name": "Les Coquettes Le Café",
-          "address": "Braambergstraat 12 a, 8000 Brugge, Belgium",
-          "lat": 51.2075563,
-          "lng": 3.2286907,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b3hom_v_q6abq",
-              "label": "Official Website",
-              "url": "http://www.lescoquettes.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929149363
-        },
-        {
-          "id": "res_mw4b48at_z_9sflb",
-          "sheet": "Coffee",
-          "name": "Blackbird Coffee Club",
-          "address": "Jan van Eyckplein 7, 8000 Brugge, Belgium",
-          "lat": 51.2118512,
-          "lng": 3.2258364,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b47no_y_jspqe",
-              "label": "Official Website",
-              "url": "https://www.blackbird-bruges.com/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929182725
-        },
-        {
-          "id": "res_mw4b4jof_12_mfrwf",
-          "sheet": "Coffee",
-          "name": "EspressoBar - I Love Coffee",
-          "address": "Sint-Jakobsstraat 10, 8000 Brugge, Belgium",
-          "lat": 51.209469899999995,
-          "lng": 3.2225167,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b4j2f_11_slwm9",
-              "label": "Official Website",
-              "url": "https://ilcoffee.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929197471
-        },
-        {
-          "id": "res_mw4b4wl4_15_486mi",
-          "sheet": "Coffee",
-          "name": "Brapas",
-          "address": "Sint-Amandsstraat 30, 8000 Brugge, Belgium",
-          "lat": 51.208492299999996,
-          "lng": 3.2220795,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4b4w02_14_de2c0",
-              "label": "Official Website",
-              "url": "https://www.brapas.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929214200
-        },
-        {
-          "id": "res_mw4b7r7r_17_3y2cn",
-          "sheet": "Coffee",
-          "name": "Hof Café",
-          "address": "Markt 3, 8000 Brugge, Belgium",
-          "lat": 51.2089925,
-          "lng": 3.2253825,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929347207
         },
         {
           "id": "res_mw4b8sxc_19_qxaxo",
@@ -2890,28 +2726,6 @@
           "createdAt": 1794101192352
         },
         {
-          "id": "res_mw764umf_8_piwgn",
-          "sheet": "Coffee",
-          "name": "The Republic",
-          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
-          "lat": 51.210260100000006,
-          "lng": 3.2214601000000003,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw764tva_7_joecf",
-              "label": "Official Website",
-              "url": "https://www.republiekbrugge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794102212103
-        },
-        {
           "id": "res_mw765n4r_b_aim2z",
           "sheet": "Pubs",
           "name": "2be Shop",
@@ -3022,28 +2836,6 @@
           "createdAt": 1794104793580
         },
         {
-          "id": "res_mw77oy7k_r_e8d61",
-          "sheet": "Coffee",
-          "name": "Kaffee Kamiel",
-          "address": "Zilverpand 7, 8000 Brugge, Belgium",
-          "lat": 51.2068096,
-          "lng": 3.2201052,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw77oxfw_q_dkz3x",
-              "label": "Official Website",
-              "url": "https://www.kaffeekamiel.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794104829488
-        },
-        {
           "id": "res_mw79a2x8_10_rvzl4",
           "sheet": "Pubs",
           "name": "The Monk",
@@ -3126,6 +2918,214 @@
           "createdAt": 1794354278331
         },
         {
+          "id": "res_mw01kzh4_g_yhx9b",
+          "sheet": "Coffee",
+          "name": "Aux Merveilleux de Fred",
+          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
+          "lat": 51.3443421,
+          "lng": 3.2877077,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793671303576
+        },
+        {
+          "id": "res_mw4b2qza_q_gxuxf",
+          "sheet": "Coffee",
+          "name": "Nuba Cafe Brugge",
+          "address": "Oude Burg 10, 8000 Brugge, Belgium",
+          "lat": 51.2072618,
+          "lng": 3.2247989,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b2qbo_p_4bibj",
+              "label": "Official Website",
+              "url": "https://www.instagram.com/nubacafe/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929113622
+        },
+        {
+          "id": "res_mw4b34u4_t_d481t",
+          "sheet": "Coffee",
+          "name": "Coffeebar Adriaan",
+          "address": "Adriaan Willaertstraat 7, 8000 Brugge, Belgium",
+          "lat": 51.2108078,
+          "lng": 3.2237238,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b348x_s_q2blg",
+              "label": "Official Website",
+              "url": "http://www.coffeebaradriaan.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929131580
+        },
+        {
+          "id": "res_mw4b3ik3_w_t0il9",
+          "sheet": "Coffee",
+          "name": "Les Coquettes Le Café",
+          "address": "Braambergstraat 12 a, 8000 Brugge, Belgium",
+          "lat": 51.2075563,
+          "lng": 3.2286907,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b3hom_v_q6abq",
+              "label": "Official Website",
+              "url": "http://www.lescoquettes.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929149363
+        },
+        {
+          "id": "res_mw4b48at_z_9sflb",
+          "sheet": "Coffee",
+          "name": "Blackbird Coffee Club",
+          "address": "Jan van Eyckplein 7, 8000 Brugge, Belgium",
+          "lat": 51.2118512,
+          "lng": 3.2258364,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b47no_y_jspqe",
+              "label": "Official Website",
+              "url": "https://www.blackbird-bruges.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929182725
+        },
+        {
+          "id": "res_mw4b4jof_12_mfrwf",
+          "sheet": "Coffee",
+          "name": "EspressoBar - I Love Coffee",
+          "address": "Sint-Jakobsstraat 10, 8000 Brugge, Belgium",
+          "lat": 51.209469899999995,
+          "lng": 3.2225167,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b4j2f_11_slwm9",
+              "label": "Official Website",
+              "url": "https://ilcoffee.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929197471
+        },
+        {
+          "id": "res_mw4b4wl4_15_486mi",
+          "sheet": "Coffee",
+          "name": "Brapas",
+          "address": "Sint-Amandsstraat 30, 8000 Brugge, Belgium",
+          "lat": 51.208492299999996,
+          "lng": 3.2220795,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4b4w02_14_de2c0",
+              "label": "Official Website",
+              "url": "https://www.brapas.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929214200
+        },
+        {
+          "id": "res_mw4b7r7r_17_3y2cn",
+          "sheet": "Coffee",
+          "name": "Hof Café",
+          "address": "Markt 3, 8000 Brugge, Belgium",
+          "lat": 51.2089925,
+          "lng": 3.2253825,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929347207
+        },
+        {
+          "id": "res_mw764umf_8_piwgn",
+          "sheet": "Coffee",
+          "name": "The Republic",
+          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
+          "lat": 51.210260100000006,
+          "lng": 3.2214601000000003,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw764tva_7_joecf",
+              "label": "Official Website",
+              "url": "https://www.republiekbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794102212103
+        },
+        {
+          "id": "res_mw77oy7k_r_e8d61",
+          "sheet": "Coffee",
+          "name": "Kaffee Kamiel",
+          "address": "Zilverpand 7, 8000 Brugge, Belgium",
+          "lat": 51.2068096,
+          "lng": 3.2201052,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77oxfw_q_dkz3x",
+              "label": "Official Website",
+              "url": "https://www.kaffeekamiel.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104829488
+        },
+        {
           "id": "res_mwbc86bk_z_w5yz3",
           "sheet": "Coffee",
           "name": "AVI '38 Specialty Coffeebar Bruges",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354309632,
+      "updatedAt": 1794354435983,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
