@@ -2985,7 +2985,7 @@
           "lat": 51.2118512,
           "lng": 3.2258364,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354553595,
+      "updatedAt": 1794354557811,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcdhth_17_9y0wf",
+      "ts": 1794354557813,
+      "action": "research-edited",
+      "detail": "Updated \"Blackbird Coffee Club\" in Brugge research"
+    },
+    {
       "id": "log_mwbcdekb_16_ooy2o",
       "ts": 1794354553595,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793057474079,
       "action": "section-map-added",
       "detail": "Added a map for Hotels on Brugge"
-    },
-    {
-      "id": "log_mvpw0go1_6_jc1gz",
-      "ts": 1793057286241,
-      "action": "plan-item-deleted",
-      "detail": "Removed \"Hotel Aragon\" from Brugge"
     }
   ]
 }
