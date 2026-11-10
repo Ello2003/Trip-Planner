@@ -2289,7 +2289,7 @@
               "url": "https://www.thespotbruges.be/"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1793923323899
         },
@@ -3105,7 +3105,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354206867,
+      "updatedAt": 1794354231954,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7625,6 +7625,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbc6idu_u_av4gl",
+      "ts": 1794354231954,
+      "action": "research-edited",
+      "detail": "Updated \"The Spot Waffles & Pancakes\" in Brugge research"
+    },
+    {
       "id": "log_mwbc5z0z_t_gq85k",
       "ts": 1794354206867,
       "action": "plan-item-edited",
@@ -8817,12 +8823,6 @@
       "ts": 1792023252508,
       "action": "plan-item-edited",
       "detail": "Updated \"Bonnars\" (Restaurants) on Edinburgh"
-    },
-    {
-      "id": "log_mv8sczzb_v_ghnce",
-      "ts": 1792023227687,
-      "action": "research-promoted",
-      "detail": "Promoted \"Bonnars\" to Plan on Edinburgh"
     }
   ]
 }
