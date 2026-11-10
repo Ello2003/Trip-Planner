@@ -1824,7 +1824,7 @@
           "lat": 51.2313728,
           "lng": 3.2128952,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -2784,7 +2784,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272486484,
+      "updatedAt": 1794272533857,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7304,6 +7304,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9zjfq9_14_mvwn9",
+      "ts": 1794272533857,
+      "action": "research-edited",
+      "detail": "Updated \"The Chocolate Line\" in Brugge research"
+    },
+    {
       "id": "log_mw9zif6d_13_qtnpb",
       "ts": 1794272486485,
       "action": "plan-item-edited",
@@ -8496,12 +8502,6 @@
       "ts": 1790981364408,
       "action": "sheet-visibility-changed",
       "detail": "Hid \"Things To Do\" for Brugge"
-    },
-    {
-      "id": "log_murk1a4l_3_xad7j",
-      "ts": 1790981319045,
-      "action": "sheet-visibility-changed",
-      "detail": "Hid \"Shopping\" for Brugge"
     }
   ]
 }
