@@ -3124,10 +3124,26 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794354278331
+        },
+        {
+          "id": "res_mwbc86bk_z_w5yz3",
+          "sheet": "Coffee",
+          "name": "AVI '38 Specialty Coffeebar Bruges",
+          "address": "Niklaas Desparsstraat 8, 8000 Brugge, Belgium",
+          "lat": 51.209677799999994,
+          "lng": 3.2237647999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794354309632
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354278331,
+      "updatedAt": 1794354309632,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7647,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbc86bk_10_9e583",
+      "ts": 1794354309632,
+      "action": "research-added",
+      "detail": "Added \"AVI '38 Specialty Coffeebar Bruges\" to Brugge research"
+    },
+    {
       "id": "log_mwbc7i63_y_s2vt4",
       "ts": 1794354278331,
       "action": "research-added",
@@ -8839,12 +8861,6 @@
       "ts": 1792975155112,
       "action": "plan-item-added",
       "detail": "Added \"Hotel Aragon\" (Hotels) on Brugge"
-    },
-    {
-      "id": "log_mv9zqs02_d_90gu5",
-      "ts": 1792096094018,
-      "action": "plan-item-added",
-      "detail": "Added \"Petrol\" (Transport / Transfers) on Edinburgh"
     }
   ]
 }
