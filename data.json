@@ -3089,7 +3089,7 @@
           "lat": 51.2089925,
           "lng": 3.2253825,
           "priceLevel": null,
-          "priority": null,
+          "priority": 3,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354689879,
+      "updatedAt": 1794354696684,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcggz0_1h_je5tb",
+      "ts": 1794354696684,
+      "action": "research-edited",
+      "detail": "Updated \"Hof Café\" in Brugge research"
+    },
+    {
       "id": "log_mwbcgbq0_1g_9tra9",
       "ts": 1794354689880,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793403949442,
       "action": "plan-moved-to-research",
       "detail": "Moved \"Le Trappiste\" from Plan back to Research on Brugge"
-    },
-    {
-      "id": "log_mvvmemkc_l_h3c9u",
-      "ts": 1793403947964,
-      "action": "plan-moved-to-research",
-      "detail": "Moved \"'t Brugs Beertje\" from Plan back to Research on Brugge"
     }
   ]
 }
