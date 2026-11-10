@@ -2979,7 +2979,7 @@
           "lat": 51.2059797,
           "lng": 3.2209095999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "Views",
           "links": [
@@ -3001,7 +3001,7 @@
           "lat": 51.207456699999994,
           "lng": 3.2279464,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "Views",
           "links": [
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354870207,
+      "updatedAt": 1794354887871,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbckkhr_1o_f7ojl",
+      "ts": 1794354887871,
+      "action": "research-edited",
+      "detail": "Updated \"’t Klein Venetië\" in Brugge research"
+    },
+    {
+      "id": "log_mwbckhoh_1n_kgc3l",
+      "ts": 1794354884225,
+      "action": "research-edited",
+      "detail": "Updated \"ODA Rooftop Bar\" in Brugge research"
+    },
+    {
       "id": "log_mwbcjksg_1m_u7bvz",
       "ts": 1794354841600,
       "action": "research-edited",
@@ -8849,18 +8861,6 @@
       "ts": 1793403996078,
       "action": "research-added",
       "detail": "Added \"Historic centre of Brugge (Bruges)\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmeqpq_v_pi90o",
-      "ts": 1793403953342,
-      "action": "plan-moved-to-research",
-      "detail": "Moved \"De Kelk\" from Plan back to Research on Brugge"
-    },
-    {
-      "id": "log_mvvmeq3q_t_xnmem",
-      "ts": 1793403952550,
-      "action": "plan-moved-to-research",
-      "detail": "Moved \"Huisbrouwerij De Halve Maan\" from Plan back to Research on Brugge"
     }
   ]
 }
