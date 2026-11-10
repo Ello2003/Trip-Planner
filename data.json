@@ -2903,7 +2903,7 @@
           "lat": 51.2099298,
           "lng": 3.2300152,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -2925,7 +2925,7 @@
           "lat": 51.209677799999994,
           "lng": 3.2237647999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -2941,7 +2941,7 @@
           "lat": 51.3443421,
           "lng": 3.2877077,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354441399,
+      "updatedAt": 1794354492538,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,24 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcc3ga_13_g2125",
+      "ts": 1794354492538,
+      "action": "research-edited",
+      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcc0ew_12_qtkjq",
+      "ts": 1794354488600,
+      "action": "research-edited",
+      "detail": "Updated \"AVI '38 Specialty Coffeebar Bruges\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcbxp4_11_8jded",
+      "ts": 1794354485080,
+      "action": "research-edited",
+      "detail": "Updated \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" in Brugge research"
+    },
+    {
       "id": "log_mwbc86bk_10_9e583",
       "ts": 1794354309632,
       "action": "research-added",
@@ -8843,24 +8861,6 @@
       "ts": 1793057277257,
       "action": "research-added",
       "detail": "Added \"Hotel Aragon\" to Brugge research"
-    },
-    {
-      "id": "log_mvoj4b4o_5_v95nz",
-      "ts": 1792975164504,
-      "action": "plan-unmarked-visited",
-      "detail": "Unmarked \"Hotel Aragon\" as visited on Brugge"
-    },
-    {
-      "id": "log_mvoj477u_4_eo8b9",
-      "ts": 1792975159434,
-      "action": "plan-marked-visited",
-      "detail": "Marked \"Hotel Aragon\" as visited on Brugge"
-    },
-    {
-      "id": "log_mvoj43vs_3_kkxsa",
-      "ts": 1792975155112,
-      "action": "plan-item-added",
-      "detail": "Added \"Hotel Aragon\" (Hotels) on Brugge"
     }
   ]
 }
