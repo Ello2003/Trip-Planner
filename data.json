@@ -2551,7 +2551,7 @@
           "priceLevel": null,
           "priority": null,
           "estCost": null,
-          "notes": "",
+          "notes": "Tasting Paddles",
           "links": [
             {
               "id": "link_mw9xqkgg_4_5aw2y",
@@ -2565,7 +2565,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794269508954,
+      "updatedAt": 1794269609953,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7085,6 +7085,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9xsrmp_2_jz6tx",
+      "ts": 1794269609953,
+      "action": "research-edited",
+      "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
+    },
+    {
       "id": "log_mw9xqlp6_6_2nq3w",
       "ts": 1794269508954,
       "action": "research-added",
@@ -8277,12 +8283,6 @@
       "ts": 1790783482124,
       "action": "plan-unmarked-visited",
       "detail": "Unmarked \"Blacklock\" as visited on London"
-    },
-    {
-      "id": "log_muoa6zge_5_rpwoa",
-      "ts": 1790783390462,
-      "action": "trip-duplicated",
-      "detail": "Duplicated \"London\" as \"London (copy)\""
     }
   ]
 }
