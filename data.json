@@ -2131,11 +2131,11 @@
           "lat": 51.1970288,
           "lng": 3.2175407,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "Liège Waffles",
           "links": [],
-          "status": "promoted",
+          "status": "researching",
           "linkedPlanItemId": "plan_mwbc36vq_j_w0kju",
           "createdAt": 1793669924469
         },
@@ -3059,7 +3059,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354078602,
+      "updatedAt": 1794354087263,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7579,6 +7579,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbc3eqn_m_23jr5",
+      "ts": 1794354087263,
+      "action": "research-edited",
+      "detail": "Updated \"Chez Albert\" in Brugge research"
+    },
+    {
       "id": "log_mwbc3824_l_ep5oz",
       "ts": 1794354078604,
       "action": "plan-item-edited",
@@ -8771,12 +8777,6 @@
       "ts": 1792019157902,
       "action": "research-promoted",
       "detail": "Promoted \"Petrol\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mv8pwnzh_k_g2h23",
-      "ts": 1792019106413,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Brussels to Brugge Train\" (Transport / Transfers) on Brugge"
     }
   ]
 }
