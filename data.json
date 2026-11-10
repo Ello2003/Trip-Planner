@@ -2311,7 +2311,7 @@
               "url": "https://www.wafflesnbeer.be/?utm_source=google&utm_medium=organic&utm_campaign=gmb"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1793923350231
         },
@@ -3105,7 +3105,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354231954,
+      "updatedAt": 1794354236907,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7625,6 +7625,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbc6m7f_v_d35ce",
+      "ts": 1794354236907,
+      "action": "research-edited",
+      "detail": "Updated \"Waffles 'n Beer in Bruges Centre\" in Brugge research"
+    },
+    {
       "id": "log_mwbc6idu_u_av4gl",
       "ts": 1794354231954,
       "action": "research-edited",
@@ -8817,12 +8823,6 @@
       "ts": 1792096077925,
       "action": "sheet-visibility-changed",
       "detail": "Showed \"Transport / Transfers\" for Edinburgh"
-    },
-    {
-      "id": "log_mv8sdj4s_w_dxmwe",
-      "ts": 1792023252508,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Bonnars\" (Restaurants) on Edinburgh"
     }
   ]
 }
