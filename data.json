@@ -2934,22 +2934,6 @@
           "createdAt": 1794354309632
         },
         {
-          "id": "res_mw01kzh4_g_yhx9b",
-          "sheet": "Coffee",
-          "name": "Aux Merveilleux de Fred",
-          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
-          "lat": 51.3443421,
-          "lng": 3.2877077,
-          "priceLevel": null,
-          "priority": 5,
-          "estCost": null,
-          "notes": "",
-          "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793671303576
-        },
-        {
           "id": "res_mw4b2qza_q_gxuxf",
           "sheet": "Coffee",
           "name": "Nuba Cafe Brugge",
@@ -2970,6 +2954,22 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793929113622
+        },
+        {
+          "id": "res_mw01kzh4_g_yhx9b",
+          "sheet": "Coffee",
+          "name": "Aux Merveilleux de Fred",
+          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
+          "lat": 51.3443421,
+          "lng": 3.2877077,
+          "priceLevel": null,
+          "priority": 5,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793671303576
         },
         {
           "id": "res_mw4b34u4_t_d481t",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354492538,
+      "updatedAt": 1794354496745,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
