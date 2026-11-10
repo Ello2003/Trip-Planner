@@ -1175,6 +1175,35 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mw9zbxqp_w_3uggd",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Boho Brunch",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Giststraat 3, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw9zbxqs_x_f4g5o",
+              "label": "Official Website",
+              "url": "http://www.bohobrunch.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2506,8 +2535,8 @@
               "url": "http://www.bohobrunch.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mw9z0c6c_b_ul2wx",
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw9zbxqp_w_3uggd",
           "createdAt": 1794101192352
         },
         {
@@ -2726,7 +2755,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272178612,
+      "updatedAt": 1794272185865,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7246,6 +7275,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9zbz7v_z_dkmdk",
+      "ts": 1794272185867,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Boho Brunch\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbxqs_y_h72u8",
+      "ts": 1794272183956,
+      "action": "research-promoted",
+      "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9zbtmd_v_osypn",
       "ts": 1794272178613,
       "action": "plan-item-edited",
@@ -8432,18 +8473,6 @@
       "ts": 1790981298534,
       "action": "trip-edited",
       "detail": "Updated details for \"Brugge\""
-    },
-    {
-      "id": "log_muq76asx_1_u6l5w",
-      "ts": 1790899252017,
-      "action": "sheet-deleted",
-      "detail": "Deleted Plan/Research category \"Coffee Shops\" (items moved to Hotels)"
-    },
-    {
-      "id": "log_muq6ze1o_1_4lpo1",
-      "ts": 1790898929628,
-      "action": "trip-edited",
-      "detail": "Updated details for \"London\""
     }
   ]
 }
