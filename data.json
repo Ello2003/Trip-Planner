@@ -1129,6 +1129,29 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mw9zbmr8_q_5tcy1",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Boulangerie Schaeverbeke",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Schaarstraat 2, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -1918,8 +1941,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw9zbmr8_q_5tcy1",
           "createdAt": 1793928358536
         },
         {
@@ -2680,7 +2703,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272159275,
+      "updatedAt": 1794272171451,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7200,6 +7223,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9zbo3f_s_fxtp3",
+      "ts": 1794272171451,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Boulangerie Schaeverbeke\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbmr8_r_7p93s",
+      "ts": 1794272169716,
+      "action": "research-promoted",
+      "detail": "Promoted \"Boulangerie Schaeverbeke\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9zbep9_p_tnazp",
       "ts": 1794272159277,
       "action": "plan-item-edited",
@@ -8386,18 +8421,6 @@
       "ts": 1790807534544,
       "action": "expense-deleted",
       "detail": "Removed \"The Coach and Horses\" (£0.00) from London"
-    },
-    {
-      "id": "log_muooixsu_8_rq160",
-      "ts": 1790807462814,
-      "action": "expense-added",
-      "detail": "Added \"Misc\" (£149.11) to London"
-    },
-    {
-      "id": "log_muooegfw_6_q3sq3",
-      "ts": 1790807253692,
-      "action": "visited-actual-created",
-      "detail": "Copied estimated cost for \"The Coach and Horses\" into Actual Expenses on London"
     }
   ]
 }
