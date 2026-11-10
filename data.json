@@ -1042,6 +1042,31 @@
           },
           "actualNotes": "",
           "actualRating": null
+        },
+        {
+          "id": "plan_mw9z0c6c_b_ul2wx",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Boho Brunch",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Giststraat 3, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw9z0c6c_c_fm5gw",
+              "label": "Official Website",
+              "url": "http://www.bohobrunch.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -2373,8 +2398,8 @@
               "url": "http://www.bohobrunch.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw9z0c6c_b_ul2wx",
           "createdAt": 1794101192352
         },
         {
@@ -7113,6 +7138,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9z0c6l_d_c7t8i",
+      "ts": 1794271642797,
+      "action": "research-promoted",
+      "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9yxfzf_a_13kjc",
       "ts": 1794271507755,
       "action": "research-edited",
@@ -8305,12 +8336,6 @@
       "ts": 1790802986040,
       "action": "expense-deleted",
       "detail": "Removed \"Blacklock\" (£56.66) from London"
-    },
-    {
-      "id": "log_muolm802_2_09tr7",
-      "ts": 1790802577154,
-      "action": "visited-actual-created",
-      "detail": "Copied estimated cost for \"Blacklock\" into Actual Expenses on London"
     }
   ]
 }
