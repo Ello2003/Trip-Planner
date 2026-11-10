@@ -1732,7 +1732,13 @@
           "priority": null,
           "estCost": null,
           "notes": "",
-          "links": [],
+          "links": [
+            {
+              "id": "link_mw9yste4_7_iv7ry",
+              "label": "Menu",
+              "url": "https://www.thatstoast.com/menu"
+            }
+          ],
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793671609357
@@ -2587,7 +2593,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794270911242,
+      "updatedAt": 1794271297409,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7107,6 +7113,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9ysxoh_8_idpou",
+      "ts": 1794271297409,
+      "action": "research-edited",
+      "detail": "Updated \"That's Toast\" in Brugge research"
+    },
+    {
       "id": "log_mw9yknpm_6_b5c3a",
       "ts": 1794270911242,
       "action": "research-edited",
@@ -8299,12 +8311,6 @@
       "ts": 1790787268821,
       "action": "plan-item-edited",
       "detail": "Updated \"Blacklock\" (Restaurants) on London"
-    },
-    {
-      "id": "log_muocg1q0_1_y4aec",
-      "ts": 1790787172536,
-      "action": "country-auto-guessed",
-      "detail": "Guessed country for 1 trip(s) from their names — check Edit Trip to correct any that are wrong"
     }
   ]
 }
