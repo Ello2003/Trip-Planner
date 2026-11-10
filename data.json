@@ -2972,6 +2972,28 @@
           "createdAt": 1793930232872
         },
         {
+          "id": "res_mw6ww5ml_28_3ku06",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "ODA Rooftop Bar",
+          "address": "Steenstraat 96, 8000 Brugge, Belgium",
+          "lat": 51.2059797,
+          "lng": 3.2209095999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Views",
+          "links": [
+            {
+              "id": "link_mw6ww377_27_5qkjc",
+              "label": "Official Website",
+              "url": "https://www.odarooftopbar.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794086689917
+        },
+        {
           "id": "res_mw010p4b_e_f9m4n",
           "sheet": "Bars With Views | Cocktails",
           "name": "Groot Vlaenderen",
@@ -3008,28 +3030,6 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794086673646
-        },
-        {
-          "id": "res_mw6ww5ml_28_3ku06",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "ODA Rooftop Bar",
-          "address": "Steenstraat 96, 8000 Brugge, Belgium",
-          "lat": 51.2059797,
-          "lng": 3.2209095999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "Views",
-          "links": [
-            {
-              "id": "link_mw6ww377_27_5qkjc",
-              "label": "Official Website",
-              "url": "https://www.odarooftopbar.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794086689917
         },
         {
           "id": "res_mw6xmgvd_2b_njrpe",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354841600,
+      "updatedAt": 1794354858763,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
