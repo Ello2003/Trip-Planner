@@ -1901,7 +1901,7 @@
           "lat": 51.2094416,
           "lng": 3.2230032,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -2651,7 +2651,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794271824779,
+      "updatedAt": 1794272005712,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7171,6 +7171,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9z847k_k_jqc3o",
+      "ts": 1794272005712,
+      "action": "research-edited",
+      "detail": "Updated \"Tasty Sandwich\" in Brugge research"
+    },
+    {
       "id": "log_mw9z48ln_j_wkwyv",
       "ts": 1794271824779,
       "action": "research-edited",
@@ -8363,12 +8369,6 @@
       "ts": 1790806660038,
       "action": "plan-marked-visited",
       "detail": "Marked \"The French House\" as visited on London"
-    },
-    {
-      "id": "log_muoo1jf3_7_kfofi",
-      "ts": 1790806651023,
-      "action": "plan-item-edited",
-      "detail": "Updated \"The French House\" (Bars) on London"
     }
   ]
 }
