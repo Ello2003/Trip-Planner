@@ -1508,6 +1508,52 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbc5w4y_o_84hdr",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "House of Waffles",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "House of Waffles, Wollestraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbc5y1e_r_knpa4",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Chez Albert",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Chez Albert, Stationsplein, Sint-Michiels, Bruges, Brugge, West Flanders, Flanders, 8200, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Liège Waffles",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2135,8 +2181,8 @@
           "estCost": null,
           "notes": "Liège Waffles",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mwbc36vq_j_w0kju",
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbc5y1e_r_knpa4",
           "createdAt": 1793669924469
         },
         {
@@ -2147,12 +2193,12 @@
           "lat": 51.2075842,
           "lng": 3.226278,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbc5w4y_o_84hdr",
           "createdAt": 1793669967875
         },
         {
@@ -3059,7 +3105,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354087263,
+      "updatedAt": 1794354206867,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7579,6 +7625,36 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbc5z0z_t_gq85k",
+      "ts": 1794354206867,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Chez Albert\" on Brugge"
+    },
+    {
+      "id": "log_mwbc5y1f_s_8x9ui",
+      "ts": 1794354205587,
+      "action": "research-promoted",
+      "detail": "Promoted \"Chez Albert\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbc5xf5_q_67bch",
+      "ts": 1794354204785,
+      "action": "plan-item-edited",
+      "detail": "Updated \"House of Waffles\" on Brugge"
+    },
+    {
+      "id": "log_mwbc5w53_p_hl6o6",
+      "ts": 1794354203127,
+      "action": "research-promoted",
+      "detail": "Promoted \"House of Waffles\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbc5tir_n_wpm9j",
+      "ts": 1794354199731,
+      "action": "research-edited",
+      "detail": "Updated \"House of Waffles\" in Brugge research"
+    },
+    {
       "id": "log_mwbc3eqn_m_23jr5",
       "ts": 1794354087263,
       "action": "research-edited",
@@ -8747,36 +8823,6 @@
       "ts": 1792023227687,
       "action": "research-promoted",
       "detail": "Promoted \"Bonnars\" to Plan on Edinburgh"
-    },
-    {
-      "id": "log_mv8s5fu4_s_y86bs",
-      "ts": 1792022874989,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Prince Brassiere\" (Restaurants) on Edinburgh"
-    },
-    {
-      "id": "log_mv8rn4di_r_zpdh1",
-      "ts": 1792022020326,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Prince Brassiere\" (Restaurants) on Edinburgh"
-    },
-    {
-      "id": "log_mv8rmp8p_q_m5j99",
-      "ts": 1792022000713,
-      "action": "research-promoted",
-      "detail": "Promoted \"Prince Brassiere\" to Plan on Edinburgh"
-    },
-    {
-      "id": "log_mv8pxsrs_n_1mpbf",
-      "ts": 1792019159272,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Petrol\" (Transport / Transfers) on Brugge"
-    },
-    {
-      "id": "log_mv8pxrpq_m_1byab",
-      "ts": 1792019157902,
-      "action": "research-promoted",
-      "detail": "Promoted \"Petrol\" to Plan on Brugge"
     }
   ]
 }
