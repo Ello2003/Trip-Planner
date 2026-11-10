@@ -1071,6 +1071,31 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mw9z20fd_f_k1nqo",
+          "sheet": "Pubs",
+          "name": "Brewery Bourgogne des Flandres",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Wollestraat 26, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mw9z20fd_g_0zd4p",
+              "label": "Official Website",
+              "url": "http://bourgognedesflandres.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Tasting Paddles\nTerrace",
+          "visited": false,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -2594,8 +2619,8 @@
               "url": "http://bourgognedesflandres.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mw9z20fd_f_k1nqo",
           "createdAt": 1794269508954
         },
         {
@@ -7142,6 +7167,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mw9z20ff_h_efvs3",
+      "ts": 1794271720875,
+      "action": "research-promoted",
+      "detail": "Promoted \"Brewery Bourgogne des Flandres\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9z126u_e_0kyh9",
       "ts": 1794271676502,
       "action": "plan-item-edited",
@@ -8334,12 +8365,6 @@
       "ts": 1790806638527,
       "action": "research-added",
       "detail": "Added \"The French House\" to London research"
-    },
-    {
-      "id": "log_muoo0jmk_2_9a7vf",
-      "ts": 1790806604636,
-      "action": "expense-added",
-      "detail": "Added \"Poplo\" (£33.48) to London"
     }
   ]
 }
