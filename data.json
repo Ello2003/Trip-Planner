@@ -1233,6 +1233,35 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbbv9rl_16_kvb11",
+          "sheet": "Cigars",
+          "name": "Jerry's Cigar Bar",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Simon Stevinplein 13, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbbv9rm_17_9wo71",
+              "label": "Official Website",
+              "url": "http://www.jerryscigarbar.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -1724,8 +1753,8 @@
               "url": "http://www.jerryscigarbar.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbbv9rl_16_kvb11",
           "createdAt": 1793404343009
         },
         {
@@ -2784,7 +2813,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794272537997,
+      "updatedAt": 1794353710688,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7304,6 +7333,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbbvc69_19_qokt4",
+      "ts": 1794353710689,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Jerry's Cigar Bar\" on Brugge"
+    },
+    {
+      "id": "log_mwbbv9rm_18_zflf6",
+      "ts": 1794353707570,
+      "action": "research-promoted",
+      "detail": "Promoted \"Jerry's Cigar Bar\" to Plan on Brugge"
+    },
+    {
       "id": "log_mw9zjixc_15_iodmn",
       "ts": 1794272538000,
       "action": "research-edited",
@@ -8490,18 +8531,6 @@
       "ts": 1790981395478,
       "action": "sheet-visibility-changed",
       "detail": "Showed \"Coffee\" for Brugge"
-    },
-    {
-      "id": "log_murk2vpy_6_0v2hd",
-      "ts": 1790981393686,
-      "action": "sheet-visibility-changed",
-      "detail": "Hid \"Coffee\" for Brugge"
-    },
-    {
-      "id": "log_murk2jjw_5_ylwhb",
-      "ts": 1790981377916,
-      "action": "sheet-visibility-changed",
-      "detail": "Hid \"Cocktails\" for Brugge"
     }
   ]
 }
