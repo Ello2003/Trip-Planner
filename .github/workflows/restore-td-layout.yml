@@ -1,0 +1,22 @@
+name: Restore TripDetail layout v2
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/restore_td_layout.py'
+      - '.github/workflows/restore-td-layout.yml'
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/restore_td_layout.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/TripDetailView.tsx
+          git status
+          git commit -m "Restore original TripDetailView formatting (detail-header, tab-bar, figs)" || echo nochange
+          git push
