@@ -3866,7 +3866,7 @@
               "url": "http://www.aupetitgrand.be/"
             }
           ],
-          "status": "promoted",
+          "status": "researching",
           "linkedPlanItemId": "plan_mwbh1hwc_d_c55w1",
           "createdAt": 1793929585439
         },
@@ -4080,7 +4080,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794363212976,
+      "updatedAt": 1794363312864,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8600,6 +8600,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbhl59c_2_c3ldk",
+      "ts": 1794363312865,
+      "action": "research-edited",
+      "detail": "Updated \"Au Petit Grand BV\" in Brugge research"
+    },
+    {
       "id": "log_mwbh8vv9_n_njkf9",
       "ts": 1794362740821,
       "action": "research-edited",
@@ -9792,12 +9798,6 @@
       "ts": 1793663776886,
       "action": "trip-archived",
       "detail": "Archived trip \"Italy\""
-    },
-    {
-      "id": "log_mvzx3nfk_6_7ni5y",
-      "ts": 1793663776352,
-      "action": "trip-archived",
-      "detail": "Archived trip \"Paris\""
     }
   ]
 }
