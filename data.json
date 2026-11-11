@@ -2485,6 +2485,26 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbhlums_6_sth9g",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Fritbar",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Fritbar, 3, Katelijnestraat, Onze-Lieve-Vrouwekwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3166,8 +3186,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbhlums_6_sth9g",
           "createdAt": 1793671841204
         },
         {
@@ -8626,6 +8646,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbhlumw_7_7uih8",
+      "ts": 1794363345752,
+      "action": "research-promoted",
+      "detail": "Promoted \"Fritbar\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbhlabs_5_abvb9",
       "ts": 1794363319432,
       "action": "research-promoted",
@@ -9818,12 +9844,6 @@
       "ts": 1793663861279,
       "action": "research-edited",
       "detail": "Updated \"Cafe Royal\" in Edinburgh research"
-    },
-    {
-      "id": "log_mvzx3pjd_8_65n3h",
-      "ts": 1793663779081,
-      "action": "trip-archived",
-      "detail": "Archived trip \"London\""
     }
   ]
 }
