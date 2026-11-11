@@ -30,6 +30,18 @@ interface PlanTabProps {
 
 const PRIORITY_LABELS: Record<number, string> = { 1: '★', 2: '★★', 3: '★★★', 4: '★★★★', 5: '★★★★★' };
 
+/** Prefer plan item priority; fall back to linked Research row */
+const planPriority = (item: { id: string; priority?: number | null }, research: { linkedPlanItemId?: string | null; priority?: number | null }[]): number | null => {
+  const raw = item.priority != null ? Number(item.priority) : NaN;
+  if (Number.isFinite(raw) && raw >= 1 && raw <= 5) return raw;
+  const linked = research.find(r => r.linkedPlanItemId === item.id);
+  if (linked?.priority != null) {
+    const n = Number(linked.priority);
+    if (Number.isFinite(n) && n >= 1 && n <= 5) return n;
+  }
+  return null;
+};
+
 export const PlanTab: React.FC<PlanTabProps> = ({
   onRenameSheet,
   onRecolorSheet,
@@ -292,11 +304,14 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                               placeholder="What's happening"
                               onChange={e => handleTimelineItemChange(item, 'name', e.target.value)}
                             />
-                            {item.priority ? (
-                              <div style={{ color: 'var(--brass)', fontSize: '11px', letterSpacing: '1px', marginTop: '2px' }}>
-                                {PRIORITY_LABELS[item.priority] || ''}
-                              </div>
-                            ) : null}
+                            {(() => {
+                              const pr = planPriority(item, trip.research || []);
+                              return pr ? (
+                                <div style={{ color: 'var(--ochre, var(--brass))', fontSize: '13px', letterSpacing: '2px', marginTop: '3px', fontWeight: 600 }} title={`Priority ${pr}/5`}>
+                                  {PRIORITY_LABELS[pr]}
+                                </div>
+                              ) : null;
+                            })()}
                             <textarea
                               className="tl-notes"
                               rows={1}
@@ -381,11 +396,12 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                         <table className="exp-table plan-table">
                           <thead>
                             <tr>
-                              <th style={{ width: '32%' }}>Name</th>
-                              <th style={{ width: '14%' }}>Status</th>
-                              <th style={{ width: '18%' }}>When</th>
-                              <th style={{ width: '14%' }} className="num">Cost</th>
-                              <th style={{ width: '22%' }}></th>
+                              <th style={{ width: '28%' }}>Name</th>
+                              <th style={{ width: '12%' }}>Priority</th>
+                              <th style={{ width: '12%' }}>Status</th>
+                              <th style={{ width: '16%' }}>When</th>
+                              <th style={{ width: '12%' }} className="num">Cost</th>
+                              <th style={{ width: '20%' }}></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -430,6 +446,9 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                                       ))}
                                     </div>
                                   )}
+                                </td>
+                                <td style={{ whiteSpace: 'nowrap', color: 'var(--ochre, var(--brass))', letterSpacing: '1px', fontWeight: 600, fontSize: '13px' }}>
+                                  {(() => { const pr = planPriority(i, trip.research || []); return pr ? PRIORITY_LABELS[pr] : '—'; })()}
                                 </td>
                                 <td>
                                   <span
