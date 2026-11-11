@@ -2335,7 +2335,17 @@
           "notes": "Walk in",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "El Churrasco Argentino",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbh1gju_a_dyrwe",
@@ -2361,7 +2371,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Seafoodbar Belge",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbh1hwc_d_c55w1",
@@ -2387,7 +2407,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Au Petit Grand BV",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbh5c62_j_nuki7",
@@ -2418,7 +2448,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "De Gastro",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -4040,7 +4080,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362740821,
+      "updatedAt": 1794363212976,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
