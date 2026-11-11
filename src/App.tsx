@@ -581,6 +581,42 @@ export const App: React.FC = () => {
     showToast('Added to Plan — still on Research');
   };
 
+  // Quick promote: add with existing info only, no modal
+  const handleQuickPromoteToPlan = (item: ResearchItem) => {
+    if (!currentTrip) return;
+    const newPlan: PlanItem = {
+      id: uid('plan'),
+      sheet: item.sheet,
+      name: item.name,
+      status: 'idea',
+      date: currentTrip.startDate || null,
+      endDate: null,
+      time: null,
+      dayNumber: currentTrip.timelineMode === 'days' ? 1 : null,
+      dayNumberEnd: null,
+      location: item.address || '',
+      links: (item.links || []).map(l => ({ ...l, id: uid('link') })),
+      cost: item.estCost,
+      linkedExpenseId: null,
+      actualExpenseId: null,
+      notes: item.notes || '',
+      visited: false,
+      estimateCategory: resolveExpenseCategory(item.sheet, state.categories)
+    };
+    const updatedResearch = currentTrip.research.map(r =>
+      r.id === item.id ? { ...r, status: 'promoted' as const, linkedPlanItemId: newPlan.id } : r
+    );
+    handleUpdateTrip(
+      {
+        ...currentTrip,
+        planItems: [...currentTrip.planItems, newPlan],
+        research: updatedResearch
+      },
+      { action: 'research-promoted', detail: `Quick-added "${item.name}" to Plan on ${currentTrip.name}` }
+    );
+    showToast(`Quick-added "${item.name}" to Plan`);
+  };
+
   // Print export handler
   const handleExportPDF = (trip: Trip) => {
     setPrintingTrip(trip);
@@ -701,6 +737,7 @@ export const App: React.FC = () => {
               setModalPayload({ item });
             }}
             onPromoteToPlan={handlePromoteToPlan}
+            onQuickPromoteToPlan={handleQuickPromoteToPlan}
             onOpenAddPackingModal={defaultCat => {
               setModalType('addPackingItem');
               setModalPayload({ defaultCat });
