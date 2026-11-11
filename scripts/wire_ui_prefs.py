@@ -1,39 +1,44 @@
 from pathlib import Path
 import re
 
-# ---- App.tsx: restore/save active trip + tabs ----
+# ---- App.tsx ----
 app_path = Path('src/App.tsx')
 app = app_path.read_text()
-if "from './utils/uiPrefs'" not in app and 'from "./utils/uiPrefs"' not in app:
-    # after other util imports
-    if "from './utils/storage'" in app:
+
+if 'loadGlobalUi' not in app:
+    # Add import after githubSync import block
+    marker = "from './utils/githubSync';"
+    if marker in app:
         app = app.replace(
-            "from './utils/storage'",
-            "from './utils/storage'\nimport { loadGlobalUi, saveGlobalUi } from './utils/uiPrefs'",
+            marker,
+            marker + "\nimport { loadGlobalUi, saveGlobalUi } from './utils/uiPrefs';",
             1,
         )
     else:
         app = "import { loadGlobalUi, saveGlobalUi } from './utils/uiPrefs';\n" + app
 
-# Replace initial useState for navigation
-if 'loadGlobalUi()' not in app:
-    app = app.replace(
-        "const [activeTripId, setActiveTripId] = useState<string | null>(null);\n  const [activeTripTab, setActiveTripTab] = useState<string>('budget');\n  const [activeDashTab, setActiveDashTab] = useState<'trips' | 'charts'>('trips');",
-        """const _ui0 = loadGlobalUi();
-  const [activeTripId, setActiveTripId] = useState<string | null>(() => _ui0.activeTripId ?? null);
-  const [activeTripTab, setActiveTripTab] = useState<string>(() => _ui0.activeTripTab || 'budget');
-  const [activeDashTab, setActiveDashTab] = useState<'trips' | 'charts'>(() => _ui0.activeDashTab || 'trips');
-
-  useEffect(() => {
-    saveGlobalUi({ activeTripId, activeTripTab, activeDashTab });
-  }, [activeTripId, activeTripTab, activeDashTab]);""",
-        1,
+    old_nav = (
+        "const [activeTripId, setActiveTripId] = useState<string | null>(null);\n"
+        "  const [activeTripTab, setActiveTripTab] = useState<string>('budget');\n"
+        "  const [activeDashTab, setActiveDashTab] = useState<'trips' | 'charts'>('trips');"
     )
-    print('App navigation prefs')
+    new_nav = (
+        "const _ui0 = loadGlobalUi();\n"
+        "  const [activeTripId, setActiveTripId] = useState<string | null>(() => _ui0.activeTripId ?? null);\n"
+        "  const [activeTripTab, setActiveTripTab] = useState<string>(() => _ui0.activeTripTab || 'budget');\n"
+        "  const [activeDashTab, setActiveDashTab] = useState<'trips' | 'charts'>(() => _ui0.activeDashTab || 'trips');\n"
+        "\n"
+        "  useEffect(() => {\n"
+        "    saveGlobalUi({ activeTripId, activeTripTab, activeDashTab });\n"
+        "  }, [activeTripId, activeTripTab, activeDashTab]);"
+    )
+    if old_nav not in app:
+        raise SystemExit('App nav block not found')
+    app = app.replace(old_nav, new_nav, 1)
+    app_path.write_text(app)
+    print('App ok')
 else:
     print('App already')
-
-app_path.write_text(app)
 
 # ---- ResearchTab ----
 rp = Path('src/components/ResearchTab.tsx')
@@ -44,32 +49,34 @@ if 'loadTripUi' not in r:
         "import React, { useState, useEffect } from 'react';\nimport { loadTripUi, saveTripUi } from '../utils/uiPrefs';",
         1,
     )
-    # replace researchView + collapsed state init
+    old = (
+        "  const [researchView, setResearchView] = useState<'both' | 'list' | 'map'>('both');\n"
+        "  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>({});\n"
+        "  const [expandedSectionMaps, setExpandedSectionMaps] = useState<Record<string, boolean>>({});"
+    )
+    new = (
+        "  const _prefs = loadTripUi(trip.id);\n"
+        "  const [researchView, setResearchView] = useState<'both' | 'list' | 'map'>(() => _prefs.researchView || 'both');\n"
+        "  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>(() => _prefs.researchCollapsedSheets || {});\n"
+        "  const [expandedSectionMaps, setExpandedSectionMaps] = useState<Record<string, boolean>>(() => _prefs.researchExpandedMaps || {});"
+    )
+    if old not in r:
+        raise SystemExit('Research state block not found')
+    r = r.replace(old, new, 1)
     r = r.replace(
-        "  const [researchView, setResearchView] = useState<'both' | 'list' | 'map'>('both');\n  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>({});\n  const [expandedSectionMaps, setExpandedSectionMaps] = useState<Record<string, boolean>>({});",
-        """  const _prefs = loadTripUi(trip.id);
-  const [researchView, setResearchView] = useState<'both' | 'list' | 'map'>(() => _prefs.researchView || 'both');
-  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>(() => _prefs.researchCollapsedSheets || {});
-  const [expandedSectionMaps, setExpandedSectionMaps] = useState<Record<string, boolean>>(() => _prefs.researchExpandedMaps || {});""",
+        '  const toggleSheet = (key: string) => {',
+        "  useEffect(() => {\n"
+        "    saveTripUi(trip.id, {\n"
+        "      researchView,\n"
+        "      researchCollapsedSheets: collapsedSheets,\n"
+        "      researchExpandedMaps: expandedSectionMaps\n"
+        "    });\n"
+        "  }, [trip.id, researchView, collapsedSheets, expandedSectionMaps]);\n\n"
+        "  const toggleSheet = (key: string) => {",
         1,
     )
-    # persist on change — insert after state declarations block before toggleSheet
-    if 'saveTripUi(trip.id' not in r:
-        r = r.replace(
-            '  const toggleSheet = (key: string) => {',
-            """  useEffect(() => {
-    saveTripUi(trip.id, {
-      researchView,
-      researchCollapsedSheets: collapsedSheets,
-      researchExpandedMaps: expandedSectionMaps
-    });
-  }, [trip.id, researchView, collapsedSheets, expandedSectionMaps]);
-
-  const toggleSheet = (key: string) => {""",
-            1,
-        )
     rp.write_text(r)
-    print('ResearchTab')
+    print('Research ok')
 else:
     print('Research already')
 
@@ -82,28 +89,31 @@ if 'loadTripUi' not in p:
         "import React, { useState, useEffect } from 'react';\nimport { loadTripUi, saveTripUi } from '../utils/uiPrefs';",
         1,
     )
+    old = (
+        "  const [timelineCollapsed, setTimelineCollapsed] = useState(false);\n"
+        "  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>({});"
+    )
+    new = (
+        "  const _prefs = loadTripUi(trip.id);\n"
+        "  const [timelineCollapsed, setTimelineCollapsed] = useState(() => !!_prefs.timelineCollapsed);\n"
+        "  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>(() => _prefs.planCollapsedSheets || {});"
+    )
+    if old not in p:
+        raise SystemExit('Plan state block not found')
+    p = p.replace(old, new, 1)
     p = p.replace(
-        "  const [timelineCollapsed, setTimelineCollapsed] = useState(false);\n  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>({});",
-        """  const _prefs = loadTripUi(trip.id);
-  const [timelineCollapsed, setTimelineCollapsed] = useState(() => !!_prefs.timelineCollapsed);
-  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>(() => _prefs.planCollapsedSheets || {});""",
+        '  const toggleSheet = (key: string) => {',
+        "  useEffect(() => {\n"
+        "    saveTripUi(trip.id, {\n"
+        "      timelineCollapsed,\n"
+        "      planCollapsedSheets: collapsedSheets\n"
+        "    });\n"
+        "  }, [trip.id, timelineCollapsed, collapsedSheets]);\n\n"
+        "  const toggleSheet = (key: string) => {",
         1,
     )
-    if 'saveTripUi(trip.id' not in p:
-        p = p.replace(
-            '  const toggleSheet = (key: string) => {',
-            """  useEffect(() => {
-    saveTripUi(trip.id, {
-      timelineCollapsed,
-      planCollapsedSheets: collapsedSheets
-    });
-  }, [trip.id, timelineCollapsed, collapsedSheets]);
-
-  const toggleSheet = (key: string) => {""",
-            1,
-        )
     pp.write_text(p)
-    print('PlanTab')
+    print('Plan ok')
 else:
     print('Plan already')
 
@@ -112,25 +122,39 @@ td = Path('src/components/TripDetailView.tsx')
 t = td.read_text()
 if 'loadTripUi' not in t:
     if "from '../utils/uiPrefs'" not in t:
-        # after react import
         t = t.replace(
             "import React from 'react';",
             "import React, { useEffect } from 'react';\nimport { loadTripUi, saveTripUi } from '../utils/uiPrefs';",
             1,
         )
-    t = t.replace(
-        "  const [showMapBanner, setShowMapBanner] = React.useState<boolean>(false);\n  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>('both');",
-        """  const _prefs = loadTripUi(trip.id);
-  const [showMapBanner, setShowMapBanner] = React.useState<boolean>(() => !!_prefs.showMapBanner);
-  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>(() => _prefs.planViewMode || 'both');
-
-  useEffect(() => {
-    saveTripUi(trip.id, { showMapBanner, planViewMode });
-  }, [trip.id, showMapBanner, planViewMode]);""",
-        1,
+        # maybe already useState from react differently
+        if "import React from 'react'" not in t and "loadTripUi" not in t:
+            t = "import { loadTripUi, saveTripUi } from '../utils/uiPrefs';\n" + t
+    old = (
+        "  const [showMapBanner, setShowMapBanner] = React.useState<boolean>(false);\n"
+        "  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>('both');"
     )
+    new = (
+        "  const _prefs = loadTripUi(trip.id);\n"
+        "  const [showMapBanner, setShowMapBanner] = React.useState<boolean>(() => !!_prefs.showMapBanner);\n"
+        "  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>(() => _prefs.planViewMode || 'both');\n"
+        "\n"
+        "  useEffect(() => {\n"
+        "    saveTripUi(trip.id, { showMapBanner, planViewMode });\n"
+        "  }, [trip.id, showMapBanner, planViewMode]);"
+    )
+    if old not in t:
+        # try without React.
+        old2 = old.replace('React.useState', 'useState')
+        new2 = new.replace('React.useState', 'useState')
+        if old2 in t:
+            t = t.replace(old2, new2, 1)
+        else:
+            raise SystemExit('TripDetail state block not found: ' + repr(t[t.find('showMapBanner')-20:t.find('showMapBanner')+120]))
+    else:
+        t = t.replace(old, new, 1)
     td.write_text(t)
-    print('TripDetailView')
+    print('TripDetail ok')
 else:
     print('TripDetail already')
 
