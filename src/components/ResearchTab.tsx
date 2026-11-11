@@ -253,7 +253,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                           title="Promote to Plan (edit details)"
                                           style={{ marginRight: '6px' }}
                                         >
-                                          to Plan
+                                          ↩ Plan
                                         </button>
                                       </>
                                     )}
