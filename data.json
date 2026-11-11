@@ -637,7 +637,7 @@
       "id": "trip_ms9g79qh_14_mvqhc",
       "name": "Brugge",
       "year": 2026,
-      "status": "upcoming",
+      "status": "archived",
       "budget": 1000,
       "startDate": "2026-12-11",
       "endDate": "2026-12-13",
@@ -1387,7 +1387,7 @@
           "sheet": "Shopping",
           "name": "Käthe Wohlfahrt",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1409,14 +1409,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Käthe Wohlfahrt",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbbxxrw_6_a19rx",
           "sheet": "Shopping",
           "name": "The Bottle Shop",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1438,14 +1448,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Bottle Shop",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbbyqdj_a_bi7zx",
           "sheet": "Belgium Chocolate | Waffles",
           "name": "The Chocolate Line",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1461,14 +1481,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Chocolate Line",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbbzbnq_e_ksjvu",
           "sheet": "Belgium Chocolate | Waffles",
           "name": "The Old Chocolate House",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1484,14 +1514,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Old Chocolate House",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbc36vq_j_w0kju",
           "sheet": "Belgium Chocolate | Waffles",
           "name": "Chez Albert",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1507,14 +1547,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Chez Albert",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbc5w4y_o_84hdr",
           "sheet": "Belgium Chocolate | Waffles",
           "name": "House of Waffles",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1530,14 +1580,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "House of Waffles",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbc5y1e_r_knpa4",
           "sheet": "Belgium Chocolate | Waffles",
           "name": "Chez Albert",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1553,14 +1613,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Chez Albert",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbcvn5y_1v_1a7bj",
           "sheet": "Bars With Views | Cocktails",
           "name": "NOBLE Bruges",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1582,14 +1652,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "NOBLE Bruges",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbcvpf3_1z_nsfi6",
           "sheet": "Bars With Views | Cocktails",
           "name": "ODA Rooftop Bar",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1611,14 +1691,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "ODA Rooftop Bar",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbcvraf_23_qd23k",
           "sheet": "Bars With Views | Cocktails",
           "name": "’t Klein Venetië",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1640,14 +1730,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "’t Klein Venetië",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbcvtbs_27_r5at6",
           "sheet": "Bars With Views | Cocktails",
           "name": "Opus Latino",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1669,14 +1769,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Opus Latino",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbcwwog_2b_rfk71",
           "sheet": "Bars With Views | Cocktails",
           "name": "Groot Vlaenderen",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1692,14 +1802,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Groot Vlaenderen",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbcwzde_2e_c2p80",
           "sheet": "Bars With Views | Cocktails",
           "name": "The Republic",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1721,14 +1841,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Republic",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbcxg72_2i_0xz7c",
           "sheet": "Coffee",
           "name": "DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -1750,7 +1880,17 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -3318,7 +3458,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355490806,
+      "updatedAt": 1794356405388,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -3355,7 +3495,7 @@
         "Hotels": "https://www.google.com/maps/d/u/0/embed?mid=1f6FfvNkIjENZy6xpFzzQ36u-ZKDRmns&ehbc=2E312F"
       },
       "timelineManualOrder": true,
-      "isArchived": false,
+      "isArchived": true,
       "luggageBags": [],
       "outfits": [],
       "hauls": [],
@@ -7838,6 +7978,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbdh3f0_2_njcw5",
+      "ts": 1794356405388,
+      "action": "trip-archived",
+      "detail": "Archived trip \"Brugge\""
+    },
+    {
       "id": "log_mwbcxhpz_2l_46pzu",
       "ts": 1794355490807,
       "action": "plan-item-edited",
@@ -9030,12 +9176,6 @@
       "ts": 1793658541730,
       "action": "research-edited",
       "detail": "Updated \"Le Trappiste\" in Brugge research"
-    },
-    {
-      "id": "log_mvztzad3_11_cu7aa",
-      "ts": 1793658533943,
-      "action": "research-edited",
-      "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
     }
   ]
 }
