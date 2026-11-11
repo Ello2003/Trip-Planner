@@ -4,6 +4,23 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.24.0] - 2026-11-11
+
+### Added
+- **Mobile bottom tab navigation** for an app-like trip experience without changing desktop layout.
+- **Drag-and-drop reordering** (Plan timeline, Research tables, Packing) via @dnd-kit, replacing up/down buttons.
+- **Single-click inline title editing** for sheet/section names.
+- **Quick promote from Research**: `+` adds to Plan with existing data and no modal; stays on Research.
+- **↩ Plan** control on Research (same arrow icon as Plan’s Move to Research) opens the full Plan edit form.
+- **Star priority on Plan items**: Research priority (★–★★★★★) is copied on promote and shown under the name in the Plan table and timeline; retained when moving back to Research.
+
+### Fixed
+- Plan timeline titles no longer clip on narrow mobile widths.
+- Promoting to Plan no longer switches away from the Research tab.
+- Research rows again show links and notes under name/address.
+
+---
+
 ## [1.15.0] - 2026-10-25
 
 ### Added

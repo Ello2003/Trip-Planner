@@ -372,7 +372,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.22.0';
+export const APP_VERSION = '1.24.0';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
