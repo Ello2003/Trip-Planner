@@ -3067,9 +3067,9 @@
           "lat": 51.2122443,
           "lng": 3.2231237,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
-          "notes": "",
+          "notes": "Cocktails",
           "links": [],
           "status": "researching",
           "linkedPlanItemId": null,
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355311119,
+      "updatedAt": 1794355337070,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcu73i_1q_1r7l4",
+      "ts": 1794355337071,
+      "action": "research-edited",
+      "detail": "Updated \"Groot Vlaenderen\" in Brugge research"
+    },
+    {
       "id": "log_mwbcksof_1p_yye75",
       "ts": 1794354898479,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793404032214,
       "action": "research-added",
       "detail": "Added \"Belfry of Bruges\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmg3el_z_nfmus",
-      "ts": 1793404016445,
-      "action": "research-added",
-      "detail": "Added \"Market Square\" to Brugge research"
     }
   ]
 }
