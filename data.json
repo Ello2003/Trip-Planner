@@ -3060,6 +3060,28 @@
           "createdAt": 1794104793580
         },
         {
+          "id": "res_mw77muh8_l_1rebc",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Estaminet in 't Molenhuis🍺",
+          "address": "Potterierei 109, 8000 Brugge, Belgium",
+          "lat": 51.220402799999995,
+          "lng": 3.2332451,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77mt21_k_bav5h",
+              "label": "Official Website",
+              "url": "https://molenhuisbrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104731340
+        },
+        {
           "id": "res_mw010p4b_e_f9m4n",
           "sheet": "Bars With Views | Cocktails",
           "name": "Groot Vlaenderen",
@@ -3098,28 +3120,6 @@
           "createdAt": 1794104647363
         },
         {
-          "id": "res_mw77muh8_l_1rebc",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "Estaminet in 't Molenhuis🍺",
-          "address": "Potterierei 109, 8000 Brugge, Belgium",
-          "lat": 51.220402799999995,
-          "lng": 3.2332451,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw77mt21_k_bav5h",
-              "label": "Official Website",
-              "url": "https://molenhuisbrugge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794104731340
-        },
-        {
           "id": "res_mwbci3t0_1k_htn6f",
           "sheet": "Bars With Views | Cocktails",
           "name": "The Republic",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355363995,
+      "updatedAt": 1794355375044,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
