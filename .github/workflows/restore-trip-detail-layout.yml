@@ -1,0 +1,51 @@
+name: Restore TripDetail layout
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/restore-trip-detail-layout.yml'
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore TripDetailView from known-good commit
+        run: |
+          curl -sL "https://raw.githubusercontent.com/Ello2003/Trip-Planner/906e07e9/src/components/TripDetailView.tsx" -o src/components/TripDetailView.tsx
+          python3 << 'PY'
+          from pathlib import Path
+          p = Path('src/components/TripDetailView.tsx')
+          t = p.read_text()
+          if 'onQuickPromoteToPlan' not in t:
+              t = t.replace(
+                  '  onPromoteToPlan: (item: ResearchItem) => void;',
+                  '  onPromoteToPlan: (item: ResearchItem) => void;\n  onQuickPromoteToPlan?: (item: ResearchItem) => void;',
+                  1,
+              )
+              t = t.replace(
+                  '  onPromoteToPlan,',
+                  '  onPromoteToPlan,\n  onQuickPromoteToPlan,',
+                  1,
+              )
+              t = t.replace(
+                  '          onPromoteToPlan={onPromoteToPlan}\n',
+                  '          onPromoteToPlan={onPromoteToPlan}\n          onQuickPromoteToPlan={onQuickPromoteToPlan}\n',
+                  1,
+              )
+              p.write_text(t)
+              print('added quick promote')
+          else:
+              print('already has quick')
+          print('size', p.stat().st_size)
+          assert 'detail-header' in t
+          assert 'tab-bar' in t
+          PY
+      - name: Commit
+        run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/TripDetailView.tsx
+          git commit -m "Restore original TripDetailView formatting + quick promote" || echo nochange
+          git push
