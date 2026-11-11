@@ -28,6 +28,8 @@ interface PlanTabProps {
   onOpenCurrencyConverter?: () => void;
 }
 
+const PRIORITY_LABELS: Record<number, string> = { 1: '★', 2: '★★', 3: '★★★', 4: '★★★★', 5: '★★★★★' };
+
 export const PlanTab: React.FC<PlanTabProps> = ({
   onRenameSheet,
   onRecolorSheet,
@@ -290,6 +292,11 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                               placeholder="What's happening"
                               onChange={e => handleTimelineItemChange(item, 'name', e.target.value)}
                             />
+                            {item.priority ? (
+                              <div style={{ color: 'var(--brass)', fontSize: '11px', letterSpacing: '1px', marginTop: '2px' }}>
+                                {PRIORITY_LABELS[item.priority] || ''}
+                              </div>
+                            ) : null}
                             <textarea
                               className="tl-notes"
                               rows={1}
@@ -387,6 +394,11 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                                 <td>
                                   <div>
                                     <strong>{i.name}</strong>
+                                  {i.priority ? (
+                                    <div style={{ color: 'var(--brass)', fontSize: '12px', letterSpacing: '1px', marginTop: '2px' }} title="Priority">
+                                      {PRIORITY_LABELS[i.priority] || ''}
+                                    </div>
+                                  ) : null}
                                     {i.visited && (
                                       <span
                                         className="status-chip status-completed"

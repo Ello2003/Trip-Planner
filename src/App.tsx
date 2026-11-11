@@ -519,7 +519,7 @@ export const App: React.FC = () => {
       lat: null,
       lng: null,
       priceLevel: null,
-      priority: null,
+      priority: item.priority ?? null,
       estCost: item.cost,
       notes: item.notes || '',
       links: (item.links || []).map(l => ({ ...l, id: uid('link') })),
@@ -559,6 +559,7 @@ export const App: React.FC = () => {
       actualExpenseId: null,
       notes: item.notes || '',
       visited: false,
+      priority: item.priority ?? null,
       estimateCategory: resolveExpenseCategory(item.sheet, state.categories)
     };
 
@@ -601,6 +602,7 @@ export const App: React.FC = () => {
       actualExpenseId: null,
       notes: item.notes || '',
       visited: false,
+      priority: item.priority ?? null,
       estimateCategory: resolveExpenseCategory(item.sheet, state.categories)
     };
     const updatedResearch = currentTrip.research.map(r =>
