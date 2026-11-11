@@ -1915,7 +1915,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Hotel Van Cleef",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfa23f_5_5ycrv",
@@ -1940,7 +1950,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Estaminet in 't Molenhuis🍺",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfabk5_8_jtgt6",
@@ -1959,7 +1979,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "AVI '38 Specialty Coffeebar Bruges",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfabzf_a_f0zbu",
@@ -1984,7 +2014,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Nuba Cafe Brugge",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfacfu_d_o81ux",
@@ -2009,7 +2049,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Coffeebar Adriaan",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfacv9_g_08xmv",
@@ -2034,7 +2084,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Blackbird Coffee Club",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfadl7_j_xmw2t",
@@ -2059,7 +2119,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "EspressoBar - I Love Coffee",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfadz8_m_4nzb5",
@@ -2084,7 +2154,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Les Coquettes Le Café",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbfaitu_p_6lowg",
@@ -2109,7 +2189,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Kaffee Kamiel",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbg3qqe_10_2osdu",
@@ -2139,7 +2229,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Bistro Christophe",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbg6qbm_14_2l3gq",
@@ -2164,7 +2264,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Seafoodbar Belge",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwbg6ssa_17_3barv",
@@ -2189,7 +2299,17 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Au Petit Grand BV",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -3587,7 +3707,7 @@
           "lat": 51.2094637,
           "lng": 3.2260896,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3597,7 +3717,7 @@
               "url": "http://www.aupetitgrand.be/"
             }
           ],
-          "status": "promoted",
+          "status": "researching",
           "linkedPlanItemId": "plan_mwbg6ssa_17_3barv",
           "createdAt": 1793929585439
         },
@@ -3806,7 +3926,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794360815857,
+      "updatedAt": 1794362021009,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8326,6 +8446,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbgtggh_2_e1ctv",
+      "ts": 1794362021009,
+      "action": "research-edited",
+      "detail": "Updated \"Au Petit Grand BV\" in Brugge research"
+    },
+    {
       "id": "log_mwbg6ssd_19_n1zbh",
       "ts": 1794360963901,
       "action": "research-promoted",
@@ -9518,12 +9644,6 @@
       "ts": 1793659544091,
       "action": "research-edited",
       "detail": "Updated \"Boniface Bridge\" in Brugge research"
-    },
-    {
-      "id": "log_mvzukuhi_1r_1qupb",
-      "ts": 1793659539798,
-      "action": "research-edited",
-      "detail": "Updated \"Simon Stevin\" in Brugge research"
     }
   ]
 }
