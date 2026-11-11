@@ -1,0 +1,21 @@
+name: Fix plan name stars
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/fix_plan_name_stars.py'
+      - '.github/workflows/fix-plan-name-stars.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/fix_plan_name_stars.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/PlanTab.tsx
+          git commit -m "Plan: under-name stars use Research fallback" || echo nochange
+          git push
