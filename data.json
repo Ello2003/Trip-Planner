@@ -3118,32 +3118,10 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794104647363
-        },
-        {
-          "id": "res_mwbci3t0_1k_htn6f",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "The Republic",
-          "address": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
-          "lat": 51.210260100000006,
-          "lng": 3.2214601000000003,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mwbci2ev_1j_ryrty",
-              "label": "Official Website",
-              "url": "https://www.republiekbrugge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794354772932
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355391629,
+      "updatedAt": 1794355398425,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7641,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcvifu_1u_sq8oy",
+      "ts": 1794355398426,
+      "action": "research-deleted",
+      "detail": "Removed \"The Republic\" from Brugge research"
+    },
+    {
       "id": "log_mwbcvd71_1t_as1gm",
       "ts": 1794355391629,
       "action": "research-edited",
@@ -8855,12 +8839,6 @@
       "ts": 1793404072486,
       "action": "research-added",
       "detail": "Added \"De Dijver park\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmh2tg_17_c2w37",
-      "ts": 1793404062340,
-      "action": "research-added",
-      "detail": "Added \"Rosary Quay\" to Brugge research"
     }
   ]
 }
