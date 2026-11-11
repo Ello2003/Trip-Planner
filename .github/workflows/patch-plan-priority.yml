@@ -1,0 +1,21 @@
+name: Patch plan priority
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/patch_plan_priority.py'
+      - '.github/workflows/patch-plan-priority.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/patch_plan_priority.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/App.tsx
+          git commit -m "App: copy Research priority onto Plan items" || echo nochange
+          git push
