@@ -637,7 +637,7 @@
       "id": "trip_ms9g79qh_14_mvqhc",
       "name": "Brugge",
       "year": 2026,
-      "status": "archived",
+      "status": "upcoming",
       "budget": 1000,
       "startDate": "2026-12-11",
       "endDate": "2026-12-13",
@@ -2745,138 +2745,6 @@
           "createdAt": 1793929396080
         },
         {
-          "id": "res_mw4ba2hi_1c_r8frc",
-          "sheet": "Restaurants",
-          "name": "El Churrasco Argentino",
-          "address": "Vlamingstraat 76, 8000 Brugge, Belgium",
-          "lat": 51.2111303,
-          "lng": 3.2243527,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4ba1ne_1b_p6d2d",
-              "label": "Official Website",
-              "url": "https://www.elchurrascoargentinobrugge.com/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929455126
-        },
-        {
-          "id": "res_mw4bcv1b_1f_rhrbg",
-          "sheet": "Restaurants",
-          "name": "Au Petit Grand BV",
-          "address": "Philipstockstraat 18, 8000 Brugge, Belgium",
-          "lat": 51.2094637,
-          "lng": 3.2260896,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4bcu9z_1e_8m693",
-              "label": "Official Website",
-              "url": "http://www.aupetitgrand.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929585439
-        },
-        {
-          "id": "res_mw4beu1g_1i_gj9v7",
-          "sheet": "Restaurants",
-          "name": "De koetse",
-          "address": "Oude Burg 31, 8000 Brugge, Belgium",
-          "lat": 51.2063534,
-          "lng": 3.2235506,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4betc2_1h_kmmgk",
-              "label": "Official Website",
-              "url": "http://www.dekoetsebrugge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929677460
-        },
-        {
-          "id": "res_mw4bg428_1l_iwbb2",
-          "sheet": "Restaurants",
-          "name": "Pigeon House",
-          "address": "Sint-Jansplein 12, 8000 Brugge, Belgium",
-          "lat": 51.2107083,
-          "lng": 3.2263167,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4bg3dz_1k_jr204",
-              "label": "Official Website",
-              "url": "http://pigeonhouse.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929737104
-        },
-        {
-          "id": "res_mw4bh5j5_1o_01fyj",
-          "sheet": "Restaurants",
-          "name": "De Gastro",
-          "address": "Braambergstraat 6, 8000 Brugge, Belgium",
-          "lat": 51.2074419,
-          "lng": 3.228262,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4bh4vu_1n_8h9f9",
-              "label": "Official Website",
-              "url": "http://www.degastro.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929785665
-        },
-        {
-          "id": "res_mw4bko1x_1x_phjlp",
-          "sheet": "Restaurants",
-          "name": "Seafoodbar Belge",
-          "address": "Eiermarkt 14, 8000 Brugge, Belgium",
-          "lat": 51.209329800000006,
-          "lng": 3.2236027999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4bkmz7_1w_mj264",
-              "label": "Official Website",
-              "url": "http://www.seafoodbar-belge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929949637
-        },
-        {
           "id": "res_mw4bni95_1z_cmt3t",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Three.B.pasta",
@@ -2891,50 +2759,6 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793930082089
-        },
-        {
-          "id": "res_mw6ygo7u_2e_2jpmp",
-          "sheet": "Restaurants",
-          "name": "Brasserie Rozenhoedkaai",
-          "address": "Pandreitje 1a, 8000 Brugge, Belgium",
-          "lat": 51.207317599999996,
-          "lng": 3.2280884999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw6ygnj8_2d_tc1ef",
-              "label": "Official Website",
-              "url": "http://www.rozenhoedkaai.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794089326746
-        },
-        {
-          "id": "res_mw6zf94a_2h_d0446",
-          "sheet": "Restaurants",
-          "name": "Petite Aneth",
-          "address": "Maria van Bourgondiëlaan 1, 8000 Brugge, Belgium",
-          "lat": 51.2117541,
-          "lng": 3.2112190999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw6zf7ft_2g_ki2rb",
-              "label": "Official Website",
-              "url": "http://www.aneth.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794090940138
         },
         {
           "id": "res_mw75izs0_5_uwp5w",
@@ -3455,10 +3279,186 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwbcwzde_2e_c2p80",
           "createdAt": 1794104647363
+        },
+        {
+          "id": "res_mw4bcv1b_1f_rhrbg",
+          "sheet": "Restaurants",
+          "name": "Au Petit Grand BV",
+          "address": "Philipstockstraat 18, 8000 Brugge, Belgium",
+          "lat": 51.2094637,
+          "lng": 3.2260896,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bcu9z_1e_8m693",
+              "label": "Official Website",
+              "url": "http://www.aupetitgrand.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929585439
+        },
+        {
+          "id": "res_mw4ba2hi_1c_r8frc",
+          "sheet": "Restaurants",
+          "name": "El Churrasco Argentino",
+          "address": "Vlamingstraat 76, 8000 Brugge, Belgium",
+          "lat": 51.2111303,
+          "lng": 3.2243527,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4ba1ne_1b_p6d2d",
+              "label": "Official Website",
+              "url": "https://www.elchurrascoargentinobrugge.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929455126
+        },
+        {
+          "id": "res_mw4beu1g_1i_gj9v7",
+          "sheet": "Restaurants",
+          "name": "De koetse",
+          "address": "Oude Burg 31, 8000 Brugge, Belgium",
+          "lat": 51.2063534,
+          "lng": 3.2235506,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4betc2_1h_kmmgk",
+              "label": "Official Website",
+              "url": "http://www.dekoetsebrugge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929677460
+        },
+        {
+          "id": "res_mw4bg428_1l_iwbb2",
+          "sheet": "Restaurants",
+          "name": "Pigeon House",
+          "address": "Sint-Jansplein 12, 8000 Brugge, Belgium",
+          "lat": 51.2107083,
+          "lng": 3.2263167,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bg3dz_1k_jr204",
+              "label": "Official Website",
+              "url": "http://pigeonhouse.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929737104
+        },
+        {
+          "id": "res_mw4bh5j5_1o_01fyj",
+          "sheet": "Restaurants",
+          "name": "De Gastro",
+          "address": "Braambergstraat 6, 8000 Brugge, Belgium",
+          "lat": 51.2074419,
+          "lng": 3.228262,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bh4vu_1n_8h9f9",
+              "label": "Official Website",
+              "url": "http://www.degastro.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929785665
+        },
+        {
+          "id": "res_mw4bko1x_1x_phjlp",
+          "sheet": "Restaurants",
+          "name": "Seafoodbar Belge",
+          "address": "Eiermarkt 14, 8000 Brugge, Belgium",
+          "lat": 51.209329800000006,
+          "lng": 3.2236027999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bkmz7_1w_mj264",
+              "label": "Official Website",
+              "url": "http://www.seafoodbar-belge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929949637
+        },
+        {
+          "id": "res_mw6ygo7u_2e_2jpmp",
+          "sheet": "Restaurants",
+          "name": "Brasserie Rozenhoedkaai",
+          "address": "Pandreitje 1a, 8000 Brugge, Belgium",
+          "lat": 51.207317599999996,
+          "lng": 3.2280884999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw6ygnj8_2d_tc1ef",
+              "label": "Official Website",
+              "url": "http://www.rozenhoedkaai.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794089326746
+        },
+        {
+          "id": "res_mw6zf94a_2h_d0446",
+          "sheet": "Restaurants",
+          "name": "Petite Aneth",
+          "address": "Maria van Bourgondiëlaan 1, 8000 Brugge, Belgium",
+          "lat": 51.2117541,
+          "lng": 3.2112190999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw6zf7ft_2g_ki2rb",
+              "label": "Official Website",
+              "url": "http://www.aneth.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794090940138
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794356405388,
+      "updatedAt": 1794356575166,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -3495,7 +3495,7 @@
         "Hotels": "https://www.google.com/maps/d/u/0/embed?mid=1f6FfvNkIjENZy6xpFzzQ36u-ZKDRmns&ehbc=2E312F"
       },
       "timelineManualOrder": true,
-      "isArchived": true,
+      "isArchived": false,
       "luggageBags": [],
       "outfits": [],
       "hauls": [],
@@ -7978,12 +7978,6 @@
   },
   "activityLog": [
     {
-      "id": "log_mwbdh3f0_2_njcw5",
-      "ts": 1794356405388,
-      "action": "trip-archived",
-      "detail": "Archived trip \"Brugge\""
-    },
-    {
       "id": "log_mwbcxhpz_2l_46pzu",
       "ts": 1794355490807,
       "action": "plan-item-edited",
@@ -9176,6 +9170,12 @@
       "ts": 1793658541730,
       "action": "research-edited",
       "detail": "Updated \"Le Trappiste\" in Brugge research"
+    },
+    {
+      "id": "log_mvztzad3_11_cu7aa",
+      "ts": 1793658533943,
+      "action": "research-edited",
+      "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
     }
   ]
 }
