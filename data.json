@@ -3853,7 +3853,7 @@
               "url": "http://pigeonhouse.be/"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1793929737104
         },
@@ -3952,7 +3952,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362040668,
+      "updatedAt": 1794362387398,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8472,6 +8472,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbh1b5y_9_004v2",
+      "ts": 1794362387398,
+      "action": "research-edited",
+      "detail": "Updated \"Pigeon House\" in Brugge research"
+    },
+    {
       "id": "log_mwbgtxdj_8_kcpvv",
       "ts": 1794362042935,
       "action": "research-promoted",
@@ -9664,12 +9670,6 @@
       "ts": 1793660595776,
       "action": "research-edited",
       "detail": "Updated \"Hotel Aragon\" in Brugge research"
-    },
-    {
-      "id": "log_mvzuluks_20_1i3pv",
-      "ts": 1793659586572,
-      "action": "research-edited",
-      "detail": "Updated \"Gunpowder Tower (Poertoren)\" in Brugge research"
     }
   ]
 }
