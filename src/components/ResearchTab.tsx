@@ -16,6 +16,7 @@ interface ResearchTabProps {
   onOpenAddResearchModal: (defaultSheet?: string) => void;
   onOpenEditResearchModal: (item: ResearchItem) => void;
   onPromoteToPlan: (item: ResearchItem) => void;
+  onQuickPromoteToPlan?: (item: ResearchItem) => void;
   onManageSheets: () => void;
   onOpenMapSettings: () => void;
 }
@@ -34,6 +35,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   onOpenAddResearchModal,
   onOpenEditResearchModal,
   onPromoteToPlan,
+  onQuickPromoteToPlan,
   onManageSheets,
   onOpenMapSettings
 }) => {
@@ -208,22 +210,14 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                   <td style={{ minWidth: '180px' }}>
                                     <strong>{r.name}</strong>
                                     {r.address && (
-                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px' }}>
-                                        {r.address}
-                                      </div>
+                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px' }}>{r.address}</div>
                                     )}
                                     {r.links && r.links.length > 0 && (
                                       <div style={{ fontSize: '11px', marginTop: '2px' }}>
                                         {r.links.map((link, idx) => (
                                           <span key={link.id || idx}>
                                             {idx > 0 && ' · '}
-                                            <a
-                                              href={link.url}
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                              style={{ color: 'var(--blue)' }}
-                                              onClick={e => e.stopPropagation()}
-                                            >
+                                            <a href={link.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue)' }} onClick={e => e.stopPropagation()}>
                                               {link.label || 'link'}
                                             </a>
                                           </span>
@@ -231,9 +225,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                       </div>
                                     )}
                                     {r.notes && (
-                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px', fontStyle: 'italic', marginTop: '2px' }}>
-                                        {r.notes}
-                                      </div>
+                                      <div style={{ color: 'var(--ink-soft)', fontSize: '11px', fontStyle: 'italic', marginTop: '2px' }}>{r.notes}</div>
                                     )}
                                   </td>
                                   <td>{r.priceLevel ? PRICE_LABELS[r.priceLevel] : '—'}</td>
@@ -244,7 +236,17 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                   </td>
                                   <td style={{ whiteSpace: 'nowrap' }}>
                                     {r.status !== 'promoted' && (
-                                      <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan" style={{ marginRight: '6px' }}>{'\u2192 Plan'}</button>
+                                      <>
+                                        <button
+                                          className="exp-del"
+                                          onClick={() => (onQuickPromoteToPlan ? onQuickPromoteToPlan(r) : onPromoteToPlan(r))}
+                                          title="Quick add to Plan (no form)"
+                                          style={{ marginRight: '4px' }}
+                                        >
+                                          {'\u271A'}
+                                        </button>
+                                        <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan (edit details)" style={{ marginRight: '6px' }}>{'\u2192 Plan'}</button>
+                                      </>
                                     )}
                                     <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">{'\u270E'}</button>
                                     <button className="exp-del" onClick={() => handleDeleteItem(r)} title="Delete">{'\u2715'}</button>
