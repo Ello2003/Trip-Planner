@@ -1,0 +1,21 @@
+name: Patch App quick promote
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/patch_app_quick.py'
+      - '.github/workflows/patch-app-quick.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/patch_app_quick.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/App.tsx
+          git commit -m "App: handleQuickPromoteToPlan (no modal)" || echo nochange
+          git push
