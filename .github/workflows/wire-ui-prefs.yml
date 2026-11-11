@@ -1,0 +1,22 @@
+name: Wire UI prefs persistence
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wire_ui_prefs.py'
+      - 'src/utils/uiPrefs.ts'
+      - '.github/workflows/wire-ui-prefs.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/wire_ui_prefs.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/App.tsx src/components/ResearchTab.tsx src/components/PlanTab.tsx src/components/TripDetailView.tsx src/utils/uiPrefs.ts
+          git commit -m "Persist UI toggles: tabs, map/list views, collapsed sections" || echo nochange
+          git push
