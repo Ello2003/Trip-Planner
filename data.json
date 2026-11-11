@@ -2110,6 +2110,36 @@
           "notes": "",
           "visited": false,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbg3qqe_10_2osdu",
+          "sheet": "Restaurants",
+          "name": "Bistro Christophe",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Garenmarkt 34, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbg3qqe_11_7ta56",
+              "label": "Official Website",
+              "url": "https://www.christophe-brugge.be/"
+            },
+            {
+              "id": "link_mwbg3qqe_12_tgun8",
+              "label": "Menu",
+              "url": "https://bistrochristophe.be/en/menu/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3720,8 +3750,8 @@
               "url": "https://bistrochristophe.be/en/menu/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbg3qqe_10_2osdu",
           "createdAt": 1794360340907
         }
       ],
@@ -8246,6 +8276,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbg3qqf_13_o7ndv",
+      "ts": 1794360821271,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Bistro Christophe\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbg3mk2_z_dk3mu",
       "ts": 1794360815858,
       "action": "research-edited",
@@ -9438,12 +9474,6 @@
       "ts": 1793659531271,
       "action": "research-edited",
       "detail": "Updated \"Rosary Quay\" in Brugge research"
-    },
-    {
-      "id": "log_mvzukk2s_1m_6keul",
-      "ts": 1793659526308,
-      "action": "research-edited",
-      "detail": "Updated \"Den Burg\" in Brugge research"
     }
   ]
 }
