@@ -1,0 +1,23 @@
+name: Force changelog 124
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/force_changelog_124.py'
+      - '.github/workflows/force-changelog-124.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/force_changelog_124.py
+      - name: Commit
+        run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts
+          git diff --cached --stat
+          git commit -m "chore: in-app CHANGELOG 1.24.0 entry" || echo nochange
+          git push origin HEAD:main
