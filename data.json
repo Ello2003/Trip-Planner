@@ -1722,6 +1722,35 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbcxg72_2i_0xz7c",
+          "sheet": "Coffee",
+          "name": "DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Hoogstraat 33, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbcxg72_2j_oy8v6",
+              "label": "Official Website",
+              "url": "http://www.deeskoffie.com/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2911,8 +2940,8 @@
               "url": "http://www.deeskoffie.com/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbcxg72_2i_0xz7c",
           "createdAt": 1794354278331
         },
         {
@@ -3289,7 +3318,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355469191,
+      "updatedAt": 1794355490806,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7809,6 +7838,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcxhpz_2l_46pzu",
+      "ts": 1794355490807,
+      "action": "plan-item-edited",
+      "detail": "Updated \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" on Brugge"
+    },
+    {
+      "id": "log_mwbcxg73_2k_4wg6e",
+      "ts": 1794355488831,
+      "action": "research-promoted",
+      "detail": "Promoted \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbcx11l_2h_19i4a",
       "ts": 1794355469193,
       "action": "plan-item-edited",
@@ -8995,18 +9036,6 @@
       "ts": 1793658533943,
       "action": "research-edited",
       "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
-    },
-    {
-      "id": "log_mvztxbv1_x_z0eiq",
-      "ts": 1793658442573,
-      "action": "research-edited",
-      "detail": "Updated \"De Witte Pelikaan\" in Brugge research"
-    },
-    {
-      "id": "log_mvxvs1un_1v_ww62h",
-      "ts": 1793540623201,
-      "action": "backup-exported",
-      "detail": "Exported a JSON backup (v1.13.4)"
     }
   ]
 }
