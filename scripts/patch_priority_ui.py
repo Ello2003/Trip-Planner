@@ -1,23 +1,40 @@
 from pathlib import Path
-import urllib.request
+import re
 
-# --- types.ts ---
-url = 'https://raw.githubusercontent.com/Ello2003/Trip-Planner/459d907ca56488e61b14159d43688fe24697ea8d/src/types.ts'
-t = urllib.request.urlopen(url, timeout=30).read().decode()
-block = t[t.find('export interface PlanItem'):t.find('export interface ResearchItem')]
-if 'priority' not in block:
-    t = t.replace(
-        '  notes: string;\n  visited: boolean;\n\n  actualNotes?: string;',
-        '  notes: string;\n  visited: boolean;\n  /** Star priority 1-5 carried from Research when promoted */\n  priority?: number | null;\n\n  actualNotes?: string;',
-        1,
-    )
-    print('types: added priority')
+# types
+t = Path('src/types.ts').read_text()
+if 'WILL_READ' in t or len(t) < 1000:
+    import urllib.request
+    t = urllib.request.urlopen('https://raw.githubusercontent.com/Ello2003/Trip-Planner/459d907ca56488e61b14159d43688fe24697ea8d/src/types.ts', timeout=30).read().decode()
+    print('restored types from good commit')
+
+m = re.search(r'(export interface PlanItem \{[\s\S]*?visited: boolean;)(\n\n  actualNotes)', t)
+if m and 'priority?:' not in m.group(0):
+    t = t[:m.end(1)] + '\n  /** Star priority 1-5 carried from Research when promoted */\n  priority?: number | null;' + m.group(2) + t[m.end(2):]
+    print('types priority inserted')
+elif 'priority?:' in t[t.find('PlanItem'):t.find('ResearchItem')]:
+    print('types already ok')
 else:
-    print('types: already has priority')
+    print('types WARN')
 Path('src/types.ts').write_text(t)
-assert 'export interface PlanItem' in t
 
-# --- PlanTab.tsx ---
+# App
+app = Path('src/App.tsx').read_text()
+count = 0
+needle = 'visited: false,\n      estimateCategory: resolveExpenseCategory(item.sheet, state.categories)'
+repl = 'visited: false,\n      priority: item.priority ?? null,\n      estimateCategory: resolveExpenseCategory(item.sheet, state.categories)'
+while needle in app:
+    app = app.replace(needle, repl, 1)
+    count += 1
+print('App promote replacements', count)
+app = app.replace(
+    'priceLevel: null,\n      priority: null,\n      estCost: item.cost,',
+    'priceLevel: null,\n      priority: item.priority ?? null,\n      estCost: item.cost,',
+    1,
+)
+Path('src/App.tsx').write_text(app)
+
+# PlanTab
 pt = Path('src/components/PlanTab.tsx').read_text()
 if 'PRIORITY_LABELS' not in pt:
     pt = pt.replace(
@@ -28,53 +45,16 @@ if 'PRIORITY_LABELS' not in pt:
 if 'i.priority' not in pt and '<strong>{i.name}</strong>' in pt:
     pt = pt.replace(
         '<strong>{i.name}</strong>',
-        """<strong>{i.name}</strong>
-                                  {i.priority ? (
-                                    <div style={{ color: 'var(--brass)', fontSize: '12px', letterSpacing: '1px', marginTop: '2px' }} title=\"Priority\">
-                                      {PRIORITY_LABELS[i.priority] || ''}
-                                    </div>
-                                  ) : null}""",
+        "<strong>{i.name}</strong>\n                                  {i.priority ? (\n                                    <div style={{ color: 'var(--brass)', fontSize: '12px', letterSpacing: '1px', marginTop: '2px' }} title=\"Priority\">\n                                      {PRIORITY_LABELS[i.priority] || ''}\n                                    </div>\n                                  ) : null}",
         1,
     )
-    print('PlanTab table stars')
-if 'item.priority' not in pt:
-    needle = """                            <input
-                              className=\"tl-name\"
-                              value={item.name}
-                              placeholder=\"What's happening\"
-                              onChange={e => handleTimelineItemChange(item, 'name', e.target.value)}
-                            />"""
-    if needle in pt:
-        pt = pt.replace(
-            needle,
-            needle + """
-                            {item.priority ? (
-                              <div style={{ color: 'var(--brass)', fontSize: '11px', letterSpacing: '1px', marginTop: '2px' }}>
-                                {PRIORITY_LABELS[item.priority] || ''}
-                              </div>
-                            ) : null}""",
-            1,
-        )
-        print('PlanTab timeline stars')
-    else:
-        print('WARN timeline needle')
+    print('table stars')
+if 'item.priority' not in pt and 'className="tl-name"' in pt:
+    i = pt.find('className="tl-name"')
+    j = pt.find('/>', i)
+    insert_at = j + 2
+    snippet = "\n                            {item.priority ? (\n                              <div style={{ color: 'var(--brass)', fontSize: '11px', letterSpacing: '1px', marginTop: '2px' }}>\n                                {PRIORITY_LABELS[item.priority] || ''}\n                              </div>\n                            ) : null}"
+    pt = pt[:insert_at] + snippet + pt[insert_at:]
+    print('timeline stars')
 Path('src/components/PlanTab.tsx').write_text(pt)
-
-# --- App promote priority (idempotent) ---
-app = Path('src/App.tsx').read_text()
-old = 'visited: false,\n      estimateCategory: resolveExpenseCategory(item.sheet, state.categories)'
-new = 'visited: false,\n      priority: item.priority ?? null,\n      estimateCategory: resolveExpenseCategory(item.sheet, state.categories)'
-if old in app:
-    app = app.replace(old, new)
-    print('App promote priority')
-elif 'priority: item.priority' in app:
-    print('App already has priority on promote')
-else:
-    print('WARN promote')
-old_m = 'priceLevel: null,\n      priority: null,\n      estCost: item.cost,'
-new_m = 'priceLevel: null,\n      priority: item.priority ?? null,\n      estCost: item.cost,'
-if old_m in app:
-    app = app.replace(old_m, new_m, 1)
-    print('App move priority')
-Path('src/App.tsx').write_text(app)
 print('done')
