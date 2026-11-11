@@ -3674,10 +3674,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794089326746
+        },
+        {
+          "id": "res_mwbfjicc_t_5neny",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Poules Moules",
+          "address": "Simon Stevinplein 9, 8000 Brugge, Belgium",
+          "lat": 51.206312,
+          "lng": 3.223192,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwbfjhgt_s_xbl8g",
+              "label": "Official Website",
+              "url": "http://www.poulesmoules.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794359877276
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794359850810,
+      "updatedAt": 1794359877276,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8197,6 +8219,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbfjicd_u_6omnu",
+      "ts": 1794359877277,
+      "action": "research-added",
+      "detail": "Added \"Poules Moules\" to Brugge research"
+    },
+    {
       "id": "log_mwbfaitw_r_id1eg",
       "ts": 1794359458004,
       "action": "research-promoted",
@@ -9389,12 +9417,6 @@
       "ts": 1793659513787,
       "action": "research-edited",
       "detail": "Updated \"Belfry of Bruges\" in Brugge research"
-    },
-    {
-      "id": "log_mvzuk4yg_1h_lek5p",
-      "ts": 1793659506712,
-      "action": "research-edited",
-      "detail": "Updated \"Market Square\" in Brugge research"
     }
   ]
 }
