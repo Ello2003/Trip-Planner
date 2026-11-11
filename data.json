@@ -1891,6 +1891,56 @@
           },
           "actualNotes": "",
           "actualRating": null
+        },
+        {
+          "id": "plan_mwbfa1i6_2_k211e",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Hotel Van Cleef",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Molenmeers 11, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfa1i6_3_e45my",
+              "label": "Official Website",
+              "url": "http://www.hotelvancleef.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfa23f_5_5ycrv",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Estaminet in 't Molenhuis🍺",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Potterierei 109, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfa23f_6_lg6va",
+              "label": "Official Website",
+              "url": "https://molenhuisbrugge.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3216,8 +3266,8 @@
               "url": "http://www.hotelvancleef.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfa1i6_2_k211e",
           "createdAt": 1794104793580
         },
         {
@@ -3238,8 +3288,8 @@
               "url": "https://molenhuisbrugge.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfa23f_5_5ycrv",
           "createdAt": 1794104731340
         },
         {
@@ -7978,6 +8028,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbfa23f_7_lvry9",
+      "ts": 1794359436315,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Estaminet in 't Molenhuis🍺\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfa1i6_4_rs2fn",
+      "ts": 1794359435550,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Hotel Van Cleef\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbcxhpz_2l_46pzu",
       "ts": 1794355490807,
       "action": "plan-item-edited",
@@ -9164,18 +9226,6 @@
       "ts": 1793658546581,
       "action": "research-edited",
       "detail": "Updated \"De Garre\" in Brugge research"
-    },
-    {
-      "id": "log_mvztzgde_13_03dc2",
-      "ts": 1793658541730,
-      "action": "research-edited",
-      "detail": "Updated \"Le Trappiste\" in Brugge research"
-    },
-    {
-      "id": "log_mvztzad3_11_cu7aa",
-      "ts": 1793658533943,
-      "action": "research-edited",
-      "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
     }
   ]
 }
