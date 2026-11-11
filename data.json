@@ -2459,6 +2459,32 @@
           },
           "actualNotes": "",
           "actualRating": null
+        },
+        {
+          "id": "plan_mwbhlabq_3_lwlsb",
+          "sheet": "Restaurants",
+          "name": "Au Petit Grand BV",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Philipstockstraat 18, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbhlabq_4_ypk8b",
+              "label": "Official Website",
+              "url": "http://www.aupetitgrand.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3866,8 +3892,8 @@
               "url": "http://www.aupetitgrand.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mwbh1hwc_d_c55w1",
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbhlabq_3_lwlsb",
           "createdAt": 1793929585439
         },
         {
@@ -8600,6 +8626,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbhlabs_5_abvb9",
+      "ts": 1794363319432,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Au Petit Grand BV\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbhl59c_2_c3ldk",
       "ts": 1794363312865,
       "action": "research-edited",
@@ -9792,12 +9824,6 @@
       "ts": 1793663779081,
       "action": "trip-archived",
       "detail": "Archived trip \"London\""
-    },
-    {
-      "id": "log_mvzx3nue_7_q26p5",
-      "ts": 1793663776886,
-      "action": "trip-archived",
-      "detail": "Archived trip \"Italy\""
     }
   ]
 }
