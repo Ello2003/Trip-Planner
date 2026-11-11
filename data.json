@@ -3083,7 +3083,7 @@
           "lat": 51.210260100000006,
           "lng": 3.2214601000000003,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355342669,
+      "updatedAt": 1794355363995,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcurvf_1s_2c05i",
+      "ts": 1794355363995,
+      "action": "research-edited",
+      "detail": "Updated \"The Republic\" in Brugge research"
+    },
+    {
       "id": "log_mwbcubf1_1r_sdpmd",
       "ts": 1794355342669,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793404052469,
       "action": "research-added",
       "detail": "Added \"De Burg\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmgows_13_2aa89",
-      "ts": 1793404044316,
-      "action": "research-added",
-      "detail": "Added \"Basilica of the Holy Blood\" to Brugge research"
     }
   ]
 }
