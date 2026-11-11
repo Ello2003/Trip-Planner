@@ -410,11 +410,14 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                                 <td>
                                   <div>
                                     <strong>{i.name}</strong>
-                                  {i.priority ? (
-                                    <div style={{ color: 'var(--brass)', fontSize: '12px', letterSpacing: '1px', marginTop: '2px' }} title="Priority">
-                                      {PRIORITY_LABELS[i.priority] || ''}
-                                    </div>
-                                  ) : null}
+                                  {(() => {
+                                    const pr = planPriority(i, trip.research || []);
+                                    return pr ? (
+                                      <div style={{ color: 'var(--ochre, var(--brass))', fontSize: '13px', letterSpacing: '2px', marginTop: '3px', fontWeight: 600 }} title={`Priority ${pr}/5`}>
+                                        {PRIORITY_LABELS[pr]}
+                                      </div>
+                                    ) : null;
+                                  })()}
                                     {i.visited && (
                                       <span
                                         className="status-chip status-completed"
