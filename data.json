@@ -2310,6 +2310,32 @@
           },
           "actualNotes": "",
           "actualRating": null
+        },
+        {
+          "id": "plan_mwbgtxdi_6_ht6ja",
+          "sheet": "Restaurants",
+          "name": "El Churrasco Argentino",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Vlamingstraat 76, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbgtxdi_7_suryq",
+              "label": "Official Website",
+              "url": "https://www.elchurrascoargentinobrugge.com/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Walk in",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3775,7 +3801,7 @@
           "priceLevel": null,
           "priority": null,
           "estCost": null,
-          "notes": "",
+          "notes": "Walk in",
           "links": [
             {
               "id": "link_mw4ba1ne_1b_p6d2d",
@@ -3783,8 +3809,8 @@
               "url": "https://www.elchurrascoargentinobrugge.com/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbgtxdi_6_ht6ja",
           "createdAt": 1793929455126
         },
         {
@@ -3926,7 +3952,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362035062,
+      "updatedAt": 1794362040668,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8446,6 +8472,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbgtxdj_8_kcpvv",
+      "ts": 1794362042935,
+      "action": "research-promoted",
+      "detail": "Quick-added \"El Churrasco Argentino\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbgtvmk_5_94v6x",
+      "ts": 1794362040668,
+      "action": "research-edited",
+      "detail": "Updated \"El Churrasco Argentino\" in Brugge research"
+    },
+    {
       "id": "log_mwbgtrau_4_9zd98",
       "ts": 1794362035062,
       "action": "research-edited",
@@ -9632,18 +9670,6 @@
       "ts": 1793659586572,
       "action": "research-edited",
       "detail": "Updated \"Gunpowder Tower (Poertoren)\" in Brugge research"
-    },
-    {
-      "id": "log_mvzulrdu_1y_2zt3j",
-      "ts": 1793659582434,
-      "action": "research-edited",
-      "detail": "Updated \"Minnewater\" in Brugge research"
-    },
-    {
-      "id": "log_mvzulnhv_1x_vf2en",
-      "ts": 1793659577395,
-      "action": "research-edited",
-      "detail": "Updated \"De Wijngaard\" in Brugge research"
     }
   ]
 }
