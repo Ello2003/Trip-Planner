@@ -1,0 +1,21 @@
+name: Update changelog
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/update_changelog.py'
+      - '.github/workflows/update-changelog.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/update_changelog.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts package.json CHANGELOG.md
+          git commit -m "docs: changelog v1.24.0 (mobile, DnD, quick promote, priority)" || echo nochange
+          git push
