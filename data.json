@@ -2388,6 +2388,37 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbh5c62_j_nuki7",
+          "sheet": "Restaurants",
+          "name": "De Gastro",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Braambergstraat 6, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbh5c62_k_awoi0",
+              "label": "Official Website",
+              "url": "http://www.degastro.be/"
+            },
+            {
+              "id": "link_mwbh5c62_l_slbr6",
+              "label": "Menu",
+              "url": "https://cdn.prod.website-files.com/6266b3961c3bfddae7ce6434/68bdeb761716cd7d24b9dcae_DeGastro-MainMenu5%5BDEF%5D.pdf"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3917,7 +3948,7 @@
           "lat": 51.2074419,
           "lng": 3.228262,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3932,8 +3963,8 @@
               "url": "https://cdn.prod.website-files.com/6266b3961c3bfddae7ce6434/68bdeb761716cd7d24b9dcae_DeGastro-MainMenu5%5BDEF%5D.pdf"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbh5c62_j_nuki7",
           "createdAt": 1793929785665
         },
         {
@@ -4009,7 +4040,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362567237,
+      "updatedAt": 1794362573620,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8529,6 +8560,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbh5c64_m_cghhx",
+      "ts": 1794362575324,
+      "action": "research-promoted",
+      "detail": "Quick-added \"De Gastro\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbh5aus_i_a5s3o",
+      "ts": 1794362573620,
+      "action": "research-edited",
+      "detail": "Updated \"De Gastro\" in Brugge research"
+    },
+    {
       "id": "log_mwbh55xh_h_9vqxe",
       "ts": 1794362567237,
       "action": "research-edited",
@@ -9715,18 +9758,6 @@
       "ts": 1793663775582,
       "action": "trip-archived",
       "detail": "Archived trip \"London\""
-    },
-    {
-      "id": "log_mvzx3lmc_4_y7o30",
-      "ts": 1793663774004,
-      "action": "trip-archived",
-      "detail": "Archived trip \"Liverpool\""
-    },
-    {
-      "id": "log_mvzx3kzu_3_1ga1w",
-      "ts": 1793663773194,
-      "action": "trip-archived",
-      "detail": "Archived trip \"Santorini\""
     }
   ]
 }
