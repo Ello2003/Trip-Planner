@@ -3977,7 +3977,7 @@
           "priceLevel": null,
           "priority": null,
           "estCost": null,
-          "notes": "",
+          "notes": "Interesting menu Friday lunch maybe?",
           "links": [
             {
               "id": "link_mw6ygnj8_2d_tc1ef",
@@ -4040,7 +4040,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362573620,
+      "updatedAt": 1794362740821,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8560,6 +8560,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbh8vv9_n_njkf9",
+      "ts": 1794362740821,
+      "action": "research-edited",
+      "detail": "Updated \"Brasserie Rozenhoedkaai\" in Brugge research"
+    },
+    {
       "id": "log_mwbh5c64_m_cghhx",
       "ts": 1794362575324,
       "action": "research-promoted",
@@ -9752,12 +9758,6 @@
       "ts": 1793663776352,
       "action": "trip-archived",
       "detail": "Archived trip \"Paris\""
-    },
-    {
-      "id": "log_mvzx3mu6_5_axg21",
-      "ts": 1793663775582,
-      "action": "trip-archived",
-      "detail": "Archived trip \"London\""
     }
   ]
 }
