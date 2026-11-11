@@ -3705,7 +3705,7 @@
           "lat": 51.2043078,
           "lng": 3.2295314999999998,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3726,7 +3726,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794360340907,
+      "updatedAt": 1794360815857,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8246,6 +8246,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbg3mk2_z_dk3mu",
+      "ts": 1794360815858,
+      "action": "research-edited",
+      "detail": "Updated \"Bistro Christophe\" in Brugge research"
+    },
+    {
       "id": "log_mwbftg30_y_g27o4",
       "ts": 1794360340908,
       "action": "research-added",
@@ -9438,12 +9444,6 @@
       "ts": 1793659526308,
       "action": "research-edited",
       "detail": "Updated \"Den Burg\" in Brugge research"
-    },
-    {
-      "id": "log_mvzukemd_1l_kqvea",
-      "ts": 1793659519237,
-      "action": "research-edited",
-      "detail": "Updated \"Basilica of the Holy Blood\" in Brugge research"
     }
   ]
 }
