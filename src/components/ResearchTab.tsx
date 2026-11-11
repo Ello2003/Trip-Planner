@@ -200,7 +200,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                 <th style={{ width: '12%' }}>Priority</th>
                                 <th style={{ width: '12%' }} className="num">Est. Cost</th>
                                 <th style={{ width: '12%' }}>Status</th>
-                                <th style={{ width: '14%' }}></th>
+                                <th style={{ width: '16%' }}></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -238,14 +238,23 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                                     {r.status !== 'promoted' && (
                                       <>
                                         <button
-                                          className="exp-del"
+                                          type="button"
+                                          className="btn-ghost btn-sm"
                                           onClick={() => (onQuickPromoteToPlan ? onQuickPromoteToPlan(r) : onPromoteToPlan(r))}
                                           title="Quick add to Plan (no form)"
-                                          style={{ marginRight: '4px' }}
+                                          style={{ marginRight: '4px', minWidth: '32px', fontWeight: 700 }}
                                         >
-                                          {'\u271A'}
+                                          +
                                         </button>
-                                        <button className="btn-ghost btn-sm" onClick={() => onPromoteToPlan(r)} title="Promote to Plan (edit details)" style={{ marginRight: '6px' }}>{'\u2192 Plan'}</button>
+                                        <button
+                                          type="button"
+                                          className="btn-ghost btn-sm"
+                                          onClick={() => onPromoteToPlan(r)}
+                                          title="Promote to Plan (edit details)"
+                                          style={{ marginRight: '6px' }}
+                                        >
+                                          to Plan
+                                        </button>
                                       </>
                                     )}
                                     <button className="exp-del" onClick={() => onOpenEditResearchModal(r)} title="Edit">{'\u270E'}</button>
