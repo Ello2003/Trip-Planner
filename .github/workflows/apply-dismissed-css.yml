@@ -1,0 +1,21 @@
+name: Apply dismissed CSS
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/apply_dismissed_css.py'
+      - '.github/workflows/apply-dismissed-css.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/apply_dismissed_css.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/index.css src/components/PlanTab.tsx src/components/ResearchTab.tsx
+          git commit -m "UI: strikethrough all fields when dismissed/cancelled" || echo nochange
+          git push
