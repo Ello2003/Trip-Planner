@@ -1670,6 +1670,58 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbcwwog_2b_rfk71",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Groot Vlaenderen",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Groot Vlaenderen, 94, Vlamingstraat, Sint-Walburgakwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Cocktails",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbcwzde_2e_c2p80",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "The Republic",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Sint-Jakobsstraat 36, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbcwzdf_2f_m2h41",
+              "label": "Official Website",
+              "url": "https://www.republiekbrugge.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -3209,8 +3261,8 @@
           "estCost": null,
           "notes": "Cocktails",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbcwwog_2b_rfk71",
           "createdAt": 1793670357035
         },
         {
@@ -3231,13 +3283,13 @@
               "url": "https://www.republiekbrugge.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbcwzde_2e_c2p80",
           "createdAt": 1794104647363
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355414034,
+      "updatedAt": 1794355469191,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7757,6 +7809,30 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcx11l_2h_19i4a",
+      "ts": 1794355469193,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Republic\" on Brugge"
+    },
+    {
+      "id": "log_mwbcwzdg_2g_9ag7w",
+      "ts": 1794355467028,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Republic\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcwy5z_2d_c5xki",
+      "ts": 1794355465463,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Groot Vlaenderen\" on Brugge"
+    },
+    {
+      "id": "log_mwbcwwog_2c_vo792",
+      "ts": 1794355463536,
+      "action": "research-promoted",
+      "detail": "Promoted \"Groot Vlaenderen\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbcvuhf_2a_kf4zh",
       "ts": 1794355414035,
       "action": "plan-item-edited",
@@ -8931,30 +9007,6 @@
       "ts": 1793540623201,
       "action": "backup-exported",
       "detail": "Exported a JSON backup (v1.13.4)"
-    },
-    {
-      "id": "log_mvvn6hqb_1u_gnxcm",
-      "ts": 1793405248067,
-      "action": "research-added",
-      "detail": "Added \"Käthe Wohlfahrt\" to Brugge research"
-    },
-    {
-      "id": "log_mvvn63gw_1s_dhm3l",
-      "ts": 1793405229584,
-      "action": "research-added",
-      "detail": "Added \"De Witte Pelikaan\" to Brugge research"
-    },
-    {
-      "id": "log_mvvn5pzv_1q_172ns",
-      "ts": 1793405212124,
-      "action": "sheet-visibility-changed",
-      "detail": "Showed \"Shopping\" for Brugge"
-    },
-    {
-      "id": "log_mvvmnkxi_1p_j3tkv",
-      "ts": 1793404365750,
-      "action": "research-added",
-      "detail": "Added \"Missault\" to Brugge research"
     }
   ]
 }
