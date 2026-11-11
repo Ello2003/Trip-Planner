@@ -3696,10 +3696,37 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794359877276
+        },
+        {
+          "id": "res_mwbftg2z_x_lmfm0",
+          "sheet": "Restaurants",
+          "name": "Bistro Christophe",
+          "address": "Garenmarkt 34, 8000 Brugge, Belgium",
+          "lat": 51.2043078,
+          "lng": 3.2295314999999998,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwbfssha_v_78oa3",
+              "label": "Official Website",
+              "url": "https://www.christophe-brugge.be/"
+            },
+            {
+              "id": "link_mwbft0lk_w_1emsz",
+              "label": "Menu",
+              "url": "https://bistrochristophe.be/en/menu/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794360340907
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794359877276,
+      "updatedAt": 1794360340907,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8219,6 +8246,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbftg30_y_g27o4",
+      "ts": 1794360340908,
+      "action": "research-added",
+      "detail": "Added \"Bistro Christophe\" to Brugge research"
+    },
+    {
       "id": "log_mwbfjicd_u_6omnu",
       "ts": 1794359877277,
       "action": "research-added",
@@ -9411,12 +9444,6 @@
       "ts": 1793659519237,
       "action": "research-edited",
       "detail": "Updated \"Basilica of the Holy Blood\" in Brugge research"
-    },
-    {
-      "id": "log_mvzukaez_1j_rd7h5",
-      "ts": 1793659513787,
-      "action": "research-edited",
-      "detail": "Updated \"Belfry of Bruges\" in Brugge research"
     }
   ]
 }
