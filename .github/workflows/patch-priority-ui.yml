@@ -1,0 +1,21 @@
+name: Patch priority UI
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/patch_priority_ui.py'
+      - '.github/workflows/patch-priority-ui.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/patch_priority_ui.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts src/components/PlanTab.tsx src/App.tsx
+          git commit -m "Plan: show Research star priority; copy on promote" || echo nochange
+          git push
