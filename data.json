@@ -3544,6 +3544,28 @@
           "createdAt": 1794090940138
         },
         {
+          "id": "res_mw4bko1x_1x_phjlp",
+          "sheet": "Restaurants",
+          "name": "Seafoodbar Belge",
+          "address": "Eiermarkt 14, 8000 Brugge, Belgium",
+          "lat": 51.209329800000006,
+          "lng": 3.2236027999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw4bkmz7_1w_mj264",
+              "label": "Official Website",
+              "url": "http://www.seafoodbar-belge.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1793929949637
+        },
+        {
           "id": "res_mw4ba2hi_1c_r8frc",
           "sheet": "Restaurants",
           "name": "El Churrasco Argentino",
@@ -3632,28 +3654,6 @@
           "createdAt": 1793929785665
         },
         {
-          "id": "res_mw4bko1x_1x_phjlp",
-          "sheet": "Restaurants",
-          "name": "Seafoodbar Belge",
-          "address": "Eiermarkt 14, 8000 Brugge, Belgium",
-          "lat": 51.209329800000006,
-          "lng": 3.2236027999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw4bkmz7_1w_mj264",
-              "label": "Official Website",
-              "url": "http://www.seafoodbar-belge.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793929949637
-        },
-        {
           "id": "res_mw6ygo7u_2e_2jpmp",
           "sheet": "Restaurants",
           "name": "Brasserie Rozenhoedkaai",
@@ -3677,7 +3677,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794359844753,
+      "updatedAt": 1794359850810,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
