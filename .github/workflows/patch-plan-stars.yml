@@ -1,0 +1,21 @@
+name: Patch plan stars
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/patch_plan_stars.py'
+      - '.github/workflows/patch-plan-stars.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/patch_plan_stars.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/PlanTab.tsx
+          git commit -m "Plan: Priority column + research fallback for stars" || echo nochange
+          git push
