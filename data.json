@@ -2085,6 +2085,31 @@
           "notes": "",
           "visited": false,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfaitu_p_6lowg",
+          "sheet": "Coffee",
+          "name": "Kaffee Kamiel",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Zilverpand 7, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfaitu_q_srikq",
+              "label": "Official Website",
+              "url": "https://www.kaffeekamiel.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3246,8 +3271,8 @@
               "url": "https://www.kaffeekamiel.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfaitu_p_6lowg",
           "createdAt": 1794104829488
         },
         {
@@ -8172,6 +8197,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbfaitw_r_id1eg",
+      "ts": 1794359458004,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Kaffee Kamiel\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbfadz9_o_7uixk",
       "ts": 1794359451717,
       "action": "research-promoted",
@@ -9364,12 +9395,6 @@
       "ts": 1793659506712,
       "action": "research-edited",
       "detail": "Updated \"Market Square\" in Brugge research"
-    },
-    {
-      "id": "log_mvzujy8t_1g_d6w0u",
-      "ts": 1793659498013,
-      "action": "research-edited",
-      "detail": "Updated \"Historic centre of Brugge (Bruges)\" in Brugge research"
     }
   ]
 }
