@@ -1,3 +1,5 @@
+@import './dismissed-rows.css';
+
 :root {
   --ink: #1c2530;
   --ink-soft: #37455a;
