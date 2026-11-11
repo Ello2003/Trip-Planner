@@ -2336,6 +2336,58 @@
           "visited": false,
           "priority": null,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbh1gju_a_dyrwe",
+          "sheet": "Restaurants",
+          "name": "Seafoodbar Belge",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Eiermarkt 14, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbh1gju_b_fikoe",
+              "label": "Official Website",
+              "url": "http://www.seafoodbar-belge.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbh1hwc_d_c55w1",
+          "sheet": "Restaurants",
+          "name": "Au Petit Grand BV",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Philipstockstraat 18, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbh1hwc_e_9pnp1",
+              "label": "Official Website",
+              "url": "http://www.aupetitgrand.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3743,8 +3795,8 @@
               "url": "http://www.aupetitgrand.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mwbg6ssa_17_3barv",
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbh1hwc_d_c55w1",
           "createdAt": 1793929585439
         },
         {
@@ -3787,8 +3839,8 @@
               "url": "http://www.seafoodbar-belge.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mwbg6qbm_14_2l3gq",
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbh1gju_a_dyrwe",
           "createdAt": 1793929949637
         },
         {
@@ -8472,6 +8524,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbh1hwe_f_tm8p0",
+      "ts": 1794362396126,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Au Petit Grand BV\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbh1gjx_c_gypge",
+      "ts": 1794362394381,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Seafoodbar Belge\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbh1b5y_9_004v2",
       "ts": 1794362387398,
       "action": "research-edited",
@@ -9658,18 +9722,6 @@
       "ts": 1793663772368,
       "action": "trip-archived",
       "detail": "Archived trip \"London\""
-    },
-    {
-      "id": "log_mvzvhspx_25_zd1hr",
-      "ts": 1793661077157,
-      "action": "research-added",
-      "detail": "Added \"Hotel Dukes' Palace\" to Brugge research"
-    },
-    {
-      "id": "log_mvzv7ha8_22_atek9",
-      "ts": 1793660595776,
-      "action": "research-edited",
-      "detail": "Updated \"Hotel Aragon\" in Brugge research"
     }
   ]
 }
