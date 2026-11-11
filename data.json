@@ -3739,7 +3739,7 @@
               "url": "http://www.aneth.be/"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1794090940138
         },
@@ -3926,7 +3926,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362021009,
+      "updatedAt": 1794362029936,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8446,6 +8446,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbgtncg_3_j2rhm",
+      "ts": 1794362029936,
+      "action": "research-edited",
+      "detail": "Updated \"Petite Aneth\" in Brugge research"
+    },
+    {
       "id": "log_mwbgtggh_2_e1ctv",
       "ts": 1794362021009,
       "action": "research-edited",
@@ -9638,12 +9644,6 @@
       "ts": 1793659547492,
       "action": "research-edited",
       "detail": "Updated \"Huisbrouwerij De Halve Maan\" in Brugge research"
-    },
-    {
-      "id": "log_mvzukxsr_1t_nj5xn",
-      "ts": 1793659544091,
-      "action": "research-edited",
-      "detail": "Updated \"Boniface Bridge\" in Brugge research"
     }
   ]
 }
