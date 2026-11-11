@@ -3067,7 +3067,7 @@
           "lat": 51.220402799999995,
           "lng": 3.2332451,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355375044,
+      "updatedAt": 1794355391629,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcvd71_1t_as1gm",
+      "ts": 1794355391629,
+      "action": "research-edited",
+      "detail": "Updated \"Estaminet in 't Molenhuis🍺\" in Brugge research"
+    },
+    {
       "id": "log_mwbcurvf_1s_2c05i",
       "ts": 1794355363995,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793404062340,
       "action": "research-added",
       "detail": "Added \"Rosary Quay\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmgv79_15_wr0sg",
-      "ts": 1793404052469,
-      "action": "research-added",
-      "detail": "Added \"De Burg\" to Brugge research"
     }
   ]
 }
