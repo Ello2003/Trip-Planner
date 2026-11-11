@@ -1,0 +1,21 @@
+name: Apply quick promote UI
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/apply_quick_promote_ui.py'
+      - '.github/workflows/apply-quick-promote-ui.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/apply_quick_promote_ui.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/App.tsx src/components/ResearchTab.tsx src/components/TripDetailView.tsx
+          git commit -m "Quick add (+) to Plan without modal; keep -> Plan for edit" || echo nochange
+          git push
