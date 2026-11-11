@@ -1,0 +1,21 @@
+name: Dismissed strikethrough
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/patch_dismissed_strike.py'
+      - '.github/workflows/patch-dismissed-strike.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/patch_dismissed_strike.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/ResearchTab.tsx src/components/PlanTab.tsx src/index.css
+          git commit -m "UI: strikethrough full row when dismissed/cancelled" || echo nochange
+          git push
