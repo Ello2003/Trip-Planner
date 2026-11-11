@@ -3038,6 +3038,28 @@
           "createdAt": 1794086673646
         },
         {
+          "id": "res_mw77o6i4_o_jschl",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Hotel Van Cleef",
+          "address": "Molenmeers 11, 8000 Brugge, Belgium",
+          "lat": 51.2102551,
+          "lng": 3.2319484999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mw77o56k_n_s9evr",
+              "label": "Official Website",
+              "url": "http://www.hotelvancleef.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794104793580
+        },
+        {
           "id": "res_mw010p4b_e_f9m4n",
           "sheet": "Bars With Views | Cocktails",
           "name": "Groot Vlaenderen",
@@ -3098,28 +3120,6 @@
           "createdAt": 1794104731340
         },
         {
-          "id": "res_mw77o6i4_o_jschl",
-          "sheet": "Bars With Views | Cocktails",
-          "name": "Hotel Van Cleef",
-          "address": "Molenmeers 11, 8000 Brugge, Belgium",
-          "lat": 51.2102551,
-          "lng": 3.2319484999999997,
-          "priceLevel": null,
-          "priority": null,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mw77o56k_n_s9evr",
-              "label": "Official Website",
-              "url": "http://www.hotelvancleef.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1794104793580
-        },
-        {
           "id": "res_mwbci3t0_1k_htn6f",
           "sheet": "Bars With Views | Cocktails",
           "name": "The Republic",
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794354898479,
+      "updatedAt": 1794355311119,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
