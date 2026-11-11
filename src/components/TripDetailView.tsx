@@ -12,11 +12,10 @@ import { TripChartsTab } from './TripChartsTab';
 import { PlanTab } from './PlanTab';
 import { ResearchTab } from './ResearchTab';
 import { VisitedTab } from './VisitedTab';
-import { NotesTab } from './NotesTab';
 import { PackingTab } from './PackingTab';
 import { AttireTab } from './AttireTab';
 import { HaulsTab } from './HaulsTab';
-import { MobileBottomTabs } from './MobileBottomTabs';
+import { TripMap } from './TripMap';
 import { ensureActualExpense } from '../utils/storage';
 
 interface TripDetailViewProps {
@@ -82,6 +81,9 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
   onShowToast,
   onOpenCurrencyConverter
 }) => {
+  const [showMapBanner, setShowMapBanner] = React.useState<boolean>(false);
+  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>('both');
+
   const handleToggleVisited = (item: PlanItem) => {
     const copyTrip = { ...trip };
     const updatedPlan = copyTrip.planItems.map(p => {
@@ -93,6 +95,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
       }
       return updated;
     });
+
     onUpdateTrip(
       {
         ...copyTrip,
@@ -106,118 +109,276 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
     );
   };
 
-  const spent = budgetCountedTotal(trip);
-  const remaining = (trip.budget || 0) - spent;
-  const duration = tripDuration(trip);
+  const budgetSpent = budgetCountedTotal(trip);
+  const budget = Math.max(0, Number(trip.budget) || 0);
+  const diff = budget - budgetSpent;
+  const perPerson = trip.travelers > 1 ? budgetSpent / trip.travelers : null;
+
   const flag = countryFlagForTrip(trip);
-  const daysLeft = trip.startDate ? daysUntil(trip.startDate) : null;
+  const flagTitle = trip.countryGuessed
+    ? 'Guessed from trip name — click Edit Trip to confirm'
+    : trip.country;
+
+  let dateSub = `${trip.year} · ${trip.status}`;
+  if (trip.startDate) {
+    dateSub += ` · ${trip.startDate}${trip.endDate ? ' → ' + trip.endDate : ''}`;
+  }
+  const detailDays = tripDuration(trip);
+  if (detailDays) {
+    dateSub += ` · ${detailDays} day${detailDays !== 1 ? 's' : ''}`;
+  }
+  if (trip.status === 'upcoming' && trip.startDate) {
+    const d = daysUntil(trip.startDate);
+    dateSub += ` · ${d >= 0 ? 'in ' + d + ' days' : Math.abs(d) + ' days ago'}`;
+  }
+
+  const packingCount = trip.packingList.length
+    ? ` (${trip.packingList.filter(p => p.packed).length}/${trip.packingList.length})`
+    : '';
 
   const disabledTabsSet = new Set(settings.disabledTabs || ['attire', 'hauls']);
-  const visibleTabs = (settings.tripTabOrder || [
-    'plan',
-    'budget',
-    'charts',
-    'research',
-    'notes',
-    'posttrip',
-    'packing',
-    'attire',
-    'hauls'
-  ]).filter(k => !disabledTabsSet.has(k));
+  const visibleTabs = (settings.tripTabOrder || []).filter(k => !disabledTabsSet.has(k));
+
+  React.useEffect(() => {
+    if (disabledTabsSet.has(activeTripTab)) {
+      setActiveTripTab(visibleTabs[0] || 'budget');
+    }
+  }, [activeTripTab, settings.disabledTabs]);
+
+  const renderTabButton = (key: string) => {
+    let label = 'Tab';
+    let count = '';
+    if (key === 'budget') label = 'Budget';
+    if (key === 'charts') label = 'Charts';
+    if (key === 'plan') {
+      label = 'Plan';
+      if (trip.planItems.length) count = ` (${trip.planItems.length})`;
+    }
+    if (key === 'packing') {
+      label = 'Packing';
+      count = packingCount;
+    }
+    if (key === 'attire') {
+      label = 'Attire & Bags';
+      const outfitCount = trip.outfits?.length || 0;
+      if (outfitCount) count = ` (${outfitCount})`;
+    }
+    if (key === 'hauls') {
+      label = 'Lounges & Hauls';
+      const haulsCount = (trip.hauls?.length || 0) + (trip.loungeVisits?.length || 0);
+      if (haulsCount) count = ` (${haulsCount})`;
+    }
+    if (key === 'research') {
+      label = 'Research';
+      if (trip.research.length) count = ` (${trip.research.length})`;
+    }
+    if (key === 'posttrip') {
+      label = 'Visited';
+      const visitedCount = trip.planItems.filter(p => p.visited).length;
+      if (visitedCount) count = ` (${visitedCount})`;
+    }
+
+    return (
+      <button
+        key={key}
+        className={`tab-btn ${activeTripTab === key ? 'active' : ''}`}
+        onClick={() => setActiveTripTab(key)}
+      >
+        {label}
+        {count}
+      </button>
+    );
+  };
 
   return (
-    <main className="trip-detail">
-      <div className="trip-detail-header">
-        <button className="btn-ghost btn-sm" onClick={onBackToDashboard}>
-          All Trips
-        </button>
-        <div className="trip-detail-title">
-          <span className="trip-flag">{flag}</span>
-          <div>
-            <h1>{trip.name}</h1>
-            <div className="trip-detail-meta">
-              {trip.startDate && (
-                <span>
-                  {trip.startDate}
-                  {trip.endDate ? ` – ${trip.endDate}` : ''}
-                  {duration ? ` · ${duration}d` : ''}
-                </span>
-              )}
-              {typeof daysLeft === 'number' && daysLeft >= 0 && (
-                <span> · {daysLeft === 0 ? 'Today' : `${daysLeft}d away`}</span>
-              )}
-              <span>
-                {' '}· Budget {fmt(trip.budget || 0)} · Spent {fmt(spent)}
-                {remaining >= 0 ? ` · Left ${fmt(remaining)}` : ` · Over ${fmt(-remaining)}`}
+    <main>
+      <button className="btn-ghost back-btn" onClick={onBackToDashboard}>
+        ← All Trips
+      </button>
+
+      {(trip.status === 'archived' || trip.isArchived) && (
+        <div
+          style={{
+            margin: '12px 0 16px',
+            padding: '10px 16px',
+            background: 'var(--paper-raised)',
+            border: '1px dashed var(--brass)',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px',
+            fontSize: '13px'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ fontSize: '18px' }}>📦</span>
+            <span>
+              <strong>Archived Trip:</strong> This trip is currently hidden from the main dashboard.
+            </span>
+          </div>
+          <button
+            type="button"
+            className="btn-primary btn-sm"
+            onClick={() => {
+              onUpdateTrip(
+                { ...trip, status: 'upcoming', isArchived: false, updatedAt: Date.now() },
+                { action: 'trip-unarchived', detail: `Restored "${trip.name}" to active status` }
+              );
+            }}
+          >
+            Restore to Active
+          </button>
+        </div>
+      )}
+
+      <div className="detail-header">
+        <div>
+          <div className="detail-title">
+            {flag && (
+              <span
+                className={`pass-flag ${trip.countryGuessed ? 'pass-flag-guessed' : ''}`}
+                title={flagTitle}
+              >
+                {flag}{' '}
               </span>
+            )}
+            {trip.name}
+            {(trip.status === 'archived' || trip.isArchived) && (
+              <span
+                style={{
+                  marginLeft: '10px',
+                  fontSize: '11px',
+                  fontFamily: 'var(--font-mono)',
+                  padding: '2px 8px',
+                  borderRadius: '10px',
+                  background: 'var(--paper-edge)',
+                  color: 'var(--ink-soft)',
+                  verticalAlign: 'middle',
+                  fontWeight: 500
+                }}
+              >
+                📦 Archived
+              </span>
+            )}
+          </div>
+          <div className="detail-sub">{dateSub}</div>
+        </div>
+
+        <div className="detail-figs">
+          <div className="detail-fig">
+            <div className="label">Budget</div>
+            <div className="value">{fmt(budget)}</div>
+          </div>
+          <div className="detail-fig">
+            <div className="label">Spent</div>
+            <div className="value">{fmt(budgetSpent)}</div>
+          </div>
+          <div className="detail-fig">
+            <div className="label">Variance</div>
+            <div
+              className="value"
+              style={{ color: diff < 0 ? '#e0897c' : '#8fd6c3' }}
+            >
+              {diff < 0 ? '-' : ''}
+              {fmt(Math.abs(diff))}
             </div>
           </div>
-        </div>
-        <div className="trip-detail-actions">
-          <button className="btn-ghost btn-sm" onClick={onEditTrip}>
-            Edit
-          </button>
-          <button className="btn-ghost btn-sm" onClick={onDuplicateTrip}>
-            Duplicate
-          </button>
-          <button className="btn-ghost btn-sm" onClick={onOpenReorderTabs}>
-            Tabs
-          </button>
-          <button className="btn-ghost btn-sm" onClick={onExportPDF}>
-            Export
-          </button>
-          <button className="btn-ghost btn-sm danger" onClick={onDeleteTrip}>
-            Delete
-          </button>
+          {perPerson != null && (
+            <div className="detail-fig">
+              <div className="label">Per Person ({trip.travelers})</div>
+              <div className="value">{fmt(perPerson)}</div>
+            </div>
+          )}
         </div>
       </div>
 
-      <div className="trip-tabs desktop-only">
-        {visibleTabs.map(tab => (
+      <div className="toolbar">
+        {settings.showItineraryMap !== false && (
           <button
-            key={tab}
-            className={`trip-tab ${activeTripTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTripTab(tab)}
+            className={`btn-ghost ${showMapBanner ? 'active' : ''}`}
+            onClick={() => setShowMapBanner(!showMapBanner)}
+            style={{ borderColor: showMapBanner ? 'var(--brass)' : undefined }}
           >
-            {tab === 'plan'
-              ? 'Plan'
-              : tab === 'budget'
-              ? 'Budget'
-              : tab === 'charts'
-              ? 'Charts'
-              : tab === 'research'
-              ? 'Research'
-              : tab === 'notes'
-              ? 'Notes'
-              : tab === 'posttrip'
-              ? 'Visited'
-              : tab === 'packing'
-              ? 'Packing'
-              : tab === 'attire'
-              ? 'Attire'
-              : tab === 'hauls'
-              ? 'Hauls'
-              : tab}
+            🗺️ {showMapBanner ? 'Hide Map Banner' : 'Itinerary Map'}
           </button>
-        ))}
+        )}
+        {settings.enableCurrencyConverter !== false && onOpenCurrencyConverter && (
+          <button
+            type="button"
+            className="btn-ghost"
+            onClick={onOpenCurrencyConverter}
+            title="Open Currency Converter"
+          >
+            💱 Currency
+          </button>
+        )}
+        <button
+          type="button"
+          className="btn-ghost"
+          onClick={() => {
+            const isNowArchived = trip.status === 'archived' || !!trip.isArchived;
+            const nextStatus = isNowArchived ? 'upcoming' : 'archived';
+            onUpdateTrip(
+              {
+                ...trip,
+                status: nextStatus,
+                isArchived: !isNowArchived,
+                updatedAt: Date.now()
+              },
+              {
+                action: isNowArchived ? 'trip-unarchived' : 'trip-archived',
+                detail: `${isNowArchived ? 'Unarchived' : 'Archived'} "${trip.name}"`
+              }
+            );
+          }}
+          title={trip.status === 'archived' ? 'Restore to active trips' : 'Archive and hide from main dashboard'}
+        >
+          📦 {trip.status === 'archived' || trip.isArchived ? 'Unarchive Trip' : 'Archive Trip'}
+        </button>
+        <button className="btn-ghost" onClick={onEditTrip}>
+          Edit Trip Details
+        </button>
+        <button className="btn-ghost" onClick={onDuplicateTrip}>
+          Duplicate as New Trip
+        </button>
+        <button className="btn-danger" onClick={onDeleteTrip}>
+          Delete Trip
+        </button>
       </div>
 
-      {activeTripTab === 'plan' && (
-        <PlanTab
+      {showMapBanner && (
+        <TripMap
           trip={trip}
           sheets={sheets}
           categories={categories}
-          onRenameSheet={onRenameSheet}
-          onRecolorSheet={onRecolorSheet}
+          settings={settings}
+          onOpenMapSettings={onOpenMapSettings}
           onUpdateTrip={onUpdateTrip}
-          onOpenAddPlanModal={onOpenAddPlanModal}
-          onOpenEditPlanModal={onOpenEditPlanModal}
-          onMoveToResearch={onMoveToResearch}
-          onManageSheets={onManageSheets}
-          onExportPDF={onExportPDF}
-          onOpenCurrencyConverter={onOpenCurrencyConverter}
+          onToggleVisited={handleToggleVisited}
         />
       )}
+
+      <div className="tab-bar">
+        {visibleTabs.map(renderTabButton)}
+        <button
+          className="btn-ghost btn-sm"
+          onClick={onOpenReorderTabs}
+          title="Customize & Reorder Tabs"
+          style={{
+            alignSelf: 'center',
+            padding: '5px 10px',
+            fontSize: '0.82rem',
+            marginLeft: 'auto',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '4px'
+          }}
+        >
+          ⚙️ Tabs
+        </button>
+      </div>
+
       {activeTripTab === 'budget' && (
         <BudgetTab
           trip={trip}
@@ -228,7 +389,125 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           onOpenCurrencyConverter={onOpenCurrencyConverter}
         />
       )}
-      {activeTripTab === 'charts' && <TripChartsTab trip={trip} categories={categories} />}
+
+      {activeTripTab === 'charts' && (
+        <TripChartsTab trip={trip} categories={categories} />
+      )}
+
+      {activeTripTab === 'plan' && (
+        <div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginBottom: '12px',
+              padding: '6px 12px',
+              background: 'var(--paper-raised)',
+              border: '1px solid var(--paper-edge)',
+              borderRadius: '6px',
+              flexWrap: 'wrap',
+              gap: '8px'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--ink)' }}>
+                View:
+              </span>
+              <div style={{ display: 'inline-flex', gap: '4px' }}>
+                <button
+                  type="button"
+                  className={`btn-ghost btn-sm ${planViewMode === 'both' ? 'active' : ''}`}
+                  onClick={() => setPlanViewMode('both')}
+                  style={{
+                    fontSize: '11px',
+                    padding: '3px 8px',
+                    background: planViewMode === 'both' ? 'var(--brass)' : 'transparent',
+                    color: planViewMode === 'both' ? '#fff' : 'inherit'
+                  }}
+                >
+                  🔀 Map & Timeline
+                </button>
+                <button
+                  type="button"
+                  className={`btn-ghost btn-sm ${planViewMode === 'timeline' ? 'active' : ''}`}
+                  onClick={() => setPlanViewMode('timeline')}
+                  style={{
+                    fontSize: '11px',
+                    padding: '3px 8px',
+                    background: planViewMode === 'timeline' ? 'var(--brass)' : 'transparent',
+                    color: planViewMode === 'timeline' ? '#fff' : 'inherit'
+                  }}
+                >
+                  📋 Timeline Only
+                </button>
+                <button
+                  type="button"
+                  className={`btn-ghost btn-sm ${planViewMode === 'map' ? 'active' : ''}`}
+                  onClick={() => setPlanViewMode('map')}
+                  style={{
+                    fontSize: '11px',
+                    padding: '3px 8px',
+                    background: planViewMode === 'map' ? 'var(--brass)' : 'transparent',
+                    color: planViewMode === 'map' ? '#fff' : 'inherit'
+                  }}
+                >
+                  🗺️ Map Only
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              className="btn-ghost btn-sm"
+              onClick={onOpenMapSettings}
+              title="Configure Google Maps API Key"
+              style={{ fontSize: '11px', padding: '3px 8px', fontFamily: 'var(--font-mono)' }}
+            >
+              ⚙️ Maps Key
+            </button>
+          </div>
+
+          {(planViewMode === 'both' || planViewMode === 'map') && !showMapBanner && (
+            <TripMap
+              trip={trip}
+              sheets={sheets}
+              categories={categories}
+              settings={settings}
+              onOpenMapSettings={onOpenMapSettings}
+              onUpdateTrip={onUpdateTrip}
+              onToggleVisited={handleToggleVisited}
+            />
+          )}
+
+          {planViewMode !== 'map' && (
+            <PlanTab
+              trip={trip}
+              sheets={sheets}
+              categories={categories}
+              onRenameSheet={onRenameSheet}
+              onRecolorSheet={onRecolorSheet}
+              onUpdateTrip={onUpdateTrip}
+              onOpenAddPlanModal={onOpenAddPlanModal}
+              onOpenEditPlanModal={onOpenEditPlanModal}
+              onMoveToResearch={onMoveToResearch}
+              onManageSheets={onManageSheets}
+              onExportPDF={onExportPDF}
+              onOpenCurrencyConverter={onOpenCurrencyConverter}
+            />
+          )}
+        </div>
+      )}
+
+
+      {activeTripTab === 'attire' && (
+        <AttireTab trip={trip} onUpdateTrip={onUpdateTrip} />
+      )}
+
+      {activeTripTab === 'hauls' && (
+        <HaulsTab trip={trip} onUpdateTrip={onUpdateTrip} />
+      )}
+
       {activeTripTab === 'research' && (
         <ResearchTab
           trip={trip}
@@ -246,9 +525,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           onOpenMapSettings={onOpenMapSettings}
         />
       )}
-      {activeTripTab === 'notes' && (
-        <NotesTab key={trip.id} trip={trip} onUpdateTrip={onUpdateTrip} onShowToast={onShowToast} />
-      )}
+
       {activeTripTab === 'posttrip' && (
         <VisitedTab
           trip={trip}
@@ -259,6 +536,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           onUpdateTrip={onUpdateTrip}
         />
       )}
+
       {activeTripTab === 'packing' && (
         <PackingTab
           trip={trip}
@@ -267,9 +545,6 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           onShowToast={onShowToast}
         />
       )}
-      {activeTripTab === 'attire' && <AttireTab trip={trip} onUpdateTrip={onUpdateTrip} />}
-      {activeTripTab === 'hauls' && <HaulsTab trip={trip} onUpdateTrip={onUpdateTrip} />}
-      <MobileBottomTabs tabs={visibleTabs} active={activeTripTab} onChange={setActiveTripTab} />
     </main>
   );
 };
