@@ -1554,6 +1554,122 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbcvn5y_1v_1a7bj",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "NOBLE Bruges",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Meestraat 4, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbcvn5y_1w_9btey",
+              "label": "Official Website",
+              "url": "http://www.noblebruges.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "With View",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbcvpf3_1z_nsfi6",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "ODA Rooftop Bar",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Steenstraat 96, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbcvpf3_20_i2wnr",
+              "label": "Official Website",
+              "url": "https://www.odarooftopbar.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Views",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbcvraf_23_qd23k",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "’t Klein Venetië",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Braambergstraat 1, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbcvraf_24_d4j93",
+              "label": "Official Website",
+              "url": "http://www.kleinvenetie.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Views",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwbcvtbs_27_r5at6",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Opus Latino",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Burg 15, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbcvtbs_28_q2ad6",
+              "label": "Official Website",
+              "url": "http://www.opuslatino.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Views.",
+          "visited": false,
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -2967,8 +3083,8 @@
               "url": "http://www.noblebruges.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbcvn5y_1v_1a7bj",
           "createdAt": 1793930232872
         },
         {
@@ -2989,8 +3105,8 @@
               "url": "https://www.odarooftopbar.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbcvpf3_1z_nsfi6",
           "createdAt": 1794086689917
         },
         {
@@ -3011,8 +3127,8 @@
               "url": "http://www.kleinvenetie.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbcvraf_23_qd23k",
           "createdAt": 1794087917545
         },
         {
@@ -3033,8 +3149,8 @@
               "url": "http://www.opuslatino.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbcvtbs_27_r5at6",
           "createdAt": 1794086673646
         },
         {
@@ -3121,7 +3237,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355398425,
+      "updatedAt": 1794355414034,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7641,6 +7757,54 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcvuhf_2a_kf4zh",
+      "ts": 1794355414035,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Opus Latino\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvtbt_29_nn208",
+      "ts": 1794355412537,
+      "action": "research-promoted",
+      "detail": "Promoted \"Opus Latino\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvscv_26_5yyh0",
+      "ts": 1794355411279,
+      "action": "plan-item-edited",
+      "detail": "Updated \"’t Klein Venetië\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvrag_25_42uvd",
+      "ts": 1794355409896,
+      "action": "research-promoted",
+      "detail": "Promoted \"’t Klein Venetië\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvqhg_22_ngky8",
+      "ts": 1794355408852,
+      "action": "plan-item-edited",
+      "detail": "Updated \"ODA Rooftop Bar\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvpf4_21_a2scz",
+      "ts": 1794355407472,
+      "action": "research-promoted",
+      "detail": "Promoted \"ODA Rooftop Bar\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvoi5_1y_2ly0b",
+      "ts": 1794355406285,
+      "action": "plan-item-edited",
+      "detail": "Updated \"NOBLE Bruges\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvn5y_1x_6meer",
+      "ts": 1794355404550,
+      "action": "research-promoted",
+      "detail": "Promoted \"NOBLE Bruges\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbcvifu_1u_sq8oy",
       "ts": 1794355398426,
       "action": "research-deleted",
@@ -8791,54 +8955,6 @@
       "ts": 1793404365750,
       "action": "research-added",
       "detail": "Added \"Missault\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmn3dt_1n_pw9jh",
-      "ts": 1793404343009,
-      "action": "research-added",
-      "detail": "Added \"Jerry's Cigar Bar\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmikzc_1l_7ztxn",
-      "ts": 1793404132536,
-      "action": "research-added",
-      "detail": "Added \"Gunpowder Tower (Poertoren)\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmicdl_1j_9r65n",
-      "ts": 1793404121385,
-      "action": "research-added",
-      "detail": "Added \"Minnewater\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmi5uj_1h_l2vkq",
-      "ts": 1793404112923,
-      "action": "research-added",
-      "detail": "Added \"De Wijngaard\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmhzxs_1f_04xem",
-      "ts": 1793404105264,
-      "action": "research-added",
-      "detail": "Added \"Huisbrouwerij De Halve Maan\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmhqev_1d_45gm9",
-      "ts": 1793404092919,
-      "action": "research-added",
-      "detail": "Added \"Boniface Bridge\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmhk98_1b_ec8aj",
-      "ts": 1793404084940,
-      "action": "research-added",
-      "detail": "Added \"Simon Stevin\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmhana_19_cu75c",
-      "ts": 1793404072486,
-      "action": "research-added",
-      "detail": "Added \"De Dijver park\" to Brugge research"
     }
   ]
 }
