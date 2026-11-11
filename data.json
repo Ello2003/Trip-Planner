@@ -2140,6 +2140,56 @@
           "notes": "",
           "visited": false,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbg6qbm_14_2l3gq",
+          "sheet": "Restaurants",
+          "name": "Seafoodbar Belge",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Eiermarkt 14, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbg6qbm_15_hft2f",
+              "label": "Official Website",
+              "url": "http://www.seafoodbar-belge.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbg6ssa_17_3barv",
+          "sheet": "Restaurants",
+          "name": "Au Petit Grand BV",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Philipstockstraat 18, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbg6ssa_18_e88dt",
+              "label": "Official Website",
+              "url": "http://www.aupetitgrand.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3547,8 +3597,8 @@
               "url": "http://www.aupetitgrand.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbg6ssa_17_3barv",
           "createdAt": 1793929585439
         },
         {
@@ -3591,8 +3641,8 @@
               "url": "http://www.seafoodbar-belge.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbg6qbm_14_2l3gq",
           "createdAt": 1793929949637
         },
         {
@@ -8276,6 +8326,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbg6ssd_19_n1zbh",
+      "ts": 1794360963901,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Au Petit Grand BV\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbg6qbt_16_5qrui",
+      "ts": 1794360960713,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Seafoodbar Belge\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbg3qqf_13_o7ndv",
       "ts": 1794360821271,
       "action": "research-promoted",
@@ -9462,18 +9524,6 @@
       "ts": 1793659539798,
       "action": "research-edited",
       "detail": "Updated \"Simon Stevin\" in Brugge research"
-    },
-    {
-      "id": "log_mvzukqv0_1p_cirve",
-      "ts": 1793659535100,
-      "action": "research-edited",
-      "detail": "Updated \"De Dijver park\" in Brugge research"
-    },
-    {
-      "id": "log_mvzuknwn_1o_17zsr",
-      "ts": 1793659531271,
-      "action": "research-edited",
-      "detail": "Updated \"Rosary Quay\" in Brugge research"
     }
   ]
 }
