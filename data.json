@@ -3751,7 +3751,7 @@
           "lat": 51.209329800000006,
           "lng": 3.2236027999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3761,7 +3761,7 @@
               "url": "http://www.seafoodbar-belge.be/"
             }
           ],
-          "status": "promoted",
+          "status": "researching",
           "linkedPlanItemId": "plan_mwbg6qbm_14_2l3gq",
           "createdAt": 1793929949637
         },
@@ -3926,7 +3926,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362029936,
+      "updatedAt": 1794362035062,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8446,6 +8446,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbgtrau_4_9zd98",
+      "ts": 1794362035062,
+      "action": "research-edited",
+      "detail": "Updated \"Seafoodbar Belge\" in Brugge research"
+    },
+    {
       "id": "log_mwbgtncg_3_j2rhm",
       "ts": 1794362029936,
       "action": "research-edited",
@@ -9638,12 +9644,6 @@
       "ts": 1793659577395,
       "action": "research-edited",
       "detail": "Updated \"De Wijngaard\" in Brugge research"
-    },
-    {
-      "id": "log_mvzul0f8_1v_vugyi",
-      "ts": 1793659547492,
-      "action": "research-edited",
-      "detail": "Updated \"Huisbrouwerij De Halve Maan\" in Brugge research"
     }
   ]
 }
