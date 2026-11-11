@@ -3925,6 +3925,11 @@
               "id": "link_mw4bh4vu_1n_8h9f9",
               "label": "Official Website",
               "url": "http://www.degastro.be/"
+            },
+            {
+              "id": "link_mwbh51nw_g_8n3o1",
+              "label": "Menu",
+              "url": "https://cdn.prod.website-files.com/6266b3961c3bfddae7ce6434/68bdeb761716cd7d24b9dcae_DeGastro-MainMenu5%5BDEF%5D.pdf"
             }
           ],
           "status": "researching",
@@ -4004,7 +4009,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794362387398,
+      "updatedAt": 1794362567237,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8524,6 +8529,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbh55xh_h_9vqxe",
+      "ts": 1794362567237,
+      "action": "research-edited",
+      "detail": "Updated \"De Gastro\" in Brugge research"
+    },
+    {
       "id": "log_mwbh1hwe_f_tm8p0",
       "ts": 1794362396126,
       "action": "research-promoted",
@@ -9716,12 +9727,6 @@
       "ts": 1793663773194,
       "action": "trip-archived",
       "detail": "Archived trip \"Santorini\""
-    },
-    {
-      "id": "log_mvzx3kcw_2_lt1ag",
-      "ts": 1793663772368,
-      "action": "trip-archived",
-      "detail": "Archived trip \"London\""
     }
   ]
 }
