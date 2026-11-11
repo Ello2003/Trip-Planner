@@ -406,7 +406,7 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                           </thead>
                           <tbody>
                             {items.map(i => (
-                              <tr key={i.id}>
+                              <tr key={i.id} className={i.status === 'cancelled' ? 'is-cancelled row-dismissed' : ''} >
                                 <td>
                                   <div>
                                     <strong>{i.name}</strong>

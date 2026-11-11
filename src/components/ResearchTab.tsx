@@ -205,7 +205,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                             </thead>
                             <tbody>
                               {items.map(r => (
-                                <SortableRow as="tr" key={r.id} id={r.id}>
+                                <SortableRow as="tr" key={r.id} id={r.id} className={r.status === 'dismissed' ? 'row-dismissed' : ''} >
                                   <td className="drag-cell"><DragHandle /></td>
                                   <td style={{ minWidth: '180px' }}>
                                     <strong>{r.name}</strong>
