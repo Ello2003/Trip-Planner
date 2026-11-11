@@ -2505,6 +2505,26 @@
           "visited": false,
           "priority": null,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbhm110_9_0gk2d",
+          "sheet": "Breakfasts | Bakeries | Casual Dining",
+          "name": "Fritbar",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Fritbar, 3, Katelijnestraat, Onze-Lieve-Vrouwekwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3182,12 +3202,12 @@
           "lat": 51.2037742,
           "lng": 3.2247633,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
           "status": "promoted",
-          "linkedPlanItemId": "plan_mwbhlums_6_sth9g",
+          "linkedPlanItemId": "plan_mwbhm110_9_0gk2d",
           "createdAt": 1793671841204
         },
         {
@@ -4126,7 +4146,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794363312864,
+      "updatedAt": 1794363352781,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8646,6 +8666,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbhm112_a_nnf79",
+      "ts": 1794363354038,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Fritbar\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbhm025_8_nf74f",
+      "ts": 1794363352781,
+      "action": "research-edited",
+      "detail": "Updated \"Fritbar\" in Brugge research"
+    },
+    {
       "id": "log_mwbhlumw_7_7uih8",
       "ts": 1794363345752,
       "action": "research-promoted",
@@ -9832,18 +9864,6 @@
       "ts": 1793663982885,
       "action": "research-edited",
       "detail": "Updated \"Panda & Sons\" in Edinburgh research"
-    },
-    {
-      "id": "log_mvzx70ux_4_m3y2t",
-      "ts": 1793663933722,
-      "action": "research-edited",
-      "detail": "Updated \"Brewhemia\" in Edinburgh research"
-    },
-    {
-      "id": "log_mvzx5gyn_3_jhywf",
-      "ts": 1793663861279,
-      "action": "research-edited",
-      "detail": "Updated \"Cafe Royal\" in Edinburgh research"
     }
   ]
 }
