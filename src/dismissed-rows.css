@@ -1,0 +1,22 @@
+/* Full-row strikethrough when Research dismissed / Plan cancelled */
+#travel-ledger-root .tl-row.is-cancelled,
+#travel-ledger-root tr.row-dismissed,
+#travel-ledger-root tr.is-cancelled {
+  opacity: 0.55;
+}
+
+#travel-ledger-root .tl-row.is-cancelled .tl-time,
+#travel-ledger-root .tl-row.is-cancelled .tl-name,
+#travel-ledger-root .tl-row.is-cancelled .tl-notes,
+#travel-ledger-root .tl-row.is-cancelled .tl-sheet-tag,
+#travel-ledger-root tr.row-dismissed td,
+#travel-ledger-root tr.is-cancelled td {
+  text-decoration: line-through;
+}
+
+/* Keep action buttons usable */
+#travel-ledger-root .tl-row.is-cancelled .tl-reorder-cell,
+#travel-ledger-root tr.row-dismissed td:last-child,
+#travel-ledger-root tr.is-cancelled td:last-child {
+  text-decoration: none;
+}

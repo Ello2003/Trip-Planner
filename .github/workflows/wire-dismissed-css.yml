@@ -1,0 +1,22 @@
+name: Wire dismissed CSS
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wire_dismissed_css.py'
+      - 'src/dismissed-rows.css'
+      - '.github/workflows/wire-dismissed-css.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/wire_dismissed_css.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/index.css src/components/ResearchTab.tsx src/dismissed-rows.css
+          git commit -m "UI: wire dismissed-row strikethrough styles" || echo nochange
+          git push
