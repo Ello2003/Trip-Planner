@@ -3045,7 +3045,7 @@
           "lat": 51.2102551,
           "lng": 3.2319484999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -3143,7 +3143,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794355337070,
+      "updatedAt": 1794355342669,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -7663,6 +7663,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbcubf1_1r_sdpmd",
+      "ts": 1794355342669,
+      "action": "research-edited",
+      "detail": "Updated \"Hotel Van Cleef\" in Brugge research"
+    },
+    {
       "id": "log_mwbcu73i_1q_1r7l4",
       "ts": 1794355337071,
       "action": "research-edited",
@@ -8855,12 +8861,6 @@
       "ts": 1793404044316,
       "action": "research-added",
       "detail": "Added \"Basilica of the Holy Blood\" to Brugge research"
-    },
-    {
-      "id": "log_mvvmgfkm_11_ia350",
-      "ts": 1793404032214,
-      "action": "research-added",
-      "detail": "Added \"Belfry of Bruges\" to Brugge research"
     }
   ]
 }
