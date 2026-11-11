@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { loadTripUi, saveTripUi } from '../utils/uiPrefs';
 import { Trip, Category, Sheet, Settings, PlanItem, ResearchItem } from '../types';
 import {
   fmt,
@@ -81,8 +82,13 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
   onShowToast,
   onOpenCurrencyConverter
 }) => {
-  const [showMapBanner, setShowMapBanner] = React.useState<boolean>(false);
-  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>('both');
+  const _prefs = loadTripUi(trip.id);
+  const [showMapBanner, setShowMapBanner] = React.useState<boolean>(() => !!_prefs.showMapBanner);
+  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>(() => _prefs.planViewMode || 'both');
+
+  useEffect(() => {
+    saveTripUi(trip.id, { showMapBanner, planViewMode });
+  }, [trip.id, showMapBanner, planViewMode]);
 
   const handleToggleVisited = (item: PlanItem) => {
     const copyTrip = { ...trip };

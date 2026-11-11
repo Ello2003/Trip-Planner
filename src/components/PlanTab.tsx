@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { loadTripUi, saveTripUi } from '../utils/uiPrefs';
 import { InlineText, InlineColor, rekey } from './InlineEdit';
 import { SortableList, SortableRow, DragHandle } from './Sortable';
 import { Trip, Sheet, PlanItem, Category } from '../types';
@@ -56,8 +57,16 @@ export const PlanTab: React.FC<PlanTabProps> = ({
   onExportPDF,
   onOpenCurrencyConverter
 }) => {
-  const [timelineCollapsed, setTimelineCollapsed] = useState(false);
-  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>({});
+  const _prefs = loadTripUi(trip.id);
+  const [timelineCollapsed, setTimelineCollapsed] = useState(() => !!_prefs.timelineCollapsed);
+  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>(() => _prefs.planCollapsedSheets || {});
+
+  useEffect(() => {
+    saveTripUi(trip.id, {
+      timelineCollapsed,
+      planCollapsedSheets: collapsedSheets
+    });
+  }, [trip.id, timelineCollapsed, collapsedSheets]);
 
   const toggleSheet = (key: string) => {
     setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));

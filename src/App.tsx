@@ -17,7 +17,8 @@ import {
   loadHistory,
   defaultSeedState,
   resolveExpenseCategory
-} from './utils/storage';
+} from './utils/storage'
+import { loadGlobalUi, saveGlobalUi } from './utils/uiPrefs';
 import { uid, singleLine, fmt, renameSheetsInState, renameExpenseCategoriesInState } from './utils/helpers';
 import {
   githubConfigured,
@@ -67,9 +68,14 @@ export const App: React.FC = () => {
   } = useFirebase();
 
   const [state, setState] = useState<AppState>(defaultSeedState);
-  const [activeTripId, setActiveTripId] = useState<string | null>(null);
-  const [activeTripTab, setActiveTripTab] = useState<string>('budget');
-  const [activeDashTab, setActiveDashTab] = useState<'trips' | 'charts'>('trips');
+  const _ui0 = loadGlobalUi();
+  const [activeTripId, setActiveTripId] = useState<string | null>(() => _ui0.activeTripId ?? null);
+  const [activeTripTab, setActiveTripTab] = useState<string>(() => _ui0.activeTripTab || 'budget');
+  const [activeDashTab, setActiveDashTab] = useState<'trips' | 'charts'>(() => _ui0.activeDashTab || 'trips');
+
+  useEffect(() => {
+    saveGlobalUi({ activeTripId, activeTripTab, activeDashTab });
+  }, [activeTripId, activeTripTab, activeDashTab]);
 
   const hasSyncedInitialCloudRef = useRef(false);
   useEffect(() => {

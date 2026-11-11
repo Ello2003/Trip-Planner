@@ -1,6 +1,7 @@
 import { InlineText, InlineColor, rekey } from './InlineEdit';
 import { SortableList, SortableRow, DragHandle } from './Sortable';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { loadTripUi, saveTripUi } from '../utils/uiPrefs';
 import { Trip, Sheet, ResearchItem, Settings, Category } from '../types';
 import { fmt, extractMapEmbedUrl } from '../utils/helpers';
 import { ResearchMap } from './ResearchMap';
@@ -39,11 +40,20 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   onManageSheets,
   onOpenMapSettings
 }) => {
-  const [researchView, setResearchView] = useState<'both' | 'list' | 'map'>('both');
-  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>({});
-  const [expandedSectionMaps, setExpandedSectionMaps] = useState<Record<string, boolean>>({});
+  const _prefs = loadTripUi(trip.id);
+  const [researchView, setResearchView] = useState<'both' | 'list' | 'map'>(() => _prefs.researchView || 'both');
+  const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>(() => _prefs.researchCollapsedSheets || {});
+  const [expandedSectionMaps, setExpandedSectionMaps] = useState<Record<string, boolean>>(() => _prefs.researchExpandedMaps || {});
   const [sectionMapEditMode, setSectionMapEditMode] = useState<Record<string, boolean>>({});
   const [sectionMapInputs, setSectionMapInputs] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    saveTripUi(trip.id, {
+      researchView,
+      researchCollapsedSheets: collapsedSheets,
+      researchExpandedMaps: expandedSectionMaps
+    });
+  }, [trip.id, researchView, collapsedSheets, expandedSectionMaps]);
 
   const toggleSheet = (key: string) => {
     setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));
