@@ -1941,6 +1941,150 @@
           "notes": "",
           "visited": false,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfabk5_8_jtgt6",
+          "sheet": "Coffee",
+          "name": "AVI '38 Specialty Coffeebar Bruges",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Niklaas Desparsstraat 8, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfabzf_a_f0zbu",
+          "sheet": "Coffee",
+          "name": "Nuba Cafe Brugge",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Oude Burg 10, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfabzf_b_gp9cj",
+              "label": "Official Website",
+              "url": "https://www.instagram.com/nubacafe/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfacfu_d_o81ux",
+          "sheet": "Coffee",
+          "name": "Coffeebar Adriaan",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Adriaan Willaertstraat 7, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfacfu_e_pf4fg",
+              "label": "Official Website",
+              "url": "http://www.coffeebaradriaan.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfacv9_g_08xmv",
+          "sheet": "Coffee",
+          "name": "Blackbird Coffee Club",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Jan van Eyckplein 7, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfacv9_h_z16hx",
+              "label": "Official Website",
+              "url": "https://www.blackbird-bruges.com/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfadl7_j_xmw2t",
+          "sheet": "Coffee",
+          "name": "EspressoBar - I Love Coffee",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Sint-Jakobsstraat 10, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfadl7_k_l7l25",
+              "label": "Official Website",
+              "url": "https://ilcoffee.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwbfadz8_m_4nzb5",
+          "sheet": "Coffee",
+          "name": "Les Coquettes Le Café",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Braambergstraat 12 a, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwbfadz8_n_bv5zq",
+              "label": "Official Website",
+              "url": "http://www.lescoquettes.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -2970,8 +3114,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfabk5_8_jtgt6",
           "createdAt": 1794354309632
         },
         {
@@ -2992,8 +3136,8 @@
               "url": "https://www.instagram.com/nubacafe/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfabzf_a_f0zbu",
           "createdAt": 1793929113622
         },
         {
@@ -3014,8 +3158,8 @@
               "url": "http://www.coffeebaradriaan.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfacfu_d_o81ux",
           "createdAt": 1793929131580
         },
         {
@@ -3036,8 +3180,8 @@
               "url": "https://www.blackbird-bruges.com/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfacv9_g_08xmv",
           "createdAt": 1793929182725
         },
         {
@@ -3058,8 +3202,8 @@
               "url": "https://ilcoffee.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfadl7_j_xmw2t",
           "createdAt": 1793929197471
         },
         {
@@ -3080,8 +3224,8 @@
               "url": "http://www.lescoquettes.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwbfadz8_m_4nzb5",
           "createdAt": 1793929149363
         },
         {
@@ -8028,6 +8172,42 @@
   },
   "activityLog": [
     {
+      "id": "log_mwbfadz9_o_7uixk",
+      "ts": 1794359451717,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Les Coquettes Le Café\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfadl7_l_shyju",
+      "ts": 1794359451211,
+      "action": "research-promoted",
+      "detail": "Quick-added \"EspressoBar - I Love Coffee\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfacv9_i_3aoxb",
+      "ts": 1794359450277,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Blackbird Coffee Club\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfacfu_f_cy9ab",
+      "ts": 1794359449722,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Coffeebar Adriaan\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfabzf_c_lx1gs",
+      "ts": 1794359449131,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Nuba Cafe Brugge\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfabk7_9_dohc4",
+      "ts": 1794359448583,
+      "action": "research-promoted",
+      "detail": "Quick-added \"AVI '38 Specialty Coffeebar Bruges\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwbfa23f_7_lvry9",
       "ts": 1794359436315,
       "action": "research-promoted",
@@ -9190,42 +9370,6 @@
       "ts": 1793659498013,
       "action": "research-edited",
       "detail": "Updated \"Historic centre of Brugge (Bruges)\" in Brugge research"
-    },
-    {
-      "id": "log_mvzujrrj_1f_bf6t2",
-      "ts": 1793659489615,
-      "action": "research-edited",
-      "detail": "Updated \"Missault\" in Brugge research"
-    },
-    {
-      "id": "log_mvzujk4o_1d_3us3m",
-      "ts": 1793659479720,
-      "action": "research-edited",
-      "detail": "Updated \"Jerry's Cigar Bar\" in Brugge research"
-    },
-    {
-      "id": "log_mvztzzlj_1b_hwgm4",
-      "ts": 1793658566647,
-      "action": "research-edited",
-      "detail": "Updated \"De Kelk\" in Brugge research"
-    },
-    {
-      "id": "log_mvztzw8d_19_pnkuy",
-      "ts": 1793658562285,
-      "action": "research-edited",
-      "detail": "Updated \"Huisbrouwerij De Halve Maan\" in Brugge research"
-    },
-    {
-      "id": "log_mvztzrl4_17_e7oge",
-      "ts": 1793658556264,
-      "action": "research-edited",
-      "detail": "Updated \"Bauhaus\" in Brugge research"
-    },
-    {
-      "id": "log_mvztzk45_15_ecw9g",
-      "ts": 1793658546581,
-      "action": "research-edited",
-      "detail": "Updated \"De Garre\" in Brugge research"
     }
   ]
 }
