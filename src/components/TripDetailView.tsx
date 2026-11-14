@@ -16,6 +16,8 @@ import { VisitedTab } from './VisitedTab';
 import { PackingTab } from './PackingTab';
 import { AttireTab } from './AttireTab';
 import { HaulsTab } from './HaulsTab';
+import { NotesTab } from './NotesTab';
+import { MobileBottomTabs } from './MobileBottomTabs';
 import { TripMap } from './TripMap';
 import { ensureActualExpense } from '../utils/storage';
 
@@ -145,8 +147,12 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
     ? ` (${trip.packingList.filter(p => p.packed).length}/${trip.packingList.length})`
     : '';
 
+  const KNOWN_TABS = new Set(['budget', 'charts', 'plan', 'research', 'notes', 'posttrip', 'packing', 'attire', 'hauls']);
   const disabledTabsSet = new Set(settings.disabledTabs || ['attire', 'hauls']);
-  const visibleTabs = (settings.tripTabOrder || []).filter(k => !disabledTabsSet.has(k));
+  // Only real modules, enabled, unique — drops orphans / duplicates left in saved order
+  const visibleTabs = Array.from(
+    new Set((settings.tripTabOrder || []).filter(k => KNOWN_TABS.has(k) && !disabledTabsSet.has(k)))
+  );
 
   React.useEffect(() => {
     if (disabledTabsSet.has(activeTripTab)) {
@@ -180,6 +186,9 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
     if (key === 'research') {
       label = 'Research';
       if (trip.research.length) count = ` (${trip.research.length})`;
+    }
+    if (key === 'notes') {
+      label = 'Notes';
     }
     if (key === 'posttrip') {
       label = 'Visited';
@@ -550,6 +559,10 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
         />
       )}
 
+      {activeTripTab === 'notes' && (
+        <NotesTab trip={trip} onUpdateTrip={onUpdateTrip} onShowToast={onShowToast} />
+      )}
+
       {activeTripTab === 'packing' && (
         <PackingTab
           trip={trip}
@@ -558,6 +571,8 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           onShowToast={onShowToast}
         />
       )}
+
+      <MobileBottomTabs tabs={visibleTabs} active={activeTripTab} onChange={setActiveTripTab} />
     </main>
   );
 };

@@ -210,6 +210,14 @@ export function migrateState(state: any): AppState {
   sDefaults.tripTabOrder.forEach(key => {
     if (!state.settings.tripTabOrder.includes(key)) state.settings.tripTabOrder.push(key);
   });
+  // Drop unknown keys and duplicates from older saves
+  const known = new Set(sDefaults.tripTabOrder);
+  const seen = new Set<string>();
+  state.settings.tripTabOrder = state.settings.tripTabOrder.filter(k => {
+    if (!known.has(k) || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
   if (!Array.isArray(state.settings.disabledTabs)) {
     state.settings.disabledTabs = ['attire', 'hauls'];
   }

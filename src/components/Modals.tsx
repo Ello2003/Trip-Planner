@@ -1961,6 +1961,7 @@ export const ReorderTabsModal: React.FC<{
     plan: 'Hour-by-hour itinerary, scheduled items, and interactive map',
     research: 'Places discovered, notes, ratings, and places map',
     posttrip: 'Visited places checklist and completion records',
+    notes: 'Journal, web clips, geo-pins and practical trip info',
     packing: 'Packing lists and baggage essentials tracker',
     attire: 'Luggage manifests and outfit wardrobe planner',
     hauls: 'Lounges visited and duty-free specialty hauls diary'
