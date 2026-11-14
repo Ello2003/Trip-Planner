@@ -2563,7 +2563,7 @@
           "status": "booked",
           "date": null,
           "endDate": null,
-          "time": null,
+          "time": "20:00",
           "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Oude Burg 31, 8000 Brugge, Belgium",
@@ -4258,7 +4258,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794623803653,
+      "updatedAt": 1794623823882,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8778,6 +8778,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsosui_e_s5ova",
+      "ts": 1794623823882,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De koetse\" on Brugge"
+    },
+    {
       "id": "log_mwfsod8l_d_d1ba0",
       "ts": 1794623803653,
       "action": "plan-item-edited",
@@ -9970,12 +9976,6 @@
       "ts": 1793671609358,
       "action": "research-added",
       "detail": "Added \"That's Toast\" to Brugge research"
-    },
-    {
-      "id": "log_mw01kzh4_h_zyrgm",
-      "ts": 1793671303576,
-      "action": "research-added",
-      "detail": "Added \"Aux Merveilleux de Fred\" to Brugge research"
     }
   ]
 }
