@@ -2536,6 +2536,360 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwfteisv_6_3204c",
+          "sheet": "Sights",
+          "name": "Historic centre of Brugge (Bruges)",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Grote Markt, 2000 Antwerpen, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftejp2_8_mj0f2",
+          "sheet": "Sights",
+          "name": "Market Square",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Markt, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftek7r_a_x3xhl",
+          "sheet": "Sights",
+          "name": "Belfry of Bruges",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Markt 7, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwftek7r_b_btydf",
+              "label": "Official Website",
+              "url": "https://www.museabrugge.be/bezoek-onze-musea/onze-musea-en-monumenten/belfort"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftektj_d_0ela2",
+          "sheet": "Sights",
+          "name": "Basilica of the Holy Blood",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Burg 13, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwftektj_e_4975b",
+              "label": "Official Website",
+              "url": "http://www.holyblood.com/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftem1a_g_gm8s4",
+          "sheet": "Sights",
+          "name": "Den Burg",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Den Burg, Netherlands",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftemgg_i_keab5",
+          "sheet": "Sights",
+          "name": "Rosary Quay",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Rozenhoedkaai 3, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwftemgg_j_0rlxu",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/en/rozenhoedkaai"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftenuw_l_drkfs",
+          "sheet": "Sights",
+          "name": "De Dijver park",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Dijver, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwfteoe0_n_6acn4",
+          "sheet": "Sights",
+          "name": "Simon Stevin",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Simon Stevinplein, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwfteoe0_o_nzrhs",
+              "label": "Official Website",
+              "url": "http://www.brugge.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftepnv_q_bclrj",
+          "sheet": "Sights",
+          "name": "Boniface Bridge",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Groeninge 6, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwftepnv_r_pksnt",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/en/bonifaciusbrug-bonifaciusbridge"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwfteq7q_t_0xy7l",
+          "sheet": "Sights",
+          "name": "Huisbrouwerij De Halve Maan",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Walplein 26, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwfteq7q_u_4xrxh",
+              "label": "Official Website",
+              "url": "http://www.halvemaan.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwfteqoe_w_ezond",
+          "sheet": "Sights",
+          "name": "De Wijngaard",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Begijnhof 4, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwfteqoe_x_hzuzl",
+              "label": "Official Website",
+              "url": "https://sites.google.com/view/dewijngaardbegijnhofbrugge/home"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftermy_z_x9xic",
+          "sheet": "Sights",
+          "name": "Minnewater",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Minnewater, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwfterzv_11_aqkqu",
+          "sheet": "Sights",
+          "name": "Gunpowder Tower (Poertoren)",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Begijnenvest 1, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwfterzv_12_7taez",
+              "label": "Official Website",
+              "url": "https://inventaris.onroerenderfgoed.be/erfgoedobjecten/200722"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftesho_14_5iwdw",
+          "sheet": "Sights",
+          "name": "Hotel Dukes' Palace",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Prinsenhof 8, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwftesho_15_sw95p",
+              "label": "Official Website",
+              "url": "https://www.hoteldukespalace.com/en/?utm_source=GMB&utm_medium=organic"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftet22_17_q0g4k",
+          "sheet": "Sights",
+          "name": "Winter gloed 2025",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Site Oud Sint-Jan, Zonnekemeers, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -2765,8 +3119,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwfteisv_6_3204c",
           "createdAt": 1793403996078
         },
         {
@@ -2781,8 +3135,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftejp2_8_mj0f2",
           "createdAt": 1793404016445
         },
         {
@@ -2803,8 +3157,8 @@
               "url": "https://www.museabrugge.be/bezoek-onze-musea/onze-musea-en-monumenten/belfort"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftek7r_a_x3xhl",
           "createdAt": 1793404032213
         },
         {
@@ -2825,8 +3179,8 @@
               "url": "http://www.holyblood.com/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftektj_d_0ela2",
           "createdAt": 1793404044316
         },
         {
@@ -2841,8 +3195,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftem1a_g_gm8s4",
           "createdAt": 1793404052469
         },
         {
@@ -2863,8 +3217,8 @@
               "url": "https://www.visitbruges.be/en/rozenhoedkaai"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftemgg_i_keab5",
           "createdAt": 1793404062340
         },
         {
@@ -2879,8 +3233,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftenuw_l_drkfs",
           "createdAt": 1793404072486
         },
         {
@@ -2901,8 +3255,8 @@
               "url": "http://www.brugge.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwfteoe0_n_6acn4",
           "createdAt": 1793404084939
         },
         {
@@ -2923,8 +3277,8 @@
               "url": "https://www.visitbruges.be/en/bonifaciusbrug-bonifaciusbridge"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftepnv_q_bclrj",
           "createdAt": 1793404092919
         },
         {
@@ -2945,8 +3299,8 @@
               "url": "http://www.halvemaan.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwfteq7q_t_0xy7l",
           "createdAt": 1793404105264
         },
         {
@@ -2967,8 +3321,8 @@
               "url": "https://sites.google.com/view/dewijngaardbegijnhofbrugge/home"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwfteqoe_w_ezond",
           "createdAt": 1793404112923
         },
         {
@@ -2983,8 +3337,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftermy_z_x9xic",
           "createdAt": 1793404121384
         },
         {
@@ -3005,8 +3359,8 @@
               "url": "https://inventaris.onroerenderfgoed.be/erfgoedobjecten/200722"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwfterzv_11_aqkqu",
           "createdAt": 1793404132536
         },
         {
@@ -3115,8 +3469,8 @@
               "url": "https://www.hoteldukespalace.com/en/?utm_source=GMB&utm_medium=organic"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftesho_14_5iwdw",
           "createdAt": 1793661077157
         },
         {
@@ -3277,8 +3631,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftet22_17_q0g4k",
           "createdAt": 1793928101289
         },
         {
@@ -8677,6 +9031,96 @@
   },
   "activityLog": [
     {
+      "id": "log_mwftet22_18_hm2hl",
+      "ts": 1794625037210,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Winter gloed 2025\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftesho_16_s4qez",
+      "ts": 1794625036476,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Hotel Dukes' Palace\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfterzv_13_rcome",
+      "ts": 1794625035835,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Gunpowder Tower (Poertoren)\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftermy_10_4f06h",
+      "ts": 1794625035370,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Minnewater\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfteqog_y_l478b",
+      "ts": 1794625034128,
+      "action": "research-promoted",
+      "detail": "Quick-added \"De Wijngaard\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfteq7r_v_0ninx",
+      "ts": 1794625033527,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Huisbrouwerij De Halve Maan\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftepnv_s_3s477",
+      "ts": 1794625032811,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Boniface Bridge\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfteoe0_p_v4lgx",
+      "ts": 1794625031160,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Simon Stevin\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftenuw_m_b4qr4",
+      "ts": 1794625030472,
+      "action": "research-promoted",
+      "detail": "Quick-added \"De Dijver park\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftemgg_k_eqnwi",
+      "ts": 1794625028656,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Rosary Quay\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftem1a_h_umbjk",
+      "ts": 1794625028110,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Den Burg\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftektk_f_n2tu6",
+      "ts": 1794625026536,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Basilica of the Holy Blood\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftek7s_c_7bncx",
+      "ts": 1794625025752,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Belfry of Bruges\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftejp2_9_dgloy",
+      "ts": 1794625025078,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Market Square\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfteisw_7_mw8i1",
+      "ts": 1794625023920,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Historic centre of Brugge (Bruges)\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwftd2e7_5_ko5ab",
       "ts": 1794624955999,
       "action": "plan-item-edited",
@@ -9785,96 +10229,6 @@
       "ts": 1793930082089,
       "action": "research-added",
       "detail": "Added \"Three.B.pasta\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bko1x_1y_wcapn",
-      "ts": 1793929949637,
-      "action": "research-added",
-      "detail": "Added \"Seafoodbar Belge\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bh5j5_1p_i8alh",
-      "ts": 1793929785665,
-      "action": "research-added",
-      "detail": "Added \"De Gastro\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bg428_1m_amora",
-      "ts": 1793929737104,
-      "action": "research-added",
-      "detail": "Added \"Pigeon House\" to Brugge research"
-    },
-    {
-      "id": "log_mw4beu1h_1j_ifzoy",
-      "ts": 1793929677461,
-      "action": "research-added",
-      "detail": "Added \"De koetse\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bcv1b_1g_1t5q0",
-      "ts": 1793929585439,
-      "action": "research-added",
-      "detail": "Added \"Au Petit Grand BV\" to Brugge research"
-    },
-    {
-      "id": "log_mw4ba2hi_1d_h0lh4",
-      "ts": 1793929455126,
-      "action": "research-added",
-      "detail": "Added \"El Churrasco Argentino\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b8sxc_1a_9bivq",
-      "ts": 1793929396080,
-      "action": "research-added",
-      "detail": "Added \"CROQUES & COFFEE\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b7r7r_18_08kyf",
-      "ts": 1793929347207,
-      "action": "research-added",
-      "detail": "Added \"Hof Café\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b4wl4_16_6ftcl",
-      "ts": 1793929214200,
-      "action": "research-added",
-      "detail": "Added \"Brapas\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b4jof_13_ycfbi",
-      "ts": 1793929197471,
-      "action": "research-added",
-      "detail": "Added \"EspressoBar - I Love Coffee\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b48at_10_o8yat",
-      "ts": 1793929182725,
-      "action": "research-added",
-      "detail": "Added \"Blackbird Coffee Club\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b3ik3_x_fwveh",
-      "ts": 1793929149363,
-      "action": "research-added",
-      "detail": "Added \"Les Coquettes Le Café\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b34u5_u_5jty4",
-      "ts": 1793929131581,
-      "action": "research-added",
-      "detail": "Added \"Coffeebar Adriaan\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b2qza_r_72qw6",
-      "ts": 1793929113622,
-      "action": "research-added",
-      "detail": "Added \"Nuba Cafe Brugge\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b1e0w_o_4i5si",
-      "ts": 1793929050176,
-      "action": "research-added",
-      "detail": "Added \"Bakery St. Paul\" to Brugge research"
     }
   ]
 }
