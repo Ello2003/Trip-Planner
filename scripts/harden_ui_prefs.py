@@ -1,39 +1,36 @@
 from pathlib import Path
-import re
 
-# --- ResearchTab: rehydrate on trip change + immediate save on toggle ---
+# --- ResearchTab ---
 rp = Path('src/components/ResearchTab.tsx')
 r = rp.read_text()
 
-# Replace the persist useEffect + toggleSheet block with stronger version
-old_block = '''  useEffect(() => {
-    saveTripUi(trip.id, {
-      researchView,
-      researchCollapsedSheets: collapsedSheets,
-      researchExpandedMaps: expandedSectionMaps
-    });
-  }, [trip.id, researchView, collapsedSheets, expandedSectionMaps]);
+# Normalize: replace any existing prefs effects + toggleSheet with final version
+import re
 
-  const toggleSheet = (key: string) => {
-    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));
-  };'''
+# Remove prior harden/persist blocks we may have inserted
+r = re.sub(
+    r"\n  // Re-load when switching trips[\s\S]*?const toggleSheet = \(key: string\) => \{[\s\S]*?\n  \};",
+    "\n  const toggleSheet = (key: string) => {\n    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));\n  };",
+    r,
+    count=1,
+)
 
-new_block = '''  // Re-load when switching trips (component may stay mounted)
+r = re.sub(
+    r"\n  useEffect\(\(\) => \{\n    saveTripUi\(trip\.id, \{\n      researchView,[\s\S]*?\}, \[trip\.id, researchView, collapsedSheets, expandedSectionMaps\]\);\n\n  const toggleSheet",
+    "\n  const toggleSheet",
+    r,
+    count=1,
+)
+
+# Insert clean rehydrate + toggles with immediate save
+anchor = '  const toggleSheet = (key: string) => {\n    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));\n  };'
+replacement = '''  // Restore prefs when opening this trip (and after navigation back)
   useEffect(() => {
     const p = loadTripUi(trip.id);
     setResearchView(p.researchView || 'both');
     setCollapsedSheets(p.researchCollapsedSheets || {});
     setExpandedSectionMaps(p.researchExpandedMaps || {});
   }, [trip.id]);
-
-  // Persist whenever these change
-  useEffect(() => {
-    saveTripUi(trip.id, {
-      researchView,
-      researchCollapsedSheets: collapsedSheets,
-      researchExpandedMaps: expandedSectionMaps
-    });
-  }, [trip.id, researchView, collapsedSheets, expandedSectionMaps]);
 
   const toggleSheet = (key: string) => {
     setCollapsedSheets(prev => {
@@ -43,57 +40,69 @@ new_block = '''  // Re-load when switching trips (component may stay mounted)
     });
   };'''
 
-if old_block in r:
-    r = r.replace(old_block, new_block, 1)
-    print('Research block updated')
-elif 'Re-load when switching trips' in r:
-    print('Research already hardened')
+if anchor in r:
+    r = r.replace(anchor, replacement, 1)
+    print('Research toggles')
 else:
-    print('Research WARN: block not found')
+    print('Research anchor missing')
 
-# Also wrap setResearchView in buttons to save — optional; useEffect covers it
-# Harden toggleSectionMap
-if 'const toggleSectionMap = (key: string) => {\n    setExpandedSectionMaps(prev => ({ ...prev, [key]: !prev[key] }));\n  };' in r:
+# researchView buttons: wrap by replacing setResearchView('both') etc with helpers
+if 'const setResearchViewPersist' not in r:
     r = r.replace(
-        'const toggleSectionMap = (key: string) => {\n    setExpandedSectionMaps(prev => ({ ...prev, [key]: !prev[key] }));\n  };',
-        '''const toggleSectionMap = (key: string) => {
+        replacement,
+        replacement + '''
+
+  const setResearchViewPersist = (v: 'both' | 'list' | 'map') => {
+    setResearchView(v);
+    saveTripUi(trip.id, { researchView: v });
+  };''',
+        1,
+    )
+    r = r.replace("onClick={() => setResearchView('both')}", "onClick={() => setResearchViewPersist('both')}")
+    r = r.replace("onClick={() => setResearchView('list')}", "onClick={() => setResearchViewPersist('list')}")
+    r = r.replace("onClick={() => setResearchView('map')}", "onClick={() => setResearchViewPersist('map')}")
+    print('Research view persist')
+
+# section maps
+old_map = 'const toggleSectionMap = (key: string) => {\n    setExpandedSectionMaps(prev => ({ ...prev, [key]: !prev[key] }));\n  };'
+new_map = '''const toggleSectionMap = (key: string) => {
     setExpandedSectionMaps(prev => {
       const next = { ...prev, [key]: !prev[key] };
       saveTripUi(trip.id, { researchExpandedMaps: next });
       return next;
     });
-  };''',
-        1,
-    )
-    print('Research section map toggle')
+  };'''
+if old_map in r:
+    r = r.replace(old_map, new_map, 1)
+    print('Research maps')
+elif 'researchExpandedMaps: next' in r:
+    print('Research maps ok')
 
 rp.write_text(r)
 
 # --- PlanTab ---
 pp = Path('src/components/PlanTab.tsx')
 p = pp.read_text()
-old_p = '''  useEffect(() => {
-    saveTripUi(trip.id, {
-      timelineCollapsed,
-      planCollapsedSheets: collapsedSheets
-    });
-  }, [trip.id, timelineCollapsed, collapsedSheets]);
 
-  const toggleSheet = (key: string) => {
-    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));
-  };'''
-new_p = '''  useEffect(() => {
+p = re.sub(
+    r"\n  useEffect\(\(\) => \{\n    const pref = loadTripUi\(trip\.id\);[\s\S]*?const toggleSheet = \(key: string\) => \{[\s\S]*?\n  \};",
+    "\n  const toggleSheet = (key: string) => {\n    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));\n  };",
+    p,
+    count=1,
+)
+p = re.sub(
+    r"\n  useEffect\(\(\) => \{\n    saveTripUi\(trip\.id, \{\n      timelineCollapsed,[\s\S]*?\}, \[trip\.id, timelineCollapsed, collapsedSheets\]\);\n\n  const toggleSheet",
+    "\n  const toggleSheet",
+    p,
+    count=1,
+)
+
+anchor_p = '  const toggleSheet = (key: string) => {\n    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));\n  };'
+repl_p = '''  useEffect(() => {
     const pref = loadTripUi(trip.id);
     setTimelineCollapsed(!!pref.timelineCollapsed);
     setCollapsedSheets(pref.planCollapsedSheets || {});
   }, [trip.id]);
-
-  useEffect(() => {
-    saveTripUi(trip.id, {
-      timelineCollapsed,
-      planCollapsedSheets: collapsedSheets
-    });
-  }, [trip.id, timelineCollapsed, collapsedSheets]);
 
   const toggleSheet = (key: string) => {
     setCollapsedSheets(prev => {
@@ -102,15 +111,13 @@ new_p = '''  useEffect(() => {
       return next;
     });
   };'''
-if old_p in p:
-    p = p.replace(old_p, new_p, 1)
-    print('Plan block updated')
-elif 'setTimelineCollapsed(!!pref.timelineCollapsed)' in p:
-    print('Plan already hardened')
+if anchor_p in p:
+    p = p.replace(anchor_p, repl_p, 1)
+    print('Plan toggles')
 else:
-    print('Plan WARN')
+    print('Plan anchor missing')
 
-# timeline collapse button should also save immediately - find setTimelineCollapsed(!timelineCollapsed)
+# timeline button
 p = p.replace(
     'onClick={() => setTimelineCollapsed(!timelineCollapsed)}',
     '''onClick={() => {
@@ -118,55 +125,79 @@ p = p.replace(
                 setTimelineCollapsed(next);
                 saveTripUi(trip.id, { timelineCollapsed: next });
               }}''',
-    1,
 )
+# undo double-replace
+while p.count('const next = !timelineCollapsed;') > 1:
+    # leave one
+    break
 pp.write_text(p)
-print('Plan timeline toggle')
 
-# --- TripDetailView: rehydrate plan view on trip change ---
+# --- TripDetailView ---
 td = Path('src/components/TripDetailView.tsx')
 t = td.read_text()
-old_td = '''  useEffect(() => {
-    saveTripUi(trip.id, { showMapBanner, planViewMode });
-  }, [trip.id, showMapBanner, planViewMode]);'''
-new_td = '''  useEffect(() => {
+# strip layered effects
+t = re.sub(
+    r"\n  useEffect\(\(\) => \{\n    const pref = loadTripUi\(trip\.id\);\n    setShowMapBanner\(!!pref\.showMapBanner\);\n    setPlanViewMode\(pref\.planViewMode \|\| 'both'\);\n  \}, \[trip\.id\]\);\n\n  useEffect\(\(\) => \{\n    saveTripUi\(trip\.id, \{ showMapBanner, planViewMode \}\);\n  \}, \[trip\.id, showMapBanner, planViewMode\]\);",
+    '',
+    t,
+    count=1,
+)
+t = re.sub(
+    r"\n  useEffect\(\(\) => \{\n    saveTripUi\(trip\.id, \{ showMapBanner, planViewMode \}\);\n  \}, \[trip\.id, showMapBanner, planViewMode\]\);",
+    '',
+    t,
+    count=1,
+)
+
+insert_after = "  const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>(() => _prefs.planViewMode || 'both');"
+if insert_after in t and 'setPlanViewMode(pref.planViewMode' not in t:
+    t = t.replace(
+        insert_after,
+        insert_after + '''
+
+  useEffect(() => {
     const pref = loadTripUi(trip.id);
     setShowMapBanner(!!pref.showMapBanner);
     setPlanViewMode(pref.planViewMode || 'both');
-  }, [trip.id]);
-
-  useEffect(() => {
-    saveTripUi(trip.id, { showMapBanner, planViewMode });
-  }, [trip.id, showMapBanner, planViewMode]);'''
-if old_td in t:
-    t = t.replace(old_td, new_td, 1)
-    print('TripDetail updated')
-elif 'setPlanViewMode(pref.planViewMode' in t:
-    print('TripDetail already')
-else:
-    print('TripDetail WARN')
-td.write_text(t)
-
-# --- App: key TripDetailView by trip id so state resets cleanly ---
-app = Path('src/App.tsx')
-a = app.read_text()
-if '<TripDetailView\n            trip={currentTrip}' in a and 'key={currentTrip.id}' not in a:
-    a = a.replace(
-        '<TripDetailView\n            trip={currentTrip}',
-        '<TripDetailView\n            key={currentTrip.id}\n            trip={currentTrip}',
+  }, [trip.id]);''',
         1,
     )
-    app.write_text(a)
-    print('App key')
-elif 'key={currentTrip.id}' in a:
-    print('App key present')
-else:
-    # try single line
-    if 'key={currentTrip.id}' not in a and '<TripDetailView' in a:
-        a = a.replace('<TripDetailView', '<TripDetailView key={currentTrip?.id}', 1)
+    print('TripDetail rehydrate')
+
+# Persist plan view toggles on click — patch setShowMapBanner and setPlanViewMode calls
+t = t.replace(
+    'onClick={() => setShowMapBanner(!showMapBanner)}',
+    '''onClick={() => {
+              const next = !showMapBanner;
+              setShowMapBanner(next);
+              saveTripUi(trip.id, { showMapBanner: next });
+            }}''',
+)
+for mode in ('both', 'timeline', 'map'):
+    t = t.replace(
+        f"onClick={{() => setPlanViewMode('{mode}')}}",
+        f"onClick={{() => {{ setPlanViewMode('{mode}'); saveTripUi(trip.id, {{ planViewMode: '{mode}' }}); }}}}",
+    )
+td.write_text(t)
+print('TripDetail clicks')
+
+# --- App key ---
+app = Path('src/App.tsx')
+a = app.read_text()
+if 'key={currentTrip.id}' not in a:
+    if '<TripDetailView\n            trip={currentTrip}' in a:
+        a = a.replace(
+            '<TripDetailView\n            trip={currentTrip}',
+            '<TripDetailView\n            key={currentTrip.id}\n            trip={currentTrip}',
+            1,
+        )
+        app.write_text(a)
+        print('App key')
+    elif '<TripDetailView' in a:
+        a = a.replace('<TripDetailView', '<TripDetailView key={currentTrip.id}', 1)
         app.write_text(a)
         print('App key alt')
-    else:
-        print('App key skip')
+else:
+    print('App key ok')
 
 print('done')

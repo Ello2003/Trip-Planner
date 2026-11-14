@@ -18,5 +18,5 @@ jobs:
           git config user.name "Ello2003"
           git config user.email "graeme.crazydiamond@gmail.com"
           git add src/components/ResearchTab.tsx src/components/PlanTab.tsx src/components/TripDetailView.tsx src/App.tsx src/utils/uiPrefs.ts
-          git commit -m "fix: collapse/view toggles save immediately and rehydrate per trip" || echo nochange
+          git commit -m "fix: persist collapsed sections on toggle; rehydrate without clobber" || echo nochange
           git push
