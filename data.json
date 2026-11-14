@@ -2297,6 +2297,11 @@
               "id": "link_mwbh1gju_b_fikoe",
               "label": "Official Website",
               "url": "http://www.seafoodbar-belge.be/"
+            },
+            {
+              "id": "link_mwfsyh4a_p_7zpeh",
+              "label": "Menu",
+              "url": "https://www.seafoodbar-belge.be/#menu"
             }
           ],
           "cost": null,
@@ -4173,7 +4178,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624228707,
+      "updatedAt": 1794624280538,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8693,6 +8698,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsyl7e_q_dxtl0",
+      "ts": 1794624280538,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Seafoodbar Belge\" on Brugge"
+    },
+    {
       "id": "log_mwfsxh7n_o_lkc7i",
       "ts": 1794624228707,
       "action": "plan-item-edited",
@@ -9885,12 +9896,6 @@
       "ts": 1793928997787,
       "action": "research-added",
       "detail": "Added \"Carpe Diem Bakery & Tea-room\" to Brugge research"
-    },
-    {
-      "id": "log_mw4ap5uz_d_idxkt",
-      "ts": 1793928479723,
-      "action": "research-added",
-      "detail": "Added \"Van Mullem 🍞\" to Brugge research"
     }
   ]
 }
