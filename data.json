@@ -2246,41 +2246,6 @@
           "homeCurrency": "GBP"
         },
         {
-          "id": "plan_mwbg6qbm_14_2l3gq",
-          "sheet": "Restaurants",
-          "name": "Seafoodbar Belge",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "Eiermarkt 14, 8000 Brugge, Belgium",
-          "links": [
-            {
-              "id": "link_mwbg6qbm_15_hft2f",
-              "label": "Official Website",
-              "url": "http://www.seafoodbar-belge.be/"
-            }
-          ],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "estimateCategory": "Other",
-          "estimateQuantity": 1,
-          "estimateOriginal": {
-            "name": "Seafoodbar Belge",
-            "sheet": "Restaurants",
-            "category": "Other",
-            "quantity": 1,
-            "cost": null
-          },
-          "actualNotes": "",
-          "actualRating": null
-        },
-        {
           "id": "plan_mwbg6ssa_17_3barv",
           "sheet": "Restaurants",
           "name": "Au Petit Grand BV",
@@ -4270,7 +4235,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624024539,
+      "updatedAt": 1794624028805,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8790,6 +8755,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfst6yv_i_gdne0",
+      "ts": 1794624028807,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Seafoodbar Belge\" from Brugge"
+    },
+    {
       "id": "log_mwfst3ob_h_maynq",
       "ts": 1794624024539,
       "action": "plan-item-edited",
@@ -9982,12 +9953,6 @@
       "ts": 1793928081467,
       "action": "research-edited",
       "detail": "Updated \"Käthe Wohlfahrt\" in Brugge research"
-    },
-    {
-      "id": "log_mw47n7x3_8_3ntzo",
-      "ts": 1793923350231,
-      "action": "research-added",
-      "detail": "Added \"Waffles 'n Beer in Bruges Centre\" to Brugge research"
     }
   ]
 }
