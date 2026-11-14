@@ -2221,7 +2221,7 @@
           "sheet": "Restaurants",
           "name": "El Churrasco Argentino",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -2250,7 +2250,11 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwbh1gju_a_dyrwe",
@@ -4153,7 +4157,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624943174,
+      "updatedAt": 1794624955998,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8673,6 +8677,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwftd2e7_5_ko5ab",
+      "ts": 1794624955999,
+      "action": "plan-item-edited",
+      "detail": "Updated \"El Churrasco Argentino\" on Brugge"
+    },
+    {
       "id": "log_mwftcsi0_4_hrh53",
       "ts": 1794624943176,
       "action": "plan-item-deleted",
@@ -9865,12 +9875,6 @@
       "ts": 1793929050176,
       "action": "research-added",
       "detail": "Added \"Bakery St. Paul\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b1a7b_m_xcqj3",
-      "ts": 1793929045223,
-      "action": "research-added",
-      "detail": "Added \"Bakery Sint-Paulus\" to Brugge research"
     }
   ]
 }
