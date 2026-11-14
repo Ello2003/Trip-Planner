@@ -2403,42 +2403,6 @@
           "homeCurrency": "GBP"
         },
         {
-          "id": "plan_mwbhlabq_3_lwlsb",
-          "sheet": "Restaurants",
-          "name": "Au Petit Grand BV",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "Philipstockstraat 18, 8000 Brugge, Belgium",
-          "links": [
-            {
-              "id": "link_mwbhlabq_4_ypk8b",
-              "label": "Official Website",
-              "url": "http://www.aupetitgrand.be/"
-            }
-          ],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "priority": 5,
-          "estimateCategory": "Other",
-          "estimateQuantity": 1,
-          "estimateOriginal": {
-            "name": "Au Petit Grand BV",
-            "sheet": "Restaurants",
-            "category": "Other",
-            "quantity": 1,
-            "cost": null
-          },
-          "actualNotes": "",
-          "actualRating": null
-        },
-        {
           "id": "plan_mwbhlums_6_sth9g",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Fritbar",
@@ -4200,7 +4164,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624035750,
+      "updatedAt": 1794624045375,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8720,6 +8684,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfstjr5_k_019vu",
+      "ts": 1794624045377,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Au Petit Grand BV\" from Brugge"
+    },
+    {
       "id": "log_mwfstcbs_j_mc1f2",
       "ts": 1794624035752,
       "action": "plan-item-deleted",
@@ -9912,12 +9882,6 @@
       "ts": 1793928358536,
       "action": "research-added",
       "detail": "Added \"Boulangerie Schaeverbeke\" to Brugge research"
-    },
-    {
-      "id": "log_mw4ah1ux_5_monhx",
-      "ts": 1793928101289,
-      "action": "research-added",
-      "detail": "Added \"Winter gloed 2025\" to Brugge research"
     }
   ]
 }
