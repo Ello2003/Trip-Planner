@@ -2388,36 +2388,6 @@
           "homeCurrency": "GBP"
         },
         {
-          "id": "plan_mwbhlums_6_sth9g",
-          "sheet": "Breakfasts | Bakeries | Casual Dining",
-          "name": "Fritbar",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "Fritbar, 3, Katelijnestraat, Onze-Lieve-Vrouwekwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
-          "links": [],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "priority": null,
-          "estimateCategory": "Other",
-          "estimateQuantity": 1,
-          "estimateOriginal": {
-            "name": "Fritbar",
-            "sheet": "Breakfasts | Bakeries | Casual Dining",
-            "category": "Other",
-            "quantity": 1,
-            "cost": null
-          },
-          "actualNotes": "",
-          "actualRating": null
-        },
-        {
           "id": "plan_mwbhm110_9_0gk2d",
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Fritbar",
@@ -4183,7 +4153,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624899849,
+      "updatedAt": 1794624943174,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8703,6 +8673,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwftcsi0_4_hrh53",
+      "ts": 1794624943176,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Fritbar\" from Brugge"
+    },
+    {
       "id": "log_mwftbv2h_3_h0c8p",
       "ts": 1794624899849,
       "action": "plan-item-edited",
@@ -9893,12 +9869,6 @@
     {
       "id": "log_mw4b1a7b_m_xcqj3",
       "ts": 1793929045223,
-      "action": "research-added",
-      "detail": "Added \"Bakery Sint-Paulus\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b131o_k_muem3",
-      "ts": 1793929035948,
       "action": "research-added",
       "detail": "Added \"Bakery Sint-Paulus\" to Brugge research"
     }
