@@ -815,35 +815,6 @@
           }
         },
         {
-          "id": "plan_mvoj43vr_2_vup1t",
-          "sheet": "Hotels",
-          "name": "Hotel Aragon",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": "2026-12-12",
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": 2,
-          "location": "",
-          "links": [],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "actualNotes": "",
-          "actualRating": null,
-          "estimateQuantity": 1,
-          "estimateCategory": "Hotels",
-          "estimateOriginal": {
-            "name": "Hotel Aragon",
-            "sheet": "Hotels",
-            "category": "Hotels",
-            "quantity": 1,
-            "cost": null
-          }
-        },
-        {
           "id": "plan_mw79t9vl_16_pgpo6",
           "sheet": "Pubs",
           "name": "Le Trappiste",
@@ -2206,7 +2177,7 @@
           "sheet": "Restaurants",
           "name": "Bistro Christophe",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-12",
           "endDate": null,
           "time": "20:45",
           "dayNumber": 2,
@@ -2286,7 +2257,7 @@
           "sheet": "Restaurants",
           "name": "Seafoodbar Belge",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-12",
           "endDate": null,
           "time": "20:30",
           "dayNumber": 2,
@@ -2331,7 +2302,7 @@
           "sheet": "Restaurants",
           "name": "Au Petit Grand BV",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-12",
           "endDate": null,
           "time": "20:30",
           "dayNumber": 2,
@@ -2376,7 +2347,7 @@
           "sheet": "Restaurants",
           "name": "De Gastro",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-12",
           "endDate": null,
           "time": "20:15",
           "dayNumber": 2,
@@ -2481,7 +2452,7 @@
           "sheet": "Restaurants",
           "name": "De koetse",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-12",
           "endDate": null,
           "time": "20:00",
           "dayNumber": 2,
@@ -2504,7 +2475,17 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "De koetse",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwfsi3vq_7_tf113",
@@ -2530,7 +2511,17 @@
           "notes": "Interesting menu Friday lunch maybe?",
           "visited": false,
           "priority": 4,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Brasserie Rozenhoedkaai",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwfskidy_a_8m0tp",
@@ -2556,7 +2547,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Hotels"
+          "estimateCategory": "Hotels",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Hotel Aragon",
+            "sheet": "Hotels",
+            "category": "Hotels",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -4178,7 +4179,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624280538,
+      "updatedAt": 1794624890639,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8698,6 +8699,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwftbnyo_2_cj759",
+      "ts": 1794624890640,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Hotel Aragon\" from Brugge"
+    },
+    {
       "id": "log_mwfsyl7e_q_dxtl0",
       "ts": 1794624280538,
       "action": "plan-item-edited",
@@ -9890,12 +9897,6 @@
       "ts": 1793929029517,
       "action": "research-added",
       "detail": "Added \"Bakkerij Sint-Paulus\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b09ln_g_d7cc7",
-      "ts": 1793928997787,
-      "action": "research-added",
-      "detail": "Added \"Carpe Diem Bakery & Tea-room\" to Brugge research"
     }
   ]
 }
