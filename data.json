@@ -2337,6 +2337,11 @@
               "id": "link_mwbh1hwc_e_9pnp1",
               "label": "Official Website",
               "url": "http://www.aupetitgrand.be/"
+            },
+            {
+              "id": "link_mwfsxe1c_n_dwp2f",
+              "label": "Menu",
+              "url": "https://www.aupetitgrand.be/media/menu_apg_2026_en.pdf"
             }
           ],
           "cost": null,
@@ -4168,7 +4173,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624160333,
+      "updatedAt": 1794624228707,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8688,6 +8693,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsxh7n_o_lkc7i",
+      "ts": 1794624228707,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Au Petit Grand BV\" on Brugge"
+    },
+    {
       "id": "log_mwfsw0gd_m_ul1xy",
       "ts": 1794624160333,
       "action": "plan-item-edited",
@@ -9880,12 +9891,6 @@
       "ts": 1793928479723,
       "action": "research-added",
       "detail": "Added \"Van Mullem 🍞\" to Brugge research"
-    },
-    {
-      "id": "log_mw4anqdq_a_eawc7",
-      "ts": 1793928413006,
-      "action": "research-edited",
-      "detail": "Updated \"Tasty Sandwich\" in Brugge research"
     }
   ]
 }
