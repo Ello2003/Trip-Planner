@@ -2351,11 +2351,11 @@
           "id": "plan_mwbh1gju_a_dyrwe",
           "sheet": "Restaurants",
           "name": "Seafoodbar Belge",
-          "status": "idea",
-          "date": "2026-12-11",
+          "status": "booked",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "20:30",
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Eiermarkt 14, 8000 Brugge, Belgium",
           "links": [
@@ -2381,7 +2381,11 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwbh1hwc_d_c55w1",
@@ -4262,7 +4266,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794623939419,
+      "updatedAt": 1794623981941,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8782,6 +8786,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfss6t1_g_d12ez",
+      "ts": 1794623981941,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Seafoodbar Belge\" on Brugge"
+    },
+    {
       "id": "log_mwfsr9zv_f_u7d4v",
       "ts": 1794623939419,
       "action": "plan-item-edited",
@@ -9974,12 +9984,6 @@
       "ts": 1793923323900,
       "action": "research-added",
       "detail": "Added \"The Spot Waffles & Pancakes\" to Brugge research"
-    },
-    {
-      "id": "log_mw01wib8_l_lp09l",
-      "ts": 1793671841204,
-      "action": "research-added",
-      "detail": "Added \"Fritbar\" to Brugge research"
     }
   ]
 }
