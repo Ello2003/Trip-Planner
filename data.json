@@ -2560,11 +2560,11 @@
           "id": "plan_mwfshcte_3_tim8u",
           "sheet": "Restaurants",
           "name": "De koetse",
-          "status": "idea",
-          "date": "2026-12-11",
+          "status": "booked",
+          "date": null,
           "endDate": null,
           "time": null,
-          "dayNumber": 1,
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Oude Burg 31, 8000 Brugge, Belgium",
           "links": [
@@ -2580,7 +2580,11 @@
           "notes": "",
           "visited": false,
           "priority": 4,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwfsi3vq_7_tf113",
@@ -4254,7 +4258,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794623508605,
+      "updatedAt": 1794623803653,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8774,6 +8778,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsod8l_d_d1ba0",
+      "ts": 1794623803653,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De koetse\" on Brugge"
+    },
+    {
       "id": "log_mwfskie0_c_cp2jw",
       "ts": 1794623623704,
       "action": "research-promoted",
@@ -9966,12 +9976,6 @@
       "ts": 1793671303576,
       "action": "research-added",
       "detail": "Added \"Aux Merveilleux de Fred\" to Brugge research"
-    },
-    {
-      "id": "log_mw010p4b_f_jy4t5",
-      "ts": 1793670357035,
-      "action": "research-added",
-      "detail": "Added \"Groot Vlaenderen\" to Brugge research"
     }
   ]
 }
