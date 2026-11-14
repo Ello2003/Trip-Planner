@@ -5967,7 +5967,7 @@
           }
         }
       ],
-      "timelineMode": "days",
+      "timelineMode": "dates",
       "research": [
         {
           "id": "res_msj09m6f_1t_bbyb9",
@@ -6660,7 +6660,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794691488079,
+      "updatedAt": 1794691496325,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
