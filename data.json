@@ -2423,11 +2423,11 @@
           "id": "plan_mwbh5c62_j_nuki7",
           "sheet": "Restaurants",
           "name": "De Gastro",
-          "status": "idea",
-          "date": "2026-12-11",
+          "status": "booked",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "20:15",
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Braambergstraat 6, 8000 Brugge, Belgium",
           "links": [
@@ -2458,7 +2458,11 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwbhlabq_3_lwlsb",
@@ -4258,7 +4262,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794623823882,
+      "updatedAt": 1794623939419,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8778,6 +8782,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsr9zv_f_u7d4v",
+      "ts": 1794623939419,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De Gastro\" on Brugge"
+    },
+    {
       "id": "log_mwfsosui_e_s5ova",
       "ts": 1794623823882,
       "action": "plan-item-edited",
@@ -9970,12 +9980,6 @@
       "ts": 1793671841204,
       "action": "research-added",
       "detail": "Added \"Fritbar\" to Brugge research"
-    },
-    {
-      "id": "log_mw01rjf2_j_ldn9m",
-      "ts": 1793671609358,
-      "action": "research-added",
-      "detail": "Added \"That's Toast\" to Brugge research"
     }
   ]
 }
