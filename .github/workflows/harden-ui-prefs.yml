@@ -1,0 +1,22 @@
+name: Harden UI prefs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/harden_ui_prefs.py'
+      - 'src/utils/uiPrefs.ts'
+      - '.github/workflows/harden-ui-prefs.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/harden_ui_prefs.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/ResearchTab.tsx src/components/PlanTab.tsx src/components/TripDetailView.tsx src/App.tsx src/utils/uiPrefs.ts
+          git commit -m "fix: collapse/view toggles save immediately and rehydrate per trip" || echo nochange
+          git push

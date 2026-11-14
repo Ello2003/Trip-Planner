@@ -19,13 +19,15 @@ export type TripUiPrefs = {
 const GLOBAL_KEY = 'travel-ledger-ui-global-v1';
 const tripKey = (tripId: string) => `travel-ledger-ui-trip-v1:${tripId}`;
 
-function readJson<T>(key: string, fallback: T): T {
+function readJson<T extends object>(key: string, fallback: T): T {
   try {
     const raw = localStorage.getItem(key);
-    if (raw == null || raw === '') return fallback;
-    return { ...fallback, ...JSON.parse(raw) } as T;
+    if (raw == null || raw === '') return { ...fallback };
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return { ...fallback };
+    return { ...fallback, ...parsed } as T;
   } catch {
-    return fallback;
+    return { ...fallback };
   }
 }
 
@@ -42,8 +44,7 @@ export function loadGlobalUi(): GlobalUiPrefs {
 }
 
 export function saveGlobalUi(patch: Partial<GlobalUiPrefs>): void {
-  const next = { ...loadGlobalUi(), ...patch };
-  writeJson(GLOBAL_KEY, next);
+  writeJson(GLOBAL_KEY, { ...loadGlobalUi(), ...patch });
 }
 
 export function loadTripUi(tripId: string): TripUiPrefs {
@@ -51,8 +52,8 @@ export function loadTripUi(tripId: string): TripUiPrefs {
   return readJson<TripUiPrefs>(tripKey(tripId), {});
 }
 
+/** Merge-patch trip UI prefs and write immediately (safe to call from event handlers). */
 export function saveTripUi(tripId: string, patch: Partial<TripUiPrefs>): void {
   if (!tripId) return;
-  const next = { ...loadTripUi(tripId), ...patch };
-  writeJson(tripKey(tripId), next);
+  writeJson(tripKey(tripId), { ...loadTripUi(tripId), ...patch });
 }
