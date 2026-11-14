@@ -2325,7 +2325,7 @@
           "id": "plan_mwbh1hwc_d_c55w1",
           "sheet": "Restaurants",
           "name": "Au Petit Grand BV",
-          "status": "idea",
+          "status": "booked",
           "date": null,
           "endDate": null,
           "time": "20:30",
@@ -4168,7 +4168,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624130756,
+      "updatedAt": 1794624160333,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8688,6 +8688,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsw0gd_m_ul1xy",
+      "ts": 1794624160333,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Au Petit Grand BV\" on Brugge"
+    },
+    {
       "id": "log_mwfsvdms_l_5o7va",
       "ts": 1794624130756,
       "action": "plan-item-edited",
@@ -9880,12 +9886,6 @@
       "ts": 1793928413006,
       "action": "research-edited",
       "detail": "Updated \"Tasty Sandwich\" in Brugge research"
-    },
-    {
-      "id": "log_mw4anhtn_9_hxv73",
-      "ts": 1793928401915,
-      "action": "research-added",
-      "detail": "Added \"Eiermarkt 7\" to Brugge research"
     }
   ]
 }
