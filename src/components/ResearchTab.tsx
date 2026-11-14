@@ -47,7 +47,7 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   const [sectionMapEditMode, setSectionMapEditMode] = useState<Record<string, boolean>>({});
   const [sectionMapInputs, setSectionMapInputs] = useState<Record<string, string>>({});
 
-  // Re-load when switching trips (component may stay mounted)
+  // Restore prefs when opening this trip (and after navigation back)
   useEffect(() => {
     const p = loadTripUi(trip.id);
     setResearchView(p.researchView || 'both');
@@ -55,21 +55,17 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
     setExpandedSectionMaps(p.researchExpandedMaps || {});
   }, [trip.id]);
 
-  // Persist whenever these change
-  useEffect(() => {
-    saveTripUi(trip.id, {
-      researchView,
-      researchCollapsedSheets: collapsedSheets,
-      researchExpandedMaps: expandedSectionMaps
-    });
-  }, [trip.id, researchView, collapsedSheets, expandedSectionMaps]);
-
   const toggleSheet = (key: string) => {
     setCollapsedSheets(prev => {
       const next = { ...prev, [key]: !prev[key] };
       saveTripUi(trip.id, { researchCollapsedSheets: next });
       return next;
     });
+  };
+
+  const setResearchViewPersist = (v: 'both' | 'list' | 'map') => {
+    setResearchView(v);
+    saveTripUi(trip.id, { researchView: v });
   };
 
   const handleRenameSheet = (from: string, to: string): string | null => {
@@ -141,9 +137,9 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
           + Add Place
         </button>
         <div className="timeline-toggle" style={{ display: 'inline-flex' }}>
-          <button type="button" className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('both')} title="Split view">Split View</button>
-          <button type="button" className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('list')} title="List only">List Only</button>
-          <button type="button" className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchView('map')} title="Map only">Map Only</button>
+          <button type="button" className={`btn-sm ${researchView === 'both' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchViewPersist('both')} title="Split view">Split View</button>
+          <button type="button" className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchViewPersist('list')} title="List only">List Only</button>
+          <button type="button" className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchViewPersist('map')} title="Map only">Map Only</button>
         </div>
         <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>Manage Categories</button>
         <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>Maps Key</button>

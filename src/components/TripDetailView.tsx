@@ -92,9 +92,6 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
     setPlanViewMode(pref.planViewMode || 'both');
   }, [trip.id]);
 
-  useEffect(() => {
-    saveTripUi(trip.id, { showMapBanner, planViewMode });
-  }, [trip.id, showMapBanner, planViewMode]);
 
   const handleToggleVisited = (item: PlanItem) => {
     const copyTrip = { ...trip };
@@ -309,7 +306,11 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
         {settings.showItineraryMap !== false && (
           <button
             className={`btn-ghost ${showMapBanner ? 'active' : ''}`}
-            onClick={() => setShowMapBanner(!showMapBanner)}
+            onClick={() => {
+              const next = !showMapBanner;
+              setShowMapBanner(next);
+              saveTripUi(trip.id, { showMapBanner: next });
+            }}
             style={{ borderColor: showMapBanner ? 'var(--brass)' : undefined }}
           >
             🗺️ {showMapBanner ? 'Hide Map Banner' : 'Itinerary Map'}
@@ -430,7 +431,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
                 <button
                   type="button"
                   className={`btn-ghost btn-sm ${planViewMode === 'both' ? 'active' : ''}`}
-                  onClick={() => setPlanViewMode('both')}
+                  onClick={() => { setPlanViewMode('both'); saveTripUi(trip.id, { planViewMode: 'both' }); }}
                   style={{
                     fontSize: '11px',
                     padding: '3px 8px',
@@ -443,7 +444,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
                 <button
                   type="button"
                   className={`btn-ghost btn-sm ${planViewMode === 'timeline' ? 'active' : ''}`}
-                  onClick={() => setPlanViewMode('timeline')}
+                  onClick={() => { setPlanViewMode('timeline'); saveTripUi(trip.id, { planViewMode: 'timeline' }); }}
                   style={{
                     fontSize: '11px',
                     padding: '3px 8px',
@@ -456,7 +457,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
                 <button
                   type="button"
                   className={`btn-ghost btn-sm ${planViewMode === 'map' ? 'active' : ''}`}
-                  onClick={() => setPlanViewMode('map')}
+                  onClick={() => { setPlanViewMode('map'); saveTripUi(trip.id, { planViewMode: 'map' }); }}
                   style={{
                     fontSize: '11px',
                     padding: '3px 8px',

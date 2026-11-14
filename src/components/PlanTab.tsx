@@ -67,13 +67,6 @@ export const PlanTab: React.FC<PlanTabProps> = ({
     setCollapsedSheets(pref.planCollapsedSheets || {});
   }, [trip.id]);
 
-  useEffect(() => {
-    saveTripUi(trip.id, {
-      timelineCollapsed,
-      planCollapsedSheets: collapsedSheets
-    });
-  }, [trip.id, timelineCollapsed, collapsedSheets]);
-
   const toggleSheet = (key: string) => {
     setCollapsedSheets(prev => {
       const next = { ...prev, [key]: !prev[key] };
