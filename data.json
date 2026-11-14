@@ -2205,11 +2205,11 @@
           "id": "plan_mwbg3qqe_10_2osdu",
           "sheet": "Restaurants",
           "name": "Bistro Christophe",
-          "status": "idea",
-          "date": "2026-12-11",
+          "status": "booked",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "20:45",
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Garenmarkt 34, 8000 Brugge, Belgium",
           "links": [
@@ -2239,7 +2239,11 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwbg6qbm_14_2l3gq",
@@ -4266,7 +4270,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794623981941,
+      "updatedAt": 1794624024539,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8786,6 +8790,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfst3ob_h_maynq",
+      "ts": 1794624024539,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Bistro Christophe\" on Brugge"
+    },
+    {
       "id": "log_mwfss6t1_g_d12ez",
       "ts": 1794623981941,
       "action": "plan-item-edited",
@@ -9978,12 +9988,6 @@
       "ts": 1793923350231,
       "action": "research-added",
       "detail": "Added \"Waffles 'n Beer in Bruges Centre\" to Brugge research"
-    },
-    {
-      "id": "log_mw47mnlo_4_w3kyz",
-      "ts": 1793923323900,
-      "action": "research-added",
-      "detail": "Added \"The Spot Waffles & Pancakes\" to Brugge research"
     }
   ]
 }
