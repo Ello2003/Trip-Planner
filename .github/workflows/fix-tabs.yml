@@ -1,0 +1,21 @@
+name: Fix tabs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/fix_tabs.py'
+      - '.github/workflows/fix-tabs.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/fix_tabs.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/TripDetailView.tsx src/utils/storage.ts src/components/Modals.tsx
+          git commit -m "fix: remove orphan tabs, wire Notes, mobile bottom tabs from visible only" || echo nochange
+          git push
