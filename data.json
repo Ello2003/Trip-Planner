@@ -2527,12 +2527,12 @@
           "id": "plan_mwfskidy_a_8m0tp",
           "sheet": "Hotels",
           "name": "Hotel Aragon",
-          "status": "idea",
-          "date": "2026-12-11",
+          "status": "booked",
+          "date": null,
           "endDate": null,
           "time": null,
           "dayNumber": 1,
-          "dayNumberEnd": null,
+          "dayNumberEnd": 1,
           "location": "Naaldenstraat 22, 8000 Brugge, Belgium",
           "links": [
             {
@@ -2557,7 +2557,11 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4179,7 +4183,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624890639,
+      "updatedAt": 1794624899849,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8699,6 +8703,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwftbv2h_3_h0c8p",
+      "ts": 1794624899849,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Hotel Aragon\" on Brugge"
+    },
+    {
       "id": "log_mwftbnyo_2_cj759",
       "ts": 1794624890640,
       "action": "plan-item-deleted",
@@ -9891,12 +9901,6 @@
       "ts": 1793929035948,
       "action": "research-added",
       "detail": "Added \"Bakery Sint-Paulus\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b0y31_i_4803q",
-      "ts": 1793929029517,
-      "action": "research-added",
-      "detail": "Added \"Bakkerij Sint-Paulus\" to Brugge research"
     }
   ]
 }
