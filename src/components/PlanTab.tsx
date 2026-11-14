@@ -62,6 +62,12 @@ export const PlanTab: React.FC<PlanTabProps> = ({
   const [collapsedSheets, setCollapsedSheets] = useState<Record<string, boolean>>(() => _prefs.planCollapsedSheets || {});
 
   useEffect(() => {
+    const pref = loadTripUi(trip.id);
+    setTimelineCollapsed(!!pref.timelineCollapsed);
+    setCollapsedSheets(pref.planCollapsedSheets || {});
+  }, [trip.id]);
+
+  useEffect(() => {
     saveTripUi(trip.id, {
       timelineCollapsed,
       planCollapsedSheets: collapsedSheets
@@ -69,7 +75,11 @@ export const PlanTab: React.FC<PlanTabProps> = ({
   }, [trip.id, timelineCollapsed, collapsedSheets]);
 
   const toggleSheet = (key: string) => {
-    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));
+    setCollapsedSheets(prev => {
+      const next = { ...prev, [key]: !prev[key] };
+      saveTripUi(trip.id, { planCollapsedSheets: next });
+      return next;
+    });
   };
 
   // Rename a section in place; keep its collapsed/expanded state under the new name
@@ -255,7 +265,11 @@ export const PlanTab: React.FC<PlanTabProps> = ({
             </button>
             <button
               className="btn-ghost btn-sm"
-              onClick={() => setTimelineCollapsed(!timelineCollapsed)}
+              onClick={() => {
+                const next = !timelineCollapsed;
+                setTimelineCollapsed(next);
+                saveTripUi(trip.id, { timelineCollapsed: next });
+              }}
             >
               {timelineCollapsed ? 'Show' : 'Hide'}
             </button>

@@ -708,6 +708,7 @@ export const App: React.FC = () => {
           </>
         ) : (
           <TripDetailView
+            key={currentTrip.id}
             trip={currentTrip}
             categories={state.categories}
             sheets={state.sheets}

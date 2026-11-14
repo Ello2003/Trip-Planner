@@ -87,6 +87,12 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
   const [planViewMode, setPlanViewMode] = React.useState<'both' | 'timeline' | 'map'>(() => _prefs.planViewMode || 'both');
 
   useEffect(() => {
+    const pref = loadTripUi(trip.id);
+    setShowMapBanner(!!pref.showMapBanner);
+    setPlanViewMode(pref.planViewMode || 'both');
+  }, [trip.id]);
+
+  useEffect(() => {
     saveTripUi(trip.id, { showMapBanner, planViewMode });
   }, [trip.id, showMapBanner, planViewMode]);
 

@@ -47,6 +47,15 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   const [sectionMapEditMode, setSectionMapEditMode] = useState<Record<string, boolean>>({});
   const [sectionMapInputs, setSectionMapInputs] = useState<Record<string, string>>({});
 
+  // Re-load when switching trips (component may stay mounted)
+  useEffect(() => {
+    const p = loadTripUi(trip.id);
+    setResearchView(p.researchView || 'both');
+    setCollapsedSheets(p.researchCollapsedSheets || {});
+    setExpandedSectionMaps(p.researchExpandedMaps || {});
+  }, [trip.id]);
+
+  // Persist whenever these change
   useEffect(() => {
     saveTripUi(trip.id, {
       researchView,
@@ -56,7 +65,11 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   }, [trip.id, researchView, collapsedSheets, expandedSectionMaps]);
 
   const toggleSheet = (key: string) => {
-    setCollapsedSheets(prev => ({ ...prev, [key]: !prev[key] }));
+    setCollapsedSheets(prev => {
+      const next = { ...prev, [key]: !prev[key] };
+      saveTripUi(trip.id, { researchCollapsedSheets: next });
+      return next;
+    });
   };
 
   const handleRenameSheet = (from: string, to: string): string | null => {
@@ -71,7 +84,11 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   };
 
   const toggleSectionMap = (key: string) => {
-    setExpandedSectionMaps(prev => ({ ...prev, [key]: !prev[key] }));
+    setExpandedSectionMaps(prev => {
+      const next = { ...prev, [key]: !prev[key] };
+      saveTripUi(trip.id, { researchExpandedMaps: next });
+      return next;
+    });
   };
 
   const handleSaveSectionMap = (key: string) => {
