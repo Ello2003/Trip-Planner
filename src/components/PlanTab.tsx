@@ -107,6 +107,10 @@ export const PlanTab: React.FC<PlanTabProps> = ({
   const groupOrder: string[] = [];
 
   trip.planItems.forEach(item => {
+    // Hour-by-hour only includes items with an explicit time (no default clock time)
+    const hasTime = item.time != null && String(item.time).trim() !== '';
+    if (!hasTime) return;
+
     let key: string, label: string;
     if (mode === 'dates') {
       let itemDate = item.date || null;
@@ -272,7 +276,7 @@ export const PlanTab: React.FC<PlanTabProps> = ({
         {!timelineCollapsed && (
           <div style={{ marginTop: '12px' }}>
             {groupOrder.length === 0 ? (
-              <div className="empty-state">Add items with a date/day to build the hour-by-hour view.</div>
+              <div className="empty-state">Add a time to plan items to place them on the hour-by-hour timeline.</div>
             ) : (
               groupOrder.map(key => {
                 const g = groups[key];
