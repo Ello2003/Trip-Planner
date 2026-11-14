@@ -1,0 +1,21 @@
+name: Timeline require time
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/timeline_require_time.py'
+      - '.github/workflows/timeline-require-time.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/timeline_require_time.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/PlanTab.tsx
+          git commit -m "Timeline: plot only items with a set time" || echo nochange
+          git push
