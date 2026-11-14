@@ -2912,7 +2912,7 @@
           "estimateCategory": "Other"
         }
       ],
-      "timelineMode": "days",
+      "timelineMode": "dates",
       "research": [
         {
           "id": "res_murk7nx3_9_b0buk",
@@ -4531,7 +4531,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624955998,
+      "updatedAt": 1794625107356,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
