@@ -2890,6 +2890,26 @@
           "visited": false,
           "priority": null,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwftfet5_19_6n8h8",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "The Chocolate Line",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "The Chocolate Line, 75, Vaartstraat, Nijverheidsdok (Z12), Sint-Pieters, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Handmade Chocs",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3485,8 +3505,8 @@
           "estCost": null,
           "notes": "Handmade Chocs",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mwbbyqdj_a_bi7zx",
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwftfet5_19_6n8h8",
           "createdAt": 1793669606280
         },
         {
@@ -9031,6 +9051,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwftfet6_1a_hffpo",
+      "ts": 1794625065402,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Chocolate Line\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwftet22_18_hm2hl",
       "ts": 1794625037210,
       "action": "research-promoted",
@@ -10223,12 +10249,6 @@
       "ts": 1793930232872,
       "action": "research-added",
       "detail": "Added \"NOBLE Bruges\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bni95_20_edgu4",
-      "ts": 1793930082089,
-      "action": "research-added",
-      "detail": "Added \"Three.B.pasta\" to Brugge research"
     }
   ]
 }
