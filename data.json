@@ -2581,6 +2581,32 @@
           "visited": false,
           "priority": 4,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwfsi3vq_7_tf113",
+          "sheet": "Restaurants",
+          "name": "Brasserie Rozenhoedkaai",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Pandreitje 1a, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwfsi3vq_8_ih9kz",
+              "label": "Official Website",
+              "url": "http://www.rozenhoedkaai.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Interesting menu Friday lunch maybe?",
+          "visited": false,
+          "priority": 4,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -4137,7 +4163,7 @@
           "lat": 51.207317599999996,
           "lng": 3.2280884999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "Interesting menu Friday lunch maybe?",
           "links": [
@@ -4147,8 +4173,8 @@
               "url": "http://www.rozenhoedkaai.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwfsi3vq_7_tf113",
           "createdAt": 1794089326746
         },
         {
@@ -4202,7 +4228,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794623458970,
+      "updatedAt": 1794623508605,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8722,6 +8748,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsi3vs_9_9ret9",
+      "ts": 1794623511592,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Brasserie Rozenhoedkaai\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfsi1kt_6_alfks",
+      "ts": 1794623508605,
+      "action": "research-edited",
+      "detail": "Updated \"Brasserie Rozenhoedkaai\" in Brugge research"
+    },
+    {
       "id": "log_mwfshctf_5_e6mb5",
       "ts": 1794623476515,
       "action": "research-promoted",
@@ -9908,18 +9946,6 @@
       "ts": 1793669967875,
       "action": "research-added",
       "detail": "Added \"House of Waffles\" to Brugge research"
-    },
-    {
-      "id": "log_mw00rfcl_b_v12a7",
-      "ts": 1793669924469,
-      "action": "research-added",
-      "detail": "Added \"Chez Albert\" to Brugge research"
-    },
-    {
-      "id": "log_mw00lafg_9_ao7xz",
-      "ts": 1793669638156,
-      "action": "research-added",
-      "detail": "Added \"The Old Chocolate House\" to Brugge research"
     }
   ]
 }
