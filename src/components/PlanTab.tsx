@@ -43,6 +43,45 @@ const planPriority = (item: { id: string; priority?: number | null }, research: 
   return null;
 };
 
+/** Inline 1-5 star control; click same star again to clear */
+const PriorityStars: React.FC<{
+  value: number | null;
+  onChange: (n: number | null) => void;
+  size?: number;
+}> = ({ value, onChange, size = 14 }) => {
+  const v = value != null && value >= 1 && value <= 5 ? value : 0;
+  return (
+    <span
+      role="group"
+      aria-label="Priority rating"
+      style={{ display: 'inline-flex', gap: '1px', alignItems: 'center', cursor: 'pointer', userSelect: 'none' }}
+      onClick={e => e.stopPropagation()}
+    >
+      {[1, 2, 3, 4, 5].map(n => (
+        <button
+          key={n}
+          type="button"
+          title={n === v ? `Clear priority (${n}/5)` : `Set priority ${n}/5`}
+          onClick={() => onChange(n === v ? null : n)}
+          style={{
+            border: 'none',
+            background: 'transparent',
+            padding: '0 1px',
+            margin: 0,
+            cursor: 'pointer',
+            fontSize: size,
+            lineHeight: 1,
+            color: n <= v ? 'var(--ochre, var(--brass))' : 'var(--paper-edge)',
+            fontWeight: n <= v ? 700 : 400
+          }}
+        >
+          ★
+        </button>
+      ))}
+    </span>
+  );
+};
+
 export const PlanTab: React.FC<PlanTabProps> = ({
   onRenameSheet,
   onRecolorSheet,
@@ -182,6 +221,17 @@ export const PlanTab: React.FC<PlanTabProps> = ({
       },
       { action: 'plan-item-deleted', detail: `Removed "${item.name}" from ${trip.name}` }
     );
+  };
+
+  const handleSetPriority = (item: PlanItem, priority: number | null) => {
+    const updatedPlan = trip.planItems.map(p =>
+      p.id === item.id ? { ...p, priority } : p
+    );
+    onUpdateTrip({
+      ...trip,
+      planItems: updatedPlan,
+      updatedAt: Date.now()
+    });
   };
 
   const handleTimelineItemChange = (item: PlanItem, field: 'time' | 'name' | 'notes', val: string) => {
@@ -324,14 +374,13 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                               placeholder="What's happening"
                               onChange={e => handleTimelineItemChange(item, 'name', e.target.value)}
                             />
-                            {(() => {
-                              const pr = planPriority(item, trip.research || []);
-                              return pr ? (
-                                <div style={{ color: 'var(--ochre, var(--brass))', fontSize: '13px', letterSpacing: '2px', marginTop: '3px', fontWeight: 600 }} title={`Priority ${pr}/5`}>
-                                  {PRIORITY_LABELS[pr]}
-                                </div>
-                              ) : null;
-                            })()}
+                            <div style={{ marginTop: '4px' }}>
+                              <PriorityStars
+                                value={planPriority(item, trip.research || [])}
+                                onChange={n => handleSetPriority(item, n)}
+                                size={13}
+                              />
+                            </div>
                             <textarea
                               className="tl-notes"
                               rows={1}
@@ -430,14 +479,7 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                                 <td>
                                   <div>
                                     <strong>{i.name}</strong>
-                                  {(() => {
-                                    const pr = planPriority(i, trip.research || []);
-                                    return pr ? (
-                                      <div style={{ color: 'var(--ochre, var(--brass))', fontSize: '13px', letterSpacing: '2px', marginTop: '3px', fontWeight: 600 }} title={`Priority ${pr}/5`}>
-                                        {PRIORITY_LABELS[pr]}
-                                      </div>
-                                    ) : null;
-                                  })()}
+
                                     {i.visited && (
                                       <span
                                         className="status-chip status-completed"
@@ -470,8 +512,11 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                                     </div>
                                   )}
                                 </td>
-                                <td style={{ whiteSpace: 'nowrap', color: 'var(--ochre, var(--brass))', letterSpacing: '1px', fontWeight: 600, fontSize: '13px' }}>
-                                  {(() => { const pr = planPriority(i, trip.research || []); return pr ? PRIORITY_LABELS[pr] : '—'; })()}
+                                <td style={{ whiteSpace: 'nowrap', verticalAlign: 'middle' }}>
+                                  <PriorityStars
+                                    value={planPriority(i, trip.research || [])}
+                                    onChange={n => handleSetPriority(i, n)}
+                                  />
                                 </td>
                                 <td>
                                   <span
