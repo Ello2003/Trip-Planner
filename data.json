@@ -2246,41 +2246,6 @@
           "homeCurrency": "GBP"
         },
         {
-          "id": "plan_mwbg6ssa_17_3barv",
-          "sheet": "Restaurants",
-          "name": "Au Petit Grand BV",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "Philipstockstraat 18, 8000 Brugge, Belgium",
-          "links": [
-            {
-              "id": "link_mwbg6ssa_18_e88dt",
-              "label": "Official Website",
-              "url": "http://www.aupetitgrand.be/"
-            }
-          ],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "estimateCategory": "Other",
-          "estimateQuantity": 1,
-          "estimateOriginal": {
-            "name": "Au Petit Grand BV",
-            "sheet": "Restaurants",
-            "category": "Other",
-            "quantity": 1,
-            "cost": null
-          },
-          "actualNotes": "",
-          "actualRating": null
-        },
-        {
           "id": "plan_mwbgtxdi_6_ht6ja",
           "sheet": "Restaurants",
           "name": "El Churrasco Argentino",
@@ -4235,7 +4200,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624028805,
+      "updatedAt": 1794624035750,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8755,6 +8720,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfstcbs_j_mc1f2",
+      "ts": 1794624035752,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Au Petit Grand BV\" from Brugge"
+    },
+    {
       "id": "log_mwfst6yv_i_gdne0",
       "ts": 1794624028807,
       "action": "plan-item-deleted",
@@ -9947,12 +9918,6 @@
       "ts": 1793928101289,
       "action": "research-added",
       "detail": "Added \"Winter gloed 2025\" to Brugge research"
-    },
-    {
-      "id": "log_mw4agmkb_3_5r4m4",
-      "ts": 1793928081467,
-      "action": "research-edited",
-      "detail": "Updated \"Käthe Wohlfahrt\" in Brugge research"
     }
   ]
 }
