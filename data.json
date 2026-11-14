@@ -2326,10 +2326,10 @@
           "sheet": "Restaurants",
           "name": "Au Petit Grand BV",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "20:30",
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Philipstockstraat 18, 8000 Brugge, Belgium",
           "links": [
@@ -2355,7 +2355,11 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwbh5c62_j_nuki7",
@@ -4164,7 +4168,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624045375,
+      "updatedAt": 1794624130756,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -8684,6 +8688,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwfsvdms_l_5o7va",
+      "ts": 1794624130756,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Au Petit Grand BV\" on Brugge"
+    },
+    {
       "id": "log_mwfstjr5_k_019vu",
       "ts": 1794624045377,
       "action": "plan-item-deleted",
@@ -9876,12 +9886,6 @@
       "ts": 1793928401915,
       "action": "research-added",
       "detail": "Added \"Eiermarkt 7\" to Brugge research"
-    },
-    {
-      "id": "log_mw4amkco_7_jk8lz",
-      "ts": 1793928358536,
-      "action": "research-added",
-      "detail": "Added \"Boulangerie Schaeverbeke\" to Brugge research"
     }
   ]
 }
