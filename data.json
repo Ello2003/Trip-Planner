@@ -6769,13 +6769,29 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794781681837
+        },
+        {
+          "id": "res_mwiepf1j_j_sg4b6",
+          "sheet": "Quick Eats",
+          "name": "Toscanino",
+          "address": "30 Forrest Rd, Edinburgh EH1 2QN, UK",
+          "lat": 55.9455873,
+          "lng": -3.1910022,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794781736551
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794781681837,
+      "updatedAt": 1794781736551,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8828,6 +8844,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwiepf1j_k_p275q",
+      "ts": 1794781736551,
+      "action": "research-added",
+      "detail": "Added \"Toscanino\" to Edinburgh research"
+    },
+    {
       "id": "log_mwieo8tp_i_bri24",
       "ts": 1794781681837,
       "action": "research-added",
@@ -10020,12 +10042,6 @@
       "ts": 1793929396080,
       "action": "research-added",
       "detail": "Added \"CROQUES & COFFEE\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b7r7r_18_08kyf",
-      "ts": 1793929347207,
-      "action": "research-added",
-      "detail": "Added \"Hof Café\" to Brugge research"
     }
   ]
 }
