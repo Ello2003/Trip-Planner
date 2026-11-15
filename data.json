@@ -4187,7 +4187,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794624955998,
+      "updatedAt": 1794713053293,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -5967,7 +5967,7 @@
           }
         }
       ],
-      "timelineMode": "dates",
+      "timelineMode": "days",
       "research": [
         {
           "id": "res_msj09m6f_1t_bbyb9",
