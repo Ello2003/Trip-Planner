@@ -6845,13 +6845,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794784497243
+        },
+        {
+          "id": "res_mwiggbs3_u_48sp4",
+          "sheet": "Restaurants",
+          "name": "Locanda de Gusti",
+          "address": "102 Dalry Rd, Edinburgh EH11 2DW, UK",
+          "lat": 55.9437004,
+          "lng": -3.21971,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Seafood",
+          "links": [
+            {
+              "id": "link_mwiggaz4_t_k2k7v",
+              "label": "Official Website",
+              "url": "http://www.locandadegusti.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794784671651
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794784497243,
+      "updatedAt": 1794784671651,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8904,6 +8926,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwiggbs3_v_datpv",
+      "ts": 1794784671651,
+      "action": "research-added",
+      "detail": "Added \"Locanda de Gusti\" to Edinburgh research"
+    },
+    {
       "id": "log_mwigcl7f_s_k20tl",
       "ts": 1794784497243,
       "action": "research-added",
@@ -10096,12 +10124,6 @@
       "ts": 1793929737104,
       "action": "research-added",
       "detail": "Added \"Pigeon House\" to Brugge research"
-    },
-    {
-      "id": "log_mw4beu1h_1j_ifzoy",
-      "ts": 1793929677461,
-      "action": "research-added",
-      "detail": "Added \"De koetse\" to Brugge research"
     }
   ]
 }
