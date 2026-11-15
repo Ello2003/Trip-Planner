@@ -245,6 +245,13 @@ export const App: React.FC = () => {
     [updateState]
   );
 
+  const handleReorderSheets = useCallback(
+    (nextSheets: Sheet[]) => {
+      updateState(prev => ({ ...prev, sheets: nextSheets }));
+    },
+    [updateState]
+  );
+
   // Update specific trip
   const handleUpdateTrip = useCallback(
     (updatedTrip: Trip, logAction?: { action: string; detail: string }) => {
@@ -714,6 +721,7 @@ export const App: React.FC = () => {
             sheets={state.sheets}
             onRenameSheet={handleRenameSheet}
             onRecolorSheet={handleRecolorSheet}
+            onReorderSheets={handleReorderSheets}
             settings={state.settings}
             activeTripTab={activeTripTab}
             setActiveTripTab={setActiveTripTab}

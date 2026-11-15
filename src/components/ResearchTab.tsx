@@ -20,6 +20,7 @@ interface ResearchTabProps {
   onQuickPromoteToPlan?: (item: ResearchItem) => void;
   onManageSheets: () => void;
   onOpenMapSettings: () => void;
+  onReorderSheets?: (sheets: Sheet[]) => void;
 }
 
 const PRICE_LABELS: Record<number, string> = { 1: '£', 2: '££', 3: '£££', 4: '££££' };
@@ -38,7 +39,8 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
   onPromoteToPlan,
   onQuickPromoteToPlan,
   onManageSheets,
-  onOpenMapSettings
+  onOpenMapSettings,
+  onReorderSheets
 }) => {
   const _prefs = loadTripUi(trip.id);
   const [researchView, setResearchView] = useState<'both' | 'list' | 'map'>(() => _prefs.researchView || 'both');
@@ -130,6 +132,16 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
     });
   };
 
+  const visibleSheets = sheets.filter(s => !trip.hiddenSheets.includes(s.key));
+
+  const handleReorderSections = (_from: number, _to: number, newKeys: string[]) => {
+    if (!onReorderSheets) return;
+    const byKey = new Map(sheets.map(s => [s.key, s]));
+    const ordered = newKeys.map(k => byKey.get(k)).filter(Boolean) as Sheet[];
+    const rest = sheets.filter(s => !newKeys.includes(s.key));
+    onReorderSheets([...ordered, ...rest]);
+  };
+
   return (
     <div>
       <div className="toolbar" style={{ flexWrap: 'wrap', gap: '8px' }}>
@@ -162,16 +174,27 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
 
       {researchView !== 'map' && (
         <div>
-          {sheets.filter(s => !trip.hiddenSheets.includes(s.key)).map(s => {
+          <SortableList
+            ids={visibleSheets.map(s => s.key)}
+            onReorder={handleReorderSections}
+            disabled={!onReorderSheets}
+          >
+          {visibleSheets.map(s => {
             const items = trip.research.filter(r => r.sheet === s.key);
             const isCollapsed = collapsedSheets[s.key];
             const hasMap = !!trip.sectionMapUrls[s.key];
             const mapExpanded = expandedSectionMaps[s.key];
             const mapEditing = sectionMapEditMode[s.key];
             return (
-              <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={s.key}>
+              <SortableRow
+                id={s.key}
+                key={s.key}
+                className={`sheet-section ${items.length ? '' : 'is-empty'}`}
+                disabled={!onReorderSheets}
+              >
                 <div className="sheet-header">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }} onClick={() => toggleSheet(s.key)}>
+                    {onReorderSheets ? <DragHandle /> : null}
                     <span>{isCollapsed ? '\u25B8' : '\u25BE'}</span>
                     {onRecolorSheet ? (
                       <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
@@ -294,9 +317,10 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                     )}
                   </div>
                 )}
-              </div>
+              </SortableRow>
             );
           })}
+          </SortableList>
         </div>
       )}
     </div>

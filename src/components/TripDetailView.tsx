@@ -27,6 +27,7 @@ interface TripDetailViewProps {
   sheets: Sheet[];
   onRenameSheet?: (from: string, to: string) => string | null;
   onRecolorSheet?: (key: string, color: string) => void;
+  onReorderSheets?: (sheets: Sheet[]) => void;
   settings: Settings;
   activeTripTab: string;
   setActiveTripTab: (tab: string) => void;
@@ -59,6 +60,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
   sheets,
   onRenameSheet,
   onRecolorSheet,
+  onReorderSheets,
   settings,
   activeTripTab,
   setActiveTripTab,
@@ -538,6 +540,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
           settings={settings}
           onRenameSheet={onRenameSheet}
           onRecolorSheet={onRecolorSheet}
+          onReorderSheets={onReorderSheets}
           onUpdateTrip={onUpdateTrip}
           onOpenAddResearchModal={onOpenAddResearchModal}
           onOpenEditResearchModal={onOpenEditResearchModal}
