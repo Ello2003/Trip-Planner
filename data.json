@@ -5971,7 +5971,7 @@
           "sheet": "Restaurants",
           "name": "The Spence",
           "status": "idea",
-          "date": "2026-12-04",
+          "date": null,
           "endDate": null,
           "time": null,
           "dayNumber": 1,
@@ -5995,7 +5995,11 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -6691,7 +6695,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794781255013,
+      "updatedAt": 1794781266392,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8739,6 +8743,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwiefc9k_7_oe129",
+      "ts": 1794781266392,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Spence\" on Edinburgh"
+    },
+    {
       "id": "log_mwief8ej_6_j70j4",
       "ts": 1794781261387,
       "action": "research-promoted",
@@ -9931,12 +9941,6 @@
       "ts": 1793929182725,
       "action": "research-added",
       "detail": "Added \"Blackbird Coffee Club\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b3ik3_x_fwveh",
-      "ts": 1793929149363,
-      "action": "research-added",
-      "detail": "Added \"Les Coquettes Le Café\" to Brugge research"
     }
   ]
 }
