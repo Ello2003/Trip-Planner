@@ -6785,13 +6785,29 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794781736551
+        },
+        {
+          "id": "res_mwietxcy_l_1cpc1",
+          "sheet": "Quick Eats",
+          "name": "Polentoni",
+          "address": "38 Easter Rd, Edinburgh EH7 5RG, UK",
+          "lat": 55.958344399999994,
+          "lng": -3.171645,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794781946915
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794781736551,
+      "updatedAt": 1794781946915,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8844,6 +8860,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwietxcz_m_6e4y4",
+      "ts": 1794781946915,
+      "action": "research-added",
+      "detail": "Added \"Polentoni\" to Edinburgh research"
+    },
+    {
       "id": "log_mwiepf1j_k_p275q",
       "ts": 1794781736551,
       "action": "research-added",
@@ -10036,12 +10058,6 @@
       "ts": 1793929455126,
       "action": "research-added",
       "detail": "Added \"El Churrasco Argentino\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b8sxc_1a_9bivq",
-      "ts": 1793929396080,
-      "action": "research-added",
-      "detail": "Added \"CROQUES & COFFEE\" to Brugge research"
     }
   ]
 }
