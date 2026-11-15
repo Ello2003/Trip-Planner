@@ -6823,13 +6823,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1788228459956
+        },
+        {
+          "id": "res_mwigcl7f_r_dpufq",
+          "sheet": "Pubs",
+          "name": "The Piper's Rest",
+          "address": "3 Hunter Square, Edinburgh EH1 1QW, UK",
+          "lat": 55.9497447,
+          "lng": -3.1881241,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwigckjt_q_vebhe",
+              "label": "Official Website",
+              "url": "http://www.thepipersrest.co.uk/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794784497243
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794783118313,
+      "updatedAt": 1794784497243,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8882,6 +8904,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwigcl7f_s_k20tl",
+      "ts": 1794784497243,
+      "action": "research-added",
+      "detail": "Added \"The Piper's Rest\" to Edinburgh research"
+    },
+    {
       "id": "log_mwifi70h_p_bcwm9",
       "ts": 1794783079169,
       "action": "research-added",
@@ -10074,12 +10102,6 @@
       "ts": 1793929677461,
       "action": "research-added",
       "detail": "Added \"De koetse\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bcv1b_1g_1t5q0",
-      "ts": 1793929585439,
-      "action": "research-added",
-      "detail": "Added \"Au Petit Grand BV\" to Brugge research"
     }
   ]
 }
