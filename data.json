@@ -6747,13 +6747,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794781656633
+        },
+        {
+          "id": "res_mwieo8tp_h_6bldb",
+          "sheet": "Quick Eats",
+          "name": "Croccante & Co",
+          "address": "2 Lynedoch Pl, Edinburgh EH3 7PX, UK",
+          "lat": 55.9517251,
+          "lng": -3.212606,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwieo842_g_pxrgz",
+              "label": "Official Website",
+              "url": "https://croccanteandco.co.uk/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794781681837
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794781656633,
+      "updatedAt": 1794781681837,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8806,6 +8828,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwieo8tp_i_bri24",
+      "ts": 1794781681837,
+      "action": "research-added",
+      "detail": "Added \"Croccante & Co\" to Edinburgh research"
+    },
+    {
       "id": "log_mwienpdm_f_s1p5v",
       "ts": 1794781656634,
       "action": "research-added",
@@ -9998,12 +10026,6 @@
       "ts": 1793929347207,
       "action": "research-added",
       "detail": "Added \"Hof Café\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b4wl4_16_6ftcl",
-      "ts": 1793929214200,
-      "action": "research-added",
-      "detail": "Added \"Brapas\" to Brugge research"
     }
   ]
 }
