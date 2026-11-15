@@ -6725,13 +6725,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1788228459956
+        },
+        {
+          "id": "res_mwienpdl_e_jsz3b",
+          "sheet": "Quick Eats",
+          "name": "Toscano",
+          "address": "165A Bruntsfield Pl, Edinburgh EH10 4DG, UK",
+          "lat": 55.9358249,
+          "lng": -3.2094229999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwienmyw_d_0z1z6",
+              "label": "Official Website",
+              "url": "https://www.toscanoedinburgh.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794781656633
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794781266392,
+      "updatedAt": 1794781656633,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8784,6 +8806,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwienpdm_f_s1p5v",
+      "ts": 1794781656634,
+      "action": "research-added",
+      "detail": "Added \"Toscano\" to Edinburgh research"
+    },
+    {
       "id": "log_mwiegktp_c_t4n9l",
       "ts": 1794781324141,
       "action": "research-promoted",
@@ -9976,12 +10004,6 @@
       "ts": 1793929214200,
       "action": "research-added",
       "detail": "Added \"Brapas\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b4jof_13_ycfbi",
-      "ts": 1793929197471,
-      "action": "research-added",
-      "detail": "Added \"EspressoBar - I Love Coffee\" to Brugge research"
     }
   ]
 }
