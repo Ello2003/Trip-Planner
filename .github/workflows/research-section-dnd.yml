@@ -1,0 +1,21 @@
+name: Research section DnD
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research_section_dnd.py'
+      - '.github/workflows/research-section-dnd.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/research_section_dnd.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/ResearchTab.tsx src/components/TripDetailView.tsx src/App.tsx
+          git commit -m "Research: drag category sections to reorder" || echo nochange
+          git push
