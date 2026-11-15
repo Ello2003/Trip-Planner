@@ -231,8 +231,7 @@ export function migrateState(state: any): AppState {
     if (t.notes === undefined) t.notes = '';
     if (!Array.isArray(t.planItems)) t.planItems = [];
     if (t.timelineMode === undefined || t.timelineMode === null) t.timelineMode = 'days';
-    t.timelineMode = 'days';
-    t.timelineManualOrder = true;
+    if (t.timelineManualOrder === undefined) t.timelineManualOrder = false;
     if (!Array.isArray(t.research)) t.research = [];
     if (!Array.isArray(t.packingList)) t.packingList = [];
     if (!Array.isArray(t.luggageBags)) t.luggageBags = [];

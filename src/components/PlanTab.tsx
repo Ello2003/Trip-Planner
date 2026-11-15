@@ -298,18 +298,34 @@ export const PlanTab: React.FC<PlanTabProps> = ({
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
           <h3 style={{ margin: 0 }}>Hour by Hour</h3>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <button
-              className="btn-ghost btn-sm"
-              onClick={() =>
-                onUpdateTrip({
-                  ...trip,
-                  timelineManualOrder: !trip.timelineManualOrder,
-                  updatedAt: Date.now()
-                })
-              }
-            >
-              {trip.timelineManualOrder ? 'Manual order' : 'Arrange manually'}
-            </button>
+            <div className="timeline-toggle" style={{ display: 'inline-flex' }} title="Order stops within each day">
+              <button
+                type="button"
+                className={`btn-sm ${!trip.timelineManualOrder ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() =>
+                  onUpdateTrip({
+                    ...trip,
+                    timelineManualOrder: false,
+                    updatedAt: Date.now()
+                  })
+                }
+              >
+                By time
+              </button>
+              <button
+                type="button"
+                className={`btn-sm ${trip.timelineManualOrder ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() =>
+                  onUpdateTrip({
+                    ...trip,
+                    timelineManualOrder: true,
+                    updatedAt: Date.now()
+                  })
+                }
+              >
+                Manual
+              </button>
+            </div>
             <button
               className="btn-ghost btn-sm"
               onClick={() => {
