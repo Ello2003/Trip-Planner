@@ -6052,7 +6052,7 @@
               "url": "https://gleneagles.com/townhouse/wp-content/uploads/sites/8/2022/06/Wine-List-August-2026.pdf"
             }
           ],
-          "status": "dismissed",
+          "status": "shortlisted",
           "linkedPlanItemId": null,
           "createdAt": 1786132089174
         },
@@ -6660,7 +6660,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794691496325,
+      "updatedAt": 1794781255013,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8708,6 +8708,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwief3hh_2_8ha5j",
+      "ts": 1794781255013,
+      "action": "research-edited",
+      "detail": "Updated \"The Spence\" in Edinburgh research"
+    },
+    {
       "id": "log_mwfteisw_7_mw8i1",
       "ts": 1794625023920,
       "action": "research-promoted",
@@ -9900,12 +9906,6 @@
       "ts": 1793929131581,
       "action": "research-added",
       "detail": "Added \"Coffeebar Adriaan\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b2qza_r_72qw6",
-      "ts": 1793929113622,
-      "action": "research-added",
-      "detail": "Added \"Nuba Cafe Brugge\" to Brugge research"
     }
   ]
 }
