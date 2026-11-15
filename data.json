@@ -6801,13 +6801,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794781946915
+        },
+        {
+          "id": "res_mwifi70h_o_q6tpm",
+          "sheet": "Pubs",
+          "name": "The Broughton",
+          "address": "46-48a Broughton St, Edinburgh EH1 3SA, UK",
+          "lat": 55.958389999999994,
+          "lng": -3.1901475,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwifi5qh_n_glygp",
+              "label": "Official Website",
+              "url": "https://www.thebroughtonbar.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794783079169
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794781946915,
+      "updatedAt": 1794783079169,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8860,6 +8882,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwifi70h_p_bcwm9",
+      "ts": 1794783079169,
+      "action": "research-added",
+      "detail": "Added \"The Broughton\" to Edinburgh research"
+    },
+    {
       "id": "log_mwietxcz_m_6e4y4",
       "ts": 1794781946915,
       "action": "research-added",
@@ -10052,12 +10080,6 @@
       "ts": 1793929585439,
       "action": "research-added",
       "detail": "Added \"Au Petit Grand BV\" to Brugge research"
-    },
-    {
-      "id": "log_mw4ba2hi_1d_h0lh4",
-      "ts": 1793929455126,
-      "action": "research-added",
-      "detail": "Added \"El Churrasco Argentino\" to Brugge research"
     }
   ]
 }
