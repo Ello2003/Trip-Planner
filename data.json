@@ -5965,6 +5965,37 @@
             "quantity": 1,
             "cost": 50
           }
+        },
+        {
+          "id": "plan_mwief8ej_3_46srw",
+          "sheet": "Restaurants",
+          "name": "The Spence",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Gleneagles Townhouse",
+          "links": [
+            {
+              "id": "link_mwief8ej_4_4rapg",
+              "label": "Food",
+              "url": "https://gleneagles.com/townhouse/wp-content/uploads/sites/8/2022/06/A-La-Carte-53.pdf"
+            },
+            {
+              "id": "link_mwief8ej_5_bo8j6",
+              "label": "Wine",
+              "url": "https://gleneagles.com/townhouse/wp-content/uploads/sites/8/2022/06/Wine-List-August-2026.pdf"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6052,8 +6083,8 @@
               "url": "https://gleneagles.com/townhouse/wp-content/uploads/sites/8/2022/06/Wine-List-August-2026.pdf"
             }
           ],
-          "status": "shortlisted",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwief8ej_3_46srw",
           "createdAt": 1786132089174
         },
         {
@@ -8708,6 +8739,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwief8ej_6_j70j4",
+      "ts": 1794781261387,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Spence\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwief3hh_2_8ha5j",
       "ts": 1794781255013,
       "action": "research-edited",
@@ -9900,12 +9937,6 @@
       "ts": 1793929149363,
       "action": "research-added",
       "detail": "Added \"Les Coquettes Le Café\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b34u5_u_5jty4",
-      "ts": 1793929131581,
-      "action": "research-added",
-      "detail": "Added \"Coffeebar Adriaan\" to Brugge research"
     }
   ]
 }
