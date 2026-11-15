@@ -6000,6 +6000,42 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwiegkto_8_ff0wp",
+          "sheet": "Coffee",
+          "name": "Grand Cafe",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "20 North Bridge",
+          "links": [
+            {
+              "id": "link_mwiegkto_9_k0wx1",
+              "label": "Whiskey",
+              "url": "https://grandcafeedinburgh.co.uk/menus/grand-cafe-whisky-menu.pdf"
+            },
+            {
+              "id": "link_mwiegkto_a_90gxc",
+              "label": "Drinks",
+              "url": "https://grandcafeedinburgh.co.uk/menus/grand-cafe-drinks-menu.pdf"
+            },
+            {
+              "id": "link_mwiegkto_b_vbk5q",
+              "label": "Wine",
+              "url": "https://grandcafeedinburgh.co.uk/menus/grand-cafe-wine-menu.pdf"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6428,8 +6464,8 @@
               "url": "https://grandcafeedinburgh.co.uk/menus/grand-cafe-wine-menu.pdf"
             }
           ],
-          "status": "shortlisted",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwiegkto_8_ff0wp",
           "createdAt": 1787522599886
         },
         {
@@ -8743,6 +8779,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwiegktp_c_t4n9l",
+      "ts": 1794781324141,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Grand Cafe\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwiefc9k_7_oe129",
       "ts": 1794781266392,
       "action": "plan-item-edited",
@@ -9935,12 +9977,6 @@
       "ts": 1793929197471,
       "action": "research-added",
       "detail": "Added \"EspressoBar - I Love Coffee\" to Brugge research"
-    },
-    {
-      "id": "log_mw4b48at_10_o8yat",
-      "ts": 1793929182725,
-      "action": "research-added",
-      "detail": "Added \"Blackbird Coffee Club\" to Brugge research"
     }
   ]
 }
