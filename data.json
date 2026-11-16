@@ -6126,6 +6126,32 @@
           "visited": false,
           "priority": null,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwjwwbob_1r_v81ku",
+          "sheet": "Pubs",
+          "name": "Cafe Royal",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "19 W Register St, Edinburgh EH2 2AA, UK",
+          "links": [
+            {
+              "id": "link_mwjwwbob_1s_y9zt1",
+              "label": "Official Website",
+              "url": "https://www.caferoyaledinburgh.com/?utm_source=g_places&utm_medium=locations&utm_campaign=MC_pubpage"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6824,8 +6850,8 @@
               "url": "https://www.caferoyaledinburgh.com/?utm_source=g_places&utm_medium=locations&utm_campaign=MC_pubpage"
             }
           ],
-          "status": "shortlisted",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwjwwbob_1r_v81ku",
           "createdAt": 1786131993137
         },
         {
@@ -9108,6 +9134,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwwbob_1t_3ei0j",
+      "ts": 1794872758043,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Cafe Royal\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwjwuwch_1q_81ix7",
       "ts": 1794872691521,
       "action": "plan-item-edited",
@@ -10300,12 +10332,6 @@
       "ts": 1794102320338,
       "action": "research-added",
       "detail": "Added \"The Bottle Shop\" to Brugge research"
-    },
-    {
-      "id": "log_mw765n4r_c_y1w92",
-      "ts": 1794102249051,
-      "action": "research-added",
-      "detail": "Added \"2be Shop\" to Brugge research"
     }
   ]
 }
