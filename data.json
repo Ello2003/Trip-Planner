@@ -6828,7 +6828,7 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1787521321309
         },
@@ -6935,7 +6935,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794871751245,
+      "updatedAt": 1794871786325,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8988,6 +8988,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwbhw5_15_ef4zo",
+      "ts": 1794871786325,
+      "action": "research-edited",
+      "detail": "Updated \"Abacus at The Scholar\" in Edinburgh research"
+    },
+    {
       "id": "log_mwjwaqtp_14_9u5xb",
       "ts": 1794871751245,
       "action": "research-edited",
@@ -10180,12 +10186,6 @@
       "ts": 1794086689917,
       "action": "research-added",
       "detail": "Added \"ODA Rooftop Bar\" to Brugge research"
-    },
-    {
-      "id": "log_mw6wvt2m_26_kf424",
-      "ts": 1794086673646,
-      "action": "research-added",
-      "detail": "Added \"Opus Latino\" to Brugge research"
     }
   ]
 }
