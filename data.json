@@ -6929,13 +6929,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794794798288
+        },
+        {
+          "id": "res_mwjwdqkt_19_ln276",
+          "sheet": "Pubs",
+          "name": "The Abbotsford Bar & Restaurant",
+          "address": "3-5 Rose St, Edinburgh EH2 2PR, UK",
+          "lat": 55.9532418,
+          "lng": -3.1945946,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwjwdoxp_18_3obz9",
+              "label": "Official Website",
+              "url": "https://www.theabbotsford.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794871890893
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794871847364,
+      "updatedAt": 1794871890893,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8988,6 +9010,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwdqkt_1a_ezkvl",
+      "ts": 1794871890893,
+      "action": "research-added",
+      "detail": "Added \"The Abbotsford Bar & Restaurant\" to Edinburgh research"
+    },
+    {
       "id": "log_mwjwcszo_17_kfon3",
       "ts": 1794871847364,
       "action": "research-edited",
@@ -10180,12 +10208,6 @@
       "ts": 1794090940138,
       "action": "research-added",
       "detail": "Added \"Petite Aneth\" to Brugge research"
-    },
-    {
-      "id": "log_mw6ygo7v_2f_eqtvk",
-      "ts": 1794089326747,
-      "action": "research-added",
-      "detail": "Added \"Brasserie Rozenhoedkaai\" to Brugge research"
     }
   ]
 }
