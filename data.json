@@ -6060,6 +6060,68 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwjwu1b3_1i_f8hlz",
+          "sheet": "Pubs",
+          "name": "The Abbotsford Bar & Restaurant",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "3-5 Rose St, Edinburgh EH2 2PR, UK",
+          "links": [
+            {
+              "id": "link_mwjwu1b3_1j_7vikt",
+              "label": "Official Website",
+              "url": "https://www.theabbotsford.com/"
+            },
+            {
+              "id": "link_mwjwu1b3_1k_qpd99",
+              "label": "Menu",
+              "url": "https://static1.squarespace.com/static/56cc81e0859fd03dbee5f119/t/69df551f9fced703f2a84db5/1776243999953/Abbotsford+A5+Food+Menu+April+2026+FINAL.pdf"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwjwu2g9_1m_kio84",
+          "sheet": "Pubs",
+          "name": "The Guildford Arms",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "1 W Register St, Edinburgh EH2 2AA, UK",
+          "links": [
+            {
+              "id": "link_mwjwu2g9_1n_igp9f",
+              "label": "Official Website",
+              "url": "https://www.guildfordarms.com/"
+            },
+            {
+              "id": "link_mwjwu2g9_1o_0zeyk",
+              "label": "Menu",
+              "url": "https://static1.squarespace.com/static/5436a9a4e4b09dbd92ec776e/t/69df559d97062b26c8620fcb/1776244125862/Guildford+A5+Food+Menu+April+26+FINAL.pdf"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6953,8 +7015,8 @@
               "url": "https://static1.squarespace.com/static/56cc81e0859fd03dbee5f119/t/69df551f9fced703f2a84db5/1776243999953/Abbotsford+A5+Food+Menu+April+2026+FINAL.pdf"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwjwu1b3_1i_f8hlz",
           "createdAt": 1794871890893
         },
         {
@@ -6980,8 +7042,8 @@
               "url": "https://static1.squarespace.com/static/5436a9a4e4b09dbd92ec776e/t/69df559d97062b26c8620fcb/1776244125862/Guildford+A5+Food+Menu+April+26+FINAL.pdf"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwjwu2g9_1m_kio84",
           "createdAt": 1794871901882
         }
       ],
@@ -9042,6 +9104,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwu2gb_1p_g3qv1",
+      "ts": 1794872652779,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Guildford Arms\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwjwu1b4_1l_3z9b6",
+      "ts": 1794872651296,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Abbotsford Bar & Restaurant\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwjwieqe_1h_obvq5",
       "ts": 1794872108823,
       "action": "research-edited",
@@ -10228,18 +10302,6 @@
       "ts": 1794102212104,
       "action": "research-added",
       "detail": "Added \"The Republic\" to Brugge research"
-    },
-    {
-      "id": "log_mw75izs0_6_bxca2",
-      "ts": 1794101192352,
-      "action": "research-added",
-      "detail": "Added \"Boho Brunch\" to Brugge research"
-    },
-    {
-      "id": "log_mw6zvu7p_2l_904g3",
-      "ts": 1794091713973,
-      "action": "research-deleted",
-      "detail": "Removed \"Bakery Sint-Paulus\" from Brugge research"
     }
   ]
 }
