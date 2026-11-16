@@ -6888,7 +6888,7 @@
               "url": "http://www.locandadegusti.com/"
             }
           ],
-          "status": "researching",
+          "status": "shortlisted",
           "linkedPlanItemId": null,
           "createdAt": 1794784671651
         },
@@ -6935,7 +6935,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794871803576,
+      "updatedAt": 1794871847364,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8988,6 +8988,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwcszo_17_kfon3",
+      "ts": 1794871847364,
+      "action": "research-edited",
+      "detail": "Updated \"Locanda de Gusti\" in Edinburgh research"
+    },
+    {
       "id": "log_mwjwbv7c_16_6lnij",
       "ts": 1794871803576,
       "action": "research-edited",
@@ -10180,12 +10186,6 @@
       "ts": 1794089326747,
       "action": "research-added",
       "detail": "Added \"Brasserie Rozenhoedkaai\" to Brugge research"
-    },
-    {
-      "id": "log_mw6xmgvd_2c_5v1ij",
-      "ts": 1794087917545,
-      "action": "research-added",
-      "detail": "Added \"’t Klein Venetië\" to Brugge research"
     }
   ]
 }
