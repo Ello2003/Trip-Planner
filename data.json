@@ -6951,13 +6951,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794871890893
+        },
+        {
+          "id": "res_mwjwdz22_1c_xy18j",
+          "sheet": "Pubs",
+          "name": "The Guildford Arms",
+          "address": "1 W Register St, Edinburgh EH2 2AA, UK",
+          "lat": 55.9536832,
+          "lng": -3.1901219999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwjwdy49_1b_4pmgp",
+              "label": "Official Website",
+              "url": "https://www.guildfordarms.com/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794871901882
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794871890893,
+      "updatedAt": 1794871901882,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9010,6 +9032,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwdz22_1d_pxhv6",
+      "ts": 1794871901882,
+      "action": "research-added",
+      "detail": "Added \"The Guildford Arms\" to Edinburgh research"
+    },
+    {
       "id": "log_mwjwdqkt_1a_ezkvl",
       "ts": 1794871890893,
       "action": "research-added",
@@ -10202,12 +10230,6 @@
       "ts": 1794091668701,
       "action": "research-deleted",
       "detail": "Removed \"Bakery St. Paul\" from Brugge research"
-    },
-    {
-      "id": "log_mw6zf94a_2i_17pf2",
-      "ts": 1794090940138,
-      "action": "research-added",
-      "detail": "Added \"Petite Aneth\" to Brugge research"
     }
   ]
 }
