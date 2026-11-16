@@ -6968,6 +6968,11 @@
               "id": "link_mwjwdy49_1b_4pmgp",
               "label": "Official Website",
               "url": "https://www.guildfordarms.com/"
+            },
+            {
+              "id": "link_mwjwhi5q_1e_n6vd5",
+              "label": "Menu",
+              "url": "https://static1.squarespace.com/static/5436a9a4e4b09dbd92ec776e/t/69df559d97062b26c8620fcb/1776244125862/Guildford+A5+Food+Menu+April+26+FINAL.pdf"
             }
           ],
           "status": "researching",
@@ -6979,7 +6984,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794871901882,
+      "updatedAt": 1794872070855,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9032,6 +9037,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwhlfr_1f_advn6",
+      "ts": 1794872070855,
+      "action": "research-edited",
+      "detail": "Updated \"The Guildford Arms\" in Edinburgh research"
+    },
+    {
       "id": "log_mwjwdz22_1d_pxhv6",
       "ts": 1794871901882,
       "action": "research-added",
@@ -10224,12 +10235,6 @@
       "ts": 1794091705258,
       "action": "research-deleted",
       "detail": "Removed \"Bakery Sint-Paulus\" from Brugge research"
-    },
-    {
-      "id": "log_mw6zuva5_2j_2liww",
-      "ts": 1794091668701,
-      "action": "research-deleted",
-      "detail": "Removed \"Bakery St. Paul\" from Brugge research"
     }
   ]
 }
