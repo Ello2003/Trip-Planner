@@ -6891,13 +6891,35 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794784671651
+        },
+        {
+          "id": "res_mwim99rv_z_idcjv",
+          "sheet": "Quick Eats",
+          "name": "Dough Pizza",
+          "address": "172 Rose St, Edinburgh EH2 4BA, UK",
+          "lat": 55.951497499999995,
+          "lng": -3.2040921,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwim98to_y_pdkkt",
+              "label": "Official Website",
+              "url": "https://doughrosestreet.square.site/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794794420155
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794794296473,
+      "updatedAt": 1794794420155,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8950,6 +8972,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwim99rv_10_nndla",
+      "ts": 1794794420155,
+      "action": "research-added",
+      "detail": "Added \"Dough Pizza\" to Edinburgh research"
+    },
+    {
       "id": "log_mwim5vy8_x_6o97c",
       "ts": 1794794262272,
       "action": "plan-item-added",
@@ -10142,12 +10170,6 @@
       "ts": 1793929949637,
       "action": "research-added",
       "detail": "Added \"Seafoodbar Belge\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bh5j5_1p_i8alh",
-      "ts": 1793929785665,
-      "action": "research-added",
-      "detail": "Added \"De Gastro\" to Brugge research"
     }
   ]
 }
