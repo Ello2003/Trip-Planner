@@ -6946,6 +6946,11 @@
               "id": "link_mwjwdoxp_18_3obz9",
               "label": "Official Website",
               "url": "https://www.theabbotsford.com/"
+            },
+            {
+              "id": "link_mwjwic92_1g_xhly1",
+              "label": "Menu",
+              "url": "https://static1.squarespace.com/static/56cc81e0859fd03dbee5f119/t/69df551f9fced703f2a84db5/1776243999953/Abbotsford+A5+Food+Menu+April+2026+FINAL.pdf"
             }
           ],
           "status": "researching",
@@ -6984,7 +6989,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794872070855,
+      "updatedAt": 1794872108822,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9037,6 +9042,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwieqe_1h_obvq5",
+      "ts": 1794872108823,
+      "action": "research-edited",
+      "detail": "Updated \"The Abbotsford Bar & Restaurant\" in Edinburgh research"
+    },
+    {
       "id": "log_mwjwhlfr_1f_advn6",
       "ts": 1794872070855,
       "action": "research-edited",
@@ -10227,12 +10238,6 @@
     {
       "id": "log_mw6zvu7p_2l_904g3",
       "ts": 1794091713973,
-      "action": "research-deleted",
-      "detail": "Removed \"Bakery Sint-Paulus\" from Brugge research"
-    },
-    {
-      "id": "log_mw6zvnhm_2k_ber8k",
-      "ts": 1794091705258,
       "action": "research-deleted",
       "detail": "Removed \"Bakery Sint-Paulus\" from Brugge research"
     }
