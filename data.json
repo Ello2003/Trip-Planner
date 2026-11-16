@@ -6913,13 +6913,29 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1794794420155
+        },
+        {
+          "id": "res_mwimhdjk_11_hturt",
+          "sheet": "Quick Eats",
+          "name": "Victor Hugo Deli",
+          "address": "Victor Hugo Deli, 26,27, Melville Terrace, Sciennes, City of Edinburgh, Scotland, EH9 1LP, United Kingdom",
+          "lat": 55.9393749,
+          "lng": -3.1872222,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794794798288
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794794420155,
+      "updatedAt": 1794794798288,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8972,6 +8988,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwimhdjk_12_07w8y",
+      "ts": 1794794798288,
+      "action": "research-added",
+      "detail": "Added \"Victor Hugo Deli\" to Edinburgh research"
+    },
+    {
       "id": "log_mwim99rv_10_nndla",
       "ts": 1794794420155,
       "action": "research-added",
@@ -10164,12 +10186,6 @@
       "ts": 1793930082089,
       "action": "research-added",
       "detail": "Added \"Three.B.pasta\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bko1x_1y_wcapn",
-      "ts": 1793929949637,
-      "action": "research-added",
-      "detail": "Added \"Seafoodbar Belge\" to Brugge research"
     }
   ]
 }
