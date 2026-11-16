@@ -6066,9 +6066,9 @@
           "sheet": "Pubs",
           "name": "The Abbotsford Bar & Restaurant",
           "status": "idea",
-          "date": "2026-12-04",
+          "date": null,
           "endDate": null,
-          "time": null,
+          "time": "20:00",
           "dayNumber": 1,
           "dayNumberEnd": null,
           "location": "3-5 Rose St, Edinburgh EH2 2PR, UK",
@@ -6090,7 +6090,11 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwjwu2g9_1m_kio84",
@@ -7051,7 +7055,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794872108822,
+      "updatedAt": 1794872691521,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9104,6 +9108,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwuwch_1q_81ix7",
+      "ts": 1794872691521,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Abbotsford Bar & Restaurant\" on Edinburgh"
+    },
+    {
       "id": "log_mwjwu2gb_1p_g3qv1",
       "ts": 1794872652779,
       "action": "research-promoted",
@@ -10296,12 +10306,6 @@
       "ts": 1794102249051,
       "action": "research-added",
       "detail": "Added \"2be Shop\" to Brugge research"
-    },
-    {
-      "id": "log_mw764umg_9_w4k7y",
-      "ts": 1794102212104,
-      "action": "research-added",
-      "detail": "Added \"The Republic\" to Brugge research"
     }
   ]
 }
