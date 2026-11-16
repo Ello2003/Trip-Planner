@@ -6036,6 +6036,30 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwim5vy8_w_in67d",
+          "sheet": "Restaurants",
+          "name": "Prince Brassiere",
+          "status": "booked",
+          "date": null,
+          "endDate": null,
+          "time": "20:15",
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Brasserie Prince, 1 Princes St., Edinburgh EH2 2EQ, UK (55.95300, -3.18927)",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -6873,7 +6897,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794784671651,
+      "updatedAt": 1794794262272,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8926,6 +8950,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwim5vy8_x_6o97c",
+      "ts": 1794794262272,
+      "action": "plan-item-added",
+      "detail": "Added \"Prince Brassiere\" (Restaurants) on Edinburgh"
+    },
+    {
       "id": "log_mwiggbs3_v_datpv",
       "ts": 1794784671651,
       "action": "research-added",
@@ -10118,12 +10148,6 @@
       "ts": 1793929785665,
       "action": "research-added",
       "detail": "Added \"De Gastro\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bg428_1m_amora",
-      "ts": 1793929737104,
-      "action": "research-added",
-      "detail": "Added \"Pigeon House\" to Brugge research"
     }
   ]
 }
