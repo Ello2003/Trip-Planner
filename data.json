@@ -6866,7 +6866,7 @@
               "url": "http://www.thepipersrest.co.uk/"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1794784497243
         },
@@ -6935,7 +6935,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794871786325,
+      "updatedAt": 1794871803576,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8988,6 +8988,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwbv7c_16_6lnij",
+      "ts": 1794871803576,
+      "action": "research-edited",
+      "detail": "Updated \"The Piper's Rest\" in Edinburgh research"
+    },
+    {
       "id": "log_mwjwbhw5_15_ef4zo",
       "ts": 1794871786325,
       "action": "research-edited",
@@ -10180,12 +10186,6 @@
       "ts": 1794087917545,
       "action": "research-added",
       "detail": "Added \"’t Klein Venetië\" to Brugge research"
-    },
-    {
-      "id": "log_mw6ww5ml_29_2wff9",
-      "ts": 1794086689917,
-      "action": "research-added",
-      "detail": "Added \"ODA Rooftop Bar\" to Brugge research"
     }
   ]
 }
