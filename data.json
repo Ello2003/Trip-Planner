@@ -6780,7 +6780,7 @@
               "url": "https://www.thebroughtonbar.com/"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1794783079169
         },
@@ -6935,7 +6935,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794794798288,
+      "updatedAt": 1794871745598,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -8988,6 +8988,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjwamgu_13_pzkz3",
+      "ts": 1794871745598,
+      "action": "research-edited",
+      "detail": "Updated \"The Broughton\" in Edinburgh research"
+    },
+    {
       "id": "log_mwimhdjk_12_07w8y",
       "ts": 1794794798288,
       "action": "research-added",
@@ -10180,12 +10186,6 @@
       "ts": 1793930232872,
       "action": "research-added",
       "detail": "Added \"NOBLE Bruges\" to Brugge research"
-    },
-    {
-      "id": "log_mw4bni95_20_edgu4",
-      "ts": 1793930082089,
-      "action": "research-added",
-      "detail": "Added \"Three.B.pasta\" to Brugge research"
     }
   ]
 }
