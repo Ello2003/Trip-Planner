@@ -14,6 +14,8 @@ export type TripUiPrefs = {
   planCollapsedSheets?: Record<string, boolean>;
   researchCollapsedSheets?: Record<string, boolean>;
   researchExpandedMaps?: Record<string, boolean>;
+  notesCollapsed?: Record<string, boolean>;
+  notesHiddenSections?: string[];
 };
 
 const GLOBAL_KEY = 'travel-ledger-ui-global-v1';

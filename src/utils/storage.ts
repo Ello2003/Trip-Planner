@@ -245,12 +245,9 @@ export function migrateState(state: any): AppState {
     const tn = t.tripNotes;
     if (!Array.isArray(tn.entries)) tn.entries = [];
     if (!Array.isArray(tn.clips)) tn.clips = [];
-    if (!Array.isArray(tn.pins)) tn.pins = [];
-    if (!tn.practical || typeof tn.practical !== 'object') tn.practical = emptyTripNotes().practical;
-    if (!Array.isArray(tn.practical.apps)) tn.practical.apps = [];
-    if (typeof tn.practical.currency !== 'string') tn.practical.currency = '';
-    if (typeof tn.practical.emergency !== 'string') tn.practical.emergency = '';
-    if (!['', 'low', 'medium', 'high'].includes(tn.practical.safety)) tn.practical.safety = '';
+    // Geo-pins and practicality removed from Notes — clear on every load
+    tn.pins = [];
+    tn.practical = { currency: '', safety: '', emergency: '', apps: [] };
     if (!tn.legacyMigrated) {
       if (typeof t.notes === 'string' && t.notes.trim() && tn.entries.length === 0) {
         tn.entries.push({ id: uid('note'), text: t.notes.trim(), kind: 'note', createdAt: t.createdAt || Date.now() });
