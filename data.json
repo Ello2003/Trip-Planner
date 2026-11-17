@@ -6180,7 +6180,7 @@
           "actualExpenseId": null,
           "notes": "Decor",
           "visited": false,
-          "priority": 4,
+          "priority": 5,
           "estimateCategory": "Other"
         },
         {
@@ -6200,7 +6200,7 @@
           "actualExpenseId": null,
           "notes": "",
           "visited": false,
-          "priority": null,
+          "priority": 5,
           "estimateCategory": "Other"
         }
       ],
@@ -7131,7 +7131,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794874364991,
+      "updatedAt": 1794874416708,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
