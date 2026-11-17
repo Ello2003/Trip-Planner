@@ -391,7 +391,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.25.5';
+export const APP_VERSION = '1.25.6';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -453,6 +453,7 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.25.6': 'chore: correct 1.25.x changelog history with real change notes; feat: IndexedDB document storage (larger files, lean localStorage); Store trip documents in IndexedDB; raise size limit; optional cloud note; Notes: collapse/remove sections, strip geo-pins and practicality; Notes: tidy fonts, remove icons/pins/practical, collapsible deletable sections Touched: CI workflows, Changelog, Maintenance scripts, Trip docume…',
   '1.25.5': 'Trip documents stored in IndexedDB (up to ~40 MB each) instead of base64 in localStorage; legacy uploads migrate automatically; trip saves keep metadata only; optional cloudUrl field for future cross-device files.',
   '1.25.4': 'Notes section polish follow-up: collapse/remove persistence wiring and stylesheet refinements for the cleaned Notes tab.',
   '1.25.3': 'Notes tab redesign: calmer typography, text actions instead of emoji icons, collapsible and removable sections; geo-pins and practicality removed for all trips going forward.',
