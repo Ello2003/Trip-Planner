@@ -6202,6 +6202,26 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwk05ua2_25_153t0",
+          "sheet": "Wine Bars",
+          "name": "Le Di-Vin",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "9 Randolph Pl, Edinburgh EH3 7TE",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Near Kimpton",
+          "visited": false,
+          "priority": 4,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6398,8 +6418,8 @@
           "estCost": null,
           "notes": "Near Kimpton",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwk05ua2_25_153t0",
           "createdAt": 1786400017960
         },
         {
@@ -9200,6 +9220,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwk05ua3_26_wq0s0",
+      "ts": 1794878240907,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Le Di-Vin\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwk05qmt_24_vvi60",
       "ts": 1794878236181,
       "action": "research-edited",
@@ -10390,12 +10416,6 @@
     {
       "id": "log_mw793iar_w_p67f2",
       "ts": 1794107188323,
-      "action": "research-edited",
-      "detail": "Updated \"Bauhaus\" in Brugge research"
-    },
-    {
-      "id": "log_mw793d61_v_4dffe",
-      "ts": 1794107181673,
       "action": "research-edited",
       "detail": "Updated \"Bauhaus\" in Brugge research"
     }
