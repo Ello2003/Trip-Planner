@@ -7125,13 +7125,29 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwjwu2g9_1m_kio84",
           "createdAt": 1794871901882
+        },
+        {
+          "id": "res_mwjzgiat_21_6j47x",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Downstairs at Betty’s",
+          "address": "15 Charlotte Ln, Edinburgh EH2 4QZ, UK",
+          "lat": 55.95129360000001,
+          "lng": -3.2095781999999997,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1794877058981
         }
       ],
       "packingList": [],
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794874416708,
+      "updatedAt": 1794877058981,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9184,6 +9200,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjzgiat_22_fiig4",
+      "ts": 1794877058981,
+      "action": "research-added",
+      "detail": "Added \"Downstairs at Betty’s\" to Edinburgh research"
+    },
+    {
       "id": "log_mwjxurlr_20_7iwlc",
       "ts": 1794874364992,
       "action": "plan-item-edited",
@@ -10376,12 +10398,6 @@
       "ts": 1794106870257,
       "action": "research-edited",
       "detail": "Updated \"Le Trappiste\" in Brugge research"
-    },
-    {
-      "id": "log_mw77oy7k_s_v0dyo",
-      "ts": 1794104829488,
-      "action": "research-added",
-      "detail": "Added \"Kaffee Kamiel\" to Brugge research"
     }
   ]
 }
