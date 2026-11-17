@@ -385,7 +385,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.25.0';
+export const APP_VERSION = '1.25.1';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -447,6 +447,7 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.25.1': 'Auto bump after: Travel Ledger sync — 2026-11-17T22:51:22.072Z',
   '1.25.0': 'Document uploads on Budget and Notes per trip. Research category sections can be drag-reordered. Plan timeline sorts By time or Manual (choice is saved). Hour-by-hour timeline only includes items with a set time. Inline star priority on Plan items. Dismissed/cancelled rows show full strikethrough. Collapsed sections and view toggles persist across navigation. Tab bar only shows known enabled tabs; Notes tab wired; mobile bottom tabs match.',
   '1.24.0': 'Improved mobile usability with a bottom tab bar and responsive Plan timeline so titles are no longer clipped on small screens. Replaced up/down reorder controls with drag-and-drop across Plan, Research and Packing lists. Added single-click inline editing for section titles. Research now offers a quick-add (+) that promotes a place to Plan without opening the form, and a Plan button that opens the edit form while staying on Research. Star priority from Research is copied onto Plan items and shown under the name in the Plan table and timeline. Moved Plan items back to Research keep their priority.',
   '1.22.0': 'Added a Notes tab to every trip with four sections: My Raw Context and Audio Logs for first-person journal notes with optional voice dictation, Web Clips and References saved as Site - Title links with a one-line reason and copy-as-Markdown, Saved Geo-Pins for coordinates or Google Maps links with one-tap Open in Maps and a use-my-location button, and a Practical Dashboard for currency, safety level, emergency number and essential apps. Added automatic migration of any existing single-line trip note into the new journal, and notes are included in trip duplicates, backups, cloud sync and GitHub sync. Improved the Reorder Tabs list so the new Notes tab can be moved or hidden like any other tab.',
