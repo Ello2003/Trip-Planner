@@ -6382,7 +6382,7 @@
               "url": "https://caskandvine.co.uk/wp-content/uploads/2026/04/Whisky-Menu-Apr-26.pdf"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1786399400720
         },
@@ -7147,7 +7147,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794877058981,
+      "updatedAt": 1794878229536,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9200,6 +9200,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwk05li9_23_9ytc6",
+      "ts": 1794878229537,
+      "action": "research-edited",
+      "detail": "Updated \"Cask and Vine\" in Edinburgh research"
+    },
+    {
       "id": "log_mwjzgiat_22_fiig4",
       "ts": 1794877058981,
       "action": "research-added",
@@ -10390,12 +10396,6 @@
     {
       "id": "log_mw78x3rf_u_hocsr",
       "ts": 1794106889547,
-      "action": "research-edited",
-      "detail": "Updated \"Le Trappiste\" in Brugge research"
-    },
-    {
-      "id": "log_mw78wovl_t_ij41x",
-      "ts": 1794106870257,
       "action": "research-edited",
       "detail": "Updated \"Le Trappiste\" in Brugge research"
     }
