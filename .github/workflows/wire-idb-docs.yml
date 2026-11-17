@@ -1,0 +1,23 @@
+name: Wire IndexedDB docs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/utils/docStore.ts'
+      - 'src/components/TripDocumentsPanel.tsx'
+      - 'scripts/wire_idb_docs.py'
+      - '.github/workflows/wire-idb-docs.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/wire_idb_docs.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts src/utils/storage.ts src/utils/docStore.ts src/components/TripDocumentsPanel.tsx
+          git commit -m "feat: IndexedDB document storage (larger files, lean localStorage)" || echo nochange
+          git push
