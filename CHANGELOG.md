@@ -4,6 +4,13 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.25.2] - 2026-11-17
+
+### Changed
+- Auto bump after: Open PDFs in browser from trip document uploads
+
+---
+
 ## [1.25.1] - 2026-11-17
 
 ### Changed
