@@ -25,7 +25,7 @@ jobs:
           set -e
           MSG=$(git log -1 --pretty=%B)
           echo "commit message: $MSG"
-          if echo "$MSG" | grep -qiE 'chore:\s*(bump|version)|\[skip version\]|meaningful version notes|correct .*changelog'; then
+          if echo "$MSG" | grep -qiE 'chore:\s*(bump|version)|\[skip version\]|meaningful version notes|correct .*changelog|tidy .*notes|changelog history'; then
             echo "skip=true" >> $GITHUB_OUTPUT
             echo "Skipping — version / history commit"
             exit 0
@@ -34,6 +34,16 @@ jobs:
             if git diff HEAD~1 -- src/types.ts | grep -q "APP_VERSION"; then
               echo "skip=true" >> $GITHUB_OUTPUT
               echo "Skipping — APP_VERSION already updated in this commit"
+              exit 0
+            fi
+          fi
+          # Skip pure meta changes (scripts, workflows, markdown only)
+          CHANGED=$(git diff HEAD~1 --name-only 2>/dev/null || true)
+          if [ -n "$CHANGED" ]; then
+            APP_TOUCHED=$(echo "$CHANGED" | grep -E '^src/' | grep -vE 'types\.ts$' || true)
+            if [ -z "$APP_TOUCHED" ]; then
+              echo "skip=true" >> $GITHUB_OUTPUT
+              echo "Skipping — no app source changes"
               exit 0
             fi
           fi
@@ -46,7 +56,6 @@ jobs:
           if [ -n "$NOTES" ]; then
             python3 scripts/bump_version.py "$LEVEL" "$NOTES"
           else
-            # Script derives notes from git log + changed paths (never bare Auto bump)
             python3 scripts/bump_version.py "$LEVEL"
           fi
       - name: Commit version
@@ -57,6 +66,5 @@ jobs:
           git add src/types.ts package.json CHANGELOG.md
           VER=$(python3 -c "import re;print(re.search(r\"APP_VERSION = '([^']+)'\", open('src/types.ts').read()).group(1))")
           NOTES=$(python3 -c "import re;m=re.search(r\"'%s':\s*'([^']*)'\" % '$VER', open('src/types.ts').read());print(m.group(1) if m else '')")
-          # Keep commit subject short; body holds the detail
           git commit -m "chore: bump version to ${VER}" -m "${NOTES}" || echo nochange
           git push

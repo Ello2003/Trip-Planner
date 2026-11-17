@@ -1,0 +1,21 @@
+name: Fix bump noise
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/fix_bump_noise.py'
+      - '.github/workflows/fix-bump-noise.yml'
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/fix_bump_noise.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts CHANGELOG.md scripts/bump_version.py .github/workflows/bump-version-on-change.yml
+          git commit -m "chore: tidy version notes [skip version]" || echo nochange
+          git push
