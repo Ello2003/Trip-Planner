@@ -4,6 +4,25 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.25.0] - 2026-11-17
+
+### Added
+- **Document uploads** on Budget and Notes (PDF, images, office files; stored with the trip).
+- **Drag-and-drop** for Research category sections.
+- **By time / Manual** timeline sort control on Plan (persisted).
+- **Inline star ratings** on Plan items when Research has no priority.
+- **Persistent UI state**: collapsed sections, research/plan views, open trip and tab.
+
+### Changed
+- Hour-by-hour timeline only lists items that have a **time** set (no default clock time).
+- Tab bar filters unknown/disabled tabs; Notes tab fully wired; mobile bottom nav matches desktop visibility.
+
+### Fixed
+- Timeline sort was forced to Manual on every load.
+- Orphan / duplicate tab keys from older saves.
+
+---
+
 ## [1.24.0] - 2026-11-11
 
 ### Added
