@@ -7,6 +7,9 @@ on:
       level:
         description: 'patch, minor, or major'
         default: 'patch'
+      notes:
+        description: 'Optional release notes (leave empty to summarise from git)'
+        default: ''
 jobs:
   bump:
     runs-on: ubuntu-latest
@@ -15,19 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 40
       - name: Decide whether to bump
         id: decide
         run: |
           set -e
           MSG=$(git log -1 --pretty=%B)
           echo "commit message: $MSG"
-          if echo "$MSG" | grep -qiE 'chore: (bump|version)|\[skip version\]|bump to |-> 1\.'; then
+          if echo "$MSG" | grep -qiE 'chore:\s*(bump|version)|\[skip version\]|meaningful version notes|correct .*changelog'; then
             echo "skip=true" >> $GITHUB_OUTPUT
-            echo "Skipping — version commit"
+            echo "Skipping — version / history commit"
             exit 0
           fi
-          # If this push already changed APP_VERSION, skip
           if git diff HEAD~1 --name-only 2>/dev/null | grep -q 'src/types.ts'; then
             if git diff HEAD~1 -- src/types.ts | grep -q "APP_VERSION"; then
               echo "skip=true" >> $GITHUB_OUTPUT
@@ -36,12 +38,17 @@ jobs:
             fi
           fi
           echo "skip=false" >> $GITHUB_OUTPUT
-      - name: Bump patch version
+      - name: Bump version with detailed notes
         if: steps.decide.outputs.skip != 'true'
         run: |
           LEVEL="${{ github.event.inputs.level || 'patch' }}"
-          NOTES="Auto bump after: $(git log -1 --pretty=%s)"
-          python3 scripts/bump_version.py "$LEVEL" "$NOTES"
+          NOTES="${{ github.event.inputs.notes }}"
+          if [ -n "$NOTES" ]; then
+            python3 scripts/bump_version.py "$LEVEL" "$NOTES"
+          else
+            # Script derives notes from git log + changed paths (never bare Auto bump)
+            python3 scripts/bump_version.py "$LEVEL"
+          fi
       - name: Commit version
         if: steps.decide.outputs.skip != 'true'
         run: |
@@ -49,5 +56,7 @@ jobs:
           git config user.email "graeme.crazydiamond@gmail.com"
           git add src/types.ts package.json CHANGELOG.md
           VER=$(python3 -c "import re;print(re.search(r\"APP_VERSION = '([^']+)'\", open('src/types.ts').read()).group(1))")
-          git commit -m "chore: bump version to ${VER}" || echo nochange
+          NOTES=$(python3 -c "import re;m=re.search(r\"'%s':\s*'([^']*)'\" % '$VER', open('src/types.ts').read());print(m.group(1) if m else '')")
+          # Keep commit subject short; body holds the detail
+          git commit -m "chore: bump version to ${VER}" -m "${NOTES}" || echo nochange
           git push

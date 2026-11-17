@@ -1,0 +1,21 @@
+name: Fix 1.25.x version history
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/fix_version_history_125.py'
+      - '.github/workflows/fix-version-history.yml'
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/fix_version_history_125.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts CHANGELOG.md scripts/bump_version.py .github/workflows/bump-version-on-change.yml
+          git commit -m "chore: correct 1.25.x changelog history with real change notes" || echo nochange
+          git push
