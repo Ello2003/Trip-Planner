@@ -6,38 +6,53 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ## [1.25.5] - 2026-11-17
 
+### Added
+- **IndexedDB document store** for Budget and Notes uploads (about 40 MB per file).
+- Automatic **migration** of older base64 uploads into IndexedDB.
+
 ### Changed
-- Auto bump after: Travel Ledger sync — 2026-11-17T23:35:58.397Z
+- Trip JSON / localStorage keeps **file metadata only** (name, size, type) so saves stay small.
+- Open and Download load the binary from IndexedDB (or legacy data / cloud URL when present).
 
 ---
+
 
 ## [1.25.4] - 2026-11-17
 
 ### Changed
-- Auto bump after: Travel Ledger sync — 2026-11-17T23:34:33.119Z
+- Notes collapse/remove preferences and related styling follow-up after the Notes redesign.
 
 ---
+
 
 ## [1.25.3] - 2026-11-17
 
 ### Changed
-- Auto bump after: Travel Ledger sync — 2026-11-17T23:27:53.625Z
+- Notes typography cleaned up; emoji / icon-only actions replaced with text controls.
+- Journal, Links, and Documents sections can be **collapsed** or **removed** (and restored) per trip.
+
+### Removed
+- **Geo-pins** and **practicality** blocks from Notes for existing and new trips.
 
 ---
+
 
 ## [1.25.2] - 2026-11-17
 
 ### Changed
-- Auto bump after: Open PDFs in browser from trip document uploads
+- **Open** on PDF uploads uses the browser PDF viewer in a new tab (blob URL).
+- Images and text open in-browser; **Download** remains available for every file.
 
 ---
+
 
 ## [1.25.1] - 2026-11-17
 
-### Changed
-- Auto bump after: Travel Ledger sync — 2026-11-17T22:51:22.072Z
+### Added
+- Shared **bump_version** script and CI workflow so each main change can ship with a version and changelog entry.
 
 ---
+
 
 ## [1.25.0] - 2026-11-17
 
