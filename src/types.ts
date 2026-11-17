@@ -385,7 +385,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.25.3';
+export const APP_VERSION = '1.25.4';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -447,6 +447,7 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.25.4': 'Auto bump after: Travel Ledger sync — 2026-11-17T23:34:33.119Z',
   '1.25.3': 'Auto bump after: Travel Ledger sync — 2026-11-17T23:27:53.625Z',
   '1.25.2': 'Auto bump after: Open PDFs in browser from trip document uploads',
   '1.25.1': 'Auto bump after: Travel Ledger sync — 2026-11-17T22:51:22.072Z',
