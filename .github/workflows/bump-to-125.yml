@@ -1,0 +1,21 @@
+name: Bump to 1.25.0
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/bump_to_125.py'
+      - '.github/workflows/bump-to-125.yml'
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/bump_to_125.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts package.json CHANGELOG.md
+          git commit -m "chore: bump version to 1.25.0" || echo nochange
+          git push
