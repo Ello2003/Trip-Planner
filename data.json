@@ -4196,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794958989146,
+      "updatedAt": 1794959014017,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -4291,6 +4291,15 @@
           "section": "notes",
           "createdAt": 1794955876326,
           "blobId": "doc_mwladu5i_2_8k568"
+        },
+        {
+          "id": "doc_mwlc9376_2_fzybn",
+          "blobId": "doc_mwlc9376_2_fzybn",
+          "name": "newcastle-to-manchester-airport-itinerary-11dec-v2.pdf",
+          "mimeType": "application/pdf",
+          "size": 21644,
+          "section": "notes",
+          "createdAt": 1794959014017
         }
       ]
     },
@@ -9336,6 +9345,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwlc937l_3_plget",
+      "ts": 1794959014017,
+      "action": "trip-documents",
+      "detail": "Added 1 document(s) on Brugge (notes)"
+    },
+    {
       "id": "log_mwladu5i_3_vqpu0",
       "ts": 1794955876326,
       "action": "trip-documents",
@@ -10528,12 +10543,6 @@
       "ts": 1794107494988,
       "action": "research-added",
       "detail": "Added \"The Monk\" to Brugge research"
-    },
-    {
-      "id": "log_mw797io5_z_h7v6a",
-      "ts": 1794107375429,
-      "action": "research-edited",
-      "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
     }
   ]
 }
