@@ -5970,11 +5970,11 @@
           "id": "plan_mwief8ej_3_46srw",
           "sheet": "Restaurants",
           "name": "The Spence",
-          "status": "idea",
+          "status": "booked",
           "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "21:45",
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "Gleneagles Townhouse",
           "links": [
@@ -7127,7 +7127,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794872691521,
+      "updatedAt": 1794874012322,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9180,6 +9180,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjxn7he_1z_weeak",
+      "ts": 1794874012322,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Spence\" on Edinburgh"
+    },
+    {
       "id": "log_mwjxmmab_1y_wnr11",
       "ts": 1794873984851,
       "action": "research-promoted",
@@ -10372,12 +10378,6 @@
       "ts": 1794104793581,
       "action": "research-added",
       "detail": "Added \"Hotel Van Cleef\" to Brugge research"
-    },
-    {
-      "id": "log_mw77muh8_m_zyiwb",
-      "ts": 1794104731340,
-      "action": "research-added",
-      "detail": "Added \"Estaminet in 't Molenhuis🍺\" to Brugge research"
     }
   ]
 }
