@@ -6207,7 +6207,7 @@
           "id": "plan_mwk05ua2_25_153t0",
           "sheet": "Wine Bars",
           "name": "Le Di-Vin",
-          "status": "idea",
+          "status": "booked",
           "date": null,
           "endDate": null,
           "time": "20:00",
@@ -6220,7 +6220,7 @@
           "actualExpenseId": null,
           "notes": "Near Kimpton",
           "visited": false,
-          "priority": 4,
+          "priority": 5,
           "estimateCategory": "Other",
           "currency": "GBP",
           "originalCost": null,
@@ -7171,7 +7171,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794878272756,
+      "updatedAt": 1794878280337,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9224,6 +9224,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwk06mh0_28_04r9n",
+      "ts": 1794878277444,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Le Di-Vin\" on Edinburgh"
+    },
+    {
       "id": "log_mwk06iut_27_1yf6v",
       "ts": 1794878272757,
       "action": "plan-item-edited",
@@ -10416,12 +10422,6 @@
       "ts": 1794107371058,
       "action": "research-edited",
       "detail": "Updated \"2be Shop\" in Brugge research"
-    },
-    {
-      "id": "log_mw796c8g_x_hx2u2",
-      "ts": 1794107320432,
-      "action": "research-edited",
-      "detail": "Updated \"Huisbrouwerij De Halve Maan\" in Brugge research"
     }
   ]
 }
