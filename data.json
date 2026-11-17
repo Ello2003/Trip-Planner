@@ -113,6 +113,10 @@
     {
       "key": "Transport / Transfers",
       "color": "#5b6672"
+    },
+    {
+      "key": "Cheap Eats",
+      "color": "#b8874f"
     }
   ],
   "trips": [
@@ -220,7 +224,8 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     },
     {
       "id": "trip_ms9g79qh_e_y0tq4",
@@ -315,7 +320,8 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     },
     {
       "id": "trip_ms9g79qh_m_f4vz9",
@@ -421,7 +427,8 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     },
     {
       "id": "trip_ms9g79qh_q_oggtn",
@@ -498,7 +505,8 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     },
     {
       "id": "trip_ms9g79qh_11_kwuzd",
@@ -631,7 +639,8 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     },
     {
       "id": "trip_ms9g79qh_14_mvqhc",
@@ -4187,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794713053293,
+      "updatedAt": 1794955876326,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -4272,7 +4281,18 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": [
+        {
+          "id": "doc_mwladu5i_2_8k568",
+          "name": "bruges-to-brussels-airport-itinerary-v2.pdf",
+          "mimeType": "application/pdf",
+          "size": 21597,
+          "section": "notes",
+          "dataUrl": "data:application/pdf;base64,JVBERi0xLjcKJfCflqQKNSAwIG9iago8PC9GaWx0ZXIgL0ZsYXRlRGVjb2RlL0xlbmd0aCAzNjM1Pj4Kc3RyZWFtCnja7VxJbyy3Eb7rV8zZgNpkkcUFEAZwbMOIL/Hy4IfAyGGeRuOLXwA7h/z9cGcVe5kZ9QS5xIKsUam7WMtXC4u05UGEr2cZ/uW0nJzz1ujD6+enP57EZDH9tX1I5PplASdjPHh5kMpPUkntzeHzk3GTyJ8J+XdGtp3MuBD6xy+e/hkkEOgc6CCB8EKGP4hJGm2FOfz529OXJzmJw2//IqzJJ7STUdZ6PJggxeHPt2uPWZkfu3zx9GNQj8iLWOWij7spPv0xiBlN5TUK74J83gjrosTRkFauCHqV542PXoKsXFpQatEXnUs0+hUyYdJdEfVSQTGUUbOICieUB6bhImeDahD7Vu2yKwhGwIkJvJNGMe0ImSINrO9kyoXSi3o2OS5o5RSCjw4MyFOoVhwIKBfkBhfwGf6xXMmVhz15uKMOyzs+ypRklOEd9EoENCmcVHunYu/WILmP810vVBwCmEmCxkClb9nwEdCB3aHA/azve6OqoLyZHAZka/qWCq5VMqRHt0OF+1nf90ZV4Y8tPP/03dOXXxWB5OHfFKZ9hc/JeGZmvN+ffn7PGhBjb8bsc1DPTmqm3jsXibaaM/vMAn/3IjwqaCoqZBXtZrQD/35jMdgC9Uih71+kez3ykpkX8zqh73AIAS90rzf6I6yFCxIzaO3XJEJIdggBhVah79eE4JdpQvC7XxMKVKwCU/xqjTuXYDglaxD6/kU6frXWfA1T19APcEjDKVGE0B9hLVyQmOF3vyYMp0QTQt+vCcEv04Tgd78mFKi6x0gnI6hJPAq/bA1C379Ixy8CTLiAX0Lfj1+mCKE/wlq4IDHD735NGE41T42Fvl8Tgl+mCcHvfk0oUKEKTPFrDE4ucnsEftkahL5/EbKFDrxU5sXwS+j78csUIfRHWAsXJGb43a8JwynRhND3a0LwyzQh+N2vCQWqrgJT/NpAFo/CL1uD0Pcv0vFrjQpb2jl+CX0/fpkihP4Ia+GCxAy/+zVhOCWaEPp+TQh+mSYEv/s1oUBVVWCKXwdyMo/CL1uD0Pcv0vEbeckF/BL6fvwyRQj9EdbCBYkZfvdrwnBKNCH0/ZoQ/DJNCH4XNaF/D251Bqzmw1tC/p2RbSczLoT+vvGmU75a4/p4c+XhhfFmHw87SzS10fZFduuoTir8MtKppk6Ej3Mq1GdfqV28i6V3bi/v9ASVS1vRO1OfJvIR6itRh5CDh3yw8kju5iLLUSJ0vsS0XRXm+a53X4yZaMHOr2VYKQ/xa8Xv/XHiSinsBPOTiSsP52nkjdCjEvsVZHiODCVHugXdMSAnkHMqQ4ZeQQahq8nKhoyyone4iAxcRgYS1mJSbiQHD7Zn23KUSJHhl5FByF3vthgz0YKdX/8fmP/bwAzpcfsI4S8fnmQ9qSWyicmDRX/48Pnpy29++fvP3353CBw+XJ5+fREClBAYv81RhV+1Oz7L+NMcn+PvqIUQMvzEoxTxd5F/76/FZ47Pujwb30vvn/u7AOH3U3leZh6ojs+QGGJ+KKiTmCp1dIGsAl9xKu+f8vovmY2+xGUyC4w0KOwgsjsd/3H48P3Ttx+CrSCeRQaLTCr9Ez5oKa3BdVtJCPZ0FlEma/3t62++/uGrg2zWUjqrnGTAbDE4gskr2yiiOGepAyshqwXwCC9Zaq2L1PHzW/hWVZvyWvgp60+babawUXj0vmsM2V+ZW7JaNSbYo6xeSCZzxyii9uSRLlL0STOiTWyOyZ/ZyL7zl5+IkJB/Tz8NsbqsJ7+yHnKDksqq0eoxuIrVbWhFUCqHFKNSVb9V48skj644eCNiy+SBYiZJtIfsLPkpS9hWlzHI0Lp01seWr04flx89oF+PIIsJS4hgMXImDStC6HWMDbZytyqcTOuImSGvpLEGVA68iitJIBCRCpf8d9A5tmowRYMUH1foaV1YYmCjiDEjv7YO9AhsMXvK/BssfJG1YDeKU5/Hgjnfjbb0OpbvpOqZB704DVY1wWqhd5Aa7/FjyJhRK1MyWoRSz2rFkCbFjcxBprmjE75QDLIQRId9iXTaypR1e57trLH6KydNvZozj89JSpo3TY5RGeEm3o4qvqw+5VSUcqrNP7Vpvk4+rTlHXPoiWBK5PiVV0RJ7u2IsKPriAqpDaIedPsSaxJXeRrUvqNYRKSNLbadQZQ3IkeWmSx1Roup/1LSGnY65RojsAlHyXvoZ3GEJGrTt9Y7ZvIaBKthcinTtcXJWg73ZJCU4U4IWLfM2gFRJc9kp0RJNV4I0SVwD25DgroV5DBqtQ9sBYO1dFi71/s3wktXxsRoPIM2EIZUh1HiYZcueXjYw3wUJuiUHDY6Sggbq4HBWY1n5ynTz1iAUQt62ilki7UKK3P1tGIT9dvhoY+tFoBDPg9P+l0RHi08sEBBNP2VyzKcegjVlgQaxNIHLnVtMBvkZRUyiSB/1VjICS7FNx7YBpOrYtoVQUoaNAyjLSxgM6qiS8tt6Y1FU/SoB49i6Lay1p/ql9qdDzIl+kj9jlAxZXlMvlGkRjWReYYdCqWsRLDWhFdqmWa1xNc4yQjZuwq2YVAewgHCOI0SzxGlJ4jS1DAeJIh6UOypR1YpefV0omGS9AE7V1vu1BRHpX+tqJjelfDU82tx/B0KCmk/h85wwKU7vaAkpGq4Yg7h06GBpFwQpoZbeuAWCPtP6V3cRtZ9uTcFlA2Jcutk+IbY0NbW1jv+1d0Q5SS8n9lxWcsO+UNBn1QaVmyDs8OwNRvtvmYMhaW6O1ChejnW31vCJpEfRNV2lzKbK3mrsPkryVn2fVRsr6D0bkkjXZR+5Jb1zAXU0DvKGa3wj5GqpQTkzvDG3syJNbyhQvuXwavocQbNNSagg8YQhFJdxiblJI5IuxRx6tQ2QerBFadtrmZG1x3stfn/r++7qppreaj+YymSv+TKVpPO6fbVwk2f2jSHhKq4U76ZqGMwA4Stc+143PONftp2rw64L7nIuf2MhiFSWqG2QWsTQNLjkXWNCW+isHKXa8G7gZS4lGcu7vNw6eWhymqHhUgU7lXPeB3BnY9FWFDyUvQ9vhu4uddEUeK3U1Z1vDHq5r5pcWw/6RKUoHAoZ5swr7QvtUQsqxzFYnZ6Z0qTAy3a3o0Nz7Bgua7eDrHnjPcYGzrmG84pE9oJ0478CjTpcodv9HpHwwjIADn1Q3cq0PH9e2khGjWs3doVh6sEkyRFEKmnGMrphpJnR9VahXjAL1oFaG5cAabjaLknUfiS/0vZwbLPSNylyYZNSi+Nt07lVlTF8lLzJq4Yk3hgFy1OCXSGOYY+pbw1xMtwyF9J/LowJ3psCrskDZKjWOiNNwBraXf3Cx84Uh+uDsPUkgEZPljlnbaRGZ2JwLvPNrbkYhQDXfJ4aFhC7hn+bam96UrNMyEcXEWEZpafZyNKTiaWbTyxhfWBJEldOt3RoiWT6v2iFma3z6I1GVi2ZZEZfB37QDj9mPZucNKIzMCyx1DnwQxMkQtx0YEL2nWG/L/Pcr1UM6YaCVczWR3/jGAjF5KRUSo6iLzYktW/UnmCzjhQ3+j+Mp5g86176SVLLwDV/392/G5Eu1RuVZf/41x9++v5HavY0fCjnWfPzpxJM0OyVzFyPOiIq46S/ViTZIOGG2EiePPcu3zWko1pJEXoYdvcgkXohBZVF25+HDBQgQKdk8/6TmCz+t0HCqe4SWUpp0u8TmeGXsoauaFviQ710INRNQvqWtAXNRiJdKHQzl3MGbqZq33FTzNz02sa7QBreaFHtN3TWfvIIUnWdsby1v9oZZydozFeq3QOr2bX19je0aylqvZrZYGtkBr6SyGYnv7ad/G64kWu+2OjWLVgfsfDGc6Gy9VPdVhToAKTvguiDd3fF/fOYikFMRoZcfB1KkOdD0o7ZvkSqeItwG/lbCExDlrxuwDp9TplP51F8Dsd1p8xdv9bWLgx4TuyEsJqtd+Mt2mu3YBypldgTTGu9z728KEh9iFL9nKdNHpCFwTWExHTjXyi4NuwB8SiS2iMeJUoOEL5rz5OM8+Ly4wEqS4LrAtfBvq2XI8hWhG5BSK1lDj9zcYGch+FwN2S1PYp3vjRaJ81glPuBLfWGwbWb5Aaol3ZeaeoEZcfeKzCNdUlcIlvf+1zLDstplnbDFGYXivo2TDnXwdlKwdOk/ps+m6G9rn3AJMaG5kxvFa5HXPWgReLKelB6hoTdfIrpWqtFLq9sDv+P0DfIZTO3AR0u0eKdHzYmwFIExoHlcnDGv74Zdu0AV64dALkbAP1ugLrnboAdKmvuiviR8WwjQKzhBE6WZ65bl1s8Hz7tPjh1iPE6vxJ2++BUkYNTVcTWeZqDpneWKsV13pwuHeHxqy26nAaqEG1iuDsAZRBL77+tXHNZG3bEoYJ6WblhMzZBTvUrfWoC6ZyQ6+cPQUdc1rFiqN3mosLp3BanZ3Q/fk6p6UK3JP1c91I6pdvmJO30QZJjMiBs6uyU3327oaEdbizWsfmJjJH1Ow8mielDEcNu+nm2GG6Ibdbo8U5avCIfOhX04zLb07Pks9n9tpDV4v/+wV4V+f4py42tXOkKSgfhyiWkYcp0c/JjDdLq1IAU6xtmnP1yzcYVp+D2SXqvDV51yw3bp+dybavnj7ztH091XTzVlWDguv/OS6fCQegQPA8Wej0j6dDbtTXyEXhugfogasgJ5xn65aS1RgcDtzWNaTc38oo1w4R+Y5Rsr8su/ZpYBvG4HUaYtHQg8boSKwcC7UqaZeNShNJ2EHtevTVFyzOWkClnhv36db/HthnTK42qZpcIx7sKCzurtbxMGpalu3C4dRcu8lPr4AzNhGTgvPEMtVw08/N7Zp6n9c3Gj7dAP9av/wDEudxNCmVuZHN0cmVhbQplbmRvYmoKNyAwIG9iago8PC9GaWx0ZXIgL0ZsYXRlRGVjb2RlL0xlbmd0aCAxNjAxPj4Kc3RyZWFtCnja7VfJbhw3EL33V/TZgGhuxQUYNODYhoFcEsdCjCDIYTyj8UUKEOeQ30+RLJLF7h5J1iWXeCCZqmGztvdesdUs8XOj8FewSoQQvbPz6WH6a5LCQ/62LbK5frwW0igb3exCXT2gVQnnoo6Kme/RbERYm72GtjeKsDF2D6eJmRVIEfvBzG6Eqoc0dwps3c1iY9YTy4SZ76ceEzP36Jk7bpT9XJ5pL0W3dgdstfNMt52mz9OfWHtMAD/fvk6vj0rI+evf/NS+Ai+c8T7CHJyI87e7/Pgzt16mj/jB3kcnfUAQBAM62rQI2oAZ3LNg4z4Y4ggGo1Zmr23ruxQmbIwDGOwVMDC7FhAaGMhd6tkeGMw+GAw7usXEzD165o4bORjiLhi6tSfdVnvPdNvpfwr+JxS8vEIGMn+4jBsWKSwKVMYlLY2VRjHTJy1kDNImGn3XYc/eXAjMQ0X6ClthsnvOPe/Evpkdcj99foURYSoKp4ZPg0Kq6HCYpM3GX9OIIXCzCfz5Gb7KCTIA4t69DJn5fjBDNw+nwCbFEJz2rG24sArTvqLC7AgWuU5hpH9jmiw8vhnY5pwqlhUQPcm5jKnSuFBYeDlG8cPtpOpYD6Y6iRplxQOo+fZhev3u198+vf8wKzvfXqbfD1IaKSWoBXAJsGj8zx5xiVZ7wV9KSo1b1JeyVhp/Yvk7rzXtAXrOLDcmneHwx6Yjy/cGFm8P5fvkyuqyv/nAtbbkw5CPdH4oNkx7dw/QTz7jvCh16OemGJLd0zNaZ/+6hJGjOJa8/aJ8DroED5Yle6Rk0aY82o/LH/Ptj9P7W+yKqvBXieOpPbrBf78ZSjnhejd+evvu7c9veDfCYhyrT62f1SW3+nfqSaplTibVOpTWhZIXZW7sYlhf2xmU/Nhmi1WQh2IDU2y4NUcT+5mlsouOB6p+jTDSo648bs9LbviRvu4AiQ0fy01gOaWyW0d5+dwXaqYl0FAIPOpNhKU9rfRIEuGxcdasa79hwlP4sucttq7hsmH3uIrHKeSw1CrGJ7Egz7X3paK5qkdWlhRHWONj5Y9Bz+AFr7lLDnbxnWoaKvhabWvnU+mp7FB4ZCpa07e2IAuRZA+9mcA4JWMXjTVkarI5MQJFjqti6K4nnp+B6mfhtLUmm+JhjemGPMpA19BPi5Y1Xvz2Lm1JPi+M66AVuIgUN23UASagN1x3reCovPoJvKWUQLUAbzQ1sYvkhYmoIeKwOmRe8fr5nCUnsbGkEXl70QzES04ZUAEVw1qGRNVL3FsElcjqDsy/Gf1m4Nf//Us0stVNIy/gEV6sYtQsQnh2hAxRmo2lUxkP9rr8nemJWlDbCZJ1yfei60s+LWlD0msXGEYrzAnK+e/zSL/Sek6lgXuW4INQD4cRz4birFB3BWTYfDPOgUofneySJNUookM+YqnjqMpzPtEzxpAsIfJu8hhtkn+uelU3r7Wptxy1KQzaBK3WffCtJ1TKvgnTpuuj7qx1pfZtQM7p+iQsz1fS7BKLaqsd27KjkytnEAaJ2oOh1T0ualjueNX+tetF6ZfI4RAoZdpbZw4MoY7gsJpCO3zJeuqp3kcO9KYR6S1JJm0wKA7Q3iiCNFHPv3yYXr+h+y1evR0EPf8zMeRAFAafiB4v/toEEaL30nP7/fSp3KGv+bh6h2ZevFCPXaIL23PzKt2zPH3hE64QtNyfBqYg43LLqrhUZSAgf7+YDoUYQt/eMvJQplt7LMOn9D7JPzERB3sCS74oSKJ5ei5BsPzQGLk0vFW82MAaf9llRH0PuHT6psMtUauMYiqoqzeNVtQBxcelTNDVrYJLpu0ck4xMVReOTNfPxG/Y3DGeunY6izCzTll4EjuarnaFVF21cvrnbLsqm94LO8imru8NZvdeMepW3qD6rCjTZLxz5AsusBYamnNnugyuL7g6KAGgY1hFt4M8fr1CHipIyLblVpXKB/jGvUG2jcJ7hLydjbFC45uyD8P5Spjy9lzrey6tQlk8jJOLXkzNOEzj48NU+u2DDFLlvkSH5OZlxS3vzy+RPB+01h41D/MUDvNVETNHCOD5AVD0wBoRtUdX3P5i0RvcDAWuyF0XuIqfXYmfuSr9G2E0TBjDShjVc4TxCfjgno/18y/T6x9ACmVuZHN0cmVhbQplbmRvYmoKMTUgMCBvYmoKPDwvU3VidHlwZSAvT3BlblR5cGUvRmlsdGVyIC9GbGF0ZURlY29kZS9MZW5ndGggNDYyNz4+CnN0cmVhbQp42u1YeVgUx7bvYaa7R4EyJDYx09g9boCIIG4oYFRkURBUFhFB9l02ARFwCeKCIi5RVCKIgOCGCsjiAi4E44KKqMEliRpjFvVesxlzmluT66seucm9Nzdv/b73x/tezZypU1W/OludPt3Ts/z8ZlF9qFxKSb0xzc1NK5RKRylKuYWiTPAsX9vR8RuiCa+gSAuLTApPHVahXUdRBofJ+HxcdHiU+PatR4QvJTQ+jkywk5XrCf8xoaFxSRlZW9WGfSiKKyQyy5PCs1KpJ7NlWRIhJjk8KXqAhZ0pkR9GyCM1JT3jVQHlSrCpZF2rV0voacDzL0L7Ob2klMon8uZuZzUt998MXvfjK3g1TFll8BXBKSkD6nUjewzu/fUH6pKyjqy/Ula9duDvGpEzW/9LKQ2KDFopmlIZFBjMI2PP170ihHJVOMpQ9W+7/kGKv2eAN7FRi5WvdalsFGP+hjFABp16D5Tkl6Xmk16hInGgEmWNel5BmZLRa96AKMnr5ZXUKKqgl1dRAnWql6epAdTdXp7Rz1tS/pQPFUANp0aQjzU1jUqhUqlsKo2Kp2KpOCqD6B9NpNlRYwkXQVa0/7RHS7lQ0VS6Hp9MRua9M5mEEvXSkgiXTCR5E0wSkbGYoLWULxVOZtMpZ4JJpKJ6ZTr8A+pvmJG/ohx6rRn/H+DmEp1peqtS9FbZUTZk3yh90A308aOo/nIk9L2KqiO9JcGpSBRlH4YTvAPxw4McsT+xaz6RlEp8yqZWaN/SDsbKV6/0Z2NOdlkTuVMpN2qm3oNAYstCojvrN+SrR//+5/Pgz33oL3+XX3/clK+7V/lynv++KUgiUgqF4g3v+KSIxem+4cnpI51TEqPkORuJpyQzhTTQiJIEA0lUSv1V2NZI2WWkysMpf5nQk03Din7vm5m8fBPWmVC0QkE7Lt2ww85m1ChLf5+A4SNGWE9LSc1Oi4+Ny9COHmU3VhuRre1d0bpEp8fHJmvNCZMZnZiSmhSdnPEb+r+3/7UPWtkJrezE341lTxWPFTSl6KugnhjIfpMLRU1KUV/KkDKidlEl1BUKUzrqF4WZYoTCQeGoOKhoM2ANkg0+MPhCOVO5RPm5aooqUDVfFaQKVi1QhahCVRtVj2grOpaOo/PoB/QvjBHjwDgyXsxSZifzHSuwIpvPfsVi9Si1nTpOHa/epK5V16nr1cfUDepGdVOfIX1i+xzs87zvlL7JfW8aGhoONRxm6GUYbLjXsNOIMfIw8jTKMHpkbGLsaBxoPN94vfF544+MLxhfNL6EOGSK3kYD0DtIg3hkhgYiAYlIiwahwWgIGors0Gg0Bo1F45A3moVmoznIB/kiP+SP5qIANA8FovkoCAWjBSgEhaIwFI4iUCSKQtEoBsWiOBSPEtBClIiSUDJKQaloEUpD6SgDLUaZaAnKQtkoBy1Fy9BytAK9h3LRSpSHVqHVaA1ai/LROrQeFaANqBBtRJvQZrQFvY+2om2oCG1HO9BOVIw+QLtQCSpFu1EZ2oPKUQWqRHtRFapG+9B+dAAdRIdQDTqMjqCjqBbVoXp0DDWgRtSEmtFxdAKdRKdQC2pFp9EZdBad6zdSxyDy1bduqVLqw61kQ1clLw4XsBqG0l9e2t/UrfnG5bJWO3GadcwHsfsThKLcotzt721cv3nt+6vUuI935NyRGmz6bBwM7jq++9J94aQvDeMY3A9sGk5Wf7bxzjtb2B0s/sWfAzM8mY4NDs9K5P0Dzl88XHJg327xEUznAi+vLarSHKgsO1pbnhkTm5UakSEghK9DaE8Sh1nsHITNsI0G27ZgMyBD4TtGCxEJoARLDVgcAfolhAkyHuFgDlhwbgEzsNGAbRBRSYaCBfMzjjiMldhSgy3iMT0IEzwijl8Bcw6bP2I3uqdEzcpV+7I/l5w6nw8GahjIygLPwDMOV2EequQwQYIMt8LmYEVCZgvVPXHcZI+Fs8PECL8sOyxo8JslY474C+5NXTEP+Lsdhy4cFxs+3PM1vKMB06WP4z8Uroe71U3gMa2qPbAkplT8IGnbu8M1jqsn5SYL4UuTMiL5mJSy2hxx+cFV3c80D7d+uuOA0Lzr0N4GnmjLk5ZzuuWg7Qm0Ye0XO4dhxNuwyFYqAhMOtzFl9RXlL26rod9Xtef+rIGB1o+xJbYYNxZbCWnAV7Kf1J28crk+zMUpPRmPxioBG02M8VqDB6ilTIZIT4IbXNumDaurxFMrDkYEaGaGhnrPiK3/OF/AZgweXPjNaDDnYcSfvwThQWyb4zHxauP+E1c10HfMbTxwqFPIu4nCivj8jNnEU6awflPZ1t3qQ8U1ZY18e0387GkRcRPE94gaqQyquanSdDyRwTt1bjTuC3XYDrRg183iBFBz2IsBL2inCXR5TyCn68fM1Ik0vMkc3VVT1szfbJ43bkLYPBfv+EPn14lYYPAbG5/ag8CD9YsXMBLM7b7FbwfHvZcYIVaCJQ0nZZ2bpRPc6pN5ldnV6jMxHgff5cdMi3IJE8Pdcpwwp8Fo1+RaH2FGY3fUQx4G/eknsAUz+6cYzYnKWRAqFu7aeG1T+fZ975wtO1Ldyp/Ymx2yW7TEfty1pkCnKQv8vDxDz965e7ztikg0Vckm52MTeMmELRiPuRSv+UPTbLLwCDUMYooh42OYAk4QqibQkZIpt7d4x9Yd29UH9pU2n9SAcsRn+G08YIQDVrnvD7sSL0wMiZ9rr8GaH21gOFj++AQ0D+PPTTwhYA0s5i43R/v5h0Z5zwyrb29rru8Q1+MjXFfzgqnuoSHu7mEnbtxqPnmd2FQPEzms2PSNIyD+6676W01iXUfFz8BoXiz9NKFNuBPi2jCex4OthpFsMX9kAW/WHtleUiEWF20rqqxW44HRHk6BCfua1glfSXO4600B9pPCAjw8I0/fv3/sbIcoXyMlv10UUqnq18ujt6SsBwuuBVvQYMPgLT1JNHYgJ/9LEg0jmVYg08vk7PVhnkE9jbrvm8JnzMP2krrj4vG6/ZcuaG5Fn5/QItw6ub/psuZM2tmIWqEubF7JJB7fY8AKm3Bgz9yoTfH3i01xFbE9g01U4M58XL9wplf0QmcRuzOou+ddKZNb27GiIbFR3e1r14gVPI7A/bEFzsXvwVvE2lDwAKOfwLFIxOaMzco5c214rHZ/CmNg3M0/Qd8vWsNH7xFR911TqGdAeaP6wmnx/PVDz0kMgU587tMlXAh0q8IqHpNlK933nJQOPAt0uxMeh8f6OmFaRCgGMqCTg1tggm/BRPgrmOiKfkmSAwWmPUGSGYdPkLRxYPIjVqYtXqQOjfVd5MNjNO4lWIHdnWfQ/+zxZcmHxfLsHTnF0XI2wYhsjJ5iFx7H4CHYFi/Bi2AoHgeBz68dvd8u7h5Bf0WclzbDQw4/ZMGqJwmPwNW4EaqxlawYHuorWrxcYa1eW2ILX5KRrpb1S04K8Enf3yncwFbT2Mm7g5sjheim9iVdPAz//C6YiVItK7uU07tZyidu/UBc8YJE6SoHb+uu0kQgcNJVWndVrzuTxf11d/EA6S6NM16r65a2merXrHSrGdwkraaxjbwiFcpBkTQ92dww+/jpXqKHa8wwrNBgRd3Qq26Ce8f9hBf8i/uHr3eIHZ3HXv6oASbmR48uocvTsWYQX4j7c9DvngWpcVYOFtgII6fvwAZsPvkOyI2+DDKhmINZDGgePQNLMJ/wKbYW8W29RRKnghTQsp/WxU2dEhPnSI6tG3KgiYMpzNX9i2aJSWxB1obsXI3b5szdcQKM28dkFOftqtHkw8L87TYN6vs1jRe+1Hy05FxcrXAkYUGJF6/jX0serQIfmME2l+YvKxN3LytKi9fE5aVkLxOW52StDeNRmfRC2szBiALzB3gmj6eZT8SDMX3eDyxTxB+W0N9l1aXM1nj7xowa5tN8b61A8hSPKvp5PHjzMBuUX5D6wM65iPlqETMVtLY8sfyc5sOWo/eenYucukVAMRInfc9BPEm6z0iWLdJ9/zr+hfJx57FjQsJHjgxpeixIeeQs8tiJFXNaQ4Wgc3cXPeYf361uOSe2Hq/46L5GyiOnDq09yaYQIl/JYxis0B3HfaXjNLZkMK1rxrTULM9DhHyF8wwYStcA6a7RiHhoD5UcLJVCaezEYBJzPBxu09iRgbU6MlcJViwx9LZsErkUpD6Mro8unSbcCWK2mpXUUjrdW1VspfJSLr1yVck+DZxjwWBKOzbH5pO9sEmeQLS2b63c3cW37cuOzc5btixPzFq5YYNbru/KAdrsAD8rjdVVj28vtlWdPS2kbFpZvFQAawZPgiTOIXKBS3ByVUNTxZ6PdgotRXVb399Ysu0dFHOB2ESOUfshO/fIqbTrPHDPoR/Yf7y4O/aseC5mxpEZvHtwmn+8CDtZ6ItPc12trhaWQW6uLsGdL75tuX5D1N/4vuZgwMqxn2AzHo+3GYRnYrcnQ2AsvP31Z8AVi1jDuOakpPryLuEdL89uP1VaIx4sOVTSwJ/fl+pSIpLQDDcl9/4krMU7mba4BVXuPOaG4zewvXPF1NoAcW7dtYRr/PWTe9uOiuRIjLmbp9yHiMOD3F1dg7q+/b6l64Ygxw0yucKdG7Zs1bStOr2iXngeO/aCXBBtrbEKz8BTnw4iN1Hj59d/PiTfXMNyotLm8ZELSw8uEVfsWbt3/Rn1xifcg6KjDZf5K/Vhjlv19f+aVM1NOMfs3/lBdXFxwfoPhJ/YjUnJhZm8TUjoKNFjss0d3XTQStMfyOc7VKrjJrAdUWEHfPiguelRMaK/b8okaw12eIxJwfjoaNmFVsGZ9VgQMiMwsaIxV8BDmcLwXcl1Seq45gs5d3gY9fQ2mIjShywuwBR3rdXZYnjwdFfvsM7nPzTfJHekmM7e44K77OUTxzsOVeYuLhGKszcti9fgB2T6r2xndkvMIaE6MWRXCO8WmDorSoQ9rFwNI4l1WKurAy3Tk6QioTYhnPykFwQPOGkI1urlurLtl4DDeTRMYHAgfAkzIUzOer0EuSTqYaSIrblI5MnSiCmdtccunjqQGiZgnX58rbbht7H0JvuT52VMuQWTf5LCmUX+B6bzXpFLfBeInSRoHb9JuXK8qeviwQRPAT/SewJGHp1Y7Tx/kXekcI9AoU06yeGJ5liBXbHb95gCB5j4A1DgDJ6WP+NJYiGmubun3QaZB7hOmTyv68WLM113SMxgvt7zXwqI1KPMrCMtKSTNTf8ECCbcWXwn9rR4Jnb6EQ/ePSh5Fknzvin67LIkyeUSfP37H05dv0lqJd75q6EN7P3Gxvu7thesKxNgMFu4at2GNbynX7hzovhSfmTdKBlwwKwf04WH8XjgeDesjN2RWJYplmWV5p3NAceAAUdzd+Yu1iRELfGISXm/OFtYtmPNjjUHyPMIgw03f+ENE/jb50tqGsSGmr2nz2luxJ1wKRew6xk6aufKbRWagzV7WjsPp88v1P8raCMJOgmGkeMc5mbThT9nxp8I/6amctO2auE5u3756oJcPiZvR4sIp+QQSvWmUh3Bfs16hoa7zUqquSrAdyQpjFhsdHU6qD9urb7UIHgSN+BHU/CW6vTFT6ETcR9JlHmYo6uj5aQBqOLABcrlgjcW248Be5kDF1yOp+MqGpyYb8Dpa+wkcyQognwEKt1AbCgNJLdCBhboLtC+cdEBuXkbN+cIg9l15TsLSvnahq3bq8RjJaUVlVchreetAfqS6Cl5SbZcQWpB/rpV6uxVS/PS+czlW/YsEn2a6NL0RdsSeKewIKu14j2mcF/hpk3b1Lu3lRTt5ctLV+dUiufD6ezqvasO8582tjx/X0T/1GylNrjC6TqGSB2vn+vwGXCVJnEuvn6ubu2+XV3t7V1dvu3Tf7fxf6FBy3+h/sCjJ/9Z5JIX/6IQ/GVZ/x4zjlLIb0JN//VrI4OblL3+/ZAXZUnoVxTBTyFjjdzrcdbUQEIuhIRefgAhnpC2d2xKyIzsWfRHr6iILg0hH0LWhLz0c5GUh7IvZUXGLkTXZFlu7/xs5VTKWZ4n65YGJdTMXhmzCa8l64jw+jllHWWsXysh9kRSwh/qJ/aRdUfSDya93mZiLyL8cELTiP5pvThHmVdmU05kfjKhIYQc9HFZo7dxYO8+B8Kj3j1vEOrzO53TKSfqf9AMrF/B797lhVCjqf9v/yeaspZC/wbKx/NuCmVuZHN0cmVhbQplbmRvYmoKMTYgMCBvYmoKPDwvU3VidHlwZSAvT3BlblR5cGUvRmlsdGVyIC9GbGF0ZURlY29kZS9MZW5ndGggNDQ5Nj4+CnN0cmVhbQp42u04aVQUR7c1DN094tQYl0ad1u4RDEFAQECNAkZEFpFVRCOCioCgMoioIIoL4ko0GhPUKCq4oSYI4hqFgEJwCS4Y1xjccMElnyYab5MaH69mwHzJl3zv5bwf75x3zqvhTt1bdfe6faepkJEjQ1AbtBAp0Tvevr66LunwGiHlDoTaTwwJd3JJDJuYjZAC0TEhVh+TomvqJiBkVkbp04nxMXFS6pq1FM+j0C+RLnCeysUUv0yhZ6J+5uylher+CPEqqjNfHzM7BTWGGnXJFNjkGH28dq7LG6p/AoWolGkzZjYvQS6U16hDZzJLocP1BV+Nb+fxC1IqG43CV7ZWHzLOj6yW/9wsN9soC8weUFKJzFDLoDJmN/7jJ3RaWUL3f1UWtATwu0H1hJq+kdJsgWINYpC5WY7Zh5Qe3jIrxiEXRV8jK/NPqT9oiRg+OhgNRjqibLFl7qqwf8tjZm523hSBkn5zKJLOCvM2FE8y+WnEFciSUi24GdKgRa24EvVDa1pxc9QT1bTiDOqCnrTirGndFkWgEWg06oXs6ccBeaNpKAVloFQ0GSWgRDST2ndBzqgPcqPYRLqj+xcZHRqK4tEME38ypWxaV9IoJJm06SmWTDUFUx491TGLcutQOIqhqzOopngqOYvyxlCrLZoH/oH3LWfvf+Ed2OpZv7/FPYpSqSY/p5n87IMcqbSzMdGmfCLUyZgZ02yODtLZGIk5zZOORupKrfmiYSiQ2hpJPYykejLQfF1HnRVBRNncbDopG5rBvsirlS/UxBeDpv7GZ9bc3HwXoea7f/25E3VnBPOw9fx7ov96qE1VkUifOwsazyNTBHQ0LzLW/p+HghYnUigUHYMn6yfOmhEekzyj94j4hFlJManGZXtZQHI3hdxdjWTRTBaVchdzYq9WZpPkX/s2ZTCgb/dJt/ZRHSC9PTJXKBj3uUv7ODo720aMGN3L3t7Be1pKRurkhMSZOhfnPm66iRm61h3d0PgZkxOSdTYUSYtPmpaij0+e+U/u/5l8Swg6YwzGwBQNCgYpLBSo0cwYJs2KypSVtjRHOegj9BV6SPPTqFAq2iu6KZwVaYrVikdmIWahZnlmvyol5UJlvfK58oXyJ+XPypfKV8pfzHuYZ5vfYtoxdowXM4TxZkKZMGYEM5GJZbKYRcxhtiM7mW1gX7PAypw958D15oZzgVwQF8yFcKFcGHdJ1VEVodqgamjzTpv0NrvaHGtzvE1DmxcWrhZjLT61uNK2c1vPthvbnmn7Qo3VA9ST1bvVe9R71V+ov1S/Uv+ifq0GtaxuUv+qJmoD7og7YR5b4s64Cw7BUTgaj8Pj8QScgefguTgTz8Pz8QK8EGfhRTgbL8ZL8FK8DC/HK3AO/givxKvwx3g1XoM/wWvxp/gznIvX4fV4A/4cb8SbcB7ejLfgrTgfF+BteDvegXfiXbgQ78Z78F78Bf4SF+F9uBiX4P24FB/AB/EhfBgfwUfxV/gYPo7LcDn+GlfgSnwCn8RVuBp/g2vwKXwan8Fn8be4Fp/D5/EFfBHX4Uv4O3wZX8FX8TV8Hd/A3+Ob+Adcj2/h2/gOvovv4QZ8Hz/AD/Ej3Igf4yeaDzQ7yQMN/TONCjkL7vErExaMTU8kXaF/l5c1RYe/0z7yq3WwH+zrGrV50lkPkbT3nhTppCXqeg9oV/7V+m3FYv7neZ+X7led8WRAwRIN2DMl1fnnTmnJwWd8cN2iTcXaiqKiivKShMjxKVM/iBKhKznGh4ZPmDla8A6tvlS198DDbySNhuyDhU16/j3SOZAEkD5a4nKWBDwnncWTrCtYR4IHuGnBtQw8G8BKpNyNJJF/Dp3PQgD00YJLIAS8B53FkWwDsS4jHsRNS1wjiacrocxU+YN7L3nrUxmc7/z0qBViPHduRenxO1pQc0a7JVDLk0XesIiljBBOOa1fmtAM6hDJepPFnGQhqymL0YRCYVMCPyxEHzlJih4+055otWT5TcKDA9jVAw+LQDfrcdQ5sXxS6G5/wdP8yTE78iGZGG3fyzHqOYyFsceePZGolvXyet6wvqEpIYxLIsr0TNItQzWc04TKH9/jDW3Yz059sf9e5fOqLv84+fWV+9pTM6piSsX9MaM3+wt9/KcG0V/0+IXjVgxRNbAfl32ye/121ZFtX+2qFG6eCvMMmzImMEFyiiC2/Sb4ZROXrnISSw1Oh7v8OraEffr1ODfnkSOd7aLKflkiubKrw3Lj86aqfEouJj4TwOZxA3R/lFjeb490bteX5Ze18M7Aq0Qg1h+4k97LxQZ25ZHVO9YVqA5uPbL9pHDjWJTnhxlJcXOkGVlTlwXnqDQ0gJSmMbzBjB1lsGR+YMsOFuVVCU9qAqzeDQ2yHxRVejON2lwfljstf7oq4sB3STcFsH7+EuxA5/iUdBsTO18/USqESAaOU6flpfIXPFjM+aCOIMHTJz4gRho3dLYr6awlmrxBh4eLofvPJN0QQHj2AnpA1z6PSUefkdNHxUvgt7LqHy+EM4djfT6XSHvizt+pDLF3Dhk2cEDQxUcPTp25R89AzjN6muwmd2SJJ1niS2xHkXmqx2wppN+H0eAGk1WUSZDb81eObiu+oAXW7XvSgbR39SCM77bEy9HiwImxoe5a0uWZEzWv+/ERdLkZWzPgoEhUkMdfPT7O2y9ynNfgsUfr6o4fvSqRavOGU2H93UJHOPcNqbl9t6b6PvWiEgbwxCLvmg8g4fu6/bWHpCOXtjZAZy1oMq7HfCvWxAXt9RSIYGdDdKTrg97Q6Xz59pNHJeKfE25rIwRNOFA3T4JO8iy+/oyvo0tIkFu/UaeePqw5Vy8ZC3hKSy3L+eamkn77oCfDNP4qmca8ZMlnTXqGqFmy4Y2e+Qd7HaYx8OkNnmSyoIY7jKbie0uoZy9+veVQqVS8f2tFtbYhttKxWDy/t6jyqvZE+lfxReK+uMhNPgIpYxvJeR4ywZ+r2L149g5pZ/rn+lht7Dz99HRxdmry4tEC8Sd3eVgN6Vx9WZSHZ2TUAEnzuslO/ogHt2SnG8RN6OWRFBIhDfNOsCYWtMuU9LwwVAyr/i7liQC+z59CRIFkz2aPyZqcmawK0QdNpql51wlUtAeE3AMOrGpOzkneI+1K3ahfN1KleX3fEopYCAQGREiHNGIOIgmSSBHb+Ebg5TMwmIOe1+xIMAn6wI70lDQVMBzu8HKPekMPmCc71xtWvdHLW+sNQ1jNMtMWvKgnL+iWrt4w742+kTW1FhhF20TvN/rHRjIUvCjlSOXG1BMDXXndpKULroZG1tBebmRs3ugb5AZWxoYG5hXdrqDuneEhg60+mrevVDpyYMux81roPvA66SmSE0YbsmAOn8Eo7n7lWHf3UWNdJA30b5qew/e+zly8VtQIKi2kEyvoTSaRBNKD9CYZZDb0II6QcLlm074a8ZUbQ2JoRUaHXwli0iZMWTxeIE496fH6g//PdHIGp5dETfwcUr0jgul5QDDQY1zM3iqJ7SPlBDDjPh2/QS8Cs41N3L5454pnOaCeXexRpKo/+GXZbS108LxodPW+yVWdOT3dWVzFnuz0bdKOtA1TJmjdxsfZirTmGmnLK1/++dwi8XZsvyOknUDcbAeQLi7Hwp+mSjBsLNM44+CkEdq4tNikWWJacnRWqOA+asuhRCnliwX7Vh5VubIr/TeM3x2r8i2/nQhK4d6lrcXHpLLSvbVntQ/Cz9nuEsnwMsZ1+9TCKu2V2rIfQVU72n6lSA/udZPAQ3a94eIAWPxGMB0a1DdlWkIQrX1rlmgN98lA+T7zHkv6UbQ7Ra1ZCKEPxE8s9JefgofhKUOFlsk36EkaCgbIjqwhwHCGGSBX1BsCONlfPsW0Pluh8hdl/IpFyz5aKiTP3bhTgtNco1854QcFz4pLEGekZOlXjFbdZr9du3/3DeHawWljpFlcTkLGfL9FxCIzY9nU+arg6UnRflqHcyG/nKvcdqJGjPhk58wTwuZ1q9YWSsQG/Php2XNSZ4pJkyfOjRQC4vdWniwufLBBur8+b3XhBtqyTlAf3+ivnueCD1QmXxZAfEDLfwgM6veKSN4fpoTGSbCbAxuSzzeeGkibY9uggc4uI25CO2hXfZO2JMLJU+EFv+zrhV+m71aVJQTuHiIQK2diToYQzwc6sIL231+FTrlSf7b/vAkxQwWnkVfhHeh84sbDuiMTh+QaW2s29eF9sp2tTAwvpJ2hmwtREHfic5cowOq78l21RyXfKxyZI8fwD6o9SAeJ4DB3V6fgH0ADmtM/PBSpilyYz99ccjyzVLw72b2il0BsehMl8SJeD6zAFtS3LgCbT13wnRmV4C+MGrf9yDQpfc/iPTkVqlUX+Gdra87eFu7UDOtt6oLr5HzerZ7dt2Vz6dqPP8rZIl7kVs9euHKOMCh6/GDJxcevzhB1S466Z/wBtqW8H3BnY6ILhwmkoyuxIB6u+cOPjpKiS8tTTwhnjxaeOyKlcEQXN9p66KTCU9liP9bu0+vBwArXv91xqEg6ULaxFtpp5QCOzAjiG8q9SFfS8UMvt75jrtIXhE7l1+7SDNWZDukWHOJeV9XdLdyZnblV3J6RmzpJS5pvyTquIfDku17jZg6PFGEPpzF0Bzvq1vuG/Ftsk968v9VtWsOEgx7GNBvVTGB/uAk+pIT5mSVT4Clth8MYHUtSSSpjFHagfP3f6KkUJNdRRYb821DPXTt5+sKZffH+InnzljxdHDfMSMrduccRFb18YtJCI8WqpJjtfoJP1PTA8dIVmqK3Glp8P3coNlBscfpeQJWN6DlGPyRaaqB8sEMu5omtqxUZSnwarKEX2N5/BYMhoO/PxEFaOYh/XDWIWJJ3wgY5OY64Dh2hY/X1RpqbEySZvw072YgjZTMuCNCtARTgDkP7ghmRpKEjjK8/33ODWJgTyD9qqeDgP1YwrT+qommOlw93Mi50j69AxD6EoeU76I4VSJfLd1aXSmQvR2ya3Pn7tP46EvXvy+8RrZl9F1uD3MGthA4VVcAtV93hVs3LXpklREyc6jlWesIZn5QAWcP/nOP3DcEC0XgE2g04FAfv6KUbs5lv5m1Lm6QdEzllyLj4DQVp4vyNSzYuLaFdjODVF8KguwBdbte+uDH+sPUOyX0L47cpuaBEW3Z4z4XzxckjV4nGsl1LfegLPd8nPYf6XTLo2Iji5NqCzavWFIp13PIFC3PmCAlZuSUSkLvGwk2zlPPfJ+WcLtzHbVjMgbOizL1vsOXcasN/Eq+X7bpYJg0xugz7LSFazmd6s8TW4El0sidFIdCQz2hey19bgqNpz9rg0FN2YN5l3zM46CjixIIDZXnMvpCdfjE4MUZFR2E7D0PhE6OqDmQE6QAjGAcWvEkuCSJbmScsdIVo6EyimWesMVddaDjkXYMD0VKFLiz4GLZNfZ+ZNC9jXqIwb8Gq1RnSYG5RXt6yAmHX7s82FUg7t2ws2HQI5jVpuphaa5I8VnbiR63MnDVJyMxcsz5dIm0uMuvmzF6TQfvgGIelUiW7atuq3NW5qoLcTRu2CLnbspfkSj8GMnN37snaIdQeKLshbeI0b4fB4zh9AyRKbhfRMgfYXaBlQNm6TcPL/btNA7xgp+kxNL6yfkP/lTCc9ZbPtrxskc3gLU/hfcPDfX2rwi9eqK46f2lklY+k+V8fobDhbwdUcOFvtkvo//d7K+z9m1ph0IU/trpfMzvJhEdIYdkCfzXMNiE30z1MEBpGwea3exlLNJrSjqbZslk2c0D2FCZRsKKgM8k6IOvWdUcK71KwofzJ/+5qiNpqTyHE7BJypjCG4pFmsSjydzbjfuN1QKbLVMoX2Co7VmmBbCgdTXFnKse/5VWWoN+io+vd/q19B2RHoZ/iFZLorKVgS212aI3DF91CQ0x+vEIDKT5U6YV8jesUehrljDI0Jz5034rKaSjtRXEL6hNL5/YUOv3Jpj8ajv67UWG67/vz3RjVaebQTP60Pu6v79L+f/zfGrR+OtGa7vCfm2PFbwplbmRzdHJlYW0KZW5kb2JqCjE3IDAgb2JqCjw8L1N1YnR5cGUgL09wZW5UeXBlL0ZpbHRlciAvRmxhdGVEZWNvZGUvTGVuZ3RoIDM0NzI+PgpzdHJlYW0KeNqdNwlYU1fWN3l5j0Ap1v6Nn7zXeS9j/WytCAr9RUFxwWHABVAQFKnIviaEEMImS0JYE8IihLCGfccFF1BB646/1dYqLtM6Wqu1Hbuotf8N/6Mf/01gqp3l+2bmvpx3z73n3LPdc+598fH39wGWIBdg4A13Dw/h7b2h4wBgMgCsP/Txc3CMORVjBQAHoLY7XBQqwe7xFgPAHUbjhpjI0Ij58lKDCUewLAZN8EX4Nwi/gWB+jEiWto5j2QvALDTmxIhC0yQgyNcky4iAEIeKIm01jqGIthtBgCQxWTaVDhyRfn9EF5rVcmzrNv74aE3IrJU/AwwzyQZ/et79jql/PK/o+dSLqUWYP/cR4CIPuGC6oXWYaooAY9haRI/A/NG68SkWvGxBAPia3wDj5nDKAQ543BLu9qmnYKOpBxs4u4Aj579NrPjLVZxXJIBtWwNNFgpB2rQunj3n7b/ycHncq2YPMPS2QHowwOFZIjzBpNGMc8AcNJrGucAaKGdwDHwAtDM4D8wDZ2ZwHMwFD2dwwjz/HtgGtoJAsBAsQo8dcAeJQALSgRTEgmgQA2RIvyNYApYiiUIQhijCv1kjBOtBJEg284vRaMHMjBxBglmaCGFiJMkb8YiQjBTELQR+IBTNJgMvRAlFnLEgfEauy284/8q3+DecLjNWLfsXeAOQfqnZwkSzhUuBPYIl5g3gmmMJwFumqJh7HihCPQ3eQDM2iNsO6XABa1FkvMzyI5EcCZKeNjVl3h07JO1VejiKWjzSJ5+amvrynz+/zYN/0JBVUy8QKE25/PeNg5INcDicN71jRWEpyX6h4uTFXrLQhNhw0+xiIwWMb3OMv7MGRpprZDDjXF6ONZddZI3lsLET30yk4+pZFW9bB74JFbMBzuHgrpml+qX2S5a8h1Jy4aJFdu6JknRpbHSMTOi4ZOkHwrB04QxFuD4yOTZaLFyAEHlkQqJEFCmWveT+z9ZPOyE0eSGc9uKVGVOpcU0Ooyrgo3PGCryGcv11tDuz0C7NBm8CZ7AceKAKuQ2MnO2cJ9y3uUWYJWaFvYZZYwuwd7H3sIXY+9gizA7bju3APsOuYzewcewmdgv7BvsW+wv2BPsO+x77AfsRe4o949XzGniNvCaegdfMa+G18tp47bwOXievi9eNK3AlDoko4gJxkRizmG1hb+Fg8aGF2OIJ34nfZmlt+brlKssHVi5WrlYBViqrQRbaoN8rjYWQ81yQMh+/QORuK8zOzshKyykQl+RFzr02PPSgkemAr+FmrtjngncIxPcTgUbGWRMiwST1iwI/QxipCQVu42ZcMREtWO4RttyP2bh4B+vNLiA3N27rTaBFvSNpJ6gvrwzeP898/JcRuAkuIL+Ov7Cxh65JSipPoHLcBMf6ZCF1TGWqNl1KrkxhLeMW0UlroraFJPEVaWkFUmp3XNuRLEbVXNTUSt5thtyBZ3TH7X0nhzv41Y2G8lYKaSeM9QIWm6zHvyKg/UQ0voUIYEFKFjs/LXvTXERvfiCYfJ2oGzl36vFxyLsw9+Gx0yd6L/Lr+6r2DZB3Qi57NtOV0qQyMcXaO61i14QzXxE1wzW9jR384d6THeepa8O7vbx2bnbezbyzbdluzx0RQbaiyBxJwjt8Yzxh4waH4X1BqUGnrqVuHU/cXsloCtUFBSTLXeXG8jx3959V0SXl6rJysk5TU9ZBOxGFCSV7MhD9Ex/4xqNbvedO0cOj3TeukBfkfX7d9P2Rg2OPyCvhpzYa6MrkpDIJtXy9yC+IEcemR6Su5X9FGB70Hr5k4Jc3NGkN1JVDcf7h2RHyZCY+MTBzLZVP5JhMmoLugijWHUXkAHTHfyYa7uC/J340xuFexOSyyeBUBxx+ekfAJhHwMLyGdnDCcmKHYJIgWGpyDv45cXqsW3+BOjaYKWliauV7JSKSnb1iKUu4hh76vIh2yiEUFpEVYr2MNkQfSjyRw89vbS/qoL4dP3j7AjN0vv3GdfJG1PnN7bROIka7vDM0W7SDuQaDcPgRMs44YewTaLrw7/94SWjnun3BJtrXfie7gf0v0nXfpjExnd3drxqg7t84eOMsc/h0x41L5E9/+FTotVXis5WG7r13IXhGDe+XReqYsuzSrFIZn3VilwmODqbGNTBVGeVpKSRr4Wr/7uadR8by6ZIKdUUl+eejn1zvo6tbm8vaqZnMz/01pyHP2Pxrfk+3AWMzTBR0son4M2LBhAhnrYlJp19E+A8EnAUTcdiFYpdJQD/4JSqQhxM6o1pQfLSgXdEjvxg46t3I3ysRlyVQ9ssSfDcwLuu2zEtirfl5UYWR0SRrdf79r+Po3N79+YPUz48HP/uYGTzad2bgC/5CQro1U5Qu5fuGro5aSfn49o8kMekDisPDJHR+DFdCy1Fa3z1QsY96OhrEgr3Mr0X8DBXkYoJ1QAZ+S7ws74GJAGONoKKrVF9H3vS7srKJrkxM0MZT7AoWrGF/F88UZRVnK8hNQwFX02i4eif+hawvMYhMSI8SS+jIMN90V+rdoJ5r2UyxrkSnI/WaKm0T/QGhSirOlJMO5zwey2lVd29RH/Xzg+4zF5hTx/ddP0d25nVkttMp+8SGYD27ZmSuW0uyYYjcX9vT00n3HzhRf5U6eyQ3tYVpytDHi0lliaoolbb5TXMzjpwUFCsL1YWUPLuypogp0aq1ZaRWXabR0pfhabyiU62uJkfCjvjU0uUyqVZKsUJnXxZLY+4RVV2VtbW1/NaWI7VHqeGDe6T1TLmqNE9JFpaoSvLoonRVREqWe77tu8oQVXTWBmloyJ4t/KLs4qxscmvX7pEMWmVoLWylDhyq1B9genX11Yf381UWhRbiOllbHl2o0xfrqRqtuqKN0WrKNRUaPgugh2BztlOAExWTVFWfxSh1BbX1ZH9Tf08j3VbXvXe08mmtRj1Ux0dbZWs8AZ8KNHW4pk6j05Lndl30R5uSkoxqfKlLpEcAE+wdy3IcSNehtZektLK1q6CHuvtp9+ljTEdP/UD9Wb4zsULkH+JOhUY39WUwOS35HV3k5eZb/afoCwdHesaokwPyiBpGm1uqyCXz1aoSJY1Km0bp4Uz4sAPJo9LWMJ1teUZ6aTrFurBvsI5sNGt5dfVPQ8P69kNMT6O+rraLn7ka/4JghcYwwfEj0qh6pkpeJhOTPpk+okDaMyIo1psKimodzGCULQXtnSTknoX49X10dXNjWafpNL4IswW1d7RtfeR3y8dZ8MHyMM/tdPCmKBZfQW5r8z8YRcfuG8o8R0Hr5+MQ9DLOhEd0QLQntXLXyP0WTVVZHdN4XfC4Y/zyF9TYoTifGqZUoVEoUKrkFWeaUsUNpiCHzNl+jxiDR3DIbbv2ydfI99jtOWp1voRZxz5BpM+N1rhWr6mpIcfijgXq6bLMTOT2mp1y343MOdiK20w6wFpU+c4Eujua0QLoYA4UOgfuEabNgqPm8YymozDkf7+CBDuEP0HBgU+gFHrhLCDYFlZslnXxVW4bGAw3IOEzoq/Bu/it+k8uXaWO9sviy003RGE+mVucXZxNu7G/zHDcqf/04nXqeLd45x61WhnLuLPfIsqfjJa4Vqft15GdOV2pLXRbSlJ1MOXll7TVl1Hsl7eLaviVGalaGeWxK9VnI6P/GB3n0Oul7l9D9IgaPRDzYX5xVmEGs5Z99kqI9OT5mOOBtXTZHlOIVntJAgKn5RjfMu4XsIsWvM9uCmNUcYUJ6CLAbq+GvCe3Bm+fpY/9Tz/kPCBvRlz17qRrEhMroqlsN8HJw0lh6EZP06Ylkyy6ijlrIumc5OR8MRUU0X4kk1EZCptbyOO6k03H6dYzfQeGWvk1ba0VpuSpZGMF94iLcKA1qD35SK5tQUNDcRN15+b+SyeZ01cHnv9AQmvPm8JVrrv9JHTjPdyFgPGbBSMHUsIbmWpZebKYDMndkfYhLd0SFxmaylfI5YXJ1Npdo59D4hwkbu5nqg2GsjZ0BbAfQc+XIToP23Fo1X517AVVTTTez9fgGmWeRkltCUlav4lpuIubSldntBGUN2uq9OQ1rxML13vLI8LoqBhZYDDpvU/8XEKPp/Ur6/Krcm0rlRV7lGSOQqrMoTNTRZnRKn5RVlZJFuUT03RAwRRXllRWkhWaKk017UgUyEpyMkmfwyHXMumCNtMtChd+dxu+NhbX59TCrG4KrkmszzPYlmhL0AeEoaa9sYFubeupHkJpkpWESj1fo1KiUs9Dh5vp24yLnHIkeuF83JlIYOfj64ksT/wzYuUkgRcrSnIVZHiDbDCXLtLpinVUc7cWVVv9DTwvrlidTaXlVOoLTaetRkuaTzf6jhHDH07XwqE58LKxGV9CsEWTLkFGF9yBGEexs3lo/GgObJimbJ+0yzXa4fMIdsukXRrClhCHEM8TAgYal9VMLjOFET6HBgHMgtX4+wTryvo7QX/cnoBWbDWbxxrw7wm4DgY/YoNNN9n/7Xlr4nWB6f/FnGn4dxrid57pAzlzpl5w7UA4gusI5iHwRLAGgQeCXX+zTvzPZHLr0Re+qf8M/ev6xzoj/hXbkJwd4D9oyNa1Zj0vwCaEeyHwf4XmAf4M1s3QXRC+HlsL/jjjoy8CCzNtM/gDoq9CtobO8GYgf+Son/3//QNATwplbmRzdHJlYW0KZW5kb2JqCjE4IDAgb2JqCjw8L0ZpbHRlciAvRmxhdGVEZWNvZGUvTGVuZ3RoIDUxOT4+CnN0cmVhbQp42l2US4ucQBSF9/6KWk4Wg+Wth9PQCGFm04tJQjr5AT7KjpBWse1F//tofZUJRFA43Mc595R189fT22kcVpV/W6b2HFbVD2O3hNt0X9qgmnAZxqwQ1Q3tmlD8ttd6zvKt+Py4reF6GvspOx5V/n0L3tbloZ4+d1MTPmX516ULyzBe1NPP1/OGz/d5/h2uYVyVzqpKdaHfGr3X85f6GlQey55P3RYf1sfzVvMv48djDkoiLhDTTl24zXUblnq8hOyot6dSx357qiyM3X9x7yhr+vZXvezpYrZ0ra1UO3KgMiEPchHZl4h8CSLmiTlLpolIFxGJJuaIWZCmrqdLB2ojEkFLQawmdqCOniU99QGGl4gMqh2qDcocyjRdhC4CsiDbwxBAsHvYHZklmQZ2B7sNZHYRFU1EpgbRxdClwDOTPMMJjxMWzzyeGZADCcosyoSYJVYwrWHaAicMThQlyMNAzBNzoDJl0tOknkxrmFbDLokd1RbVmtmF2YX5LPMZMl3KRIugpeBUDKdiqHPJlxadDZl4bfBaUG3TSfP32PT3wOBhcKAS5PcZZDcrQ66CKHbhxBwnJtRZ6gxOuPS/MK1NJ818hvlKGxkk3RU8K/FMwyfwWU7MkymwW9jD3xnSe4jXNt3P/QLve+ZjO7T3ZdkWQ1xGcSPsu2AYw8e+mqd5r9rfP0naJDsKZW5kc3RyZWFtCmVuZG9iagoyMiAwIG9iago8PC9GaWx0ZXIgL0ZsYXRlRGVjb2RlL0xlbmd0aCA1MjA+PgpzdHJlYW0KeNpdlEuL2zAUhff+FVpOF4P11gyEQJlusuiDpv0Bji1nDI1tHGeRf19Zn8iUBhI4uY9z7pF067fDl8M4rKL+sUztMa6iH8ZuidfptrRRnOJ5GCulRTe0a0H5t700c1Wn4uP9usbLYeynarcT9c8UvK7LXTx97qZT/FTV35cuLsN4Fk+/344JH2/z/Cde4rgKWe33oot9avS1mb81lyjqXPZ86FJ8WO/PqeYj49d9jkJnrBDTTl28zk0bl2Y8x2on02cvdn367Ks4dv/FvaPs1LfvzbKlG5vSpXRmvyHnMwouI9tn5CPIgSxIgxR1DXWvGckuI92CFEhmpKgz1CnYDewaBlsY0OKLFjI9mTaCOpABabSAAkiBTEFoMUVLAPmMwsagpSbToMUVLS8wBBiIBWKaLpYultk9s1t88fhiX0EvdEFLKFpOaGlAzG7K7C11JxB8Hj4nQT1amNYWJ/AsFHdx3uK8xEGNgwZ2B7uDIcAguQWaWxDLqfiHAh8//mFqDa+FVzK1ZmpNN0s3iT8afxyxQEzhucFzRRdDF9/ns1IwGKZ2TK1RaPFOw2ALA11C6QKDhsHgjys3kzpT6sgM5fzJDGQaYq504VQdpxrDP2497oHizHQ5M26MLa+FijTE9nzLO90e8rZvHluivS1LWhB5KeXNsO2EYYyPvTVP81a1ff8C8AYlgQplbmRzdHJlYW0KZW5kb2JqCjI2IDAgb2JqCjw8L0ZpbHRlciAvRmxhdGVEZWNvZGUvTGVuZ3RoIDM4MD4+CnN0cmVhbQp42l2S3WqEMBCF732KXG4vFk3iTxdEKNsbL/pDt30ATcatUGOI7oVv35gTttCAwseZmZyZTHpun1szrix9d7O60MqG0WhHy3xzilhP19EkXDA9qjVS+Kups0nqky/bstLUmmFO6pqlH15cVrexw5Oee3pI0jenyY3myg5f54vny83aH5rIrCxLmoZpGnyhl86+dhOxNKQdW+31cd2OPucv4nOzxERgDjNq1rTYTpHrzJWSOvOnYfXgT5OQ0f90mSOtH9R35/Zw0fnwLMtPzU45BSp1oIIHqjJQBm0ASWgCVIByVBGI5KABRIF4H0h2gTLcIHCDzAP50iFPIa8HwWcZfZ5Aj6ASVMALqlSxioamoD1CqwIJROaI5OhIoiMOTUIrcF8V70O3ZewWkWWsgo4kOuJwJuGMY4ICE+SYksSUeAUqMRe4FtE1tAqaQF4e8+BFwkuGWQsKjx9feV+DfVvvO6Zuzvn1Cisd9mrfqNHQfevtbPes/fsFNw/LmAplbmRzdHJlYW0KZW5kb2JqCjMxIDAgb2JqCjw8L1R5cGUgL09ialN0bS9OIDIyL0ZpcnN0IDE1Ni9GaWx0ZXIgL0ZsYXRlRGVjb2RlL0xlbmd0aCAxMzU0Pj4Kc3RyZWFtCnjazZfbbts4EIbv9ynm0sEiEkkdKBVFADtpUu+2TTZOT+v6QrFZR1tbMiR527z9/kP6oKTOCWiLBSyLwxnODKn5SEmSIEVhSAHpmEKSQUAxqSCkhEIRUkpRGpMUpCNFUlIqEpJoiYht0RNrktwUEckU9zAgJUhG6FcSP4xR6FJBSirEL0pIRaTSFHdNgWSjhIIghJxSoDkVQUGiw9+eP/cvrheG/LNsamr/z3xS0zBGwudIDv8j/7BcFg2pgwO2PavKyXJsKuq8N1l9fVbl0MXKC/ac3vk6zJpsVk6dT5Lsxz9dNrO8YDG08qusmFLHFKuBL741J4MmawxByKQn+D7OSB4c+N2VeNhlER0fTi//MeMGfRDOsqYxVeGEwVU2yeHYCsclksNEEa6dHWeFv8pA63J7bSZ51iu/0ZCNozTylI6iVFISSi9JUh2HvA5FgyE1RXbMuanLZTXGhNx8Lqp8/pCL3syYyQNGPzJTvTPTblGUUA5T+5SlcI/5Z+RvI/mD5WVjxVd58QXZ4MEN49CLVBArRXGUekLGMkTB69STOkCpxmHg6VSiE0EH/Ozfk+BKoK3vcZOXhT8g/+15ny/qXDXNon7m+1+/fvUuzWyaZ0VTZXkBwbeF9rjcVBJ4aZyApChNvcDlFgrtpWEEfKIk9tKfllvezAx1etWSyWlKQquuzaymbl4tyqqhT53e+dtPe9RvQFOVVdd7/pGpmzW0/oePf1MEYNzq6lR4SWxnIDYo+8d5hRHYYhyI3A5se11rYYsZl5H06Kgsq/2m3D9hSi/yuWGe740eR4EXhfJGdLEJ4ir6jfm2Dn8joPKol42/LBd0uuDVrDHz/mf6WC7pdV5jba4MCuYZvFzwOn7auzcTJZUnpdbYbduZVObf9TLcyMpl4syC9XLJ1nLJ25sK7zWIP67yRVNWVnyTzaE4evdx8OLk9zf5/HJZ7w+yot7vlbOJtTjO5vnsmjpOSazc849n2RSoWoPeCrZ9pQWl2La1Skd+H7trPu4WU6yT8Lv1mBOHhhfAttkcm/DipcmnV041aMz8HSXCNl5ywyaQzwwOGLejbVg4XZiCZ3V7fluLw/4Rd7BK+L2sNnarvXOuMB9c1wjcLz6XjMm5meZ1U2Hq3Ul5iSI6rSam4o27059gBnmDsh4sF4uZmfOEmC84uShP+kevswX5ayuwN5RAVicj7HZDrdQIx+kwwAmLa8SFxUoWyBpJWEVRTI+5rAec0uyWWhc6ESNGEWi45k4OgREjCiOnSBDPWkMRx3qEUnRuIJAdyW4QY4inikaCYU4zgolLkc3ad54Dt/lyE14ZcnTsvhul9ZJg5gE62yNtiuhbrwDWCvlGCTLgd4ih7cLrBkZGYoR3Csn5BaPRrfLmt5Ad9b+tj8cWxkX5tsjH5QQo27cN/0UBietg84T3X67KeoIdk73h5FLuzHoUf6eHR4dn3Xbo/xV68Q9Cb8c0fxl1tsDvoW6NR/tCdandJFqvTJ0FAteavA0gOE5cbKbNYbdmP0zduDWYmzFb1By6W8zsJUQ7/rbNPi1mMIBgud6xTVgHm4Foc2zrVIg2ZDh+hjKVDJlwTr9DTrisMIHvsVPB07DbURRb4pR6CnHh44l73z87/+OvG7A7bB4CL05ukRcJu+BJehd50LTIi9rksepe8vQPIu/u6f4aAFewjfgYH95B2y3y9GrEijI04jU/a7TwJepUK0zQSDYV69zoYHX8PADJ6izaUoIO7axXmOyodP20Sr/7IbQKPn5KwSetgnfHF39r2y9ZSxV/YbPkIvN3tU34P0oJYE4KZW5kc3RyZWFtCmVuZG9iagozMiAwIG9iago8PC9UeXBlIC9YUmVmL0luZGV4IFswIDMzXS9XIFsxIDIgMl0vU2l6ZSAzMy9Sb290IDMgMCBSL0luZm8gMiAwIFIvRmlsdGVyIC9GbGF0ZURlY29kZS9MZW5ndGggMTA2Pj4Kc3RyZWFtCnjaJcw5DYBQEIThWe77cdaUaEABIYSKAgO4wAAakIAyXMCbbPNl8yezAL7PQQ8QIQ5xBUabJ8Wll08CEpKIxCQhqXR2IcNpGQ/LtOosIzkpZL61GVKSSpZXW00a0pJO1sd+2XbgB7w6DBkKZW5kc3RyZWFtCmVuZG9iagpzdGFydHhyZWYKMjEzMzUKJSVFT0YK",
+          "createdAt": 1794955876326
+        }
+      ]
     },
     {
       "id": "trip_ms9gp16e_1_0n81d",
@@ -5842,7 +5862,8 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     },
     {
       "id": "trip_msizzid0_1p_eq7is",
@@ -5971,7 +5992,7 @@
           "sheet": "Restaurants",
           "name": "The Spence",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-05",
           "endDate": null,
           "time": "21:45",
           "dayNumber": 2,
@@ -5999,7 +6020,17 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Spence",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwiegkto_8_ff0wp",
@@ -6035,14 +6066,24 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Grand Cafe",
+            "sheet": "Coffee",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwim5vy8_w_in67d",
           "sheet": "Restaurants",
           "name": "Prince Brassiere",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-04",
           "endDate": null,
           "time": "20:15",
           "dayNumber": 1,
@@ -6059,14 +6100,23 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateOriginal": {
+            "name": "Prince Brassiere",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwjwu1b3_1i_f8hlz",
           "sheet": "Pubs",
           "name": "The Abbotsford Bar & Restaurant",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-04",
           "endDate": null,
           "time": "20:00",
           "dayNumber": 1,
@@ -6094,14 +6144,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Abbotsford Bar & Restaurant",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwjwu2g9_1m_kio84",
           "sheet": "Pubs",
           "name": "The Guildford Arms",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-04",
           "endDate": null,
           "time": "20:00",
           "dayNumber": 1,
@@ -6129,7 +6189,17 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Guildford Arms",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwjwwbob_1r_v81ku",
@@ -6155,7 +6225,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Cafe Royal",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwjxmdle_1u_00amv",
@@ -6181,7 +6261,17 @@
           "notes": "Decor",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Voodoo Rooms",
+            "sheet": "Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwjxmmab_1x_9qc3w",
@@ -6201,14 +6291,24 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Dome",
+            "sheet": "Bars With Views | Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwk05ua2_25_153t0",
           "sheet": "Wine Bars",
           "name": "Le Di-Vin",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-05",
           "endDate": null,
           "time": "20:00",
           "dayNumber": 2,
@@ -6225,7 +6325,17 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Le Di-Vin",
+            "sheet": "Wine Bars",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -7206,7 +7316,8 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     },
     {
       "id": "trip_mswbxsjm_8_wbnn1",
@@ -9090,19 +9201,1339 @@
           "apps": []
         },
         "legacyMigrated": true
-      }
+      },
+      "documents": []
     }
   ],
   "trash": {
-    "trips": [],
-    "expenses": []
+    "trips": [
+      {
+        "id": "trip_muoa6zge_4_xi9fr",
+        "name": "London (copy)",
+        "year": 2027,
+        "status": "upcoming",
+        "budget": 500,
+        "startDate": null,
+        "endDate": null,
+        "travelers": 1,
+        "notes": "",
+        "expenses": [],
+        "planItems": [],
+        "timelineMode": null,
+        "research": [],
+        "packingList": [],
+        "country": "United Kingdom",
+        "countryGuessed": true,
+        "mapEmbedUrl": "",
+        "manualEstimates": [],
+        "hiddenSheets": [],
+        "sectionMapUrls": {},
+        "createdAt": 1790783390462,
+        "updatedAt": 1790783390462,
+        "timelineManualOrder": false,
+        "deletedAt": 1790800930302
+      }
+    ],
+    "expenses": [
+      {
+        "id": "trash_muyljm8u_6_wtt74",
+        "tripId": "trip_ms9g79qh_14_mvqhc",
+        "tripName": "Brugge",
+        "expense": {
+          "id": "exp_muylikqi_4_3nzoh",
+          "description": "Train",
+          "category": "Transportation",
+          "quantity": 1,
+          "unitCost": 0,
+          "notes": "",
+          "rating": null
+        },
+        "deletedAt": 1791407117406
+      },
+      {
+        "id": "trash_muookh5c_9_paw02",
+        "tripId": "trip_mswbxsjm_8_wbnn1",
+        "tripName": "London",
+        "expense": {
+          "id": "exp_muooegfv_5_33tx8",
+          "description": "The Coach and Horses",
+          "category": "Food & Drink",
+          "quantity": 1,
+          "unitCost": 0,
+          "notes": "",
+          "rating": null
+        },
+        "deletedAt": 1790807534544
+      },
+      {
+        "id": "trash_muoluzhz_2_zwcdy",
+        "tripId": "trip_mswbxsjm_8_wbnn1",
+        "tripName": "London",
+        "expense": {
+          "id": "exp_muolm802_1_g9yfg",
+          "description": "Blacklock",
+          "category": "Food & Drink",
+          "quantity": 1,
+          "unitCost": 56.66,
+          "notes": "",
+          "rating": 4
+        },
+        "deletedAt": 1790802986040
+      },
+      {
+        "id": "trash_muoa1co8_d_mnro2",
+        "tripId": "trip_mswbxsjm_8_wbnn1",
+        "tripName": "London",
+        "expense": {
+          "id": "exp_munaw737_3d_vjqrb",
+          "description": "Walker Slater",
+          "category": "Shopping",
+          "quantity": 1,
+          "unitCost": 595
+        },
+        "deletedAt": 1790783127656
+      },
+      {
+        "id": "trash_muoa0ps0_b_dzh7l",
+        "tripId": "trip_mswbxsjm_8_wbnn1",
+        "tripName": "London",
+        "expense": {
+          "id": "exp_muo9wel2_1_5d22u",
+          "description": "Mimi",
+          "category": "Hotels",
+          "quantity": 2,
+          "unitCost": 128.5
+        },
+        "deletedAt": 1790783097984
+      },
+      {
+        "id": "trash_muoa0mun_9_29ata",
+        "tripId": "trip_mswbxsjm_8_wbnn1",
+        "tripName": "London",
+        "expense": {
+          "id": "exp_muo9wel2_5_zrhoo",
+          "description": "Drakes",
+          "category": "Other",
+          "quantity": 1,
+          "unitCost": 40
+        },
+        "deletedAt": 1790783094191
+      },
+      {
+        "id": "trash_muoa0c64_7_7ojxi",
+        "tripId": "trip_mswbxsjm_8_wbnn1",
+        "tripName": "London",
+        "expense": {
+          "id": "exp_muo9wel2_3_f17gd",
+          "description": "Walker Slater",
+          "category": "Other",
+          "quantity": 1,
+          "unitCost": 600
+        },
+        "deletedAt": 1790783080348
+      }
+    ]
   },
   "activityLog": [
     {
-      "id": "log_mw8bl340_2_4dcwo",
-      "ts": 1794171833856,
-      "action": "setup",
-      "detail": "Ledger initialised"
+      "id": "log_mwladu5i_3_vqpu0",
+      "ts": 1794955876326,
+      "action": "trip-documents",
+      "detail": "Added document(s) on Brugge (notes)"
+    },
+    {
+      "id": "log_mwk06mh0_28_04r9n",
+      "ts": 1794878277444,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Le Di-Vin\" on Edinburgh"
+    },
+    {
+      "id": "log_mwk06iut_27_1yf6v",
+      "ts": 1794878272757,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Le Di-Vin\" on Edinburgh"
+    },
+    {
+      "id": "log_mwk05ua3_26_wq0s0",
+      "ts": 1794878240907,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Le Di-Vin\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwk05qmt_24_vvi60",
+      "ts": 1794878236181,
+      "action": "research-edited",
+      "detail": "Updated \"One20 Wine Cafe\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwk05li9_23_9ytc6",
+      "ts": 1794878229537,
+      "action": "research-edited",
+      "detail": "Updated \"Cask and Vine\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwjzgiat_22_fiig4",
+      "ts": 1794877058981,
+      "action": "research-added",
+      "detail": "Added \"Downstairs at Betty’s\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwjxurlr_20_7iwlc",
+      "ts": 1794874364992,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Guildford Arms\" on Edinburgh"
+    },
+    {
+      "id": "log_mwjxn7he_1z_weeak",
+      "ts": 1794874012322,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Spence\" on Edinburgh"
+    },
+    {
+      "id": "log_mwjxmmab_1y_wnr11",
+      "ts": 1794873984851,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Dome\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwjxmdle_1w_y74fv",
+      "ts": 1794873973586,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Voodoo Rooms\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwjwwbob_1t_3ei0j",
+      "ts": 1794872758043,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Cafe Royal\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwjwuwch_1q_81ix7",
+      "ts": 1794872691521,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Abbotsford Bar & Restaurant\" on Edinburgh"
+    },
+    {
+      "id": "log_mwjwu2gb_1p_g3qv1",
+      "ts": 1794872652779,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Guildford Arms\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwjwu1b4_1l_3z9b6",
+      "ts": 1794872651296,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Abbotsford Bar & Restaurant\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwjwieqe_1h_obvq5",
+      "ts": 1794872108823,
+      "action": "research-edited",
+      "detail": "Updated \"The Abbotsford Bar & Restaurant\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwjwhlfr_1f_advn6",
+      "ts": 1794872070855,
+      "action": "research-edited",
+      "detail": "Updated \"The Guildford Arms\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwjwdz22_1d_pxhv6",
+      "ts": 1794871901882,
+      "action": "research-added",
+      "detail": "Added \"The Guildford Arms\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwjwdqkt_1a_ezkvl",
+      "ts": 1794871890893,
+      "action": "research-added",
+      "detail": "Added \"The Abbotsford Bar & Restaurant\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwjwcszo_17_kfon3",
+      "ts": 1794871847364,
+      "action": "research-edited",
+      "detail": "Updated \"Locanda de Gusti\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwjwbv7c_16_6lnij",
+      "ts": 1794871803576,
+      "action": "research-edited",
+      "detail": "Updated \"The Piper's Rest\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwjwbhw5_15_ef4zo",
+      "ts": 1794871786325,
+      "action": "research-edited",
+      "detail": "Updated \"Abacus at The Scholar\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwjwaqtp_14_9u5xb",
+      "ts": 1794871751245,
+      "action": "research-edited",
+      "detail": "Updated \"Devils Advocate\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwjwamgu_13_pzkz3",
+      "ts": 1794871745598,
+      "action": "research-edited",
+      "detail": "Updated \"The Broughton\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwimhdjk_12_07w8y",
+      "ts": 1794794798288,
+      "action": "research-added",
+      "detail": "Added \"Victor Hugo Deli\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwim99rv_10_nndla",
+      "ts": 1794794420155,
+      "action": "research-added",
+      "detail": "Added \"Dough Pizza\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwim5vy8_x_6o97c",
+      "ts": 1794794262272,
+      "action": "plan-item-added",
+      "detail": "Added \"Prince Brassiere\" (Restaurants) on Edinburgh"
+    },
+    {
+      "id": "log_mwiggbs3_v_datpv",
+      "ts": 1794784671651,
+      "action": "research-added",
+      "detail": "Added \"Locanda de Gusti\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwigcl7f_s_k20tl",
+      "ts": 1794784497243,
+      "action": "research-added",
+      "detail": "Added \"The Piper's Rest\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwifi70h_p_bcwm9",
+      "ts": 1794783079169,
+      "action": "research-added",
+      "detail": "Added \"The Broughton\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwietxcz_m_6e4y4",
+      "ts": 1794781946915,
+      "action": "research-added",
+      "detail": "Added \"Polentoni\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwiepf1j_k_p275q",
+      "ts": 1794781736551,
+      "action": "research-added",
+      "detail": "Added \"Toscanino\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwieo8tp_i_bri24",
+      "ts": 1794781681837,
+      "action": "research-added",
+      "detail": "Added \"Croccante & Co\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwienpdm_f_s1p5v",
+      "ts": 1794781656634,
+      "action": "research-added",
+      "detail": "Added \"Toscano\" to Edinburgh research"
+    },
+    {
+      "id": "log_mwiegktp_c_t4n9l",
+      "ts": 1794781324141,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Grand Cafe\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwiefc9k_7_oe129",
+      "ts": 1794781266392,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Spence\" on Edinburgh"
+    },
+    {
+      "id": "log_mwief8ej_6_j70j4",
+      "ts": 1794781261387,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Spence\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwief3hh_2_8ha5j",
+      "ts": 1794781255013,
+      "action": "research-edited",
+      "detail": "Updated \"The Spence\" in Edinburgh research"
+    },
+    {
+      "id": "log_mwfteisw_7_mw8i1",
+      "ts": 1794625023920,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Historic centre of Brugge (Bruges)\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwftd2e7_5_ko5ab",
+      "ts": 1794624955999,
+      "action": "plan-item-edited",
+      "detail": "Updated \"El Churrasco Argentino\" on Brugge"
+    },
+    {
+      "id": "log_mwftcsi0_4_hrh53",
+      "ts": 1794624943176,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Fritbar\" from Brugge"
+    },
+    {
+      "id": "log_mwftbv2h_3_h0c8p",
+      "ts": 1794624899849,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Hotel Aragon\" on Brugge"
+    },
+    {
+      "id": "log_mwftbnyo_2_cj759",
+      "ts": 1794624890640,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Hotel Aragon\" from Brugge"
+    },
+    {
+      "id": "log_mwfsyl7e_q_dxtl0",
+      "ts": 1794624280538,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Seafoodbar Belge\" on Brugge"
+    },
+    {
+      "id": "log_mwfsxh7n_o_lkc7i",
+      "ts": 1794624228707,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Au Petit Grand BV\" on Brugge"
+    },
+    {
+      "id": "log_mwfsw0gd_m_ul1xy",
+      "ts": 1794624160333,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Au Petit Grand BV\" on Brugge"
+    },
+    {
+      "id": "log_mwfsvdms_l_5o7va",
+      "ts": 1794624130756,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Au Petit Grand BV\" on Brugge"
+    },
+    {
+      "id": "log_mwfstjr5_k_019vu",
+      "ts": 1794624045377,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Au Petit Grand BV\" from Brugge"
+    },
+    {
+      "id": "log_mwfstcbs_j_mc1f2",
+      "ts": 1794624035752,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Au Petit Grand BV\" from Brugge"
+    },
+    {
+      "id": "log_mwfst6yv_i_gdne0",
+      "ts": 1794624028807,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Seafoodbar Belge\" from Brugge"
+    },
+    {
+      "id": "log_mwfst3ob_h_maynq",
+      "ts": 1794624024539,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Bistro Christophe\" on Brugge"
+    },
+    {
+      "id": "log_mwfss6t1_g_d12ez",
+      "ts": 1794623981941,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Seafoodbar Belge\" on Brugge"
+    },
+    {
+      "id": "log_mwfsr9zv_f_u7d4v",
+      "ts": 1794623939419,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De Gastro\" on Brugge"
+    },
+    {
+      "id": "log_mwfsosui_e_s5ova",
+      "ts": 1794623823882,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De koetse\" on Brugge"
+    },
+    {
+      "id": "log_mwfsod8l_d_d1ba0",
+      "ts": 1794623803653,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De koetse\" on Brugge"
+    },
+    {
+      "id": "log_mwfskie0_c_cp2jw",
+      "ts": 1794623623704,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Hotel Aragon\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfsi3vs_9_9ret9",
+      "ts": 1794623511592,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Brasserie Rozenhoedkaai\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfsi1kt_6_alfks",
+      "ts": 1794623508605,
+      "action": "research-edited",
+      "detail": "Updated \"Brasserie Rozenhoedkaai\" in Brugge research"
+    },
+    {
+      "id": "log_mwfshctf_5_e6mb5",
+      "ts": 1794623476515,
+      "action": "research-promoted",
+      "detail": "Quick-added \"De koetse\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwfsgza2_2_esy6a",
+      "ts": 1794623458970,
+      "action": "research-edited",
+      "detail": "Updated \"De koetse\" in Brugge research"
+    },
+    {
+      "id": "log_mwbhm112_a_nnf79",
+      "ts": 1794363354038,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Fritbar\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbhm025_8_nf74f",
+      "ts": 1794363352781,
+      "action": "research-edited",
+      "detail": "Updated \"Fritbar\" in Brugge research"
+    },
+    {
+      "id": "log_mwbhlumw_7_7uih8",
+      "ts": 1794363345752,
+      "action": "research-promoted",
+      "detail": "Promoted \"Fritbar\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbhlabs_5_abvb9",
+      "ts": 1794363319432,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Au Petit Grand BV\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbhl59c_2_c3ldk",
+      "ts": 1794363312865,
+      "action": "research-edited",
+      "detail": "Updated \"Au Petit Grand BV\" in Brugge research"
+    },
+    {
+      "id": "log_mwbh8vv9_n_njkf9",
+      "ts": 1794362740821,
+      "action": "research-edited",
+      "detail": "Updated \"Brasserie Rozenhoedkaai\" in Brugge research"
+    },
+    {
+      "id": "log_mwbh5c64_m_cghhx",
+      "ts": 1794362575324,
+      "action": "research-promoted",
+      "detail": "Quick-added \"De Gastro\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbh5aus_i_a5s3o",
+      "ts": 1794362573620,
+      "action": "research-edited",
+      "detail": "Updated \"De Gastro\" in Brugge research"
+    },
+    {
+      "id": "log_mwbh55xh_h_9vqxe",
+      "ts": 1794362567237,
+      "action": "research-edited",
+      "detail": "Updated \"De Gastro\" in Brugge research"
+    },
+    {
+      "id": "log_mwbh1hwe_f_tm8p0",
+      "ts": 1794362396126,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Au Petit Grand BV\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbh1gjx_c_gypge",
+      "ts": 1794362394381,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Seafoodbar Belge\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbh1b5y_9_004v2",
+      "ts": 1794362387398,
+      "action": "research-edited",
+      "detail": "Updated \"Pigeon House\" in Brugge research"
+    },
+    {
+      "id": "log_mwbgtxdj_8_kcpvv",
+      "ts": 1794362042935,
+      "action": "research-promoted",
+      "detail": "Quick-added \"El Churrasco Argentino\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbgtvmk_5_94v6x",
+      "ts": 1794362040668,
+      "action": "research-edited",
+      "detail": "Updated \"El Churrasco Argentino\" in Brugge research"
+    },
+    {
+      "id": "log_mwbgtrau_4_9zd98",
+      "ts": 1794362035062,
+      "action": "research-edited",
+      "detail": "Updated \"Seafoodbar Belge\" in Brugge research"
+    },
+    {
+      "id": "log_mwbgtncg_3_j2rhm",
+      "ts": 1794362029936,
+      "action": "research-edited",
+      "detail": "Updated \"Petite Aneth\" in Brugge research"
+    },
+    {
+      "id": "log_mwbgtggh_2_e1ctv",
+      "ts": 1794362021009,
+      "action": "research-edited",
+      "detail": "Updated \"Au Petit Grand BV\" in Brugge research"
+    },
+    {
+      "id": "log_mwbg6ssd_19_n1zbh",
+      "ts": 1794360963901,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Au Petit Grand BV\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbg6qbt_16_5qrui",
+      "ts": 1794360960713,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Seafoodbar Belge\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbg3qqf_13_o7ndv",
+      "ts": 1794360821271,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Bistro Christophe\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbg3mk2_z_dk3mu",
+      "ts": 1794360815858,
+      "action": "research-edited",
+      "detail": "Updated \"Bistro Christophe\" in Brugge research"
+    },
+    {
+      "id": "log_mwbftg30_y_g27o4",
+      "ts": 1794360340908,
+      "action": "research-added",
+      "detail": "Added \"Bistro Christophe\" to Brugge research"
+    },
+    {
+      "id": "log_mwbfjicd_u_6omnu",
+      "ts": 1794359877277,
+      "action": "research-added",
+      "detail": "Added \"Poules Moules\" to Brugge research"
+    },
+    {
+      "id": "log_mwbfaitw_r_id1eg",
+      "ts": 1794359458004,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Kaffee Kamiel\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfadz9_o_7uixk",
+      "ts": 1794359451717,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Les Coquettes Le Café\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfadl7_l_shyju",
+      "ts": 1794359451211,
+      "action": "research-promoted",
+      "detail": "Quick-added \"EspressoBar - I Love Coffee\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfacv9_i_3aoxb",
+      "ts": 1794359450277,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Blackbird Coffee Club\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfacfu_f_cy9ab",
+      "ts": 1794359449722,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Coffeebar Adriaan\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfabzf_c_lx1gs",
+      "ts": 1794359449131,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Nuba Cafe Brugge\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfabk7_9_dohc4",
+      "ts": 1794359448583,
+      "action": "research-promoted",
+      "detail": "Quick-added \"AVI '38 Specialty Coffeebar Bruges\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfa23f_7_lvry9",
+      "ts": 1794359436315,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Estaminet in 't Molenhuis🍺\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbfa1i6_4_rs2fn",
+      "ts": 1794359435550,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Hotel Van Cleef\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcxhpz_2l_46pzu",
+      "ts": 1794355490807,
+      "action": "plan-item-edited",
+      "detail": "Updated \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" on Brugge"
+    },
+    {
+      "id": "log_mwbcxg73_2k_4wg6e",
+      "ts": 1794355488831,
+      "action": "research-promoted",
+      "detail": "Promoted \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcx11l_2h_19i4a",
+      "ts": 1794355469193,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Republic\" on Brugge"
+    },
+    {
+      "id": "log_mwbcwzdg_2g_9ag7w",
+      "ts": 1794355467028,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Republic\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcwy5z_2d_c5xki",
+      "ts": 1794355465463,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Groot Vlaenderen\" on Brugge"
+    },
+    {
+      "id": "log_mwbcwwog_2c_vo792",
+      "ts": 1794355463536,
+      "action": "research-promoted",
+      "detail": "Promoted \"Groot Vlaenderen\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvuhf_2a_kf4zh",
+      "ts": 1794355414035,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Opus Latino\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvtbt_29_nn208",
+      "ts": 1794355412537,
+      "action": "research-promoted",
+      "detail": "Promoted \"Opus Latino\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvscv_26_5yyh0",
+      "ts": 1794355411279,
+      "action": "plan-item-edited",
+      "detail": "Updated \"’t Klein Venetië\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvrag_25_42uvd",
+      "ts": 1794355409896,
+      "action": "research-promoted",
+      "detail": "Promoted \"’t Klein Venetië\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvqhg_22_ngky8",
+      "ts": 1794355408852,
+      "action": "plan-item-edited",
+      "detail": "Updated \"ODA Rooftop Bar\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvpf4_21_a2scz",
+      "ts": 1794355407472,
+      "action": "research-promoted",
+      "detail": "Promoted \"ODA Rooftop Bar\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvoi5_1y_2ly0b",
+      "ts": 1794355406285,
+      "action": "plan-item-edited",
+      "detail": "Updated \"NOBLE Bruges\" on Brugge"
+    },
+    {
+      "id": "log_mwbcvn5y_1x_6meer",
+      "ts": 1794355404550,
+      "action": "research-promoted",
+      "detail": "Promoted \"NOBLE Bruges\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbcvifu_1u_sq8oy",
+      "ts": 1794355398426,
+      "action": "research-deleted",
+      "detail": "Removed \"The Republic\" from Brugge research"
+    },
+    {
+      "id": "log_mwbcvd71_1t_as1gm",
+      "ts": 1794355391629,
+      "action": "research-edited",
+      "detail": "Updated \"Estaminet in 't Molenhuis🍺\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcurvf_1s_2c05i",
+      "ts": 1794355363995,
+      "action": "research-edited",
+      "detail": "Updated \"The Republic\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcubf1_1r_sdpmd",
+      "ts": 1794355342669,
+      "action": "research-edited",
+      "detail": "Updated \"Hotel Van Cleef\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcu73i_1q_1r7l4",
+      "ts": 1794355337071,
+      "action": "research-edited",
+      "detail": "Updated \"Groot Vlaenderen\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcksof_1p_yye75",
+      "ts": 1794354898479,
+      "action": "research-edited",
+      "detail": "Updated \"Opus Latino\" in Brugge research"
+    },
+    {
+      "id": "log_mwbckkhr_1o_f7ojl",
+      "ts": 1794354887871,
+      "action": "research-edited",
+      "detail": "Updated \"’t Klein Venetië\" in Brugge research"
+    },
+    {
+      "id": "log_mwbckhoh_1n_kgc3l",
+      "ts": 1794354884225,
+      "action": "research-edited",
+      "detail": "Updated \"ODA Rooftop Bar\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcjksg_1m_u7bvz",
+      "ts": 1794354841600,
+      "action": "research-edited",
+      "detail": "Updated \"NOBLE Bruges\" in Brugge research"
+    },
+    {
+      "id": "log_mwbci3t0_1l_06irz",
+      "ts": 1794354772932,
+      "action": "research-added",
+      "detail": "Added \"The Republic\" to Brugge research"
+    },
+    {
+      "id": "log_mwbchj9o_1i_txpc6",
+      "ts": 1794354746316,
+      "action": "research-deleted",
+      "detail": "Removed \"The Republic\" from Brugge research"
+    },
+    {
+      "id": "log_mwbcggz0_1h_je5tb",
+      "ts": 1794354696684,
+      "action": "research-edited",
+      "detail": "Updated \"Hof Café\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcgbq0_1g_9tra9",
+      "ts": 1794354689880,
+      "action": "research-edited",
+      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcg8bf_1f_8f7bv",
+      "ts": 1794354685467,
+      "action": "research-edited",
+      "detail": "Updated \"Kaffee Kamiel\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcg5hn_1e_1luxr",
+      "ts": 1794354681803,
+      "action": "research-edited",
+      "detail": "Updated \"Les Coquettes Le Café\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcg1mk_1d_7m28o",
+      "ts": 1794354676796,
+      "action": "research-edited",
+      "detail": "Updated \"EspressoBar - I Love Coffee\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcfumx_1c_0vidx",
+      "ts": 1794354667737,
+      "action": "research-deleted",
+      "detail": "Removed \"Brapas\" from Brugge research"
+    },
+    {
+      "id": "log_mwbcfqwk_1b_oy07w",
+      "ts": 1794354662900,
+      "action": "research-added",
+      "detail": "Added \"Brapas\" to Brugge research"
+    },
+    {
+      "id": "log_mwbcev7c_18_m1qrg",
+      "ts": 1794354621816,
+      "action": "research-edited",
+      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcdhth_17_9y0wf",
+      "ts": 1794354557813,
+      "action": "research-edited",
+      "detail": "Updated \"Blackbird Coffee Club\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcdekb_16_ooy2o",
+      "ts": 1794354553595,
+      "action": "research-edited",
+      "detail": "Updated \"Coffeebar Adriaan\" in Brugge research"
+    },
+    {
+      "id": "log_mwbccfgy_15_zgqea",
+      "ts": 1794354508114,
+      "action": "research-edited",
+      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
+    },
+    {
+      "id": "log_mwbccauo_14_6w0ou",
+      "ts": 1794354502128,
+      "action": "research-edited",
+      "detail": "Updated \"Nuba Cafe Brugge\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcc3ga_13_g2125",
+      "ts": 1794354492538,
+      "action": "research-edited",
+      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcc0ew_12_qtkjq",
+      "ts": 1794354488600,
+      "action": "research-edited",
+      "detail": "Updated \"AVI '38 Specialty Coffeebar Bruges\" in Brugge research"
+    },
+    {
+      "id": "log_mwbcbxp4_11_8jded",
+      "ts": 1794354485080,
+      "action": "research-edited",
+      "detail": "Updated \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" in Brugge research"
+    },
+    {
+      "id": "log_mwbc86bk_10_9e583",
+      "ts": 1794354309632,
+      "action": "research-added",
+      "detail": "Added \"AVI '38 Specialty Coffeebar Bruges\" to Brugge research"
+    },
+    {
+      "id": "log_mwbc7i63_y_s2vt4",
+      "ts": 1794354278331,
+      "action": "research-added",
+      "detail": "Added \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" to Brugge research"
+    },
+    {
+      "id": "log_mwbc6m7f_v_d35ce",
+      "ts": 1794354236907,
+      "action": "research-edited",
+      "detail": "Updated \"Waffles 'n Beer in Bruges Centre\" in Brugge research"
+    },
+    {
+      "id": "log_mwbc6idu_u_av4gl",
+      "ts": 1794354231954,
+      "action": "research-edited",
+      "detail": "Updated \"The Spot Waffles & Pancakes\" in Brugge research"
+    },
+    {
+      "id": "log_mwbc5z0z_t_gq85k",
+      "ts": 1794354206867,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Chez Albert\" on Brugge"
+    },
+    {
+      "id": "log_mwbc5y1f_s_8x9ui",
+      "ts": 1794354205587,
+      "action": "research-promoted",
+      "detail": "Promoted \"Chez Albert\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbc5xf5_q_67bch",
+      "ts": 1794354204785,
+      "action": "plan-item-edited",
+      "detail": "Updated \"House of Waffles\" on Brugge"
+    },
+    {
+      "id": "log_mwbc5w53_p_hl6o6",
+      "ts": 1794354203127,
+      "action": "research-promoted",
+      "detail": "Promoted \"House of Waffles\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbc5tir_n_wpm9j",
+      "ts": 1794354199731,
+      "action": "research-edited",
+      "detail": "Updated \"House of Waffles\" in Brugge research"
+    },
+    {
+      "id": "log_mwbc3eqn_m_23jr5",
+      "ts": 1794354087263,
+      "action": "research-edited",
+      "detail": "Updated \"Chez Albert\" in Brugge research"
+    },
+    {
+      "id": "log_mwbc3824_l_ep5oz",
+      "ts": 1794354078604,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Chez Albert\" on Brugge"
+    },
+    {
+      "id": "log_mwbc36vt_k_qmxsp",
+      "ts": 1794354077081,
+      "action": "research-promoted",
+      "detail": "Promoted \"Chez Albert\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbc34b7_i_1ad4j",
+      "ts": 1794354073747,
+      "action": "research-edited",
+      "detail": "Updated \"Chez Albert\" in Brugge research"
+    },
+    {
+      "id": "log_mwbbzudg_h_bbvl5",
+      "ts": 1794353920900,
+      "action": "research-edited",
+      "detail": "Updated \"The Chocolate Line\" in Brugge research"
+    },
+    {
+      "id": "log_mwbbzddg_g_7lmp4",
+      "ts": 1794353898868,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Old Chocolate House\" on Brugge"
+    },
+    {
+      "id": "log_mwbbzbnr_f_h2txe",
+      "ts": 1794353896647,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Old Chocolate House\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbbz917_d_t2px2",
+      "ts": 1794353893243,
+      "action": "research-edited",
+      "detail": "Updated \"The Old Chocolate House\" in Brugge research"
+    },
+    {
+      "id": "log_mwbbys4z_c_xutb6",
+      "ts": 1794353871347,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Chocolate Line\" on Brugge"
+    },
+    {
+      "id": "log_mwbbyqdj_b_z0mic",
+      "ts": 1794353869063,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Chocolate Line\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbbxyv5_9_tqp1n",
+      "ts": 1794353833409,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Bottle Shop\" on Brugge"
+    },
+    {
+      "id": "log_mwbbxxrx_8_hrlik",
+      "ts": 1794353831997,
+      "action": "research-promoted",
+      "detail": "Promoted \"The Bottle Shop\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbbxx39_5_58oz2",
+      "ts": 1794353831109,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Käthe Wohlfahrt\" on Brugge"
+    },
+    {
+      "id": "log_mwbbxvn5_4_108uj",
+      "ts": 1794353829233,
+      "action": "research-promoted",
+      "detail": "Promoted \"Käthe Wohlfahrt\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbbvzbc_5_dql6z",
+      "ts": 1794353740680,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Missault\" on Brugge"
+    },
+    {
+      "id": "log_mwbbvxzd_4_xflw4",
+      "ts": 1794353738953,
+      "action": "research-promoted",
+      "detail": "Promoted \"Missault\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwbbvc69_19_qokt4",
+      "ts": 1794353710689,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Jerry's Cigar Bar\" on Brugge"
+    },
+    {
+      "id": "log_mwbbv9rm_18_zflf6",
+      "ts": 1794353707570,
+      "action": "research-promoted",
+      "detail": "Promoted \"Jerry's Cigar Bar\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9zjixc_15_iodmn",
+      "ts": 1794272538000,
+      "action": "research-edited",
+      "detail": "Updated \"The Old Chocolate House\" in Brugge research"
+    },
+    {
+      "id": "log_mw9zjfq9_14_mvwn9",
+      "ts": 1794272533857,
+      "action": "research-edited",
+      "detail": "Updated \"The Chocolate Line\" in Brugge research"
+    },
+    {
+      "id": "log_mw9zif6d_13_qtnpb",
+      "ts": 1794272486485,
+      "action": "plan-item-edited",
+      "detail": "Updated \"De Witte Pelikaan\" on Brugge"
+    },
+    {
+      "id": "log_mw9zidyz_12_d3cbq",
+      "ts": 1794272484923,
+      "action": "research-promoted",
+      "detail": "Promoted \"De Witte Pelikaan\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9zbz7v_z_dkmdk",
+      "ts": 1794272185867,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Boho Brunch\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbxqs_y_h72u8",
+      "ts": 1794272183956,
+      "action": "research-promoted",
+      "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9zbtmd_v_osypn",
+      "ts": 1794272178613,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Tasty Sandwich\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbs9z_u_b3ujb",
+      "ts": 1794272176871,
+      "action": "research-promoted",
+      "detail": "Promoted \"Tasty Sandwich\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9zbo3f_s_fxtp3",
+      "ts": 1794272171451,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Boulangerie Schaeverbeke\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbmr8_r_7p93s",
+      "ts": 1794272169716,
+      "action": "research-promoted",
+      "detail": "Promoted \"Boulangerie Schaeverbeke\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9zbep9_p_tnazp",
+      "ts": 1794272159277,
+      "action": "plan-item-edited",
+      "detail": "Updated \"That's Toast\" on Brugge"
+    },
+    {
+      "id": "log_mw9zbcw6_o_3g6ym",
+      "ts": 1794272156934,
+      "action": "research-promoted",
+      "detail": "Promoted \"That's Toast\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9z8kkn_l_axnwl",
+      "ts": 1794272026919,
+      "action": "research-edited",
+      "detail": "Updated \"Boho Brunch\" in Brugge research"
+    },
+    {
+      "id": "log_mw9z847k_k_jqc3o",
+      "ts": 1794272005712,
+      "action": "research-edited",
+      "detail": "Updated \"Tasty Sandwich\" in Brugge research"
+    },
+    {
+      "id": "log_mw9z48ln_j_wkwyv",
+      "ts": 1794271824779,
+      "action": "research-edited",
+      "detail": "Updated \"Boho Brunch\" in Brugge research"
+    },
+    {
+      "id": "log_mw9z25o0_i_nvuxm",
+      "ts": 1794271727664,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Brewery Bourgogne des Flandres\" on Brugge"
+    },
+    {
+      "id": "log_mw9z20ff_h_efvs3",
+      "ts": 1794271720875,
+      "action": "research-promoted",
+      "detail": "Promoted \"Brewery Bourgogne des Flandres\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9z126u_e_0kyh9",
+      "ts": 1794271676502,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Boho Brunch\" on Brugge"
+    },
+    {
+      "id": "log_mw9z0c6l_d_c7t8i",
+      "ts": 1794271642797,
+      "action": "research-promoted",
+      "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw9yxfzf_a_13kjc",
+      "ts": 1794271507755,
+      "action": "research-edited",
+      "detail": "Updated \"Boulangerie Schaeverbeke\" in Brugge research"
+    },
+    {
+      "id": "log_mw9ywxfe_9_0uni4",
+      "ts": 1794271483706,
+      "action": "research-edited",
+      "detail": "Updated \"That's Toast\" in Brugge research"
+    },
+    {
+      "id": "log_mw9ysxoh_8_idpou",
+      "ts": 1794271297409,
+      "action": "research-edited",
+      "detail": "Updated \"That's Toast\" in Brugge research"
+    },
+    {
+      "id": "log_mw9yknpm_6_b5c3a",
+      "ts": 1794270911242,
+      "action": "research-edited",
+      "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
+    },
+    {
+      "id": "log_mw9xue78_5_593a9",
+      "ts": 1794269685860,
+      "action": "research-added",
+      "detail": "Added \"Duvelorium Belgian Beer Bar\" to Brugge research"
+    },
+    {
+      "id": "log_mw9xsrmp_2_jz6tx",
+      "ts": 1794269609953,
+      "action": "research-edited",
+      "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
+    },
+    {
+      "id": "log_mw9xqlp6_6_2nq3w",
+      "ts": 1794269508954,
+      "action": "research-added",
+      "detail": "Added \"Brewery Bourgogne des Flandres\" to Brugge research"
+    },
+    {
+      "id": "log_mw79uzqg_1q_bflvr",
+      "ts": 1794108470632,
+      "action": "plan-item-edited",
+      "detail": "Updated \"'t Brugs Beertje\" on Brugge"
+    },
+    {
+      "id": "log_mw79uye6_1p_9uv0j",
+      "ts": 1794108468894,
+      "action": "research-promoted",
+      "detail": "Promoted \"'t Brugs Beertje\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw79uqfm_1m_vc7k5",
+      "ts": 1794108458578,
+      "action": "plan-item-edited",
+      "detail": "Updated \"2be Shop\" on Brugge"
+    },
+    {
+      "id": "log_mw79up2j_1l_pvmzx",
+      "ts": 1794108456811,
+      "action": "research-promoted",
+      "detail": "Promoted \"2be Shop\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw79u6az_1i_z6zav",
+      "ts": 1794108432491,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Huisbrouwerij De Halve Maan\" on Brugge"
+    },
+    {
+      "id": "log_mw79u3er_1h_4b4kr",
+      "ts": 1794108428739,
+      "action": "research-promoted",
+      "detail": "Promoted \"Huisbrouwerij De Halve Maan\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw79tuhc_1e_qgalw",
+      "ts": 1794108417168,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Bauhaus\" on Brugge"
+    },
+    {
+      "id": "log_mw79tso9_1d_fz115",
+      "ts": 1794108414825,
+      "action": "research-promoted",
+      "detail": "Promoted \"Bauhaus\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw79tdsu_19_oplf7",
+      "ts": 1794108395550,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Le Trappiste\" on Brugge"
+    },
+    {
+      "id": "log_mw79t9vl_18_w4e94",
+      "ts": 1794108390465,
+      "action": "research-promoted",
+      "detail": "Promoted \"Le Trappiste\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mw79p2pt_15_5w46g",
+      "ts": 1794108194561,
+      "action": "research-edited",
+      "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
+    },
+    {
+      "id": "log_mw79atof_14_0xocj",
+      "ts": 1794107529663,
+      "action": "research-edited",
+      "detail": "Updated \"Bauhaus\" in Brugge research"
+    },
+    {
+      "id": "log_mw79ad5q_12_xn2l7",
+      "ts": 1794107508254,
+      "action": "research-edited",
+      "detail": "Updated \"The Monk\" in Brugge research"
+    },
+    {
+      "id": "log_mw79a2x8_11_k5b9h",
+      "ts": 1794107494988,
+      "action": "research-added",
+      "detail": "Added \"The Monk\" to Brugge research"
+    },
+    {
+      "id": "log_mw797io5_z_h7v6a",
+      "ts": 1794107375429,
+      "action": "research-edited",
+      "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
     }
   ]
 }
