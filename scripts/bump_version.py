@@ -91,9 +91,13 @@ def is_noise_commit(msg: str) -> bool:
     return bool(
         re.match(r'^chore:\s*(bump|version)', m)
         or re.match(r'^chore:\s*meaningful version', m)
+        or re.match(r'^chore:\s*tidy .*notes', m)
+        or re.match(r'^chore:\s*correct .*changelog', m)
         or 'auto bump after' in m
         or m.startswith('merge ')
         or 'travel ledger sync' in m
+        or 'changelog history' in m
+        or 'skip version' in m
     )
 
 

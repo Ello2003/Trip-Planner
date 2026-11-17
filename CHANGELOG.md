@@ -7,28 +7,19 @@ All notable changes to the **Travel Ledger** project are documented here.
 ## [1.25.7] - 2026-11-17
 
 ### Changed
-- chore: correct 1.25.x changelog history with real change notes
-- feat: IndexedDB document storage (larger files, lean localStorage)
-- Store trip documents in IndexedDB
-- raise size limit
-- optional cloud note
-- Notes: collapse/remove sections, strip geo-pins and practicality
-- Notes: tidy fonts, remove icons/pins/practical, collapsible deletable sections
+- Finished applying the corrected **1.25.x** release history (documents / IndexedDB, Notes cleanup, PDF viewer, version tooling).
 
 ---
+
 
 ## [1.25.6] - 2026-11-17
 
 ### Changed
-- chore: correct 1.25.x changelog history with real change notes
-- feat: IndexedDB document storage (larger files, lean localStorage)
-- Store trip documents in IndexedDB
-- raise size limit
-- optional cloud note
-- Notes: collapse/remove sections, strip geo-pins and practicality
-- Notes: tidy fonts, remove icons/pins/practical, collapsible deletable sections Touched: CI workflows, Changelog, Maintenance scripts, Trip docume…
+- Auto version bumps now write **detailed notes** from recent commits and the areas of the app that changed.
+- In-app and markdown changelog entries for **1.25.0–1.25.5** filled in with real feature descriptions (no more “Auto bump after …” placeholders).
 
 ---
+
 
 ## [1.25.5] - 2026-11-17
 
