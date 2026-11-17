@@ -4,6 +4,19 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.25.7] - 2026-11-17
+
+### Changed
+- chore: correct 1.25.x changelog history with real change notes
+- feat: IndexedDB document storage (larger files, lean localStorage)
+- Store trip documents in IndexedDB
+- raise size limit
+- optional cloud note
+- Notes: collapse/remove sections, strip geo-pins and practicality
+- Notes: tidy fonts, remove icons/pins/practical, collapsible deletable sections
+
+---
+
 ## [1.25.6] - 2026-11-17
 
 ### Changed
