@@ -1,5 +1,6 @@
 import { AppState, Category, Sheet, Settings, Trip, PlanItem, ManualEstimate, Expense, HistoryEntry, SHEET_TO_CAT } from '../types';
 import { uid, guessCountryFromName, daysBetweenDateKeys, addDaysToDateKey, emptyTripNotes } from './helpers';
+import { slimDocumentsForPersist } from './docStore';
 
 export const STORAGE_KEY = 'trips-data';
 export const HISTORY_KEY = 'trips-data-history';
@@ -515,7 +516,15 @@ export async function loadInitialState(): Promise<AppState> {
 
 export function saveStateToLocalStorage(state: AppState): boolean {
   try {
-    const payload = JSON.stringify(state);
+    // Strip document payloads — binaries live in IndexedDB
+    const slim: AppState = {
+      ...state,
+      trips: (state.trips || []).map(tr => ({
+        ...tr,
+        documents: slimDocumentsForPersist(tr.documents)
+      }))
+    };
+    const payload = JSON.stringify(slim);
     localStorage.setItem(STORAGE_KEY, payload);
     return localStorage.getItem(STORAGE_KEY) === payload;
   } catch (e) {

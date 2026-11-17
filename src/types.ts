@@ -251,8 +251,14 @@ export interface TripDoc {
   mimeType: string;
   size: number;
   section: 'budget' | 'notes';
-  /** data URL (base64) — kept with trip data for offline access */
-  dataUrl: string;
+  /** IndexedDB key for the binary (usually same as id) */
+  blobId?: string;
+  /** @deprecated Legacy inline base64 — migrated to IndexedDB then stripped */
+  dataUrl?: string;
+  /** Optional Firebase Storage (or other) download URL for cross-device access */
+  cloudUrl?: string;
+  /** Internal: trip id used when migrating legacy blobs */
+  tripIdHint?: string;
   createdAt: number;
 }
 
