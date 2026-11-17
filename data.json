@@ -6178,6 +6178,26 @@
           "visited": false,
           "priority": 4,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwjxmmab_1x_9qc3w",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "The Dome",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6778,8 +6798,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwjxmmab_1x_9qc3w",
           "createdAt": 1788228366640
         },
         {
@@ -9160,6 +9180,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjxmmab_1y_wnr11",
+      "ts": 1794873984851,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Dome\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwjxmdle_1w_y74fv",
       "ts": 1794873973586,
       "action": "research-promoted",
@@ -10352,12 +10378,6 @@
       "ts": 1794104731340,
       "action": "research-added",
       "detail": "Added \"Estaminet in 't Molenhuis🍺\" to Brugge research"
-    },
-    {
-      "id": "log_mw77l1oj_j_ewnkl",
-      "ts": 1794104647363,
-      "action": "research-added",
-      "detail": "Added \"The Republic\" to Brugge research"
     }
   ]
 }
