@@ -6208,10 +6208,10 @@
           "sheet": "Wine Bars",
           "name": "Le Di-Vin",
           "status": "idea",
-          "date": "2026-12-04",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "20:00",
+          "dayNumber": 2,
           "dayNumberEnd": null,
           "location": "9 Randolph Pl, Edinburgh EH3 7TE",
           "links": [],
@@ -6221,7 +6221,11 @@
           "notes": "Near Kimpton",
           "visited": false,
           "priority": 4,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -7167,7 +7171,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794878236181,
+      "updatedAt": 1794878272756,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9220,6 +9224,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwk06iut_27_1yf6v",
+      "ts": 1794878272757,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Le Di-Vin\" on Edinburgh"
+    },
+    {
       "id": "log_mwk05ua3_26_wq0s0",
       "ts": 1794878240907,
       "action": "research-promoted",
@@ -10412,12 +10422,6 @@
       "ts": 1794107320432,
       "action": "research-edited",
       "detail": "Updated \"Huisbrouwerij De Halve Maan\" in Brugge research"
-    },
-    {
-      "id": "log_mw793iar_w_p67f2",
-      "ts": 1794107188323,
-      "action": "research-edited",
-      "detail": "Updated \"Bauhaus\" in Brugge research"
     }
   ]
 }
