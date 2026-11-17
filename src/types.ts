@@ -244,6 +244,18 @@ export interface TripNotesData {
   legacyMigrated?: boolean;
 }
 
+/** Uploaded file attached to Budget or Notes for a trip */
+export interface TripDoc {
+  id: string;
+  name: string;
+  mimeType: string;
+  size: number;
+  section: 'budget' | 'notes';
+  /** data URL (base64) — kept with trip data for offline access */
+  dataUrl: string;
+  createdAt: number;
+}
+
 export interface Trip {
   id: string;
   name: string;
@@ -256,6 +268,7 @@ export interface Trip {
   travelers: number;
   notes: string;
   tripNotes?: TripNotesData;
+  documents?: TripDoc[];
   expenses: Expense[];
   planItems: PlanItem[];
   timelineMode: 'dates' | 'days';

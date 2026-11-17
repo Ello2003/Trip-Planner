@@ -13,6 +13,7 @@ import {
 } from '../utils/helpers';
 import { removeBlankActual, resolveExpenseCategory } from '../utils/storage';
 import { formatCurrencyAmount } from '../utils/currency';
+import { TripDocumentsPanel } from './TripDocumentsPanel';
 
 interface BudgetTabProps {
   trip: Trip;
@@ -652,6 +653,13 @@ export const BudgetTab: React.FC<BudgetTabProps> = ({
           }
         />
       </div>
+
+      <TripDocumentsPanel
+        trip={trip}
+        section="budget"
+        onUpdateTrip={onUpdateTrip}
+        title="Budget documents"
+      />
     </div>
   );
 };

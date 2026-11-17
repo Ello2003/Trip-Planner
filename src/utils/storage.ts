@@ -234,6 +234,7 @@ export function migrateState(state: any): AppState {
     if (t.timelineManualOrder === undefined) t.timelineManualOrder = false;
     if (!Array.isArray(t.research)) t.research = [];
     if (!Array.isArray(t.packingList)) t.packingList = [];
+    if (!Array.isArray(t.documents)) t.documents = [];
     if (!Array.isArray(t.luggageBags)) t.luggageBags = [];
     if (!Array.isArray(t.outfits)) t.outfits = [];
     if (!Array.isArray(t.hauls)) t.hauls = [];

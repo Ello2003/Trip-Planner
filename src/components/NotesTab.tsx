@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Trip, TripNotesData, SafetyLevel } from '../types';
 import { uid, emptyTripNotes, siteNameFromUrl, normalizeWebUrl, parseCoords } from '../utils/helpers';
+import { TripDocumentsPanel } from './TripDocumentsPanel';
 
 interface NotesTabProps {
   trip: Trip;
@@ -624,6 +625,13 @@ export const NotesTab: React.FC<NotesTabProps> = ({ trip, onUpdateTrip, onShowTo
 
   return (
     <div className="notes-tab">
+      <TripDocumentsPanel
+        trip={trip}
+        section="notes"
+        onUpdateTrip={onUpdateTrip}
+        onShowToast={onShowToast}
+        title="Trip documents"
+      />
       <JournalSection notes={notes} save={save} toast={onShowToast} />
       <ClipsSection notes={notes} save={save} toast={onShowToast} />
       <PinsSection notes={notes} save={save} toast={onShowToast} tripName={trip.name} />
