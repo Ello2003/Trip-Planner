@@ -2,9 +2,9 @@
 """Bump APP_VERSION (types.ts), package.json, in-app CHANGELOG, and CHANGELOG.md.
 
 Usage:
-  python3 scripts/bump_version.py              # patch +1 (1.25.0 -> 1.25.1)
-  python3 scripts/bump_version.py minor        # 1.25.0 -> 1.26.0
-  python3 scripts/bump_version.py major        # 1.25.0 -> 2.0.0
+  python3 scripts/bump_version.py              # patch +1
+  python3 scripts/bump_version.py minor        # minor +1
+  python3 scripts/bump_version.py major        # major +1
   python3 scripts/bump_version.py 1.26.0       # set exact
   python3 scripts/bump_version.py patch "Notes about this release"
 """
@@ -48,7 +48,6 @@ def bump(kind: str, current: str) -> str:
         return fmt((major + 1, 0, 0))
     if kind == 'minor':
         return fmt((major, minor + 1, 0))
-    # patch default
     return fmt((major, minor, patch + 1))
 
 
@@ -74,7 +73,6 @@ def main() -> None:
     if not notes:
         notes = f'Maintenance release {new}.'
 
-    # types.ts APP_VERSION + CHANGELOG entry
     t = TYPES.read_text()
     t, n = re.subn(
         r"export const APP_VERSION = '[^']+';",
@@ -92,13 +90,11 @@ def main() -> None:
         )
     TYPES.write_text(t)
 
-    # package.json
     pkg = PKG.read_text()
     pkg, n = re.subn(r'"version": "[^"]+"', f'"version": "{new}"', pkg, count=1)
     if n:
         PKG.write_text(pkg)
 
-    # CHANGELOG.md
     today = date.today().isoformat()
     block = f'''## [{new}] - {today}
 
