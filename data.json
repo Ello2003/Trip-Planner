@@ -6512,7 +6512,7 @@
               "url": "https://www.one-20.co.uk/wp-content/uploads/2026/04/Table-Wine-List-2026-Website-2.pdf"
             }
           ],
-          "status": "researching",
+          "status": "dismissed",
           "linkedPlanItemId": null,
           "createdAt": 1787521297567
         },
@@ -7147,7 +7147,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794878229536,
+      "updatedAt": 1794878236181,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9200,6 +9200,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwk05qmt_24_vvi60",
+      "ts": 1794878236181,
+      "action": "research-edited",
+      "detail": "Updated \"One20 Wine Cafe\" in Edinburgh research"
+    },
+    {
       "id": "log_mwk05li9_23_9ytc6",
       "ts": 1794878229537,
       "action": "research-edited",
@@ -10392,12 +10398,6 @@
       "ts": 1794107181673,
       "action": "research-edited",
       "detail": "Updated \"Bauhaus\" in Brugge research"
-    },
-    {
-      "id": "log_mw78x3rf_u_hocsr",
-      "ts": 1794106889547,
-      "action": "research-edited",
-      "detail": "Updated \"Le Trappiste\" in Brugge research"
     }
   ]
 }
