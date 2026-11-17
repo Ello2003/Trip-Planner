@@ -6152,6 +6152,32 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwjxmdle_1u_00amv",
+          "sheet": "Cocktails",
+          "name": "Voodoo Rooms",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "19a W Register St, Edinburgh EH2 2AA",
+          "links": [
+            {
+              "id": "link_mwjxmdle_1v_njmfr",
+              "label": "Gallery",
+              "url": "https://thevoodoorooms.com/gallery/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Decor",
+          "visited": false,
+          "priority": 4,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6174,8 +6200,8 @@
               "url": "https://thevoodoorooms.com/gallery/"
             }
           ],
-          "status": "shortlisted",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwjxmdle_1u_00amv",
           "createdAt": 1786110821511
         },
         {
@@ -9134,6 +9160,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjxmdle_1w_y74fv",
+      "ts": 1794873973586,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Voodoo Rooms\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwjwwbob_1t_3ei0j",
       "ts": 1794872758043,
       "action": "research-promoted",
@@ -10326,12 +10358,6 @@
       "ts": 1794104647363,
       "action": "research-added",
       "detail": "Added \"The Republic\" to Brugge research"
-    },
-    {
-      "id": "log_mw76764y_f_18k9p",
-      "ts": 1794102320338,
-      "action": "research-added",
-      "detail": "Added \"The Bottle Shop\" to Brugge research"
     }
   ]
 }
