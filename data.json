@@ -6101,9 +6101,9 @@
           "sheet": "Pubs",
           "name": "The Guildford Arms",
           "status": "idea",
-          "date": "2026-12-04",
+          "date": null,
           "endDate": null,
-          "time": null,
+          "time": "20:00",
           "dayNumber": 1,
           "dayNumberEnd": null,
           "location": "1 W Register St, Edinburgh EH2 2AA, UK",
@@ -6125,7 +6125,11 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwjwwbob_1r_v81ku",
@@ -7127,7 +7131,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794874012322,
+      "updatedAt": 1794874364991,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -9180,6 +9184,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwjxurlr_20_7iwlc",
+      "ts": 1794874364992,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Guildford Arms\" on Edinburgh"
+    },
+    {
       "id": "log_mwjxn7he_1z_weeak",
       "ts": 1794874012322,
       "action": "plan-item-edited",
@@ -10372,12 +10382,6 @@
       "ts": 1794104829488,
       "action": "research-added",
       "detail": "Added \"Kaffee Kamiel\" to Brugge research"
-    },
-    {
-      "id": "log_mw77o6i5_p_t5e57",
-      "ts": 1794104793581,
-      "action": "research-added",
-      "detail": "Added \"Hotel Van Cleef\" to Brugge research"
     }
   ]
 }
