@@ -1,0 +1,22 @@
+name: Wire trip documents
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wire_trip_docs.py'
+      - 'src/components/TripDocumentsPanel.tsx'
+      - '.github/workflows/wire-trip-docs.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/wire_trip_docs.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/types.ts src/utils/storage.ts src/components/BudgetTab.tsx src/components/NotesTab.tsx src/components/TripDocumentsPanel.tsx
+          git commit -m "feat: upload documents on Budget and Notes per trip" || echo nochange
+          git push
