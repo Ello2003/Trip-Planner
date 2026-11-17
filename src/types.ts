@@ -385,7 +385,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.25.2';
+export const APP_VERSION = '1.25.3';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -447,6 +447,7 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.25.3': 'Auto bump after: Travel Ledger sync — 2026-11-17T23:27:53.625Z',
   '1.25.2': 'Auto bump after: Open PDFs in browser from trip document uploads',
   '1.25.1': 'Auto bump after: Travel Ledger sync — 2026-11-17T22:51:22.072Z',
   '1.25.0': 'Document uploads on Budget and Notes per trip. Research category sections can be drag-reordered. Plan timeline sorts By time or Manual (choice is saved). Hour-by-hour timeline only includes items with a set time. Inline star priority on Plan items. Dismissed/cancelled rows show full strikethrough. Collapsed sections and view toggles persist across navigation. Tab bar only shows known enabled tabs; Notes tab wired; mobile bottom tabs match.',

@@ -4,6 +4,13 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.25.3] - 2026-11-17
+
+### Changed
+- Auto bump after: Travel Ledger sync — 2026-11-17T23:27:53.625Z
+
+---
+
 ## [1.25.2] - 2026-11-17
 
 ### Changed
