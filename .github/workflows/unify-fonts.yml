@@ -1,0 +1,21 @@
+name: Unify fonts to Budget style
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/unify_fonts_budget.py'
+      - '.github/workflows/unify-fonts.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/unify_fonts_budget.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/index.css
+          git commit -m "style: match Notes fonts to Budget (mono section labels, body 13px)" || echo nochange
+          git push
