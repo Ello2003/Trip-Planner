@@ -1947,9 +1947,12 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-display);
-  font-size: 16px;
-  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
 }
 
 #travel-ledger-root .notes-count {
@@ -1969,7 +1972,7 @@ body {
   width: 100%;
   min-width: 0;
   padding: 9px 11px;
-  font-family: inherit;
+  font-family: var(--font-body);
   font-size: 13px;
   color: var(--ink);
   background: #fff;
@@ -2004,7 +2007,7 @@ body {
 
 #travel-ledger-root .notes-bullet { flex: 0 0 auto; width: 18px; text-align: center; color: var(--brass); line-height: 1.5; }
 #travel-ledger-root .notes-body { flex: 1; min-width: 0; }
-#travel-ledger-root .notes-text { font-size: 13.5px; line-height: 1.5; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+#travel-ledger-root .notes-text { font-family: var(--font-body); font-size: 13px; line-height: 1.5; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
 #travel-ledger-root .notes-why { margin-top: 2px; font-size: 12.5px; line-height: 1.45; color: var(--ink-soft); overflow-wrap: anywhere; }
 
 #travel-ledger-root .notes-meta {
@@ -2133,11 +2136,12 @@ body {
 }
 #travel-ledger-root .notes-collapse-btn h3 {
   margin: 0;
-  font-size: 15px;
-  font-weight: 650;
-  letter-spacing: 0.01em;
-  color: var(--ink);
-  font-family: var(--font-display, inherit);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 #travel-ledger-root .notes-chevron {
   font-size: 11px;
@@ -2167,16 +2171,21 @@ body {
   padding: 8px 2px;
 }
 #travel-ledger-root .notes-text {
-  font-size: 14px;
-  line-height: 1.55;
-  letter-spacing: 0.01em;
-}
-#travel-ledger-root .notes-why {
+  font-family: var(--font-body);
   font-size: 13px;
   line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--ink);
+}
+#travel-ledger-root .notes-why {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink-soft);
 }
 #travel-ledger-root .notes-input {
-  font-size: 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
   line-height: 1.45;
 }
 #travel-ledger-root .notes-docs-wrap .chart-card {
@@ -2193,4 +2202,23 @@ body {
   #travel-ledger-root .notes-input { font-size: 16px; } /* stops iOS zooming on focus */
   #travel-ledger-root .notes-icon-btn { min-width: 36px; height: 36px; }
   #travel-ledger-root .notes-hint { display: none; }
+}
+
+
+/* Unified section headings (Budget style) */
+#travel-ledger-root .sheet-header,
+#travel-ledger-root .sheet-header .inline-text,
+#travel-ledger-root .sheet-header span:not(.sheet-dot) {
+  font-family: var(--font-body);
+}
+#travel-ledger-root .notes-tab,
+#travel-ledger-root .notes-tab button:not(.btn-primary):not(.btn-ghost),
+#travel-ledger-root .notes-tab input,
+#travel-ledger-root .notes-tab textarea {
+  font-family: var(--font-body);
+}
+#travel-ledger-root .notes-meta,
+#travel-ledger-root .notes-hint,
+#travel-ledger-root .notes-count {
+  font-family: var(--font-mono);
 }
