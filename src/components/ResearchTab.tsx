@@ -65,6 +65,43 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
     });
   };
 
+  const hideSheet = (key: string) => {
+    if (trip.hiddenSheets.includes(key)) return;
+    onUpdateTrip({
+      ...trip,
+      hiddenSheets: [...trip.hiddenSheets, key],
+      updatedAt: Date.now()
+    });
+  };
+
+  const showSheet = (key: string) => {
+    onUpdateTrip({
+      ...trip,
+      hiddenSheets: trip.hiddenSheets.filter(k => k !== key),
+      updatedAt: Date.now()
+    });
+  };
+
+  const collapseAllSections = () => {
+    const keys = sheets.filter(s => !trip.hiddenSheets.includes(s.key)).map(s => s.key);
+    const next: Record<string, boolean> = { ...collapsedSheets };
+    keys.forEach(k => {
+      next[k] = true;
+    });
+    setCollapsedSheets(next);
+    saveTripUi(trip.id, { researchCollapsedSheets: next });
+  };
+
+  const expandAllSections = () => {
+    const keys = sheets.filter(s => !trip.hiddenSheets.includes(s.key)).map(s => s.key);
+    const next: Record<string, boolean> = { ...collapsedSheets };
+    keys.forEach(k => {
+      next[k] = false;
+    });
+    setCollapsedSheets(next);
+    saveTripUi(trip.id, { researchCollapsedSheets: next });
+  };
+
   const setResearchViewPersist = (v: 'both' | 'list' | 'map') => {
     setResearchView(v);
     saveTripUi(trip.id, { researchView: v });
@@ -153,9 +190,35 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
           <button type="button" className={`btn-sm ${researchView === 'list' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchViewPersist('list')} title="List only">List Only</button>
           <button type="button" className={`btn-sm ${researchView === 'map' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setResearchViewPersist('map')} title="Map only">Map Only</button>
         </div>
-        <button className="btn-ghost btn-sm" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>Manage Categories</button>
-        <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>Maps Key</button>
+        <div style={{ marginLeft: 'auto', display: 'inline-flex', gap: '6px', flexWrap: 'wrap', alignItems: 'center' }}>
+          <button type="button" className="btn-ghost btn-sm" onClick={collapseAllSections} title="Collapse all sections">Collapse all</button>
+          <button type="button" className="btn-ghost btn-sm" onClick={expandAllSections} title="Expand all sections">Expand all</button>
+          <button className="btn-ghost btn-sm" onClick={onManageSheets}>Manage Categories</button>
+          <button className="btn-ghost btn-sm" onClick={onOpenMapSettings}>Maps Key</button>
+        </div>
       </div>
+
+      {trip.hiddenSheets.length > 0 && (
+        <div
+          className="chart-card"
+          style={{ marginBottom: '12px', padding: '10px 12px', display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}
+        >
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--ink-soft)', fontWeight: 600 }}>
+            Hidden categories
+          </span>
+          {trip.hiddenSheets.map(key => (
+            <button
+              key={key}
+              type="button"
+              className="btn-ghost btn-sm"
+              onClick={() => showSheet(key)}
+              title={`Show “${key}” again`}
+            >
+              Show {key}
+            </button>
+          ))}
+        </div>
+      )}
 
       {(researchView === 'both' || researchView === 'map') && (
         <ResearchMap
@@ -208,9 +271,31 @@ export const ResearchTab: React.FC<ResearchTabProps> = ({
                     )}{' '}
                     <span style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-mono)', fontSize: '11px' }}>({items.length})</span>
                   </div>
-                  <div style={{ display: 'flex', gap: '6px' }}>
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      className="btn-ghost btn-sm"
+                      onClick={e => {
+                        e.stopPropagation();
+                        toggleSheet(s.key);
+                      }}
+                      title={isCollapsed ? 'Expand section' : 'Collapse section'}
+                    >
+                      {isCollapsed ? 'Expand' : 'Collapse'}
+                    </button>
                     <button className="btn-ghost btn-sm" onClick={() => toggleSectionMap(s.key)} title={hasMap ? 'Show/hide map' : 'Add a map'} style={hasMap ? { borderColor: 'var(--brass)', color: 'var(--brass)' } : undefined}>Map</button>
                     <button className="btn-ghost btn-sm" onClick={() => onOpenAddResearchModal(s.key)}>+ Add</button>
+                    <button
+                      type="button"
+                      className="btn-ghost btn-sm"
+                      onClick={e => {
+                        e.stopPropagation();
+                        hideSheet(s.key);
+                      }}
+                      title="Hide this category from Research (quick — no menu)"
+                    >
+                      Hide
+                    </button>
                   </div>
                 </div>
                 {!isCollapsed && (
