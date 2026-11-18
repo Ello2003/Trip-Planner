@@ -1,0 +1,21 @@
+name: Research quick toggles
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/research_quick_toggles.py'
+      - '.github/workflows/research-quick-toggles.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/research_quick_toggles.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/components/ResearchTab.tsx
+          git commit -m "Research: section Collapse/Expand/Hide toggles without Manage menu" || echo nochange
+          git push
