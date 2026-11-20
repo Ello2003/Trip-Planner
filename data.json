@@ -2952,7 +2952,7 @@
           "lat": 51.204911599999996,
           "lng": 3.2253486,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4218,7 +4218,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795137090476,
+      "updatedAt": 1795137138509,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9489,6 +9489,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwoaawy5_p_1dp7z",
+      "ts": 1795137138509,
+      "action": "research-edited",
+      "detail": "Updated \"Boniface Bridge\" in Brugge research"
+    },
+    {
       "id": "log_mwoa9vvw_o_xxn6r",
       "ts": 1795137090476,
       "action": "research-edited",
@@ -10681,12 +10687,6 @@
       "ts": 1794269685860,
       "action": "research-added",
       "detail": "Added \"Duvelorium Belgian Beer Bar\" to Brugge research"
-    },
-    {
-      "id": "log_mw9xsrmp_2_jz6tx",
-      "ts": 1794269609953,
-      "action": "research-edited",
-      "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
     }
   ]
 }
