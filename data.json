@@ -1291,7 +1291,7 @@
           "status": "idea",
           "date": null,
           "endDate": null,
-          "time": null,
+          "time": "11:00",
           "dayNumber": 3,
           "dayNumberEnd": null,
           "location": "Simon Stevinplein 13, 8000 Brugge, Belgium",
@@ -4200,7 +4200,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795138720264,
+      "updatedAt": 1795138736212,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9471,6 +9471,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwob95qs_12_t0j8q",
+      "ts": 1795138736212,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Jerry's Cigar Bar\" on Brugge"
+    },
+    {
       "id": "log_mwob8tfs_11_yv19m",
       "ts": 1795138720264,
       "action": "plan-item-deleted",
@@ -10663,12 +10669,6 @@
       "ts": 1794272005712,
       "action": "research-edited",
       "detail": "Updated \"Tasty Sandwich\" in Brugge research"
-    },
-    {
-      "id": "log_mw9z48ln_j_wkwyv",
-      "ts": 1794271824779,
-      "action": "research-edited",
-      "detail": "Updated \"Boho Brunch\" in Brugge research"
     }
   ]
 }
