@@ -2871,15 +2871,21 @@
         {
           "id": "res_mvvmgv79_14_kl3mc",
           "sheet": "Sights",
-          "name": "Den Burg",
-          "address": "Den Burg, Netherlands",
-          "lat": 53.0546266,
-          "lng": 4.7997252999999995,
+          "name": "De Burg",
+          "address": "Burg 15, 8000 Brugge, Belgium",
+          "lat": 51.208506199999995,
+          "lng": 3.2268383,
           "priceLevel": null,
           "priority": 5,
           "estCost": null,
           "notes": "",
-          "links": [],
+          "links": [
+            {
+              "id": "link_mwoaczzd_t_g3bdf",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/hoogtepunten/burg"
+            }
+          ],
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793404052469
@@ -4218,7 +4224,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795137171933,
+      "updatedAt": 1795137236941,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9489,6 +9495,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwoad0wd_u_1m4a2",
+      "ts": 1795137236941,
+      "action": "research-edited",
+      "detail": "Updated \"De Burg\" in Brugge research"
+    },
+    {
       "id": "log_mwoabmql_s_3jmd2",
       "ts": 1795137171933,
       "action": "research-edited",
@@ -10681,12 +10693,6 @@
       "ts": 1794271507755,
       "action": "research-edited",
       "detail": "Updated \"Boulangerie Schaeverbeke\" in Brugge research"
-    },
-    {
-      "id": "log_mw9ywxfe_9_0uni4",
-      "ts": 1794271483706,
-      "action": "research-edited",
-      "detail": "Updated \"That's Toast\" in Brugge research"
     }
   ]
 }
