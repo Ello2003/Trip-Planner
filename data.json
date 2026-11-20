@@ -6365,6 +6365,106 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwo84tjq_4_20h82",
+          "sheet": "Shopping",
+          "name": "Jeffrey St. Whisky & Tobacco",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "12-14 Jeffrey St, Edinburgh EH1 1DT",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Shopping"
+        },
+        {
+          "id": "plan_mwo84v34_6_a138p",
+          "sheet": "Shopping",
+          "name": "Walker Slater",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Shopping"
+        },
+        {
+          "id": "plan_mwo84vr4_8_ljbbj",
+          "sheet": "Shopping",
+          "name": "Castle View Cigars",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "15 Frederick St, Edinburgh EH2 2EY",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Shopping"
+        },
+        {
+          "id": "plan_mwo84wey_a_s7d5e",
+          "sheet": "Shopping",
+          "name": "Robert Graham 1874 Whisky & Cigars",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "194 Rose St, Edinburgh EH2 4AZ",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Shopping"
+        },
+        {
+          "id": "plan_mwo84x0d_c_dokiq",
+          "sheet": "Shopping",
+          "name": "Royal Mile Whiskies",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Shopping"
         }
       ],
       "timelineMode": "days",
@@ -6885,8 +6985,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwo84tjq_4_20h82",
           "createdAt": 1787876999314
         },
         {
@@ -6901,8 +7001,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwo84v34_6_a138p",
           "createdAt": 1787877899817
         },
         {
@@ -6917,8 +7017,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwo84vr4_8_ljbbj",
           "createdAt": 1787878410969
         },
         {
@@ -6933,8 +7033,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwo84wey_a_s7d5e",
           "createdAt": 1787878516195
         },
         {
@@ -6949,8 +7049,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwo84x0d_c_dokiq",
           "createdAt": 1787878651183
         },
         {
@@ -9365,6 +9465,36 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo84x0f_d_koml3",
+      "ts": 1795133499423,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Royal Mile Whiskies\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwo84wf0_b_u27cl",
+      "ts": 1795133498652,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Robert Graham 1874 Whisky & Cigars\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwo84vr4_9_xamjy",
+      "ts": 1795133497792,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Castle View Cigars\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwo84v36_7_hvb1t",
+      "ts": 1795133496930,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Walker Slater\" to Plan on Edinburgh"
+    },
+    {
+      "id": "log_mwo84tjq_5_zm4wj",
+      "ts": 1795133494934,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Jeffrey St. Whisky & Tobacco\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwo84d4w_3_rx7av",
       "ts": 1795133473664,
       "action": "research-promoted",
@@ -10533,36 +10663,6 @@
       "ts": 1794108414825,
       "action": "research-promoted",
       "detail": "Promoted \"Bauhaus\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw79tdsu_19_oplf7",
-      "ts": 1794108395550,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Le Trappiste\" on Brugge"
-    },
-    {
-      "id": "log_mw79t9vl_18_w4e94",
-      "ts": 1794108390465,
-      "action": "research-promoted",
-      "detail": "Promoted \"Le Trappiste\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw79p2pt_15_5w46g",
-      "ts": 1794108194561,
-      "action": "research-edited",
-      "detail": "Updated \"'t Brugs Beertje\" in Brugge research"
-    },
-    {
-      "id": "log_mw79atof_14_0xocj",
-      "ts": 1794107529663,
-      "action": "research-edited",
-      "detail": "Updated \"Bauhaus\" in Brugge research"
-    },
-    {
-      "id": "log_mw79ad5q_12_xn2l7",
-      "ts": 1794107508254,
-      "action": "research-edited",
-      "detail": "Updated \"The Monk\" in Brugge research"
     }
   ]
 }
