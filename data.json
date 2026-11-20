@@ -2800,11 +2800,11 @@
           "lat": 51.2088142,
           "lng": 3.2243722999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "promoted",
+          "status": "researching",
           "linkedPlanItemId": "plan_mwfteisv_6_3204c",
           "createdAt": 1793403996078
         },
@@ -4196,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1794959014017,
+      "updatedAt": 1795134447512,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9467,6 +9467,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo8p8k9_e_jf3xd",
+      "ts": 1795134447513,
+      "action": "research-edited",
+      "detail": "Updated \"Historic centre of Brugge (Bruges)\" in Brugge research"
+    },
+    {
       "id": "log_mwo84x0f_d_koml3",
       "ts": 1795133499423,
       "action": "research-promoted",
@@ -10659,12 +10665,6 @@
       "ts": 1794108417168,
       "action": "plan-item-edited",
       "detail": "Updated \"Bauhaus\" on Brugge"
-    },
-    {
-      "id": "log_mw79tso9_1d_fz115",
-      "ts": 1794108414825,
-      "action": "research-promoted",
-      "detail": "Promoted \"Bauhaus\" to Plan on Brugge"
     }
   ]
 }
