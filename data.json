@@ -4221,10 +4221,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1795137042184
+        },
+        {
+          "id": "res_mwob3sy6_w_6n0yc",
+          "sheet": "Sights",
+          "name": "Sint-Salvatorskathedraal",
+          "address": "Steenstraat, 8000 Brugge, Belgium",
+          "lat": 51.2055976,
+          "lng": 3.2215419,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "Light festival",
+          "links": [
+            {
+              "id": "link_mwob3o0b_v_tsp2w",
+              "label": "Official Website",
+              "url": "https://www.sintsalvatorskathedraal.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795138486350
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795137236941,
+      "updatedAt": 1795138486350,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9495,6 +9517,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwob3sy7_x_z9msk",
+      "ts": 1795138486351,
+      "action": "research-added",
+      "detail": "Added \"Sint-Salvatorskathedraal\" to Brugge research"
+    },
+    {
       "id": "log_mwoad0wd_u_1m4a2",
       "ts": 1795137236941,
       "action": "research-edited",
@@ -10687,12 +10715,6 @@
       "ts": 1794271642797,
       "action": "research-promoted",
       "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw9yxfzf_a_13kjc",
-      "ts": 1794271507755,
-      "action": "research-edited",
-      "detail": "Updated \"Boulangerie Schaeverbeke\" in Brugge research"
     }
   ]
 }
