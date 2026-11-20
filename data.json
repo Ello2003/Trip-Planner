@@ -1328,10 +1328,10 @@
           "sheet": "Cigars",
           "name": "Missault",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
           "time": null,
-          "dayNumber": 1,
+          "dayNumber": 3,
           "dayNumberEnd": null,
           "location": "Braambergstraat 5, 8000 Brugge, Belgium",
           "links": [
@@ -4230,7 +4230,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795138659242,
+      "updatedAt": 1795138665328,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9501,6 +9501,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwob7n1t_10_go6p1",
+      "ts": 1795138665329,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Missault\" on Brugge"
+    },
+    {
       "id": "log_mwob7icq_z_xt6ug",
       "ts": 1795138659242,
       "action": "plan-item-edited",
@@ -10693,12 +10699,6 @@
       "ts": 1794271727664,
       "action": "plan-item-edited",
       "detail": "Updated \"Brewery Bourgogne des Flandres\" on Brugge"
-    },
-    {
-      "id": "log_mw9z20ff_h_efvs3",
-      "ts": 1794271720875,
-      "action": "research-promoted",
-      "detail": "Promoted \"Brewery Bourgogne des Flandres\" to Plan on Brugge"
     }
   ]
 }
