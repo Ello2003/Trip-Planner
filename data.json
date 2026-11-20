@@ -3034,7 +3034,7 @@
           "lat": 51.1985841,
           "lng": 3.2236217999999996,
           "priceLevel": null,
-          "priority": null,
+          "priority": 3,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4218,7 +4218,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795137042184,
+      "updatedAt": 1795137090476,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9489,6 +9489,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwoa9vvw_o_xxn6r",
+      "ts": 1795137090476,
+      "action": "research-edited",
+      "detail": "Updated \"Gunpowder Tower (Poertoren)\" in Brugge research"
+    },
+    {
       "id": "log_mwoa8umg_n_gtqqu",
       "ts": 1795137042184,
       "action": "research-added",
@@ -10681,12 +10687,6 @@
       "ts": 1794269609953,
       "action": "research-edited",
       "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
-    },
-    {
-      "id": "log_mw9xqlp6_6_2nq3w",
-      "ts": 1794269508954,
-      "action": "research-added",
-      "detail": "Added \"Brewery Bourgogne des Flandres\" to Brugge research"
     }
   ]
 }
