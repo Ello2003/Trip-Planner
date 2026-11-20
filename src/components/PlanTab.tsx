@@ -25,6 +25,7 @@ interface PlanTabProps {
   onOpenEditPlanModal: (item: PlanItem) => void;
   onMoveToResearch: (item: PlanItem) => void;
   onManageSheets: () => void;
+  onReorderSheets?: (sheets: Sheet[]) => void;
   onExportPDF: () => void;
   onOpenCurrencyConverter?: () => void;
 }
@@ -93,6 +94,7 @@ export const PlanTab: React.FC<PlanTabProps> = ({
   onOpenEditPlanModal,
   onMoveToResearch,
   onManageSheets,
+  onReorderSheets,
   onExportPDF,
   onOpenCurrencyConverter
 }) => {
@@ -112,6 +114,53 @@ export const PlanTab: React.FC<PlanTabProps> = ({
       saveTripUi(trip.id, { planCollapsedSheets: next });
       return next;
     });
+  };
+
+  const hideSheet = (key: string) => {
+    if (trip.hiddenSheets.includes(key)) return;
+    onUpdateTrip({
+      ...trip,
+      hiddenSheets: [...trip.hiddenSheets, key],
+      updatedAt: Date.now()
+    });
+  };
+
+  const showSheet = (key: string) => {
+    onUpdateTrip({
+      ...trip,
+      hiddenSheets: trip.hiddenSheets.filter(k => k !== key),
+      updatedAt: Date.now()
+    });
+  };
+
+  const collapseAllSections = () => {
+    const keys = sheets.filter(s => !trip.hiddenSheets.includes(s.key)).map(s => s.key);
+    const next: Record<string, boolean> = { ...collapsedSheets };
+    keys.forEach(k => {
+      next[k] = true;
+    });
+    setCollapsedSheets(next);
+    saveTripUi(trip.id, { planCollapsedSheets: next });
+  };
+
+  const expandAllSections = () => {
+    const keys = sheets.filter(s => !trip.hiddenSheets.includes(s.key)).map(s => s.key);
+    const next: Record<string, boolean> = { ...collapsedSheets };
+    keys.forEach(k => {
+      next[k] = false;
+    });
+    setCollapsedSheets(next);
+    saveTripUi(trip.id, { planCollapsedSheets: next });
+  };
+
+  const visibleSheets = sheets.filter(s => !trip.hiddenSheets.includes(s.key));
+
+  const handleReorderSections = (_from: number, _to: number, newKeys: string[]) => {
+    if (!onReorderSheets) return;
+    const byKey = new Map(sheets.map(s => [s.key, s]));
+    const ordered = newKeys.map(k => byKey.get(k)).filter(Boolean) as Sheet[];
+    const rest = sheets.filter(s => !newKeys.includes(s.key));
+    onReorderSheets([...ordered, ...rest]);
   };
 
   // Rename a section in place; keep its collapsed/expanded state under the new name
@@ -280,17 +329,25 @@ export const PlanTab: React.FC<PlanTabProps> = ({
             Day numbers
           </button>
         </div>
-        <button className="btn-ghost" onClick={onManageSheets} style={{ marginLeft: 'auto' }}>
-          Manage Categories
-        </button>
-        {onOpenCurrencyConverter && (
-          <button className="btn-ghost" onClick={onOpenCurrencyConverter} title="Open Currency Converter">
-            💱 Currency
+        <div style={{ marginLeft: 'auto', display: 'inline-flex', gap: '6px', flexWrap: 'wrap', alignItems: 'center' }}>
+          <button type="button" className="btn-ghost btn-sm" onClick={collapseAllSections} title="Collapse all sections">
+            Collapse all
           </button>
-        )}
-        <button className="btn-ghost" onClick={onExportPDF}>
-          Export PDF
-        </button>
+          <button type="button" className="btn-ghost btn-sm" onClick={expandAllSections} title="Expand all sections">
+            Expand all
+          </button>
+          <button className="btn-ghost" onClick={onManageSheets}>
+            Manage Categories
+          </button>
+          {onOpenCurrencyConverter && (
+            <button className="btn-ghost" onClick={onOpenCurrencyConverter} title="Open Currency Converter">
+              💱 Currency
+            </button>
+          )}
+          <button className="btn-ghost" onClick={onExportPDF}>
+            Export PDF
+          </button>
+        </div>
       </div>
 
       {/* Hour by Hour Timeline Card */}
@@ -439,21 +496,52 @@ export const PlanTab: React.FC<PlanTabProps> = ({
         )}
       </div>
 
+      {trip.hiddenSheets.length > 0 && (
+        <div
+          className="chart-card"
+          style={{ marginBottom: '12px', padding: '10px 12px', display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}
+        >
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--ink-soft)', fontWeight: 600 }}>
+            Hidden categories
+          </span>
+          {trip.hiddenSheets.map(key => (
+            <button
+              key={key}
+              type="button"
+              className="btn-ghost btn-sm"
+              onClick={() => showSheet(key)}
+              title={`Show “${key}” again`}
+            >
+              Show {key}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Sheet Sections */}
       <div>
-        {sheets
-          .filter(s => !trip.hiddenSheets.includes(s.key))
-          .map(s => {
+        <SortableList
+          ids={visibleSheets.map(s => s.key)}
+          onReorder={handleReorderSections}
+          disabled={!onReorderSheets}
+        >
+        {visibleSheets.map(s => {
             const items = trip.planItems.filter(i => i.sheet === s.key);
             const isCollapsed = collapsedSheets[s.key];
 
             return (
-              <div className={`sheet-section ${items.length ? '' : 'is-empty'}`} key={s.key}>
+              <SortableRow
+                id={s.key}
+                key={s.key}
+                className={`sheet-section ${items.length ? '' : 'is-empty'}`}
+                disabled={!onReorderSheets}
+              >
                 <div className="sheet-header">
                   <div
                     style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}
                     onClick={() => toggleSheet(s.key)}
                   >
+                    {onReorderSheets ? <DragHandle /> : null}
                     <span>{isCollapsed ? '▸' : '▾'}</span>
                     {onRecolorSheet ? (
                       <InlineColor color={s.color} onCommit={c => onRecolorSheet(s.key, c)} />
@@ -469,9 +557,33 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                       ({items.length})
                     </span>
                   </div>
-                  <button className="btn-ghost btn-sm" onClick={() => onOpenAddPlanModal(s.key)}>
-                    + Add
-                  </button>
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                    <button
+                      type="button"
+                      className="btn-ghost btn-sm"
+                      onClick={e => {
+                        e.stopPropagation();
+                        toggleSheet(s.key);
+                      }}
+                      title={isCollapsed ? 'Expand section' : 'Collapse section'}
+                    >
+                      {isCollapsed ? 'Expand' : 'Collapse'}
+                    </button>
+                    <button className="btn-ghost btn-sm" onClick={() => onOpenAddPlanModal(s.key)}>
+                      + Add
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-ghost btn-sm"
+                      onClick={e => {
+                        e.stopPropagation();
+                        hideSheet(s.key);
+                      }}
+                      title="Hide this category from Plan (quick — no menu)"
+                    >
+                      Hide
+                    </button>
+                  </div>
                 </div>
 
                 {!isCollapsed && (
@@ -608,9 +720,10 @@ export const PlanTab: React.FC<PlanTabProps> = ({
                     )}
                   </div>
                 )}
-              </div>
+              </SortableRow>
             );
           })}
+        </SortableList>
       </div>
     </div>
   );

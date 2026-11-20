@@ -511,6 +511,7 @@ export const TripDetailView: React.FC<TripDetailViewProps> = ({
               categories={categories}
               onRenameSheet={onRenameSheet}
               onRecolorSheet={onRecolorSheet}
+              onReorderSheets={onReorderSheets}
               onUpdateTrip={onUpdateTrip}
               onOpenAddPlanModal={onOpenAddPlanModal}
               onOpenEditPlanModal={onOpenEditPlanModal}
