@@ -2974,7 +2974,7 @@
           "lat": 51.202447299999996,
           "lng": 3.2241779999999998,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4218,7 +4218,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795137165599,
+      "updatedAt": 1795137171933,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9489,6 +9489,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwoabmql_s_3jmd2",
+      "ts": 1795137171933,
+      "action": "research-edited",
+      "detail": "Updated \"Huisbrouwerij De Halve Maan\" in Brugge research"
+    },
+    {
       "id": "log_mwoabhuo_r_8ir8c",
       "ts": 1795137165600,
       "action": "research-edited",
@@ -10679,12 +10685,6 @@
     {
       "id": "log_mw9ywxfe_9_0uni4",
       "ts": 1794271483706,
-      "action": "research-edited",
-      "detail": "Updated \"That's Toast\" in Brugge research"
-    },
-    {
-      "id": "log_mw9ysxoh_8_idpou",
-      "ts": 1794271297409,
       "action": "research-edited",
       "detail": "Updated \"That's Toast\" in Brugge research"
     }
