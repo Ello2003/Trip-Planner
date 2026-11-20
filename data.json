@@ -2545,36 +2545,6 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
-        },
-        {
-          "id": "plan_mwfteisv_6_3204c",
-          "sheet": "Sights",
-          "name": "Historic centre of Brugge (Bruges)",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "Grote Markt, 2000 Antwerpen, Belgium",
-          "links": [],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "priority": null,
-          "estimateCategory": "Other",
-          "estimateQuantity": 1,
-          "estimateOriginal": {
-            "name": "Historic centre of Brugge (Bruges)",
-            "sheet": "Sights",
-            "category": "Other",
-            "quantity": 1,
-            "cost": null
-          },
-          "actualNotes": "",
-          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -4230,7 +4200,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795138673369,
+      "updatedAt": 1795138720264,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9501,6 +9471,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwob8tfs_11_yv19m",
+      "ts": 1795138720264,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Historic centre of Brugge (Bruges)\" from Brugge"
+    },
+    {
       "id": "log_mwob7n1t_10_go6p1",
       "ts": 1795138665329,
       "action": "plan-item-edited",
@@ -10693,12 +10669,6 @@
       "ts": 1794271824779,
       "action": "research-edited",
       "detail": "Updated \"Boho Brunch\" in Brugge research"
-    },
-    {
-      "id": "log_mw9z25o0_i_nvuxm",
-      "ts": 1794271727664,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Brewery Bourgogne des Flandres\" on Brugge"
     }
   ]
 }
