@@ -4193,10 +4193,32 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwbg3qqe_10_2osdu",
           "createdAt": 1794360340907
+        },
+        {
+          "id": "res_mwoa8umg_m_pbhi2",
+          "sheet": "Sights",
+          "name": "Beguinage \"Ten Wijngaerde\"",
+          "address": "Begijnhof 30, 8000 Brugge, Belgium",
+          "lat": 51.2013447,
+          "lng": 3.2227093,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwoa8tf6_l_vt19h",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/nl/begijnhof"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795137042184
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795134741629,
+      "updatedAt": 1795137042184,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9467,6 +9489,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwoa8umg_n_gtqqu",
+      "ts": 1795137042184,
+      "action": "research-added",
+      "detail": "Added \"Beguinage \"Ten Wijngaerde\"\" to Brugge research"
+    },
+    {
       "id": "log_mwo8vji5_k_lqjo2",
       "ts": 1795134741629,
       "action": "research-edited",
@@ -10659,12 +10687,6 @@
       "ts": 1794269508954,
       "action": "research-added",
       "detail": "Added \"Brewery Bourgogne des Flandres\" to Brugge research"
-    },
-    {
-      "id": "log_mw79uzqg_1q_bflvr",
-      "ts": 1794108470632,
-      "action": "plan-item-edited",
-      "detail": "Updated \"'t Brugs Beertje\" on Brugge"
     }
   ]
 }
