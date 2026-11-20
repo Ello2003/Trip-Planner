@@ -2930,7 +2930,7 @@
           "lat": 51.206611599999995,
           "lng": 3.2227343,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4218,7 +4218,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795137138509,
+      "updatedAt": 1795137143875,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9489,6 +9489,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwoab137_q_0op7y",
+      "ts": 1795137143875,
+      "action": "research-edited",
+      "detail": "Updated \"Simon Stevin\" in Brugge research"
+    },
+    {
       "id": "log_mwoaawy5_p_1dp7z",
       "ts": 1795137138509,
       "action": "research-edited",
@@ -10681,12 +10687,6 @@
       "ts": 1794270911242,
       "action": "research-edited",
       "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
-    },
-    {
-      "id": "log_mw9xue78_5_593a9",
-      "ts": 1794269685860,
-      "action": "research-added",
-      "detail": "Added \"Duvelorium Belgian Beer Bar\" to Brugge research"
     }
   ]
 }
