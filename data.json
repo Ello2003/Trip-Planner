@@ -1330,7 +1330,7 @@
           "status": "idea",
           "date": null,
           "endDate": null,
-          "time": null,
+          "time": "11:30",
           "dayNumber": 3,
           "dayNumberEnd": null,
           "location": "Braambergstraat 5, 8000 Brugge, Belgium",
@@ -4200,7 +4200,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795138736212,
+      "updatedAt": 1795216334720,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9471,6 +9471,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwplgd4x_13_94q0t",
+      "ts": 1795216334721,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Missault\" on Brugge"
+    },
+    {
       "id": "log_mwob95qs_12_t0j8q",
       "ts": 1795138736212,
       "action": "plan-item-edited",
@@ -10663,12 +10669,6 @@
       "ts": 1794272026919,
       "action": "research-edited",
       "detail": "Updated \"Boho Brunch\" in Brugge research"
-    },
-    {
-      "id": "log_mw9z847k_k_jqc3o",
-      "ts": 1794272005712,
-      "action": "research-edited",
-      "detail": "Updated \"Tasty Sandwich\" in Brugge research"
     }
   ]
 }
