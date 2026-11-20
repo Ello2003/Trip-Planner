@@ -2876,7 +2876,7 @@
           "lat": 53.0546266,
           "lng": 4.7997252999999995,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -4196,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795134495336,
+      "updatedAt": 1795134522269,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9467,6 +9467,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo8qu8t_i_i6dd5",
+      "ts": 1795134522269,
+      "action": "research-edited",
+      "detail": "Updated \"Den Burg\" in Brugge research"
+    },
+    {
       "id": "log_mwo8q9go_h_fbae8",
       "ts": 1795134495336,
       "action": "research-edited",
@@ -10659,12 +10665,6 @@
       "ts": 1794108458578,
       "action": "plan-item-edited",
       "detail": "Updated \"2be Shop\" on Brugge"
-    },
-    {
-      "id": "log_mw79up2j_1l_pvmzx",
-      "ts": 1794108456811,
-      "action": "research-promoted",
-      "detail": "Promoted \"2be Shop\" to Plan on Brugge"
     }
   ]
 }
