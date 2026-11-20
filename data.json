@@ -2914,7 +2914,7 @@
           "lat": 51.206101700000005,
           "lng": 3.2257072,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [],
@@ -4218,7 +4218,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795137143875,
+      "updatedAt": 1795137165599,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9489,6 +9489,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwoabhuo_r_8ir8c",
+      "ts": 1795137165600,
+      "action": "research-edited",
+      "detail": "Updated \"De Dijver park\" in Brugge research"
+    },
+    {
       "id": "log_mwoab137_q_0op7y",
       "ts": 1795137143875,
       "action": "research-edited",
@@ -10681,12 +10687,6 @@
       "ts": 1794271297409,
       "action": "research-edited",
       "detail": "Updated \"That's Toast\" in Brugge research"
-    },
-    {
-      "id": "log_mw9yknpm_6_b5c3a",
-      "ts": 1794270911242,
-      "action": "research-edited",
-      "detail": "Updated \"Brewery Bourgogne des Flandres\" in Brugge research"
     }
   ]
 }
