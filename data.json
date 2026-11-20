@@ -6345,6 +6345,26 @@
           },
           "actualNotes": "",
           "actualRating": null
+        },
+        {
+          "id": "plan_mwo84d4v_2_t8kv1",
+          "sheet": "Cocktails",
+          "name": "Panda & Sons",
+          "status": "idea",
+          "date": "2026-12-04",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Panda & Sons, 79, Queen Street, New Town, New Town/Broughton, City of Edinburgh, Scotland, EH2 4NF, United Kingdom",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -6432,8 +6452,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "shortlisted",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwo84d4v_2_t8kv1",
           "createdAt": 1786132373098
         },
         {
@@ -9345,6 +9365,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo84d4w_3_rx7av",
+      "ts": 1795133473664,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Panda & Sons\" to Plan on Edinburgh"
+    },
+    {
       "id": "log_mwlc937l_3_plget",
       "ts": 1794959014017,
       "action": "trip-documents",
@@ -10537,12 +10563,6 @@
       "ts": 1794107508254,
       "action": "research-edited",
       "detail": "Updated \"The Monk\" in Brugge research"
-    },
-    {
-      "id": "log_mw79a2x8_11_k5b9h",
-      "ts": 1794107494988,
-      "action": "research-added",
-      "detail": "Added \"The Monk\" to Brugge research"
     }
   ]
 }
