@@ -2832,7 +2832,7 @@
           "lat": 51.2081466,
           "lng": 3.2248010999999996,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4196,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795134458448,
+      "updatedAt": 1795134464202,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9467,6 +9467,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo8plfw_g_z94by",
+      "ts": 1795134464204,
+      "action": "research-edited",
+      "detail": "Updated \"Belfry of Bruges\" in Brugge research"
+    },
+    {
       "id": "log_mwo8ph00_f_ydbu3",
       "ts": 1795134458448,
       "action": "research-edited",
@@ -10659,12 +10665,6 @@
       "ts": 1794108432491,
       "action": "plan-item-edited",
       "detail": "Updated \"Huisbrouwerij De Halve Maan\" on Brugge"
-    },
-    {
-      "id": "log_mw79u3er_1h_4b4kr",
-      "ts": 1794108428739,
-      "action": "research-promoted",
-      "detail": "Promoted \"Huisbrouwerij De Halve Maan\" to Plan on Brugge"
     }
   ]
 }
