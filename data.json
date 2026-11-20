@@ -2793,22 +2793,6 @@
           "createdAt": 1793403953342
         },
         {
-          "id": "res_mvvmfnou_w_rqzde",
-          "sheet": "Sights",
-          "name": "Historic centre of Brugge (Bruges)",
-          "address": "Grote Markt, 2000 Antwerpen, Belgium",
-          "lat": 51.2088142,
-          "lng": 3.2243722999999997,
-          "priceLevel": null,
-          "priority": 5,
-          "estCost": null,
-          "notes": "",
-          "links": [],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mwfteisv_6_3204c",
-          "createdAt": 1793403996078
-        },
-        {
           "id": "res_mvvmg3ek_y_ebjcc",
           "sheet": "Sights",
           "name": "Market Square",
@@ -4246,7 +4230,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795138486350,
+      "updatedAt": 1795138622996,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9517,6 +9501,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwob6qdw_y_bjp8y",
+      "ts": 1795138622996,
+      "action": "research-deleted",
+      "detail": "Removed \"Historic centre of Brugge (Bruges)\" from Brugge research"
+    },
+    {
       "id": "log_mwob3sy7_x_z9msk",
       "ts": 1795138486351,
       "action": "research-added",
@@ -10709,12 +10699,6 @@
       "ts": 1794271676502,
       "action": "plan-item-edited",
       "detail": "Updated \"Boho Brunch\" on Brugge"
-    },
-    {
-      "id": "log_mw9z0c6l_d_c7t8i",
-      "ts": 1794271642797,
-      "action": "research-promoted",
-      "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
     }
   ]
 }
