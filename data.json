@@ -3018,9 +3018,9 @@
           "lat": 51.199729399999995,
           "lng": 3.2239419999999996,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
-          "notes": "",
+          "notes": "Lake of Love",
           "links": [],
           "status": "researching",
           "linkedPlanItemId": null,
@@ -4196,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795134522269,
+      "updatedAt": 1795134625905,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9467,6 +9467,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo8t27l_j_c8tqr",
+      "ts": 1795134625905,
+      "action": "research-edited",
+      "detail": "Updated \"Minnewater\" in Brugge research"
+    },
+    {
       "id": "log_mwo8qu8t_i_i6dd5",
       "ts": 1795134522269,
       "action": "research-edited",
@@ -10659,12 +10665,6 @@
       "ts": 1794108468894,
       "action": "research-promoted",
       "detail": "Promoted \"'t Brugs Beertje\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw79uqfm_1m_vc7k5",
-      "ts": 1794108458578,
-      "action": "plan-item-edited",
-      "detail": "Updated \"2be Shop\" on Brugge"
     }
   ]
 }
