@@ -1367,10 +1367,10 @@
           "sheet": "Shopping",
           "name": "Käthe Wohlfahrt",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "12:00",
+          "dayNumber": 3,
           "dayNumberEnd": null,
           "location": "Breidelstraat 4, 8000 Brugge, Belgium",
           "links": [
@@ -4200,7 +4200,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795216362382,
+      "updatedAt": 1795216371667,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9471,6 +9471,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwplh5n7_15_ixm7p",
+      "ts": 1795216371667,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Käthe Wohlfahrt\" on Brugge"
+    },
+    {
       "id": "log_mwplgyha_14_y4lj4",
       "ts": 1795216362382,
       "action": "plan-item-edited",
@@ -10663,12 +10669,6 @@
       "ts": 1794272159277,
       "action": "plan-item-edited",
       "detail": "Updated \"That's Toast\" on Brugge"
-    },
-    {
-      "id": "log_mw9zbcw6_o_3g6ym",
-      "ts": 1794272156934,
-      "action": "research-promoted",
-      "detail": "Promoted \"That's Toast\" to Plan on Brugge"
     }
   ]
 }
