@@ -2854,7 +2854,7 @@
           "lat": 51.2081343,
           "lng": 3.2265447999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 3,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4196,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795134464202,
+      "updatedAt": 1795134495336,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9467,6 +9467,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo8q9go_h_fbae8",
+      "ts": 1795134495336,
+      "action": "research-edited",
+      "detail": "Updated \"Basilica of the Holy Blood\" in Brugge research"
+    },
+    {
       "id": "log_mwo8plfw_g_z94by",
       "ts": 1795134464204,
       "action": "research-edited",
@@ -10659,12 +10665,6 @@
       "ts": 1794108456811,
       "action": "research-promoted",
       "detail": "Promoted \"2be Shop\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw79u6az_1i_z6zav",
-      "ts": 1794108432491,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Huisbrouwerij De Halve Maan\" on Brugge"
     }
   ]
 }
