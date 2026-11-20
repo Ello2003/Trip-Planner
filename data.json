@@ -2892,7 +2892,7 @@
           "lat": 51.2073745,
           "lng": 3.2278678999999997,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4196,7 +4196,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795134625905,
+      "updatedAt": 1795134741629,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9467,6 +9467,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwo8vji5_k_lqjo2",
+      "ts": 1795134741629,
+      "action": "research-edited",
+      "detail": "Updated \"Rosary Quay\" in Brugge research"
+    },
+    {
       "id": "log_mwo8t27l_j_c8tqr",
       "ts": 1795134625905,
       "action": "research-edited",
@@ -10659,12 +10665,6 @@
       "ts": 1794108470632,
       "action": "plan-item-edited",
       "detail": "Updated \"'t Brugs Beertje\" on Brugge"
-    },
-    {
-      "id": "log_mw79uye6_1p_9uv0j",
-      "ts": 1794108468894,
-      "action": "research-promoted",
-      "detail": "Promoted \"'t Brugs Beertje\" to Plan on Brugge"
     }
   ]
 }
