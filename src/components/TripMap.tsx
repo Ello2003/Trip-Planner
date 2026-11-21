@@ -10,6 +10,7 @@ import {
 } from '@vis.gl/react-google-maps';
 import { Trip, PlanItem, Sheet, Category, Settings } from '../types';
 import { formatDateKey, fmt } from '../utils/helpers';
+import { buildPlaceQueries, searchPlaceLatLng } from '../utils/geocodePlace';
 
 interface TripMapProps {
   trip: Trip;
@@ -103,65 +104,67 @@ const MapController: React.FC<{
 // Places dynamic geocoder that leverages Places API (New) Place class
 const PlacesResolver: React.FC<{
   tripName: string;
+  country?: string;
   planItems: PlanItem[];
   onResolved: (id: string, coords: { lat: number; lng: number }) => void;
-}> = ({ tripName, planItems, onResolved }) => {
+}> = ({ tripName, country, planItems, onResolved }) => {
   const placesLib = useMapsLibrary('places');
-  const resolvedIdsRef = useRef<Set<string>>(new Set());
+  const successIdsRef = useRef<Set<string>>(new Set());
+  const failCountRef = useRef<Record<string, number>>({});
+  const inflightRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     if (!placesLib || !placesLib.Place) return;
 
-    // Filter items that have a meaningful location and haven't been resolved yet
     const toResolve = planItems.filter(item => {
-      if (resolvedIdsRef.current.has(item.id)) return false;
+      if (item.lat != null && item.lng != null && Number.isFinite(Number(item.lat)) && Number.isFinite(Number(item.lng))) {
+        successIdsRef.current.add(item.id);
+        return false;
+      }
+      if (successIdsRef.current.has(item.id)) return false;
+      if (inflightRef.current.has(item.id)) return false;
+      if ((failCountRef.current[item.id] || 0) >= 4) return false;
       const loc = (item.location || '').trim();
       const name = (item.name || '').trim();
-      return loc.length > 2 || name.length > 2;
+      return loc.length > 1 || name.length > 1;
     });
 
     if (toResolve.length === 0) return;
 
-    // Batch resolve gently with small stagger to respect quota
     let cancelled = false;
-    toResolve.slice(0, 15).forEach((item, index) => {
+    toResolve.slice(0, 40).forEach((item, index) => {
+      inflightRef.current.add(item.id);
       setTimeout(async () => {
-        if (cancelled) return;
-        resolvedIdsRef.current.add(item.id);
-
-        const query = item.location && item.location.trim().length > 2
-          ? `${item.name}, ${item.location}, ${tripName}`
-          : `${item.name}, ${tripName}`;
-
-        try {
-          // Use modern Places API (New) Place.searchByText
-          const { places } = await placesLib.Place.searchByText({
-            textQuery: query,
-            fields: ['location', 'displayName', 'formattedAddress']
-          });
-
-          if (places && places.length > 0 && places[0].location) {
-            const loc: any = places[0].location;
-            const lat = typeof loc.lat === 'function' ? loc.lat() : Number(loc.lat);
-            const lng = typeof loc.lng === 'function' ? loc.lng() : Number(loc.lng);
-            if (Number.isFinite(lat) && Number.isFinite(lng)) {
-              onResolved(item.id, { lat, lng });
-            }
-          }
-        } catch (err) {
-          // Fallback silently without throwing unhandled exceptions
-          console.debug('Place search query skipped for:', item.name);
+        if (cancelled) {
+          inflightRef.current.delete(item.id);
+          return;
         }
-      }, index * 250);
+        const queries = buildPlaceQueries({
+          name: item.name,
+          location: item.location,
+          tripName,
+          country
+        });
+        const coords = await searchPlaceLatLng(placesLib, queries);
+        inflightRef.current.delete(item.id);
+        if (cancelled) return;
+        if (coords) {
+          successIdsRef.current.add(item.id);
+          onResolved(item.id, coords);
+        } else {
+          failCountRef.current[item.id] = (failCountRef.current[item.id] || 0) + 1;
+        }
+      }, index * 200);
     });
 
     return () => {
       cancelled = true;
     };
-  }, [placesLib, planItems, tripName, onResolved]);
+  }, [placesLib, planItems, tripName, country, onResolved]);
 
   return null;
 };
+
 
 export const TripMap: React.FC<TripMapProps> = ({
   trip,
@@ -212,7 +215,15 @@ export const TripMap: React.FC<TripMapProps> = ({
   // Handle dynamic coordinates resolved by Places API
   const handleCoordResolved = useCallback((id: string, coords: { lat: number; lng: number }) => {
     setDynamicCoords(prev => ({ ...prev, [id]: coords }));
-  }, []);
+    if (onUpdateTrip) {
+      const updated = (trip.planItems || []).map(item =>
+        item.id === id && (item.lat == null || item.lng == null)
+          ? { ...item, lat: coords.lat, lng: coords.lng }
+          : item
+      );
+      onUpdateTrip({ ...trip, planItems: updated, updatedAt: Date.now() });
+    }
+  }, [onUpdateTrip, trip]);
 
   // Compute all plotted plan items
   const plottedItems = useMemo<PlottedItem[]>(() => {
@@ -234,8 +245,14 @@ export const TripMap: React.FC<TripMapProps> = ({
       let lng: number | null = null;
       let source: PlottedItem['source'] = 'city_fallback';
 
+      // 0. Stored coordinates on the plan item
+      if (item.lat != null && item.lng != null && Number.isFinite(Number(item.lat)) && Number.isFinite(Number(item.lng))) {
+        lat = Number(item.lat);
+        lng = Number(item.lng);
+        source = 'exact';
+      }
       // 1. Dynamic Places API resolved coordinate
-      if (dynamicCoords[item.id]) {
+      else if (dynamicCoords[item.id]) {
         lat = dynamicCoords[item.id].lat;
         lng = dynamicCoords[item.id].lng;
         source = 'places';
@@ -595,6 +612,7 @@ export const TripMap: React.FC<TripMapProps> = ({
             {/* Places Resolver for intelligent text-to-coord resolution */}
             <PlacesResolver
               tripName={trip.name}
+              country={trip.country}
               planItems={trip.planItems}
               onResolved={handleCoordResolved}
             />

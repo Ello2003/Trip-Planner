@@ -89,6 +89,9 @@ export interface PlanItem {
   dayNumber: number | null;
   dayNumberEnd: number | null;
   location: string;
+  /** Resolved map coordinates (Places / manual) */
+  lat?: number | null;
+  lng?: number | null;
   links: LinkItem[];
   cost: number | null;
   currency?: string;

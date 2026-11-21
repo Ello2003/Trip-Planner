@@ -10,6 +10,7 @@ import {
 } from '@vis.gl/react-google-maps';
 import { Trip, ResearchItem, Sheet, Category, Settings } from '../types';
 import { fmt } from '../utils/helpers';
+import { buildPlaceQueries, searchPlaceLatLng } from '../utils/geocodePlace';
 
 interface ResearchMapProps {
   trip: Trip;
@@ -106,62 +107,68 @@ const MapController: React.FC<{
 // Places dynamic resolver for researched items without stored coordinates
 const PlacesResearchResolver: React.FC<{
   tripName: string;
+  country?: string;
   researchItems: ResearchItem[];
   onResolved: (id: string, coords: { lat: number; lng: number }) => void;
-}> = ({ tripName, researchItems, onResolved }) => {
+}> = ({ tripName, country, researchItems, onResolved }) => {
   const placesLib = useMapsLibrary('places');
-  const resolvedIdsRef = useRef<Set<string>>(new Set());
+  const successIdsRef = useRef<Set<string>>(new Set());
+  const failCountRef = useRef<Record<string, number>>({});
+  const inflightRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     if (!placesLib || !placesLib.Place) return;
 
     const toResolve = researchItems.filter(item => {
-      if (item.lat != null && item.lng != null) return false;
-      if (resolvedIdsRef.current.has(item.id)) return false;
+      if (item.lat != null && item.lng != null && Number.isFinite(item.lat) && Number.isFinite(item.lng)) {
+        successIdsRef.current.add(item.id);
+        return false;
+      }
+      if (successIdsRef.current.has(item.id)) return false;
+      if (inflightRef.current.has(item.id)) return false;
+      if ((failCountRef.current[item.id] || 0) >= 4) return false;
       const addr = (item.address || '').trim();
       const name = (item.name || '').trim();
-      return addr.length > 2 || name.length > 2;
+      return addr.length > 1 || name.length > 1;
     });
 
     if (toResolve.length === 0) return;
 
     let cancelled = false;
-    toResolve.slice(0, 15).forEach((item, index) => {
+    // Process in larger batches so later items (e.g. Jerry Cigar Bar) still resolve
+    toResolve.slice(0, 40).forEach((item, index) => {
+      inflightRef.current.add(item.id);
       setTimeout(async () => {
-        if (cancelled) return;
-        resolvedIdsRef.current.add(item.id);
-
-        const query = item.address && item.address.trim().length > 2
-          ? `${item.name}, ${item.address}, ${tripName}`
-          : `${item.name}, ${tripName}`;
-
-        try {
-          const { places } = await placesLib.Place.searchByText({
-            textQuery: query,
-            fields: ['location', 'displayName', 'formattedAddress']
-          });
-
-          if (places && places.length > 0 && places[0].location) {
-            const loc: any = places[0].location;
-            const lat = typeof loc.lat === 'function' ? loc.lat() : Number(loc.lat);
-            const lng = typeof loc.lng === 'function' ? loc.lng() : Number(loc.lng);
-            if (Number.isFinite(lat) && Number.isFinite(lng)) {
-              onResolved(item.id, { lat, lng });
-            }
-          }
-        } catch {
-          // Ignore lookup failures silently
+        if (cancelled) {
+          inflightRef.current.delete(item.id);
+          return;
         }
-      }, index * 250);
+        const queries = buildPlaceQueries({
+          name: item.name,
+          address: item.address,
+          tripName,
+          country
+        });
+        const coords = await searchPlaceLatLng(placesLib, queries);
+        inflightRef.current.delete(item.id);
+        if (cancelled) return;
+        if (coords) {
+          successIdsRef.current.add(item.id);
+          onResolved(item.id, coords);
+        } else {
+          failCountRef.current[item.id] = (failCountRef.current[item.id] || 0) + 1;
+        }
+      }, index * 200);
     });
 
     return () => {
       cancelled = true;
     };
-  }, [placesLib, researchItems, tripName, onResolved]);
+  }, [placesLib, researchItems, tripName, country, onResolved]);
 
   return null;
 };
+
 
 export const ResearchMap: React.FC<ResearchMapProps> = ({
   trip,
@@ -212,7 +219,18 @@ export const ResearchMap: React.FC<ResearchMapProps> = ({
 
   const handleCoordResolved = useCallback((id: string, coords: { lat: number; lng: number }) => {
     setDynamicCoords(prev => ({ ...prev, [id]: coords }));
-  }, []);
+    // Persist so pins survive reload and Plan can reuse Research coords
+    if (onUpdateTrip) {
+      const updated = (trip.research || []).map(item =>
+        item.id === id && (item.lat == null || item.lng == null)
+          ? { ...item, lat: coords.lat, lng: coords.lng }
+          : item
+      );
+      if (updated !== trip.research) {
+        onUpdateTrip({ ...trip, research: updated, updatedAt: Date.now() });
+      }
+    }
+  }, [onUpdateTrip, trip]);
 
   // Compute all plotted research items
   const plottedItems = useMemo<PlottedResearchItem[]>(() => {
@@ -671,6 +689,7 @@ export const ResearchMap: React.FC<ResearchMapProps> = ({
             {/* Places Resolver for automatic geocoding of research addresses */}
             <PlacesResearchResolver
               tripName={trip.name}
+              country={trip.country}
               researchItems={trip.research || []}
               onResolved={handleCoordResolved}
             />
