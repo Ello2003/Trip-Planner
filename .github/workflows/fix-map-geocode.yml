@@ -1,0 +1,22 @@
+name: Fix map geocode
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/utils/geocodePlace.ts'
+      - 'scripts/fix_map_geocode.py'
+      - '.github/workflows/fix-map-geocode.yml'
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/fix_map_geocode.py
+      - run: |
+          git config user.name "Ello2003"
+          git config user.email "graeme.crazydiamond@gmail.com"
+          git add src/utils/geocodePlace.ts src/components/ResearchMap.tsx src/components/TripMap.tsx src/types.ts
+          git commit -m "fix: reliable map geocoding (retries, batch, persist lat/lng)" || echo nochange
+          git push
