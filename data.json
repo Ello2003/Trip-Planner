@@ -1294,7 +1294,7 @@
           "time": "11:00",
           "dayNumber": 3,
           "dayNumberEnd": null,
-          "location": "Simon Stevinplein 13, 8000 Brugge, Belgium",
+          "location": "Simon Stevinplein 13, Simon Stevinplein 13, 8000 Brugge, Belgium (51.20624, 3.22267)",
           "links": [
             {
               "id": "link_mwbbv9rm_17_9wo71",
@@ -4167,7 +4167,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795220319071,
+      "updatedAt": 1795220492028,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9438,6 +9438,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwpnxgxo_18_51tfg",
+      "ts": 1795220492028,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Jerry's Cigar Bar\" on Brugge"
+    },
+    {
       "id": "log_mwpntrhb_17_qvnyb",
       "ts": 1795220319071,
       "action": "plan-item-deleted",
@@ -10630,12 +10636,6 @@
       "ts": 1794272176871,
       "action": "research-promoted",
       "detail": "Promoted \"Tasty Sandwich\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw9zbo3f_s_fxtp3",
-      "ts": 1794272171451,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Boulangerie Schaeverbeke\" on Brugge"
     }
   ]
 }
