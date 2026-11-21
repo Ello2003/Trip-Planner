@@ -1333,7 +1333,7 @@
           "time": "11:30",
           "dayNumber": 3,
           "dayNumberEnd": null,
-          "location": "Braambergstraat 5, 8000 Brugge, Belgium",
+          "location": "Braambergstraat 5, Braambergstraat 5, 8000 Brugge, Belgium (51.20751, 3.22804)",
           "links": [
             {
               "id": "link_mwbbvxzc_3_rv3vr",
@@ -4167,7 +4167,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795220492028,
+      "updatedAt": 1795220503137,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9438,6 +9438,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwpnxpi9_19_fvx9u",
+      "ts": 1795220503137,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Missault\" on Brugge"
+    },
+    {
       "id": "log_mwpnxgxo_18_51tfg",
       "ts": 1795220492028,
       "action": "plan-item-edited",
@@ -10630,12 +10636,6 @@
       "ts": 1794272178613,
       "action": "plan-item-edited",
       "detail": "Updated \"Tasty Sandwich\" on Brugge"
-    },
-    {
-      "id": "log_mw9zbs9z_u_b3ujb",
-      "ts": 1794272176871,
-      "action": "research-promoted",
-      "detail": "Promoted \"Tasty Sandwich\" to Plan on Brugge"
     }
   ]
 }
