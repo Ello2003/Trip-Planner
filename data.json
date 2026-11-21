@@ -1507,39 +1507,6 @@
           "actualRating": null
         },
         {
-          "id": "plan_mwbc36vq_j_w0kju",
-          "sheet": "Belgium Chocolate | Waffles",
-          "name": "Chez Albert",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "Chez Albert, Stationsplein, Sint-Michiels, Bruges, Brugge, West Flanders, Flanders, 8200, Belgium",
-          "links": [],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "Liège Waffles",
-          "visited": false,
-          "estimateCategory": "Other",
-          "currency": "GBP",
-          "originalCost": null,
-          "exchangeRate": 1,
-          "homeCurrency": "GBP",
-          "estimateQuantity": 1,
-          "estimateOriginal": {
-            "name": "Chez Albert",
-            "sheet": "Belgium Chocolate | Waffles",
-            "category": "Other",
-            "quantity": 1,
-            "cost": null
-          },
-          "actualNotes": "",
-          "actualRating": null
-        },
-        {
           "id": "plan_mwbc5w4y_o_84hdr",
           "sheet": "Belgium Chocolate | Waffles",
           "name": "House of Waffles",
@@ -4200,7 +4167,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795220302320,
+      "updatedAt": 1795220319071,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9471,6 +9438,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwpntrhb_17_qvnyb",
+      "ts": 1795220319071,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Chez Albert\" from Brugge"
+    },
+    {
       "id": "log_mwpntek0_16_bmdq6",
       "ts": 1795220302320,
       "action": "plan-item-edited",
@@ -10663,12 +10636,6 @@
       "ts": 1794272171451,
       "action": "plan-item-edited",
       "detail": "Updated \"Boulangerie Schaeverbeke\" on Brugge"
-    },
-    {
-      "id": "log_mw9zbmr8_r_7p93s",
-      "ts": 1794272169716,
-      "action": "research-promoted",
-      "detail": "Promoted \"Boulangerie Schaeverbeke\" to Plan on Brugge"
     }
   ]
 }
