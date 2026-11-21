@@ -1445,10 +1445,10 @@
           "sheet": "Belgium Chocolate | Waffles",
           "name": "The Chocolate Line",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
-          "time": null,
-          "dayNumber": 1,
+          "time": "12:00",
+          "dayNumber": 3,
           "dayNumberEnd": null,
           "location": "The Chocolate Line, 75, Vaartstraat, Nijverheidsdok (Z12), Sint-Pieters, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
           "links": [],
@@ -4200,7 +4200,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795216371667,
+      "updatedAt": 1795220302320,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9471,6 +9471,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwpntek0_16_bmdq6",
+      "ts": 1795220302320,
+      "action": "plan-item-edited",
+      "detail": "Updated \"The Chocolate Line\" on Brugge"
+    },
+    {
       "id": "log_mwplh5n7_15_ixm7p",
       "ts": 1795216371667,
       "action": "plan-item-edited",
@@ -10663,12 +10669,6 @@
       "ts": 1794272169716,
       "action": "research-promoted",
       "detail": "Promoted \"Boulangerie Schaeverbeke\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw9zbep9_p_tnazp",
-      "ts": 1794272159277,
-      "action": "plan-item-edited",
-      "detail": "Updated \"That's Toast\" on Brugge"
     }
   ]
 }
