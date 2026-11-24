@@ -4184,7 +4184,7 @@
           "lat": 51.2037993,
           "lng": 3.2246725,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4222,7 +4222,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795559582514,
+      "updatedAt": 1795559589252,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9554,6 +9554,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwv9ti10_b_5mc4i",
+      "ts": 1795559589252,
+      "action": "research-edited",
+      "detail": "Updated \"Otto Waffle Atelier Katelijnestraat\" in Brugge research"
+    },
+    {
       "id": "log_mwv9tctu_a_rioqg",
       "ts": 1795559582514,
       "action": "research-added",
@@ -10746,12 +10752,6 @@
       "ts": 1794272486485,
       "action": "plan-item-edited",
       "detail": "Updated \"De Witte Pelikaan\" on Brugge"
-    },
-    {
-      "id": "log_mw9zidyz_12_d3cbq",
-      "ts": 1794272484923,
-      "action": "research-promoted",
-      "detail": "Promoted \"De Witte Pelikaan\" to Plan on Brugge"
     }
   ]
 }
