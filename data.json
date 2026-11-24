@@ -2618,6 +2618,30 @@
           },
           "actualNotes": "",
           "actualRating": null
+        },
+        {
+          "id": "plan_mwvbqibi_7_gsqtt",
+          "sheet": "Pubs",
+          "name": "Cambrinus",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4366,7 +4390,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795561991305,
+      "updatedAt": 1795562808894,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9698,6 +9722,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvbqibi_8_6hmhk",
+      "ts": 1795562808894,
+      "action": "plan-item-added",
+      "detail": "Added \"Cambrinus\" (Pubs) on Brugge"
+    },
+    {
       "id": "log_mwvb8zgp_6_81xzk",
       "ts": 1795561991305,
       "action": "plan-item-edited",
@@ -10890,12 +10920,6 @@
       "ts": 1794353831109,
       "action": "plan-item-edited",
       "detail": "Updated \"Käthe Wohlfahrt\" on Brugge"
-    },
-    {
-      "id": "log_mwbbxvn5_4_108uj",
-      "ts": 1794353829233,
-      "action": "research-promoted",
-      "detail": "Promoted \"Käthe Wohlfahrt\" to Plan on Brugge"
     }
   ]
 }
