@@ -3670,15 +3670,26 @@
         {
           "id": "res_mw01kzh4_g_yhx9b",
           "sheet": "Coffee",
-          "name": "Aux Merveilleux de Fred",
-          "address": "Aux Merveilleux de Fred, Nestor de Tièrestraat, Stationsbuurt, Het Zoute, Knokke, Knokke-Heist, Brugge, West Flanders, Flanders, 8300, Belgium",
-          "lat": 51.3443421,
-          "lng": 3.2877077,
+          "name": "Aux Merveilleux De Fred Bruges",
+          "address": "Eiermarkt 3A, 8000 Brugge, Belgium",
+          "lat": 51.2091152,
+          "lng": 3.2228737,
           "priceLevel": null,
           "priority": 3,
           "estCost": null,
           "notes": "Meringues",
-          "links": [],
+          "links": [
+            {
+              "id": "link_mwv9rc53_5_g5hby",
+              "label": "Official Website",
+              "url": "https://marvelous-by-fred.square.site/"
+            },
+            {
+              "id": "link_mwv9rhor_6_752kr",
+              "label": "Official Website (Aux Merveilleux De Fred Bruges)",
+              "url": "http://www.auxmerveilleux.com/"
+            }
+          ],
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1793671303576
@@ -4189,7 +4200,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795559318934,
+      "updatedAt": 1795559497029,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9521,6 +9532,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwv9riva_7_rcl2y",
+      "ts": 1795559497030,
+      "action": "research-edited",
+      "detail": "Updated \"Aux Merveilleux De Fred Bruges\" in Brugge research"
+    },
+    {
       "id": "log_mwv9npg7_4_dmfny",
       "ts": 1795559318935,
       "action": "research-added",
@@ -10713,12 +10730,6 @@
       "ts": 1794272185867,
       "action": "plan-item-edited",
       "detail": "Updated \"Boho Brunch\" on Brugge"
-    },
-    {
-      "id": "log_mw9zbxqs_y_h72u8",
-      "ts": 1794272183956,
-      "action": "research-promoted",
-      "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
     }
   ]
 }
