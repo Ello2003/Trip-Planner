@@ -2512,6 +2512,58 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwv9tm8m_c_zytsk",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Otto Waffle Atelier Katelijnestraat",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Katelijnestraat 1, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwv9tm8m_d_svyri",
+              "label": "Official Website",
+              "url": "http://ottowaffleatelier.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwv9tmr9_f_7kqq7",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Chocoholic",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Wollestraat 34, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwv9tmr9_g_9bwmf",
+              "label": "Official Website",
+              "url": "http://www.choco-holic.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -4194,8 +4246,8 @@
               "url": "http://ottowaffleatelier.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwv9tm8m_c_zytsk",
           "createdAt": 1795559318934
         },
         {
@@ -4216,8 +4268,8 @@
               "url": "http://www.choco-holic.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwv9tmr9_f_7kqq7",
           "createdAt": 1795559582514
         }
       ],
@@ -9554,6 +9606,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwv9tmr9_h_e3ajq",
+      "ts": 1795559595381,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Chocoholic\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwv9tm8n_e_5lq9k",
+      "ts": 1795559594711,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Otto Waffle Atelier Katelijnestraat\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwv9ti10_b_5mc4i",
       "ts": 1795559589252,
       "action": "research-edited",
@@ -10740,18 +10804,6 @@
       "ts": 1794272538000,
       "action": "research-edited",
       "detail": "Updated \"The Old Chocolate House\" in Brugge research"
-    },
-    {
-      "id": "log_mw9zjfq9_14_mvwn9",
-      "ts": 1794272533857,
-      "action": "research-edited",
-      "detail": "Updated \"The Chocolate Line\" in Brugge research"
-    },
-    {
-      "id": "log_mw9zif6d_13_qtnpb",
-      "ts": 1794272486485,
-      "action": "plan-item-edited",
-      "detail": "Updated \"De Witte Pelikaan\" on Brugge"
     }
   ]
 }
