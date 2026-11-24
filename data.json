@@ -4164,10 +4164,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1795138486350
+        },
+        {
+          "id": "res_mwv9npg6_3_v5im9",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Otto Waffle Atelier Katelijnestraat",
+          "address": "Katelijnestraat 1, 8000 Brugge, Belgium",
+          "lat": 51.2037993,
+          "lng": 3.2246725,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwv9nmnn_2_69nqk",
+              "label": "Official Website",
+              "url": "http://ottowaffleatelier.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795559318934
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795220503137,
+      "updatedAt": 1795559318934,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9499,6 +9521,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwv9npg7_4_dmfny",
+      "ts": 1795559318935,
+      "action": "research-added",
+      "detail": "Added \"Otto Waffle Atelier Katelijnestraat\" to Brugge research"
+    },
+    {
       "id": "log_mwpnxpi9_19_fvx9u",
       "ts": 1795220503137,
       "action": "plan-item-edited",
@@ -10691,12 +10719,6 @@
       "ts": 1794272183956,
       "action": "research-promoted",
       "detail": "Promoted \"Boho Brunch\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw9zbtmd_v_osypn",
-      "ts": 1794272178613,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Tasty Sandwich\" on Brugge"
     }
   ]
 }
