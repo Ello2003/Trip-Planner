@@ -7441,7 +7441,7 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1795481368935,
+      "updatedAt": 1795481379524,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
@@ -7456,7 +7456,8 @@
         "Cheap Eats",
         "Activities",
         "Cigars",
-        "Quick Eats"
+        "Quick Eats",
+        "Hotels"
       ],
       "sectionMapUrls": {
         "Wine Bars": "https://www.google.com/maps/d/embed?mid=1Wa9qzlro10vsTMlHaTCkZ0R4WTI2XYI&hl=en&ehbc=2E312F"
