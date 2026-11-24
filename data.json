@@ -2624,9 +2624,9 @@
           "sheet": "Pubs",
           "name": "Cambrinus",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
-          "time": null,
+          "time": "19:30",
           "dayNumber": 1,
           "dayNumberEnd": null,
           "location": "Philipstockstraat 19, 8000 Brugge, Belgium",
@@ -2643,7 +2643,11 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4392,7 +4396,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795562817933,
+      "updatedAt": 1795562846233,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9724,6 +9728,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvbrb4q_e_djlfe",
+      "ts": 1795562846234,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Cambrinus\" on Brugge"
+    },
+    {
       "id": "log_mwvbr6fq_d_08hpo",
       "ts": 1795562840150,
       "action": "research-promoted",
@@ -10916,12 +10926,6 @@
       "ts": 1794353869063,
       "action": "research-promoted",
       "detail": "Promoted \"The Chocolate Line\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbbxyv5_9_tqp1n",
-      "ts": 1794353833409,
-      "action": "plan-item-edited",
-      "detail": "Updated \"The Bottle Shop\" on Brugge"
     }
   ]
 }
