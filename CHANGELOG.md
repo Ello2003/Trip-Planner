@@ -4,6 +4,14 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.25.9] - 2026-11-24
+
+### Changed
+- fix: reliable map geocoding (retries, batch, persist lat/lng)
+- fix: map geocoding retries, full queue, persist coordinates Touched: Changelog, Dependencies, Types / app version.
+
+---
+
 ## [1.25.8] - 2026-11-24
 
 ### Changed
