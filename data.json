@@ -2372,9 +2372,9 @@
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Fritbar",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
-          "time": null,
+          "time": "17:00",
           "dayNumber": 1,
           "dayNumberEnd": null,
           "location": "Fritbar, 3, Katelijnestraat, Onze-Lieve-Vrouwekwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
@@ -2395,7 +2395,11 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         },
         {
           "id": "plan_mwfshcte_3_tim8u",
@@ -4362,7 +4366,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795561965829,
+      "updatedAt": 1795561991305,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9694,6 +9698,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvb8zgp_6_81xzk",
+      "ts": 1795561991305,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Fritbar\" on Brugge"
+    },
+    {
       "id": "log_mwvb8ft1_5_53fby",
       "ts": 1795561965830,
       "action": "plan-item-edited",
@@ -10886,12 +10896,6 @@
       "ts": 1794353829233,
       "action": "research-promoted",
       "detail": "Promoted \"Käthe Wohlfahrt\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbbvzbc_5_dql6z",
-      "ts": 1794353740680,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Missault\" on Brugge"
     }
   ]
 }
