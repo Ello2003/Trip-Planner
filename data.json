@@ -1250,7 +1250,7 @@
           "sheet": "Shopping",
           "name": "De Witte Pelikaan",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-13",
           "endDate": null,
           "time": "12:00",
           "dayNumber": 3,
@@ -1289,7 +1289,7 @@
           "sheet": "Cigars",
           "name": "Jerry's Cigar Bar",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-13",
           "endDate": null,
           "time": "11:00",
           "dayNumber": 3,
@@ -1328,7 +1328,7 @@
           "sheet": "Cigars",
           "name": "Missault",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-13",
           "endDate": null,
           "time": "11:30",
           "dayNumber": 3,
@@ -1367,7 +1367,7 @@
           "sheet": "Shopping",
           "name": "Käthe Wohlfahrt",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-13",
           "endDate": null,
           "time": "12:00",
           "dayNumber": 3,
@@ -1445,7 +1445,7 @@
           "sheet": "Belgium Chocolate | Waffles",
           "name": "The Chocolate Line",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-13",
           "endDate": null,
           "time": "12:00",
           "dayNumber": 3,
@@ -6335,7 +6335,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Panda & Sons",
+            "sheet": "Cocktails",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwo84tjq_4_20h82",
@@ -6355,7 +6365,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Shopping"
+          "estimateCategory": "Shopping",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Jeffrey St. Whisky & Tobacco",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwo84v34_6_a138p",
@@ -6375,7 +6395,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Shopping"
+          "estimateCategory": "Shopping",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Walker Slater",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwo84vr4_8_ljbbj",
@@ -6395,7 +6425,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Shopping"
+          "estimateCategory": "Shopping",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Castle View Cigars",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwo84wey_a_s7d5e",
@@ -6415,7 +6455,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Shopping"
+          "estimateCategory": "Shopping",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Robert Graham 1874 Whisky & Cigars",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwo84x0d_c_dokiq",
@@ -6435,7 +6485,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Shopping"
+          "estimateCategory": "Shopping",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Royal Mile Whiskies",
+            "sheet": "Shopping",
+            "category": "Shopping",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -7381,14 +7441,12 @@
       "country": "United Kingdom",
       "countryGuessed": false,
       "createdAt": 1786110350004,
-      "updatedAt": 1794878280337,
+      "updatedAt": 1795481357783,
       "mapEmbedUrl": "https://www.google.com/maps/d/u/0/embed?mid=11LfUXb5kKkPuZQaevNFVaQ820krDU14&ehbc=2E312F",
       "manualEstimates": [],
       "hiddenSheets": [
         "Things To Do",
         "Sights",
-        "Activities",
-        "Hotels",
         "Breakfasts | Bakeries | Casual Dining",
         "Belgium Chocolate | Waffles",
         "Transport / Transfers",
