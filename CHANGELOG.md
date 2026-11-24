@@ -4,6 +4,15 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.25.8] - 2026-11-24
+
+### Changed
+- fix: reliable map geocoding (retries, batch, persist lat/lng)
+- fix: map geocoding retries, full queue, persist coordinates
+- Plan: drag category sections + quick hide/collapse like Research Touched: CI workflows, Maintenance scripts, ResearchMap.tsx, TripMap.tsx, Types / app version, geocodePlace.ts.
+
+---
+
 ## [1.25.7] - 2026-11-17
 
 ### Changed
