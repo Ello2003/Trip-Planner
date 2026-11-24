@@ -2197,9 +2197,9 @@
           "sheet": "Restaurants",
           "name": "El Churrasco Argentino",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
-          "time": null,
+          "time": "19:00",
           "dayNumber": 1,
           "dayNumberEnd": null,
           "location": "Vlamingstraat 76, 8000 Brugge, Belgium",
@@ -2213,7 +2213,7 @@
           "cost": null,
           "linkedExpenseId": null,
           "actualExpenseId": null,
-          "notes": "Walk in",
+          "notes": "Walk in's",
           "visited": false,
           "priority": null,
           "estimateCategory": "Other",
@@ -4362,7 +4362,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795561737022,
+      "updatedAt": 1795561965829,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9694,6 +9694,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvb8ft1_5_53fby",
+      "ts": 1795561965830,
+      "action": "plan-item-edited",
+      "detail": "Updated \"El Churrasco Argentino\" on Brugge"
+    },
+    {
       "id": "log_mwvb3j9a_4_9jm0o",
       "ts": 1795561737022,
       "action": "research-added",
@@ -10886,12 +10892,6 @@
       "ts": 1794353740680,
       "action": "plan-item-edited",
       "detail": "Updated \"Missault\" on Brugge"
-    },
-    {
-      "id": "log_mwbbvxzd_4_xflw4",
-      "ts": 1794353738953,
-      "action": "research-promoted",
-      "detail": "Promoted \"Missault\" to Plan on Brugge"
     }
   ]
 }
