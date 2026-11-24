@@ -2564,6 +2564,26 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwv9tsrh_i_hs4r0",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "The Chocolate Line",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "The Chocolate Line, 75, Vaartstraat, Nijverheidsdok (Z12), Sint-Pieters, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Handmade Chocs",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3149,8 +3169,8 @@
           "estCost": null,
           "notes": "Handmade Chocs",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": "plan_mwbbyqdj_a_bi7zx",
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwv9tsrh_i_hs4r0",
           "createdAt": 1793669606280
         },
         {
@@ -9606,6 +9626,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwv9tsri_j_vsfjg",
+      "ts": 1795559603166,
+      "action": "research-promoted",
+      "detail": "Quick-added \"The Chocolate Line\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwv9tmr9_h_e3ajq",
       "ts": 1795559595381,
       "action": "research-promoted",
@@ -10798,12 +10824,6 @@
       "ts": 1794353707570,
       "action": "research-promoted",
       "detail": "Promoted \"Jerry's Cigar Bar\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw9zjixc_15_iodmn",
-      "ts": 1794272538000,
-      "action": "research-edited",
-      "detail": "Updated \"The Old Chocolate House\" in Brugge research"
     }
   ]
 }
