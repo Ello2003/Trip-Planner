@@ -4291,10 +4291,26 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwv9tmr9_f_7kqq7",
           "createdAt": 1795559582514
+        },
+        {
+          "id": "res_mwv9vnwi_k_odbuh",
+          "sheet": "Sights",
+          "name": "Mary's Bridge (Mariabrug)",
+          "address": "Mariastraat, 8000 Brugge, Belgium",
+          "lat": 51.2038619,
+          "lng": 3.2245586999999998,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795559690178
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795559589252,
+      "updatedAt": 1795559690178,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9626,6 +9642,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwv9vnwi_l_a68w2",
+      "ts": 1795559690178,
+      "action": "research-added",
+      "detail": "Added \"Mary's Bridge (Mariabrug)\" to Brugge research"
+    },
+    {
       "id": "log_mwv9tsri_j_vsfjg",
       "ts": 1795559603166,
       "action": "research-promoted",
@@ -10818,12 +10840,6 @@
       "ts": 1794353710689,
       "action": "plan-item-edited",
       "detail": "Updated \"Jerry's Cigar Bar\" on Brugge"
-    },
-    {
-      "id": "log_mwbbv9rm_18_zflf6",
-      "ts": 1794353707570,
-      "action": "research-promoted",
-      "detail": "Promoted \"Jerry's Cigar Bar\" to Plan on Brugge"
     }
   ]
 }
