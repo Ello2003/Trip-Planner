@@ -2537,7 +2537,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Otto Waffle Atelier Katelijnestraat",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwv9tmr9_f_7kqq7",
@@ -2563,7 +2573,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Chocoholic",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwv9tsrh_i_hs4r0",
@@ -2583,7 +2603,17 @@
           "notes": "Handmade Chocs",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "The Chocolate Line",
+            "sheet": "Belgium Chocolate | Waffles",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -4307,10 +4337,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1795559690178
+        },
+        {
+          "id": "res_mwvb3j9a_3_9ak40",
+          "sheet": "Pubs",
+          "name": "Cambrinus",
+          "address": "Philipstockstraat 19, 8000 Brugge, Belgium",
+          "lat": 51.209595199999995,
+          "lng": 3.2261623999999998,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwvb3hj8_2_ra33w",
+              "label": "Official Website",
+              "url": "https://www.cambrinus.eu/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795561737022
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795559690178,
+      "updatedAt": 1795561737022,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9642,6 +9694,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvb3j9a_4_9jm0o",
+      "ts": 1795561737022,
+      "action": "research-added",
+      "detail": "Added \"Cambrinus\" to Brugge research"
+    },
+    {
       "id": "log_mwv9vnwi_l_a68w2",
       "ts": 1795559690178,
       "action": "research-added",
@@ -10834,12 +10892,6 @@
       "ts": 1794353738953,
       "action": "research-promoted",
       "detail": "Promoted \"Missault\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbbvc69_19_qokt4",
-      "ts": 1794353710689,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Jerry's Cigar Bar\" on Brugge"
     }
   ]
 }
