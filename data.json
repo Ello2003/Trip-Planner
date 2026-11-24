@@ -2618,30 +2618,6 @@
           },
           "actualNotes": "",
           "actualRating": null
-        },
-        {
-          "id": "plan_mwvbqibi_7_gsqtt",
-          "sheet": "Pubs",
-          "name": "Cambrinus",
-          "status": "idea",
-          "date": null,
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "",
-          "links": [],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "estimateCategory": "Other",
-          "estimateQuantity": 1,
-          "currency": "GBP",
-          "originalCost": null,
-          "exchangeRate": 1,
-          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4390,7 +4366,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795562808894,
+      "updatedAt": 1795562817933,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9722,6 +9698,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvbqpam_9_2d490",
+      "ts": 1795562817934,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Cambrinus\" from Brugge"
+    },
+    {
       "id": "log_mwvbqibi_8_6hmhk",
       "ts": 1795562808894,
       "action": "plan-item-added",
@@ -10914,12 +10896,6 @@
       "ts": 1794353831997,
       "action": "research-promoted",
       "detail": "Promoted \"The Bottle Shop\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbbxx39_5_58oz2",
-      "ts": 1794353831109,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Käthe Wohlfahrt\" on Brugge"
     }
   ]
 }
