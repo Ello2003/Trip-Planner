@@ -4197,10 +4197,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1795559318934
+        },
+        {
+          "id": "res_mwv9tctu_9_ufgox",
+          "sheet": "Belgium Chocolate | Waffles",
+          "name": "Chocoholic",
+          "address": "Wollestraat 34, 8000 Brugge, Belgium",
+          "lat": 51.2070948,
+          "lng": 3.2267406999999997,
+          "priceLevel": null,
+          "priority": 5,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwv9tanj_8_7v15h",
+              "label": "Official Website",
+              "url": "http://www.choco-holic.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795559582514
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795559497029,
+      "updatedAt": 1795559582514,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9532,6 +9554,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwv9tctu_a_rioqg",
+      "ts": 1795559582514,
+      "action": "research-added",
+      "detail": "Added \"Chocoholic\" to Brugge research"
+    },
+    {
       "id": "log_mwv9riva_7_rcl2y",
       "ts": 1795559497030,
       "action": "research-edited",
@@ -10724,12 +10752,6 @@
       "ts": 1794272484923,
       "action": "research-promoted",
       "detail": "Promoted \"De Witte Pelikaan\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mw9zbz7v_z_dkmdk",
-      "ts": 1794272185867,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Boho Brunch\" on Brugge"
     }
   ]
 }
