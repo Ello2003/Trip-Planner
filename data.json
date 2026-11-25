@@ -4769,10 +4769,26 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1795570224584
+        },
+        {
+          "id": "res_mwvg5sj6_1x_9oci3",
+          "sheet": "Sights",
+          "name": "Groenerei",
+          "address": "Groenerei, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2092288,
+          "lng": 3.2306283,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795570240434
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570224584,
+      "updatedAt": 1795570240434,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10105,6 +10121,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg5sj6_1y_zuhoj",
+      "ts": 1795570240434,
+      "action": "research-added",
+      "detail": "Added \"Groenerei\" to Brugge research"
+    },
+    {
       "id": "log_mwvg5gaw_1w_uip65",
       "ts": 1795570224584,
       "action": "research-added",
@@ -11297,12 +11319,6 @@
       "ts": 1794354676796,
       "action": "research-edited",
       "detail": "Updated \"EspressoBar - I Love Coffee\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcfumx_1c_0vidx",
-      "ts": 1794354667737,
-      "action": "research-deleted",
-      "detail": "Removed \"Brapas\" from Brugge research"
     }
   ]
 }
