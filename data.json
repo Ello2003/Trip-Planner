@@ -4753,10 +4753,26 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwvfhrs2_q_3vnpz",
           "createdAt": 1795569116769
+        },
+        {
+          "id": "res_mwvg5gav_1v_a49pt",
+          "sheet": "Sights",
+          "name": "Dijver",
+          "address": "Dijver, Onze-Lieve-Vrouwekwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.206274,
+          "lng": 3.2261856,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795570224584
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570135493,
+      "updatedAt": 1795570224584,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10089,6 +10105,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg5gaw_1w_uip65",
+      "ts": 1795570224584,
+      "action": "research-added",
+      "detail": "Added \"Dijver\" to Brugge research"
+    },
+    {
       "id": "log_mwvg3kn2_1u_o7rfx",
       "ts": 1795570136894,
       "action": "research-promoted",
@@ -11281,12 +11303,6 @@
       "ts": 1794354667737,
       "action": "research-deleted",
       "detail": "Removed \"Brapas\" from Brugge research"
-    },
-    {
-      "id": "log_mwbcfqwk_1b_oy07w",
-      "ts": 1794354662900,
-      "action": "research-added",
-      "detail": "Added \"Brapas\" to Brugge research"
     }
   ]
 }
