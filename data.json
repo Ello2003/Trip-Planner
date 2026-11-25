@@ -2197,7 +2197,7 @@
           "sheet": "Restaurants",
           "name": "El Churrasco Argentino",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": "19:00",
           "dayNumber": 1,
@@ -2372,7 +2372,7 @@
           "sheet": "Breakfasts | Bakeries | Casual Dining",
           "name": "Fritbar",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": "17:00",
           "dayNumber": 1,
@@ -2635,6 +2635,11 @@
               "id": "link_mwvbr6fq_c_vqfn8",
               "label": "Official Website",
               "url": "https://www.cambrinus.eu/"
+            },
+            {
+              "id": "link_mwwpic5e_2_lioyx",
+              "label": "Menu",
+              "url": "https://irp.cdn-website.com/cd9eb98e/files/uploaded/Menukaart+-+Cambrinus+Restaurant_2025.pdf"
             }
           ],
           "cost": null,
@@ -2647,14 +2652,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Cambrinus",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvff7dx_f_2x89k",
           "sheet": "Restaurants",
           "name": "De Gastro",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": "20:00",
           "dayNumber": 1,
@@ -2671,14 +2686,23 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateOriginal": {
+            "name": "De Gastro",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvfg4hk_k_yv30r",
           "sheet": "Restaurants",
           "name": "Vlaminck '14",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": "19:45",
           "dayNumber": 1,
@@ -2701,14 +2725,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Vlaminck '14",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvfhrs2_q_3vnpz",
           "sheet": "Restaurants",
           "name": "Mozart Ribs & More",
           "status": "booked",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": "18:00",
           "dayNumber": 1,
@@ -2725,14 +2759,24 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Mozart Ribs & More",
+            "sheet": "Restaurants",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvfiphg_t_zsvkn",
           "sheet": "Hotels",
           "name": "Seafoodbar Belge",
           "status": "idea",
-          "date": null,
+          "date": "2026-12-11",
           "endDate": null,
           "time": "19:00",
           "dayNumber": 1,
@@ -2749,7 +2793,16 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "estimateOriginal": {
+            "name": "Seafoodbar Belge",
+            "sheet": "Hotels",
+            "category": "Hotels",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvfy86a_z_jax0f",
@@ -2769,7 +2822,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Market Square",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvfyapw_11_gihdh",
@@ -2795,7 +2858,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Belfry of Bruges",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg01ea_14_44zce",
@@ -2821,7 +2894,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "De Burg",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg0dmw_17_1qf0r",
@@ -2847,7 +2930,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Rosary Quay",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg0gwq_1a_ptdq3",
@@ -2873,7 +2966,17 @@
           "notes": "",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Simon Stevin",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg1hmx_1f_2n2y3",
@@ -2899,7 +3002,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Duvelorium Belgian Beer Bar",
+            "sheet": "Pubs",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg1zpy_1i_2es0q",
@@ -2919,7 +3032,17 @@
           "notes": "Lake of Love",
           "visited": false,
           "priority": 5,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Minnewater",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg2jb5_1l_bowx7",
@@ -2945,7 +3068,17 @@
           "notes": "",
           "visited": false,
           "priority": 4,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Hotel Dukes' Palace",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg3ei6_1p_cgf2y",
@@ -2971,7 +3104,17 @@
           "notes": "Light festival",
           "visited": false,
           "priority": 4,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Sint-Salvatorskathedraal",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg3kn1_1t_vd8f8",
@@ -2991,7 +3134,17 @@
           "notes": "",
           "visited": false,
           "priority": 4,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Mary's Bridge (Mariabrug)",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg5x20_1z_2ygzq",
@@ -3011,7 +3164,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Dijver",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         },
         {
           "id": "plan_mwvg5xjm_21_72tch",
@@ -3031,7 +3194,17 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "estimateOriginal": {
+            "name": "Groenerei",
+            "sheet": "Sights",
+            "category": "Other",
+            "quantity": 1,
+            "cost": null
+          },
+          "actualNotes": "",
+          "actualRating": null
         }
       ],
       "timelineMode": "days",
@@ -4828,7 +5001,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570408444,
+      "updatedAt": 1795646411499,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10161,6 +10334,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwpiei3_3_n3hoe",
+      "ts": 1795646411499,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Cambrinus\" on Brugge"
+    },
+    {
       "id": "log_mwvg5xjp_22_ze5jh",
       "ts": 1795570246933,
       "action": "research-promoted",
@@ -11353,12 +11532,6 @@
       "ts": 1794354689880,
       "action": "research-edited",
       "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcg8bf_1f_8f7bv",
-      "ts": 1794354685467,
-      "action": "research-edited",
-      "detail": "Updated \"Kaffee Kamiel\" in Brugge research"
     }
   ]
 }
