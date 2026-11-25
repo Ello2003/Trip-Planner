@@ -4536,7 +4536,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569252451,
+      "updatedAt": 1795569289406,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -4567,7 +4567,8 @@
         "Coffee Shops",
         "Transport / Transfers",
         "Bars",
-        "Quick Eats"
+        "Quick Eats",
+        "Cheap Eats"
       ],
       "sectionMapUrls": {
         "Hotels": "https://www.google.com/maps/d/u/0/embed?mid=1f6FfvNkIjENZy6xpFzzQ36u-ZKDRmns&ehbc=2E312F"
