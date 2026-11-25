@@ -3209,15 +3209,21 @@
         {
           "id": "plan_mwwptmfj_5_0z995",
           "sheet": "Pubs",
-          "name": "cafe cambrinus",
+          "name": "Cafe Cambrinus",
           "status": "idea",
           "date": null,
           "endDate": null,
           "time": null,
           "dayNumber": 1,
           "dayNumberEnd": null,
-          "location": "",
-          "links": [],
+          "location": "Cafe Cambrinus / Brugge, Philipstockstraat 9, 8000 Brugge, Belgium (51.20951, 3.22533)",
+          "links": [
+            {
+              "id": "link_mwwpujko_7_27nb3",
+              "label": "Menu",
+              "url": "https://irp.cdn-website.com/2b8512b2/files/uploaded/Cambrinus_Menu_2025.pdf"
+            }
+          ],
           "cost": null,
           "linkedExpenseId": null,
           "actualExpenseId": null,
@@ -3228,7 +3234,8 @@
           "currency": "GBP",
           "originalCost": null,
           "exchangeRate": 1,
-          "homeCurrency": "GBP"
+          "homeCurrency": "GBP",
+          "priority": 4
         }
       ],
       "timelineMode": "days",
@@ -5025,7 +5032,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795646934991,
+      "updatedAt": 1795646995246,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10358,6 +10365,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwpuv6i_8_dqzx5",
+      "ts": 1795646992986,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Cafe Cambrinus\" on Brugge"
+    },
+    {
       "id": "log_mwwptmfj_6_s5ek4",
       "ts": 1795646934991,
       "action": "plan-item-added",
@@ -11550,12 +11563,6 @@
       "ts": 1794354772932,
       "action": "research-added",
       "detail": "Added \"The Republic\" to Brugge research"
-    },
-    {
-      "id": "log_mwbchj9o_1i_txpc6",
-      "ts": 1794354746316,
-      "action": "research-deleted",
-      "detail": "Removed \"The Republic\" from Brugge research"
     }
   ]
 }
