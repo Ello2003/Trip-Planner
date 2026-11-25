@@ -2900,6 +2900,26 @@
           "visited": false,
           "priority": null,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg1zpy_1i_2es0q",
+          "sheet": "Sights",
+          "name": "Minnewater",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Minnewater, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Lake of Love",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3315,8 +3335,8 @@
           "estCost": null,
           "notes": "Lake of Love",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg1zpy_1i_2es0q",
           "createdAt": 1793404121384
         },
         {
@@ -9997,6 +10017,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg1zpy_1j_enoq3",
+      "ts": 1795570063126,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Minnewater\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvg1hmx_1h_i41el",
       "ts": 1795570039689,
       "action": "research-promoted",
@@ -11189,12 +11215,6 @@
       "ts": 1794354492538,
       "action": "research-edited",
       "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcc0ew_12_qtkjq",
-      "ts": 1794354488600,
-      "action": "research-edited",
-      "detail": "Updated \"AVI '38 Specialty Coffeebar Bruges\" in Brugge research"
     }
   ]
 }
