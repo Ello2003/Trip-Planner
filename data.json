@@ -2750,6 +2750,52 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwvfy86a_z_jax0f",
+          "sheet": "Sights",
+          "name": "Market Square",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Markt, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvfyapw_11_gihdh",
+          "sheet": "Sights",
+          "name": "Belfry of Bruges",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Markt 7, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwvfyapw_12_t72e2",
+              "label": "Official Website",
+              "url": "https://www.museabrugge.be/bezoek-onze-musea/onze-musea-en-monumenten/belfort"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -2979,8 +3025,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvfy86a_z_jax0f",
           "createdAt": 1793404016445
         },
         {
@@ -3001,8 +3047,8 @@
               "url": "https://www.museabrugge.be/bezoek-onze-musea/onze-musea-en-monumenten/belfort"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvfyapw_11_gihdh",
           "createdAt": 1793404032213
         },
         {
@@ -9869,6 +9915,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfyapw_13_qrvux",
+      "ts": 1795569890756,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Belfry of Bruges\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwvfy86b_10_2m4rh",
+      "ts": 1795569887459,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Market Square\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvfkm78_y_52wvx",
       "ts": 1795569252452,
       "action": "plan-item-edited",
@@ -11055,18 +11113,6 @@
       "ts": 1794354206867,
       "action": "plan-item-edited",
       "detail": "Updated \"Chez Albert\" on Brugge"
-    },
-    {
-      "id": "log_mwbc5y1f_s_8x9ui",
-      "ts": 1794354205587,
-      "action": "research-promoted",
-      "detail": "Promoted \"Chez Albert\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbc5xf5_q_67bch",
-      "ts": 1794354204785,
-      "action": "plan-item-edited",
-      "detail": "Updated \"House of Waffles\" on Brugge"
     }
   ]
 }
