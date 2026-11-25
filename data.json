@@ -3256,28 +3256,6 @@
           "createdAt": 1793404092919
         },
         {
-          "id": "res_mvvmhzxs_1e_x40nj",
-          "sheet": "Sights",
-          "name": "Huisbrouwerij De Halve Maan",
-          "address": "Walplein 26, 8000 Brugge, Belgium",
-          "lat": 51.202447299999996,
-          "lng": 3.2241779999999998,
-          "priceLevel": null,
-          "priority": 4,
-          "estCost": null,
-          "notes": "",
-          "links": [
-            {
-              "id": "link_mvzukztn_1u_o4mex",
-              "label": "Official Website",
-              "url": "http://www.halvemaan.be/"
-            }
-          ],
-          "status": "researching",
-          "linkedPlanItemId": null,
-          "createdAt": 1793404105264
-        },
-        {
           "id": "res_mvvmi5uj_1g_1ckv8",
           "sheet": "Sights",
           "name": "De Wijngaard",
@@ -4660,7 +4638,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570003825,
+      "updatedAt": 1795570034524,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9993,6 +9971,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg1dng_1e_t48vx",
+      "ts": 1795570034525,
+      "action": "research-deleted",
+      "detail": "Removed \"Huisbrouwerij De Halve Maan\" from Brugge research"
+    },
+    {
       "id": "log_mwvg0pyp_1d_mql5e",
       "ts": 1795570003825,
       "action": "research-edited",
@@ -11185,12 +11169,6 @@
       "ts": 1794354485080,
       "action": "research-edited",
       "detail": "Updated \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" in Brugge research"
-    },
-    {
-      "id": "log_mwbc86bk_10_9e583",
-      "ts": 1794354309632,
-      "action": "research-added",
-      "detail": "Added \"AVI '38 Specialty Coffeebar Bruges\" to Brugge research"
     }
   ]
 }
