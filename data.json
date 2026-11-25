@@ -2992,6 +2992,46 @@
           "visited": false,
           "priority": 4,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg5x20_1z_2ygzq",
+          "sheet": "Sights",
+          "name": "Dijver",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Dijver, Onze-Lieve-Vrouwekwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg5xjm_21_72tch",
+          "sheet": "Sights",
+          "name": "Groenerei",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Groenerei, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -4766,8 +4806,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg5x20_1z_2ygzq",
           "createdAt": 1795570224584
         },
         {
@@ -4782,8 +4822,8 @@
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg5xjm_21_72tch",
           "createdAt": 1795570240434
         }
       ],
@@ -10121,6 +10161,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg5xjp_22_ze5jh",
+      "ts": 1795570246933,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Groenerei\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwvg5x23_20_pi3gd",
+      "ts": 1795570246299,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Dijver\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvg5sj6_1y_zuhoj",
       "ts": 1795570240434,
       "action": "research-added",
@@ -11307,18 +11359,6 @@
       "ts": 1794354685467,
       "action": "research-edited",
       "detail": "Updated \"Kaffee Kamiel\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcg5hn_1e_1luxr",
-      "ts": 1794354681803,
-      "action": "research-edited",
-      "detail": "Updated \"Les Coquettes Le Café\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcg1mk_1d_7m28o",
-      "ts": 1794354676796,
-      "action": "research-edited",
-      "detail": "Updated \"EspressoBar - I Love Coffee\" in Brugge research"
     }
   ]
 }
