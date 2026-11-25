@@ -2623,7 +2623,7 @@
           "id": "plan_mwvbr6fq_b_yqrwx",
           "sheet": "Pubs",
           "name": "Cambrinus",
-          "status": "idea",
+          "status": "booked",
           "date": null,
           "endDate": null,
           "time": "19:30",
@@ -4536,7 +4536,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569163396,
+      "updatedAt": 1795569210247,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9868,6 +9868,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfjpmv_v_jlvjc",
+      "ts": 1795569210247,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Cambrinus\" on Brugge"
+    },
+    {
       "id": "log_mwvfiphg_u_ywtgz",
       "ts": 1795569163396,
       "action": "plan-item-added",
@@ -11060,12 +11066,6 @@
       "ts": 1794354087263,
       "action": "research-edited",
       "detail": "Updated \"Chez Albert\" in Brugge research"
-    },
-    {
-      "id": "log_mwbc3824_l_ep5oz",
-      "ts": 1794354078604,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Chez Albert\" on Brugge"
     }
   ]
 }
