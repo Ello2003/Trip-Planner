@@ -2726,6 +2726,30 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwvfiphg_t_zsvkn",
+          "sheet": "Hotels",
+          "name": "Seafoodbar Belge",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": "19:00",
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Hotels",
+          "estimateQuantity": 1,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4512,7 +4536,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569131465,
+      "updatedAt": 1795569163396,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9844,6 +9868,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfiphg_u_ywtgz",
+      "ts": 1795569163396,
+      "action": "plan-item-added",
+      "detail": "Added \"Seafoodbar Belge\" (Hotels) on Brugge"
+    },
+    {
       "id": "log_mwvfi0uh_s_omojw",
       "ts": 1795569131465,
       "action": "plan-item-edited",
@@ -11036,12 +11066,6 @@
       "ts": 1794354078604,
       "action": "plan-item-edited",
       "detail": "Updated \"Chez Albert\" on Brugge"
-    },
-    {
-      "id": "log_mwbc36vt_k_qmxsp",
-      "ts": 1794354077081,
-      "action": "research-promoted",
-      "detail": "Promoted \"Chez Albert\" to Plan on Brugge"
     }
   ]
 }
