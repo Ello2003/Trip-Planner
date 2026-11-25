@@ -2707,10 +2707,10 @@
           "id": "plan_mwvfhrs2_q_3vnpz",
           "sheet": "Restaurants",
           "name": "Mozart Ribs & More",
-          "status": "idea",
-          "date": "2026-12-11",
+          "status": "booked",
+          "date": null,
           "endDate": null,
-          "time": null,
+          "time": "18:00",
           "dayNumber": 1,
           "dayNumberEnd": null,
           "location": "Mozart Ribs & More, 9, Sint-Jakobsstraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
@@ -2721,7 +2721,11 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4508,7 +4512,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569116769,
+      "updatedAt": 1795569131465,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9840,6 +9844,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfi0uh_s_omojw",
+      "ts": 1795569131465,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Mozart Ribs & More\" on Brugge"
+    },
+    {
       "id": "log_mwvfhrs2_r_c2e27",
       "ts": 1795569119714,
       "action": "research-promoted",
@@ -11032,12 +11042,6 @@
       "ts": 1794354077081,
       "action": "research-promoted",
       "detail": "Promoted \"Chez Albert\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbc34b7_i_1ad4j",
-      "ts": 1794354073747,
-      "action": "research-edited",
-      "detail": "Updated \"Chez Albert\" in Brugge research"
     }
   ]
 }
