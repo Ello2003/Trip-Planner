@@ -2621,7 +2621,7 @@
         },
         {
           "id": "plan_mwvbr6fq_b_yqrwx",
-          "sheet": "Pubs",
+          "sheet": "Restaurants",
           "name": "Cambrinus",
           "status": "booked",
           "date": null,
@@ -5001,7 +5001,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795646411499,
+      "updatedAt": 1795646909666,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10334,6 +10334,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwpt2w3_4_zahd2",
+      "ts": 1795646909667,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Cambrinus\" on Brugge"
+    },
+    {
       "id": "log_mwwpiei3_3_n3hoe",
       "ts": 1795646411499,
       "action": "plan-item-edited",
@@ -11526,12 +11532,6 @@
       "ts": 1794354696684,
       "action": "research-edited",
       "detail": "Updated \"Hof Café\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcgbq0_1g_9tra9",
-      "ts": 1794354689880,
-      "action": "research-edited",
-      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
     }
   ]
 }
