@@ -2848,6 +2848,32 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg0gwq_1a_ptdq3",
+          "sheet": "Sights",
+          "name": "Simon Stevin",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Simon Stevinplein, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwvg0gwq_1b_34244",
+              "label": "Official Website",
+              "url": "http://www.brugge.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3203,8 +3229,8 @@
               "url": "http://www.brugge.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg0gwq_1a_ptdq3",
           "createdAt": 1793404084939
         },
         {
@@ -9967,6 +9993,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg0gws_1c_7ngz5",
+      "ts": 1795569992092,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Simon Stevin\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvg0dn3_19_bsuro",
       "ts": 1795569987855,
       "action": "research-promoted",
@@ -11159,12 +11191,6 @@
       "ts": 1794354278331,
       "action": "research-added",
       "detail": "Added \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" to Brugge research"
-    },
-    {
-      "id": "log_mwbc6m7f_v_d35ce",
-      "ts": 1794354236907,
-      "action": "research-edited",
-      "detail": "Updated \"Waffles 'n Beer in Bruges Centre\" in Brugge research"
     }
   ]
 }
