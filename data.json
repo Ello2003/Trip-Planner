@@ -2874,6 +2874,32 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg1hmx_1f_2n2y3",
+          "sheet": "Pubs",
+          "name": "Duvelorium Belgian Beer Bar",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Markt 1, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwvg1hmx_1g_4oqd8",
+              "label": "Official Website",
+              "url": "https://www.duvelorium.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3833,8 +3859,8 @@
               "url": "https://www.duvelorium.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg1hmx_1f_2n2y3",
           "createdAt": 1794269685860
         },
         {
@@ -9971,6 +9997,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg1hmx_1h_i41el",
+      "ts": 1795570039689,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Duvelorium Belgian Beer Bar\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvg1dng_1e_t48vx",
       "ts": 1795570034525,
       "action": "research-deleted",
@@ -11163,12 +11195,6 @@
       "ts": 1794354488600,
       "action": "research-edited",
       "detail": "Updated \"AVI '38 Specialty Coffeebar Bruges\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcbxp4_11_8jded",
-      "ts": 1794354485080,
-      "action": "research-edited",
-      "detail": "Updated \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" in Brugge research"
     }
   ]
 }
