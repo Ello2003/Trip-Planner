@@ -4417,10 +4417,32 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwvbr6fq_b_yqrwx",
           "createdAt": 1795561737022
+        },
+        {
+          "id": "res_mwvffy5o_i_m88wm",
+          "sheet": "Restaurants",
+          "name": "Vlaminck '14",
+          "address": "Vlamingstraat 14, 8000 Brugge, Belgium",
+          "lat": 51.209767299999996,
+          "lng": 3.2247402,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwvfftf0_h_ihjue",
+              "label": "Official Website",
+              "url": "https://www.vlaminck14.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795569034668
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795568999974,
+      "updatedAt": 1795569034668,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9752,6 +9774,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvffy5o_j_6l88c",
+      "ts": 1795569034668,
+      "action": "research-added",
+      "detail": "Added \"Vlaminck '14\" to Brugge research"
+    },
+    {
       "id": "log_mwvff7dy_g_bub07",
       "ts": 1795568999974,
       "action": "plan-item-added",
@@ -10944,12 +10972,6 @@
       "ts": 1794353893243,
       "action": "research-edited",
       "detail": "Updated \"The Old Chocolate House\" in Brugge research"
-    },
-    {
-      "id": "log_mwbbys4z_c_xutb6",
-      "ts": 1794353871347,
-      "action": "plan-item-edited",
-      "detail": "Updated \"The Chocolate Line\" on Brugge"
     }
   ]
 }
