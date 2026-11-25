@@ -2382,7 +2382,7 @@
           "cost": null,
           "linkedExpenseId": null,
           "actualExpenseId": null,
-          "notes": "",
+          "notes": "Walk in's",
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other",
@@ -4828,7 +4828,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570240434,
+      "updatedAt": 1795570408444,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
