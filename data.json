@@ -3241,7 +3241,7 @@
           "lat": 51.204911599999996,
           "lng": 3.2253486,
           "priceLevel": null,
-          "priority": 5,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4660,7 +4660,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569289406,
+      "updatedAt": 1795570003825,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9993,6 +9993,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg0pyp_1d_mql5e",
+      "ts": 1795570003825,
+      "action": "research-edited",
+      "detail": "Updated \"Boniface Bridge\" in Brugge research"
+    },
+    {
       "id": "log_mwvg0gws_1c_7ngz5",
       "ts": 1795569992092,
       "action": "research-promoted",
@@ -11185,12 +11191,6 @@
       "ts": 1794354309632,
       "action": "research-added",
       "detail": "Added \"AVI '38 Specialty Coffeebar Bruges\" to Brugge research"
-    },
-    {
-      "id": "log_mwbc7i63_y_s2vt4",
-      "ts": 1794354278331,
-      "action": "research-added",
-      "detail": "Added \"DEES Specialty Coffee | BAR & ROASTERY | BRUGGE |\" to Brugge research"
     }
   ]
 }
