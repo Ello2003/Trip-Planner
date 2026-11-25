@@ -2946,6 +2946,32 @@
           "visited": false,
           "priority": 4,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg3ei6_1p_cgf2y",
+          "sheet": "Sights",
+          "name": "Sint-Salvatorskathedraal",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Steenstraat, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwvg3ei6_1q_s2uho",
+              "label": "Official Website",
+              "url": "https://www.sintsalvatorskathedraal.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Light festival",
+          "visited": false,
+          "priority": 4,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -4574,7 +4600,7 @@
           "lat": 51.2055976,
           "lng": 3.2215419,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "Light festival",
           "links": [
@@ -4584,8 +4610,8 @@
               "url": "https://www.sintsalvatorskathedraal.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg3ei6_1p_cgf2y",
           "createdAt": 1795138486350
         },
         {
@@ -4710,7 +4736,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570080368,
+      "updatedAt": 1795570127455,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10043,6 +10069,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg3ei7_1r_y9wf7",
+      "ts": 1795570128943,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Sint-Salvatorskathedraal\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwvg3dcv_1o_o3ye6",
+      "ts": 1795570127455,
+      "action": "research-edited",
+      "detail": "Updated \"Sint-Salvatorskathedraal\" in Brugge research"
+    },
+    {
       "id": "log_mwvg2jb8_1n_st5jo",
       "ts": 1795570088516,
       "action": "research-promoted",
@@ -11229,18 +11267,6 @@
       "ts": 1794354557813,
       "action": "research-edited",
       "detail": "Updated \"Blackbird Coffee Club\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcdekb_16_ooy2o",
-      "ts": 1794354553595,
-      "action": "research-edited",
-      "detail": "Updated \"Coffeebar Adriaan\" in Brugge research"
-    },
-    {
-      "id": "log_mwbccfgy_15_zgqea",
-      "ts": 1794354508114,
-      "action": "research-edited",
-      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
     }
   ]
 }
