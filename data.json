@@ -2702,6 +2702,26 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwvfhrs2_q_3vnpz",
+          "sheet": "Restaurants",
+          "name": "Mozart Ribs & More",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Mozart Ribs & More, 9, Sint-Jakobsstraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -4469,10 +4489,26 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwvfg4hk_k_yv30r",
           "createdAt": 1795569034668
+        },
+        {
+          "id": "res_mwvfhpi9_o_3se9b",
+          "sheet": "Restaurants",
+          "name": "Mozart Ribs & More",
+          "address": "Mozart Ribs & More, 9, Sint-Jakobsstraat, Steenstraatkwartier, Brugge-Centrum, Brugge, Bruges, Brugge, West Flanders, Flanders, 8000, Belgium",
+          "lat": 51.2093407,
+          "lng": 3.222401,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [],
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvfhrs2_q_3vnpz",
+          "createdAt": 1795569116769
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569048548,
+      "updatedAt": 1795569116769,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9804,6 +9840,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfhrs2_r_c2e27",
+      "ts": 1795569119714,
+      "action": "research-promoted",
+      "detail": "Promoted \"Mozart Ribs & More\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwvfhpia_p_xrzat",
+      "ts": 1795569116770,
+      "action": "research-added",
+      "detail": "Added \"Mozart Ribs & More\" to Brugge research"
+    },
+    {
       "id": "log_mwvfg8v9_n_h7l4p",
       "ts": 1795569048549,
       "action": "plan-item-edited",
@@ -10990,18 +11038,6 @@
       "ts": 1794354073747,
       "action": "research-edited",
       "detail": "Updated \"Chez Albert\" in Brugge research"
-    },
-    {
-      "id": "log_mwbbzudg_h_bbvl5",
-      "ts": 1794353920900,
-      "action": "research-edited",
-      "detail": "Updated \"The Chocolate Line\" in Brugge research"
-    },
-    {
-      "id": "log_mwbbzddg_g_7lmp4",
-      "ts": 1794353898868,
-      "action": "plan-item-edited",
-      "detail": "Updated \"The Old Chocolate House\" on Brugge"
     }
   ]
 }
