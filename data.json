@@ -3457,7 +3457,7 @@
           "lat": 51.20854800000001,
           "lng": 3.2201049999999998,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [
@@ -4684,7 +4684,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570034524,
+      "updatedAt": 1795570080368,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10017,6 +10017,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg2d0w_1k_vkbxc",
+      "ts": 1795570080368,
+      "action": "research-edited",
+      "detail": "Updated \"Hotel Dukes' Palace\" in Brugge research"
+    },
+    {
       "id": "log_mwvg1zpy_1j_enoq3",
       "ts": 1795570063126,
       "action": "research-promoted",
@@ -11209,12 +11215,6 @@
       "ts": 1794354502128,
       "action": "research-edited",
       "detail": "Updated \"Nuba Cafe Brugge\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcc3ga_13_g2125",
-      "ts": 1794354492538,
-      "action": "research-edited",
-      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
     }
   ]
 }
