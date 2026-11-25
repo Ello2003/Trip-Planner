@@ -2677,7 +2677,7 @@
           "id": "plan_mwvfg4hk_k_yv30r",
           "sheet": "Restaurants",
           "name": "Vlaminck '14",
-          "status": "idea",
+          "status": "booked",
           "date": null,
           "endDate": null,
           "time": "19:45",
@@ -4536,7 +4536,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569237489,
+      "updatedAt": 1795569252451,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9868,6 +9868,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfkm78_y_52wvx",
+      "ts": 1795569252452,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Mozart Ribs & More\" on Brugge"
+    },
+    {
+      "id": "log_mwvfkjfj_x_irfa0",
+      "ts": 1795569248863,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Vlaminck '14\" on Brugge"
+    },
+    {
       "id": "log_mwvfkanl_w_s0pc2",
       "ts": 1795569237489,
       "action": "plan-item-edited",
@@ -11054,18 +11066,6 @@
       "ts": 1794354204785,
       "action": "plan-item-edited",
       "detail": "Updated \"House of Waffles\" on Brugge"
-    },
-    {
-      "id": "log_mwbc5w53_p_hl6o6",
-      "ts": 1794354203127,
-      "action": "research-promoted",
-      "detail": "Promoted \"House of Waffles\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbc5tir_n_wpm9j",
-      "ts": 1794354199731,
-      "action": "research-edited",
-      "detail": "Updated \"House of Waffles\" in Brugge research"
     }
   ]
 }
