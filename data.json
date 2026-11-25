@@ -2672,6 +2672,32 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwvfg4hk_k_yv30r",
+          "sheet": "Restaurants",
+          "name": "Vlaminck '14",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Vlamingstraat 14, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwvfg4hk_l_bogx4",
+              "label": "Official Website",
+              "url": "https://www.vlaminck14.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": null,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -4436,8 +4462,8 @@
               "url": "https://www.vlaminck14.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvfg4hk_k_yv30r",
           "createdAt": 1795569034668
         }
       ],
@@ -9774,6 +9800,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfg4hn_m_hbllj",
+      "ts": 1795569042875,
+      "action": "research-promoted",
+      "detail": "Promoted \"Vlaminck '14\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvffy5o_j_6l88c",
       "ts": 1795569034668,
       "action": "research-added",
@@ -10966,12 +10998,6 @@
       "ts": 1794353896647,
       "action": "research-promoted",
       "detail": "Promoted \"The Old Chocolate House\" to Plan on Brugge"
-    },
-    {
-      "id": "log_mwbbz917_d_t2px2",
-      "ts": 1794353893243,
-      "action": "research-edited",
-      "detail": "Updated \"The Old Chocolate House\" in Brugge research"
     }
   ]
 }
