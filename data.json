@@ -2822,6 +2822,32 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg0dmw_17_1qf0r",
+          "sheet": "Sights",
+          "name": "Rosary Quay",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Rozenhoedkaai 3, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwvg0dmw_18_tdxgj",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/en/rozenhoedkaai"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3139,8 +3165,8 @@
               "url": "https://www.visitbruges.be/en/rozenhoedkaai"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg0dmw_17_1qf0r",
           "createdAt": 1793404062340
         },
         {
@@ -9941,6 +9967,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg0dn3_19_bsuro",
+      "ts": 1795569987855,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Rosary Quay\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvg01em_16_jwvq9",
       "ts": 1795569971999,
       "action": "research-promoted",
@@ -11133,12 +11165,6 @@
       "ts": 1794354236907,
       "action": "research-edited",
       "detail": "Updated \"Waffles 'n Beer in Bruges Centre\" in Brugge research"
-    },
-    {
-      "id": "log_mwbc6idu_u_av4gl",
-      "ts": 1794354231954,
-      "action": "research-edited",
-      "detail": "Updated \"The Spot Waffles & Pancakes\" in Brugge research"
     }
   ]
 }
