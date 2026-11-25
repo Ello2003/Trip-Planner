@@ -2648,6 +2648,30 @@
           "originalCost": null,
           "exchangeRate": 1,
           "homeCurrency": "GBP"
+        },
+        {
+          "id": "plan_mwvff7dx_f_2x89k",
+          "sheet": "Restaurants",
+          "name": "De Gastro",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": "20:00",
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4396,7 +4420,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795562846233,
+      "updatedAt": 1795568999974,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9728,6 +9752,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvff7dy_g_bub07",
+      "ts": 1795568999974,
+      "action": "plan-item-added",
+      "detail": "Added \"De Gastro\" (Restaurants) on Brugge"
+    },
+    {
       "id": "log_mwvbrb4q_e_djlfe",
       "ts": 1795562846234,
       "action": "plan-item-edited",
@@ -10920,12 +10950,6 @@
       "ts": 1794353871347,
       "action": "plan-item-edited",
       "detail": "Updated \"The Chocolate Line\" on Brugge"
-    },
-    {
-      "id": "log_mwbbyqdj_b_z0mic",
-      "ts": 1794353869063,
-      "action": "research-promoted",
-      "detail": "Promoted \"The Chocolate Line\" to Plan on Brugge"
     }
   ]
 }
