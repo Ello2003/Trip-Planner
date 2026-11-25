@@ -2972,6 +2972,26 @@
           "visited": false,
           "priority": 4,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg3kn1_1t_vd8f8",
+          "sheet": "Sights",
+          "name": "Mary's Bridge (Mariabrug)",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Mariastraat, 8000 Brugge, Belgium",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 4,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -4666,12 +4686,12 @@
           "lat": 51.2038619,
           "lng": 3.2245586999999998,
           "priceLevel": null,
-          "priority": null,
+          "priority": 4,
           "estCost": null,
           "notes": "",
           "links": [],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg3kn1_1t_vd8f8",
           "createdAt": 1795559690178
         },
         {
@@ -4736,7 +4756,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795570127455,
+      "updatedAt": 1795570135493,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10069,6 +10089,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg3kn2_1u_o7rfx",
+      "ts": 1795570136894,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Mary's Bridge (Mariabrug)\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwvg3jk7_1s_o3pot",
+      "ts": 1795570135495,
+      "action": "research-edited",
+      "detail": "Updated \"Mary's Bridge (Mariabrug)\" in Brugge research"
+    },
+    {
       "id": "log_mwvg3ei7_1r_y9wf7",
       "ts": 1795570128943,
       "action": "research-promoted",
@@ -11255,18 +11287,6 @@
       "ts": 1794354662900,
       "action": "research-added",
       "detail": "Added \"Brapas\" to Brugge research"
-    },
-    {
-      "id": "log_mwbcev7c_18_m1qrg",
-      "ts": 1794354621816,
-      "action": "research-edited",
-      "detail": "Updated \"Aux Merveilleux de Fred\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcdhth_17_9y0wf",
-      "ts": 1794354557813,
-      "action": "research-edited",
-      "detail": "Updated \"Blackbird Coffee Club\" in Brugge research"
     }
   ]
 }
