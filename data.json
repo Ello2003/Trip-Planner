@@ -2796,6 +2796,32 @@
           "visited": false,
           "priority": 5,
           "estimateCategory": "Other"
+        },
+        {
+          "id": "plan_mwvg01ea_14_44zce",
+          "sheet": "Sights",
+          "name": "De Burg",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Burg 15, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwvg01eb_15_n0d5k",
+              "label": "Official Website",
+              "url": "https://www.visitbruges.be/hoogtepunten/burg"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -3091,8 +3117,8 @@
               "url": "https://www.visitbruges.be/hoogtepunten/burg"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwvg01ea_14_44zce",
           "createdAt": 1793404052469
         },
         {
@@ -9915,6 +9941,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvg01em_16_jwvq9",
+      "ts": 1795569971999,
+      "action": "research-promoted",
+      "detail": "Quick-added \"De Burg\" to Plan on Brugge"
+    },
+    {
       "id": "log_mwvfyapw_13_qrvux",
       "ts": 1795569890756,
       "action": "research-promoted",
@@ -11107,12 +11139,6 @@
       "ts": 1794354231954,
       "action": "research-edited",
       "detail": "Updated \"The Spot Waffles & Pancakes\" in Brugge research"
-    },
-    {
-      "id": "log_mwbc5z0z_t_gq85k",
-      "ts": 1794354206867,
-      "action": "plan-item-edited",
-      "detail": "Updated \"Chez Albert\" on Brugge"
     }
   ]
 }
