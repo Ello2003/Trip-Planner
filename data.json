@@ -3205,6 +3205,30 @@
           },
           "actualNotes": "",
           "actualRating": null
+        },
+        {
+          "id": "plan_mwwptmfj_5_0z995",
+          "sheet": "Pubs",
+          "name": "cafe cambrinus",
+          "status": "idea",
+          "date": null,
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "",
+          "links": [],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "",
+          "visited": false,
+          "estimateCategory": "Other",
+          "estimateQuantity": 1,
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -5001,7 +5025,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795646909666,
+      "updatedAt": 1795646934991,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10334,6 +10358,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwptmfj_6_s5ek4",
+      "ts": 1795646934991,
+      "action": "plan-item-added",
+      "detail": "Added \"cafe cambrinus\" (Pubs) on Brugge"
+    },
+    {
       "id": "log_mwwpt2w3_4_zahd2",
       "ts": 1795646909667,
       "action": "plan-item-edited",
@@ -11526,12 +11556,6 @@
       "ts": 1794354746316,
       "action": "research-deleted",
       "detail": "Removed \"The Republic\" from Brugge research"
-    },
-    {
-      "id": "log_mwbcggz0_1h_je5tb",
-      "ts": 1794354696684,
-      "action": "research-edited",
-      "detail": "Updated \"Hof Café\" in Brugge research"
     }
   ]
 }
