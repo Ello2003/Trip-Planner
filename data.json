@@ -2678,9 +2678,9 @@
           "sheet": "Restaurants",
           "name": "Vlaminck '14",
           "status": "idea",
-          "date": "2026-12-11",
+          "date": null,
           "endDate": null,
-          "time": null,
+          "time": "19:45",
           "dayNumber": 1,
           "dayNumberEnd": null,
           "location": "Vlamingstraat 14, 8000 Brugge, Belgium",
@@ -2697,7 +2697,11 @@
           "notes": "",
           "visited": false,
           "priority": null,
-          "estimateCategory": "Other"
+          "estimateCategory": "Other",
+          "currency": "GBP",
+          "originalCost": null,
+          "exchangeRate": 1,
+          "homeCurrency": "GBP"
         }
       ],
       "timelineMode": "days",
@@ -4468,7 +4472,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795569034668,
+      "updatedAt": 1795569048548,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -9800,6 +9804,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwvfg8v9_n_h7l4p",
+      "ts": 1795569048549,
+      "action": "plan-item-edited",
+      "detail": "Updated \"Vlaminck '14\" on Brugge"
+    },
+    {
       "id": "log_mwvfg4hn_m_hbllj",
       "ts": 1795569042875,
       "action": "research-promoted",
@@ -10992,12 +11002,6 @@
       "ts": 1794353898868,
       "action": "plan-item-edited",
       "detail": "Updated \"The Old Chocolate House\" on Brugge"
-    },
-    {
-      "id": "log_mwbbzbnr_f_h2txe",
-      "ts": 1794353896647,
-      "action": "research-promoted",
-      "detail": "Promoted \"The Old Chocolate House\" to Plan on Brugge"
     }
   ]
 }
