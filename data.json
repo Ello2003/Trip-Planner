@@ -3201,6 +3201,32 @@
           "exchangeRate": 1,
           "homeCurrency": "GBP",
           "priority": 4
+        },
+        {
+          "id": "plan_mwwud95r_h_od0vw",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Blend Wijnbar Wijnwinkel",
+          "status": "idea",
+          "date": "2026-12-11",
+          "endDate": null,
+          "time": null,
+          "dayNumber": 1,
+          "dayNumberEnd": null,
+          "location": "Kuipersstraat 6/8, 8000 Brugge, Belgium",
+          "links": [
+            {
+              "id": "link_mwwud95r_i_0igdx",
+              "label": "Official Website",
+              "url": "http://www.blendwijnhandel.be/"
+            }
+          ],
+          "cost": null,
+          "linkedExpenseId": null,
+          "actualExpenseId": null,
+          "notes": "Great Wine Selection",
+          "visited": false,
+          "priority": 5,
+          "estimateCategory": "Other"
         }
       ],
       "timelineMode": "days",
@@ -5025,9 +5051,9 @@
           "lat": 51.2099232,
           "lng": 3.2233403,
           "priceLevel": null,
-          "priority": null,
+          "priority": 5,
           "estCost": null,
-          "notes": "",
+          "notes": "Great Wine Selection",
           "links": [
             {
               "id": "link_mwwubqey_d_my56t",
@@ -5035,13 +5061,13 @@
               "url": "http://www.blendwijnhandel.be/"
             }
           ],
-          "status": "researching",
-          "linkedPlanItemId": null,
+          "status": "promoted",
+          "linkedPlanItemId": "plan_mwwud95r_h_od0vw",
           "createdAt": 1795654499518
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795654499518,
+      "updatedAt": 1795654566777,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10374,6 +10400,18 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwud95u_j_o0bdj",
+      "ts": 1795654569378,
+      "action": "research-promoted",
+      "detail": "Quick-added \"Blend Wijnbar Wijnwinkel\" to Plan on Brugge"
+    },
+    {
+      "id": "log_mwwud75l_g_57mo7",
+      "ts": 1795654566777,
+      "action": "research-edited",
+      "detail": "Updated \"Blend Wijnbar Wijnwinkel\" in Brugge research"
+    },
+    {
       "id": "log_mwwubr9a_f_mtvwa",
       "ts": 1795654499518,
       "action": "research-added",
@@ -11560,18 +11598,6 @@
       "ts": 1794355337071,
       "action": "research-edited",
       "detail": "Updated \"Groot Vlaenderen\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcksof_1p_yye75",
-      "ts": 1794354898479,
-      "action": "research-edited",
-      "detail": "Updated \"Opus Latino\" in Brugge research"
-    },
-    {
-      "id": "log_mwbckkhr_1o_f7ojl",
-      "ts": 1794354887871,
-      "action": "research-edited",
-      "detail": "Updated \"’t Klein Venetië\" in Brugge research"
     }
   ]
 }
