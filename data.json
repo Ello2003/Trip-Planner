@@ -4994,10 +4994,32 @@
           "status": "promoted",
           "linkedPlanItemId": "plan_mwvg5xjm_21_72tch",
           "createdAt": 1795570240434
+        },
+        {
+          "id": "res_mwwuad1f_b_28jfu",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Punta Est",
+          "address": "Predikherenrei 1, 8000 Brugge, Belgium",
+          "lat": 51.209342899999996,
+          "lng": 3.2321363,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwwuabtk_a_690kd",
+              "label": "Official Website",
+              "url": "https://punta-est.be/nl/home"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795654434435
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795652588590,
+      "updatedAt": 1795654434435,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10330,6 +10352,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwuad1f_c_liyo7",
+      "ts": 1795654434435,
+      "action": "research-added",
+      "detail": "Added \"Punta Est\" to Brugge research"
+    },
+    {
       "id": "log_mwwt5dcc_9_aobh7",
       "ts": 1795652521932,
       "action": "plan-item-deleted",
@@ -11522,12 +11550,6 @@
       "ts": 1794354884225,
       "action": "research-edited",
       "detail": "Updated \"ODA Rooftop Bar\" in Brugge research"
-    },
-    {
-      "id": "log_mwbcjksg_1m_u7bvz",
-      "ts": 1794354841600,
-      "action": "research-edited",
-      "detail": "Updated \"NOBLE Bruges\" in Brugge research"
     }
   ]
 }
