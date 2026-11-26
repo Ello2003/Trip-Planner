@@ -2979,42 +2979,6 @@
           "actualRating": null
         },
         {
-          "id": "plan_mwvg1hmx_1f_2n2y3",
-          "sheet": "Pubs",
-          "name": "Duvelorium Belgian Beer Bar",
-          "status": "idea",
-          "date": "2026-12-11",
-          "endDate": null,
-          "time": null,
-          "dayNumber": 1,
-          "dayNumberEnd": null,
-          "location": "Markt 1, 8000 Brugge, Belgium",
-          "links": [
-            {
-              "id": "link_mwvg1hmx_1g_4oqd8",
-              "label": "Official Website",
-              "url": "https://www.duvelorium.be/"
-            }
-          ],
-          "cost": null,
-          "linkedExpenseId": null,
-          "actualExpenseId": null,
-          "notes": "",
-          "visited": false,
-          "priority": null,
-          "estimateCategory": "Other",
-          "estimateQuantity": 1,
-          "estimateOriginal": {
-            "name": "Duvelorium Belgian Beer Bar",
-            "sheet": "Pubs",
-            "category": "Other",
-            "quantity": 1,
-            "cost": null
-          },
-          "actualNotes": "",
-          "actualRating": null
-        },
-        {
           "id": "plan_mwvg1zpy_1i_2es0q",
           "sheet": "Sights",
           "name": "Minnewater",
@@ -5032,7 +4996,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795646995246,
+      "updatedAt": 1795652521915,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10365,6 +10329,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwt5dcc_9_aobh7",
+      "ts": 1795652521932,
+      "action": "plan-item-deleted",
+      "detail": "Removed \"Duvelorium Belgian Beer Bar\" from Brugge"
+    },
+    {
       "id": "log_mwwpuv6i_8_dqzx5",
       "ts": 1795646992986,
       "action": "plan-item-edited",
@@ -11557,12 +11527,6 @@
       "ts": 1794354841600,
       "action": "research-edited",
       "detail": "Updated \"NOBLE Bruges\" in Brugge research"
-    },
-    {
-      "id": "log_mwbci3t0_1l_06irz",
-      "ts": 1794354772932,
-      "action": "research-added",
-      "detail": "Added \"The Republic\" to Brugge research"
     }
   ]
 }
