@@ -4,6 +4,13 @@ All notable changes to the **Travel Ledger** project are documented here.
 
 ---
 
+## [1.25.10] - 2026-11-26
+
+### Changed
+- Maintenance updates across the app.
+
+---
+
 ## [1.25.9] - 2026-11-24
 
 ### Changed

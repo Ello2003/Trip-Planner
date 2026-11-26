@@ -394,7 +394,7 @@ export interface HistoryEntry {
 }
 
 export const CUR = '£';
-export const APP_VERSION = '1.25.9';
+export const APP_VERSION = '1.25.10';
 
 export const SHEET_TO_CAT: Record<string, string> = {
   'Hotels': 'Hotels',
@@ -456,6 +456,7 @@ export const TRIP_TAB_LABELS: Record<string, string> = {
 };
 
 export const CHANGELOG: Record<string, string> = {
+  '1.25.10': 'Maintenance updates across the app.',
   '1.25.9': 'fix: reliable map geocoding (retries, batch, persist lat/lng); fix: map geocoding retries, full queue, persist coordinates Touched: Changelog, Dependencies, Types / app version.',
   '1.25.8': 'fix: reliable map geocoding (retries, batch, persist lat/lng); fix: map geocoding retries, full queue, persist coordinates; Plan: drag category sections + quick hide/collapse like Research Touched: CI workflows, Maintenance scripts, ResearchMap.tsx, TripMap.tsx, Types / app version, geocodePlace.ts.',
   '1.25.7': 'Changelog history correction applied for 1.25.x (IndexedDB docs, Notes redesign, in-browser PDFs, versioning tooling).',
