@@ -1471,7 +1471,8 @@
             "cost": null
           },
           "actualNotes": "",
-          "actualRating": null
+          "actualRating": null,
+          "priority": 5
         },
         {
           "id": "plan_mwbbzbnq_e_ksjvu",
@@ -4996,7 +4997,7 @@
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795652521915,
+      "updatedAt": 1795652588590,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
