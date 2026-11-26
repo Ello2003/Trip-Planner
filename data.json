@@ -5016,10 +5016,32 @@
           "status": "researching",
           "linkedPlanItemId": null,
           "createdAt": 1795654434435
+        },
+        {
+          "id": "res_mwwubr9a_e_4kzq2",
+          "sheet": "Bars With Views | Cocktails",
+          "name": "Blend Wijnbar Wijnwinkel",
+          "address": "Kuipersstraat 6/8, 8000 Brugge, Belgium",
+          "lat": 51.2099232,
+          "lng": 3.2233403,
+          "priceLevel": null,
+          "priority": null,
+          "estCost": null,
+          "notes": "",
+          "links": [
+            {
+              "id": "link_mwwubqey_d_my56t",
+              "label": "Official Website",
+              "url": "http://www.blendwijnhandel.be/"
+            }
+          ],
+          "status": "researching",
+          "linkedPlanItemId": null,
+          "createdAt": 1795654499518
         }
       ],
       "createdAt": 1785532924169,
-      "updatedAt": 1795654434435,
+      "updatedAt": 1795654499518,
       "packingList": [],
       "country": "Belgium",
       "countryGuessed": false,
@@ -10352,6 +10374,12 @@
   },
   "activityLog": [
     {
+      "id": "log_mwwubr9a_f_mtvwa",
+      "ts": 1795654499518,
+      "action": "research-added",
+      "detail": "Added \"Blend Wijnbar Wijnwinkel\" to Brugge research"
+    },
+    {
       "id": "log_mwwuad1f_c_liyo7",
       "ts": 1795654434435,
       "action": "research-added",
@@ -11544,12 +11572,6 @@
       "ts": 1794354887871,
       "action": "research-edited",
       "detail": "Updated \"’t Klein Venetië\" in Brugge research"
-    },
-    {
-      "id": "log_mwbckhoh_1n_kgc3l",
-      "ts": 1794354884225,
-      "action": "research-edited",
-      "detail": "Updated \"ODA Rooftop Bar\" in Brugge research"
     }
   ]
 }
